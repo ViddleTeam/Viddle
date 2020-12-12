@@ -47,7 +47,7 @@ if (isset($login)){
         require("danesql.php");
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 			if ($connect->connect_errno!=0) {
-				echo 'Wystąpił błąd. '.$connect->error;
+				echo 'Wystąpił błąd. '.$connect->errno;
 			} else {
             if ($e == true) {
                 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE email='%s'", mysqli_real_escape_string($connect,$email))))
