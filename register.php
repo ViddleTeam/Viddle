@@ -99,15 +99,15 @@ if (isset($login)){
 				<h3 style="font-weight: bold;">Zarejestruj się w Viddle</h3>
 				<p>Dziękujemy za wybranie Viddle do udostępniania filmów! Podaj potrzebne dane, żeby zarejestrować nowe konto.</p><br>
 				<?php 
-					echo $n_error;
-					echo $e_error;
-					echo $p_error;
-					echo $rp_error;
-					echo $c_error;
-					echo $easypass_error;
-                    echo $esql_error;
-                    echo $nsql_error;
-                    echo $ee_error;
+					if (isset($n_error)) echo $n_error;
+					if (isset($e_error)) echo $e_error;
+					if (isset($p_error)) echo $p_error;
+					if (isset($rp_error)) echo $rp_error;
+					if (isset($c_error)) echo $c_error;
+					if (isset($easypass_error)) echo $easypass_error;
+                    if (isset($esql_error)) echo $esql_error;
+                    if (isset($nsql_error)) echo $nsql_error;
+                    if (isset($ee_error)) echo $ee_error;
 				?>
                 <form method="post">
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
