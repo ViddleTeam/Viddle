@@ -47,7 +47,7 @@ if (isset($login)){
         require("danesql.php");
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 			if ($connect->connect_errno!=0) {
-				echo 'Wystąpił błąd. '.$connect->errno;
+				$ee_error = "<div class='alert alert-danger' role='alert'>Wystąpił błąd.</div>";
 			} else {
             if ($e == true) {
                 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE email='%s'", mysqli_real_escape_string($connect,$email))))
@@ -107,6 +107,7 @@ if (isset($login)){
 					echo $easypass_error;
                     echo $esql_error;
                     echo $nsql_error;
+                    echo $ee_error;
 				?>
                 <form method="post">
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
