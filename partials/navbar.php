@@ -6,7 +6,7 @@ if ($_SESSION['z1'] == true) {
     $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
     $uid = $connect->query("SELECT uid FROM viddle_users WHERE login = '%s'", $connect->real_escape_string($_SESSION['login']));
     $connect->close();
-    echo "<script>console.log('$uid')</script>";
+    echo "<script>console.log('${$_SESSION['user']}')</script>";
 } else {
     $avatar = 'anonim.png';
 }
