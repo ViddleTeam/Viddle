@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['z1'] == true) {
+if (isset $_SESSION['z1']) {
     $i = '1';
     $avatar = 'test.png';
     echo "<script>console.log('${$_SESSION['user']}')</script>";
