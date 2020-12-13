@@ -21,8 +21,9 @@ if ($_SESSION['z1'] == true)
 				$dane = $result->fetch_assoc();
 				
 				$_SESSION['avatar'] = $dane['avatarname'];
+				$avatar = $dane['avatarname'];
 				
-				if($_SESSION['avatarname'] == '0')
+				if($avatar == 'x')
 				{
 					$av2 = '0';
 					$av3 = 'da.png';
