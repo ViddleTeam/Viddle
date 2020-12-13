@@ -87,7 +87,7 @@ if ($_SESSION['z1'] == true) {
                     </div>
                     
                             <?php if ($i == '0') {
-                               echp '<a href="login.php">Zaloguj się</a>';
+                               echo '<a href="login.php">Zaloguj się</a>';
                             } else { 
                            echo '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
