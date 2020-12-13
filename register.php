@@ -69,7 +69,7 @@ if (isset($login)){
                 $haslo_h = password_hash($password, PASSWORD_DEFAULT);
                 if ($connect->query("INSERT INTO viddle_users VALUES ('$login', '$haslo_h', '$email', '1', '0', '0')")) {
                     $_SESSION['z'] = true;   
-                    header('location: prejestracja.php');
+                    header('Location: prejestracja.php');
                 }
             }
         }	
