@@ -76,7 +76,7 @@ if (isset($login)){
                     $_SESSION['z'] = true;   
                     header('Location: prejestracja.php');
                 } else {
-                    echo 'Error.';
+                    echo 'Error. '.$connect->error;
                 }
             }
         }	
