@@ -7,10 +7,9 @@ if (isset($_SESSION['z']))
 		unset($_SESSION['z']);
 	}
 	else
-	{
-		echo $_SESSION['z'];
+    {
 		//header('Location: register.php');
-		exit();
+		//exit();
 	}
 
 
