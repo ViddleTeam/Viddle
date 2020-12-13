@@ -31,7 +31,7 @@ if ($_SESSION['z1'] == true)
 				else
 				{
 					$av2 = '1';
-					$av3 = 'test.png';
+					$av3 = '';
 				}
 				
 			}
