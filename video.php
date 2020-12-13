@@ -4,7 +4,6 @@
 $id = $_GET['id'];
 
 echo $id;
-
 if($id == 0)
 {
     header('Location: index.php');
@@ -20,7 +19,7 @@ else
 		    mysqli_real_escape_string($connect,$id))))
 
             $d2 = $result->num_rows;
-			if($d2 == '1')
+			if(isset($d2) && $d2 == '1')
             {
                $dane = $result->fetch_assoc();
 
@@ -44,12 +43,12 @@ else
 <html lang="pl-PL"><head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php echo $title ?></title>
+    <title><?php if(isset($title)) echo $title ?></title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="<?php echo $title ?> na Viddle">
-    <meta property="og:description" content="<?php echo $opis ?>">
+    <meta property="og:title" content="<?php if (isset($title)) echo $title ?> na Viddle">
+    <meta property="og:description" content="<?php if (isset($opis)) echo $opis ?>">
 	<script src="script.js"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
 	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
