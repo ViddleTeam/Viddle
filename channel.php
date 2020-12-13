@@ -18,6 +18,7 @@
 					<p style="text-align: left; margin-bottom: 20px;">0 obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
+					<button type="button" class="btn btn-primary"><p style="margin: 10px;">Dostosuj kanał</p></button>
 					<button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 				</span>
 				</div>
