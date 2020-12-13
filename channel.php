@@ -45,14 +45,14 @@ if ($result = @$connect->query(
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av4 ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa ?>  <img src="https://cdn.discordapp.com/attachments/745671082308010084/787484209743659039/oner_2.svg" width="80" height="40" /></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
-					<button type="button" class="btn btn-primary"><p style="margin: 10px;">Dostosuj kanał</p></button>
+					<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>
 					<button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 				</span>
 				</div>
