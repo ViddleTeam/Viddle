@@ -7,36 +7,9 @@ if ($_SESSION['z1'] == true)
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
     
-    $login = $_SESSION['user'];
-		       
-    require "danesql.php";
-    $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-    if ($result = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
-		    mysqli_real_escape_string($connect,$login))))
+    $av3 = 'avatardomyslny.png';
 
-            $d2 = $result->num_rows;
-			if($d2 == '1')
-			{
-				$dane = $result->fetch_assoc();
-				
-				$_SESSION['avatar] = $dane['avatarname'];
-				
-				if($_SESSION['avatarname'] == '0')
-				{
-					$av2 = '0';
-				}
-				else
-				{
-					$av2 = '1';
-				}
-				
-			}
-			else
-			{
-			
-			}
-			
+	$av2 = '0';
 } 
 else 
 {
