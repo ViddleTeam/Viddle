@@ -1,4 +1,5 @@
 <?php
+$title = "Udostępnianie filmów";
 require_once('partials/navbar.php');
 ?>
       <div class="container" style="margin-top:30px;">

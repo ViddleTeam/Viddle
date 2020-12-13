@@ -1,4 +1,5 @@
 <?php
+    $title = "SlaVistaPL";
     require_once('partials/navbar.php');
 ?>
 	  <center>

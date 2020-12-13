@@ -9,12 +9,12 @@ if ($_SESSION['z1'] == true) {
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viddle - strona główna</title>
+    <title>Viddle - <?php if (isset($title)) { echo $title; } else { echo 'Viddle'; } ?></title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="VDP - polska alternatywa dla YouTube">
-    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą VDP.">
+    <meta property="og:title" content="Viddle - polska alternatywa dla YouTube">
+    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
     <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
