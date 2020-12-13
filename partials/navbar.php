@@ -1,11 +1,14 @@
 <?php
 session_start();
-if (isset $_SESSION['z1']) {
+if ($_SESSION['z1'] == true) 
+{
     $i = '1';
     $avatar = 'test.png';
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
-} else {
+} 
+else 
+{
     $i = '0';
 }
 $str = "/channel.php?id=";
