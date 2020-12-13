@@ -7,6 +7,7 @@ if ($_SESSION['z1'] == true) {
     $uid = $connect->query("SELECT uid FROM viddle_users WHERE login = '%s'", $connect->real_escape_string($_SESSION['login']));
     $connect->close();
     echo "<script>console.log('${$_SESSION['user']}')</script>";
+    echo '<script>console.log("script")</script>';
 } else {
     $avatar = 'anonim.png';
 }
