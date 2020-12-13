@@ -13,7 +13,7 @@
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
-					<h3 style="align-items: center;">SlaVistaPL <img src="https://cdn.discordapp.com/attachments/627764286785060899/726095742632067072/oner.svg" /></h3>
+					<h3 style="align-items: center;">SlaVistaPL <img src="https://cdn.discordapp.com/attachments/745671082308010084/787484209743659039/oner_2.svg" /></h3>
 					<p style="text-align: left; margin-bottom: 20px;">0 obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
