@@ -45,7 +45,7 @@ if ($result = @$connect->query(
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av4 ?>">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa ?></h3>
