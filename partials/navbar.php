@@ -1,12 +1,12 @@
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SlaVistaPL na Viddle</title>
+    <title>Viddle - strona główna</title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="Viddle - polska alternatywa dla YouTube">
-    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
+    <meta property="og:title" content="VDP - polska alternatywa dla YouTube">
+    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą VDP.">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
     <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
@@ -30,15 +30,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-6">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php" title="Strona główna"><div class="container row"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none" style="margin-right: auto; margin-left: 7px; margin-top: 15px;"> Strona główna</p></div></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="trending.php" title="Popularne"><div class="container row"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none" style="margin-right: auto; margin-left: 7px; margin-top: 15px;"> Popularne</p></div></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="discover.php" title="Odkrywaj"><div class="container row"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none" style="margin-right: auto; margin-left: 7px; margin-top: 15px;"> Odkrywaj</p></div></a>
-                    </li>
+                    <div class="container row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none">Strona główna</p></a>
+                        </li>
+                    </div>
+                    <div class="container row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="trending.php" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none">Popularne</p></a>
+                        </li>
+                    </div>
+                    <div class="container row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="discover.php" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none">Odkrywaj</p></a>
+                        </li>
+                    </div>
                 </ul>
                 <form class="form-inline" method="GET" action="search.php" style="margin-right: auto;">
                     <input id="input_search" class="form-control mr-sm-2" style="width: 24rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
@@ -51,11 +57,15 @@
                         </li>
                     </div>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">SlaVistaPL</a>
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item waves-effect waves-light" href="channel.php">Przejdź na kanał</a>
-                            <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
+                            <?php if ($avatar == 'anonim.png') { ?>
+                                <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
+                            <?php } else { ?>
+                                <a class="dropdown-item waves-effect waves-light" href="channel.php">Przejdź na kanał</a>
+                                <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
+                                <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
+                            <?php } ?>
                         </div>
                     </li>
                 </ul>
