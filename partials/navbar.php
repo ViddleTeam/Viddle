@@ -2,6 +2,9 @@
 session_start();
 if ($_SESSION['z1'] == true) {
     $avatar = 'test.png';
+    require "danesql.php";
+    $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+    $uid = $connect->query("SELECT uid FROM viddle_users WHERE login = '%s'", $connect->real_escape_string($_SESSION['login']));
 } else {
     $avatar = 'anonim.png';
 }
@@ -73,7 +76,7 @@ if ($_SESSION['z1'] == true) {
                             <?php if ($avatar == 'anonim.png') { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
                             <?php } else { ?>
-                                <a class="dropdown-item waves-effect waves-light" href="channel.php">Przejdź na kanał</a>
+                                <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Przejdź na kanał</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                                 <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
                             <?php } ?>
