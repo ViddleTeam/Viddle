@@ -12,10 +12,19 @@ if ($result = @$connect->query(
 	{
 		$dane = $result->fetch_assoc();
 		
-		$_SESSION['avatar'] = $dane['avatarname'];
+		$av5 = $dane['avatarname'];
 		$nazwa = $dane['login'];
 		$_SESSION['baner'] = $dane['banername'];
-		$obserwatorzy = $dane['observators'];	
+		$obserwatorzy = $dane['observators'];
+		
+		if($av5 == 'x')
+		{
+			$av4 = 'avatardomyslny.jpg';
+		}
+		else
+		{
+			$av4 = 'grafic/'.$id.'a.'.$av5.'';
+		}
 	}
 	else
 	{
@@ -36,7 +45,7 @@ if ($result = @$connect->query(
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa ?>  <img src="https://cdn.discordapp.com/attachments/745671082308010084/787484209743659039/oner_2.svg" width="80" height="40" /></h3>
