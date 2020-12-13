@@ -86,15 +86,16 @@ if ($_SESSION['z1'] == true) {
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                                 <div class="dropdown-divider"></div>    
                                 <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>';
-                            } ?>
-                        </div>
+    echo '</div>
                     </li>
                 </ul>
             </div>
         </nav>
-    </header>
+    </header>';
+                            } ?>
+                        
 <!--    <header>
-        <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
+        <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">';
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li class="uk-active">
