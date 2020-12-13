@@ -74,7 +74,7 @@ if ($_SESSION['z1'] == true) {
                         <li class="nav-item">
                             <?php
                             <?php if ($i == '0') {
-                                $upload = 'https://media.discordapp.net/attachments/669526369407074309/787697956450861096/AAAAA.png'
+                                $upload = 'https://media.discordapp.net/attachments/669526369407074309/787697956450861096/AAAAA.png';
                                     
                             } else {
                                 $upload = 'https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png';
