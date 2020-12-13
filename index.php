@@ -72,7 +72,7 @@ if ($_SESSION['z1'] == true) {
 
                     if($avatar == 'anonim.png')
                     {
-                        echo '<a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>';
+
                     }
                     else
                     {
@@ -83,6 +83,7 @@ if ($_SESSION['z1'] == true) {
                       
                       
                     ?>
+                        <?php if ($avatar == 'anonim.png') { ?> <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a> <?php } ?>
                     </div>
                 </li>
             </ul>   
