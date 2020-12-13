@@ -1,5 +1,5 @@
 <?php
-    $title = "SlaVistaPL";
+    $title = "SlaVistaPL na Viddle";
     require_once('partials/navbar.php');
 ?>
 	  <center>
@@ -70,6 +70,10 @@
         </div>
 		</center>
 		</div>
+
+<?php 
+require_once('partials/footer.php');
+?>
 <!-- JS -->
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
