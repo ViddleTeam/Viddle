@@ -128,7 +128,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 			    
 			    if($av2 == '0')
 			    {
-			    	$av3 = '\avatardomyslny.jpg';
+			    	$av3 = 'avatardomyslny.jpg';
 			    }
 			    
 			    ?>
