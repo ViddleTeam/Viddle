@@ -39,7 +39,7 @@ if ($_SESSION['z1'] == true) {
     </div>
 </div>
 <div style="opacity: 1;" class="website">
-<!--    <header>
+<header>
         <nav uk-navbar class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
             <a class="navbar-brand" href="index.php"><img src="https://cdn.ampersandbot.pl/p1X7yQuco.png" width="120px" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
@@ -77,22 +77,21 @@ if ($_SESSION['z1'] == true) {
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
-                            <?php //if ($avatar == 'anonim.png') { ?>
+                            <?php if ($avatar == 'anonim.png') { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
-                            <?php //} else { ?>
+                            <?php } else { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                                 <div class="dropdown-divider"></div>    
                                 <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
-                            <?php //} ?>
+                            <?php } ?>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
--->
-    <header>
+<!--    <header>
         <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
@@ -106,4 +105,4 @@ if ($_SESSION['z1'] == true) {
                 </ul>
             </div>
         </nav>
-    </header>
+    </header>-->
