@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['z1'] == true) {
+    $avatar = 'test.png';
+} else {
+    $avatar = 'anonim.png';
+}
+?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

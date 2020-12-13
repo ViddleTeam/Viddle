@@ -1,10 +1,4 @@
-<?php 
-session_start();
-if ($_SESSION['z1'] == true) {
-	$avatar = 'test.png';
-} else {
-  $avatar = 'anonim.png';
-}
+<?php
 require_once('partials/navbar.php');
 ?>
       <div class="container" style="margin-top:30px;">
