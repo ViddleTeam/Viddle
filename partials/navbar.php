@@ -8,11 +8,15 @@ if ($_SESSION['z1'] == true) {
 } else {
     $i = '0';
 }
+$str = "/channel.php?id=";
+$url = $_SERVER['REQUEST_URI'];
+$cond = strpos($url, $str) !== false;
+$ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 ?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php if (strpos($_SERVER['REQUEST_URI'], '/channel.php?id=') == true) { ?> SlaVistaPL na Viddle <?php } else { ?> Viddle - <?php if (isset($title)) { echo $title; } else { echo 'Viddle'; }} ?></title>
+    <title><?php echo $ttl ?></title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <!-- UIkit CSS -->
