@@ -80,6 +80,6 @@ if ($_SESSION['z1'] == true) {
             </div>
         </nav>
     </header>
-        <?php
-        echo $_SERVER['REQUEST_URI'];
-        ?>
+    <?php
+        echo '<script>'.$_SERVER['REQUEST_URI'].'</script>';
+    ?>
