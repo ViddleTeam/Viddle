@@ -6,6 +6,17 @@ if ($_SESSION['z1'] == true)
     $avatar = 'test.png';
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
+    
+    $login = $_SESSION[
+    require "danesql.php";
+    $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+    if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
+		    mysqli_real_escape_string($connect,$login))))
+
+            $d2 = $result->num_rows;
+			if($d2 == '1')
+			{
 } 
 else 
 {
