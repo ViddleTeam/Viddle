@@ -40,17 +40,17 @@ if ($_SESSION['z1'] == true) {
                 <ul class="navbar-nav mr-auto">
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none">Strona główna</p></a>
+                            <a class="nav-link" href="index.php" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <span class="d-lg-none">Strona główna</span></a>
                         </li>
                     </div>
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="trending.php" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none">Popularne</p></a>
+                            <a class="nav-link" href="trending.php" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <span class="d-lg-none">Popularne</span></a>
                         </li>
                     </div>
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="discover.php" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none">Odkrywaj</p></a>
+                            <a class="nav-link" href="discover.php" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <span class="d-lg-none">Odkrywaj</span></a>
                         </li>
                     </div>
                 </ul>
