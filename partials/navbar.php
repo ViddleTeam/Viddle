@@ -1,11 +1,12 @@
 <?php
 session_start();
 if ($_SESSION['z1'] == true) {
+    $i = '1';
     $avatar = 'test.png';
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
 } else {
-    $avatar = 'anonim.png';
+    $i = '0';
 }
 ?>
 <html lang="pl-PL"><head>
@@ -77,7 +78,7 @@ if ($_SESSION['z1'] == true) {
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
-                            <?php if ($avatar == 'anonim.png') { ?>
+                            <?php if ($i == '0') { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
                             <?php } else { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
