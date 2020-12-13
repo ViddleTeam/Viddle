@@ -1,3 +1,3 @@
 setTimeout(function() {
-  window.open("index.php", "_self");
+  window.location.href = "/";
 }, 1 * 5000);
