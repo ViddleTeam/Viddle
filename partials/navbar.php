@@ -96,7 +96,11 @@ if ($_SESSION['z1'] == true) {
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">link 1</a></li>
+                    <li class="uk-active">
+                        <a href="/">
+                            <img src="https://cdn.ampersandbot.pl/p1X7yQuco.png" width="120px" />
+                        </a>
+                    </li>
                     <li class="uk-parent"><a href="#">link 2</a></li>
                     <li><a href=""></a></li>
                 </ul>
