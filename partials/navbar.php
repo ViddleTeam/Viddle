@@ -75,6 +75,9 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                 <form class="form-inline" method="GET" action="search.php" style="margin-right: auto;">
                     <input id="input_search" class="form-control mr-sm-2" style="width: 24rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
                 </form>
+                
+                <?php
+                if ($i == '1') { ?>
 
                 <ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
                     <div class="container row">
@@ -82,6 +85,8 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                             <a class="nav-link" href="upload.php" title="Udostępnij film na Viddle"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film na Viddle</span></a>
                         </li>
                     </div>
+                    
+                    <?php } ?>
                    
                             <?php if ($i == '0') { ?>
                     <a href="login.php">zaloguj się</a>
