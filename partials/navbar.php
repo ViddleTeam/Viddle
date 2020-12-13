@@ -72,7 +72,7 @@ if ($_SESSION['z1'] == true) {
                             <?php } else { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php">Przejdź na kanał</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
-                                <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
+                                <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
                             <?php } ?>
                         </div>
                     </li>
