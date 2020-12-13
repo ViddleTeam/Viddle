@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION['z'] == true)
+if (isset($_SESSION['z']))
 	{
 		unset($_SESSION['z']);
 	}
