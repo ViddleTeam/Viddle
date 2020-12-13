@@ -9,7 +9,7 @@ if ($_SESSION['z1'] == true) {
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php if ($_SERVER('REQUEST_URI') == '/channel.php') { ?> SlaVistaPL na Viddle <?php } else { ?> Viddle - <?php } if (isset($title)) { echo $title; } else { echo 'Viddle'; } ?></title>
+    <title><?php if ($_SERVER['REQUEST_URI'] == '/channel.php') { ?> SlaVistaPL na Viddle <?php } else { ?> Viddle - <?php } if (isset($title)) { echo $title; } else { echo 'Viddle'; } ?></title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
