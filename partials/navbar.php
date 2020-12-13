@@ -76,17 +76,17 @@ if ($_SESSION['z1'] == true) {
                         </li>
                     </div>
                     
-                            <?php if ($i == '0') { ?>
-                                <a href="login.php">Zaloguj się</a>
-                            <?php } else { ?>
-                            <li class="nav-item dropdown">
+                            <?php if ($i == '0') {
+                               echp '<a href="login.php">Zaloguj się</a>';
+                            } else { 
+                           echo '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                                 <div class="dropdown-divider"></div>    
-                                <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
-                            <?php } ?>
+                                <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>';
+                            } ?>
                         </div>
                     </li>
                 </ul>
