@@ -22,7 +22,7 @@ if ($_SESSION['z1'] == true)
 				
 				$_SESSION['avatar] = $dane['avatarname'];
 				
-				if($_SESSION['avatar'] == '0')
+				if($_SESSION['avatarname'] == '0')
 				{
 					$av2 = '0';
 				}
