@@ -68,14 +68,13 @@ if ($_SESSION['z1'] == true) {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                        <?
-                        if ($avatar == 'anonim.png') { ?>
+                        <?php if ($avatar == 'anonim.png') { ?>
                             <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
-                        <? } else { ?>
+                        <?php } else { ?>
                             <a class="dropdown-item waves-effect waves-light" href="channel.php">Przejdź na kanał</a>
                             <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                             <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
-                        <? } ?>
+                        <?php } ?>
                     </div>
                 </li>
             </ul>   
