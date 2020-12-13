@@ -1,4 +1,29 @@
 <?php
+
+$id = $_GET['id'];
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$id))))
+	
+	$d2 = $result->num_rows;
+	if($d2 == '1')
+	{
+		$dane = $result->fetch_assoc();
+		
+		$_SESSION['avatar'] = $dane['avatarname'];
+		$_SESSION['nazwa'] = $dane['login'];
+		$_SESSION['baner'] = $dane['banername'];
+		$_SESSION['obserwatorzy'] = $dane['observators'];	
+	}
+	else
+	{
+		header('location: index.php');
+	}
+	
+
+
     $title = "SlaVistaPL na Viddle";
     require_once('partials/navbar.php');
 ?>
@@ -14,7 +39,7 @@
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
-					<h3 style="align-items: center;">SlaVistaPL <img src="https://cdn.discordapp.com/attachments/745671082308010084/787484209743659039/oner_2.svg" width="80" height="40" /></h3>
+					<h3 style="align-items: center;"><?php echo $_SESSION['nazwa'] ?>  <img src="https://cdn.discordapp.com/attachments/745671082308010084/787484209743659039/oner_2.svg" width="80" height="40" /></h3>
 					<p style="text-align: left; margin-bottom: 20px;">0 obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
