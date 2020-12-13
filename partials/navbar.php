@@ -7,7 +7,8 @@ if ($_SESSION['z1'] == true)
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
     
-    $login = $_SESSION[
+    $login = $_SESSION['USER'};
+		       
     require "danesql.php";
     $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
     if ($result = @$connect->query(
@@ -17,6 +18,25 @@ if ($_SESSION['z1'] == true)
             $d2 = $result->num_rows;
 			if($d2 == '1')
 			{
+				$dane = $result->fetch_assoc();
+				
+				$_SESSION['avatar] = $dane['avatarname'];
+				
+				if($_SESSION['avatar'] == '0')
+				{
+					$av2 = '0';
+				}
+				else
+				{
+					$av2 = '1';
+				}
+				
+			}
+			else
+			{
+			
+			}
+			
 } 
 else 
 {
@@ -103,8 +123,17 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                     <a href="login.php">zaloguj się</a>
                                 
                             <?php } else { ?>
+			    
+			    <?php
+			    
+			    if($av2 == '0')
+			    {
+			    	$av3 = '\avatardomyslny.jpg';
+			    }
+			    
+			    ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av3 ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
