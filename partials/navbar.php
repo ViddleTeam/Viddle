@@ -73,7 +73,7 @@ if ($_SESSION['z1'] == true) {
                     <div class="container row">
                         <li class="nav-item">
                             <?php
-                            if($_SESSION['z1'] == true)
+                            if($i == '0')
                             {
                                 $upload = 'https://media.discordapp.net/attachments/785086822220169217/787694842763411456/AAAAA.png';
                             }
