@@ -93,7 +93,7 @@ if ($_SESSION['z1'] == true) {
     </header>
 -->
     <header>
-        <nav class="uk-navbar-container" uk-navbar>
+        <nav class="uk-navbar-container" uk-navbar style="background: #252525;">
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li class="uk-active">
