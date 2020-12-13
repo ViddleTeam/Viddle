@@ -15,7 +15,7 @@ if ($result = @$connect->query(
 		$_SESSION['avatar'] = $dane['avatarname'];
 		$nazwa = $dane['login'];
 		$_SESSION['baner'] = $dane['banername'];
-		$_SESSION['obserwatorzy'] = $dane['observators'];	
+		$obserwatorzy = $dane['observators'];	
 	}
 	else
 	{
@@ -40,7 +40,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa ?>  <img src="https://cdn.discordapp.com/attachments/745671082308010084/787484209743659039/oner_2.svg" width="80" height="40" /></h3>
-					<p style="text-align: left; margin-bottom: 20px;">0 obserwujących</p>
+					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
 					<button type="button" class="btn btn-primary"><p style="margin: 10px;">Dostosuj kanał</p></button>
