@@ -124,19 +124,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                                 
                             <?php } else { ?>
 			    
-			    <?php
-			    
-			    if($av2 == '0')
-			    {
-			    	$av3 = 'avatardomyslny.jpg';
-			    }
-			    else
-			    {
-			    	$av3 = 'test.png';
-			    }
-
-			    
-			    ?>
+			   
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av3 ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
