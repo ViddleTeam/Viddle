@@ -26,8 +26,7 @@ $error = '';
                     $_SESSION['z1'] = true;
                     
                     $_SESSION['user'] = $dane['login'];
-                    echo "<script>console.log('${$dane['login']}]')</script>";
-                    // header('location: index.php');
+                    header('Location: index.php');
                 }
                 else
                 {
