@@ -22,7 +22,7 @@ if (isset($login)){
         $e = false;
 	}
 
-	if ((strlen($password) < '8')) {
+	if (strlen($password) < '8') {
 		$ok = false;
 		$p_error = "<div class='alert alert-danger' role='alert'>Hasło musi składać się z przynajmniej 8 znaków.</div>";
 	}
@@ -52,7 +52,7 @@ if (isset($login)){
             if ($e == true) {
                 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE email='%s'", mysqli_real_escape_string($connect,$email))))
 				$d2 = $result->num_rows;
-				if ($d2 == '1') {
+				if (isset($d2) && $d2 == '1') {
 					$ok = false;
 					$esql_error = "<div class='alert alert-danger' role='alert'>Adres e-mail, który wybrałeś, jest już zajęty.</div>";
 				}
@@ -60,13 +60,13 @@ if (isset($login)){
             if ($n == true) {
                 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE login='%s'", mysqli_real_escape_string($connect,$login))))
 				$d2 = $result->num_rows;
-				if($d2 == '1') {
+				if(isset($d2) && $d2 == '1') {
 					$ok = false;
 					$nsql_error = "<div class='alert alert-danger' role='alert'>Nazwa użytkownika, którą wybrałeś/aś, jest już zajęta.</div>";
 				}
             }
             if ($ok == true) {
-                $haslo_h = password_hash($haslo2, PASSWORD_DEFAULT);
+                $haslo_h = password_hash($password, PASSWORD_DEFAULT);
                 if ($connect->query("INSERT INTO viddle_users VALUES ('$login', '$haslo_h', '$email', '1', '0', '0')")) {
                     $_SESSION['z'] = true;   
                     header('location: prejestracja.php');
