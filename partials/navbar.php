@@ -7,7 +7,7 @@ if ($_SESSION['z1'] == true)
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
     
-    $login = $_SESSION['USER'};
+    $login = $_SESSION['user'];
 		       
     require "danesql.php";
     $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
