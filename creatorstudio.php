@@ -108,6 +108,10 @@
         </div>
         </div>
             </div>
+		
+		<?php 
+require_once('partials/footer.php');
+?>
 <!-- JS -->
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
