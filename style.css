@@ -7,6 +7,10 @@ body {
 .card-settings {
 	width: 100%;
 	height: auto;
+	box-shadow: 0 0 15px -5px black!important;
+	border-radius: 7px;
+	margin: 25px;
+	background-color: #212121;
 }
 
 * {
