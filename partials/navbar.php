@@ -130,6 +130,11 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 			    {
 			    	$av3 = 'avatardomyslny.jpg';
 			    }
+			    else
+			    {
+			    	$av3 = 'test.png'
+			    }
+
 			    
 			    ?>
                     <li class="nav-item dropdown">
