@@ -77,8 +77,6 @@ if ($_SESSION['z1'] == true) {
                             <?php } else { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item waves-effect waves-light" href="settings.php">Ustawienia konta</a>
                                 <div class="dropdown-divider"></div>    
                                 <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
                             <?php } ?>
