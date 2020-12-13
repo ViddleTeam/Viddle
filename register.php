@@ -71,7 +71,7 @@ if (isset($login)){
                 $email_e = $connect->real_escape_string($email);
                 $uid = uniqid(uniqid());
                 //$success = $connect->query("INSERT INTO viddle_users VALUES ('$login', '$haslo_h', , 1, 0, 0, 0, 0)");
-                $success = $connect->query("INSERT INTO viddle_users VALUES ('$login_e', '$haslo_h', '$email_e', $uid, 1, 0, 0, 0, 0)");
+                $success = $connect->query("INSERT INTO viddle_users VALUES ('$login_e', '$haslo_h', '$email_e', '$uid', 1, 0, 0, 0, 0)");
                 if ($success) {
                     $_SESSION['z'] = true;   
                     header('Location: prejestracja.php');
