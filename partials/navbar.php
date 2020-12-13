@@ -20,7 +20,7 @@ if ($_SESSION['z1'] == true)
 			{
 				$dane = $result->fetch_assoc();
 				
-				$_SESSION['avatar] = $dane['avatarname'];
+				$_SESSION['avatar'] = $dane['avatarname'];
 				
 				if($_SESSION['avatarname'] == '0')
 				{
