@@ -22,6 +22,8 @@ if ($_SESSION['z1'] == true)
 				
 				$_SESSION['avatar'] = $dane['avatarname'];
 				$avatar = $dane['avatarname'];
+				$uid = $dane['uid'];
+				
 				
 				if($avatar == 'x')
 				{
@@ -31,7 +33,7 @@ if ($_SESSION['z1'] == true)
 				else
 				{
 					$av2 = '1';
-					$av3 = '';
+					$av3 = '/grafic/'.$uid.'a';
 				}
 				
 			}
