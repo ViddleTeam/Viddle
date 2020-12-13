@@ -51,6 +51,24 @@ $error = '';
 <!DOCTYPE html>
 <html>
 	<head>
+		<style>
+		@-webkit-keyframes autofill {
+		to {
+		color: #666;
+		background: transparent; } }
+
+		@keyframes autofill {
+		to {
+		color: #666;
+		background: transparent; } }
+
+		input:-webkit-autofill {
+		-webkit-animation-name: autofill;
+		animation-name: autofill;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both; 
+		}
+		</style>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
