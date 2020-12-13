@@ -15,11 +15,7 @@ if ($_SESSION['z1'] == true) {
 	
 	</style>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script>
-	setTimeout(function() {
-  		window.open("index.php", _self);
-	}, 1 * 5000);		
-    </script>
+    <script src='assets/logoutredirect.js'></script>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
