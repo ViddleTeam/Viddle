@@ -8,8 +8,8 @@ if (isset($_SESSION['z']))
 	}
 	else
 	{
-		
-		header('Location: register.php');
+		echo $_SESSION['z'];
+		//header('Location: register.php');
 		exit();
 	}
 
