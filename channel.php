@@ -3,7 +3,7 @@
     require_once('partials/navbar.php');
 ?>
 	  <center>
-      <div class="container" style="margin-top:20px; margin: auto; justify-content: center;">
+      <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
 		<div class="banner mx-auto">
 			<img class="img-fluid" src="http://wallpapercave.com/wp/t05PXKg.jpg" style="margin: auto; " height="100%" width="100%"/>
