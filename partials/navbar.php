@@ -33,7 +33,7 @@ if ($_SESSION['z1'] == true)
 				else
 				{
 					$av2 = '1';
-					$av3 = '/grafic/'.$uid.'a';
+					$av3 = 'grafic/'.$uid.'a';
 				}
 				
 			}
