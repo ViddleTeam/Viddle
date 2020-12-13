@@ -25,7 +25,7 @@ if ($_SESSION['z1'] == true)
 				if($_SESSION['avatarname'] == '0')
 				{
 					$av2 = '0';
-					$av3 = 'da.png;
+					$av3 = 'da.png';
 				}
 				else
 				{
