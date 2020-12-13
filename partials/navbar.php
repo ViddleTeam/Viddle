@@ -82,12 +82,14 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                             <a class="nav-link" href="upload.php" title="Udostępnij film na Viddle"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film na Viddle</span></a>
                         </li>
                     </div>
+                   
+                            <?php if ($i == '0') { ?>
+                    <a href="login.php">zaloguj się</a>
+                                
+                            <?php } else { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
-                            <?php if ($i == '0') { ?>
-                                
-                            <?php } else { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                                 <div class="dropdown-divider"></div>
