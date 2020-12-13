@@ -78,8 +78,11 @@ if ($_SESSION['z1'] == true) {
                             <?php if ($avatar == 'anonim.png') { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
                             <?php } else { ?>
-                                <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Przejdź na kanał</a>
+                                <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Ustawienia konta</a>
+                                <div class="dropdown-divider"></div>    
                                 <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
                             <?php } ?>
                         </div>
