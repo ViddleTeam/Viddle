@@ -74,7 +74,6 @@ if (isset($login)){
                 $success = $connect->query("INSERT INTO viddle_users VALUES ('$login_e', '$haslo_h', '$email_e', '$uid', 1, 0, 0, 0, 0)");
                 if ($success) {
                     $_SESSION['z'] = true;
-                    $_SESSION['login'] = $login;
                     header('Location: prejestracja.php');
                 } else {
                     echo 'Error. '.$connect->error;

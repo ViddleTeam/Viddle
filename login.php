@@ -17,7 +17,7 @@ $error = '';
 		    mysqli_real_escape_string($connect,$login))))
 
             $d2 = $result->num_rows;
-			if($d2 == '1')
+			if(isset($d2) && $d2 == '1')
 			{
 				$dane = $result->fetch_assoc();
 				
@@ -25,7 +25,7 @@ $error = '';
 				{
                     $_SESSION['z1'] = true;
                     
-                    $_SESSION['user'] = $wiersz['login'];
+                    $_SESSION['user'] = $dane['login'];
 
                     header('location: index.php');
                 }
