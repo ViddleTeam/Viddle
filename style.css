@@ -4,6 +4,11 @@ body {
 	color: white;
 }
 
+.card-settings {
+	width: 100%;
+	height: auto;
+}
+
 * {
 	font-family: 'Oxygen', sans-serif !important;
 }
