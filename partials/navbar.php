@@ -1,18 +1,22 @@
 <?php
 session_start();
 if ($_SESSION['z1'] == true) {
-    
+    $i = '1';
     $avatar = 'test.png';
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
 } else {
     $i = '0';
 }
+$str = "/channel.php?id=";
+$url = $_SERVER['REQUEST_URI'];
+$cond = strpos($url, $str) !== false;
+$ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 ?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php if ($_SERVER['REQUEST_URI'] == '/channel.php') { ?> SlaVistaPL na Viddle <?php } else { ?> Viddle - <?php if (isset($title)) { echo $title; } else { echo 'Viddle'; }} ?></title>
+    <title><?php echo $ttl ?></title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <!-- UIkit CSS -->
@@ -72,40 +76,28 @@ if ($_SESSION['z1'] == true) {
                 <ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
                     <div class="container row">
                         <li class="nav-item">
-                            <?php
-                            <?php if ($i == '0') {
-                                $upload = 'https://media.discordapp.net/attachments/669526369407074309/787697956450861096/AAAAA.png';
-                                    
-                            } else {
-                                $upload = 'https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png';
-                            }
-                            ?>
-                        <a class="nav-link" href="upload.php" title="Udostępnij film na Viddle"><img src="<?php echo $upload >?" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film na Viddle</span></a>';
-                          
-                            
+                            <a class="nav-link" href="upload.php" title="Udostępnij film na Viddle"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film na Viddle</span></a>
                         </li>
                     </div>
-                    
-                            <?php if ($i == '0') {
-                               echo '<a href="login.php">Zaloguj się</a>';
-                            } else { 
-                           echo '<li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $avatar ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
+                            <?php if ($i == '0') { ?>
+                                <a class="dropdown-item waves-effect waves-light" href="login.php">Zaloguj się</a>
+                            <?php } else { ?>
                                 <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
                                 <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
-                                <div class="dropdown-divider"></div>    
-                                <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>';
-    echo '</div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
+                            <?php } ?>
+                        </div>
                     </li>
                 </ul>
             </div>
         </nav>
-    </header>';
-                            } ?>
-                        
+    </header>
 <!--    <header>
-        <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">';
+        <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li class="uk-active">
