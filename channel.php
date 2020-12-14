@@ -1,6 +1,5 @@
 <?php
 session_start();
-$logged = $_SESSION['z1'];
 $id = $_GET['id'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -80,7 +79,7 @@ if ($result = @$connect->query(
 							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
 							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						} else {
-							if ($logged == true) {
+							if ($_SESSION['z1'] == true) {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
