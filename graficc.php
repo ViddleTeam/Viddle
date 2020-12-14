@@ -17,6 +17,7 @@ if ($result = @$connect->query(
 		
 		$av5 = $dane['avatarname'];
 		$ba2 = $dane['banername'];
+		$id = $dane['uid'];
 		
 		
 		if($av5 == 'x')
