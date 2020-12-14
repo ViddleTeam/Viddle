@@ -146,17 +146,17 @@ if ($result = @$connect->query(
   <div class="modal-dialog" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
-        <h5 class="modal-title">Nie jesteś zalogowany</h5>
+        <h5 class="modal-title">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <p>Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	<a href="login.php"><button type="button" class="btn btn-primary">Zaloguj się</button></a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij okno</button>
       </div>
     </div>
   </div>
