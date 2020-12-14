@@ -55,8 +55,14 @@ require_once('partials/navbar.php');
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmiana avataru</h4>
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
-	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <a href="achange.php"><button type="button" class="btn btn-blue-gren"><p style="margin: 10px;">Zmień avatar</p></button></a> 
-              
+	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
+		<form method ="post">
+		<center><input type="file" accept="image/png/jpg/jpeg/bmp" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
+			<br></br><br></br>
+		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
+		</form>
+		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny avatar</p></button></a>
+		
 								
 							</center>
 						</p>
