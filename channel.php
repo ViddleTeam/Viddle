@@ -63,7 +63,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa ?></h3>
-					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
+					<p style="text-align: left; margin-bottom: 20px;"><?php echo $do ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
 					<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>
@@ -71,9 +71,7 @@ if ($result = @$connect->query(
 				</span>
 				</div>
 				
-				<?php
-			echo $do;
-		?>
+				
 			</div>
 			<div class="container" style="margin-top:20px;">
         <div class="row">
