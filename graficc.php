@@ -58,7 +58,7 @@ require_once('partials/navbar.php');
 		      
 								<h2 style="color: white;">Twój avatar</h2>
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
-	      <img width="304px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <a href="achange.php"><button type="button" class="btn btn-blue-gren"><p style="margin: 10px;">Zmień avatar</p></button></a>
+	      <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <a href="achange.php"><button type="button" class="btn btn-blue-gren"><p style="margin: 10px;">Zmień avatar</p></button></a>
               
 								
 							</center>
