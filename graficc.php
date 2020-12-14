@@ -57,7 +57,8 @@ require_once('partials/navbar.php');
 		      
 								<h2 style="color: white;">Twój avatar</h2>
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
-                <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja VDP ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
+	      <img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>">
+              
 								<input type="file" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
