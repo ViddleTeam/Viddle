@@ -2,6 +2,12 @@
 
 session_start();
 
+if (!isset($_SESSION['z1']))
+{
+	 header('location: index.php');
+}
+	
+
 $error = '';
 	if (isset($_POST['login']))
 	{
