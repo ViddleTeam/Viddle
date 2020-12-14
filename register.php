@@ -73,7 +73,7 @@ if (isset($login)){
             }
             if (starts_with($login, '<') || starts_with($email, '<')) {
                 $ok = false;
-                $err_bracket = "<div class='alert alert-danger' role='alert'>Nazwa użytkownika, lub email rozpoczynają się nieprawidłowym znakiem.";
+                $err_bracket = "<div class='alert alert-danger' role='alert'>Nazwa użytkownika, lub email rozpoczynają się nieprawidłowym znakiem.</div>";
             }
             if ($ok == true) {
                 $haslo_h = password_hash($connect->real_escape_string($password), PASSWORD_DEFAULT);
