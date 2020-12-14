@@ -39,11 +39,11 @@ if ($result = @$connect->query(
 		
 		if($_SESSION['uid'] == $id)
 		{
-			$dostosowanie = '1';
+			$do = '1';
 		}
 		else
 		{
-			$dostosowanie = '0';
+			$do = '0';
 		}
 	else
 	{
@@ -72,7 +72,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: auto;">
 					<?php
-	    				if($dostosowanie == '1')
+	    				if($do == '1')
 					{
 						echo '<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>';
 					}
