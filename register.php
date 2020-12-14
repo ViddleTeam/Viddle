@@ -72,6 +72,7 @@ if (isset($login)){
 				}
             }
             if (starts_with($login, '<') || starts_with($email, '<')) {
+                $ok = false;
                 $err_bracket = "<div class='alert alert-danger' role='alert'>Nazwa użytkownika, lub email rozpoczynają się nieprawidłowym znakiem.";
             }
             if ($ok == true) {
