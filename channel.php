@@ -34,7 +34,15 @@ if ($result = @$connect->query(
 		{
 			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
 		}
-	}
+		
+		if($_SESSION['id'] == $id)
+		{
+			$dostosowanie = '1';
+		}
+		else
+		{
+			$dostosowanie = '0';
+		}
 	else
 	{
 		header('location: index.php');
@@ -61,7 +69,12 @@ if ($result = @$connect->query(
 					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
-					<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>
+					<?php
+	    				if($dostosowywanie == '1')
+					{
+						echo '<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>';
+					}
+					?>
 					<button type="button" class="btn btn-primary"><p style="margin: 10px;">Obserwuj</p></button>
 				</span>
 				</div>
