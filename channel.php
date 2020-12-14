@@ -14,7 +14,7 @@ if ($result = @$connect->query(
 		
 		$av5 = $dane['avatarname'];
 		$nazwa = $dane['login'];
-		$_SESSION['baner'] = $dane['banername'];
+		$ba2 = $dane['banername'];
 		$obserwatorzy = $dane['observators'];
 		
 		if($av5 == 'x')
@@ -25,6 +25,15 @@ if ($result = @$connect->query(
 		{
 			$av4 = 'grafic/'.$id.'a.'.$av5.'';
 		}
+		
+		if($ba2 == 'x')
+		{
+			$ba3 = 'http://wallpapercave.com/wp/t05PXKg.jpg';
+		}
+		else
+		{
+			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
+		}
 	}
 	else
 	{
@@ -33,14 +42,14 @@ if ($result = @$connect->query(
 	
 
 
-    $title = "SlaVistaPL na Viddle";
+    $title = "".$nazwa."na Viddle";
     require_once('partials/navbar.php');
 ?>
 	  <center>
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
 		<div class="banner mx-auto">
-			<img class="img-fluid" src="http://wallpapercave.com/wp/t05PXKg.jpg" style="margin: auto; " height="100%" width="100%"/>
+			<img class="img-fluid" src="<?phpecho $ba3 ?>" style="margin: auto; " height="100%" width="100%"/>
 		</div>
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
