@@ -76,8 +76,7 @@ if ($result = @$connect->query(
 					<h3 style="align-items: center;"><?php echo $nazwa ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
 				</span>
-				<span style="margin-left: auto;" class="container">
-					<div class="row">
+				<span style="margin-left: auto;" class="row">
 						<?php
 						if($do == '1')
 						{
@@ -85,7 +84,6 @@ if ($result = @$connect->query(
 						}
 						?>
 						<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>
-					</div>
 				</span>
 				</div>
 				
