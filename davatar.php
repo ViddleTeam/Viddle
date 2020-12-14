@@ -15,11 +15,9 @@ if($_SESSION['uid'] == true)
 
   $success = $connect->query("UPDATE viddle_users SET avatarname='x' WHERE id='$_SESSION['uid']'");
   
-  if ($success) 
-  {
     $_SESSION['ac'] = true;
     header('location: acfinish.php');
-  }
+  
                     
 }
 else
