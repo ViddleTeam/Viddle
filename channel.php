@@ -141,7 +141,7 @@ if ($result = @$connect->query(
 		</center>
 		</div>
 <!-- modal dla niezalogowanych -->
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modal" id="#exampleModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
