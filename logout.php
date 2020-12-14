@@ -17,9 +17,7 @@ session_destroy();
 	<style>
 	
 	</style>
-		<?php
-			echo $do;
-		?>
+		
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src='assets/logoutredirect.js'></script>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
