@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 $id = $_GET['id'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -37,6 +39,15 @@ if ($result = @$connect->query(
 			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
 		}
 		
+		if($_SESSION['uid'] == $id)
+		{
+			$do = '1';
+		}
+		else
+		{
+			$do = '0';
+		}
+		
 		
 		
 	}	
@@ -47,7 +58,7 @@ if ($result = @$connect->query(
 	
 
 
-    $title = "".$nazwa." na Viddle";
+    $title = "".$nazwa."na Viddle";
     require_once('partials/navbar.php');
 ?>
 	  <center>
