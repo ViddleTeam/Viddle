@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $id = $_GET['id'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -35,7 +37,7 @@ if ($result = @$connect->query(
 			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
 		}
 		
-		if($_SESSION['id'] == $id)
+		if($_SESSION['uid'] == $id)
 		{
 			$dostosowanie = '1';
 		}
