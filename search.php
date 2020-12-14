@@ -21,53 +21,7 @@
           </div>
         </div>
         <div style="opacity: 1;" class="website">
-    <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
-    <a class="navbar-brand" href="index.php"><img src="https://cdn.ampersandbot.pl/p1X7yQuco.png" width="120px" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
-      aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-6">
-      <ul class="navbar-nav mr-auto">
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none">Strona główna</p></a>
-		</li>
-	  </div>
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="trending.php" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none">Popularne</p></a>
-        </li>
-	  </div>
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="discover.php" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none">Odkrywaj</p></a>
-        </li>
-	  </div>
-      </ul>
-      <form class="form-inline" method="GET" action="search.php" style="margin-right: auto;">
-        <input id="input_search" class="form-control mr-sm-2" style="width: 24rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
-      </form>
- 
-	<ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
-	<div class="container row">
-		<li class="nav-item">
-		  <a class="nav-link" href="upload.php" title="Udostępnij film na VDP"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <p class="d-lg-none">Udostępnij film na VDP</p></a>
-		</li>
-	</div>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">SlaVistaPL</a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item waves-effect waves-light" href="channel.php">Przejdź na kanał</a>
-                      <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
-                      <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
-                    </div>
-                </li>
-            </ul>   
-			</div>
-  </nav>
-      </header>
+    <?php require_once("partials/navbar.php"); ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
