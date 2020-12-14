@@ -74,7 +74,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa ?></h3>
-					<p style="text-align: left; margin-bottom: 20px;"><?php echo $do ?> obserwujących</p>
+					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
 					<?php
