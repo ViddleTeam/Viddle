@@ -6,6 +6,12 @@ $c_error = '';
 $login = $_POST['login'];
 session_start();
 
+function starts_with($string, $startString): bool
+{
+    $len = strlen($startString);
+    return (substr($string, 0, $len) === $startString);
+}
+
 if (isset($login)){
     $ok = true;
     $e = true;
@@ -64,6 +70,9 @@ if (isset($login)){
 					$ok = false;
 					$nsql_error = "<div class='alert alert-danger' role='alert'>Nazwa użytkownika, którą wybrałeś/aś, jest już zajęta.</div>";
 				}
+            }
+            if (starts_with($login, '<') || starts_with($email, '<')) {
+                $err_bracket = "<div class='alert alert-danger' role='alert'>Nazwa użytkownika, lub email rozpoczynają się nieprawidłowym znakiem.";
             }
             if ($ok == true) {
                 $haslo_h = password_hash($connect->real_escape_string($password), PASSWORD_DEFAULT);
@@ -132,6 +141,7 @@ if (isset($login)){
                     if (isset($esql_error)) echo $esql_error;
                     if (isset($nsql_error)) echo $nsql_error;
                     if (isset($ee_error)) echo $ee_error;
+                    if (isset($err_bracket)) echo $err_bracket;
 				?>
                 <form method="post">
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
