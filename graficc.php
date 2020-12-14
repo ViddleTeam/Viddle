@@ -53,7 +53,7 @@ require_once('partials/navbar.php');
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na VDP</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4>
 				  
 		      
 								<h2 style="color: white;">Twój avatar</h2>
