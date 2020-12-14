@@ -78,8 +78,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: auto;" class="row">
 						<?php
-						if($do == '1')
-						{
+						if ($do == '1') {
 							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
 						}
 						?>
