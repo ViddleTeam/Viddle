@@ -26,6 +26,7 @@ $error = '';
                     $_SESSION['z1'] = true;
                     
                     $_SESSION['user'] = $dane['login'];
+		    $_SESSION['uid'] = $dane['uid'];
                     header('Location: index.php');
                 }
                 else
