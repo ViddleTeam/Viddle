@@ -1,5 +1,48 @@
 <?php
-$title = "Udostępnianie filmów";
+
+session_start();
+
+$login = $_SESSION['user'];
+
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
+		    mysqli_real_escape_string($connect,$login))))
+	
+	$d2 = $result->num_rows;
+	if($d2 == '1')
+	{
+		$dane = $result->fetch_assoc();
+		
+		$av5 = $dane['avatarname'];
+		$ba2 = $dane['banername'];
+		
+		
+		if($av5 == 'x')
+		{
+			$av4 = 'avatardomyslny.jpg';
+		}
+		else
+		{
+			$av4 = 'grafic/'.$id.'a.'.$av5.'';
+		}
+		
+		if($ba2 == 'x')
+		{
+			$ba3 = 'http://wallpapercave.com/wp/t05PXKg.jpg';
+		}
+		else
+		{
+			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
+		}
+		
+	}
+	else
+	{	
+		header('location: index.php');
+	}
+$title = "zmiana grafiki kanału";
 require_once('partials/navbar.php');
 ?>
       <div class="container" style="margin-top:30px;">
@@ -12,8 +55,8 @@ require_once('partials/navbar.php');
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na VDP</h4>
 				  
 		      
-								<h2 style="color: white;">Wybierz plik wideo z komputera/telefonu</h2>
-                <p style="color: white;">Maksymalny dozwolony rozmiar na jeden film wynosi 1 GB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
+								<h2 style="color: white;">Twój avatar</h2>
+                <p style="color: white;">oto twój aktualny avatar:</a></p>
                 <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja VDP ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
 								<input type="file" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
 							</center>
