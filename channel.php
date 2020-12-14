@@ -38,6 +38,8 @@ if ($result = @$connect->query(
 		}
 		
 		
+		
+		
 	else
 	{
 		header('location: index.php');
@@ -65,7 +67,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: auto;">
 					<?php
-	    $do = '1'
+	    $do = '1';
 	    				if($do == '1')
 					{ ?>
 						<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>
