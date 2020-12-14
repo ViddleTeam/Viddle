@@ -66,9 +66,9 @@ if (isset($login)){
 				}
             }
             if ($ok == true) {
-                $haslo_h = password_hash($connect->htmlspecialchars(real_escape_string($password), PASSWORD_DEFAULT), ENT_QUOTES);
-                $login_e = $connect->htmlspecialchars(real_escape_string($login), ENT_QUOTES);
-                $email_e = $connect->htmlspecialchars(real_escape_string($email), ENT_QUOTES);
+                $haslo_h = password_hash($connect->htmlentities(real_escape_string($password), PASSWORD_DEFAULT), ENT_QUOTES);
+                $login_e = $connect->htmlentities(real_escape_string($login), ENT_QUOTES);
+                $email_e = $connect->htmlentities(real_escape_string($email), ENT_QUOTES);
                 $uid = uniqid(uniqid());
                 //$success = $connect->query("INSERT INTO viddle_users VALUES ('$login', '$haslo_h', , 1, 0, 0, 0, 0)");
                 $success = $connect->query("INSERT INTO viddle_users VALUES ('$login_e', '$haslo_h', '$email_e', '$uid', 1, 0, 0, 'x', 'x')");
