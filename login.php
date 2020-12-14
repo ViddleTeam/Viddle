@@ -2,9 +2,10 @@
 
 session_start();
 
-if ($_SESSION['z1'] == true)
+if ($_SESSION['z1'] == true) 
 {
-	 header('location: index.php');
+	header('location: index.php');
+	exit;
 }
 	
 
