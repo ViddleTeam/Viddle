@@ -70,6 +70,10 @@ if ($result = @$connect->query(
 					<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>
 				</span>
 				</div>
+				
+				<?php
+			echo $do;
+		?>
 			</div>
 			<div class="container" style="margin-top:20px;">
         <div class="row">
