@@ -1,9 +1,6 @@
 <?php
-
 session_start();
-
-
-
+$logged = $_SESSION['z1'];
 $id = $_GET['id'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -83,7 +80,11 @@ if ($result = @$connect->query(
 							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
 							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						} else {
-							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+							if ($logged == true) {
+								echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+							} else {
+								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
+							}
 						}
 						?>
 					</div>
@@ -140,6 +141,26 @@ if ($result = @$connect->query(
         </div>
 		</center>
 		</div>
+<!-- modal dla niezalogowanych -->
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title">Nie jesteś zalogowany</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php 
 require_once('partials/footer.php');
