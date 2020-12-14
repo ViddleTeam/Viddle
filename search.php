@@ -1,7 +1,7 @@
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wyniki wyszukiwania - VDP</title>
+    <title>Wyniki wyszukiwania - Viddle</title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
@@ -21,7 +21,10 @@
           </div>
         </div>
         <div style="opacity: 1;" class="website">
-    <?php require_once("partials/navbar.php"); ?>
+    <?php 
+		require_once("partials/navbar.php");
+		$search_query = $_POST['searchbar'];
+	?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -29,7 +32,7 @@
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania dla: $search_query</h4>
               </div>
             </div>
             <div class="tile" style="margin: auto;">
