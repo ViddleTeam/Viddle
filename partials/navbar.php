@@ -120,18 +120,12 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                         <li class="nav-item">
                             <a class="nav-link" href="upload.php" title="Udostępnij film na Viddle"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film na Viddle</span></a>
                         </li>
-                    </div>
-                    
-                    <?php } ?>
-                   
-                            <?php if ($i == '0') { ?>
-                    	<li class="nav-item">
-                            <a class="nav-link" href="login.php">Zaloguj się</a>
-                        </li>
+			    <?php if ($i == '0') { ?>
+			    <li class="nav-item">
+				<a class="nav-link" href="login.php">Zaloguj się</a>
+			    </li>
                                 
                             <?php } else { ?>
-			    
-			   
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av3 ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
@@ -140,6 +134,8 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
                             <?php } ?>
+			    </div>
+                    <?php } ?>
                         </div>
                     </li>
                 </ul>
