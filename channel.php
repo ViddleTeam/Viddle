@@ -39,7 +39,7 @@ if ($result = @$connect->query(
 		
 		
 		
-		
+	}	
 	else
 	{
 		header('location: index.php');
@@ -54,7 +54,7 @@ if ($result = @$connect->query(
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
 		<div class="banner mx-auto">
-			<img class="img-fluid" src="<?php echo $ba3 ?>" style="margin: auto; " height="100%" width="100%"/>
+			<img class="img-fluid" src="<?php echo $ba3; ?>" style="margin: auto; " height="100%" width="100%"/>
 		</div>
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
