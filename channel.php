@@ -79,7 +79,7 @@ if ($result = @$connect->query(
 				<span style="margin-left: auto;">
 						<?php
 						if ($do == '1') {
-							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>'
+							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
 							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						} else {
 							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
