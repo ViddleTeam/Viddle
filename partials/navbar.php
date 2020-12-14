@@ -28,7 +28,7 @@ if ($_SESSION['z1'] == true)
 				if($avatar == 'x')
 				{
 					$av2 = '0';
-					$av3 = 'da.png';
+					$av3 = 'avatardomyslny.jpg';
 				}
 				else
 				{
