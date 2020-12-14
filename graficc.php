@@ -60,7 +60,7 @@ require_once('partials/navbar.php');
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
 	      <img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>">
               
-								<input type="file" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
+								<input type="file" accept="image/png, image/jpg" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
 					</div>
@@ -70,48 +70,7 @@ require_once('partials/navbar.php');
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
-          <div class="row">
-              <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br></h4>
-				  <p style="color: white; margin-bottom: 10px;">Krok 2/3: Nadaj nazwę filmowi oraz dodaj opis</p>
-              </div>
-            </div>
-            <div class="container row" style="width: auto; color: white;">
-               <form method="post">
-                <div class="form-row" style="justify-content: center;">
-                  <div class="col-md-12">
-                    <div class="md-form form-group" style="width: 100%;">
-                      <input type="email" style="color: white;" class="form-control" id="inputEmail4MD">
-                      <label for="inputEmail4MD" style="color: white;">Tytuł filmu</label>
-                    </div>
-                  </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="md-form form-group">
-                      <textarea id="form7" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
-                      <label for="form7" style="color: white;">Opis filmu</label>
-                    </div>
-                  </div>
-                </div>
-			   <div style="justify-content: center;">
-			   </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
-    </div>
-    </div>
-      <div class="row">
-          <div class="col-md-12">
-            <br>
-      <p style="color: white; margin-bottom: 20px;">Krok 3/3: Gotowy do przesłania?</p>
-          </div>
-        </div>
-     <center>
-     <button type="button" class="btn btn-success" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;">Rozpocznij przesyłanie</p></button>
-     </div>
-</div>
-</center>
-        </div>
+          
 <?php 
 require_once('partials/footer.php');
 ?>
