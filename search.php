@@ -32,7 +32,7 @@
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania dla: $search_query</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania dla: <?php echo $search_query; ?></h4>
               </div>
             </div>
             <div class="tile" style="margin: auto;">
