@@ -3,6 +3,9 @@ session_start();
 if ($_SESSION['z1'] == true) {
   $_SESSION['z1'] = false;  
   session_destroy();
+$_SESSION['uid'] = false;
+session_destroy();
+
 } else {
   header('Location: index.php');
 }
