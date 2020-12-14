@@ -125,7 +125,9 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                     <?php } ?>
                    
                             <?php if ($i == '0') { ?>
-                    <a href="login.php">zaloguj się</a>
+                    	<li class="nav-item">
+                            <a class="nav-link" href="discover.php" title="Zaloguj się"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <span class="d-lg-none">Odkrywaj</span></a>
+                        </li>
                                 
                             <?php } else { ?>
 			    
