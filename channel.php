@@ -47,7 +47,7 @@ if ($result = @$connect->query(
 	
 
 
-    $title = "".$nazwa."na Viddle";
+    $title = "".$nazwa." na Viddle";
     require_once('partials/navbar.php');
 ?>
 	  <center>
