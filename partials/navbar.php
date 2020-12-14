@@ -123,9 +123,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 			    </div>
                     <?php } ?>
 			<?php if ($i == '0') { ?>
-			    <li class="nav-item">
-				<a class="nav-link" href="login.php">Zaloguj się</a>
-			    </li>
+			<a class="nav-link" href="login.php" style="color: white;">Zaloguj się</a>
                                 
                             <?php } else { ?>
                     <li class="nav-item dropdown">
