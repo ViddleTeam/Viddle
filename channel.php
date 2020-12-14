@@ -77,7 +77,12 @@ if ($result = @$connect->query(
 					<p style="text-align: left; margin-bottom: 20px;"><?php echo $do ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto;">
-					<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>
+					<?php
+					if($do == '1')
+					{
+						echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
+					}
+					?>
 					<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>
 				</span>
 				</div>
