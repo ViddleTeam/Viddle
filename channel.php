@@ -76,13 +76,15 @@ if ($result = @$connect->query(
 					<h3 style="align-items: center;"><?php echo $nazwa ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
 				</span>
-				<span style="margin-left: auto;" class="row">
+				<span style="margin-left: auto;">
 						<?php
 						if ($do == '1') {
-							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
+							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>'
+							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+						} else {
+							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						}
 						?>
-						<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>
 				</span>
 				</div>
 				
