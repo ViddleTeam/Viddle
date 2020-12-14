@@ -37,14 +37,7 @@ if ($result = @$connect->query(
 			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
 		}
 		
-		if($_SESSION['uid'] == $id)
-		{
-			$do = '1';
-		}
-		else
-		{
-			$do = '0';
-		}
+		
 	else
 	{
 		header('location: index.php');
@@ -72,9 +65,10 @@ if ($result = @$connect->query(
 				</span>
 				<span style="margin-left: auto;">
 					<?php
+	    $do = '1'
 	    				if($do == '1')
 					{ ?>
-						echo '<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>';
+						<button type="button" class="btn btn-primary d-none d-md-block"><p style="margin: 10px;">Dostosuj kanał</p></button>
 					<?php }
 					?>
 					<button type="button" class="btn btn-primary"><p style="margin: 10px;">Obserwuj</p></button>
