@@ -77,10 +77,10 @@ if ($result = @$connect->query(
 						<?php
 						if ($do == '1') {
 							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
-							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+							echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="toast" data-target="#toast_observator">Obserwuj</button>';
 						} else {
 							if ($_SESSION['z1'] == true) {
-								echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="toast" data-target="#toast_observator">Obserwuj</button>';
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
 							}
@@ -159,6 +159,13 @@ if ($result = @$connect->query(
       </div>
     </div>
   </div>
+</div>
+
+<!-- toast do obserwacji -->
+<div class="toast bg-dark" id="alert_observator" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      Obserwujesz teraz ten kanał.
+    </div>
 </div>
 
 <?php 
