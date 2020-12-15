@@ -1,6 +1,6 @@
 <?php
 
-$f_plik = '';
+$f_plik = true;
 
 session_start();
 
