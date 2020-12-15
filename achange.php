@@ -68,14 +68,17 @@ if ($result = @$connect->query(
 $title = "zmiana avataru kanału";
 require_once('partials/navbar.php');
 
-?>
 
+
+?>
+<br></br>
+<br></br>
       <div class="container" style="margin-top:30px;">
 	      
 	      
 	      
 
-  <br></br>
+  
 
 <?php
 // errory
