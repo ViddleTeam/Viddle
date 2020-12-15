@@ -9,24 +9,11 @@ $login = $_SESSION['user'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
-if (isset($_POST['av7']))
+if (isset($_POST['plik']))
 {
-	$nplik = $_FILES['av7'];
-	$ok = true;
+	$plik = $_FILES['plik'];
 	
-	$odczyt = pathinfo($nplik);
-	$ext = $odczyt['extension'];
-	
-	
-
- 
-	if ($ext !="jpg" || $ext !="png" || $ext !="jpeg" || $ext !="bmp")
-	{
-		$ok = false;
-		$f_plik = false;
-		
-	}
-	
+	echo $plik;
 	
 		
 }
@@ -68,29 +55,18 @@ if ($result = @$connect->query(
 		header('location: index.php');
 	}
 $title = "zmiana avataru kanału";
-require_once('partials/navbar.php');
+
 
 
 
 ?>
-<br></br>
-<br></br>
-      <div class="container" style="margin-top:30px;">
-	      
-	      
-	      
 
   
 
 <?php
-// errory
 
-if($f_plik == false)
-{
-	$av4 = '';
-	echo '<div class="alert alert-danger" role="alert">Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp </div>';
-}
-	      echo $odczyt['extension'];
+
+
 ?>
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -102,7 +78,7 @@ if($f_plik == false)
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
 		<form method ="post" enctype="multipart/form-data">
-		<center><input type="file" name="av7" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
+		<center><input type="file" name="plik" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
 			<br></br><br></br>
 
 		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
