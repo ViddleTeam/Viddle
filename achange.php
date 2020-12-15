@@ -24,7 +24,7 @@ if (isset($_POST['av7']))
 	{
 		$ok = false;
 		$f_plik = false;
-		$av4 = '';
+		
 	}
 	
 	
@@ -87,6 +87,7 @@ require_once('partials/navbar.php');
 
 if($f_plik == false)
 {
+	$av4 = '';
 	echo '<div class="alert alert-danger" role="alert">Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp </div>';
 }
 	      echo $odczyt['extension'];
