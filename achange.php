@@ -16,11 +16,13 @@ if (isset($_POST['av7']))
 	
 	$odczyt = pathinfo($nplik);
 	$ext = $odczyt['extension'];
+	
+
  
 	if ($ext !="jpg" || $ext !="png" || $ext !="jpeg" || $ext !="bmp")
 	{
 		$ok = false;
-		$f_plik = '<div class="alert alert-danger" role="alert">Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp </div>';
+		$f_plik = false;
 	}
 	
 	
@@ -74,7 +76,10 @@ require_once('partials/navbar.php');
 
 // errory
 
-echo $f_plik;
+if($f_plik == false)
+{
+	echo '<div class="alert alert-danger" role="alert">Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp </div>';
+}
 ?>
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
