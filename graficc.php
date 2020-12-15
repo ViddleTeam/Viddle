@@ -55,7 +55,7 @@ require_once('partials/navbar.php');
               <div class="col-lg-12" style="text-align: center;">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4><br><br>
 		      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="100%" style="border-radius: 10px;" />
-		      <div class="card-channel" style="margin-top: -50px;">
+		      <div class="card-channel" style="margin-top: -50px; width: 100%; height: auto;">
               		<p style="color: white;">oto twój aktualny avatar:</a></p>
 	      		<img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <a href="achange.php"><button type="button" class="btn btn-blue-gren"><p style="margin: 10px;">Zmień avatar</p></button></a>
 	      	      </div>
