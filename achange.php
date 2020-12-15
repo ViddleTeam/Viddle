@@ -77,10 +77,12 @@ require_once('partials/navbar.php');
 <?php
 	      
 if($f_plik = false)
-{
-	echo '<br></br><br></br>';
+{ ?>
+  <br></br> <?php
 }
+?>
 
+<?php
 // errory
 
 if($f_plik == false)
