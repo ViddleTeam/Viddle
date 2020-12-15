@@ -72,9 +72,14 @@ require_once('partials/navbar.php');
 
       <div class="container" style="margin-top:30px;">
 	      
-	      <br></br><br></br>
+	      
 	      
 <?php
+	      
+if($ok = false)
+{
+	echo '<br></br><br></br>';
+}
 
 // errory
 
