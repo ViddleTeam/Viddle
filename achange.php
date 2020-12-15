@@ -76,7 +76,7 @@ require_once('partials/navbar.php');
 	      
 <?php
 	      
-if($ok = false)
+if($f_plik = false)
 {
 	echo '<br></br><br></br>';
 }
