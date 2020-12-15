@@ -16,7 +16,6 @@ if (isset($_POST['av7']))
 	
 	$nplik = 'xd.png';
 	$odczyt = pathinfo($nplik);
-	$odczyt = var_dump( $odczyt ); 
 	$ext = $odczyt['extension'];
 	
 	
