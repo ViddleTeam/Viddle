@@ -5,7 +5,7 @@ if (isset($_POST['plik']))
 	
 	echo $plik;
 	
-	echo 'poszło';
+	print_r($plik);
 	
 		
 }
