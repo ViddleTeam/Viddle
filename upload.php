@@ -2,7 +2,7 @@
 $title = "Udostępnianie filmów";
 require_once('partials/navbar.php');
 if ($_SESSION['z1'] == false) {
-	echo "<script>$('#staticBackdrop').modal('show')</script>"
+	echo "<script>$('#staticBackdrop').modal('show');</script>";
 }
 ?>
       <div class="container" style="margin-top:30px;">
