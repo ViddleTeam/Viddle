@@ -63,14 +63,15 @@ if ($result = @$connect->query(
 	}
 $title = "zmiana avataru kanału";
 require_once('partials/navbar.php');
-?>
+
+      <div class="container" style="margin-top:30px;">
+	      
 <?php
 
 // errory
 
 echo $f_plik;
 ?>
-      <div class="container" style="margin-top:30px;">
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
