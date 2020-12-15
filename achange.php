@@ -67,7 +67,7 @@ require_once('partials/navbar.php');
 
 		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
 		</form>
-		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny avatar <?php echo $nplik ?></p></button></a>
+		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny avatar </p></button></a>
 		
 								
 							</center>
