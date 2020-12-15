@@ -1,4 +1,14 @@
 <?php
+if (isset($_POST['plik']))
+{
+	$plik = $_FILES['plik'];
+	
+	echo $plik;
+	
+	echo 'poszło';
+	
+		
+}
 
 $f_plik = true;
 
@@ -9,14 +19,7 @@ $login = $_SESSION['user'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
-if (isset($_POST['plik']))
-{
-	$plik = $_FILES['plik'];
-	
-	echo $plik;
-	
-		
-}
+
 if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
 		    mysqli_real_escape_string($connect,$login))))
