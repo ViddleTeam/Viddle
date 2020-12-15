@@ -3,7 +3,7 @@ $title = "Ustawienia";
 require_once('partials/navbar.php');
 ?>
 <div class="container" style="margin-top:40px;">
-    <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Ustawienia konta</h4>
+    <h4 class="tile-before" style="color:white; margin-top: 60px;"><br>Ustawienia konta</h4>
     <p>Zmień hasło, nazwę czy awatar</p>
     <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
