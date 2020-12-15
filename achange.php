@@ -18,7 +18,7 @@ if (isset($_POST['av7']))
 	if ($ext !="jpg" || $ext !="png" || $ext !="jpeg" || $ext !="bmp")
 	{
 		$ok = false;
-		$f_plik = 'Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp';
+		$f_plik = '<div class="alert alert-danger" role="alert">Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp </div>';
 	}
 	
 	
