@@ -256,6 +256,7 @@ display: flex;
 justify-content: space-between;
 margin: 0px 10px 0px 10px;
 color: white;
+text-align: left;
 }
 ::selection {
 background-color: #00df0067;
