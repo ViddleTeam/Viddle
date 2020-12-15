@@ -53,7 +53,7 @@ require_once('partials/navbar.php');
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4><br>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4>
 		      <p>Żeby zmienić awatar, kliknij na przycisk znajdujący się pod Twoim aktualnym awatarem. Aktualizacja zdjęcia profilowego może potrwać do kilku minut.</p><br>
 		      <center>
 			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="100%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
