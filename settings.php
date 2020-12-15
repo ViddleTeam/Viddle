@@ -15,8 +15,8 @@ require_once('partials/navbar.php');
       aria-selected="false">Strefa niebezpieczna</a>
   </li>
 </ul>
-<div class="tab-content" id="myTabContent" style="padding-top: 10px; color: white !important;">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><table class="table">
+<div class="tab-content" id="myTabContent" style="padding-top: 10px;">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><table class="table" style="color: white !important;">
   <thead>
     <tr>
       <th scope="col">Ustawienie</th>
