@@ -9,7 +9,7 @@ require_once('partials/navbar.php');
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na VDP</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
 				  <p style="color: white; margin-bottom: 20px;">Krok 1/3: Wybierz film do udostępnienia</p>
               </div>
             </div>
@@ -20,7 +20,7 @@ require_once('partials/navbar.php');
 							<center>
 								<h2 style="color: white;">Wybierz plik wideo z komputera/telefonu</h2>
                 <p style="color: white;">Maksymalny dozwolony rozmiar na jeden film wynosi 1 GB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
-                <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja VDP ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
+                <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja Viddle ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
 								<input type="file" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
