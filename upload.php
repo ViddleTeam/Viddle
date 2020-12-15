@@ -1,6 +1,9 @@
 <?php
 $title = "Udostępnianie filmów";
 require_once('partials/navbar.php');
+if ($_SESSION['z1'] == false) {
+	echo "<script></script>"
+}
 ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
