@@ -85,7 +85,7 @@ require_once('partials/footer.php');
         <h5 class="modal-title" id="staticBackdropLabel">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
       </div>
       <div class="modal-body">
-        Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
+        Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze i nie tylko. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
       </div>
       <div class="modal-footer">
 		<a href="index.php"><button type="button" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button></a>
