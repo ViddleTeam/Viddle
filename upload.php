@@ -2,7 +2,7 @@
 $title = "Udostępnianie filmów";
 require_once('partials/navbar.php');
 if ($_SESSION['z1'] == false) {
-	echo "<script></script>"
+	echo "<script>$('#staticBackdrop').modal('show')</script>"
 }
 ?>
       <div class="container" style="margin-top:30px;">
@@ -79,6 +79,24 @@ if ($_SESSION['z1'] == false) {
 <?php 
 require_once('partials/footer.php');
 ?>
+
+<!-- modal dla niezalogowanych -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
+      </div>
+      <div class="modal-body">
+        Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
+      </div>
+      <div class="modal-footer">
+		<a href="index.php"><button type="button" class="btn btn-secondary">Powrót na stronę główną</button></a>
+		<a href="login.php"><button type="button" class="btn btn-primary">Zaloguj się</button></a>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- JS -->
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
