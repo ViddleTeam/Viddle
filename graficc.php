@@ -53,12 +53,12 @@ require_once('partials/navbar.php');
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4><br>
 		      <center>
 			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="100%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
 			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -125px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
-				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br><br>
-		      		<a href="achange.php"><button type="button" class="btn btn-secondary"><p style="margin: 10px;">Zmień awatar</p></button></a><br>
+				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
+		      		<a href="achange.php"><button type="button" class="btn btn-secondary"><p style="margin: 10px;">Zmień awatar</p></button></a><br><br>
 				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja zdjęcia profilowego może potrwać do kilku minut.</p>
 			      </div>
 		      </center>
