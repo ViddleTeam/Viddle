@@ -6,6 +6,11 @@ $login = $_SESSION['user'];
 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
+if (isset($_POST['av7']))
+{
+	echo 'rak';
+}
 if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
 		    mysqli_real_escape_string($connect,$login))))
@@ -57,7 +62,7 @@ require_once('partials/navbar.php');
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
 		<form method ="post">
-		<center><input type="file" accept="image/png/jpg/jpeg/bmp" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
+		<center><input type="file" name="av7" accept="image/png/jpg/jpeg/bmp" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
 			<br></br><br></br>
 		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
 		</form>
