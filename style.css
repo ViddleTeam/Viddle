@@ -4,6 +4,10 @@ body {
 	color: white;
 }
 
+table, th, td {
+	color: white !important;
+}
+
 .card-settings {
 	width: 100%;
 	height: auto;
