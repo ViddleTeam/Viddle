@@ -1,5 +1,7 @@
 <?php
 
+$f_plik = '';
+
 session_start();
 
 $login = $_SESSION['user'];
