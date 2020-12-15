@@ -2,10 +2,10 @@
 $title = "Ustawienia";
 require_once('partials/navbar.php');
 ?>
-<div class="container" style="margin-top:30px;">
+<div class="container" style="margin-top:40px;">
     <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Ustawienia konta</h4>
     <p>Zmień hasło, nazwę czy awatar</p>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
       aria-selected="true">Home</a>
@@ -19,7 +19,7 @@ require_once('partials/navbar.php');
       aria-selected="false">Contact</a>
   </li>
 </ul>
-<div class="tab-content" id="myTabContent">
+<div class="tab-content" id="myTabContent" style="padding-top: 10px;">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
     probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
     cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
