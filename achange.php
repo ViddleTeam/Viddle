@@ -90,7 +90,7 @@ if($f_plik == false)
 {
 	echo '<div class="alert alert-danger" role="alert">Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp </div>';
 }
-	      echo $nplik;
+	      echo $odczyt['extension'];
 ?>
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
