@@ -1,9 +1,6 @@
 <?php
 $title = "Udostępnianie filmów";
 require_once('partials/navbar.php');
-if ($_SESSION['z1'] == false) {
-	echo "<script>$('#staticBackdrop').modal('show');</script>";
-}
 ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -102,5 +99,10 @@ require_once('partials/footer.php');
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
 <script src="script.js"></script>
+<?php 
+if ($_SESSION['z1'] == false) {
+	echo "<script>$('#staticBackdrop').modal('show');</script>";
+}
+?>
 
 <div class="hiddendiv common"></div></body></html>
