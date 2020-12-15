@@ -9,7 +9,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if (isset($_POST['av7']))
 {
-	echo 'rak';
+	header('location: graficc.php');
 }
 if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
