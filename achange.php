@@ -99,7 +99,7 @@ if($f_plik == false)
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmiana avataru</h4>
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
-		<form method ="post">
+		<form method ="post"  ENCTYPE="multipart/form-data>
 		<center><input type="file" name="av7" accept="image/png/jpg/jpeg/bmp" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
 			<br></br><br></br>
 
