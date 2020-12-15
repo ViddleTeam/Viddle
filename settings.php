@@ -12,7 +12,7 @@ require_once('partials/navbar.php');
   </li>
   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Strefa niebezpieczeństwa</a>
+      aria-selected="false">strefa niebezpieczna</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent" style="padding-top: 10px;">
