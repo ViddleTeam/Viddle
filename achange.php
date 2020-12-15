@@ -10,6 +10,16 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if (isset($_POST['av7']))
 {
 	$nplik = $_FILES['av7'];
+	$ok = true;
+	
+	$odczyt = pathinfo($nplik);
+	$ext = $odczyt['extension'];
+ 
+	if ($ext !="jpg" || $ext !="png" || $ext !="jpeg" || $ext !="bmp")
+	{
+		$ok = false;
+		$f_plik = 'Wybrano typ pliku który jest nie obsługiwany przez nasz serwis. Obsługujemy te formaty zdjęć: .png, .jpg, .jpeg, .bmp'
+	}
 	
 	
 		
@@ -53,6 +63,12 @@ if ($result = @$connect->query(
 	}
 $title = "zmiana avataru kanału";
 require_once('partials/navbar.php');
+?>
+<?php
+
+// errory
+
+echo $f_plik;
 ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
