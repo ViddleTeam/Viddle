@@ -11,7 +11,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if (isset($_POST['av7']))
 {
-	$nplik = $_FILES['av7'];
+	$nplik = fopen("php://input", "r");;
 	$ok = true;
 	
 	$odczyt = pathinfo($nplik);
@@ -99,8 +99,8 @@ if($f_plik == false)
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmiana avataru</h4>
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
-		<form method ="post"  ENCTYPE="multipart/form-data>
-		<center><input type="file" name="av7"style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
+		<form method ="post">
+		<center><input type="file" name="av7" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
 			<br></br><br></br>
 
 		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
