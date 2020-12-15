@@ -52,7 +52,7 @@ require_once('partials/navbar.php');
         </div>
         </div>
           <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-12" style="text-align: center;">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4>
 				  
 		      
