@@ -24,6 +24,7 @@ if (isset($_POST['av7']))
 	{
 		$ok = false;
 		$f_plik = false;
+		$av4 = '';
 	}
 	
 	
