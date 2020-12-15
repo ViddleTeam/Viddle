@@ -59,7 +59,7 @@ require_once('partials/navbar.php');
 			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -125px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
 				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
 		      		<a href="achange.php"><button type="button" class="btn btn-secondary"><p style="margin: 10px;">Zmień awatar</p></button></a>
-				<button type="button" class="btn btn-elegant-grey"><p style="margin: 10px;">Przywróć domyślny awatar</p></button><br><br>
+				<button type="button" class="btn btn-elegant-gray"><p style="margin: 10px;">Przywróć domyślny awatar</p></button><br><br>
 				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja zdjęcia profilowego może potrwać do kilku minut.</p>
 			      </div>
 		      </center>
