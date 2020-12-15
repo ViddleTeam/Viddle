@@ -11,17 +11,12 @@ require_once('partials/navbar.php');
       aria-selected="true">Ustawienia ogólne</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Integruj konto</a>
-  </li>
-  <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
       aria-selected="false">Strefa niebezpieczeństwa</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent" style="padding-top: 10px;">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Już wkrótce!</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Już wkrótce!</div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Już wkrótce!</div>
 </div>
 </div>
