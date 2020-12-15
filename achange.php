@@ -74,13 +74,8 @@ require_once('partials/navbar.php');
 	      
 	      
 	      
-<?php
-	      
-if($f_plik = false)
-{ ?>
-  <br></br> <?php
-}
-?>
+
+  <br></br>
 
 <?php
 // errory
