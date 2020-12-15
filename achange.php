@@ -11,7 +11,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if (isset($_POST['av7']))
 {
-	$nplik = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	$nplik = $_FILES['av7'];
 	$ok = true;
 	
 	$odczyt = pathinfo($nplik);
