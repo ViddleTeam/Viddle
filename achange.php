@@ -9,7 +9,10 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if (isset($_POST['av7']))
 {
-	$nplik = $_FILES['plik'];
+	$nplik = $_FILES['av7'];
+	
+	
+		
 }
 if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
@@ -67,7 +70,7 @@ require_once('partials/navbar.php');
 
 		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
 		</form>
-		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny avatar </p></button></a>
+		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny avatar <?php echo $nplik ?> </p></button></a>
 		
 								
 							</center>
