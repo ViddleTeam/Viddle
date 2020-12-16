@@ -101,7 +101,7 @@ if ($result = @$connect->query(
             <h4 class="tile-before" style="color:white;">Ostatnio udostępnione</h4>
           </div><br>
 		<div class="alert alert-info" style="width: 100%;">
-		  <?php echo $nazwa; ?> nic nie udostępnił na swoim kanale.
+			<strong><?php echo $nazwa; ?> nic nie udostępnił na swoim kanale.</strong>
 		</div>
 	    <!--
 	    // tutaj placeholdery do wyświetlania filmów
