@@ -26,7 +26,7 @@ else
                $file =  $dane['fname'];
                $title =  $dane['title'];
                $opis = $dane['opis'];
-               $views = $dane['vievs'];
+               $views = $dane['views'];
                $komentarze = $dane['comments'];
 
             }
@@ -44,6 +44,7 @@ else
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php if(isset($title)) echo $title ?> na Viddle</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
