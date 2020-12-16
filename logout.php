@@ -15,7 +15,10 @@ session_destroy();
 <html>
 	<head>
 	<style>
-	
+	body {
+		background: rgb(30,0,59);
+		background: linear-gradient(90deg, rgba(30,0,59,1) 0%, rgba(9,34,121,1) 35%, rgba(154,0,255,1) 100%);
+	}
 	</style>
 		
     <script src='https://www.google.com/recaptcha/api.js'></script>
