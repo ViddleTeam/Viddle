@@ -102,37 +102,40 @@ if ($result = @$connect->query(
             </div>
             <div class="tile" style="margin: auto;">
                 <div class="card">
-                    <a href="video.php">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Testowa nazwa</p>
-                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    </a><div class="bottom-info"><a href="video.php"></a>
-					    <span>SlaVistaPL</span>
-                        <span>•</span>
-                        <span>13k wyświetleń</span>
-                    </div>
+					<a href="video.php">
+						<img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+						<p class="card-title">Testowa nazwa</p>
+						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+						<div class="bottom-info">
+						<span>SlaVistaPL</span>
+						<span>•</span>
+						<span>13k wyświetleń</span>
+						</div>
+					</a>
                 </div>
                 <div class="card">
                     <a href="video.php">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Testowa nazwa</p>
-                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    </a><div class="bottom-info"><a href="video.php"></a>
-					    <span>SlaVistaPL</span>
-                        <span>•</span>
-                        <span>13k wyświetleń</span>
-                    </div>
+						<img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+						<p class="card-title">Testowa nazwa</p>
+						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+						<div class="bottom-info">
+						<span>SlaVistaPL</span>
+						<span>•</span>
+						<span>13k wyświetleń</span>
+						</div>
+					</a>
                 </div>
                 <div class="card">
-                    <a href="video.php">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Jakiś projekt</p>
-                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    </a><div class="bottom-info">
-                        <span>SlaVistaPL</span>
-                        <span>•</span>
-                        <span>10k wyświetleń</span>
-                    </div>
+                   <a href="video.php">
+						<img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+						<p class="card-title">Testowa nazwa</p>
+						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+						<div class="bottom-info">
+						<span>SlaVistaPL</span>
+						<span>•</span>
+						<span>13k wyświetleń</span>
+						</div>
+					</a>
                 </div>
             </div>
         </div>
