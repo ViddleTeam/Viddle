@@ -103,6 +103,17 @@ if ($result = @$connect->query(
 		<div class="alert alert-info" style="width: 100%;">
 			<strong><?php echo $nazwa; ?> nic nie udostępnił na swoim kanale.</strong>
 		</div>
+				<?php
+						if ($do == '1') {
+							echo '<div class="alert alert-info" style="width: 100%;">
+									<strong>Tutaj nic nie ma. Zacznij od udostępnienia pierwszego filmu, klikając na ikonę udostępniania tuż obok Twojego awataru.</strong>
+								  </div>';
+						} else {
+								echo '<div class="alert alert-info" style="width: 100%;">
+									  	<strong><?php echo $nazwa; ?> nic nie udostępnił na swoim kanale.</strong>
+									  </div>';
+						}
+						?>
 	    <!--
 	    // tutaj placeholdery do wyświetlania filmów
             <div class="tile" style="margin: auto;">
