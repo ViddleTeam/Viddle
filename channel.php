@@ -66,11 +66,11 @@ if ($result = @$connect->query(
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4; ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
-					<h3 style="align-items: center;"><?php echo $nazwa ?></h3>
-					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy ?> obserwujących</p>
+					<h3 style="align-items: center;"><?php echo $nazwa; ?></h3>
+					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
 					<div class="row">
@@ -97,10 +97,14 @@ if ($result = @$connect->query(
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
-		<!--
           <div class="row">
             <h4 class="tile-before" style="color:white;">Ostatnio udostępnione</h4>
-            </div>
+          </div><br>
+		<div class="alert alert-info" style="width: 100%;">
+		  <?php echo $nazwa; ?> nic nie udostępnił na swoim kanale.
+		</div>
+	    <!--
+	    // tutaj placeholdery do wyświetlania filmów
             <div class="tile" style="margin: auto;">
                 <div class="card">
 					<a href="video.php">
