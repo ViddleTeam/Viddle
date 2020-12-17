@@ -87,9 +87,7 @@ require_once('partials/footer.php');
       </div>
       <div class="modal-body">
         Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.
-		<div class="file-upload-wrapper">
-  			<input type="file" id="input-file-max-fs" class="image-uploader" data-max-file-size="4M" data-height="300" />
-		</div>
+	      <input type="file" />
       </div>
       <div class="modal-footer">
 		<button type="button" class="btn btn-primary" style="padding: 10px;">Zastosuj zmiany</button>
@@ -119,9 +117,6 @@ require_once('partials/footer.php');
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-<script>
-	$('.image-uploader').file_upload();
-</script>
 <?php
 if ($_SESSION['z1'] == false) {
 	echo "<script>$('#staticBackdrop').modal('show');</script>";
