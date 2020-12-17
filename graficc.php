@@ -87,7 +87,7 @@ require_once('partials/footer.php');
       </div>
 	<form method="post" enctype="multipart/form-data">
       <div class="modal-body">
-        Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.
+        Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.<br>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
 		<center>
 			<input type="file" name="file_picker" value="Wybierz plik" style="" />
