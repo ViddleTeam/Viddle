@@ -125,7 +125,7 @@ require_once('partials/footer.php');
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 <script>
-const actualBtn = document.getElementById('actual-btn');
+const actualBtn = document.getElementById('file_picker');
 const fileChosen = document.getElementById('file-chosen');
 
 actualBtn.addEventListener('change', function(){
