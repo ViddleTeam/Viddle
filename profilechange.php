@@ -90,7 +90,9 @@ require_once('partials/footer.php');
         Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.<br>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
 		<center>
-			<input type="file" name="file_picker" value="Wybierz plik" style="" />
+			<input type="file" name="file_picker" value="Wybierz plik" hidden />
+			<label for="file_picker" class="btn btn-primary" style="padding: 10px;">Wybierz zdjęcie</label>
+			<span id="file-chosen" style="color: white;">Nie wybrano pliku</span>
 		</center>
       </div>
       <div class="modal-footer">
@@ -122,6 +124,13 @@ require_once('partials/footer.php');
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<script>
+const fileChosen = document.getElementById('file-chosen');
+
+actualBtn.addEventListener('change', function(){
+  fileChosen.textContent = this.files[0].name
+})
+</script>
 <?php
 if ($_SESSION['z1'] == false) {
 	echo "<script>$('#staticBackdrop').modal('show');</script>";
