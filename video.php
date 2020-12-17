@@ -22,7 +22,9 @@ else
 			if(isset($d2) && $d2 == '1')
             {
                $dane = $result->fetch_assoc();
-
+		
+	       $publisher = $dane['publisher'];
+	       $observators = $dane['observators'];
                $file =  $dane['fname'];
                $title =  $dane['title'];
                $opis = $dane['opis'];
@@ -52,7 +54,8 @@ else
     <meta property="og:description" content='<?php if (isset($opis)) echo $opis ?>'>
 	<script src="script.js"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
-	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
 	<style type="text/css">/* Chart.js */
 @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
@@ -80,8 +83,8 @@ else
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;">SlaVistaPL</h5>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
+                    <h5 style="align-items: center;"><?php echo $publisher; ?></h5>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators; ?> obserwujących</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
                     <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
