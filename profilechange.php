@@ -91,7 +91,7 @@ require_once('partials/footer.php');
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
 		<center>
 			<input type="file" name="file_picker" value="Wybierz plik" hidden />
-			<label for="file_picker" class="btn btn-primary" style="padding: 10px;">Wybierz zdjęcie</label>
+			<label for="file_picker" class="btn btn-primary" id="actual-btn" style="padding: 10px;">Wybierz zdjęcie</label>
 			<span id="file-chosen" style="color: white;">Nie wybrano pliku</span>
 		</center>
       </div>
@@ -125,6 +125,7 @@ require_once('partials/footer.php');
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 <script>
+const actualBtn = document.getElementById('actual-btn');
 const fileChosen = document.getElementById('file-chosen');
 
 actualBtn.addEventListener('change', function(){
