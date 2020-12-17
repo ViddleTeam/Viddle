@@ -31,7 +31,7 @@ if ($result = @$connect->query(
 		
 		if($ba2 == 'x')
 		{
-			$ba3 = 'http://wallpapercave.com/wp/t05PXKg.jpg';
+			$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
 		}
 		else
 		{
