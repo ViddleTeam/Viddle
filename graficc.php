@@ -58,7 +58,7 @@ require_once('partials/navbar.php');
 			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="100%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
 			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -125px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
 				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
-		      		<a href="achange.php"><button type="button" class="btn btn-secondary"><p style="margin: 10px;">Zmień awatar</p></button></a>
+		      	<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
 				<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny awatar</p></button><br><br>
 				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja zdjęcia profilowego może potrwać do kilku minut.</p>
 			      </div>
@@ -77,6 +77,26 @@ require_once('partials/navbar.php');
 <?php 
 require_once('partials/footer.php');
 ?>
+
+<!-- modal zmiany awataru -->
+<div class="modal fade" id="modalAvatar" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Zmiana awataru</h5>
+      </div>
+      <div class="modal-body">
+        Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.
+		<div class="file-upload-wrapper">
+  			<input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="4M" data-height="300" />
+		</div>
+      </div>
+      <div class="modal-footer">
+		<button type="button" class="btn btn-primary" style="padding: 10px;">Zastosuj zmiany</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- modal dla niezalogowanych -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
