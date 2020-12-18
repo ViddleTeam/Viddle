@@ -107,7 +107,7 @@ if ($result = @$connect->query(
 								  </div>';
 						} else {
 								echo '<div class="alert alert-info" style="width: 100%;">
-									  	<strong><?php echo $nazwa; ?> nic nie udostępnił na swoim kanale.</strong>
+									  	<strong>'.$nazwa.'nic nie udostępnił na swoim kanale.</strong>
 									  </div>';
 						}
 						?>
