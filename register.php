@@ -46,21 +46,10 @@ if (isset($login)){
     $sk = "6LfI8fwZAAAAAIbM-pHAFeKlHPBt-sMxhypcEycd";
 		$c = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sk.'&response='.$_POST['g-recaptcha-response']);
 		$v = json_decode($c);
-		$data = array(
-					'secret' => "0x2e38D68c01a7AAa01905f1471631C6b59e47300A",
-					'response' => $_POST['h-captcha-response']
-				);
-		$verify = curl_init();
-		curl_setopt($verify, CURLOPT_URL, "https://hcaptcha.com/siteverify");
-		curl_setopt($verify, CURLOPT_POST, true);
-		curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-		curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-		$response = curl_exec($verify);
-		// var_dump($response);
-		$responseData = json_decode($response);
-		if (!$responseData->success) {
-			$c_error = "<div class='alert alert-danger' role='alert'>Captcha nie została rozwiązana.</div>"
-		} 
+		if ($v->success==false) {
+			$ok=false;
+			$c_error = "<div class='alert alert-danger' role='alert'>Nie zaznaczono pola captcha.</div>";
+		}
         require("danesql.php");
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 			if ($connect->connect_errno!=0) {
@@ -108,7 +97,23 @@ if (isset($login)){
 <html>
 	<head>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-	<script src='https://www.hcaptcha.com/1/api.js' async defer></script>
+		<style>
+			@-webkit-keyframes autofill {
+			to {
+			color: #666;
+			background: transparent; } }
+
+			@keyframes autofill {
+			to {
+			color: #666;
+			background: transparent; } }
+
+			input:-webkit-autofill {
+			-webkit-animation-name: autofill;
+			animation-name: autofill;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both; }
+		</style>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -154,7 +159,7 @@ if (isset($login)){
 					<input type="password" name="repeat_password" class="form-control" placeholder="Powtórz hasło"name="haslo2" aria-label="Powtórz hasło" aria-describedby="material-addon1">
 				</div><br>
 				<center>
-                <div class="h-captcha" data-sitekey="f982278b-3800-454e-84a8-f08f6956fd44"></div><br>
+                <div class="g-recaptcha" data-sitekey="6LfI8fwZAAAAADtjXjsBIFjgpsQvk5ICt-8zKU0p"></div><br>
 				<div class="container row" style="justify-content: center;">
 					<a href="#"><input type="submit" value="Zarejestruj się" class="btn btn-success" style="padding: 10px;"></a>
 
