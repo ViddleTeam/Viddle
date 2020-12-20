@@ -114,6 +114,10 @@ else
                           <input class="form-control mr-sm-2" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
                   </div>
+				<div class="alert alert-info" style="width: 100%;">
+					<strong>Komentarze są tymczasowo wyłączone i powrócą wkrótce.</strong>
+				</div>
+		  <!--
                   <div class="container row" style="margin-top: 10px;">
                     <span>
                       <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
@@ -123,6 +127,7 @@ else
                         <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum.</p>
                     </span>
                 </div>
+		-->
                 </div>
               </div>
             </div>
