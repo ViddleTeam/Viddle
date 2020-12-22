@@ -15,6 +15,7 @@ if ($result = @$connect->query(
 		$av5 = $dane['avatarname'];
 		$nazwa = $dane['login'];
 		$ba2 = $dane['banername'];
+		// blagam zmieńcie observators na followers, poprawny angielski by sie przydał ;) - evo
 		$obserwatorzy = $dane['observators'];
 		
 		if($av5 == 'x')
@@ -54,7 +55,7 @@ if ($result = @$connect->query(
 	
 
 
-    $title = "".$nazwa." na Viddle";
+    $title = "".$nazwa." - Viddle";
     require_once('partials/navbar.php');
 ?>
 	  <center>
@@ -98,21 +99,22 @@ if ($result = @$connect->query(
         </div>
         </div>
           <div class="row">
-            <h4 class="tile-before" style="color:white;">Ostatnio udostępnione</h4>
+            <h4 class="tile-before" style="color:white;">Ostatnio dodane</h4>
           </div><br>
 				<?php
 						if ($do == '1') {
 							echo '<div class="alert alert-info" style="width: 100%;">
-									<strong>Tutaj nic nie ma. Zacznij od udostępnienia pierwszego filmu, klikając na ikonę udostępniania tuż obok Twojego awataru.</strong>
+									<strong>Aby dodać swój pierwszy film na twoim nowym kanale, kliknij na ikonę u góry obok panelu użytkownika.</strong>
 								  </div>';
 						} else {
 								echo '<div class="alert alert-info" style="width: 100%;">
-									  	<strong>'.$nazwa.' nic nie udostępnił na swoim kanale.</strong>
+									  	<strong>'.$nazwa.' nie posiada żadnych filmów.</strong>
 									  </div>';
 						}
 						?>
 	    <!--
 	    // tutaj placeholdery do wyświetlania filmów
+            // coś tutaj jeszcze sie zmieni, zobaczysz - evo
             <div class="tile" style="margin: auto;">
                 <div class="card">
 					<a href="video.php">
@@ -121,7 +123,7 @@ if ($result = @$connect->query(
 						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 						<div class="bottom-info">
 						<span>SlaVistaPL</span>
-						<span>•</span>
+						<span>-</span>
 						<span>13k wyświetleń</span>
 						</div>
 					</a>
@@ -133,7 +135,7 @@ if ($result = @$connect->query(
 						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 						<div class="bottom-info">
 						<span>SlaVistaPL</span>
-						<span>•</span>
+						<span>-</span>
 						<span>13k wyświetleń</span>
 						</div>
 					</a>
@@ -145,7 +147,7 @@ if ($result = @$connect->query(
 						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 						<div class="bottom-info">
 						<span>SlaVistaPL</span>
-						<span>•</span>
+						<span>-</span>
 						<span>13k wyświetleń</span>
 						</div>
 					</a>
