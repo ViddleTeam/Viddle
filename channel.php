@@ -20,7 +20,7 @@ if ($result = @$connect->query(
 		
 		if($av5 == 'x')
 		{
-			$av4 = 'avatardomyslny.jpg';
+			$av4 = 'anonim.png';
 		}
 		else
 		{
