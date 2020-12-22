@@ -40,11 +40,11 @@ session_destroy();
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
                                 <div id="main">
-				<h3 style="font-weight: bold;">Zostałeś pomyślnie wylogowany!</h3>
-				<p>Pomyślnie wylogowano z Viddle. Za chwilę zostaniesz przekierowany na stronę główną. Jeżeli nie chcesz czekać, kliknij przycisk poniżej.</p><br>
+				<h3 style="font-weight: bold;">Wylogowano ciebie z konta.</h3>
+				<p>Zostałeś wylogowany z twojego konta, za chwilę wrócisz do Viddle.</p><br>
 				
                 
-					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przejdź do strony głównej</p></button></a>
+					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Wróć</p></button></a>
 				</div>
 				</div>
 				</center>
