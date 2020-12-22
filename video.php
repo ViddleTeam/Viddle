@@ -2,18 +2,16 @@
 <?php
 
 $id = $_GET['id'];
-
-echo $id;
+$video_exists = true;
 if($id == 0)
 {
-    header('Location: index.php');
-	exit();
+    $video_exists = false;
 }
 else
 {
     require "danesql.php";
     $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-
+    $video_exists = true;
     if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
 		    mysqli_real_escape_string($connect,$id))))
@@ -30,12 +28,11 @@ else
                $opis = $dane['opis'];
                $views = $dane['views'];
                $komentarze = $dane['comments'];
-
+	       $video_exists = true;
             }
             else
             {
-                header('Location: index.php');
-
+		$video_exists = false;
             }
 }
 ?>
@@ -182,8 +179,7 @@ else
       </div>
       
       <!-- modal do zgłoszenia filmu -->
-      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
@@ -208,11 +204,33 @@ else
     </div>
   </div>
 </div>
+<!-- brak filmu -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Film nie został znaleziony!</h5>
+      </div>
+      <div class="modal-body">
+        Film może nie być dostępny, ponieważ nie istnieje lub został usunięty przez administratorów serwisu. Jeżeli wpisałeś ID filmu ręcznie, sprawdź czy się nie pomyliłeś.
+      </div>
+      <div class="modal-footer">
+	  <a href="index.php"><button type="button" class="btn btn-primary">Powrót na stronę główną</button></a>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- JS -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-<script src="script.js"></script>
+<?php 
+	if ($video_exists == false) {
+		echo "<script>
+			$('#staticBackdrop').modal('show');
+		</script>";
+	}
+?>
 
 <div class="hiddendiv common"></div></body></html>
