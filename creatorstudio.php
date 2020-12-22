@@ -11,23 +11,23 @@ require_once('partials/navbar.php');
                   <h4 class="tile-before" style="color:white; margin-top: 60px;">Podgląd twojego kanału</h4>
               </div>
               <div class="card-creatorstudio border border-white" style="padding: 10px;">
-                <p>Liczba wyświetleń (ostatnie 24 godziny)</p>
+                <p>Wyświetlenia (ostatnie 24 godziny)</p>
                 <h3>21 370 <small style="color: #00dd10;"><small>(+1 254)</small></small></h3>
             </div>
             <div class="card-creatorstudio border border-white" style="padding: 10px;">
-                <p>Nowi obserwujący (ostatnie 24 godziny)</p>
+                <p>Obserwujący (ostatnie 24 godziny)</p>
                 <h3>78 <small style="color: #00dd10;"><small>(+11)</small></small></h3>
             </div>
             <div class="card-creatorstudio border border-white" style="padding: 10px;">
-                <p>Nowe komentarze (ostatnie 24 godziny)</p>
+                <p>Komentarze (ostatnie 24 godziny)</p>
                 <h3>15 <small style="color: #00dd10;"><small>(+3)</small></small></h3>
             </div>
             <div class="col-lg-12">
                 <h4 class="tile-before" style="color:white; margin-top: 20px;">Statystyki ostatniego filmu</h4>
-                <p>Oto szybkie statystyki powiązane z Twoim ostatnim filmem.</p>
+                <p>Statystyki związane z twoim najnowszym filmem.</p>
                 <div class="row" style="justify-content: center;">
             <div class="card-creatorstudio border border-white" style="padding: 10px;">
-              <p>Liczba wyświetleń</p>
+              <p>Wyświetlenia</p>
               <h3>775</h3>
           </div>
           <div class="card-creatorstudio border border-white" style="padding: 10px;">
@@ -35,7 +35,7 @@ require_once('partials/navbar.php');
               <h3>67</h3>
           </div>
           <div class="card-creatorstudio border border-white" style="padding: 10px;">
-              <p>Komentarzy pod filmem</p>
+              <p>Komentarze</p>
               <h3>7</h3>
           </div>
           </div>
