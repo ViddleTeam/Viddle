@@ -25,11 +25,11 @@ if (isset($_SESSION['ac']))
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Rejestracja przebiegła pomyślnie!</title>
+		<title>Konto zostało założone.</title>
 		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
 		<link rel="stylesheet" href="style.css">
-		<meta property="og:title" content="VDP - polska alternatywa dla YouTube">
+		<meta property="og:title" content="Viddle">
 		<meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą VDP.">
 		<script src="script.js"></script>
 		<script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
@@ -39,11 +39,11 @@ if (isset($_SESSION['ac']))
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
                                 <div id="main">
-				<h3 style="font-weight: bold;">Zmiana avataru zakończona</h3>
-				<p>Pomyślnie udało się zmienić twój avatar !!!</p><br>
+				<h3 style="font-weight: bold;">Zmiana awataru</h3>
+				<p>Awatar został ustawiony.</p><br>
 				
                 
-					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Strona główna</p></button></a>
+					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zacznij</p></button></a>
 				</div>
 				</div>
 				</center>
