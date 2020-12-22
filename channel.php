@@ -55,7 +55,7 @@ if ($result = @$connect->query(
 	
 
 
-    $title = "konto".$nazwa."";
+    $title = "Konto ".$nazwa."";
     require_once('partials/navbar.php');
 ?>
 	  <center>
