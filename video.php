@@ -42,6 +42,14 @@ else
 <html lang="pl-PL"><head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<?php 
+	if ($video_exists == false) {
+		echo "<script>
+			$('#staticBackdrop').modal('show');
+		</script>";
+	}
+?>
     <title><?php if(isset($title)) echo $title ?> na Viddle</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
@@ -221,16 +229,8 @@ else
   </div>
 </div>
 <!-- JS -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-<?php 
-	if ($video_exists == false) {
-		echo "<script>
-			$('#staticBackdrop').modal('show');
-		</script>";
-	}
-?>
 
 <div class="hiddendiv common"></div></body></html>
