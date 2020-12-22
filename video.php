@@ -206,8 +206,8 @@ else
 </div>
 <!-- brak filmu -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered bg-dark">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Film nie został znaleziony!</h5>
       </div>
@@ -215,7 +215,7 @@ else
         Film może nie być dostępny, ponieważ nie istnieje lub został usunięty przez administratorów serwisu. Jeżeli wpisałeś ID filmu ręcznie, sprawdź czy się nie pomyliłeś.
       </div>
       <div class="modal-footer">
-	  <a href="index.php"><button type="button" class="btn btn-primary">Powrót na stronę główną</button></a>
+	  <a href="index.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Powrót na stronę główną</button></a>
       </div>
     </div>
   </div>
