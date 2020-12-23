@@ -2,6 +2,13 @@
 $title = "Udostępnianie filmów";
 require_once('partials/navbar.php');
 ?>
+<style> 
+input[type=submit] {
+  margin-bottom: 10px;
+  margin: 10px;
+  color: white;
+}
+</style>
       <div class="container" style="margin-top:30px;">
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -21,6 +28,7 @@ require_once('partials/navbar.php');
 								<h2 style="color: white;">Wybierz plik wideo z komputera/telefonu</h2>
                 <p style="color: white;">Maksymalny dozwolony rozmiar na jeden film wynosi 1 GB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
                 <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja Viddle ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
+								<form>
 								<input type="file" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
@@ -68,7 +76,8 @@ require_once('partials/navbar.php');
           </div>
         </div>
      <center>
-     <button type="button" class="btn btn-success" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;">Rozpocznij przesyłanie</p></button>
+     <input type="submit" value="Rozpocznij przesyłanie">
+	     </form>
      </div>
 </div>
 </center>
