@@ -5,6 +5,7 @@ require_once('partials/navbar.php');
 <style> 
 input[type=submit] {
   margin-bottom: 10px;
+  margin: 10px;
 }
 </style>
       <div class="container" style="margin-top:30px;">
@@ -74,11 +75,11 @@ input[type=submit] {
           </div>
         </div>
      <center>
-	     <p style="margin: 10px; color: white;"><input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie"></p>
+	     <p style="color: white;"><input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie"></p>
+     </center>
 	     </form>
      </div>
 </div>
-</center>
         </div>
 <?php 
 require_once('partials/footer.php');
