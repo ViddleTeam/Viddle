@@ -68,20 +68,21 @@ else
 	require_once('partials/navbar.php');	
 	?>
       <div class="container" style="margin-top: 70px; justify-content: center;">
-        <form>
+	<?php
+        echo '<form>
           <div class="form-row">
             <div class="col-md-7">
               <div class="md-form form-group">
-              <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html<?php echo '?file=https://viddlecdn.ml/videos/'.$id.'/'.$file ?>&title=<?php echo $title ?>" type="video/mp4" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+              <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/'.$id.'/'.$file.'&title='.$title.' type="video/mp4" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 640px;">
-                  <h4><?php echo $title ?></h4>
+                  <h4>'.$title.'</h4>
                   <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;"><?php echo $publisher; ?></h5>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators; ?> obserwujących</p>
+                    <h5 style="align-items: center;">'.$publisher.'</h5>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$observators.' obserwujących</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
                     <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
@@ -95,14 +96,14 @@ else
                       </p>
                     </span>
                     <span style="margin-left: auto; margin-right: -20px; text-align: right;">
-                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views; ?></h4>
+                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i>'.$views.'</h4>
                       <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
                     </span>
                     </div><br>
                     <p><?php echo $opis ?></p>
                 </div>
                 <div class="comments">
-                  <h3>Komentarze (<?php echo $komentarze ?>)</h3>
+                  <h3>Komentarze ('.$komentarze.')</h3>
                   <div class="container row">
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
@@ -174,7 +175,8 @@ else
           </div>
             </div>
           </div>
-        </form>
+        </form>';
+	?>
 		</div>		
       </div>
       
