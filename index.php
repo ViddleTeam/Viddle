@@ -100,6 +100,22 @@ require_once('partials/navbar.php');
                     </div>
             </div>
         </div>
+<!-- modal fuckadblock -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Wykryto adblocka!</h5>
+      </div>
+      <div class="modal-body">
+        Rozumiemy to, że nie lubisz reklam. W końcu, to Twoja przeglądarka. Obecnie jest to nasze jedyne źródło zarobku (wyłączając dobrowolne datki), który przeznaczamy na opłacenie serwerów. Jeżeli nie chcesz wyłączać adblocka, przemyśl dodanie na listę wyjątków tej strony.
+      </div>
+      <div class="modal-footer">
+	<button type="button" class="btn btn-blue-grey" style="padding: 10px;" data-dismiss="modal">Przejdź do Viddle</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- JS -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
