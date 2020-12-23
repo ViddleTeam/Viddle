@@ -19,10 +19,10 @@ input[type=submit] {
           <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
-		 	      <div class="alert alert-warning">
-	      	Uwaga: ze względu na limity hostingu, limit jednego filmu na Viddle obecnie wynosi 10 MB. <a href="https://support.infinityfree.net/files/how-to-upload-big-files-archives/">Dlaczego?</a>
-	      </div>
 				  <p style="color: white; margin-bottom: 20px;">Krok 1/3: Wybierz film do udostępnienia</p>
+		     <div class="alert alert-warning">
+	      	Uwaga: ze względu na limity hostingu, limit jednego filmu na Viddle obecnie wynosi 10 MB. <a class="alert-link" href="https://support.infinityfree.net/files/how-to-upload-big-files-archives/">Dlaczego?</a>
+	      </div>
               </div>
             </div>
             <div class="tile" style="margin: auto;">
