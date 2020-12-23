@@ -69,6 +69,7 @@ else
 	?>
       <div class="container" style="margin-top: 70px; justify-content: center;">
 	<?php
+	if ($video_exists == true) {
         echo '<form>
           <div class="form-row">
             <div class="col-md-7">
@@ -176,6 +177,7 @@ else
             </div>
           </div>
         </form>';
+	} else return;
 	?>
 		</div>		
       </div>
