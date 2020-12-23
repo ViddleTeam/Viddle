@@ -52,6 +52,7 @@ $url = $_SERVER['REQUEST_URI'];
 $cond = strpos($url, $str) !== false;
 $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 ?>
+<!DOCTYPE html>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
