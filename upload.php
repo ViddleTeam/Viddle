@@ -31,7 +31,7 @@ input[type=submit] {
                 <p style="color: white;">Maksymalny dozwolony rozmiar na jeden film wynosi 1 GB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
                 <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja Viddle ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
 								<form action="/post.php" method="post">
-								<input type="file" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
+								<input type="file" accept="video/mp4, video/mov" name="videovid" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
 					</div>
@@ -51,14 +51,14 @@ input[type=submit] {
                 <div class="form-row" style="justify-content: center;">
                   <div class="col-md-12">
                     <div class="md-form form-group" style="width: 100%;">
-                      <input type="email" style="color: white;" class="form-control" id="inputEmail4MD">
+                      <input type="email" style="color: white;" name="titlevid" class="form-control" id="inputEmail4MD">
                       <label for="inputEmail4MD" style="color: white;">Tytuł filmu</label>
                     </div>
                   </div>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="md-form form-group">
-                      <textarea id="form7" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
+                      <textarea id="form7" name="descvid" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
                       <label for="form7" style="color: white;">Opis filmu</label>
                     </div>
                   </div>
