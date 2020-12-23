@@ -177,7 +177,9 @@ else
             </div>
           </div>
         </form>';
-	} else return;
+	} else if ($video_exists == false) {
+		echo '';
+	}
 	?>
 		</div>		
       </div>
