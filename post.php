@@ -10,7 +10,7 @@
   $tytul = $_POST['titlevid'];
   $opis = $_POST['desvid'];
   $film = $_POST['videovid'];
-  $destination = fopen("ftp://epiz_27397314:KoDX5JDbEQ3iP@ftpupload.net/" . $film, "wb");
+  $destination = fopen("ftp://epiz_27397310:YPf7vgDQu3JpVm@ftpupload.net/" . $film, "wb");
   $source = file_get_contents($film);
   fwrite($destination, $source, strlen($source));
 } else {
