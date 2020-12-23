@@ -16,5 +16,5 @@
 } else {
 header('Location: index.php');
 } */
-echo('Strona w budowie.');
+echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 ?>
