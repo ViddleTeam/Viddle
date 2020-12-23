@@ -4,7 +4,7 @@ require_once('partials/navbar.php');
 ?>
 <style> 
 input[type=submit] {
-  border: none;
+  outline: none;
   margin-bottom: 10px;
   margin: 10px;
   height: 50px;
@@ -51,7 +51,7 @@ input[type=submit] {
                 <div class="form-row" style="justify-content: center;">
                   <div class="col-md-12">
                     <div class="md-form form-group" style="width: 100%;">
-                      <input type="email" style="color: white;" name="titlevid" class="form-control" id="inputEmail4MD">
+                      <input type="text" style="color: white;" name="titlevid" class="form-control" id="inputEmail4MD">
                       <label for="inputEmail4MD" style="color: white;">Tytuł filmu</label>
                     </div>
                   </div>
@@ -77,8 +77,7 @@ input[type=submit] {
           </div>
         </div>
      <center>
-	     <p style="color: white;"><input type="submit" value="Rozpocznij przesyłanie"></p>
-	     <!-- class="btn btn-success" do poprawy -->
+	     <p style="color: white;"><input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie"></p>
      </center>
 	     </form>
      </div>
