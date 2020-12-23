@@ -8,7 +8,7 @@ input[type=submit] {
   margin-bottom: 10px;
   margin: 10px;
   height: 50px;
-  width: 250px;
+  width: 225px;
 }
 </style>
       <div class="container" style="margin-top:30px;">
