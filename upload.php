@@ -77,7 +77,8 @@ input[type=submit] {
           </div>
         </div>
      <center>
-	     <p style="color: white;"><input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie"></p>
+	     <p style="color: white;"><input type="submit" value="Rozpocznij przesyłanie"></p>
+	     <!-- class="btn btn-success" do poprawy -->
      </center>
 	     </form>
      </div>
