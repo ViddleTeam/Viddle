@@ -77,8 +77,7 @@ if ($result = @$connect->query(
 					<div class="row">
 						<?php
 						if ($do == '1') {
-							echo '<button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button>';
-							echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+							echo '<a href="profilechange.php"><button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button></a>';
 						} else {
 							if ($_SESSION['z1'] == true) {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
