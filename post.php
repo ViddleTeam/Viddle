@@ -15,11 +15,11 @@ if ($_SESSION['z1'] == true) {
   $film = $_POST['videovid'];
   
   $login = $_SESSION['user'];
-  $filename = $_FILES["videovid"]["name"];
+  $filename = $_FILES['videovid']['name'];
   $newfilename = $viddleid . $_FILES["videovid"]["type"];
   $file_basename = substr($filename, 0, strripos($filename, '.'));
-  $file_ext = $_FILES["videovid"]["type"];
-  $filesize = $_FILES["videovid"]["size"];
+  $file_ext = $_FILES['videovid']['type'];
+  $filesize = $_FILES['videovid']['size'];
   $allowed_file_types = array('video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp');	
   define('MB', 1048576);
   require "danesql.php";
