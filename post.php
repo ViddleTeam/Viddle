@@ -45,9 +45,8 @@ if ($_SESSION['z1'] == true) {
 		$res = ftp_size($conn_id, $file);
 		$sciezka = "/viddlecdn.ml/htdocs/videos/" . $newfilename;
 		if ($res != -1) {
-    		  //echo "Plik już istnieje.";
-		  header('Location: index.php');
-		  header('Location: blad.php?id=4');
+    		  echo "Plik już istnieje.";
+		  //header('Location: blad.php?id=4');
 		} else {	
 			ftp_put($conn_id, $sciezka, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 			//echo "Wrzucono film.";	
