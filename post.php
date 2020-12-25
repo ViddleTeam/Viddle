@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 session_start();
 if ($_SESSION['z1'] == true) {
   $error = 0;
