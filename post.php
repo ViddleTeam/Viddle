@@ -77,18 +77,18 @@ if ($_SESSION['z1'] == true) {
 	  header('Location: blad.php?id=3');
 	}
   } else {
-    //header('Location: index.php');
-  	echo "ERROR 5 - Problem z filmem.";
+    header('Location: index.php');
+  	//echo "ERROR 5 - Problem z filmem.";
   }
   if ($_POST['titlevid'] == false) {
-    header('Location: index.php');
-    //echo('ERROR 1 - Brak tytułu.');
+    //header('Location: index.php');
+    echo('ERROR 1 - Brak tytułu.');
   } else if ($_POST['descvid'] == false) {
-    header('Location: index.php');
-    //echo('ERROR 2 - Brak opisu.');
+    //header('Location: index.php');
+    echo('ERROR 2 - Brak opisu.');
   } else if ($_POST['videovid'] == false) {
-    header('Location: index.php');
-    //echo('ERROR 3 - Brak filmu.');
+    //header('Location: index.php');
+    echo('ERROR 3 - Brak filmu.');
   }
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
@@ -109,8 +109,8 @@ if ($_SESSION['z1'] == true) {
   $source = file_get_contents($film);
   fwrite($destination, $source, strlen($source)); */
 } else {
-header('Location: index.php');
-//echo('ERROR 4 - Nie jesteś zalogowany.');
+//header('Location: index.php');
+echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 ?>
