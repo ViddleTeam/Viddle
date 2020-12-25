@@ -40,7 +40,7 @@ if ($_SESSION['z1'] == true) {
   }
   $viddlepath = $viddleid;
   $viddlepath .= ".mp4";
-  $data = date("Y-m-d H:i:s")
+  $data = date("Y-m-d H:i:s");
   $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$viddlepath', '$tytul', '$opis', 'x', '$data')");
   if ($success) {
      header('Location: video.php?id=' . $viddleid);
