@@ -56,19 +56,19 @@ if ($_SESSION['z1'] == true) {
 	elseif (empty($file_basename))
 	{	
 		// file selection error
-		echo "Podaj nazwę pliku do wrzucenia!";
+		echo('Podaj nazwę pliku do wrzucenia!');
 		//header('Location: index.php');
 	} 
 	elseif ($filesize > 10*MB)
 	{	
 		// file size error
-		echo "Plik jest zbyt duży!";
+		echo('Plik jest zbyt duży!');
 		//header('Location: index.php');
 	}
 	else
 	{
 		// file type error
-		echo "Tylko te pliki są akceptowalne: " . implode(', ',$allowed_file_types);
+		echo('Tylko te pliki są akceptowalne');
 		//unlink($_FILES["videovid"]["tmp_name"]);
 		//header('Location: index.php');
 	}
