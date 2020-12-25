@@ -77,7 +77,7 @@ if ($_SESSION['z1'] == true) {
 	}
   } else {
     //header('Location: index.php');
-    echo "ERROR 5 - Problem z filmem.";
+    //echo "ERROR 5 - Problem z filmem.";
 }
   if ($_POST['titlevid'] == false) {
     header('Location: index.php');
