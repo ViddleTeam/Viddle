@@ -9,7 +9,7 @@ if ($_SESSION['z1'] == true) {
     header('Location: index.php');
   }
   $tytul = $_POST['titlevid'];
-  $opis = $_POST['desvid'];
+  $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
   
   $login = $_SESSION['user'];
