@@ -8,7 +8,7 @@ if ($_SESSION['z1'] == true) {
 	$file_basename = substr($filename, 0, strripos($filename, '.'));
 	$file_ext = substr($filename, strripos($filename, '.'));
 	$filesize = $_FILES["videovid"]["size"];
-	$allowed_file_types = array('.mp4','.mov','.webm','.wmv','.3gp','.mkv','.m4v'),;	
+	$allowed_file_types = array('.mp4','.mov','.webm','.wmv','.3gp','.mkv','.m4v');	
 	define('MB', 1048576);
 	
     	require "danesql.php";
