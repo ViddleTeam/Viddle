@@ -1,6 +1,6 @@
 <?php
 if ($_SESSION['z1'] == true) {
-$error = 0;
+  $error = 0;
   if ($_POST['titlevid'] == false) {
     header('Location: index.php');
   } else if ($_POST['desvid'] == false) {
@@ -12,15 +12,15 @@ $error = 0;
   $opis = $_POST['desvid'];
   $film = $_POST['videovid'];
   
-$login = $_SESSION['user'];
-require "danesql.php";
-$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-   $viddleid = rand(1000000,9999999);
-   if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
-			$d2 = $result->num_rows;
-			if (isset($d2) && $d2 >= '1') {
-				$error = 1;
-			}
+  $login = $_SESSION['user'];
+  require "danesql.php";
+  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+  $viddleid = rand(1000000,9999999);
+  if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
+    $d2 = $result->num_rows;
+    if (isset($d2) && $d2 >= '1') {
+      $error = 1;
+    }
   while($error == 1) {
       $viddleid = rand(1000000,9999999);
       if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
