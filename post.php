@@ -3,7 +3,7 @@ if ($_SESSION['z1'] == true) {
   $error = 0;
   if ($_POST['titlevid'] == false) {
     header('Location: index.php');
-  } else if ($_POST['desvid'] == false) {
+  } else if ($_POST['descvid'] == false) {
     header('Location: index.php');
   } else if ($_POST['videovid'] == false) {
     header('Location: index.php');
