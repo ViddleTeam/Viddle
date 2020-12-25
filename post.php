@@ -45,8 +45,9 @@ if ($_SESSION['z1'] == true) {
 		$res = ftp_size($conn_id, $file);
 		$sciezka = "/viddlecdn.ml/htdocs/videos/" . $newfilename;
 		if ($res != -1) {
-    		  echo('Plik już istnieje.');
-		  //header('Location: blad.php?id=4');
+    		  //echo "Plik już istnieje.";
+		  header('Location: index.php');
+		  header('Location: blad.php?id=4');
 		} else {	
 			ftp_put($conn_id, $sciezka, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 			//echo "Wrzucono film.";	
@@ -56,38 +57,38 @@ if ($_SESSION['z1'] == true) {
 	elseif (empty($file_basename))
 	{	
 		// file selection error
-		echo('Podaj nazwę pliku do wrzucenia!');
-		//header('Location: index.php');
+		//echo "Podaj nazwę pliku do wrzucenia!";
+		header('Location: index.php');
 	} 
 	elseif ($filesize > 10*MB)
 	{	
 		// file size error
-		echo('Plik jest zbyt duży!');
-		//header('Location: index.php');
+		//echo "Plik jest zbyt duży!";
+		header('Location: index.php');
 	}
 	else
 	{
 		// file type error
-		echo('Tylko te pliki są akceptowalne');
+		//echo "Tylko te pliki są akceptowalne: " . implode(', ',$allowed_file_types);
 		//unlink($_FILES["videovid"]["tmp_name"]);
-		//header('Location: index.php');
+		header('Location: index.php');
 	}
 	if (!$upload) { 
 	  header('Location: blad.php?id=3');
 	}
   } else {
-    //header('Location: index.php');
-    echo('ERROR 5 - Problem z filmem.');
+    header('Location: index.php');
+    //echo('ERROR 5 - Problem z filmem.');
 }
   if ($_POST['titlevid'] == false) {
-    //header('Location: index.php');
-    echo('ERROR 1 - Brak tytułu.');
+    header('Location: index.php');
+    //echo('ERROR 1 - Brak tytułu.');
   } else if ($_POST['descvid'] == false) {
-    //header('Location: index.php');
-    echo('ERROR 2 - Brak opisu.');
+    header('Location: index.php');
+    //echo('ERROR 2 - Brak opisu.');
   } else if ($_POST['videovid'] == false) {
-    //header('Location: index.php');
-    echo('ERROR 3 - Brak filmu.');
+    header('Location: index.php');
+    //echo('ERROR 3 - Brak filmu.');
   }
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
@@ -108,8 +109,8 @@ if ($_SESSION['z1'] == true) {
   $source = file_get_contents($film);
   fwrite($destination, $source, strlen($source)); */
 } else {
-//header('Location: index.php');
-echo('ERROR 4 - Nie jesteś zalogowany.');
+header('Location: index.php');
+//echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 ?>
