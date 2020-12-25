@@ -24,15 +24,15 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   while($error == 1) {
       $viddleid = rand(1000000,9999999);
       if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
-			   $d2 = $result->num_rows;
-			   if (isset($d2) && $d2 >= '1') {
-				   $error = 1;
+	 $d2 = $result->num_rows;
+	 if (isset($d2) && $d2 >= '1') {
+	    $error = 1;
          } else {
-           $error = 0;
+            $error = 0;
          }
-        if ($licznik>=100) {
-           $error = 2;
-        }
+         if ($licznik>=100) {
+            $error = 2;
+         }
   }
   
   if($error=2) {
