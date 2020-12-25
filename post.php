@@ -49,7 +49,7 @@ if ($_SESSION['z1'] == true) {
   if (in_array($file_ext,$allowed_file_types) && ($filesize < 10*MB))
   {	
 	$newfilename = $viddleid . $file_ext;
-	$conn_id = ftp_connect("ftpupload.net");
+	$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
 	$res = ftp_size($conn_id, $file);
 	$sciezka = "/viddlecdn.ml/htdocs/videos/" . $newfilename;
