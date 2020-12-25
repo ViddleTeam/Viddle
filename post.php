@@ -59,13 +59,15 @@ if ($_SESSION['z1'] == true) {
 	  //header('Location: blad.php?id=4');
 	} else {	
 	  ftp_put($conn_id, $sciezka, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
-	  //echo "Wrzucono film.";	
-	}
-	  ftp_close($conn_id);
-	if (!$upload) { 
+	  //echo "Wrzucono film.";
+	  if (!$upload) { 
     	  header('Location: blad.php?id=3');
-  	}
-	$uplsuccess = 1;
+	  $uplsuccess = 0;
+  	  } else {
+	  $uplsuccess = 1;
+	  }
+	  ftp_close($conn_id);
+	}
   } elseif (empty($file_basename)) {	
 		// file selection error
 		echo "Podaj nazwę pliku do wrzucenia!";
