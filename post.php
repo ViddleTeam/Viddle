@@ -15,10 +15,11 @@ if ($_SESSION['z1'] == true) {
   
   $login = $_SESSION['user'];
   $filename = $_FILES["videovid"]["name"];
+  $newfilename = $viddleid . $_FILES["videovid"]["type"];
   $file_basename = substr($filename, 0, strripos($filename, '.'));
-  $file_ext = substr($filename, strripos($filename, '.'));
+  $file_ext = $_FILES["videovid"]["type"];
   $filesize = $_FILES["videovid"]["size"];
-  $allowed_file_types = array('.mp4','.mov','.webm','.wmv','.3gp','.mkv','.m4v');	
+  $allowed_file_types = array('video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp');	
   define('MB', 1048576);
   require "danesql.php";
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -48,7 +49,6 @@ if ($_SESSION['z1'] == true) {
 
   if (in_array($file_ext,$allowed_file_types) && ($filesize < 10*MB))
   {	
-	$newfilename = $viddleid . $file_ext;
 	$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
 	$res = ftp_size($conn_id, $file);
@@ -74,9 +74,9 @@ if ($_SESSION['z1'] == true) {
 		header('Location: index.php');
   } else {
 		// file type error
-		echo "Tylko te pliki są akceptowalne: ";
+		//echo "Tylko te pliki są akceptowalne: ";
 		//unlink($_FILES["videovid"]["tmp_name"]);
-		//header('Location: index.php');
+		header('Location: index.php');
   }
   $viddlepath = $viddleid;
   $viddlepath .= ".mp4";
