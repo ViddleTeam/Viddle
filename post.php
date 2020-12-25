@@ -56,8 +56,8 @@ if ($_SESSION['z1'] == true) {
 	elseif (empty($file_basename))
 	{	
 		// file selection error
-		//echo "Podaj nazwę pliku do wrzucenia!";
-		header('Location: index.php');
+		echo "Podaj nazwę pliku do wrzucenia!";
+		//header('Location: index.php');
 	} 
 	elseif ($filesize > 10*MB)
 	{	
