@@ -3,7 +3,7 @@ if ($_POST['titlevid'] == false) {
     header('Location: index.php');
 } else if ($_POST['descvid'] == false) {
     header('Location: index.php');
-} else if ($_POST['videovid'] == false) {
+} else if ($_FILES['videovid'] == false) {
     header('Location: index.php');
 }
 session_start();
@@ -61,6 +61,9 @@ if ($_SESSION['z1'] == true) {
 	  //echo "Wrzucono film.";	
 	}
 	  ftp_close($conn_id);
+	if (!$upload) { 
+    	  header('Location: blad.php?id=3');
+  	}
   } elseif (empty($file_basename)) {	
 		// file selection error
 		echo "Podaj nazwę pliku do wrzucenia!";
@@ -74,9 +77,6 @@ if ($_SESSION['z1'] == true) {
 		echo "Tylko te pliki są akceptowalne: ";
 		//unlink($_FILES["videovid"]["tmp_name"]);
 		//header('Location: index.php');
-  }
-  if (!$upload) { 
-    header('Location: blad.php?id=3');
   }
   $viddlepath = $viddleid;
   $viddlepath .= ".mp4";
