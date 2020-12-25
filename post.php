@@ -68,16 +68,16 @@ if ($_SESSION['z1'] == true) {
 	else
 	{
 		// file type error
-		echo "Tylko te pliki są akceptowalne: " . implode(', ',$allowed_file_types);
+		//echo "Tylko te pliki są akceptowalne: " . implode(', ',$allowed_file_types);
 		//unlink($_FILES["videovid"]["tmp_name"]);
-		//header('Location: index.php');
+		header('Location: index.php');
 	}
 	if (!$upload) { 
 	  header('Location: blad.php?id=3');
 	}
   } else {
-    //header('Location: index.php');
-    echo('ERROR 5 - Problem z filmem.');
+    header('Location: index.php');
+    //echo('ERROR 5 - Problem z filmem.');
 }
   if ($_POST['titlevid'] == false) {
     header('Location: index.php');
