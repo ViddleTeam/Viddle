@@ -43,13 +43,14 @@ if ($_SESSION['z1'] == true) {
 		$conn_id = ftp_connect("ftpupload.net/");
 		$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
 		$res = ftp_size($conn_id, $file);
+		$sciezka = "/viddlecdn.ml/htdocs/videos/" . $newfilename;
 		if ($res != -1) {
     		  //echo "Plik już istnieje.";
 		  header('Location: index.php');
 		  header('Location: blad.php?id=4');
 		else
 		{	
-			ftp_put($conn_id, "/viddlecdn.ml/htdocs/videos/" . $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
+			ftp_put($conn_id, $sciezka, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 			//echo "Wrzucono film.";	
 		}
 		ftp_close($conn_id);
@@ -75,8 +76,6 @@ if ($_SESSION['z1'] == true) {
 	}
 	if (!$upload) { 
 	  header('Location: blad.php?id=3');
-	} else {
-	  echo "Uploaded $source_file to $ftp_server as $destination_file";
 	}
   } else {
     header('Location: index.php');
