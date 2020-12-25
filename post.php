@@ -68,9 +68,9 @@ if ($_SESSION['z1'] == true) {
 	else
 	{
 		// file type error
-		//echo "Tylko te pliki są akceptowalne: " . implode(', ',$allowed_file_types);
+		echo "Tylko te pliki są akceptowalne: ";
 		//unlink($_FILES["videovid"]["tmp_name"]);
-		header('Location: index.php');
+		//header('Location: index.php');
 	}
 	if (!$upload) { 
 	  header('Location: blad.php?id=3');
