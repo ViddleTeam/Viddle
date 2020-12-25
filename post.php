@@ -35,7 +35,7 @@ if ($_SESSION['z1'] == true) {
          }
   }
   
-  if($error=2) {
+  if($error==2) {
       header('Location: blad.php?id=1');
   }
   $viddlepath = $viddleid;
