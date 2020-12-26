@@ -48,9 +48,9 @@ require_once ('partials/navbar.php');
             <p style="color: white; margin-bottom: 10px;">Krok 2/3: Nadaj nazwę filmowi oraz dodaj opis</p>
         </div>
     </div>
-    <div class="container row" style="width: auto; color: white;">
-        <form action="/post.php" method="post" enctype="multipart/form-data">
+    <div class="container row" style="width: auto; color: white;"
         <div class="form-row" style="justify-content: center;">
+            <form action="/post.php" method="post" enctype="multipart/form-data">
             <div class="col-md-12">
                 <div class="md-form form-group" style="width: 100%;">
                     <input type="text" style="color: white;" name="titlevid" class="form-control" id="inputEmail4MD">

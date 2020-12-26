@@ -113,14 +113,15 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av3 ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid ?>">Strona twojego kanału</a>
+                            <a class="dropdown-item waves-effect waves-light" href="channel?id=<?php if (isset($uid)) echo $uid ?>">Strona twojego kanału</a>
                             <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
                             <a class="dropdown-item waves-effect waves-light" href="profilechange.php">Ustawienia grafiki kanału</a>
                             <a class="dropdown-item waves-effect waves-light" href="developers.php">Dla deweloperów</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
                             <?php
-                            } ?>
+                            } 
+                            ?>
                         </div>
                     </li>
                 </ul>
