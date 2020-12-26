@@ -58,7 +58,7 @@ if ($_SESSION['z1'] == true) {
           echo "Plik już istnieje.";
 	  //header('Location: blad.php?id=4');
 	} else {	
-	  ftp_put($conn_id, $sciezka, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
+	  ftp_put($conn_id, $sciezka, $_FILES["videovid"], FTP_BINARY); 
 	  //echo "Wrzucono film.";
 	  if (!$upload) { 
     	  header('Location: blad.php?id=3');
