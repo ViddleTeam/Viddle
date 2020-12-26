@@ -61,12 +61,7 @@ if ($_SESSION['z1'] == true) {
 	  ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
 	  ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	  //echo "Wrzucono film.";
-	  if (!$upload) { 
-    	  header('Location: blad.php?id=3');
-	  $uplsuccess = 0;
-  	  } else {
 	  $uplsuccess = 1;
-	  }
 	  ftp_close($conn_id);
 	}
   } elseif (empty($file_basename)) {	
@@ -82,6 +77,10 @@ if ($_SESSION['z1'] == true) {
 		//echo "Tylko te pliki są akceptowalne: ";
 		//unlink($_FILES["videovid"]["tmp_name"]);
 		header('Location: index.php');
+  }
+  if (!$upload) { 
+    	  header('Location: blad.php?id=3');
+	  $uplsuccess = 0;
   }
   if ($uplsuccess != 1) {
 	header('Location: index.php');
