@@ -91,7 +91,7 @@ a {
 }
 
 body.bg-img {
-	background-image: url('./assets/25529.png');
+	background-image: url('assets/25529.png');
 	display: flex;
 	align-items: flex-start;
 }
