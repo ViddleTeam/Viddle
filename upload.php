@@ -34,7 +34,7 @@ input[type=submit] {
                 <p style="color: white;">Maksymalny dozwolony rozmiar na jeden film wynosi 10 MB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
                 <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja Viddle ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
 								<form action="/post.php" method="post" enctype="multipart/form-data">
-								<input type="file" accept="video/mp4, video/mov, video/webm, video/x-ms-wmv, video/3gpp" name="videovid[]" style="color: white; margin-top: 5px;" /> 
+								<input type="file" accept="video/mp4, video/mov, video/webm, video/x-ms-wmv, video/3gpp" name="videovid" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
 					</div>
