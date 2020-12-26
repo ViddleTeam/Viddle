@@ -47,25 +47,25 @@ if ($_SESSION['z1'] == true) {
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
-	        if (!in_array($file_ext, $allowed_file_types)) {
-        	  header('Location: index.php');
-    		}
-	  	if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
-	  	{	
-		$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
-		$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
-		$res = ftp_size($conn_id, $file);
-		$sciezka = "/viddlecdn.ml/htdocs/videos/";
-		if ($res != -1) {
-		  echo "Plik już istnieje.";
-		  //header('Location: blad.php?id=4');
-		} else {
-		  ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
-		  ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
-		  //echo "Wrzucono film.";
-		  $uplsuccess = 1;
-		  ftp_close($conn_id);
-		}
+	  if (!in_array($file_ext, $allowed_file_types)) {
+            header('Location: index.php');
+    	  }
+	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
+	  {	
+	    $conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
+	    $login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
+	    $res = ftp_size($conn_id, $file);
+	    $sciezka = "/viddlecdn.ml/htdocs/videos/";
+	    if ($res != -1) {
+	      echo "Plik już istnieje.";
+	      //header('Location: blad.php?id=4');
+	    } else {
+	      ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
+	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
+	      //echo "Wrzucono film.";
+	      $uplsuccess = 1;
+	      ftp_close($conn_id);
+	    }
 	  } elseif (empty($file_basename)) {	
 			// file selection error
 			//echo "Podaj nazwę pliku do wrzucenia!";
