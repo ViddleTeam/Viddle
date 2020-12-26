@@ -1,50 +1,29 @@
 <?php
 session_start();
-if ($_SESSION['z1'] == true) 
-{
+if ($_SESSION['z1'] == true) {
     $i = '1';
     $avatar = 'test.png';
     echo "<script>console.log('${$_SESSION['user']}')</script>";
     echo '<script>console.log("script")</script>';
-    
     $login = $_SESSION['user'];
-		       
     require "danesql.php";
     $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-    if ($result = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
-		    mysqli_real_escape_string($connect,$login))))
-
-            $d2 = $result->num_rows;
-			if($d2 == '1')
-			{
-				$dane = $result->fetch_assoc();
-				
-				$_SESSION['avatar'] = $dane['avatarname'];
-				$avatar = $dane['avatarname'];
-				$uid = $dane['uid'];
-				
-				
-				if($avatar == 'x')
-				{
-					$av2 = '0';
-					$av3 = 'avatardomyslny.jpg';
-				}
-				else
-				{
-					$av2 = '1';
-					$av3 = 'grafic/'.$uid.'a.'.$avatar.'';
-				}
-				
-			}
-			else
-			{
-			
-			}
-			
-} 
-else 
-{
+    if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE login='%s'", mysqli_real_escape_string($connect, $login)))) $d2 = $result->num_rows;
+    if ($d2 == '1') {
+        $dane = $result->fetch_assoc();
+        $_SESSION['avatar'] = $dane['avatarname'];
+        $avatar = $dane['avatarname'];
+        $uid = $dane['uid'];
+        if ($avatar == 'x') {
+            $av2 = '0';
+            $av3 = 'avatardomyslny.jpg';
+        } else {
+            $av2 = '1';
+            $av3 = 'grafic/' . $uid . 'a.' . $avatar . '';
+        }
+    } else {
+    }
+} else {
     $i = '0';
 }
 $str = "/channel.php?id=";
@@ -58,10 +37,10 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script data-ad-client="ca-pub-4393741826344878" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title><?php echo $ttl ?></title>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/css/uikit.min.css" />
     UIkit JS
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit.min.js"></script>
@@ -76,7 +55,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
         @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
     <meta name="turbolinks-cache-control" content="no-cache">-->
-    </head>
+</head>
 <body>
 <div class="loader" style="opacity: 0; display: none;">
     <div class="spinner spinner-center">
@@ -86,7 +65,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
     </div>
 </div>
 <div style="opacity: 1;" class="website">
-<header>
+    <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
             <a class="navbar-brand" href="index.php"><img src="https://cdn.discordapp.com/attachments/785086822220169217/792409145197985802/logo.png" width="120px" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
@@ -114,7 +93,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                 <form class="form-inline" method="GET" action="search.php" style="margin-right: auto;">
                     <input id="input_search" class="form-control mr-sm-2" style="width: 20rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
                 </form>
-                
+
                 <?php
                 if ($i == '1') { ?>
 
@@ -123,39 +102,43 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                         <li class="nav-item">
                             <a class="nav-link" href="upload.php" title="Udostępnij film"><img src="https://cdn.discordapp.com/attachments/785086822220169217/787786218812211210/Group_2_2.svg" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
                         </li>
-			    </div>
-                    <?php } ?>
-			<?php if ($i == '0') { ?>
-			<a class="nav-link" href="login.php" style="color: white;">Zaloguj się</a>
-                                
-                            <?php } else { ?>
+                    </div>
+                    <?php
+                    } ?>
+                    <?php if ($i == '0') { ?>
+                        <a class="nav-link" href="login.php" style="color: white;">Zaloguj się</a>
+
+                        <?php
+                    } else { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av3 ?>"></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid  ?>">Strona twojego kanału</a>
-                                <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
-				<a class="dropdown-item waves-effect waves-light" href="profilechange.php">Ustawienia grafiki kanału</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
-                            <?php } ?>
+                            <a class="dropdown-item waves-effect waves-light" href="channel.php?id=<?php if (isset($uid)) echo $uid ?>">Strona twojego kanału</a>
+                            <a class="dropdown-item waves-effect waves-light" href="creatorstudio.php">Studio twórców</a>
+                            <a class="dropdown-item waves-effect waves-light" href="profilechange.php">Ustawienia grafiki kanału</a>
+                            <a class="dropdown-item waves-effect waves-light" href="developers.php">Dla deweloperów</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item waves-effect waves-light" href="logout.php">Wyloguj się</a>
+                            <?php
+                            } ?>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-<!--    <header>
-        <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active">
-                        <a href="/">
-                            <img src="https://cdn.ampersandbot.pl/p1X7yQuco.png" width="120px" />
-                        </a>
-                    </li>
-                    <li class="uk-parent"><a href="#">link 2</a></li>
-                    <li><a href=""></a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>-->
+    <!--    <header>
+            <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active">
+                            <a href="/">
+                                <img src="https://cdn.ampersandbot.pl/p1X7yQuco.png" width="120px" />
+                            </a>
+                        </li>
+                        <li class="uk-parent"><a href="#">link 2</a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>-->
