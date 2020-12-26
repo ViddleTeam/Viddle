@@ -67,7 +67,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit-icons.min.js"></script>-->
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="Viddle - polska alternatywa dla YouTube">
+    <meta property="og:title" content="Viddle">
     <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
@@ -121,7 +121,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                 <ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="upload.php" title="Udostępnij film"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
+                            <a class="nav-link" href="upload.php" title="Udostępnij film"><img src="https://cdn.discordapp.com/attachments/785086822220169217/787786218812211210/Group_2_2.svg" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
                         </li>
 			    </div>
                     <?php } ?>
