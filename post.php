@@ -48,7 +48,7 @@ if ($_SESSION['z1'] == true) {
     header('Location: blad.php?id=1');
   }
 
-  if (($file_ext=="video/mp4") || ($file_ext=="video/mov") || ($file_ext=="video/webm") || ($file_ext=="ideo/x-ms-wmv") || ($file_ext=="video/3gpp") && ($filesize < 10*MB))
+  if (($file_ext=="video/mp4" || $file_ext=="video/mov" || $file_ext=="video/webm" || $file_ext=="ideo/x-ms-wmv" || $file_ext=="video/3gpp") && ($filesize < 10*MB))
   {	
 	$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
@@ -66,7 +66,7 @@ if ($_SESSION['z1'] == true) {
 	}
   } elseif (empty($file_basename)) {	
 		// file selection error
-		echo "Podaj nazwę pliku do wrzucenia!";
+		//echo "Podaj nazwę pliku do wrzucenia!";
 		//header('Location: index.php');
   } elseif ($filesize > 10*MB) {	
 		// file size error
