@@ -48,7 +48,7 @@ if ($_SESSION['z1'] == true) {
 		    } else {
 		      $error = 0;
 		    }
-		    if (isset($licznik) && $licznik>=100) {
+		    if ($licznik>=100) {
 		      $error = 2;
 		    }
 	  }
@@ -56,9 +56,6 @@ if ($_SESSION['z1'] == true) {
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
-	  if ($file_ext!="video/mp4") {
-            header('Location: index.php');
-    	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {	
 	    $conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
@@ -111,7 +108,7 @@ if ($_SESSION['z1'] == true) {
 	  {
 	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')");
 	  }
-	  if (isset($success) && $success) {
+	  if ($success) {
 	     header('Location: video.php?id=' . $viddleid);
 	  } else {
 	     header('Location: blad.php?id=2');
@@ -128,4 +125,4 @@ if ($_SESSION['z1'] == true) {
 echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
-
+?>
