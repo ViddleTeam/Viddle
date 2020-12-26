@@ -53,12 +53,13 @@ if ($_SESSION['z1'] == true) {
 	$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
 	$res = ftp_size($conn_id, $file);
-	$sciezka = "/viddlecdn.ml/htdocs/videos/" . $newfilename;
+	$sciezka = "/viddlecdn.ml/htdocs/videos/";
 	if ($res != -1) {
           echo "Plik już istnieje.";
 	  //header('Location: blad.php?id=4');
-	} else {	
-	  ftp_put($conn_id, $sciezka, $_FILES["videovid"], FTP_BINARY); 
+	} else {
+	  ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
+	  ftp_put($conn_id, $newfilename, $_FILES["videovid"], FTP_BINARY); 
 	  //echo "Wrzucono film.";
 	  if (!$upload) { 
     	  header('Location: blad.php?id=3');
