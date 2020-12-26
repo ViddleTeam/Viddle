@@ -90,6 +90,9 @@ if ($_SESSION['z1'] == true) {
 	  $viddlepath = $viddleid;
 	  $viddlepath .= ".mp4";
 	  $data = date("Y-m-d H:i:s");
+	  if (!in_array($file_ext, $allowed_file_types)) {
+            header('Location: index.php');
+    	  }
 	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$file_ext', '$tytul', '$opis', 'x', '$data')");
 	  if ($success) {
 	     header('Location: video.php?id=' . $viddleid);
