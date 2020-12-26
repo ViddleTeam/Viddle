@@ -48,7 +48,7 @@ if ($_SESSION['z1'] == true) {
     header('Location: blad.php?id=1');
   }
 
-  if (in_array($ext_type, $allowed) ||  && ($filesize < 10*MB))
+  if (in_array($ext_type, $allowed)  && ($filesize < 10*MB))
   {	
 	$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
