@@ -16,7 +16,6 @@ if ($_SESSION['z1'] == true) {
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
-	  $newfilename = $viddleid . $_FILES["videovid"]["type"];
 	  $file_basename = substr($filename, 0, strripos($filename, '.'));
 	  $file_ext = mime_content_type($_FILES["videovid"]["tmp_name"]);
 	  $filesize = $_FILES["videovid"]["size"];
@@ -43,7 +42,7 @@ if ($_SESSION['z1'] == true) {
 		      $error = 2;
 		    }
 	  }
-
+	  $newfilename = $viddleid . $_FILES["videovid"]["type"];
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
