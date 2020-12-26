@@ -13,12 +13,12 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
-  
+  if (is_uploaded_file($_FILE['videovid']['tmp_name'])) {
   $login = $_SESSION['user'];
   $filename = $_FILES["videovid"]["name"];
   $newfilename = $viddleid . $_FILES["videovid"]["type"];
   $file_basename = substr($filename, 0, strripos($filename, '.'));
-  $file_ext = $_FILES["videovid"]["type"];
+  $file_ext = mime_content_type($_FILE['videovid']['tmp_name']);
   $filesize = $_FILES["videovid"]["size"];
   $allowed_file_types = array('video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp');	
   define('MB', 1048576);
@@ -46,10 +46,6 @@ if ($_SESSION['z1'] == true) {
   
   if($error==2) {
     header('Location: blad.php?id=1');
-  }
-  if ($file_ext!="video/mp4" && $file_ext!="video/mov" && $file_ext!="video/webm" && $file_ext!="ideo/x-ms-wmv" && $file_ext!="video/3gpp")
-  {
-	header('Location: index.php');
   }
   if (($file_ext=="video/mp4" || $file_ext=="video/mov" || $file_ext=="video/webm" || $file_ext=="ideo/x-ms-wmv" || $file_ext=="video/3gpp") && ($filesize < 10*MB))
   {	
@@ -100,9 +96,12 @@ if ($_SESSION['z1'] == true) {
 /*  $destination = fopen("ftp://epiz_27397310:YPf7vgDQu3JpVm@ftpupload.net/" . $film, "wb");
   $source = file_get_contents($film);
   fwrite($destination, $source, strlen($source)); */
+  } else {
+    header('Location: index.php');
+  }
 } else {
-//header('Location: index.php');
-echo('ERROR 4 - Nie jesteś zalogowany.');
+header('Location: index.php');
+//echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 ?>
