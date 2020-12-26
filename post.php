@@ -18,7 +18,7 @@ if ($_SESSION['z1'] == true) {
 	  $filename = $_FILES["videovid"]["name"];
 	  $newfilename = $viddleid . $_FILES["videovid"]["type"];
 	  $file_basename = substr($filename, 0, strripos($filename, '.'));
-	  $file_ext = mime_content_type($_FILE['videovid']['tmp_name']);
+	  $file_ext = mime_content_type($_FILES['videovid']['tmp_name']);
 	  $filesize = $_FILES["videovid"]["size"];
 	  $allowed_file_types = ['video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp'];	
 	  define('MB', 1048576);
