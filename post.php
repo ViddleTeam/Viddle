@@ -97,7 +97,8 @@ if ($_SESSION['z1'] == true) {
 	  $source = file_get_contents($film);
 	  fwrite($destination, $source, strlen($source)); */
   } else {
-    header('Location: index.php');
+    //header('Location: index.php');
+    echo('brak pliku');
   }
 } else {
 //header('Location: index.php');
