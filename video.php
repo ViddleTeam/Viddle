@@ -241,8 +241,9 @@ else
     </div>
   </div>
 </div>
-<!-- JS -->
-<script src="partials/footer.php"></script>
+    <?php
+    require_once('partials/footer.php');
+    ?>
 <?php 
 	if ($video_exists == false) {
 		echo "<script>

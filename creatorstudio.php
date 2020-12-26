@@ -42,14 +42,9 @@ require_once('partials/navbar.php');
         </div>
         </div>
             </div>
-		
-		<?php 
+
+<?php
 require_once('partials/footer.php');
 ?>
-<!-- JS -->
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
-<script src="script.js"></script>
 
 <div class="hiddendiv common"></div></body></html>

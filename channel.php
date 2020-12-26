@@ -62,16 +62,16 @@ if ($result = @$connect->query(
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
 		<div class="banner mx-auto">
-			<img class="img-fluid" src="<?php echo $ba3; ?>" style="margin: auto; " height="100%" width="100%"/>
+			<img class="img-fluid" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto; " height="100%" width="100%"/>
 		</div>
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4; ?>">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
 					<h3 style="align-items: center;"><?php echo $nazwa; ?></h3>
-					<p style="text-align: left; margin-bottom: 20px;"><?php echo $obserwatorzy; ?> obserwujących</p>
+					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
 					<div class="row">
@@ -182,10 +182,4 @@ if ($result = @$connect->query(
 <?php 
 require_once('partials/footer.php');
 ?>
-<!-- JS -->
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
-<script src="script.js"></script>
-
 <div class="hiddendiv common"></div></body></html>

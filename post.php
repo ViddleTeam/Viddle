@@ -48,7 +48,7 @@ if ($_SESSION['z1'] == true) {
 		    } else {
 		      $error = 0;
 		    }
-		    if ($licznik>=100) {
+		    if (isset($licznik) && $licznik>=100) {
 		      $error = 2;
 		    }
 	  }
@@ -111,7 +111,7 @@ if ($_SESSION['z1'] == true) {
 	  {
 	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')");
 	  }
-	  if ($success) {
+	  if (isset($success) && $success) {
 	     header('Location: video.php?id=' . $viddleid);
 	  } else {
 	     header('Location: blad.php?id=2');
@@ -128,4 +128,4 @@ if ($_SESSION['z1'] == true) {
 echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
-?>
+

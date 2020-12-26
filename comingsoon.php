@@ -117,7 +117,7 @@
     <br>
     <center>
         <p style="text-align: center;">
-            &copy; 2020-<script>var d = new Date(); var n = d.getFullYear(); document.write(n);</script> Viddle Team
+            &copy; 2020 - <?php echo date('Y') ?> Viddle Team
         </p>
     </center>
     </body>
