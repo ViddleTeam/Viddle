@@ -21,6 +21,16 @@ if ($_SESSION['z1'] == true) {
 	  $filesize = $_FILES["videovid"]["size"];
 	  $allowed_file_types = ['video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp'];	
 	  define('MB', 1048576);
+	  function ext($mime_type){
+	    $extensions = array('video/mp4' => '.mp4',
+                          'video/mov' => '.mov',
+			  'video/webm' => '.webm',
+			  'video/x-ms-wmv' => '.wmv',
+			  'video/3gpp' => '.3gpp',
+                          );
+    	    return $extensions[$mime_type];
+	  }
+	  $test = ext($file_ext);
 	  require "danesql.php";
 	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $viddleid = rand(1000000,9999999);
@@ -42,7 +52,7 @@ if ($_SESSION['z1'] == true) {
 		      $error = 2;
 		    }
 	  }
-	  $newfilename = $viddleid . $_FILES["videovid"]["type"];
+	  $newfilename = $viddleid . $test;
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
