@@ -88,7 +88,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 <div style="opacity: 1;" class="website">
 <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
-            <a class="navbar-brand" href="index.php"><img src="https://cdn.ampersandbot.pl/p1X7yQuco.png" width="120px" /></a>
+            <a class="navbar-brand" href="index.php"><img src="https://cdn.discordapp.com/attachments/785086822220169217/792409145197985802/logo.png" width="120px" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
                     aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
