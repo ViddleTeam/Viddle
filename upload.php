@@ -80,8 +80,8 @@ input[type=submit] {
           </div>
         </div>
      <center>
-	     <!-- PROSZE NIE USUWAC class="btn btn-success" TYMCZASOWO, DZIEKI - lort533 -->
-	     <p style="color: white;"><input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie"></p>
+	     <!-- PROSZE NIE DODAWAC class="btn btn-success" TYMCZASOWO, DZIEKI - lort533 -->
+	     <p style="color: white;"><input type="submit" value="Rozpocznij przesyłanie"></p>
      </center>
 	     </form>
      </div>
