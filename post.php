@@ -47,7 +47,10 @@ if ($_SESSION['z1'] == true) {
   if($error==2) {
     header('Location: blad.php?id=1');
   }
-
+  if ($file_ext!="video/mp4" && $file_ext!="video/mov" && $file_ext!="video/webm" && $file_ext!="ideo/x-ms-wmv" && $file_ext!="video/3gpp")
+  {
+	header('Location: index.php');
+  }
   if (($file_ext=="video/mp4" || $file_ext=="video/mov" || $file_ext=="video/webm" || $file_ext=="ideo/x-ms-wmv" || $file_ext=="video/3gpp") && ($filesize < 10*MB))
   {	
 	$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
