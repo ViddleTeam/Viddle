@@ -13,7 +13,7 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
-  if (is_uploaded_file($_FILE['videovid']['tmp_name'])) {
+  if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
 	  $newfilename = $viddleid . $_FILES["videovid"]["type"];
