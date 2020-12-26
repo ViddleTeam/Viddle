@@ -70,21 +70,24 @@ if ($_SESSION['z1'] == true) {
 			// file selection error
 			//echo "Podaj nazwę pliku do wrzucenia!";
 			//header('Location: index.php');
+		  	$uplsuccess = 0;
 	  } elseif ($filesize > 10*MB) {	
 			// file size error
 			//echo "Plik jest zbyt duży!";
 			header('Location: index.php');
+		  	$uplsuccess = 0;
 	  } else {
 			// file type error
 			//echo "Tylko te pliki są akceptowalne: ";
 			//unlink($_FILES["videovid"]["tmp_name"]);
 			header('Location: index.php');
+		  	$uplsuccess = 0;
 	  }
 	  if (!$upload) { 
 		  header('Location: blad.php?id=3');
 		  $uplsuccess = 0;
 	  }
-	  if ($uplsuccess != 1) {
+	  if ($uplsuccess == 0) {
 		header('Location: index.php');
 	  }
 	  $viddlepath = $viddleid;
