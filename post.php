@@ -70,6 +70,7 @@ if ($_SESSION['z1'] == true) {
 	      //header('Location: blad.php?id=4');
 	    } else {
 	      ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
+	      ftp_mkdir($conn_id, $viddleid);
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
