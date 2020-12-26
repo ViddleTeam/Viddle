@@ -20,7 +20,7 @@ if ($_SESSION['z1'] == true) {
 	  $file_basename = substr($filename, 0, strripos($filename, '.'));
 	  $file_ext = mime_content_type($_FILE['videovid']['tmp_name']);
 	  $filesize = $_FILES["videovid"]["size"];
-	  $allowed_file_types = array('video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp');	
+	  $allowed_file_types = ['video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp'];	
 	  define('MB', 1048576);
 	  require "danesql.php";
 	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -47,7 +47,7 @@ if ($_SESSION['z1'] == true) {
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
-	  if (($file_ext=="video/mp4" || $file_ext=="video/mov" || $file_ext=="video/webm" || $file_ext=="ideo/x-ms-wmv" || $file_ext=="video/3gpp") && ($filesize < 10*MB))
+	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {	
 		$conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 		$login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
