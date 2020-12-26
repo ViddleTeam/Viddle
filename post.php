@@ -15,11 +15,11 @@ if ($_SESSION['z1'] == true) {
   $film = $_POST['videovid'];
   
   $login = $_SESSION['user'];
-  $filename = $_FILES['videovid']['name'];
-  $newfilename = $viddleid . $_FILES['videovid']['type'];
+  $filename = $_FILES["videovid"]["name"];
+  $newfilename = $viddleid . $_FILES["videovid"]["type"];
   $file_basename = substr($filename, 0, strripos($filename, '.'));
-  $file_ext = $_FILES['videovid']['type'];
-  $filesize = $_FILES['videovid']['size'];
+  $file_ext = $_FILES["videovid"]["type"];
+  $filesize = $_FILES["videovid"]["size"];
   $allowed_file_types = array('video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp');	
   define('MB', 1048576);
   require "danesql.php";
@@ -59,7 +59,7 @@ if ($_SESSION['z1'] == true) {
 	  //header('Location: blad.php?id=4');
 	} else {
 	  ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
-	  ftp_put($conn_id, $newfilename, $_FILES['videovid']['tmp_name'], FTP_BINARY); 
+	  ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	  //echo "Wrzucono film.";
 	  if (!$upload) { 
     	  header('Location: blad.php?id=3');
@@ -89,7 +89,7 @@ if ($_SESSION['z1'] == true) {
   $viddlepath = $viddleid;
   $viddlepath .= ".mp4";
   $data = date("Y-m-d H:i:s");
-  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$file_ext', '$tytul', '$opis', 'x', '$data')");
+  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$filename', '$tytul', '$opis', 'x', '$data')");
   if ($success) {
      header('Location: video.php?id=' . $viddleid);
   } else {
