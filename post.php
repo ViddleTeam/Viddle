@@ -16,7 +16,7 @@ if ($_SESSION['z1'] == true) {
   
   $login = $_SESSION['user'];
   $filename = $_FILES['videovid']['name'];
-  $newfilename = $viddleid . $_FILES["videovid"]["type"];
+  $newfilename = $viddleid . $_FILES['videovid']['type'];
   $file_basename = substr($filename, 0, strripos($filename, '.'));
   $file_ext = $_FILES['videovid']['type'];
   $filesize = $_FILES['videovid']['size'];
