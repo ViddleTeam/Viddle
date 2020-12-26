@@ -47,7 +47,7 @@ if ($_SESSION['z1'] == true) {
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
-	  if (!in_array($file_ext, $allowed_file_types)) {
+	  if ($file_ext!="video/mp4") {
             header('Location: index.php');
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
