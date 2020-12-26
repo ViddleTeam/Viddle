@@ -20,9 +20,9 @@ require_once('partials/navbar.php');
             </div>
         </div>
     </div>
-<script>
-    $('#staticBackdrop').modal('show');
-</script>
 <?php
 require_once('partials/footer.php');
 ?>
+<script>
+    $('#staticBackdrop').modal('show');
+</script>
