@@ -39,8 +39,9 @@
         </div>
         <div class="tile" style="margin: auto;">
             <?php
-            $sprntf = sprintf('%s', mysqli_real_escape_string($db, $search_query));
-            if ($result = @$db->query("SELECT * FROM viddle_videos WHERE title LIKE %$sprntf%")) {
+
+            $sprntf = sprintf("%s", mysqli_real_escape_string($db, $search_query));
+            if ($result = @$db->query("SELECT * FROM viddle_videos WHERE title LIKE %".$sprntf."%")) {
                 $arr = $result->fetch_assoc();
                 foreach ($arr as $value) {
                     echo '
