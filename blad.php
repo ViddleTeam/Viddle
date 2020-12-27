@@ -5,7 +5,7 @@ body {
   top: 50%;
   left: 50%;
 }
-input[type=submit] {
+button {
     outline: none;
     margin: 10px;
     height: 50px;
