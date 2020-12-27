@@ -5,6 +5,12 @@ body {
   top: 50%;
   left: 50%;
 }
+input[type=submit] {
+    outline: none;
+    margin: 10px;
+    height: 50px;
+    width: 225px;
+}
 </style>
 <?php
 $id = $_GET['id'];
