@@ -25,9 +25,8 @@ if($id=="1") {
   $test = "Wystąpił nieznany błąd, Koniecznie przekaż to naszej drużynie.<br />";
 }
 ?>
+<center>
 <img src="pwnedimg.png" width="200" height="200"/>
 <h1>Ups.</h1>
-
-
 <?php echo($test) ?>
 <a href="index.php"><p style="color: white;"><button class="btn btn-success">Powrót do strony głównej</button></p></a></center>
