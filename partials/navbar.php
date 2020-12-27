@@ -118,7 +118,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                             <a class="dropdown-item waves-effect waves-light" href="profilechange">Ustawienia grafiki kanału</a>
                             <a class="dropdown-item waves-effect waves-light" href="developers">Dla deweloperów</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item waves-effect waves-light" href="logout">Wyloguj się</a>
+                            <a class="dropdown-item waves-effect waves-light" href="logoust">Wyloguj się</a>
                             <?php
                             } 
                             ?>
