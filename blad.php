@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="style.css">
 <style>
 body {
-  top: 50%;
+  position:absolute;
+  top:50%;
 }
 </style>
 <center>Jakiś powód<br />
