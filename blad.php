@@ -26,4 +26,4 @@ if($id=="1") {
 ?>
 <center><h1>Wystąpił błąd!</h1><br />
 <?php echo($test) ?><br />
-<a href="index.php"><p style="color: white;"><button>Powrót do strony głównej</button></p></a></center>
+<a href="index.php"><p style="color: white;"><button class="btn btn-success">Powrót do strony głównej</button></p></a></center>
