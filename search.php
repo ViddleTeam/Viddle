@@ -41,7 +41,7 @@
             <?php
 
             $sprntf = sprintf("%s", mysqli_real_escape_string($db, $search_query));
-            if ($result = @$db->query("SELECT * FROM viddle_videos WHERE title LIKE %".$sprntf."%")) {
+            if ($result = @$db->query("SELECT * FROM viddle_videos WHERE title LIKE %${sprintf("%s", mysqli_real_escape_string($db, $search_query))}%") {
                 $arr = $result->fetch_assoc();
                 foreach ($arr as $value) {
                     echo '

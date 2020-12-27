@@ -3,13 +3,11 @@ session_start();
 if ($_SESSION['z1'] == true) {
     $i = '1';
     $avatar = 'test.png';
-    echo "<script>console.log('${$_SESSION['user']}')</script>";
-    echo '<script>console.log("script")</script>';
     $login = $_SESSION['user'];
     require "danesql.php";
     $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE login='%s'", mysqli_real_escape_string($connect, $login)))) $d2 = $result->num_rows;
-    if ($d2 == '1') {
+    if (isset($d2) && $d2 == '1') {
         $dane = $result->fetch_assoc();
         $_SESSION['avatar'] = $dane['avatarname'];
         $avatar = $dane['avatarname'];
