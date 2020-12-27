@@ -23,7 +23,7 @@
         <div style="opacity: 1;" class="website">
     <?php 
 		require_once("partials/navbar.php");
-		$search_query = $_POST['q'];
+		$search_query = $_GET['q'];
 	?>
       <div class="container" style="margin-top:30px;">
         <div class="row">

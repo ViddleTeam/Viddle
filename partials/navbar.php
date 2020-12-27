@@ -76,21 +76,21 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
                 <ul class="navbar-nav mr-auto">
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <span class="d-lg-none">Strona główna</span></a>
+                            <a class="nav-link" href="index" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <span class="d-lg-none">Strona główna</span></a>
                         </li>
                     </div>
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="trending.php" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <span class="d-lg-none">Popularne</span></a>
+                            <a class="nav-link" href="trending" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <span class="d-lg-none">Popularne</span></a>
                         </li>
                     </div>
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="discover.php" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <span class="d-lg-none">Odkrywaj</span></a>
+                            <a class="nav-link" href="discover" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <span class="d-lg-none">Odkrywaj</span></a>
                         </li>
                     </div>
                 </ul>
-                <form class="form-inline" method="GET" action="search.php" style="margin-right: auto;">
+                <form class="form-inline" method="GET" action="search" style="margin-right: auto;">
                     <input id="input_search" class="form-control mr-sm-2" style="width: 20rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
                 </form>
 
