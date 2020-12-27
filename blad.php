@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="style.css">
+<title>Wystąpił błąd!</title>
 <style>
 body {
   top: 50%;
