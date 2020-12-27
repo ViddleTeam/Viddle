@@ -21,9 +21,9 @@ if($id=="1") {
 } elseif($id=="3") {
   $test = "Wystąpił poważny błąd serwisu! Jeżeli problem nie ustąpi, skontaktuj się z deweloperami strony.<br /> <h3>Kod błędu: 0x00003c</h3>";
 } else {
-  $test = "Heh, śmieszne. Wystąpił błąd taki, że w linku nie podano kodu błędu. Śmieszne, co nie?";
+  $test = "Heh, śmieszne. Wystąpił błąd taki, że w linku nie podano kodu błędu. Śmieszne, co nie?<br />";
 }
 ?>
 <center><h1>Wystąpił błąd!</h1><br />
-<?php echo($test) ?><br />
+<?php echo($test) ?>
 <a href="index.php"><p style="color: white;"><button class="btn btn-success">Powrót do strony głównej</button></p></a></center>
