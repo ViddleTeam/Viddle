@@ -25,7 +25,8 @@ if($id=="1") {
   $test = "Wystąpił nieznany błąd, Koniecznie przekaż to naszej drużynie.<br />";
 }
 ?>
-<center><h1>Ups.</h1></center>
+<img src="pwnedimg.png" />
+<h1>Ups.</h1>
 
 
 <?php echo($test) ?>
