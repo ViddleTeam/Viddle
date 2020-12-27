@@ -11,7 +11,7 @@ if ($result = @$connect->query(
 		    mysqli_real_escape_string($connect,$login))))
 	
 	$d2 = $result->num_rows;
-	if($d2 == '1')
+	if (isset($d2) && $d2 == '1')
 	{
 		$dane = $result->fetch_assoc();
 		

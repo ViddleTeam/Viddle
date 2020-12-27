@@ -24,6 +24,11 @@
     <?php 
 		require_once("partials/navbar.php");
 		$search_query = $_GET['q'];
+		require 'danesql.php';
+		$db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+		if ($result = @$db->query(sprintf("SELECT * FROM viddle_videos WHERE title LIKE '%s'", mysqli_real_escape_string($db, $search_query)))) {
+		    $arr = $result->fetch_assoc();
+        }
 	?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -34,8 +39,15 @@
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania dla: <?php echo $search_query; ?></h4>
               </div>
-            </div>
+          </div>
             <div class="tile" style="margin: auto;">
+                <?php
+                if (isset($arr)) {
+                    foreach ($arr as $key => $value) {
+                        echo "<script>console.log('$key -> $value')</script>";
+                    }
+                }
+                ?>
                 <div class="card">
                     <a href="video.php">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
