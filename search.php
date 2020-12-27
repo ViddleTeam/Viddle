@@ -40,7 +40,7 @@
         <div class="tile" style="margin: auto;">
             <?php
             $x = $db->real_escape_string($search_query);
-            $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
+            $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$search_query}%");
             $stmt->execute();
             $stmt->store_result();
             if ($stmt->num_rows === 0) exit('No Search Results');
