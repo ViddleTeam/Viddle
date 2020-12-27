@@ -40,10 +40,10 @@
         <div class="tile" style="margin: auto;">
             <?php
             $x = $db->real_escape_string($search_query);
-            $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$search_query}%");
+            $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
             $stmt->execute();
             $stmt->store_result();
-            if ($stmt->num_rows === 0) exit('No Search Results');
+            if ($stmt->num_rows === 0) exit("Nie znaleziono filmów dla: <b>{$search_query}</b>.");
             $stmt->bind_result($publisher, $video_id, $views, $title);
             $stmt->fetch();
             while ($stmt->fetch()) { ?>
