@@ -43,7 +43,7 @@
             $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
             $stmt->execute();
             $stmt->store_result();
-            if ($stmt->num_rows === 0) exit("Nie znaleziono filmów dla: <b>{$search_query}</b>.");
+            if ($stmt->num_rows === 0) exit("Nie znaleziono filmów.");
             $stmt->bind_result($publisher, $video_id, $views, $title);
             $stmt->fetch();
             while ($stmt->fetch()) { ?>
