@@ -42,7 +42,7 @@
             if ($result = @$db->query(sprintf("SELECT * FROM viddle_videos WHERE title LIKE '%s'", mysqli_real_escape_string($db, $search_query)))) {
                 $arr = $result->fetch_assoc();
                 foreach ($arr as $value) {
-                    ?>
+                    echo '
                     <div class="card">
                         <a href="video.php">
                             <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
@@ -55,10 +55,10 @@
                             </div>
                         </a>
                     </div>
-                    <?php
+                    ';
                 }
-                unset($value);
-            } ?>
+            }
+            ?>
         </div>
     </div>
     <?php
