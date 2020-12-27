@@ -10,7 +10,12 @@ require_once('partials/navbar.php');
         <div class="col-lg-12">
             <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Dla Deweloperów</h4><br>
             <center>
-
+                <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -125px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
+                    <img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
+                    <button type="button" class="btn btn-gray" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
+                    <button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
+                    <p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut.</p>
+                </div>
             </center>
             </p>
         </div>
