@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="style.css">
 <style>
 body {
-  position:absolute;
   top: 50%;
   left: 50%;
 }
