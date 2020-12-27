@@ -39,7 +39,7 @@
         </div>
         <div class="tile" style="margin: auto;">
             <?php
-            if ($result = $db->query("SELECT * FROM viddle_videos WHERE title LIKE '%?%'", $db->real_escape_string($search_query))) {
+            if ($result = $db->query("SELECT * FROM viddle_videos WHERE title LIKE '%(?)%'", $db->real_escape_string($search_query))) {
                 $arr = $result->fetch_assoc();
                 foreach ($arr as $value) {
                     echo '
