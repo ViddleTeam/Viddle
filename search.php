@@ -57,6 +57,7 @@
                     </div>
                     <?php
                 }
+                unset($value);
             } ?>
         </div>
     </div>
