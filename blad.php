@@ -6,4 +6,4 @@ body {
 }
 </style>
 <center>Jakiś powód<br />
-<a href="index.php"><button>Powrót do strony głównej</button></a></center>
+<a href="index.php"><p style="color: white;"><button>Powrót do strony głównej</button></p></a></center>
