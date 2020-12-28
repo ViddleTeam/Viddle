@@ -32,7 +32,7 @@ if ($_SESSION['z1'] == true) {
 	  }
 	  require "danesql.php";
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-	  $wynik = $connect->query("SELECT * FROM viddle_recent WHERE number=1")
+	  $wynik = $connect->query("SELECT * FROM viddle_recent WHERE number=1");
 	  while($linia = $wynik->fetch_assoc()) {
 	    $czyzbyhmm = $linia["viddle_recent_one_user"];
 	  }
