@@ -38,7 +38,7 @@ if ($_SESSION['z1'] == true) {
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
 	  $viddleid = rand(1000000,9999999);
 	  $rezultat = $connect->query("SELECT `viddle_recent_one_user` FROM viddle_recent");
-          $danedwa = $rezultat->fetch_assoc();
+          $danedwa = $rezultat->fetch_row();
           $lastcheck = $danedwa['viddle_recent_one_user'];
 	  if($lastcheck==$login) {
 	    header('Location: blad.php?id=4');
