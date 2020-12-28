@@ -37,7 +37,7 @@ if ($_SESSION['z1'] == true) {
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
 	  $viddleid = rand(1000000,9999999);
-	  if ($result = @$connect->query(sprintf("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='%s", mysqli_real_escape_string($connect,$login))))
+	  if ($result = @$connect->query("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='$login'"))
 	  $d2 = $result->num_rows;
 	  if (isset($d2) && $d2 >= '1') {
 		header('Location: blad.php?id=4');
