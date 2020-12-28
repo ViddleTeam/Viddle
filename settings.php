@@ -28,7 +28,7 @@ require_once('partials/navbar.php');
   <tbody>
     <tr>
         <th scope="row">
-            <b>Zmień nazwę konta</b><br>
+           <i class="material-icons">edit</i> <b>Zmień nazwę konta</b><br>
             <p>Zmień obecną nazwę konta, pamiętaj że to może utrudnić znalezienie kanału twoim obecnym obserwatorom.</p>
         </th>
         <td><button type="button" class="btn btn-primary" style="padding: 10px;">Zmień</button></td>
