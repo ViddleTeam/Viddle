@@ -106,7 +106,7 @@ if ($_SESSION['z1'] == true) {
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {
-	  $success = $connect->mysqli_real_escape_string(htmlspecialchars(query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')")));
+	  $success = $connect->mysqli_real_escape_string(htmlentities(query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')")));
 	  }
 	  if ($success) {
 	     header('Location: video.php?id=' . $viddleid);
