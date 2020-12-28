@@ -34,7 +34,7 @@ if ($_SESSION['z1'] == true) {
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $result = $connect -> query("SELECT viddle_recent_one_user FROM `viddle_recent` WHERE number=1");
 	  $row = $result -> fetch_row();
-	  if($row[0] == $login) {
+	  if($row['viddle_recent_one_user'] == $login) {
 	    header('Location: blad.php?id=4');
 	  }
 	  $test = ext($file_ext);
