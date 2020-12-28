@@ -36,7 +36,7 @@ if ($_SESSION['z1'] == true) {
 	  while($linia = $wynik->fetch_assoc()) {
 	    $czyzbyhmm = $linia["viddle_recent_one_user"];
 	  }
-	  if($czyzbyhmm==$login) {
+	  if(strstr($login, $czyzbyhmm) != false) {
 	    header('Location: blad.php?id=4');
 	  }
 	  $test = ext($file_ext);
