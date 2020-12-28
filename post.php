@@ -13,6 +13,9 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
+  $zabezpjeden = mysqli_real_escape_string(htmlspecialchars($login));
+  $zabezpdwa = mysqli_real_escape_string(htmlspecialchars($opis));
+  $zabezptrzy = mysqli_real_escape_string(htmlspecialchars($film));
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
@@ -106,7 +109,7 @@ if ($_SESSION['z1'] == true) {
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('".mysqli_real_escape_string(htmlspecialchars($login))."', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '".mysqli_real_escape_string(htmlspecialchars($login))."', '".mysqli_real_escape_string(htmlspecialchars($opis)).")', 'x', '$data')");
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$zabezpjeden', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$login',viddle_recent_one_id='$viddleid' WHERE number = 1;");
