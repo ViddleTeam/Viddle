@@ -4,8 +4,6 @@ require_once('partials/navbar.php');
 ?>
 <html>
 <head>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 </head>
 <body>
 <div class="container" style="margin-top:40px;">
@@ -33,22 +31,21 @@ require_once('partials/navbar.php');
     <tr>
         <th scope="row">
 
-              <i class="material-icons">&#xE87C;</i> 
-            <b>Zmień nazwę konta</b><br>
+            <b>✏️ Zmień nazwę konta</b><br>
             <p>Zmień obecną nazwę konta, pamiętaj że to może utrudnić znalezienie kanału twoim obecnym obserwatorom.</p>
         </th>
         <td><button type="button" class="btn btn-primary" style="padding: 10px;">Zmień</button></td>
     </tr>
     <tr>
         <th scope="row">
-            <b>Zmień hasło</b><br>
+            <b>🔑 Zmień hasło</b><br>
             <p>Zmień obecne hasło na koncie, po zmianie zostaniesz wylogowany z każdego urządzenia.</p>
         </th>
         <td><button type="button" class="btn btn-primary" style="padding: 10px;" >Zmień hasło</button></td>
     </tr>
     <tr>
         <th scope="row">
-            <b>Weryfikacja dwuetapowa (2FA) <span class="badge badge-warning">Już wkrótce</span></b><br>
+            <b>🔒 Weryfikacja dwuetapowa (2FA) <span class="badge badge-warning">Już wkrótce</span></b><br>
             <p>Weryfikacja dwuetapowa jest dobrym rozwiązaniem, żeby chronić swoje konto.</p>
         </th>
         <td><button type="button" class="btn btn-primary" style="padding: 10px;">Włącz</button></td>
