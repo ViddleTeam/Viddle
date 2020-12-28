@@ -28,7 +28,7 @@ require_once('partials/navbar.php');
   <tbody>
     <tr>
         <th scope="row">
-           <i class="material-icons">edit</i> <b>Zmień nazwę konta</b><br>
+           <i class="edit"></i> <b>Zmień nazwę konta</b><br>
             <p>Zmień obecną nazwę konta, pamiętaj że to może utrudnić znalezienie kanału twoim obecnym obserwatorom.</p>
         </th>
         <td><button type="button" class="btn btn-primary" style="padding: 10px;">Zmień</button></td>
@@ -42,7 +42,7 @@ require_once('partials/navbar.php');
     </tr>
     <tr>
         <th scope="row">
-            <b>Weryfikacja dwuetapowa (2FA)<span class="badge badge-warning">Już wkrótce</span></b><br>
+            <b>Weryfikacja dwuetapowa (2FA) <span class="badge badge-warning">Już wkrótce</span></b><br>
             <p>Weryfikacja dwuetapowa jest dobrym rozwiązaniem, żeby chronić swoje konto.</p>
         </th>
         <td><button type="button" class="btn btn-primary" style="padding: 10px;">Włącz</button></td>
