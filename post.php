@@ -121,7 +121,7 @@ if ($_SESSION['z1'] == true) {
 		  $usertwoid = $dane['viddle_recent_two_id'];
 		  $userthree = $dane['viddle_recent_three_user'];
 		  $userthreeid = $dane['viddle_recent_three_id'];
-		  $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_one_user = '$login', viddle_recent_one_id = "$viddleid", viddle_recent_two_user = '$userone', viddle_recent_two_id = "$useroneid", viddle_recent_three_user = '$usertwo', viddle_recent_three_id = "$usertwoid" WHERE number=1;");
+		  $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_one_user = '$login', viddle_recent_one_id = '$viddleid', viddle_recent_two_user = '$userone', viddle_recent_two_id = '$useroneid', viddle_recent_three_user = '$usertwo', viddle_recent_three_id = '$usertwoid' WHERE number=1;");
 	          $video_exists = true;
                 }
                 else
