@@ -35,7 +35,8 @@ if ($_SESSION['z1'] == true) {
 	  $result = $connect -> query("SELECT * FROM `viddle_recent` WHERE number=1;");
 	  $row = $result -> fetch_assoc();
 	  if($row['viddle_recent_one_user'] === $login) {
-	    header('Location: blad.php?id=4');
+		header('Location: blad.php?id=4');
+		exit;
 	  }
 	  $test = ext($file_ext);
 	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
