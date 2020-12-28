@@ -33,9 +33,12 @@ if ($_SESSION['z1'] == true) {
 	  require "danesql.php";
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $pytanko = $connect->query("SELECT viddle_recent_one_user FROM viddle_recent WHERE number=1");
-	  $wtf = $connect->fetch_array($pytanko);
-	  $test = $wtf['viddle_recent_one_user'];
-	  if($test=='1')
+	  $czyzby = $pytanko->fetch_assoc();
+	  $test = $czyzby['viddle_recent_one_user'];
+	  if($test==$login)
+	  {
+		  header('Location: blad.php?id=4');
+	  }
 	  $test = ext($file_ext);
 	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
