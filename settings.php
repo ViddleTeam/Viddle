@@ -2,13 +2,15 @@
 $title = "Ustawienia";
 require_once('partials/navbar.php');
 ?>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <div class="container" style="margin-top:40px;">
     <h4 class="tile-before" style="color:white; margin-top: 60px;"><br>Ustawienia konta</h4>
-    <p>Zmień hasło, nazwę czy awatar</p>
+    <p>Zarządzaj swoim kontem.</p>
     <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Ustawienia ogólne</a>
+      aria-selected="true">Ogólne</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
