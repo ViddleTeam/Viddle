@@ -2,8 +2,12 @@
 $title = "Ustawienia";
 require_once('partials/navbar.php');
 ?>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<html>
+<head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+</head>
+<body>
 <div class="container" style="margin-top:40px;">
     <h4 class="tile-before" style="color:white; margin-top: 60px;"><br>Ustawienia konta</h4>
     <p>Zarządzaj swoim kontem.</p>
@@ -55,6 +59,8 @@ require_once('partials/navbar.php');
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Wkrótce.</div>
 </div>
 </div>
+</body>
+</html>
 <?php
 require_once('partials/footer.php');
 ?>
