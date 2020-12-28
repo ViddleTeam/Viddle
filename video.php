@@ -28,6 +28,7 @@ else
                $views = $dane['views'];
                $komentarze = $dane['comments'];
 	       $video_exists = true;
+	       $uid = $connect->query(sprintf("SELECT uid FROM viddle_users WHERE publisher = '%s''", $connect->real_escape_string($publisher)));
             }
             else
             {
@@ -97,7 +98,7 @@ else
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;">'.$publisher.'</h5>
+                    <a href="channel?id=<?php echo $uid ?>"><h5 style="align-items: center;">'.$publisher.'</h5></a>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$observators.' obserwujących</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
