@@ -106,7 +106,7 @@ if ($_SESSION['z1'] == true) {
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {
-	  $successtwo = $connect->query("SELECT viddle_recent_one_user,viddle_recent_one_id,viddle_recent_two_user,viddle_recent_two_id,viddle_recent_three_user,viddle_recent_three_id FROM viddle_recent WHERE number = 1; UPDATE `viddle_recent` SET `viddle_recent_three_user`=`viddle_recent_two_user`,`viddle_recent_three_id`=`viddle_recent_two_id`,`viddle_recent_two_user`=`viddle_recent_one_user`,`viddle_recent_two_id`=`viddle_recent_one_id`,`viddle_recent_one_user`='$login',`viddle_recent_one_id`='$viddleid';");
+	  $successtwo = $connect->query("SELECT viddle_recent_one_user,viddle_recent_one_id,viddle_recent_two_user,viddle_recent_two_id,viddle_recent_three_user,viddle_recent_three_id FROM viddle_recent WHERE number = 1; UPDATE `viddle_recent` SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$login',viddle_recent_one_id='$vidlleid';");
 	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')");
 	  }
 	  if ($success) {
