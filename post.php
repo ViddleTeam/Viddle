@@ -13,6 +13,11 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
+  if ($result = @$connect->query("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='$login'"))
+  $d2 = $result->num_rows;
+  if (isset($d2) && $d2 >= '1') {
+	header('Location: blad.php?id=4');
+  }
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
@@ -37,11 +42,6 @@ if ($_SESSION['z1'] == true) {
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
 	  $viddleid = rand(1000000,9999999);
-	  if ($result = @$connect->query("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='$login'"))
-	  $d2 = $result->num_rows;
-	  if (isset($d2) && $d2 >= '1') {
-		header('Location: blad.php?id=4');
-	  }
 	  if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
 	  $d2 = $result->num_rows;
 	  if (isset($d2) && $d2 >= '1') {
@@ -126,8 +126,8 @@ if ($_SESSION['z1'] == true) {
 	  $source = file_get_contents($film);
 	  fwrite($destination, $source, strlen($source)); */
   } else {
-    //header('Location: index.php');
-    echo('brak pliku');
+    header('Location: blad.php?=5');
+    //echo('brak pliku');
   }
 } else {
 //header('Location: index.php');
