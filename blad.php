@@ -21,6 +21,8 @@ if($id=="1") {
   $test = "Twój plik jest jakiś troszeczkę podejrzany... lub stało się coś nieoczekiwanego.<br />Wróć do poprzedniej strony i spróbuj ponownie.<br />Możliwe że to jest problem po naszej stronie, więc skontaktuj się z naszą drużyną!<br /><h2>Kod błędu: 0x00002c</h2>";
 } elseif($id=="3") {
   $test = "Kurza twarz! Wystąpił poważny błąd serwisu. Koniecznie przekaż to naszej drużynie.<br /><h3>Kod błędu: 0x00003c</h3>";
+} elseif($id=="4") {
+  $test = "Hola, hola, za szybko wrzucasz filmy! Odczekaj parę minut, żeby wrzucić kolejny.<br /><h3>Kod błędu: 0x00004c</h3>";
 } else {
   $test = "Wystąpił nieznany błąd. Koniecznie przekaż to naszej drużynie, żeby mogła się temu przyjrzeć.<br />";
 }
