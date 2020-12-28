@@ -33,10 +33,8 @@ if ($_SESSION['z1'] == true) {
 	  require "danesql.php";
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $wynik = $connect->query("SELECT * FROM viddle_recent WHERE number=1");
-	  while($linia = $wynik->fetch_assoc()) {
-	    $czyzbyhmm = $linia["viddle_recent_one_user"];
-	  }
-	  if(strstr($login, $czyzbyhmm) != false) {
+	  $linia = $wynik->fetch_assoc();
+	  if($linia["viddle_recent_one_user"] == $login) {
 	    header('Location: blad.php?id=4');
 	  }
 	  $test = ext($file_ext);
