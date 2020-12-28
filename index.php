@@ -14,7 +14,7 @@ require_once('partials/navbar.php');
             </div>
                 <div class='tile' style='margin: auto;'>
                     <div class='card'>
-                        <a href='video.php'>
+                        <a href='video?id=8385178'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>Pierwszy film</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -26,7 +26,7 @@ require_once('partials/navbar.php');
                         </a>
                     </div>
                     <div class='card'>
-                        <a href='video.php'>
+                        <a href='video?id=8385178'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>Testowa nazwa</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -38,7 +38,7 @@ require_once('partials/navbar.php');
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video.php'>
+                        <a href='video?id=8385178'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>Zrobione z nudów</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -63,7 +63,7 @@ require_once('partials/navbar.php');
             </div>
             <div class="tile" style="margin: auto;">
                 <div class='card'>
-                        <a href='video.php'>
+                        <a href='video?id=8385178'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>Pierwszy film</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -75,7 +75,7 @@ require_once('partials/navbar.php');
                         </a>
                     </div>
                     <div class='card'>
-                        <a href='video.php'>
+                        <a href='video?id=8385178'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>Testowa nazwa</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -87,7 +87,7 @@ require_once('partials/navbar.php');
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video.php'>
+                        <a href='video?id=8385178'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>Zrobione z nudów</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
