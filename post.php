@@ -37,7 +37,7 @@ if ($_SESSION['z1'] == true) {
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
 	  $viddleid = rand(1000000,9999999);
-	  if ($rezultat = @$connect->query("SELECT * FROM viddle_recent WHERE number=1")
+	  if ($rezultat = @$connect->query("SELECT * FROM viddle_recent WHERE number=1"))
           $danedwa = $rezultat->fetch_assoc();
           $lastcheck = $danedwa['viddle_recent_one_user'];
 	  if($lastcheck==$login) {
