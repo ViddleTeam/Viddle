@@ -13,6 +13,7 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
+  $login = $_SESSION['user'];
   require "danesql.php";
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   if ($result = @$connect->query("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='$login'"))
@@ -21,7 +22,6 @@ if ($_SESSION['z1'] == true) {
 	header('Location: blad.php?id=4');
   }
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
-	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
 	  $file_basename = substr($filename, 0, strripos($filename, '.'));
 	  $file_ext = mime_content_type($_FILES["videovid"]["tmp_name"]);
