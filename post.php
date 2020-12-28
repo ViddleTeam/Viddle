@@ -128,7 +128,6 @@ if ($_SESSION['z1'] == true) {
                 {
 		$video_exists = false;
                 }
-            }
 	  }
 	  if ($success) {
 	     header('Location: video.php?id=' . $viddleid);
