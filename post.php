@@ -10,9 +10,9 @@ if ($_POST['titlevid'] == false) {
 session_start();
 if ($_SESSION['z1'] == true) {
   $error = 0;
-  $tytul = $_POST['titlevid'];
-  $opis = $_POST['descvid'];
-  $film = $_POST['videovid'];
+  $tytul = mysqli_real_escape_string(htmlentities($_POST['titlevid']));
+  $opis = mysqli_real_escape_string(htmlentities($_POST['descvid']));
+  $film = mysqli_real_escape_string(htmlentities($_POST['videovid']));
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
