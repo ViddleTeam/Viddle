@@ -13,6 +13,8 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
+  require "danesql.php";
+  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   if ($result = @$connect->query("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='$login'"))
   $d2 = $result->num_rows;
   if (isset($d2) && $d2 >= '1') {
@@ -36,8 +38,6 @@ if ($_SESSION['z1'] == true) {
     	    return $extensions[$mime_type];
 	  }
 	  $test = ext($file_ext);
-	  require "danesql.php";
-	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
