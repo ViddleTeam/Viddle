@@ -34,7 +34,7 @@ if ($_SESSION['z1'] == true) {
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  if ($result = @$connect->query(sprintf("SELECT * FROM viddle_recent WHERE viddle_recent_one_user='%s", mysqli_real_escape_string($connect,$login))))
 	  $testing = $result->num_rows();
-	  if($testing >= 1) {
+	  if(isset($testing) && $testing >= '1') {
 	    header('Location: blad.php?id=4');
 	  }
 	  $test = ext($file_ext);
