@@ -106,28 +106,7 @@ if ($_SESSION['z1'] == true) {
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {
-	    $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')");
- 	    if ($result = @$connect->query(
-		sprintf("SELECT * FROM viddle_recent WHERE number=1",
-		mysqli_real_escape_string($connect,$id))))
-
-                $d2 = $result->num_rows;
-	        if(isset($d2) && $d2 == '1')
-                {
-                  $dane = $result->fetch_assoc();
-		  $userone = $dane['viddle_recent_one_user'];
-		  $useroneid = $dane['viddle_recent_one_id'];
-		  $usertwo = $dane['viddle_recent_two_user'];
-		  $usertwoid = $dane['viddle_recent_two_id'];
-		  $userthree = $dane['viddle_recent_three_user'];
-		  $userthreeid = $dane['viddle_recent_three_id'];
-		  $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_one_user = '$login', viddle_recent_one_id = $viddleid, viddle_recent_two_user = '$userone', viddle_recent_two_id = $useroneid, viddle_recent_three_user = '$usertwo', viddle_recent_three_id = $usertwoid WHERE number=1;");
-	          $video_exists = true;
-                }
-                else
-                {
-		$video_exists = false;
-                }
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$login', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$tytul', '$opis', 'x', '$data')");
 	  }
 	  if ($success) {
 	     header('Location: video.php?id=' . $viddleid);
