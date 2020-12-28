@@ -33,7 +33,7 @@ if ($_SESSION['z1'] == true) {
 	  require "danesql.php";
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $pytanko = $connect->query("SELECT viddle_recent_one_user FROM viddle_recent WHERE number=1");
-	  $wtf = @$connect->fetch_array($pytanko);
+	  $wtf = $connect->fetch_array($pytanko);
 	  $test = $wtf['viddle_recent_one_user'];
 	  if($test=='1')
 	  $test = ext($file_ext);
