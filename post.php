@@ -13,9 +13,6 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
-  $zabezpjeden = mysqli_real_escape_string(htmlspecialchars($login));
-  $zabezpdwa = mysqli_real_escape_string(htmlspecialchars($opis));
-  $zabezptrzy = mysqli_real_escape_string(htmlspecialchars($film));
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
@@ -36,6 +33,9 @@ if ($_SESSION['z1'] == true) {
 	  $test = ext($file_ext);
 	  require "danesql.php";
 	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
+  	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
+  	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
 	  $viddleid = rand(1000000,9999999);
 	  if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
 	  $d2 = $result->num_rows;
