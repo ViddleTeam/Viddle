@@ -94,7 +94,10 @@ if ($id == 0) {
                       </p>
                     </span>
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
-                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i><?php echo $views ?></h4>
+                    	<h4 style="font-weight: bold;">
+				<svg class="MuiSvgIcon-root jss173 MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true" style="margin-right: 5px;">
+					<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+				</svg><?php echo $views ?></h4>
                       <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
                     </span>
                             </div><br>
