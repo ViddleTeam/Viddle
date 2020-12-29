@@ -42,6 +42,9 @@
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
 					
 				</div><br>
+			<center>
+                <div class="g-recaptcha" data-sitekey="6LfI8fwZAAAAADtjXjsBIFjgpsQvk5ICt-8zKU0p"></div><br>
+				<div class="container row" style="justify-content: center;">
 				<center>
 				<div class="container row" style="justify-content: center;">
 				<input type="submit" value="Wyślij e-maila" class="btn btn-success" style="padding: 10px; color: white;">
