@@ -18,7 +18,12 @@ if ($id == 0) {
         $views = $dane['views'];
         $komentarze = $dane['comments'];
         $video_exists = true;
-        $uid = $connect->query(sprintf("SELECT uid FROM viddle_users WHERE publisher = '%s''", $connect->real_escape_string($publisher)));
+        if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$publisher))))
+
+            $d2 = $result->num_rows;
+			if($d2 == '1')
     } else {
         $video_exists = false;
     }
@@ -62,6 +67,8 @@ if ($id == 0) {
         <?php
         if ($video_exists == true) {
         ?>
+	    
+	    <div class='alert alert-danger' role='alert'>UWAGA !!! Ze względu na wprowadzanie zmian w rejestrze danych o filmach informacje o nich mogą być złe !!!</div>
         <form>
             <div class="form-row">
                 <div class="col-md-7">
