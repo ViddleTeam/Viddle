@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<style>
 		body {
 			background: rgb(30,0,59);
