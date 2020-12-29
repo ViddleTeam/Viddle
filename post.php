@@ -41,7 +41,7 @@ if ($_SESSION['z1'] == true) {
 	  $name = $dane['login'];
 	  $result = $connect -> query("SELECT * FROM `viddle_recent` WHERE number=1;");
 	  $row = $result -> fetch_assoc();
-	  if($row['viddle_recent_one_user'] === $login) {
+	  if($row['viddle_recent_one_user'] === $userid) {
 		header('Location: blad.php?id=4');
 		exit;
 	  }
