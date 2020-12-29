@@ -35,7 +35,7 @@ if ($_SESSION['z1'] == true) {
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-	  $result = $connect -> query("SELECT * FROM viddle_users WHERE login='$zabezpjeden';");
+	  $result = $connect -> query("SELECT * FROM `viddle_users` WHERE login='$login';");
           $dane = $result -> fetch_assoc();
           $userid = $dane['uid'];
 	  $name = $dane['login'];
