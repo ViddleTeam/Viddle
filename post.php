@@ -31,10 +31,10 @@ if ($_SESSION['z1'] == true) {
     	    return $extensions[$mime_type];
 	  }
 	  require "danesql.php";
+  	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
   	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
-  	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $result = $connect -> query("SELECT * FROM `viddle_users` WHERE login='$login';");
           $dane = $result -> fetch_assoc();
           $userid = $dane['uid'];
