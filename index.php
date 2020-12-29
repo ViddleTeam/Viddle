@@ -127,36 +127,36 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
             </div>
             <div class="tile" style="margin: auto;">
                 <div class='card'>
-                        <a href='video?id=<?php echo($userone); ?>'>
+                        <a href='video?id=<?php echo($oneid); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'><?php echo($titleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($one); ?></span>
+                            <span><?php echo($userone); ?></span>
                             <span>•</span>
                             <span><?php echo($rezultat); ?> wyświetleń</span>
                         </div>
                         </a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=<?php echo($usertwo); ?>'>
+                        <a href='video?id=<?php echo($twoid); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'><?php echo($titletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($two); ?></span></a>
+                            <span><?php echo($usertwo); ?></span></a>
                             <span>•</span>
                             <span><?php echo($rezultatdwa); ?> wyświetleń</span>
                         </div>
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=<?php echo($userthree); ?>'>
+                        <a href='video?id=<?php echo($threeid); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'><?php echo($titlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($three); ?></span>
+                            <span><?php echo($userthree); ?></span>
                             <span>•</span>
                             <span><?php echo($rezultattrzy); ?> wyświetleń</span>
                         </div>
