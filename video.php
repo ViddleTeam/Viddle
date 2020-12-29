@@ -39,7 +39,7 @@ if ($id == 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php if (isset($title)) echo $title ?> na Viddle</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <meta property="og:title" content='<?php if (isset($title)) echo $title ?> na Viddle'>
     <meta property="og:description" content='<?php if (isset($opis)) echo $opis ?>'>
