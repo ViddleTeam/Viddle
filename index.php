@@ -1,6 +1,50 @@
 <?php
 $title = "Strona główna";
 require_once('partials/navbar.php');
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+if ($result = @$connect->query(sprintf("SELECT * FROM viddle_recent WHERE number='%s'", mysqli_real_escape_string($connect, '1')))) $d2 = $result->num_rows;
+if (isset($d2) && $d2 == '1') {
+    $dane = $result->fetch_assoc();
+    $one = $dane['viddle_recent_one_user'];
+    $oneid = $dane['viddle_recent_one_id'];
+    $two = $dane['viddle_recent_two_user'];
+    $twoid = $dane['viddle_recent_two_id'];
+    $three = $dane['viddle_recent_three_user'];
+    $threeid = $dane['viddle_recent_three_id'];
+    $uidone = $connect->query(sprintf("SELECT uid FROM viddle_users WHERE publisher = '%s''", $connect->real_escape_string($one)));
+    $uidtwo = $connect->query(sprintf("SELECT uid FROM viddle_users WHERE publisher = '%s''", $connect->real_escape_string($two)));
+    $uidthree = $connect->query(sprintf("SELECT uid FROM viddle_users WHERE publisher = '%s''", $connect->real_escape_string($three)));
+    $viewsone = $connect->query(sprintf("SELECT views FROM viddle_videos WHERE video_id = '%s''", $connect->real_escape_string($oneid)));
+    $viewstwo = $connect->query(sprintf("SELECT views FROM viddle_videos WHERE video_id = '%s''", $connect->real_escape_string($twoid)));
+    $viewsthree = $connect->query(sprintf("SELECT views FROM viddle_videos WHERE video_id = '%s''", $connect->real_escape_string($threeid)));
+    $titleone = $connect->query(sprintf("SELECT title FROM viddle_videos WHERE video_id = '%s''", $connect->real_escape_string($oneid)));
+    $titletwo = $connect->query(sprintf("SELECT title FROM viddle_videos WHERE video_id = '%s''", $connect->real_escape_string($twoid)));
+    $titlethree = $connect->query(sprintf("SELECT title FROM viddle_videos WHERE video_id = '%s''", $connect->real_escape_string($threeid)));
+}
+if ($viewsone > 999 && $viewsone <= 999999) {
+    $rezultat = floor($viewsone / 1000) . 'K';
+} elseif ($value > 999999) {
+    $rezulat = floor($viewsone / 1000000) . 'M';
+} else {
+    $rezultat = $viewsone;
+}
+
+if ($viewstwo > 999 && $viewstwo <= 999999) {
+    $rezultatdwa = floor($viewstwo / 1000) . 'K';
+} elseif ($value > 999999) {
+    $rezulatdwa = floor($viewstwo / 1000000) . 'M';
+} else {
+    $rezultatdwa = $viewstwo;
+}
+
+if ($viewsthree > 999 && $viewsthree <= 999999) {
+    $rezultattrzy = floor($viewsthree / 1000) . 'K';
+} elseif ($value > 999999) {
+    $rezulattrzy = floor($viewsthree / 1000000) . 'M';
+} else {
+    $rezultattrzy = $viewsthree;
+}
 ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -63,38 +107,38 @@ require_once('partials/navbar.php');
             </div>
             <div class="tile" style="margin: auto;">
                 <div class='card'>
-                        <a href='video?id=8385178'>
+                        <a href='video?id=<?php echo($oneid); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>Pierwszy film</p>
+                        <p class='card-title'><?php echo($titleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span>Kohady</span>
+                            <span><?php echo($one); ?></span>
                             <span>•</span>
-                            <span>17.5k wyświetleń</span>
+                            <span><?php echo($rezultat); ?> wyświetleń</span>
                         </div>
                         </a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=8385178'>
+                        <a href='video?id=<?php echo($twoid); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>Testowa nazwa</p>
+                        <p class='card-title'><?php echo($titletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span>PatryQHyper</span></a>
+                            <span><?php echo($two); ?></span></a>
                             <span>•</span>
-                            <span>1.3k wyświetleń</span>
+                            <span><?php echo($rezultatdwa); ?> wyświetleń</span>
                         </div>
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=8385178'>
+                        <a href='video?id=<?php echo($threeid); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>Zrobione z nudów</p>
+                        <p class='card-title'><?php echo($titlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span>Hekitu</span>
+                            <span><?php echo($three); ?></span>
                             <span>•</span>
-                            <span>9k wyświetleń</span>
+                            <span><?php echo($rezultattrzy); ?> wyświetleń</span>
                         </div>
                         </a>
                     </div>
