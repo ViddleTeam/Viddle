@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
 body {
 	background-color: #212121;
 	color: white;
@@ -18,11 +18,11 @@ table, th, td {
 }
 
 * {
-	font-family: 'Oxygen', sans-serif !important;
+	font-family: 'Inter', sans-serif !important;
 }
 
 .modal-dialog {
-	font-family: 'Oxygen', sans-serif
+	font-family: 'Inter', sans-serif
 }
 
 .close {
@@ -35,17 +35,17 @@ table, th, td {
 
 .login-text {
 	color: white!important;
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .username-text {
 	color: #b3b3b3!important;
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .pass-text {
 	color: #b3b3b3!important;
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .video {
@@ -54,7 +54,7 @@ table, th, td {
 }
 
 .font {
-	font-family: 'Oxygen', sans-serif!important;
+	font-family: 'Inter', sans-serif!important;
 }
 
 .btn-success {
