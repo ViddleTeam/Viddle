@@ -12,12 +12,24 @@ if (isset($d2) && $d2 == '1') {
     $twoid = $dane['viddle_recent_two_id'];
     $three = $dane['viddle_recent_three_user'];
     $threeid = $dane['viddle_recent_three_id'];
-    $viewsone = $connect->query("SELECT views FROM viddle_videos WHERE video_id = '$oneid';");
-    $viewstwo = $connect->query("SELECT views FROM viddle_videos WHERE video_id = '$twoid';");
-    $viewsthree = $connect->query("SELECT views FROM viddle_videos WHERE video_id = '$threeid';");
-    $titleone = $connect->query("SELECT title FROM viddle_videos WHERE video_id = '$oneid';");
-    $titletwo = $connect->query("SELECT title FROM viddle_videos WHERE video_id = '$twoid';");
-    $titlethree = $connect->query("SELECT title FROM viddle_videos WHERE video_id = '$threeid';");
+    $viewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
+    $dane = $viewsone->fetch_assoc();
+    $viewsone = $dane['views'];
+    $viewstwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$twoid';");
+    $dane = $viewstwo->fetch_assoc();
+    $viewstwo = $dane['views'];
+    $viewsthree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$threeid';");
+    $dane = $viewsthree->fetch_assoc();
+    $viewsthree = $dane['views'];
+    $titleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
+    $dane = $titleone->fetch_assoc();
+    $titleone = $dane['title'];
+    $titletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$twoid';");
+    $dane = $titletwo->fetch_assoc();
+    $titletwo = $dane['title'];
+    $titlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$threeid';");
+    $dane = $titlethree->fetch_assoc();
+    $titlethree = $dane['title'];
 }
 if ($viewsone > 999 && $viewsone <= 999999) {
     $rezultat = floor($viewsone / 1000) . 'K';
