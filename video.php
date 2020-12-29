@@ -38,12 +38,21 @@ if ($id == 0) {
         $dane = $result->fetch_assoc();
         $observators = $dane['observators'];
 	$name = $dane['login'];
+	$av6 = $dane['avatarname'];
 	
         $video_exists = true;
     } else {
         $video_exists = false;
     }
 }
+
+if($av6 == 'x')
+{
+	$av7 = 'anonim.png';
+}
+else
+{
+	$av7 = ''.$publisher.'a.'.$av6.'';
 ?>
 
 
@@ -76,7 +85,7 @@ if ($id == 0) {
         if ($video_exists == true) {
         ?>
 	    
-	    <div class='alert alert-danger' role='alert'>UWAGA !!! Ze względu na wprowadzanie zmian w rejestrze danych o filmach informacje o nich mogą być złe !!!</div>
+	    
         <form>
             <div class="form-row">
                 <div class="col-md-7">
@@ -86,7 +95,7 @@ if ($id == 0) {
                             <h4><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
-                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>">
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
                     <a href="channel?id=<?php echo $publisher ?>"><h5 style="align-items: center;"><?php echo $name ?></h5></a>
