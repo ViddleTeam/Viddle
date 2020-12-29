@@ -122,7 +122,7 @@ if ($_SESSION['z1'] == true) {
 	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
 	  }
 	  if ($success) {
-	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$login',viddle_recent_one_id='$viddleid' WHERE number = 1;");
+	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
 	     header('Location: video.php?id=' . $viddleid);
 	  } else {
 	     header('Location: blad.php?id=2');
