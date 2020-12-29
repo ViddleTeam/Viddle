@@ -27,11 +27,10 @@
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
-				<h3 style="font-weight: bold;">Zaloguj się do Viddle</h3>
-				<p>Miło Ciebie znowu widzieć!</p><br>
+				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
+				<p>w celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła</p><br>
 				<?php
 
-				echo $error;	
 
 				?>
 
