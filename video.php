@@ -44,7 +44,6 @@ if ($id == 0) {
     <meta property="og:title" content='<?php if (isset($title)) echo $title ?> na Viddle'>
     <meta property="og:description" content='<?php if (isset($opis)) echo $opis ?>'>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="assets/materialvideo.css" />
     <style type="text/css">/* Chart.js */
         @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
