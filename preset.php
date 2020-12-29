@@ -23,7 +23,7 @@ if (isset($_POST['email']))
 			$ok = false;
 			$e1_err = '<div class='alert alert-danger' role='alert'>Na ten adres e-mail nie zostało zarejestrowane żadne konto</div>';
 		}
-		
+}		
 			
 			
 	
