@@ -23,13 +23,13 @@ if (isset($d2) && $d2 == '1') {
     $viewsthree = $dane['views'];
 
     $userone = $connect->query("SELECT * FROM viddle_users WHERE uid = '$one';");
-    $dane = $viewsone->fetch_assoc();
+    $dane = $userone->fetch_assoc();
     $userone = $dane['login'];
     $usertwo = $connect->query("SELECT * FROM viddle_users WHERE uid = '$two';");
-    $dane = $viewstwo->fetch_assoc();
+    $dane = $usertwo->fetch_assoc();
     $usertwo = $dane['login'];
     $userthree = $connect->query("SELECT * FROM viddle_users WHERE uid = '$three';");
-    $dane = $viewsthree->fetch_assoc();
+    $dane = $userthree->fetch_assoc();
     $userthree = $dane['login'];
 
     $titleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
