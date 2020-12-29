@@ -52,7 +52,7 @@ if($av6 == 'x')
 }
 else
 {
-	$av7 = ''.$publisher.'a.'.$av6.'';
+	$av7 = '/grafic/'.$publisher.'a.'.$av6.'';
 }
 ?>
 
