@@ -44,9 +44,7 @@ if ($id == 0) {
     <meta property="og:title" content='<?php if (isset($title)) echo $title ?> na Viddle'>
     <meta property="og:description" content='<?php if (isset($opis)) echo $opis ?>'>
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
-    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
-    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style type="text/css">/* Chart.js */
         @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
@@ -93,9 +91,7 @@ if ($id == 0) {
                     </span>
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;">
-				<svg class="MuiSvgIcon-root jss173 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-					<path fill="#ffffff" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
-				</svg><?php echo $views ?></h4>
+				  <i class="material-icons">visibility</i><?php echo $views ?></h4>
                       <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
                     </span>
                             </div><br>
