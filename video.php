@@ -24,6 +24,9 @@ if ($id == 0) {
 
             $d2 = $result->num_rows;
 			if($d2 == '1')
+			{
+			}
+	   
     } else {
         $video_exists = false;
     }
