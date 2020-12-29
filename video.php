@@ -53,6 +53,7 @@ if($av6 == 'x')
 else
 {
 	$av7 = ''.$publisher.'a.'.$av6.'';
+}
 ?>
 
 
