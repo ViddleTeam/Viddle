@@ -30,7 +30,7 @@ if ($id == 0) {
     } else {
         $video_exists = false;
     }
-    if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE login='$publisher'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
+    if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
     if (isset($d2) && $d2 == '1') {
         $dane = $result->fetch_assoc();
         $observators = $dane['observators'];
