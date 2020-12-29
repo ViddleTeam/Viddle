@@ -32,6 +32,7 @@ $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
 <!DOCTYPE html>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
+    <script async src="https://arc.io/widget.min.js#YXGBLYWj"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script data-ad-client="ca-pub-4393741826344878" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title><?php echo $ttl ?></title>
