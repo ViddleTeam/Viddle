@@ -127,7 +127,7 @@ if ($_SESSION['z1'] == true) {
 	  $source = file_get_contents($film);
 	  fwrite($destination, $source, strlen($source)); */
 /*  } else {
-    header('Location: blad.php?=5');
+    header('Location: blad.php?id=5');
     //echo('brak pliku');
   }
 } else {
@@ -135,5 +135,5 @@ if ($_SESSION['z1'] == true) {
 echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');*/
-header('Location: blad.php?=404');
+header('Location: blad.php?id=404');
 ?>
