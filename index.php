@@ -21,6 +21,17 @@ if (isset($d2) && $d2 == '1') {
     $viewsthree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$threeid';");
     $dane = $viewsthree->fetch_assoc();
     $viewsthree = $dane['views'];
+
+    $userone = $connect->query("SELECT * FROM viddle_users WHERE uid = '$one';");
+    $dane = $viewsone->fetch_assoc();
+    $userone = $dane['views'];
+    $usertwo = $connect->query("SELECT * FROM viddle_users WHERE uid = '$two';");
+    $dane = $viewstwo->fetch_assoc();
+    $usertwo = $dane['views'];
+    $userthree = $connect->query("SELECT * FROM viddle_users WHERE uid = '$three';");
+    $dane = $viewsthree->fetch_assoc();
+    $userthree = $dane['views'];
+
     $titleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
     $dane = $titleone->fetch_assoc();
     $titleone = $dane['title'];
@@ -116,7 +127,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
             </div>
             <div class="tile" style="margin: auto;">
                 <div class='card'>
-                        <a href='video?id=<?php echo($oneid); ?>'>
+                        <a href='video?id=<?php echo($userone); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'><?php echo($titleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -128,7 +139,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
                         </a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=<?php echo($twoid); ?>'>
+                        <a href='video?id=<?php echo($usertwo); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'><?php echo($titletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
@@ -140,7 +151,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=<?php echo($threeid); ?>'>
+                        <a href='video?id=<?php echo($userthree); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'><?php echo($titlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
