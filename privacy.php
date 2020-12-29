@@ -6,13 +6,17 @@ require_once('partials/navbar.php');
  <head>
  </head>
 <body>
- <h2>POLITYKA PRYWATNOŚCI VIDDLE</h2>
+<center>
+<h2>POLITYKA PRYWATNOŚCI VIDDLE</h2><br>
+<br>
 
 Data wejścia w życie: 31.12.2020
+ <br>
 
 1. Postanowienia ogólne
+ <br>
 
-Ochrona danych osobowych ma dla nas duże znaczenie. Jeżeli przetwarzanie Twoich danych osobowych jest konieczne, ale nie ma do tego żadnej podstawy, będziemy prosili o wyrażenie nieobowiązkowej zgody, którą będzie można wycofać w np. ustawieniach konta.
+Ochrona danych osobowych ma dla nas duże znaczenie. Jeżeli przetwarzanie Twoich danych osobowych jest konieczne, ale nie ma do tego żadnej podstawy,<br> będziemy prosili o wyrażenie nieobowiązkowej zgody, <br>którą będzie można wycofać w np. ustawieniach konta.
 
 Administratorem twoich danych, jak i podmiotem przetwarzającym Twoje dane jest Viddle.
 
@@ -59,5 +63,6 @@ Viddle jest portalem przeznaczonym dla osób powyżej 13 lat. Żadna osoba, któ
 Podstawą prawną jest punkt 6. dyrektywy RODO dla przetwarzania danych, dla których uzyskujemy zgodę na konkretny cel przetwarzania.
 
 Zastrzegamy sobie prawo do zmiany lub modyfikacji niniejszej Polityki prywatności w dowolnym momencie. W przypadku wprowadzenia zmian opublikujemy je w sekcji Polityka prywatności. O wszelkich zmianach w Polityce prywatności będziemy informować przez komunikator Discord na naszym serwerze. 
+</center>
  </body>
 </html>
