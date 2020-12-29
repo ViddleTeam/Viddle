@@ -1,5 +1,35 @@
 <?php
 
+session_start();
+
+$e1_err = '';
+if (isset($_POST['email']))
+{
+	$ok = true;
+	
+	$email = $_POST['email'];
+	
+	require "danesql.php";
+        $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+	
+	
+	 if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE email='%s'",
+		    mysqli_real_escape_string($connect,$email))))
+	
+		$d2 = $result->num_rows;
+		if(!$d2 == '1')
+		{
+			$ok = false;
+			$e1_err = '<div class='alert alert-danger' role='alert'>Na ten adres e-mail nie zostało zarejestrowane żadne konto</div>';
+		}
+		
+			
+			
+	
+	
+	
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +56,9 @@
 		<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
 	</head>
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
+		<?php
+			echo $e1_err;
+		?>
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
 				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
