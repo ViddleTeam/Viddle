@@ -90,7 +90,7 @@ if ($id == 0) {
                     </span>
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;">
-				  <i class="fas fa-eye"></i><?php echo $views ?></h4>
+				  <i class="fas fa-eye" style="margin-right: 5px;"></i><?php echo $views ?></h4>
                       <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
                     </span>
                             </div><br>
