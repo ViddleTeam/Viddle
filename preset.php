@@ -9,6 +9,7 @@ if (isset($_POST['email']))
 	
 	$email = $_POST['email'];
 	
+	require "danesql.php";
 	
         $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	
