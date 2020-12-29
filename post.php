@@ -31,7 +31,14 @@ if ($_SESSION['z1'] == true) {
     	    return $extensions[$mime_type];
 	  }
 	  require "danesql.php";
+	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
+  	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
+  	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+	  $result = $connect -> query("SELECT * FROM viddle_users WHERE login='$zabezpjeden';");
+          $dane = $result -> fetch_assoc();
+          $userid = $dane['uid'];
+	  $name = $dane['login'];
 	  $result = $connect -> query("SELECT * FROM `viddle_recent` WHERE number=1;");
 	  $row = $result -> fetch_assoc();
 	  if($row['viddle_recent_one_user'] === $login) {
@@ -39,9 +46,6 @@ if ($_SESSION['z1'] == true) {
 		exit;
 	  }
 	  $test = ext($file_ext);
-	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
-  	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
-  	  $zabezptrzy = mysqli_real_escape_string($connect, htmlspecialchars($opis));
 	  $viddleid = rand(1000000,9999999);
 	  if ($result = @$connect->query(sprintf("SELECT * FROM viddle_video WHERE video_id='%s", mysqli_real_escape_string($connect,$viddleid))))
 	  $d2 = $result->num_rows;
@@ -115,7 +119,7 @@ if ($_SESSION['z1'] == true) {
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$zabezpjeden', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$login',viddle_recent_one_id='$viddleid' WHERE number = 1;");
