@@ -18,7 +18,7 @@ if (isset($_POST['email']))
 		    mysqli_real_escape_string($connect,$email))))
 	
 		$d2 = $result->num_rows;
-		if(!$d2 == '1')
+		if($d2 == '0')
 		{
 			$ok = false;
 			$e1_err = '<div class='alert alert-danger' role='alert'>Na ten adres e-mail nie zostało zarejestrowane żadne konto</div>';
