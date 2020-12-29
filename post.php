@@ -1,5 +1,5 @@
 <?php
-/*$uplsuccess = 0;
+$uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
 } else if ($_POST['descvid'] == false) {
@@ -126,7 +126,7 @@ if ($_SESSION['z1'] == true) {
 	/*  $destination = fopen("ftp://epiz_27397310:YPf7vgDQu3JpVm@ftpupload.net/" . $film, "wb");
 	  $source = file_get_contents($film);
 	  fwrite($destination, $source, strlen($source)); */
-/*  } else {
+  } else {
     header('Location: blad.php?id=5');
     //echo('brak pliku');
   }
@@ -134,6 +134,6 @@ if ($_SESSION['z1'] == true) {
 //header('Location: index.php');
 echo('ERROR 4 - Nie jesteś zalogowany.');
 }
-echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');*/
-header('Location: blad.php?id=404');
+echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
+/*header('Location: blad.php?id=404');*/
 ?>
