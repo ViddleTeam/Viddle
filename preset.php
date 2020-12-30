@@ -3,6 +3,8 @@
 session_start();
 
 $e1_err = '';
+$e2_err = '';
+
 if (isset($_POST['email']))
 {
 	$ok = true;
@@ -19,6 +21,19 @@ if (isset($_POST['email']))
             $ok=false;
 		$e1_err = "<div class='alert alert-danger' role='alert'>Nie zaznaczono pola captcha.</div>";
         }
+	
+	require("danesql.php");
+        $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+	
+	 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE email='%s'", mysqli_real_escape_string($connect,$_POST['email']))))
+		 
+	$d2 = $result->num_rows;
+	
+	if($d2 == '0')
+	{
+		$ok=false;
+		$e2_err = "<div class='alert alert-danger' role='alert'>Na podany adres e-mail nie jest zarejestrowane żadne konto.</div>";
+	}
 }
 			
 			
@@ -58,6 +73,7 @@ if (isset($_POST['email']))
 				<div class="card-body">
 					<?php
 			echo $e1_err;
+			echo $e2_err;
 		?>
 				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
 				<p>w celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła</p><br>
