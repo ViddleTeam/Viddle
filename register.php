@@ -162,7 +162,7 @@ if (isset($login)){
 				</div><br>
 				<center>
 					<div class="h-captcha" data-sitekey="f982278b-3800-454e-84a8-f08f6956fd44"></div>
-                <div class="g-recaptcha" data-sitekey="6LfI8fwZAAAAADtjXjsBIFjgpsQvk5ICt-8zKU0p"></div><br>
+                
 				<div class="container row" style="justify-content: center;">
 					<a href="#"><input type="submit" value="Zarejestruj się" class="btn btn-success" style="padding: 10px;"></a>
 
