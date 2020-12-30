@@ -42,14 +42,21 @@ if (isset($login)){
 		$ok = false;
 		$easypass_error = "<div class='alert alert-danger' role='alert'>Hasło, które ustaliłeś, może ułatwić włamanie się na Twoje konto. Ustal silniejsze hasło!</div>";
 	}
+	
+	$secret = 'f982278b-3800-454e-84a8-f08f6956fd44';
+        $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$_POST['h-captcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']);
+        $responseData = json_decode($verifyResponse);
+        if($responseData->success)
+        {
+            
+        }
+        else
+        {
+            $ok=false;
+		$c_error = "<div class='alert alert-danger' role='alert'>Nie zaznaczono pola captcha.</div>";
+        }
 
-    $sk = "6LfI8fwZAAAAAIbM-pHAFeKlHPBt-sMxhypcEycd";
-		$c = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sk.'&response='.$_POST['g-recaptcha-response']);
-		$v = json_decode($c);
-		if ($v->success==false) {
-			$ok=false;
-			$c_error = "<div class='alert alert-danger' role='alert'>Nie zaznaczono pola captcha.</div>";
-		}
+    
         require("danesql.php");
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 			if ($connect->connect_errno!=0) {
