@@ -5,26 +5,7 @@ session_start();
 $e1_err = '';
 if (isset($_POST['email']))
 {
-	$ok = true;
-	
-	$email = $_POST['email'];
-	
-	require "danesql.php";
-	
-        $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-	
-	
-	 if ($result = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE email='%s'",
-		    mysqli_real_escape_string($connect,$email))))
-	
-		$d2 = $result->num_rows;
-		if($d2 == '0')
-		{
-			$ok = false;
-			$e1_err = '<div class='alert alert-danger' role='alert'>Na ten adres e-mail nie zostało zarejestrowane żadne konto</div>';
-		}
-}		
+}
 			
 			
 	
