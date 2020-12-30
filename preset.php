@@ -53,11 +53,12 @@ if (isset($_POST['email']))
 		<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
 	</head>
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
-		<?php
-			echo $e1_err;
-		?>
+		
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
+					<?php
+			echo $e1_err;
+		?>
 				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
 				<p>w celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła</p><br>
 				<?php
