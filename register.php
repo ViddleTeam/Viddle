@@ -95,7 +95,9 @@ if (isset($login)){
 ?>
 <!DOCTYPE HTML>
 <html>
+	
 	<head>
+		<script src="https://hcaptcha.com/1/api.js" async defer></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 		<style>
 			@-webkit-keyframes autofill {
@@ -159,6 +161,7 @@ if (isset($login)){
 					<input type="password" name="repeat_password" class="form-control" placeholder="Powtórz hasło"name="haslo2" aria-label="Powtórz hasło" aria-describedby="material-addon1">
 				</div><br>
 				<center>
+					<div class="h-captcha" data-sitekey="f982278b-3800-454e-84a8-f08f6956fd44"></div>
                 <div class="g-recaptcha" data-sitekey="6LfI8fwZAAAAADtjXjsBIFjgpsQvk5ICt-8zKU0p"></div><br>
 				<div class="container row" style="justify-content: center;">
 					<a href="#"><input type="submit" value="Zarejestruj się" class="btn btn-success" style="padding: 10px;"></a>
