@@ -99,6 +99,8 @@ if (isset($login)){
         }	
         $connect->close();	
 }
+
+echo $ok;
 ?>
 <!DOCTYPE HTML>
 <html>
