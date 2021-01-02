@@ -17,7 +17,7 @@ table, th, td {
 	background-color: #212121;
 }
 
-* {
+*:not(fas) {
 	font-family: 'Inter', sans-serif;
 }
 
