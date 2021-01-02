@@ -65,8 +65,8 @@ $mail = new PHPMailer(true);
 
     
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    $mail->isSMTP(0);                                            // Send using SMTP
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.zoho.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'support@viddle.xyz';                     // SMTP username
