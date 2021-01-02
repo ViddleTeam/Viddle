@@ -1,5 +1,9 @@
 <?php
 
+
+
+require 'vendor/autoload.php';
+
 session_start();
 
 $e1_err = '';
