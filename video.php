@@ -91,7 +91,7 @@ else
             <div class="form-row">
                 <div class="col-md-7">
                     <div class="md-form form-group">
-                        <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/<?php echo $id ?>/<?php echo $file ?>&title=<?php echo $title ?>" type="video/mp4" width="100%" height="100%" allowfullscreen=""></iframe>
+                        <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/<?php echo $id ?>/<?php echo $file ?>&title=<?php echo $title ?>" type="video/mp4" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
                         <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 640px;">
                             <h4><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
