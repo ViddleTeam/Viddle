@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 require 'vendor/autoload.php';
-require 'danemail.php';
+
 
 $e1_err = '';
 $e2_err = '';
