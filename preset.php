@@ -46,6 +46,10 @@ if (isset($_POST['email']))
 	
 	if($ok == true)
 	{
+		$k1 = rand(10000,99999);
+		$k2 = rand(10000,99999);
+		 if ($result = @$connect->query(sprintf("INSERT INTO viddle_passreset VALUES (NULL, '$_POST['email']', '$k1', '$k2')")
+						{
 
 
 
@@ -70,21 +74,18 @@ try {
   
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Prośba o zresetowanie hasła';
-    $mail->Body    = '<meta charset="UTF-8" />
-Witaj!<br><br>
-Otrzymaliśmy prośbę o zresetowanie hasła do konta powiązanego z adresem e-mail '.$_POST['email'].'<br>
-Zresetować hasło możesz <a href="https://beta.viddle.xyz/preset.php?resettoken=token_resetu_tutaj">tutaj</a><br>.
-Jeżeli nie Ty żądałeś zresetowania hasła, możesz zignorować tego maila.<br><br>
-Pozdrawiamy,<br>
-Viddle Developers';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Subject = 'Resetowanie hasła';
+    $mail->Body    = 'Hej !!! Oto link do resetowania hasła: ';
+   
 
     $mail->send();
+    echo 'Message has been sent';
+	header('Location: resetinfo.php?id='.$k2.'');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 	}
+						}
 }
 			
 			
@@ -127,7 +128,7 @@ Viddle Developers';
 			echo $e2_err;
 		?>
 				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
-				<p>Zapomniałeś hasła? Cóż, nawet najlepszym się to zdarza. Wpisz adres e-mail powiązany z Twoim kontem, żeby zresetować hasło.</p><br>
+				<p>w celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła</p><br>
 				<?php
 
 
