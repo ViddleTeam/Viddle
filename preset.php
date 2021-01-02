@@ -44,7 +44,7 @@ if (isset($_POST['email']))
 		$e2_err = "<div class='alert alert-danger' role='alert'>Na podany adres e-mail nie jest zarejestrowane żadne konto.</div>";
 	}
 	
-	if($ok == true)
+	if($e1_err == '' || $e2_err = '')
 	{
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
