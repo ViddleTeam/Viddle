@@ -54,13 +54,7 @@ $mail = new PHPMailer(true);
 
 
 
-    $mail->SMTPOptions = array(
-        'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
-        )
-        );
+   
 
     
     //Server settings
@@ -75,7 +69,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom('support@viddle.xyz', 'viddle');
-    $mail->addAddress($email);     // Add a recipient
+    $mail->addAddress($_POST['email']);     // Add a recipient
     
     // Attachments
 
