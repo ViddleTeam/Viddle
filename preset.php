@@ -1,10 +1,14 @@
 <?php
 
-
-
-require 'vendor/autoload.php';
-
 session_start();
+
+
+		use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+// Load Composer's autoloader
+require 'vendor/autoload.php';
 
 $e1_err = '';
 $e2_err = '';
@@ -37,6 +41,51 @@ if (isset($_POST['email']))
 	{
 		$ok=false;
 		$e2_err = "<div class='alert alert-danger' role='alert'>Na podany adres e-mail nie jest zarejestrowane żadne konto.</div>";
+	}
+	
+	if($ok == true)
+	{
+
+header('Content-Type: text/html; charset=utf-8'); 
+
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+
+
+
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+        )
+        );
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'programiscidiscord@gmail.com';                     // SMTP username
+    $mail->Password   = 'rudzik_zarusl';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                            // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('programiscidiscord@gmail.com', 'axel shop');
+    $mail->addAddress($email);     // Add a recipient
+    
+    // Attachments
+
+    $body = 'Hej!!! oto jest kod weryfikacji adresu e-mail w naszym serwisie:'.$kod.'. Pozdrawiamy';
+
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'WERYFIKACJA ADRESU E-MAIL';
+    $mail->Body    = $body;
+    $mail->send();
 	}
 }
 			
