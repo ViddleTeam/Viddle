@@ -70,12 +70,16 @@ try {
   
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Subject = 'Prośba o zresetowanie hasła';
+    $mail->Body    = 'Witaj!<br><br>
+Otrzymaliśmy prośbę o zresetowanie hasła do konta powiązanego z adresem e-mail '.$_POST['email'].'<br>
+Zresetować hasło możesz <a href="https://beta.viddle.xyz/preset.php?resettoken=token_resetu_tutaj">tutaj</a><br>.
+Jeżeli nie Ty żądałeś zresetowania hasła, możesz zignorować tego maila.<br><br>
+Pozdrawiamy,<br>
+Viddle Developers';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
