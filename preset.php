@@ -56,7 +56,7 @@ if (isset($_POST['email']))
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-try {
+
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
@@ -81,9 +81,8 @@ try {
     $mail->send();
     echo 'Message has been sent';
 	header('Location: resetinfo.php?id='.$k2.'');
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+
+
 	}
 						}
 }
