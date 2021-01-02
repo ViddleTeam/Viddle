@@ -47,7 +47,6 @@ if (isset($_POST['email']))
 	if($ok == true)
 	{
 
-header('Content-Type: text/html; charset=utf-8'); 
 
 
 // Instantiation and passing `true` enables exceptions
