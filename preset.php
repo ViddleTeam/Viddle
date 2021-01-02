@@ -75,7 +75,7 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Resetowanie hasła';
-    $mail->Body    = 'Hej !!! Oto link do resetowania hasła: ';
+    $mail->Body    = 'Hej !!! Oto link do resetowania hasła: https://beta.viddle.xyz/reset.php?id='.$k1.'';
    
 
     $mail->send();
