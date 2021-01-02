@@ -71,7 +71,8 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Prośba o zresetowanie hasła';
-    $mail->Body    = 'Witaj!<br><br>
+    $mail->Body    = '<meta charset="UTF-8" />
+Witaj!<br><br>
 Otrzymaliśmy prośbę o zresetowanie hasła do konta powiązanego z adresem e-mail '.$_POST['email'].'<br>
 Zresetować hasło możesz <a href="https://beta.viddle.xyz/preset.php?resettoken=token_resetu_tutaj">tutaj</a><br>.
 Jeżeli nie Ty żądałeś zresetowania hasła, możesz zignorować tego maila.<br><br>
