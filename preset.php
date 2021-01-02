@@ -91,7 +91,7 @@ $mail = new PHPMailer(true);
 	
 	
 	
-
+echo $ok;
 ?>
 
 <!DOCTYPE html>
