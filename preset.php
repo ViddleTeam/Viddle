@@ -48,7 +48,7 @@ if (isset($_POST['email']))
 	{
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
-		 if ($result = @$connect->query(sprintf("INSERT INTO viddle_passreset VALUES (NULL, '$_POST['email']', '$k1', '$k2')")
+		 if ($result = @$connect->query(sprintf("INSERT INTO viddle_users VALUES (NULL, '%s', '%s'. '%s')", mysqli_real_escape_string($connect,$_POST['email']), mysqli_real_escape_string($connect,$k1), mysqli_real_escape_string($connect,$k2))))
 						{
 
 
