@@ -16,7 +16,7 @@ $e2_err = '';
 
 if (isset($_POST['email']))
 {
-	$ok = true;
+	$ok = '2';
 	
 	$secret = '0x2e38D68c01a7AAa01905f1471631C6b59e47300A';
         $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$_POST['h-captcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']);
@@ -44,7 +44,7 @@ if (isset($_POST['email']))
 		$e2_err = "<div class='alert alert-danger' role='alert'>Na podany adres e-mail nie jest zarejestrowane żadne konto.</div>";
 	}
 	
-	if($ok == '1')
+	if($ok == true)
 	{
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
