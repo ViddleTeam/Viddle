@@ -98,9 +98,10 @@ if(!$_POST['haslo'] == '')
 				<h3 style="font-weight: bold;">Resetowanie hasła</h3>
 				<p>Już dzielą cie ostatnie kroki by zmienić hasło !!!</p><br>
 				<?php
-
-				echo $error;	
-
+				echo $p_error;	
+				echo $rp_error;
+				echo $easypass_error;
+				echo $p2_error;
 				?>
 
                 <form method="post">
