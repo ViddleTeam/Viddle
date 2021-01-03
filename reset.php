@@ -20,6 +20,19 @@ if($d2 == '1')
 
 ?>
 
+<!DOCTYPE HTML>
+<html lang="pl-PL"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><?php if (isset($title)) echo $title ?> na Viddle</title>
+    <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content='<?php if (isset($title)) echo $title ?> na Viddle'>
+    <meta property="og:description" content='<?php if (isset($opis)) echo $opis ?>'>
+    <script src="script.js"></script>
+    <style type="text/css">/* Chart.js */
+        @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+	
 <?php
   
 if($d2 == '0')
