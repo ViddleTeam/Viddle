@@ -44,8 +44,9 @@ if (isset($_POST['email']))
 		$e2_err = "<div class='alert alert-danger' role='alert'>Na podany adres e-mail nie jest zarejestrowane żadne konto.</div>";
 	}
 	
-	if($ok == true)
+	if($ok == '2')
 	{
+		echo 'poszło';
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
 		 if ($result = @$connect->query(sprintf("INSERT INTO viddle_passreset VALUES (NULL, '%s', '%s'. '%s')", mysqli_real_escape_string($connect,$_POST['email']), mysqli_real_escape_string($connect,$k1), mysqli_real_escape_string($connect,$k2))))
