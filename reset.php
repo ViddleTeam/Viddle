@@ -14,7 +14,7 @@ $d2 = $result->num_rows;
 if($d2 == '1')
 {
      
-      
+}     
   
 
 
