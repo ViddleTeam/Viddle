@@ -63,6 +63,7 @@ if(!$_POST['haslo'] == '')
 			 }
 		 }
 }
+}
 ?>
 
 <!DOCTYPE html>
