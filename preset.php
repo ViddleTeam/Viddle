@@ -87,7 +87,7 @@ $mail = new PHPMailer(true);
 	}
 	else
 	{
-		
+		$e2_err = 'wystąpił błąd !!!';
 	}
 						}
 }
