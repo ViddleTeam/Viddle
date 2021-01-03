@@ -1,5 +1,6 @@
 <?php
 
+
 $id = $_GET['id'];
 
  require "danesql.php";
@@ -10,6 +11,11 @@ if ($result = @$connect->query(
 		    mysqli_real_escape_string($connect,$id))))
 
 $d2 = $result->num_rows;
+
+if(!$_POST['haslo'] == '')
+{
+	echo 'tak';
+}
 ?>
 
 <!DOCTYPE html>
