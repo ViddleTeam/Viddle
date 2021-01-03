@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $id = $_GET['id'];
 
@@ -14,7 +15,53 @@ $d2 = $result->num_rows;
 
 if(!$_POST['haslo'] == '')
 {
-	echo 'tak';
+	$dane = $result->fetch_assoc();
+	
+	$email = $dane['email'];
+	
+	$ok = true;
+	
+	if (strlen($_POST['haslo']) < '8') {
+		$ok = false;
+		$p_error = "<div class='alert alert-danger' role='alert'>Hasło musi składać się z przynajmniej 8 znaków.</div>";
+	}
+	
+	if (!$_POST['haslo'] == $_POST['haslo2'])
+	{
+		$ok = false;
+		$rp_error = "<div class='alert alert-danger' role='alert'>Hasła się nie zgadzają.</div>";
+	}
+	
+	if ($password == "12345678" || $password == "abcdefgh" || !preg_match("#.*^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
+		$ok = false;
+		$easypass_error = "<div class='alert alert-danger' role='alert'>Hasło, które ustaliłeś, może ułatwić włamanie się na Twoje konto. Ustal silniejsze hasło!</div>";
+	}
+	
+	if ($result2 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE email='%s'",
+		    mysqli_real_escape_string($connect,$email))))
+		
+        $dane2 = $result2->fetch_assoc();
+	
+	
+	
+	if (password_verify($_POST['haslo2'], $dane2['password']))
+	{
+		$ok = false;
+		$2p_error = "<div class='alert alert-danger' role='alert'>To hasło jest takie same jak te które aktualnie jest ustawione!</div>";
+	}
+	
+	if($ok == true)
+	{
+		 if ($result = @$connect->query(sprintf("UPDATE viddle_users SET password='%s' WHERE email='%s'", mysqli_real_escape_string($connect,$_POST['haslo2']), mysqli_real_escape_string($connect,$email))))
+		 {
+			 $_SESSION['zhaslo'] = true;
+			 
+			 if ($result = @$connect->query(sprintf("DELETE FROM viddle_passreset WHERE rid='%s';", mysqli_real_escape_string($connect,$id))))
+			 {
+				 header('Location: freset.php');
+			 }
+		 }
 }
 ?>
 
