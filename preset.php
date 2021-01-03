@@ -77,7 +77,66 @@ $mail = new PHPMailer(true);
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Resetowanie hasła';
-    $mail->Body    = 'Hej !!! Oto link do resetowania hasła: https://beta.viddle.xyz/reset.php?id='.$k1.'';
+    $mail->Body    = 'html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+            * {
+                font-family: Roboto;
+                color: white;
+            }
+
+            #header {
+                padding: 10px;
+                background-color: #313539;
+                text-align: center;
+            }
+
+            #body {
+                padding: 10px;
+                background-color: #212529;
+                justify-content: center;
+            }
+
+            #text-container {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1><i class="fas fa-key" style="margin-right: 5px;"></i> Resetowanie hasła</h1>
+        </div>
+        <div id="body">
+            <div id="text-container">
+                <p>
+                    Witaj, <b>[placeholder dla nazwy użytkownika].</b><br><br>
+                    Otrzymaliśmy żądanie zmiany hasła dla konta powiązanego z adresem e-mail <b>[placeholder dla adresu e-mail]</b>.<br><br>
+                    Hasło możesz zresetować, klikając <a href="https://beta.viddle.xyz/resetinfo.php?resetkey=klucz">tutaj.</a><br><br>
+                    Jeżeli to nie Ty prosiłeś o zmianę hasła, możesz zignorować tego maila. Żeby zapobiec zmianie hasła poprzez 
+                    nieuprawiony dostęp do Twojej skrzynki, zmień do niej hasło na silniejsze.<br><br>
+                    Pozdrawiamy,<br>
+                    Viddle Developers
+                </p>
+                <br><hr>
+                <p style="text-align: center; font-size: small;">
+                    Wiadomość została wygenerowana automatycznie. Nie odpowiadaj na nią, w przeciwnym razie Twoje zapytanie trafi do niemonitorowanej skrzynki mailowej.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>';
    
 
     $mail->send();
