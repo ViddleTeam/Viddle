@@ -85,6 +85,9 @@ $mail = new PHPMailer(true);
 
 
 	}
+	else
+	{
+		$e2_err = '<div class='alert alert-danger' role='alert'>Wystąpił błąd deweloperski. Skontaktuj się z suportem viddle</div>'
 						}
 }
 			
