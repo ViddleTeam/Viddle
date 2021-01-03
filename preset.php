@@ -73,13 +73,15 @@ $mail = new PHPMailer(true);
     $mail->setFrom('support@viddle.xyz', 'viddle');
     $mail->addAddress($_POST['email']);     // Add a recipient
   
-  $body = '<html>
+
+
+			$body = '<html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8" />
         <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto');
+            @import url("https://fonts.googleapis.com/css2?family=Roboto");
 
             * {
                 font-family: Roboto;
@@ -133,7 +135,8 @@ $mail = new PHPMailer(true);
         </div>
     </body>
 </html>';
-
+	
+	
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Resetowanie hasła';
