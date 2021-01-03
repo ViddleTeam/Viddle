@@ -73,11 +73,7 @@ $mail = new PHPMailer(true);
     $mail->setFrom('support@viddle.xyz', 'viddle');
     $mail->addAddress($_POST['email']);     // Add a recipient
   
-  
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Resetowanie hasła';
-    $mail->Body    = 'html>
+  $body = '<html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8" />
@@ -137,6 +133,11 @@ $mail = new PHPMailer(true);
         </div>
     </body>
 </html>';
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Resetowanie hasła';
+    $mail->Body    = $body;
    
 
     $mail->send();
