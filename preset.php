@@ -3,7 +3,7 @@
 session_start();
 
 
-		use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
@@ -49,9 +49,8 @@ if (isset($_POST['email']))
 		echo 'poszło';
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
-		 if ($result = @$connect->query(sprintf("INSERT INTO viddle_passreset VALUES (NULL, '%s', '%s'. '%s')", mysqli_real_escape_string($connect,$_POST['email']), mysqli_real_escape_string($connect,$k1), mysqli_real_escape_string($connect,$k2))))
-						{
-
+		if ($connect->query("INSERT INTO uzytkownicy VALUES ('$_POST['email'], '$k1', '$k2'"))
+		{
 
 
 // Instantiation and passing `true` enables exceptions
