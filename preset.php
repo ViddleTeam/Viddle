@@ -87,7 +87,9 @@ $mail = new PHPMailer(true);
 	}
 	else
 	{
-		$e2_err = 'wystąpił błąd !!!';
+		$e2_err = '<div class="alert alert-danger" role="alert">
+				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle
+		  	</div>';
 	}
 						}
 }
