@@ -48,7 +48,7 @@ if(!$_POST['haslo'] == '')
 	if (password_verify($_POST['haslo2'], $dane2['password']))
 	{
 		$ok = false;
-		$2p_error = "<div class='alert alert-danger' role='alert'>To hasło jest takie same jak te które aktualnie jest ustawione!</div>";
+		$p2_error = "<div class='alert alert-danger' role='alert'>To hasło jest takie same jak te które aktualnie jest ustawione!</div>";
 	}
 	
 	if($ok == true)
