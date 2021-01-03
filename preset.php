@@ -50,7 +50,7 @@ if (isset($_POST['email']))
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
 		$email = $_POST['email'];
-		if ($connect->query("INSERT INTO viddle_passreset VALUES ('$email', '$k1', '$k2'"))
+		if ($connect->query("INSERT INTO viddle_passreset VALUES (NULL, '$email', '$k1', '$k2'"))
 		{
 
 
