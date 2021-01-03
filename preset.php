@@ -43,6 +43,12 @@ if (isset($_POST['email']))
 		$ok=false;
 		$e2_err = "<div class='alert alert-danger' role='alert'>Na podany adres e-mail nie jest zarejestrowane żadne konto.</div>";
 	}
+	else
+	{
+		$dane = $result->fetch_assoc();
+		
+		$nickname = $dane['login'];
+	}
 	
 	if($ok == '2')
 	{
@@ -119,9 +125,9 @@ $mail = new PHPMailer(true);
         <div id="body">
             <div id="text-container">
                 <p>
-                    Witaj, <b>[placeholder dla nazwy użytkownika].</b><br><br>
-                    Otrzymaliśmy żądanie zmiany hasła dla konta powiązanego z adresem e-mail <b>[placeholder dla adresu e-mail]</b>.<br><br>
-                    Hasło możesz zresetować, klikając <a href="https://beta.viddle.xyz/resetinfo.php?resetkey=klucz">tutaj.</a><br><br>
+                    Witaj, <b>'.$nickname.'.</b><br><br>
+                    Otrzymaliśmy żądanie zmiany hasła dla konta powiązanego z adresem e-mail <b>'.$_POST['email'].'</b>.<br><br>
+                    Hasło możesz zresetować, klikając <a href="https://beta.viddle.xyz/reset.php?id='.$k1.'">tutaj.</a><br><br>
                     Jeżeli to nie Ty prosiłeś o zmianę hasła, możesz zignorować tego maila. Żeby zapobiec zmianie hasła poprzez 
                     nieuprawiony dostęp do Twojej skrzynki, zmień do niej hasło na silniejsze.<br><br>
                     Pozdrawiamy,<br>
