@@ -10,11 +10,6 @@ if ($result = @$connect->query(
 		    mysqli_real_escape_string($connect,$id))))
 
 $d2 = $result->num_rows;
-if ($d2 == '0') {
-	echo "<script>
-		$('#staticBackdrop').modal('show');
-	</script>";
-}
 ?>
 
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -34,3 +29,10 @@ if ($d2 == '0') {
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<?php
+if ($d2 == '0') {
+	echo "<script>
+		$('#staticBackdrop').modal('show');
+	</script>";
+}
+?>
