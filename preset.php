@@ -49,7 +49,8 @@ if (isset($_POST['email']))
 		echo 'poszło';
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
-		if ($connect->query("INSERT INTO uzytkownicy VALUES ('$_POST['email'], '$k1', '$k2'"))
+		$email = $_POST['email'];
+		if ($connect->query("INSERT INTO uzytkownicy VALUES ('$email', '$k1', '$k2'"))
 		{
 
 
