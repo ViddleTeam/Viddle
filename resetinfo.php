@@ -53,7 +53,7 @@ $d2 = $result->num_rows;
 				<p>Na adres e-mail <?php echo $email ?> wysłaliśmy link do zresetowania hasła. Sprawdź swoją skrzynke e-mail i kliknij w link wysłany przez nas.</p><br>
 				
                 
-					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zacznij</p></button></a>
+					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Strona główna</p></button></a>
 				</div>
 				</div>
 				</center>
