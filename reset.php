@@ -39,6 +39,8 @@ $d2 = $result->num_rows;
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
+					<?php if($d2 == '1')
+					      { ?>
 				<h3 style="font-weight: bold;">Resetowanie hasła</h3>
 				<p>Już dzielą cie ostatnie kroki by zmienić hasło !!!</p><br>
 				<?php
@@ -62,61 +64,23 @@ $d2 = $result->num_rows;
                 </form>
 					
 				</div>
-				<p style="margin: 15px 0 0 0;">Zapomniałeś hasła? <a href="preset.php">Wyślij prośbę o zresetowanie.</a></p>
+				
 				</center>
 			</div>
 			</div><br>
 	</body>
 </html>
-
-<!-- brak tokena -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Wystąpił błąd!</h5>
-            </div>
-            <div class="modal-body">
-                Link do odzyskania hasła jest nieprawidłowy bądź jego ważność wygasła.
-            </div>
-            <div class="modal-footer">
-                <a href="index.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Powrót na stronę główną</button></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <?php
-if ($d2 == '0') {
-	echo "<script>
-		$('#staticBackdrop').modal('show');
-	</script>";
-	
-	echo '<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Wystąpił błąd!</h5>
-            </div>
-            <div class="modal-body">
-                Link do odzyskania hasła jest nieprawidłowy bądź jego ważność wygasła.
-            </div>
-            <div class="modal-footer">
-                <a href="index.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Powrót na stronę główną</button></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
 }
-?>
+else
+{
+	?>
+	<h3 style="font-weight: bold;">Upsss ... coś poszło nie tak</h3>
+				<p></p>Najwidoczniej ktoś już skorzystał z tego linku do zresetowania hasła lub jest on niepoprawny. Jeśli wpisywałeś link ręcznie to upewnij się że jest on prawidłowy<br>
+				
+	</body>
+</html>
+<?php
+}
+	?>
+
