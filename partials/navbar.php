@@ -12,6 +12,7 @@ if ($_SESSION['z1'] == true) {
         $_SESSION['avatar'] = $dane['avatarname'];
         $avatar = $dane['avatarname'];
         $uid = $dane['uid'];
+        $block = $dane['block'];
         if ($avatar == 'x') {
             $av2 = '0';
             $av3 = 'avatardomyslny.jpg';
@@ -28,6 +29,11 @@ $str = "/channel.php?id=";
 $url = $_SERVER['REQUEST_URI'];
 $cond = strpos($url, $str) !== false;
 $ttl = isset($title) && $cond ? "Viddle - $title" : 'Viddle - Viddle';
+
+if($block == '1')
+{
+     $_SESSION['blokada'] = true;
+     header('location: block.php');
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL"><head>
