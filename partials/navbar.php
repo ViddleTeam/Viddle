@@ -34,6 +34,7 @@ if($block == '1')
 {
      $_SESSION['blokada'] = true;
      header('location: block.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL"><head>
