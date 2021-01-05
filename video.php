@@ -163,6 +163,8 @@ else
 						
 						$k1 = $pytanie->num_rows+1;
 						
+						echo '1';
+						
 						for($k2 = 1; $k2 < $k1; $k2 += 1)
 						{
 						
