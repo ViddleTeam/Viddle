@@ -148,6 +148,7 @@ else
                                       <span>
                                         
                                       </span>
+					    <br></br>
 					    <?php
 		
 		if ($result3 = @$connect->query(
