@@ -42,7 +42,13 @@ if ($id == 0) {
 	$name = $dane['login'];
 	$av6 = $dane['avatarname'];
 	
-        $video_exists = true;
+        $video_exists = false;
+	    
+	if($_SESSION['user'] == 'Twoja Stara')
+	{
+		$video_exists = true;
+	}
+		
     } else {
         $video_exists = false;
     }
@@ -234,10 +240,10 @@ else
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Film nie został znaleziony!</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Przerwa techniczna</h5>
             </div>
             <div class="modal-body">
-                Film może nie być dostępny, ponieważ nie istnieje lub został usunięty przez administratorów serwisu. Jeżeli wpisałeś ID filmu ręcznie, sprawdź czy się nie pomyliłeś.
+               Na chwilę obecną oglądanie filmów jest niedostępne z powodów obecnie trwających prac technicznych. Gdy przerwa techniczna się skończy wszystko wróci do normy. Za utrudnienia przepraszamy
             </div>
             <div class="modal-footer">
                 <a href="index.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Powrót na stronę główną</button></a>
