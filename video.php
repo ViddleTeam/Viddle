@@ -172,7 +172,7 @@ else
 						 
 							
 							
-						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id='$k2'"))
+						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id2='$k2'"))
 						    {
 							$dane3 = $comment->fetch_assoc();
 							    
