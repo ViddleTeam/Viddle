@@ -165,7 +165,7 @@ else
 							$kdate = $dane3['published'];
 							$kvid = $dane3['videoid'];
 							    
-							if($kvid == $id)
+							if(!$kvid == $id)
 							{
 								
 							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$kuid'"))
