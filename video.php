@@ -149,7 +149,7 @@ else
                                         
                                       </span>
 					    <?php
-					    $pytanie = '$connect->query("SELECT * FROM komentarze WHERE video_id='$id'")';
+					    $pytanie = '$connect->query("SELECT * FROM viddle_comments WHERE video_id='$id'")';
 		
 					if($pytanie->num_rows > 0)
 					{
@@ -195,7 +195,7 @@ else
 							
 							    
 									}
-									}
+							}
 					}
 						
 					    ?>
