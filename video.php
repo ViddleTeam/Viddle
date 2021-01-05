@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+
 $id = $_GET['id'];
 $video_exists = true;
 if ($id == 0) {
