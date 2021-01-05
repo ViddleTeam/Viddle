@@ -149,12 +149,22 @@ else
                                         
                                       </span>
 					    <?php
-					    $pytanie = '$connect->query("SELECT * FROM viddle_comments")';
 		
-					if($pytanie->num_rows > 0)
+		if ($result3 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_comments")))
+			
+		$d3 = $result3->num_rows;
+					    
+			
+		
+					if($d3 > '0')
 					{
+						$pytanie = '$connect->query("SELECT * FROM viddle_comments")';
+						
 						$k1 = $pytanie->num_rows+1;
 						
+						for($k2 = 1; $k2 < $k1; $k2 += 1)
+						{
 						
 							echo '10';
 						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments"))
@@ -202,6 +212,7 @@ else
 									}
 							}
 						}
+					}
 					
 						
 					    ?>
