@@ -17,6 +17,8 @@ if ($id == 0) {
         $opis = $dane['opis'];
         $views = $dane['views'];
         $komentarze = $dane['comments'];
+	$likes = $dane['upvotes'];
+	$dislikes = $dane['downvotes'];
         $video_exists = true;
         if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
@@ -116,7 +118,7 @@ else
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;">
 				  <i class="fas fa-eye" style="margin-right: 5px;"></i><?php echo $views ?></h4>
-                      <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
+                      <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?> <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?>
                     </span>
                             </div><br>
                             <p><?php echo $opis ?></p>
