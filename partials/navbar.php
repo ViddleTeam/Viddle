@@ -2,6 +2,7 @@
 session_start();
 if ($_SESSION['z1'] == true) {
     $i = '1';
+    
     $avatar = 'test.png';
     $login = $_SESSION['user'];
     require "danesql.php";
@@ -12,6 +13,7 @@ if ($_SESSION['z1'] == true) {
         $_SESSION['avatar'] = $dane['avatarname'];
         $avatar = $dane['avatarname'];
         $uid = $dane['uid'];
+        $_SESSION['email'] = $dane['email']; 
         $block = $dane['block'];
         if ($avatar == 'x') {
             $av2 = '0';
