@@ -190,6 +190,7 @@ else
 								
 								$kuav = $dane4['avatarname'];
 								$kuname = $dane4['login'];
+								$kuid = $dane4['uid'];
 								
 								if($kuav == 'x')
 								{
@@ -198,7 +199,7 @@ else
 								}
 								else
 								{
-									$av11 = '/grafic/'.$kuname.'a.'.$kuav.'';
+									$av11 = '/grafic/'.$kuname.'a.'.$kuid.'';
 								}
 								
 								$vievcoment = '<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
