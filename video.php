@@ -156,14 +156,18 @@ else
 						$k1 = $pytanie->num_rows+1;
 						
 						for($k2 = 1; $k2 < $k1; $k2 += 1){
-						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id='$k2'"))
+						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments"))
 						    {
 							$dane3 = $comment->fetch_assoc();
 							    
 							$ktresc = $dane3['tresc'];
 							$kuid = $dane3['uid'];
 							$kdate = $dane3['published'];
+							$kvid = $dane3['videoid'];
 							    
+							if($kvid == $id)
+							{
+								
 							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$kuid'"))
 							{
 								$dane4 = $result4->fetch_assoc();
@@ -193,7 +197,7 @@ else
 								echo $vievcoment;
 							
 							
-							    
+							}
 									}
 							}
 					}
