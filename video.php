@@ -144,10 +144,7 @@ else
                             <div class="alert alert-info" style="width: 100%;">
                                 <strong>Komentarze są tymczasowo wyłączone i powrócą wkrótce.</strong>
                             </div>
-                                    <div class="container row" style="margin-top: 10px;">
-                                      <span>
-                                        
-                                      </span>
+                                    
 					    <br></br>
 					    <?php
 		
@@ -202,7 +199,10 @@ else
 									$av11 = '/grafic/'.$kuid.'a.'.$kuav.'';
 								}
 								
-								$vievcoment = '<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
+								$vievcoment = '<div class="container row" style="margin-top: 10px;">
+                                      <span>
+                                        
+                                      <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
 								<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
                                           <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.' • '.$kdate.' </h6>
                                           <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$ktresc.'</p>
@@ -210,6 +210,7 @@ else
                                   </div>
                         </div>
                     </div>
+		    </span>
                 </div>'; 
 								echo $vievcoment;
 							
