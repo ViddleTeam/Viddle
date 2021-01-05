@@ -64,6 +64,8 @@ else
 {
 	$av7 = '/grafic/'.$publisher.'a.'.$av6.'';
 }
+
+
 ?>
 
 
@@ -138,12 +140,11 @@ else
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                       </span>
                                 <span class="md-form my-0 mx-2" style="color: white !important;">
-                          <input class="form-control mr-sm-2" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
+                          <input class="form-control mr-sm-2" name='com' style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
+				    <input type="submit" value="OPUBLIKUJ" class="btn btn-success" style="padding: 10px; color: white;">
                             </div><br>
-                            <div class="alert alert-info" style="width: 100%;">
-                                <strong>Komentarze są tymczasowo wyłączone i powrócą wkrótce.</strong>
-                            </div>
+                            
                                     
 					    <br></br>
 					    <?php
