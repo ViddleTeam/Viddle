@@ -199,7 +199,7 @@ else
 								}
 								else
 								{
-									$av11 = '/grafic/'.$kuname.'a.'.$kuid.'';
+									$av11 = '/grafic/'.$kuid.'a.'.$kuav.'';
 								}
 								
 								$vievcoment = '<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
