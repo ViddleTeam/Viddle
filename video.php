@@ -220,15 +220,7 @@ else
 					
 						
 					    ?>
-				      <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
-                                      <span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
-                                          <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">SlaVistaPL • 3 minuty temu</h6>
-                                          <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum.</p>
-                                      </span>
-                                  </div>
-                        </div>
-                    </div>
-                </div>
+				     
                 <div class="col-md-5">
                     <div class="md-form form-group">
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
