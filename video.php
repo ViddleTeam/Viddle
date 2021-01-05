@@ -182,8 +182,9 @@ else
 							    
 							if($dane3['videoid'] == $id)
 							{
+								$uiddd = $dane3['uid'];
 								
-							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$dane3['uid']'"))
+							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$uiddd'"))
 							{
 								$dane4 = $result4->fetch_assoc();
 								
