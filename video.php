@@ -146,8 +146,60 @@ else
                             </div>
                                     <div class="container row" style="margin-top: 10px;">
                                       <span>
-                                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                                        
                                       </span>
+					    <?php
+					    $pytanie = '$connect->query("SELECT * FROM komentarze WHERE video_id='$id'")';
+		
+					if($pytanie->num_rows > 0)
+					{
+						$k1 = $pytanie->num_rows+1;
+						
+						for($k2 = 1; $k2 < $k1; $k2 += 1){
+						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id='$k2'"))
+						    {
+							$dane3 = $comment->fetch_assoc();
+							    
+							$ktresc = $dane3['tresc'];
+							$kuid = $dane3['uid'];
+							$kdate = $dane3['published'];
+							    
+							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$kuid'"))
+							{
+								$dane4 = $result4->fetch_assoc();
+								
+								$kuav = $dane4['avatarname'];
+								$kuname = $dane4['login'];
+								
+								if($kuav == 'x')
+								{
+									$av11 = 'anonim.png';
+									
+								}
+								else
+								{
+									$av11 = '/grafic/'.$kuname.'a.'.$kuav.'';
+								}
+								
+								$vievcoment = '<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
+								<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
+                                          <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.' • '.$kdate.' </h6>
+                                          <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$ktresc.'</p>
+                                      </span>
+                                  </div>
+                        </div>
+                    </div>
+                </div>'; 
+								echo $vievcoment;
+							
+							
+							    
+									}
+									}
+					}
+						
+					    ?>
+				      <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                                       <span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
                                           <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">SlaVistaPL • 3 minuty temu</h6>
                                           <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum.</p>
