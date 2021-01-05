@@ -169,9 +169,10 @@ else
 						for($k2 = 1; $k2 < $k1; $k2 += 1)
 						{
 							$ktresc = '';
-						
+						 
 							
-						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments"))
+							
+						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id='$k2'"))
 						    {
 							$dane3 = $comment->fetch_assoc();
 							    
