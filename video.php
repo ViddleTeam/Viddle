@@ -147,7 +147,7 @@ else
                                     
 					    <br></br>
 					    <?php
-		try{
+		
 			
 		if ($result3 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_comments")))
@@ -176,14 +176,14 @@ else
 							$dane3 = $comment->fetch_assoc();
 							    
 							$ktresc = $dane3['tresc'];
-							$kuid = $dane3['uid'];
-							$kdate = $dane3['published'];
-							$kvid = $dane3['videoid'];
+							$kuid = '';
+							$kdate = '';
+							
 							    
-							if($kvid == $id)
+							if($dane3['videoid'] == $id)
 							{
 								
-							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$kuid'"))
+							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$dane3['uid']'"))
 							{
 								$dane4 = $result4->fetch_assoc();
 								
@@ -198,23 +198,23 @@ else
 								}
 								else
 								{
-									$av11 = '/grafic/'.$kuid.'a.'.$kuav.'';
+									$av11 = '/grafic/'.$dane3['uid'].'a.'.$dane4['avatarname'].'';
 								}
 								
-								$vievcoment = '<div class="container row" style="margin-top: 10px;">
+								
+								echo '<div class="container row" style="margin-top: 10px;">
                                       <span>
                                         
                                       <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
 								<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
-                                          <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.$kuname.' • '.$kdate.' </h6>
-                                          <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$ktresc.'</p>
+                                          <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.$dane4['login'].' • '.$dane3['published'].' </h6>
+                                          <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$dane3['tresc'].'</p>
                                       </span>
                                   </div>
                         </div>
                     </div>
 		    </span>
-                </div>'; 
-								echo $vievcoment;
+                </div>';
 							
 							
 							}
@@ -223,7 +223,7 @@ else
 						}
 					}
 					
-		}	
+			
 					    ?>
 				     
                 <div class="col-md-5">
