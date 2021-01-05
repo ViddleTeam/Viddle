@@ -147,7 +147,8 @@ else
                                     
 					    <br></br>
 					    <?php
-		
+		try{
+			
 		if ($result3 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_comments")))
 			
@@ -222,7 +223,7 @@ else
 						}
 					}
 					
-						
+		}	
 					    ?>
 				     
                 <div class="col-md-5">
