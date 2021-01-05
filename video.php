@@ -161,14 +161,15 @@ else
 						
 						
 						
-						echo '1';
+						
 						
 						$k1 = $d3 + '1';
 						
 						for($k2 = 1; $k2 < $k1; $k2 += 1)
 						{
+							$ktresc = '';
 						
-							echo '10';
+							
 						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments"))
 						    {
 							$dane3 = $comment->fetch_assoc();
