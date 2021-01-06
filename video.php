@@ -142,7 +142,7 @@ else
                             <div class="container row">
                       <span>
 			      <?php
-				if($_SESSION['avatar'] == 'x')
+				if(!$_SESSION['z'] == 'true')
 				{
 					$avatarkomentarze = 'avatardomyslny.jpg';
 				}
