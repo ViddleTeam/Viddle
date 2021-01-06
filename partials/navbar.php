@@ -76,7 +76,7 @@ if($block == '1')
 <div style="opacity: 1;" class="website">
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
-            <a class="navbar-brand" href="index.php"><img src="https://cdn.discordapp.com/attachments/785086822220169217/792409145197985802/logo.png" width="120px" /></a>
+            <a class="navbar-brand" href="index.php"><img src="https://media.discordapp.net/attachments/785086822220169217/796438597258444830/vlogocropped.png?width=50&height=50" width="120px" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
                     aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,22 +85,22 @@ if($block == '1')
                 <ul class="navbar-nav mr-auto">
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="index" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <span class="d-lg-none">Strona główna</span></a>
+                            <a class="nav-link" href="index" title="Strona główna"><img src="https://media.discordapp.net/attachments/785086822220169217/796438583912562698/viconhome.png?width=132&height=127" width="20px"/> <span class="d-lg-none">Strona główna</span></a>
                         </li>
                     </div>
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="trending" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <span class="d-lg-none">Popularne</span></a>
+                            <a class="nav-link" href="trending" title="Popularne"><img src="https://media.discordapp.net/attachments/785086822220169217/796438586274742332/vicontrending.png?width=99&height=123" width="20px"/> <span class="d-lg-none">Popularne</span></a>
                         </li>
                     </div>
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="discover" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <span class="d-lg-none">Odkrywaj</span></a>
+                            <a class="nav-link" href="discover" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/785086822220169217/796438582041772102/vicondiscover.png?width=116&height=116" width="20px"/> <span class="d-lg-none">Odkrywaj</span></a>
                         </li>
                     </div>
                 </ul>
                 <form class="form-inline" method="GET" action="search" style="margin-right: auto;">
-                    <input id="input_search" class="form-control mr-sm-2" style="width: 20rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
+                    <input id="input_search" class="form-control mr-sm-2" style="width: 20rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj" aria-label="Szukaj">
                 </form>
 
                 <?php
@@ -109,7 +109,7 @@ if($block == '1')
                 <ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
                     <div class="container row">
                         <li class="nav-item">
-                            <a class="nav-link" href="upload.php" title="Udostępnij film"><img src="https://cdn.discordapp.com/attachments/785086822220169217/787786218812211210/Group_2_2.svg" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
+                            <a class="nav-link" href="upload.php" title="Udostępnij film"><img src="https://media.discordapp.net/attachments/785086822220169217/796438592850362378/viconupload.png?width=117&height=72" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
                         </li>
                     </div>
                     <?php
