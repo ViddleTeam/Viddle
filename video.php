@@ -7,7 +7,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 $id = $_GET['id'];
 $video_exists = true;
-
+$_SESSION['id'] = $_GET['id'];
 
 
 if ($id == 0) {
@@ -155,6 +155,7 @@ else
 		$d_error = '<div class="alert alert-danger" role="alert">
 				Twój komentarz jest za długi. Maksymalna długość wynosi 500 znaków
 		  	</div>';
+		header('location: video.php?id='.$_SESSION['id'].'');
 	}
 	
 	if($ok == true)
@@ -177,12 +178,14 @@ else
 		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$tresc', '$uid4', '$data', '$id')"))
 		{
 			$d_error = 'Pomyślnie opublikowano komentarz!';
+			header('location: video.php?id='.$_SESSION['id'].'');
 		}
 		else
 		{
 			$d_error = '<div class="alert alert-danger" role="alert">
 				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle!
 		  	</div>';
+			header('location: video.php?id='.$_SESSION['id'].'');
 		}
 	}	
 }
