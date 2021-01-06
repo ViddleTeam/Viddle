@@ -49,12 +49,9 @@ if ($id == 0) {
 	$name = $dane['login'];
 	$av6 = $dane['avatarname'];
 	
-        $video_exists = false;
+        $video_exists = true;
 	    
-	if($_SESSION['user'] == 'Twoja Stara')
-	{
-		$video_exists = true;
-	}
+	
 		
     } else {
         $video_exists = false;
@@ -161,7 +158,7 @@ else
                           <input class="form-control mr-sm-2" disable='disable' name='com'  style="color: white !important; width: 32rem;" type="text" placeholder="(pisanie komentarzy jest tymczasowo niedostępne)" aria-label="(pisanie komentarzy jest tymczasowo niedostępne)">
                       </span>
 					<?php 
-			if($video_exists == false
+			if($video_exists == false)
 			{
 					echo '<input type="submit" value="Opublikuj" class="btn btn-success" style="padding: 10px;"></a>';
 			}
@@ -339,10 +336,10 @@ else
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Przerwa techniczna</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Film nie został znaleziony!</h5>
             </div>
             <div class="modal-body">
-               Na chwilę obecną oglądanie filmów jest niedostępne z powodów obecnie trwających prac technicznych. Gdy przerwa techniczna się skończy wszystko wróci do normy. Za utrudnienia przepraszamy
+                Film może nie być dostępny, ponieważ nie istnieje lub został usunięty przez administratorów serwisu. Jeżeli wpisałeś ID filmu ręcznie, sprawdź czy się nie pomyliłeś.
             </div>
             <div class="modal-footer">
                 <a href="index.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Powrót na stronę główną</button></a>
