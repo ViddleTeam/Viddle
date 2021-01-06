@@ -190,7 +190,7 @@ else
 	}	
 }
 		?>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $_SESSION['avatar']">
                       </span>
                                 <span class="md-form my-0 mx-2" style="color: white !important;">
 					<form method='post' action='compublic.php'>
