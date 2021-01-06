@@ -91,7 +91,7 @@ if(!$_POST['com'] == '')
 		
 		$data = date("Y-m-d H:i");
 		
-		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$_POST['com']', '$_SESSION['uid']', '$data', '$id')"))
+		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$tresc', '$uid4', '$data', '$id')"))
 		{
 			$d_error = 'Pomyślnie opublikowano komentarz!';
 		}
