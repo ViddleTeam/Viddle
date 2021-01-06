@@ -2,13 +2,53 @@
 <?php
 session_start();
 
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
 $id = $_GET['id'];
 $video_exists = true;
+
+if(!$_POST['com'] == '')
+{
+	$ok = true;
+	
+	if ((strlen($_POST['com'])>500))
+	{
+		$ok = false;
+		$d_error = '<div class="alert alert-danger" role="alert">
+				Twój komentarz jest za długi. Maksymalna długość wynosi 500 znaków
+		  	</div>';
+	}
+	
+	if($ok == true)
+	{
+		if ($result6 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE videoid='%s'",
+		    mysqli_real_escape_string($connect,$id))))
+		
+		$d6 = $result->num_rows;
+		
+		$kid2 = $d6 + '1';
+		
+		$data = date("Y-m-d H:i");
+		
+		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$tresc', '$uid4', '$data', '$id')"))
+		{
+			$d_error = 'Pomyślnie opublikowano komentarz!';
+		}
+		else
+		{
+			$d_error = '<div class="alert alert-danger" role="alert">
+				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle!
+		  	</div>';
+		}
+	}	
+}
+
 if ($id == 0) {
     $video_exists = false;
 } else {
-    require "danesql.php";
-    $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+    
     $video_exists = true;
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
     if (isset($d2) && $d2 == '1') {
@@ -67,42 +107,7 @@ else
 
 
 
-if(!$_POST['com'] == '')
-{
-	$ok = true;
-	
-	if ((strlen($_POST['com'])>500))
-	{
-		$ok = false;
-		$d_error = '<div class="alert alert-danger" role="alert">
-				Twój komentarz jest za długi. Maksymalna długość wynosi 500 znaków
-		  	</div>';
-	}
-	
-	if($ok == true)
-	{
-		if ($result6 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE videoid='%s'",
-		    mysqli_real_escape_string($connect,$id))))
-		
-		$d6 = $result->num_rows;
-		
-		$kid2 = $d6 + '1';
-		
-		$data = date("Y-m-d H:i");
-		
-		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$tresc', '$uid4', '$data', '$id')"))
-		{
-			$d_error = 'Pomyślnie opublikowano komentarz!';
-		}
-		else
-		{
-			$d_error = '<div class="alert alert-danger" role="alert">
-				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle!
-		  	</div>';
-		}
-	}	
-}
+
 ?>
 
 
