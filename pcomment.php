@@ -18,9 +18,10 @@ else
      $ok = true;
      $i = $_GET['id'];
   
-     if((strlen($tresc)>500)
+     if((strlen($tresc)>500))
      {
           $ok = false;
+		  
           $_SESSION['kinfo'] = '<div class="alert alert-danger" role="alert">
 				  Twój komentarz jest za długi, maksymalna ilość znaków wynosi 500!
 		  	  </div>';
@@ -52,11 +53,20 @@ else
          
          $i3 = $i2 + '1';
          
-         $data=date("Y-m-d H:I:S");
+         $data= date("Y-m-d H:I:S");
        
-             if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$i3', '$tresc', '$_SESSION['uid']', '$data', '$i')"))
+              if ($connect->query(
+				  sprintf("INSERT INTO `viddle_comments` VALUES (NULL, '%s', '%s', '%s', '%s', '%s'",
+				  mysqli_real_escape_string($connect,$i3),
+				  mysqli_real_escape_string($connect,$tresc),
+				  mysqli_real_escape_string($connect,$_SESSION['uid']),
+				  mysqli_real_escape_string($connect,$data),
+				  mysqli_real_escape_string($connect,$i))))
              {
-                  if ($connect->query("UPDATE viddle_video SET comments='$c2' WHERE video_id='$i'"))
+                  if ($connect->query(
+				  sprintf("UPDATE viddle_videos SET comments='%s' WHERE video_id='%s'",
+				  mysqli_real_escape_string($connect,$c2),
+				  mysqli_real_escape_string($connect,$i))))
                   {
                         $_SESSION['kinfo'] = 'Pomyślnie dodano komentarz!';
                         header('location: video.php?id='.$i.'');
