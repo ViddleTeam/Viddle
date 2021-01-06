@@ -190,7 +190,7 @@ else
 	}	
 }
 		?>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $_SESSION['avatar']">
+                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $_SESSION['avatar'] ?>">
                       </span>
                                 <span class="md-form my-0 mx-2" style="color: white !important;">
 					<form method='post' action='compublic.php'>
