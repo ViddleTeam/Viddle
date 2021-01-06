@@ -158,10 +158,14 @@ else
                       </span>
                                 <span class="md-form my-0 mx-2" style="color: white !important;">
 					<form method='post' action='pcomment.php?id='.$id.''>
-                          <input class="form-control mr-sm-2" name='com'  style="color: white !important; width: 32rem;" type="text" placeholder="(pisanie komentarzy jest tymczasowo niedostępne)" aria-label="(pisanie komentarzy jest tymczasowo niedostępne)">
+                          <input class="form-control mr-sm-2" disable='disable' name='com'  style="color: white !important; width: 32rem;" type="text" placeholder="(pisanie komentarzy jest tymczasowo niedostępne)" aria-label="(pisanie komentarzy jest tymczasowo niedostępne)">
                       </span>
+					<?php 
+			if($video_exists == false
+			{
 					<input type="submit" value="Opublikuj" class="btn btn-success" style="padding: 10px;"></a>
-
+			}
+			   ?>
 				    </form>
                             </div><br>
                             
