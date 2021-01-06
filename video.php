@@ -163,7 +163,7 @@ else
 					<?php 
 			if($video_exists == false
 			{
-					<input type="submit" value="Opublikuj" class="btn btn-success" style="padding: 10px;"></a>
+					echo '<input type="submit" value="Opublikuj" class="btn btn-success" style="padding: 10px;"></a>';
 			}
 			   ?>
 				    </form>
