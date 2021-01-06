@@ -160,8 +160,8 @@ else
 					<form method='post' action='pcomment.php?id='.$id.''>
                           <input class="form-control mr-sm-2" name='com'  style="color: white !important; width: 32rem;" type="text" placeholder="(pisanie komentarzy jest tymczasowo niedostępne)" aria-label="(pisanie komentarzy jest tymczasowo niedostępne)">
                       </span>
-					
-		
+					<input type="submit" value="Opublikuj" class="btn btn-success" style="padding: 10px;"></a>
+
 				    </form>
                             </div><br>
                             
