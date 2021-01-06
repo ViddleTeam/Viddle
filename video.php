@@ -32,6 +32,11 @@ if(!$_POST['com'] == '')
 		
 		$data = date("Y-m-d H:i");
 		
+		$tresc = $_POST['com'];
+		
+		$uid4 = $_SESSION['uid'];
+		
+		
 		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$tresc', '$uid4', '$data', '$id')"))
 		{
 			$d_error = 'Pomyślnie opublikowano komentarz!';
