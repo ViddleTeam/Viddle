@@ -194,7 +194,7 @@ else
                       </span>
                                 <span class="md-form my-0 mx-2" style="color: white !important;">
 					<form method='post' action='compublic.php'>
-                          <input class="form-control mr-sm-2" name='com' disabled='disabled' style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
+                          <input class="form-control mr-sm-2" name='com' disabled='disabled' style="color: white !important; width: 32rem;" type="text" placeholder="(pisanie komentarzy jest tymczasowo niedostępne)" aria-label="(pisanie komentarzy jest tymczasowo niedostępne)">
                       </span>
 					<?php
 		$blokowanie = '1';
