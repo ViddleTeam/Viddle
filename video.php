@@ -145,50 +145,13 @@ else
                             <div class="container row">
                       <span>
 			      <?php
-		if(!$_POST['com'] == '')
-{
-	$ok = true;
-	
-	if ((strlen($_POST['com'])>500))
-	{
-		$ok = false;
-		$d_error = '<div class="alert alert-danger" role="alert">
-				Twój komentarz jest za długi. Maksymalna długość wynosi 500 znaków
-		  	</div>';
-		header('location: video.php?id='.$_SESSION['id'].'');
-	}
-	
-	if($ok == true)
-	{
-		if ($result6 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE videoid='%s'",
-		    mysqli_real_escape_string($connect,$id))))
-		
-		$d6 = $result->num_rows;
-		
-		$kid2 = $d6 + '1';
-		
-		$data = date("Y-m-d H:i");
-		
-		$tresc = $_POST['com'];
-		
-		$uid4 = $_SESSION['uid'];
-		
-		
-		if ($connect->query("INSERT INTO viddle_comments VALUES (NULL, '$kid2', '$tresc', '$uid4', '$data', '$id')"))
-		{
-			$d_error = 'Pomyślnie opublikowano komentarz!';
-			header('location: video.php?id='.$_SESSION['id'].'');
-		}
-		else
-		{
-			$d_error = '<div class="alert alert-danger" role="alert">
-				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle!
-		  	</div>';
-			header('location: video.php?id='.$_SESSION['id'].'');
-		}
-	}	
-}
+				if($_SESSION['avatar'] == 'x')
+				{
+					$avatarkomentarze = 'avatardomyslny.jpg';
+				}
+				else
+				{
+					$avatarkomentarze = ''.$_SESSION['uid'].'a.'.$_SESSION['avatar'].'';
 		?>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $_SESSION['avatar'] ?>">
                       </span>
