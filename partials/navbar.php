@@ -76,7 +76,7 @@ if($block == '1')
 <div style="opacity: 1;" class="website">
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
-            <a class="navbar-brand" href="index.php"><img src="https://media.discordapp.net/attachments/785086822220169217/796438597258444830/vlogocropped.png?width=50&height=50" width="120px" /></a>
+            <a class="navbar-brand" href="index.php"><img src="https://media.discordapp.net/attachments/785086822220169217/796438597258444830/vlogocropped.png?width=50&height=50" width="50px" height="50px"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
                     aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
