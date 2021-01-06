@@ -142,9 +142,9 @@ else
                             <div class="container row">
                       <span>
 			      <?php
-				if(!$_SESSION['z'] == 'true')
+				if($_SESSION['avatar'] == 'x')
 				{
-					$avatarkomentarze = 'avatardomyslny.jpg';
+					$avatarkomentarze = '/avatardomyslny.jpg';
 				}
 				else
 				{
