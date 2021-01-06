@@ -151,7 +151,7 @@ else
 				}
 				else
 				{
-					$avatarkomentarze = ''.$_SESSION['uid'].'a.'.$_SESSION['avatar'].'';
+					$avatarkomentarze = '/grafic/'.$_SESSION['uid'].'a.'.$_SESSION['avatar'].'';
 				}
 		?>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $avatarkomentarze ?>">
