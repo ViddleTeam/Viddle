@@ -146,9 +146,14 @@ else
 				{
 					$avatarkomentarze = '/avatardomyslny.jpg';
 				}
-				else
+			        else
 				{
 					$avatarkomentarze = '/grafic/'.$_SESSION['uid'].'a.'.$_SESSION['avatar'].'';
+				}
+		
+		                if($_SESSION['avatar'] == '')
+				{
+					$avatarkomentarze = '/avatardomyslny.jpg';
 				}
 		?>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $avatarkomentarze ?>">
