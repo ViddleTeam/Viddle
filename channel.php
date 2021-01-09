@@ -101,7 +101,51 @@ if ($result = @$connect->query(
             <h4 class="tile-before" style="color:white;">Ostatnio dodane</h4>
           </div><br>
 				<?php
-						if ($do == '1') {
+				
+				if ($result3 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_videos WHERE publisher='%s'",
+		    mysqli_real_escape_string($connect,$id))))
+					
+		    $d4 = $result->num_rows;
+				
+		    if(!$d4 == '0')
+		    {
+			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'");
+                    
+                    if($p1->num_rows > 0){
+                        $num = $p1->num_rows+1;
+						
+			
+                        
+                        for($k1 = 1; $k1 < $num; $k1 += 1){
+                            if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE id='$i' AND publisher='$id'")){
+                                $d5 = $k2->fetch_assoc();
+                                
+                               
+                                echo'
+                                <div class='card'>
+                        <a href='video?id='.$d5['video_id'.''>
+                        <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
+                        <p class='card-title'>'.$d5['title'].'</p>
+                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
+                        <div class='bottom-info'>
+                            <span>'.$nazwa.'</span>
+                            <span>•</span>
+                            <span>'.$d5['views'].' wyświetleń</span>
+                        </div>
+                        </a>
+                    </div>
+            </div>
+        </div>
+                                ';
+                                
+                            }
+                        }
+                    }
+		    }
+		    else
+		    {
+			    if ($do == '1') {
 							echo '<div class="alert alert-info" style="width: 100%;">
 									<strong>Aby dodać swój pierwszy film na twoim nowym kanale, kliknij na ikonę u góry obok panelu użytkownika.</strong>
 								  </div>';
@@ -110,6 +154,7 @@ if ($result = @$connect->query(
 									  	<strong>'.$nazwa.' nie posiada żadnych filmów.</strong>
 									  </div>';
 						}
+		    }	
 						?>
 	    <!--
 	    // tutaj placeholdery do wyświetlania filmów
