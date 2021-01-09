@@ -114,6 +114,8 @@ if ($result = @$connect->query(
                     
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows+1;
+			    
+			    echo '1';
 						
 			
                         
