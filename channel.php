@@ -123,7 +123,7 @@ if ($result = @$connect->query(
                                 
                                
                                 echo'
-                                <div class='card'>
+                                <div class="card">
                         <a href='video?id='.$d5['video_id'.''>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
                         <p class='card-title'>'.$d5['title'].'</p>
