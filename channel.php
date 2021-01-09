@@ -118,7 +118,7 @@ if ($result = @$connect->query(
 			
                         
                         for($k1 = 1; $k1 < $num; $k1 += 1){
-                            if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE id='$i'")){
+                            if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$i'")){
                                 $d5 = $k2->fetch_assoc();
                                 
                                if($id == $d5['publisher'])
