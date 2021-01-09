@@ -110,7 +110,7 @@ if ($result = @$connect->query(
 				
 		    if(!$d4 == '0')
 		    {
-			    $p1 = $connect->query("SELECT * FROM viddle_videos");
+			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'");
                     
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows+1;
