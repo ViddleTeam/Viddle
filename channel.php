@@ -124,11 +124,11 @@ if ($result = @$connect->query(
                                
                                 echo'
                                 <div class="card">
-                        <a href='video?id='.$d5['video_id'.''>
-                        <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>'.$d5['title'].'</p>
-                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
-                        <div class='bottom-info'>
+                        <a href="video?id='.$d5['video_id'.'">
+                        <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                        <p class="card-title"]>'.$d5['title'].</p>
+                        <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+                        <div class="bottom-info">
                             <span>'.$nazwa.'</span>
                             <span>•</span>
                             <span>'.$d5['views'].' wyświetleń</span>
@@ -136,8 +136,7 @@ if ($result = @$connect->query(
                         </a>
                     </div>
             </div>
-        </div>
-                                ';
+        </div> ';
                                 
                             }
                         }
