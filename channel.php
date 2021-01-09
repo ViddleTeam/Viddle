@@ -121,7 +121,7 @@ if ($result = @$connect->query(
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE id='$i'")){
                                 $d5 = $k2->fetch_assoc();
                                 
-                               if($id == $d5['video_id'])
+                               if($id == $d5['publisher'])
 			       {
                                 echo'
                                 <div class="card">
