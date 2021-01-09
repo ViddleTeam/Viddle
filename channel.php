@@ -110,7 +110,7 @@ if ($result = @$connect->query(
 				
 		    if(!$d4 == '0')
 		    {
-			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'");
+			    $p1 = $connect->query("SELECT * FROM viddle_videos");
                     
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows+1;
@@ -118,10 +118,11 @@ if ($result = @$connect->query(
 			
                         
                         for($k1 = 1; $k1 < $num; $k1 += 1){
-                            if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE id='$i' AND publisher='$id'")){
+                            if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE id='$i'")){
                                 $d5 = $k2->fetch_assoc();
                                 
-                               
+                               if($id == $d5['video_id'])
+			       {
                                 echo'
                                 <div class="card">
                         <a href="video?id='.$d5['video_id'].'">
@@ -141,6 +142,7 @@ if ($result = @$connect->query(
                             }
                         }
                     }
+		    }
 		    }
 		    else
 		    {
