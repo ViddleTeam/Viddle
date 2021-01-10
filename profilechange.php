@@ -42,9 +42,9 @@ if(isset($_FILES['file_picker']))
 	
 	if($ok == true)
 	{
-		if ( move_uploaded_file($_FILES['file_picker']['tmp_name'],
-                $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');))
-		{
+		move_uploaded_file($_FILES['file_picker']['tmp_name'],
+        $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');
+		
 			if ($result = @$connect->query(
 		    sprintf("UPDATE `viddle_users` SET avatarname='%s' WHERE uid='%s'",
 		    mysqli_real_escape_string($connect,$kon),
@@ -57,7 +57,6 @@ if(isset($_FILES['file_picker']))
 			}
 		}
 			
-	}
 	
 	
 	
@@ -66,7 +65,8 @@ if(isset($_FILES['file_picker']))
 	
 	
 	
-}
+	
+
 	if (isset($d2) && $d2 == '1')
 	{
 		$dane = $result->fetch_assoc();
