@@ -29,7 +29,7 @@ if(isset($_FILES['file_picker']))
 	
 	
 	
-	//if ($ !="jpg" || $ext !="pjpeg" || $ext !="jpeg" || $ext !="gif")
+	// if ($ !="image/jpeg" || $ext !="image/png" || $ext !="image/bmp" || $ext !="gif")
 	
 	
 	
