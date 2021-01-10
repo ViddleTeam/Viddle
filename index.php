@@ -142,7 +142,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 				}
 			    	else
 				{
-					$avnf1 = '/grafic/'.$oneid.'m.'.$avn1.'';
+					$avnf1 = 'grafic/'.$oneid.'m.'.$avn1.'';
 				}
 		       		
 		  
