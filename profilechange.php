@@ -1,5 +1,7 @@
 <?php
 
+$submit = '0';
+
 session_start();
 
 $login = $_SESSION['user'];
@@ -16,6 +18,7 @@ if(isset($_FILES['file_picker']))
 {
 	$file_name = $_FILES['file_picker']['name'];
 	
+	$submit = '1';
 	
 	
 }
@@ -108,6 +111,28 @@ require_once('partials/footer.php');
     </div>
   </div>
 </div>
+
+<?php
+	if($submit == '1')
+	{
+		echo '<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
+      </div>
+      <div class="modal-body">
+        Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze, i nie tylko. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
+      </div>
+      <div class="modal-footer">
+		<a href="index.php"><button type="button" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button></a>
+		<a href="login.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Zaloguj się</button></a>
+      </div>
+    </div>
+  </div>
+</div>';
+	}
+	?>
 <!-- modal dla niezalogowanych -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
