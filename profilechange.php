@@ -27,7 +27,7 @@ if(isset($_FILES['file_picker']))
 		//plik jest większy niż 3 mb
 	}
 	
-	echo $_FILES['file_picker']['extension'];
+	
 	
 	//if ($ !="jpg" || $ext !="pjpeg" || $ext !="jpeg" || $ext !="gif")
 	
@@ -88,7 +88,7 @@ require_once('partials/navbar.php');
 				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
 		      	<button type="button" class="btn btn-gray" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
 				<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
-				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut.</p>
+				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut. <?php echo $_FILES['file_picker']['extension'] ?></p>
 			      </div>
 		      </center>
 								
