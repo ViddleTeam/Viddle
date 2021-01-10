@@ -16,11 +16,13 @@ if ($result = @$connect->query(
 
 if(isset($_FILES['file_picker']))
 {
-	$file_name = $_FILES['file_picker']['name'];
+	$file_s = $_FILES['file_picker']['size'];
+	
+	echo $file_s;
 	
 	$submit = '1';
 	
-	echo 'Twój adres e-mail nie zostanie opublikowany. Ikonkę profiu można dostosować w aplikacji gravatar. Publikowane są wyłącznie ciekawe komentarze. Imię lub nazwa firmy wraz z linkiem do własnej strony mile widziane.';
+	
 	
 	
 }
