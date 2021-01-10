@@ -13,6 +13,7 @@ if ($result = @$connect->query(
 		    mysqli_real_escape_string($connect,$login))))
 
 $dane = $result->fetch_assoc();
+$d2 = $result->num_rows;
 
 if(isset($_FILES['file_picker']))
 {
