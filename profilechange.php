@@ -16,9 +16,22 @@ if ($result = @$connect->query(
 
 if(isset($_FILES['file_picker']))
 {
+	$ok = true;
+	
 	$file_s = $_FILES['file_picker']['size'];
 	
-	echo $file_s;
+	if($file_s > '3 000 000')
+	{
+		$ok = false;
+		
+		//plik jest większy niż 3 mb
+	}
+	
+	echo $_FILES['file_picker']['extension'];
+	
+	//if ($ !="jpg" || $ext !="pjpeg" || $ext !="jpeg" || $ext !="gif")
+	
+	
 	
 	$submit = '1';
 	
