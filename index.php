@@ -183,7 +183,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 				    
 			?>
                         <a href='video?id=<?php echo($twoid); ?>'>
-                        <img src='<?php echo $avnf2 ?>' class="img-responsive card-img">
+                        <img src='<?php echo $avnf2 ?>' class="img-responsive card-img" width="300" height="187.5">
                         <p class='card-title'><?php echo($titletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
@@ -193,9 +193,30 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
                         </div>
 			</a>
                     </div>
+		  <?php
+		  
+		  if ($resultn3 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
+		    mysqli_real_escape_string($connect,$threeid))))
+			
+				    $dn3 = $resultn3->num_rows;
+			    
+			    	    $danen3 = $resultn3->fetch_assoc();
+			    	    $avn3 = $danen3['minname'];
+			    
+			  	if($avn3 == 'x')
+				{
+					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				}
+			    	else
+				{
+					$avnf3 = '/grafic/'.$thteeid.'m.'.$avn3.'';
+				}
+		  
+		  ?>
                     <div class='card'>
                         <a href='video?id=<?php echo($threeid); ?>'>
-                        <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
+                        <img src='<?php echo $avnf3 ?>' class='img-responsive card-img' width="300" height="187.5">
                         <p class='card-title'><?php echo($titlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
