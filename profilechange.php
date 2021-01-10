@@ -102,7 +102,7 @@ require_once('partials/footer.php');
 		</center>
       </div>
       <div class="modal-footer">
-		<button type="submit" class="btn btn-primary" style="padding: 10px;">Zastosuj zmiany</button>
+		<input type="submit" class="btn btn-primary" style="padding: 10px;" value='Zastosuj zmiany'>
       </div>
 	</form>
     </div>
