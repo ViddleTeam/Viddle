@@ -11,6 +11,14 @@ if ($result = @$connect->query(
 		    mysqli_real_escape_string($connect,$login))))
 	
 	$d2 = $result->num_rows;
+
+if(isset($_FILES['file_picker']))
+{
+	$file_name = $_FILES['file_picker']['name'];
+	
+	echo $file_name;
+	
+}
 	if (isset($d2) && $d2 == '1')
 	{
 		$dane = $result->fetch_assoc();
@@ -85,7 +93,7 @@ require_once('partials/footer.php');
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Zmiana awataru</h5>
       </div>
-	<form method="post" enctype="multipart/form-data">
+	<form method="POST" enctype="multipart/form-data">
       <div class="modal-body">
 	      <p>Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.</p><br>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
