@@ -150,7 +150,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
             <div class="tile" style="margin: auto;">
                 <div class='card'>
                         <a href='video?id=<?php echo($oneid); ?>'>
-                        <img src='<?php echo $avnf1 ?>'>
+                        <img src='<?php echo $avnf1 ?>' class="img-responsive card-img">
                         <p class='card-title'><?php echo($titleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
@@ -183,7 +183,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 				    
 			?>
                         <a href='video?id=<?php echo($twoid); ?>'>
-                        <img src='<?php echo $avnf2 ?>'>
+                        <img src='<?php echo $avnf2 ?>' class="img-responsive card-img">
                         <p class='card-title'><?php echo($titletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
