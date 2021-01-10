@@ -122,6 +122,15 @@ if ($result = @$connect->query(
                         for($k1 = 1; $k1 < $num; $k1 += 1){
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
                                 $d5 = $k2->fetch_assoc();
+				    
+				    if($d5['minname'] == 'x')
+				    {
+				    	$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+					   }
+					   else
+					   {
+						   $miniaturka = 'grafic/'.$d5['video_id'].'m.'.$d5['minname'].'';
+					   }
                                 
 				    
 				    
@@ -129,7 +138,7 @@ if ($result = @$connect->query(
                                 echo'
                                 <div class="card">
                         <a href="video?id='.$d5['video_id'].'">
-                        <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                        <img src="'.$miniaturka.'" class="img-responsive card-img">
                         <p class="card-title">'.$d5['title'].'</p>
                         <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                         <div class="bottom-info">
