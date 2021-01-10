@@ -16,7 +16,7 @@ if(isset($_FILES['file_picker']))
 {
 	$file_name = $_FILES['file_picker']['name'];
 	
-	echo $file_name;
+	
 	
 }
 	if (isset($d2) && $d2 == '1')
@@ -102,7 +102,7 @@ require_once('partials/footer.php');
 		</center>
       </div>
       <div class="modal-footer">
-		<button type="button" class="btn btn-primary" style="padding: 10px;">Zastosuj zmiany</button>
+		<button type="submit" class="btn btn-primary" style="padding: 10px;">Zastosuj zmiany</button>
       </div>
 	</form>
     </div>
