@@ -56,6 +56,7 @@ if(isset($_FILES['file_picker']))
 ';
 			}
 		}
+}
 			
 	
 	
