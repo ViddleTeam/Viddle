@@ -20,6 +20,8 @@ if(isset($_FILES['file_picker']))
 	
 	$submit = '1';
 	
+	echo 'Twój adres e-mail nie zostanie opublikowany. Ikonkę profiu można dostosować w aplikacji gravatar. Publikowane są wyłącznie ciekawe komentarze. Imię lub nazwa firmy wraz z linkiem do własnej strony mile widziane.';
+	
 	
 }
 	if (isset($d2) && $d2 == '1')
