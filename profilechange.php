@@ -75,7 +75,7 @@ if(isset($_FILES['file_picker']))
 		}
 		else
 		{
-			echo 'llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll';
+			echo $ _FILES['file_picker']['error'];
 		}
 	}
 			
