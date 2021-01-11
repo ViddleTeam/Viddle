@@ -32,6 +32,10 @@ if(isset($_FILES['file_picker']))
 		$ok = false;
 		
 		//plik jest większy niż 3 mb
+		
+		$w_error = '<div class="alert alert-danger" role="alert">
+				Wybrany przez ciebie plik jest za duży. Maksymalny rozmiar wynosi 3 mb
+		  	</div>';
 	}
 	
 	
@@ -41,6 +45,10 @@ if(isset($_FILES['file_picker']))
 		$ok = false;
 		
 		//nieobsługiwany format
+		
+		$f_error = '<div class="alert alert-danger" role="alert">
+				Format wybranego przez ciebie pliku jest nieobsługiwany. Obsługujemy formaty .png, .jpg, .jpeg i .bmp
+		  	</div>';
 	}
 	
 	if($ok == true)
@@ -48,7 +56,7 @@ if(isset($_FILES['file_picker']))
 		move_uploaded_file($_FILES['file_picker']['tmp_name'],
         $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');
 		
-		echo 'dussdhkdhsdhsdksdhhkdskhdshdshdhkdskhdhskdhkdshkdskhds';
+		
 			if ($result = @$connect->query(
 		    sprintf("UPDATE `viddle_users` SET avatarname='%s' WHERE uid='%s'",
 		    mysqli_real_escape_string($connect,$kon),
@@ -62,7 +70,7 @@ if(isset($_FILES['file_picker']))
 		}
 		else
 		{
-			echo 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj';
+			
 		}
 }
 			
@@ -161,6 +169,10 @@ require_once('partials/footer.php');
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Zmiana awataru</h5>
       </div>
+	    <?php
+	    echo $f_error;
+	    echo $w_error;
+	    ?>
 	<form method="POST" enctype="multipart/form-data">
       <div class="modal-body">
 	      <p>Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.</p><br>
