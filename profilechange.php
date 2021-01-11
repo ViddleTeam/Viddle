@@ -46,13 +46,14 @@ if(isset($_FILES['file_picker']))
 		move_uploaded_file($_FILES['file_picker']['tmp_name'],
         $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');
 		
+		echo 'dussdhkdhsdhsdksdhhkdskhdshdshdhkdskhdhskdhkdshkdskhds';
 			if ($result = @$connect->query(
 		    sprintf("UPDATE `viddle_users` SET avatarname='%s' WHERE uid='%s'",
 		    mysqli_real_escape_string($connect,$kon),
 		    mysqli_real_escape_string($connect,$dane['uid']))))
 			{
 				// wyszystko poszło jak należy
-				echo 'Żadna konwersja w konwencjonalnym sensie nie jest w rzeczywistości konieczna do konwersji z JPEG na JPG. Ponieważ pliki .jpeg są zwykle normalnymi obrazami .jpg, w pliku nie wprowadzono żadnych zmian. Zasadniczo wystarczy zmienić rozszerzenie pliku z .jpeg na .jpg, aby przekonwertować plik z JPEG na JPG. konwerter-online.pl robi to za Ciebie i konwertuje twoje pliki, nawet jeśli nie jest to obraz JPEG. W tle wszystko jest zrobione, aby przekonwertować przesłany obraz.
+				echo 'Żae twoje pliki, nawet jeśli nie jest to obraz JPEG. W tle wszystko jest zrobione, aby przekonwertować przesłany obraz.
 
 ';
 			}
@@ -117,7 +118,7 @@ require_once('partials/navbar.php');
 				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
 		      	<button type="button" class="btn btn-gray" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
 				<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
-				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut. </p>
+				<p>Obsługiwane formaty <?php echo $ok ?>: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut. </p>
 			      </div>
 		      </center>
 								
