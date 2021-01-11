@@ -67,7 +67,9 @@ else
 	$av7 = '/grafic/'.$publisher.'a.'.$av6.'';
 }
 
-
+if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_ WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$publisher))))
 
 ?>
 
@@ -118,7 +120,11 @@ else
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-					<form action="">
+// 					<form action="<?php 
+					$_SESSION['id'] = $id;
+		
+					header('location: video.php?id='.$_SESSION['id'].'')
+					?>">
                     <input type="submit"value="Obserwuj' />
 					</form>
                   </span>
