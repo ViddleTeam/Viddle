@@ -119,7 +119,7 @@ else
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
 					<form action="">
-                    <input type="submit" class="btn btn-success" value='<p style="margin: 10px;">Obserwuj</p>' />
+                    <input type="submit" class="btn btn-success" <p style="margin: 10px;"> value="Obserwuj' </p> />
 					</form>
                   </span>
                             </div>
