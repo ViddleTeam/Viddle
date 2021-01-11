@@ -19,6 +19,8 @@ if(isset($_FILES['file_picker']))
 {
 	$ok = true;
 	
+	echo 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj';
+	
 	$file_s = $_FILES['file_picker']['size'];
 	$katalog = "grafic/";
 	$plik = $target_dir . basename($_FILES["file_picker"]["name"]);
