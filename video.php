@@ -69,7 +69,6 @@ else
 
 
 
-
 ?>
 
 
@@ -119,7 +118,9 @@ else
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-                    <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+					<form action="">
+                    <input type="submit" class="btn btn-success" value='<p style="margin: 10px;">Obserwuj</p>' />
+					</form>
                   </span>
                             </div>
                             <div class="border border white" style="opacity: 0.45;"></div>
