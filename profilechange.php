@@ -1,6 +1,6 @@
 <?php
 
-$submit = '0';
+$s = false;
 
 session_start();
 
@@ -18,7 +18,7 @@ $d2 = $result->num_rows;
 if(isset($_FILES['file_picker']))
 {
 	$ok = true;
-	
+	$s = true;
 	
 	
 	$file_s = $_FILES['file_picker']['size'];
@@ -110,6 +110,16 @@ if(isset($_FILES['file_picker']))
 $title = "Zmień grafikę kanału";
 require_once('partials/navbar.php');
 ?>
+<!DOCTYPE HTML>
+<html lang="pl-PL"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><?php if (isset($title)) echo $title ?> na Viddle</title>
+    <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style type="text/css">/* Chart.js */
+        @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
       <div class="container" style="margin-top:30px;">
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -142,6 +152,8 @@ require_once('partials/navbar.php');
 require_once('partials/footer.php');
 ?>
 
+
+
 <!-- modal zmiany awataru -->
 <div class="modal fade" id="modalAvatar" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -164,28 +176,15 @@ require_once('partials/footer.php');
     </div>
   </div>
 </div>
-
 <?php
-	if($submit == '1')
-	{
-		echo '<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
-      </div>
-      <div class="modal-body">
-        Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze, i nie tylko. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
-      </div>
-      <div class="modal-footer">
-		<a href="index.php"><button type="button" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button></a>
-		<a href="login.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Zaloguj się</button></a>
-      </div>
-    </div>
-  </div>
-</div>';
-	}
-	?>
+if ($s == true) {
+    echo "<script>
+			$('#staticBackdrop').modal('show');
+		</script>";
+}
+?>
+
+	
 <!-- modal dla niezalogowanych -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
