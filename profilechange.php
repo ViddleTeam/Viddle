@@ -40,8 +40,13 @@ if(isset($_FILES['file_picker']))
 	
 	
 	
-	if ($_FILES['file_picker']['type'] !="image/jpeg" || $_FILES['file_picker']['type'] !="image/png" || $_FILES['file_picker']['type'] !="image/bmp")
+	if ($_FILES['file_picker']['type']="image/jpeg" || $_FILES['file_picker']['type']="image/png" || $_FILES['file_picker']['type']="image/bmp")
 	{
+		
+	}
+	else
+	{
+		
 		$ok = false;
 		
 		//nieobsługiwany format
