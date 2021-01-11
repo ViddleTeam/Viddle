@@ -58,9 +58,9 @@ if(isset($_FILES['file_picker']))
 	
 	if($ok == true)
 	{
-		if($finish = move_uploaded_file($_FILES['file_picker']['tmp_name'],
-                $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');)
-		{
+		move_uploaded_file($_FILES['file_picker']['tmp_name'],
+                $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');
+		
 		
 		
 			if ($result = @$connect->query(
@@ -74,7 +74,7 @@ if(isset($_FILES['file_picker']))
 		}
 	
 			
-		}
+		
 }
 			
 	
