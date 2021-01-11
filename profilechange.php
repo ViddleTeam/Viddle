@@ -4,7 +4,7 @@ $submit = '0';
 
 session_start();
 
-$login = $_SESSION['user'];
+$login = $_SESSION['uid'];
 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -12,7 +12,7 @@ if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
 		    mysqli_real_escape_string($connect,$login))))
 
-$dane = $result->fetch_assoc();
+$dane2 = $result->fetch_assoc();
 $d2 = $result->num_rows;
 
 if(isset($_FILES['file_picker']))
@@ -71,11 +71,10 @@ if(isset($_FILES['file_picker']))
 
 	if (isset($d2) && $d2 == '1')
 	{
-		$dane = $result->fetch_assoc();
 		
-		$av5 = $dane['avatarname'];
-		$ba2 = $dane['banername'];
-		$id = $dane['uid'];
+		$av5 = $dane2['avatarname'];
+		$ba2 = $dane2['banername'];
+		$id = $dane2['uid'];
 		
 		
 		if($av5 == 'x')
