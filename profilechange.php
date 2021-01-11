@@ -58,8 +58,9 @@ if(isset($_FILES['file_picker']))
 	
 	if($ok == true)
 	{
-		move_uploaded_file($_FILES['file_picker']['tmp_name'],
-        $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');
+		if($finish = move_uploaded_file($_FILES['file_picker']['tmp_name'],
+                $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');)
+		{
 		
 		
 			if ($result = @$connect->query(
@@ -67,14 +68,11 @@ if(isset($_FILES['file_picker']))
 		    mysqli_real_escape_string($connect,$kon),
 		    mysqli_real_escape_string($connect,$dane['uid']))))
 			{
-				// wyszystko poszło jak należy
-				echo 'Żae twoje pliki, nawet jeśli nie jest to obraz JPEG. W tle wszystko jest zrobione, aby przekonwertować przesłany obraz.
+				
 
-';
 			}
 		}
-		else
-		{
+	
 			
 		}
 }
