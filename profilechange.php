@@ -58,8 +58,9 @@ if(isset($_FILES['file_picker']))
 	
 	if($ok == true)
 	{
-		move_uploaded_file($_FILES['file_picker']['tmp_name'],
-                $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.'');
+		if (move_uploaded_file($_FILES["file_picker"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/grafic/'.$dane['uid'].'m.'.$kon.''))
+		{
+                
 		
 		
 		
@@ -72,7 +73,7 @@ if(isset($_FILES['file_picker']))
 
 			}
 		}
-	
+	}
 			
 		
 }
