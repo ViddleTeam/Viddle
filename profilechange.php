@@ -172,6 +172,7 @@ require_once('partials/footer.php');
 	    <?php
 	    echo $f_error;
 	    echo $w_error;
+	    echo $_FILES['file_picker']['type'];
 	    ?>
 	<form method="POST" enctype="multipart/form-data">
       <div class="modal-body">
