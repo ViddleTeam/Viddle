@@ -27,7 +27,7 @@ if(isset($_FILES['file_picker']))
 
 	$kon = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	
-	if($file_s > '3 000 000')
+	if($file_s>3000000)
 	{
 		$ok = false;
 		
