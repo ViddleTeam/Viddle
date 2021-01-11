@@ -9,7 +9,7 @@ $login = $_SESSION['uid'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if ($result = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
 		    mysqli_real_escape_string($connect,$login))))
 
 $dane2 = $result->fetch_assoc();
