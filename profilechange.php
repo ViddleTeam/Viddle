@@ -19,7 +19,7 @@ if(isset($_FILES['file_picker']))
 {
 	$ok = true;
 	
-	echo 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj';
+	
 	
 	$file_s = $_FILES['file_picker']['size'];
 	$katalog = "grafic/";
@@ -59,6 +59,10 @@ if(isset($_FILES['file_picker']))
 
 ';
 			}
+		}
+		else
+		{
+			echo 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj';
 		}
 }
 			
