@@ -23,7 +23,7 @@
 <div style="opacity: 1;" class="website">
     <?php
     require_once ("partials/navbar.php");
-    $search_query = $_GET['q'];
+    $search_query = htmlentities($_GET['q']);
     require 'danesql.php';
     $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
     ?>
