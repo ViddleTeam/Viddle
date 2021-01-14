@@ -24,7 +24,9 @@ function get_buttons()
 
 if(isset($_SESSION['id']))
 {
-	header('location: video.php?id='.$_SESSION['id'].'');
+	$przekid = $_SESSION['id'];
+	unset($_SESSION['id']);
+	header('location: video.php?id='.$przekid.'');
 }
 
 require "danesql.php";
