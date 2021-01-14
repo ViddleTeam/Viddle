@@ -29,15 +29,7 @@ else
 	$form = '0';
 }
 
-if(isset($_SESSION['id']))
-{
-	if($form == '1')
-	{
-		$przekid = $_SESSION['id'];
-		unset($_SESSION['id']);
-		header('location: video.php?id='.$przekid.'');
-	}
-}
+
 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
