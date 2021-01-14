@@ -64,30 +64,7 @@ if ($id == 0) {
 
             $d2 = $result->num_rows;
 	    
-	    if(isset($_POST['ob']))
-	    {
-		$ok = true;
-		
-		$ahaha = $dane['observators'] + 1;
-	    
-	 if ($connect->query(
-				  sprintf("INSERT INTO viddle_obserwators VALUES (NULL, '%s', '%s', '%s', '%s', '%s'",
-				  mysqli_real_escape_string($connect,$ahaha),
-				  mysqli_real_escape_string($connect,$_SESSION['uid']),
-				  mysqli_real_escape_string($connect,$publisher),
-				  mysqli_real_escape_string($connect,'1'))))
-	    {
-		    if ($result = @$connect->query(
-		    sprintf("UPDATE `viddle_users` SET `observators`='%s' WHERE `uid`='%s'",
-		    mysqli_real_escape_string($connect,$ahaha),
-		    mysqli_real_escape_string($connect,$publisher))))
-		    {
-			    // dodano do obserwowanych
-		    }
-	    }
-    
-	
-	}
+	   
 			if($d2 == '1')
 			{
 			}
@@ -173,6 +150,31 @@ $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 		{
 			$video_exists = false;
 		}
+	}
+
+ if(isset($_POST['ob']))
+	    {
+		$ok = true;
+		
+		$ahaha = $dane['observators'] + 1;
+	    
+	 if ($connect->query(
+				  sprintf("INSERT INTO viddle_obserwators VALUES (NULL, '%s', '%s', '%s', '%s', '%s'",
+				  mysqli_real_escape_string($connect,$ahaha),
+				  mysqli_real_escape_string($connect,$_SESSION['uid']),
+				  mysqli_real_escape_string($connect,$publisher),
+				  mysqli_real_escape_string($connect,'1'))))
+	    {
+		    if ($result = @$connect->query(
+		    sprintf("UPDATE `viddle_users` SET `observators`='%s' WHERE `uid`='%s'",
+		    mysqli_real_escape_string($connect,$ahaha),
+		    mysqli_real_escape_string($connect,$publisher))))
+		    {
+			    // dodano do obserwowanych
+		    }
+	    }
+    
+	
 	}
 ?>
 
