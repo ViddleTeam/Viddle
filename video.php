@@ -20,13 +20,23 @@ function get_buttons()
 	}
 	return $bu1;
 }
-
+if($i = '1')
+{
+	$form = '1';
+}
+else
+{
+	$form = '0';
+}
 
 if(isset($_SESSION['id']))
 {
-	$przekid = $_SESSION['id'];
-	unset($_SESSION['id']);
-	header('location: video.php?id='.$przekid.'');
+	if($form == '1')
+	{
+		$przekid = $_SESSION['id'];
+		unset($_SESSION['id']);
+		header('location: video.php?id='.$przekid.'');
+	}
 }
 
 require "danesql.php";
