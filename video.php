@@ -136,21 +136,7 @@ else
 
 $_SESSION['id'] = $id;
 
-$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 
-	if($cheack = $connect->query($polecenie))
-	{
-		$cheack2 = $cheack->num_rows;
-		
-		if($cheack2 == '1')
-		{
-			$video_exists = true;
-		}
-		else
-		{
-			$video_exists = false;
-		}
-	}
 
  if(isset($_POST['ob']))
 	    {
@@ -421,6 +407,21 @@ $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 </div>
 </form>
 <?php
+	$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
+
+	if($cheack = $connect->query($polecenie))
+	{
+		$cheack2 = $cheack->num_rows;
+		
+		if($cheack2 == '1')
+		{
+			$video_exists = true;
+		}
+		else
+		{
+			$video_exists = false;
+		}
+	}
 } else if ($video_exists == false) {
     echo '';
 }
