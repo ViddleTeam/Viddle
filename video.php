@@ -460,7 +460,7 @@ $_SESSION['id'] = $id;
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Film nie został znaleziony!</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"><?php echo $cheack2 ?>Film nie został znaleziony!</h5>
             </div>
             <div class="modal-body">
                 Film może nie być dostępny, ponieważ nie istnieje lub został usunięty przez administratorów serwisu. Jeżeli wpisałeś ID filmu ręcznie, sprawdź czy się nie pomyliłeś.
