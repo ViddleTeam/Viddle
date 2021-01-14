@@ -2,6 +2,22 @@
 <?php
 session_start();
 
+$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
+
+	if($cheack = $connect->query($polecenie))
+	{
+		$cheack2 = $cheack->num_rows;
+		
+		if($cheack2 == '1')
+		{
+			$video_e = true;
+		}
+		else
+		{
+			$video_e = false;
+		}
+	}
+
 function get_buttons()
 {
 	$bu1 = '';
@@ -191,7 +207,7 @@ $_SESSION['id'] = $id;
     ?>
     <div class="container" style="margin-top: 70px; justify-content: center;">
         <?php
-        if ($video_exists == true) {
+        if ($video_e == true) {
         ?>
 	    
 	    
@@ -407,22 +423,8 @@ $_SESSION['id'] = $id;
 </div>
 </form>
 <?php
-	$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
-
-	if($cheack = $connect->query($polecenie))
-	{
-		$cheack2 = $cheack->num_rows;
-		
-		if($cheack2 == '1')
-		{
-			$video_exists = true;
-		}
-		else
-		{
-			$video_exists = false;
-		}
-	}
-} else if ($video_exists == false) {
+	
+} else if ($video_e == false) {
     echo '';
 }
 ?>
