@@ -112,7 +112,25 @@ else
 {
 	$obm = '1';
 }
-	
+
+if(!isset($_SESSION['uid']))
+{
+	$obm = '0';
+	$logged = '0';
+}
+else
+{
+	$logged = '1';
+}
+
+if($logged == '0')
+{
+	$obd = 'disabled="disabled"';
+}
+else
+{
+	$obd = '';
+}
 
 $_SESSION['id'] = $id;
 
@@ -168,7 +186,7 @@ $_SESSION['id'] = $id;
 // 					
 					<?php if($obm == '0') { ?>
 					<form method="post">
-                    <input type="submit" name="ob" value="Obserwuj' />
+                    <input type="submit" name="ob" <?php echo $obd ?> value="Obserwuj' />
 					</form>
 							  <?php } else { ?>
 							  
