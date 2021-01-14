@@ -39,6 +39,10 @@ if ($id == 0) {
     $video_exists = false;
 } else {
     
+	if(isset($_POST['ob']))
+	{
+			
+	}
     $video_exists = true;
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
     if (isset($d2) && $d2 == '1') {
@@ -92,9 +96,20 @@ else
 	$av7 = '/grafic/'.$publisher.'a.'.$av6.'';
 }
 
-if ($result = @$connect->query(
-		    sprintf("SELECT * FROM viddle_ WHERE uid='%s'",
+if ($resulto = @$connect->query(
+		    sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'",
+		    mysqli_real_escape_string($connect,$_SESSION['uid']),
 		    mysqli_real_escape_string($connect,$publisher))))
+	$ilosc = $resulto->num_rows;
+
+if($ilosc == '1')
+{
+	$obm = '0';
+}
+else
+{
+	$obm = '1';
+}
 	
 
 $_SESSION['id'] = $id;
@@ -148,13 +163,19 @@ $_SESSION['id'] = $id;
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-// 					<form action="<?php 
-					$_SESSION['id'] = $id;
-		
-					header('location: video.php?id='.$_SESSION['id'].'')
-					?>">
-                    <input type="submit"value="Obserwuj' />
+// 					
+					<?php if($obm == '0') { ?>
+					<form method="post">
+                    <input type="submit" name="ob" value="Obserwuj' />
 					</form>
+							  <?php } else { ?>
+							  
+							  	<form method="post">
+                    <input type="submit" name="unob" value="Obserwujujesz' />
+					</form>
+							  
+							  <?php } ?>
+							  
                   </span>
                             </div>
                             <div class="border border white" style="opacity: 0.45;"></div>
