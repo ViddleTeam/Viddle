@@ -2,6 +2,26 @@
 <?php
 session_start();
 
+function get_buttons()
+{
+	$bu1 = '';
+	$bu2=array(
+	
+		1=>'<img src="partie/pis.png" style="width:100px;height:100px;">',
+		2=>'<img src="partie/po.png" style="width:400px;height:100px;">',
+
+	);
+	
+	while(list($bu3,$bu4)=each($bu2))
+	{
+		$bu1.='<div class="1">
+		<button type="submit" name="btn_'.$bu3.'">'.$bu4.'</button> <br></br>
+		</div>';
+	}
+	return $bu1;
+}
+
+
 if(isset($_SESSION['id']))
 {
 	header('location: video.php?id='.$_SESSION['id'].'');
@@ -76,24 +96,6 @@ if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_ WHERE uid='%s'",
 		    mysqli_real_escape_string($connect,$publisher))))
 	
-function get_buttons()
-{
-	$bu1 = '';
-	$bu2=array(
-	
-		1=>'<img src="partie/pis.png" style="width:100px;height:100px;">',
-		2=>'<img src="partie/po.png" style="width:400px;height:100px;">',
-
-	);
-	
-	while(list($bu3,$bu4)=each($bu2))
-	{
-		$bu1.='<div class="1">
-		<button type="submit" name="btn_'.$bu3.'">'.$bu4.'</button> <br></br>
-		</div>';
-	}
-	return $bu1;
-}
 
 $_SESSION['id'] = $id;
 
