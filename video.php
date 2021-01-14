@@ -2,6 +2,9 @@
 <?php
 session_start();
 
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 
 	if($cheack = $connect->query($polecenie))
@@ -47,8 +50,7 @@ else
 
 
 
-require "danesql.php";
-$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
 
 if(isset($_POST['ob']))
 $id = $_GET['id'];
