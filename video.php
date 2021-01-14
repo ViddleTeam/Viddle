@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_POST['ob']) ||isset($_SESSION['id']))
 {
-	header('Location: video.php?id='.$_SESSION['id'].'')
+	header('Location: video.php?id='.$_SESSION['id'].'');
 }
 
 $id = $_GET['id'];
