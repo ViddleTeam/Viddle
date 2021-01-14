@@ -232,7 +232,7 @@ $_SESSION['id'] = $id;
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
 // 					
-					<?php if($obm == '0') { ?>
+					<?php if($obm == '1') { ?>
 					<form method="post">
                     <input type="submit" name="ob" <?php echo $obd ?> value="Obserwuj' />
 					</form>
