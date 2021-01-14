@@ -173,6 +173,7 @@ $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'"
 		{
 			$video_exists = false;
 		}
+	}
 ?>
 
 
