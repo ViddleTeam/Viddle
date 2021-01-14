@@ -21,7 +21,7 @@ function get_buttons()
 	return $bu1;
 }
 
-unset($_SESSION['id']);
+
 if(isset($_SESSION['id']))
 {
 	$przekid = $_SESSION['id'];
