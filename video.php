@@ -34,6 +34,7 @@ else
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
+if(isset($_POST['ob']))
 $id = $_GET['id'];
 $video_exists = true;
 $_SESSION['id'] = $_GET['id'];
@@ -43,10 +44,7 @@ if ($id == 0) {
     $video_exists = false;
 } else {
     
-	if(isset($_POST['ob']))
-	{
-			
-	}
+	
     $video_exists = true;
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
     if (isset($d2) && $d2 == '1') {
@@ -65,6 +63,27 @@ if ($id == 0) {
 		    mysqli_real_escape_string($connect,$publisher))))
 
             $d2 = $result->num_rows;
+	    
+	    if(isset($_POST['ob']))
+	    {
+		$ok = true;
+		
+		$ahaha = $dane['observators'] + 1;
+	    
+	    if ($resulto = @$connect->query(
+		    sprintf("INSERT INTO `viddle_obserwators` VALUES (NULL, '$ahaha', '$_SESSION['uid']', '$publisher', '1')")))
+	    {
+		    if ($result = @$connect->query(
+		    sprintf("UPDATE `viddle_users` SET `observators`='%s' WHERE `uid`='%s'",
+		    mysqli_real_escape_string($connect,$ahaha),
+		    mysqli_real_escape_string($connect,$publisher))))
+		    {
+			    // dodano do obserwowanych
+		    }
+	    }
+    
+	
+	}
 			if($d2 == '1')
 			{
 			}
