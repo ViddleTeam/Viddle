@@ -70,6 +70,7 @@ if ($id == 0) {
 		
 		$ahaha = $dane['observators'] + 1;
 	    
+		    if ($connect -> query("INSERT INTO viddle_obserwators VALUES (NULL, '$ahaha', '$_SESSION['uid']', '$publisher', '1')"))
 	    if ($resulto = @$connect->query(
 		    sprintf("INSERT INTO `viddle_obserwators` VALUES (NULL, '$ahaha', '$_SESSION['uid']', '$publisher', '1')")))
 	    {
