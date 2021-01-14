@@ -159,7 +159,7 @@ else
 
 $_SESSION['id'] = $id;
 
-$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'"
+$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 
 	if($cheack = $connect->query($polecenie))
 	{
