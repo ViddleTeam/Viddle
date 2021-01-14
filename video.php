@@ -2,14 +2,16 @@
 <?php
 session_start();
 
+$id = $_GET['id'];
+
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 
-	if($cheack = $connect->query($polecenie))
+	if($c = $connect->query($polecenie))
 	{
-		$cheack2 = $cheack->num_rows;
+		$cheack2 = $c->num_rows;
 		
 		if($cheack2 == '1')
 		{
