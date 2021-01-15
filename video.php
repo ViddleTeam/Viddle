@@ -7,38 +7,6 @@ session_unset($_SESSION['id']);
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
-if(isset($_POST['ob']) ||isset($_SESSION['id']))
-{
-	$href = $_SESSION['id'];
-	
-	
-		$ok = true;
-		
-		$ahaha = $dane['observators'] + 1;
-	    
-	 if ($connect->query(
-				  sprintf("INSERT INTO viddle_obserwators VALUES (NULL, '%s', '%s', '%s', '%s', '%s'",
-				  mysqli_real_escape_string($connect,$ahaha),
-				  mysqli_real_escape_string($connect,$_SESSION['uid']),
-				  mysqli_real_escape_string($connect,$publisher),
-				  mysqli_real_escape_string($connect,'1'))))
-	    {
-		    if ($result = @$connect->query(
-		    sprintf("UPDATE `viddle_users` SET `observators`='%s' WHERE `uid`='%s'",
-		    mysqli_real_escape_string($connect,$ahaha),
-		    mysqli_real_escape_string($connect,$publisher))))
-		    {
-			    // dodano do obserwowanych
-			    session_unset($_SESSION['id']);
-			    header('Location: video.php?id='.$href.'');
-		    }
-	    }
-    
-	
-	
-}
-else
-{
 
 $id = $_GET['id'];
 
@@ -192,7 +160,6 @@ else
 
 $_SESSION['id'] = $id;
 
-}
 
  
 ?>
