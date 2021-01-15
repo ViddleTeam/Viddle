@@ -2,7 +2,6 @@
 <?php
 session_start();
 
-session_unset($_SESSION['id']);
 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -214,7 +213,7 @@ $_SESSION['id'] = $id;
                                 <span style="margin-left: auto; margin-right: -20px;">
 // 					
 					<?php
-					require "videotool/obserwowane.php";
+					include 'videotool/obserwowane.php';
 					?>
 							  
                   </span>
