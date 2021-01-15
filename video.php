@@ -35,6 +35,8 @@ if(isset($_POST['ob']) ||isset($_SESSION['id']))
 	
 	
 }
+else
+{
 
 $id = $_GET['id'];
 
@@ -188,7 +190,7 @@ else
 
 $_SESSION['id'] = $id;
 
-
+}
 
  
 ?>
