@@ -213,7 +213,7 @@ $_SESSION['id'] = $id;
                                 <span style="margin-left: auto; margin-right: -20px;">
 // 					
 					<?php
-					include 'videotool/obserwowane.php';
+					require_once 'videotool/obserwowane.php';
 					?>
 							  
                   </span>
