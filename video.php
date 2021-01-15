@@ -210,19 +210,12 @@ $_SESSION['id'] = $id;
                     <a href="channel?id=<?php echo $publisher ?>"><h5 style="align-items: center;"><?php echo $name ?></h5></a>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
+				    
                                 <span style="margin-left: auto; margin-right: -20px;">
 // 					
-					<?php if($obm == '1') { ?>
-					<form method="post">
-                    <input type="submit" name="ob" <?php echo $obd ?> value="Obserwuj" />
-					</form>
-							  <?php } else { ?>
-							  
-							  	<form method="post">
-                    <input type="submit" name="unob" value="Obserwujujesz" />
-					</form>
-							  
-							  <?php } ?>
+					<?php
+					require "videotool/obserwowane.php";
+					?>
 							  
                   </span>
                             </div>
