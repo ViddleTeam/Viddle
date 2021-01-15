@@ -2,6 +2,9 @@
 <?php
 session_start();
 
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
 if(isset($_POST['ob']) ||isset($_SESSION['id']))
 {
 	$href = $_SESSION['id'];
@@ -35,8 +38,6 @@ if(isset($_POST['ob']) ||isset($_SESSION['id']))
 
 $id = $_GET['id'];
 
-require "danesql.php";
-$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 
