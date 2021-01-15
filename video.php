@@ -2,6 +2,8 @@
 <?php
 session_start();
 
+session_unset($_SESSION['id']);
+
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
