@@ -32,10 +32,7 @@ if(!$_POST['haslo'] == '')
 		$rp_error = "<div class='alert alert-danger' role='alert'>Hasła się nie zgadzają.</div>";
 	}
 	
-	if ($password == "12345678" || $password == "abcdefgh" || !preg_match("#.*^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
-		$ok = false;
-		$easypass_error = "<div class='alert alert-danger' role='alert'>Hasło, które ustaliłeś, może ułatwić włamanie się na Twoje konto. Ustal silniejsze hasło!</div>";
-	}
+	
 	
 	if ($result2 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE email='%s'",
