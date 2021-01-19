@@ -1,33 +1,18 @@
-
 <?php
 session_start();
-
-
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-
-
 $id = $_GET['id'];
-
-
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
-
-	if($c = $connect->query($polecenie))
-	{
+	if ($c = $connect->query($polecenie)) {
 		$cheack2 = $c->num_rows;
-		
-		if($cheack2 == '1')
-		{
+		if($cheack2 == '1') {
 			$video_e = true;
-		}
-		else
-		{
+		} else {
 			$video_e = false;
 		}
 	}
-
-function get_buttons()
-{
+function get_buttons() {
 	$bu1 = '';
 	$bu2=array(
 	
@@ -44,30 +29,20 @@ function get_buttons()
 	}
 	return $bu1;
 }
-if($i = '1')
-{
+if($i = '1') {
 	$form = '1';
-}
-else
-{
+} else {
 	$form = '0';
 }
-
-
-
-
 
 if(isset($_POST['ob']))
 $id = $_GET['id'];
 $video_exists = true;
 $_SESSION['id'] = $_GET['id'];
 
-
 if ($id == 0) {
     $video_exists = false;
 } else {
-    
-	
     $video_exists = true;
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
     if (isset($d2) && $d2 == '1') {
@@ -98,8 +73,7 @@ if ($id == 0) {
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id)))) 
 	    
     $d2 = $result->num_rows;
-    if ($d2 == '1') 
-    {
+    if ($d2 == '1') {
         $dane = $result->fetch_assoc();
         $observators = $dane['observators'];
 	$name = $dane['login'];
@@ -114,12 +88,9 @@ if ($id == 0) {
     }
 }
 
-if($av6 == 'x')
-{
+if($av6 == 'x') {
 	$av7 = 'anonim.png';
-}
-else
-{
+} else {
 	$av7 = '/grafic/'.$publisher.'a.'.$av6.'';
 }
 
@@ -129,41 +100,25 @@ if ($resulto = @$connect->query(
 		    mysqli_real_escape_string($connect,$publisher))))
 	$ilosc = $resulto->num_rows;
 
-if($ilosc == '1')
-{
+if($ilosc == '1') {
 	$obm = '0';
-}
-else
-{
+} else {
 	$obm = '1';
 }
 
-if(!isset($_SESSION['uid']))
-{
+if (!isset($_SESSION['uid'])) {
 	$obm = '0';
 	$logged = '0';
-}
-else
-{
+} else {
 	$logged = '1';
 }
-
-if($logged == '0')
-{
+if($logged == '0') {
 	$obd = 'disabled="disabled"';
-}
-else
-{
+} else {
 	$obd = '';
 }
-
 $_SESSION['id'] = $id;
-
-
- 
 ?>
-
-
 <!DOCTYPE HTML>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
@@ -445,109 +400,4 @@ if ($video_exists == false) {
 		</script>";
 }
 ?>
-	
-	<!--
-<div class="container" style="margin-top: 70px; justify-content: center;">
-        <form>
-          <div class="form-row">
-            <div class="col-md-7">
-              <div class="md-form form-group">
-                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/2704396/2704396.mp4&title=Jaro Kacz" style="width: 100%; height: 360px;" frameborder="0"></iframe>
-                <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
-                  <h4><?php echo $title ?></h4>
-                  <div class="container row" style="margin-top: 20px;">
-                  <span style="margin-left: 10px;">
-                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
-                  </span>
-                  <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;">SlaVistaPL</h5>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
-                  </span>
-                  <span style="margin-left: auto; margin-right: -20px;">
-                    <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
-                  </span>
-                  </div>
-                  <div class="border border white" style="opacity: 0.45;"></div>
-                  <div class="container row" style="margin-top: 20px;">
-                    <span style="margin-left: 10px; margin-right: auto;">
-                      <p style="text-align: left; margin-bottom: 20px; margin-top: -6px; cursor: pointer;" data-toggle="modal" data-target="#basicExampleModal">
-                        <i class="fa fa-flag" aria-hidden="true" style="margin-right: 3px;"></i> Zgłoś film
-                      </p>
-                    </span>
-                    <span style="margin-left: auto; margin-right: -20px; text-align: right;">
-                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> 3 201</h4>
-                      <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
-                    </span>
-                    </div><br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum. Praesent fringilla molestie sodales. Mauris tempus urna est, non sodales tortor placerat in. Donec elementum mattis elit. Quisque semper nisi nunc, sit amet malesuada lorem posuere quis. Vivamus non eros id ante varius ultrices.</p>
-                </div>
-                <div class="comments">
-                  <h3>Komentarze (1)</h3>
-                  <div class="container row">
-                      <span>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
-                      </span>
-                      <span class="md-form my-0 mx-2" style="color: white !important;">
-                          <input class="form-control mr-sm-2" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
-                      </span>
-                  </div>
-                  <div class="container row" style="margin-top: 10px;">
-                    <span>
-                      <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
-                    </span>
-                    <span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
-                        <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.$dane4['login'].' • '.$dane3['published'].'</h6>
-                        <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$dane3['tresc'].'</p>
-                    </span>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="md-form form-group">
-                <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
-                    <h4 style="margin-bottom: 10px;">Inni również to oglądali</h4>
-                    <div class="container">
-                      <div class="row">
-                          <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                          <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                            SlaVistaPL<br>
-                            6.1k wyświetleń</p>
-                      </div>
-                      <br>
-                      <div class="row">
-                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                        <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                          SlaVistaPL<br>
-                          6.1k wyświetleń</p>
-                    </div>
-                    <br>
-                    <div class="row">
-                      <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                      <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                        SlaVistaPL<br>
-                        6.1k wyświetleń</p>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                      SlaVistaPL<br>
-                      6.1k wyświetleń</p>
-                </div>
-                <br>
-                <div class="row">
-                  <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                  <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                    SlaVistaPL<br>
-                    6.1k wyświetleń</p>
-              </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-            </div>
--->
-
 <div class="hiddendiv common"></div></body></html>
