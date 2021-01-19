@@ -163,14 +163,11 @@ $_SESSION['id'] = $id;
                                 <span style="margin-left: 10px; margin-right: auto;">
                     <a href="channel?id=<?php echo $publisher ?>"><h5 style="align-items: center;"><?php echo $name ?></h5></a>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
-                  </span>
-				    
-                                <span style="margin-left: auto; margin-right: -20px;">
-// 					
-					<?php
-					require_once 'videotool/obserwowane.php';
-					?>
-							  
+                  </span>	    
+                  <span style="margin-left: auto; margin-right: -20px;">					
+			<?php
+				require_once 'videotool/obserwowane.php';
+			?>			  
                   </span>
                             </div>
                             <div class="border border white" style="opacity: 0.45;"></div>
@@ -193,20 +190,16 @@ $_SESSION['id'] = $id;
                             <div class="container row">
                       <span>
 			      <?php
-				if($_SESSION['avatar'] == 'x')
-				{
+				if ($_SESSION['avatar'] == 'x') {
 					$avatarkomentarze = '/avatardomyslny.jpg';
-				}
-			        else
-				{
+				} else {
 					$avatarkomentarze = '/grafic/'.$_SESSION['uid'].'a.'.$_SESSION['avatar'].'';
 				}
 		
-		                if($_SESSION['avatar'] == '')
-				{
+		                if ($_SESSION['avatar'] == '') {
 					$avatarkomentarze = '/avatardomyslny.jpg';
 				}
-		?>
+			      ?>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $avatarkomentarze ?>">
                       </span>
                                 <span class="md-form my-0 mx-2" style="color: white !important;">
@@ -221,24 +214,14 @@ $_SESSION['id'] = $id;
 			   ?>
 				    </form>
                             </div><br>
-                            
-                                    
 					    <br></br>
 					    <?php
-		
-			
 		if ($result3 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_comments")))
-			
 		$d3 = $result3->num_rows;
-					    
-			
-		
-					if($d3 > '0')
-					{
+					if($d3 > '0') {
 						$pytanie = '$connect->query("SELECT * FROM viddle_comments")';
 						$k1 = $d3 + '1';
-						
 						for($k2 = 1; $k2 < $k1; $k2 += 1)
 						{
 							$ktresc = '';
@@ -258,13 +241,9 @@ $_SESSION['id'] = $id;
 								$kuav = $dane4['avatarname'];
 								$kuname = $dane4['login'];
 								$kuid = $dane4['uid'];
-								if($kuav == 'x')
-								{
+								if($kuav == 'x') {
 									$av11 = 'anonim.png';
-									
-								}
-								else
-								{
+								} else {
 									$av11 = '/grafic/'.$dane3['uid'].'a.'.$dane4['avatarname'].'';
 								}
 								echo '<div class="container row" style="margin-top: 10px;">
@@ -276,8 +255,8 @@ $_SESSION['id'] = $id;
                         <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$dane3['tresc'].'</p>
                     </span>
                 </div>';
-							}
 									}
+								}
 							}
 						}
 					}
