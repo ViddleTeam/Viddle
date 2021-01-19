@@ -331,9 +331,9 @@ $_SESSION['id'] = $id;
                     <span>
                       <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                     </span>
-                    <span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
+                    <span class="md-form mx-2" style="color: white !important;">
                         <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">Autor komentarza • 19.01.2021</h6>
-                        <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">Treść komentarza</p>
+                        <p style="text-align: left; margin-bottom: 18px; margin-top: -6px;">Treść komentarza</p>
                     </span>
                 </div>
                 </div>
@@ -341,42 +341,42 @@ $_SESSION['id'] = $id;
                     <div class="md-form form-group">
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
                             <h4 style="margin-bottom: 10px;">Inni również to oglądali</h4>
-                            <div class="container">
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                                        SlaVistaPL<br>
-                                        6.1k wyświetleń</p>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                                        SlaVistaPL<br>
-                                        6.1k wyświetleń</p>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                                        SlaVistaPL<br>
-                                        6.1k wyświetleń</p>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                                        SlaVistaPL<br>
-                                        6.1k wyświetleń</p>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                                        SlaVistaPL<br>
-                                        6.1k wyświetleń</p>
-                                </div>
-                            </div>
+                    <div class="container">
+                      <div class="row">
+                          <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                          <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
+                            SlaVistaPL<br>
+                            6.1k wyświetleń</p>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                        <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
+                          SlaVistaPL<br>
+                          6.1k wyświetleń</p>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                      <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
+                        SlaVistaPL<br>
+                        6.1k wyświetleń</p>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
+                      SlaVistaPL<br>
+                      6.1k wyświetleń</p>
+                </div>
+                <br>
+                <div class="row">
+                  <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                  <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
+                    SlaVistaPL<br>
+                    6.1k wyświetleń</p>
+              </div>
+                    </div>
                         </div>
                     </div>
                 </div>
@@ -454,7 +454,7 @@ if ($video_exists == false) {
               <div class="md-form form-group">
                 <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/2704396/2704396.mp4&title=Jaro Kacz" style="width: 100%; height: 360px;" frameborder="0"></iframe>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
-                  <h4>Tytuł filmu</h4>
+                  <h4><?php echo $title ?></h4>
                   <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
