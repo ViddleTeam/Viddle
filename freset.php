@@ -26,9 +26,9 @@ else
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?php if($kwestia == '1') { ?>
-		<title>Dziękujemy !!!</title>
+		<title>Dziękujemy!</title>
     <?php } else { ?>
-    <title>Upsss ... coś poszło nie tak</title>
+    <title>Coś poszło nie tak</title>
     <?php } ?>
 		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
@@ -44,8 +44,8 @@ else
 				<div class="card-body">
         <?php if($kwestia == '1') { ?>
                                 <div id="main">
-				<h3 style="font-weight: bold;">Dziękujemy</h3>
-				<p>Hasło do twojego konta zostało pomyślnie zresetowane !!!</p><br>
+				<h3 style="font-weight: bold;">Hasło zostało zresetowane.</h3>
+				<p>Możesz się już zalogować z użyciem nowego hasła.</p><br>
 				
                 
 					<a href="login.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">powrót do logowania</p></button></a>
@@ -56,8 +56,8 @@ else
 			</div><br>
       <?php } else { ?>
                              <div id="main">
-				<h3 style="font-weight: bold;">Upsss ... coś poszło nie tak</h3>
-				<p>Jeśli link wpisałeś ręcznie to upewnij się że link jest poprawny</p><br>
+				<h3 style="font-weight: bold;">Coś poszło nie tak.</h3>
+				<p>Link do zresetowania hasła jest niepoprawny. Prawdopodobnie wygasł lub został nieprawidłowo wpisany.</p><br>
 				
                 
 					<a href="login.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">powrót do logowania</p></button></a>
