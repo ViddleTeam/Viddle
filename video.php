@@ -306,10 +306,8 @@ $_SESSION['id'] = $id;
     </div>
   </div>
 </div>
-<!-- JS -->
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
-<script src="script.js"></script>
+<?php 
+	require_once("partials/footer.php");
+?>
 
 <div class="hiddendiv common"></div></body></html>
