@@ -41,6 +41,7 @@ if($block == '1')
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL"><head>
+    <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/logo (1).png">
