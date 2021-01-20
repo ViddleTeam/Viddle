@@ -240,10 +240,50 @@ $_SESSION['id'] = $id;
                     <span>
                       <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                     </span>
-                    <span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
-                        <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">SlaVistaPL • 3 minuty temu</h6>
-                        <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum.</p>
-                    </span>
+			  <?php
+		if ($result3 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_comments")))
+		$d3 = $result3->num_rows;
+					if($d3 > '0') {
+						$pytanie = '$connect->query("SELECT * FROM viddle_comments")';
+						$k1 = $d3 + '1';
+						for($k2 = 1; $k2 < $k1; $k2 += 1)
+						{
+							$ktresc = '';
+						    if($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id2='$k2'"))
+						    {
+							$dane3 = $comment->fetch_assoc();
+							    
+							$ktresc = $dane3['tresc'];
+							$kuid = '';
+							$kdate = '';
+							if($dane3['videoid'] == $id)
+							{
+								$uiddd = $dane3['uid'];	
+							if($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$uiddd'"))
+							{
+								$dane4 = $result4->fetch_assoc();
+								$kuav = $dane4['avatarname'];
+								$kuname = $dane4['login'];
+								$kuid = $dane4['uid'];
+								if($kuav == 'x') {
+									$av11 = 'anonim.png';
+								} else {
+									$av11 = '/grafic/'.$dane3['uid'].'a.'.$dane4['avatarname'].'';
+								}
+								echo '
+		<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
+		<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
+                        <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.$kuname.' • '.$dane3['published'].'</h6>
+                        <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$dane3['tresc'].'</p>
+                    </span>';
+									}
+								}
+							}
+						}
+					}
+		?>
+                    
                 </div>
                 </div>
               </div>
@@ -299,7 +339,7 @@ $_SESSION['id'] = $id;
       </div>
 <?php } ?>
 
-<?php if ($video_exists == false) {
+<?php if ($video_e == false) {
     echo "<script>
 			$('#staticBackdrop').modal('show');
 		</script>";
