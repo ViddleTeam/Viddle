@@ -1,3 +1,124 @@
+<?php
+session_start();
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+$id = $_GET['id'];
+$polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
+	if ($c = $connect->query($polecenie)) {
+		$cheack2 = $c->num_rows;
+		if($cheack2 == '1') {
+			$video_e = true;
+		} else {
+			$video_e = false;
+		}
+	}
+function get_buttons() {
+	$bu1 = '';
+	$bu2=array(
+	
+		1=>'<img src="partie/pis.png" style="width:100px;height:100px;">',
+		2=>'<img src="partie/po.png" style="width:400px;height:100px;">',
+
+	);
+	
+	while(list($bu3,$bu4)=each($bu2))
+	{
+		$bu1.='<div class="1">
+		<button type="submit" name="btn_'.$bu3.'">'.$bu4.'</button> <br></br>
+		</div>';
+	}
+	return $bu1;
+}
+if($i = '1') {
+	$form = '1';
+} else {
+	$form = '0';
+}
+
+if(isset($_POST['ob']))
+$id = $_GET['id'];
+$video_exists = true;
+$_SESSION['id'] = $_GET['id'];
+
+if ($id == 0) {
+    $video_exists = false;
+} else {
+    $video_exists = true;
+    if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
+    if (isset($d2) && $d2 == '1') {
+        $dane = $result->fetch_assoc();
+        $publisher = $dane['publisher'];
+        $file = $dane['fname'];
+        $title = $dane['title'];
+        $opis = $dane['opis'];
+        $views = $dane['views'];
+        $komentarze = $dane['comments'];
+	$likes = $dane['upvotes'];
+	$dislikes = $dane['downvotes'];
+        $video_exists = true;
+        if ($result = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$publisher))))
+
+            $d2 = $result->num_rows;
+	    
+	   
+			if($d2 == '1')
+			{
+			}
+	   
+    } else {
+        $video_exists = false;
+    }
+    if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id)))) 
+	    
+    $d2 = $result->num_rows;
+    if ($d2 == '1') {
+        $dane = $result->fetch_assoc();
+        $observators = $dane['observators'];
+	$name = $dane['login'];
+	$av6 = $dane['avatarname'];
+	
+        $video_exists = true;
+	    
+	
+		
+    } else {
+        $video_exists = false;
+    }
+}
+
+if($av6 == 'x') {
+	$av7 = 'anonim.png';
+} else {
+	$av7 = '/grafic/'.$publisher.'a.'.$av6.'';
+}
+
+if ($resulto = @$connect->query(
+		    sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'",
+		    mysqli_real_escape_string($connect,$_SESSION['uid']),
+		    mysqli_real_escape_string($connect,$publisher))))
+	$ilosc = $resulto->num_rows;
+
+if($ilosc == '1') {
+	$obm = '0';
+} else {
+	$obm = '1';
+}
+
+if (!isset($_SESSION['uid'])) {
+	$obm = '0';
+	$logged = '0';
+} else {
+	$logged = '1';
+}
+if($logged == '0') {
+	$obd = 'disabled="disabled"';
+} else {
+	$obd = '';
+}
+$_SESSION['id'] = $id;
+?>
 <html lang="pl-PL"><head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,6 +189,9 @@
 			</div>
   </nav>
       </header>
+		 <?php
+        if ($video_e == true) {
+        ?>
       <div class="container" style="margin-top: 70px; justify-content: center;">
         <form>
           <div class="form-row">
@@ -173,6 +297,14 @@
         </form>
 		</div>		
       </div>
+<?php } ?>
+
+<?php if ($video_exists == false) {
+    echo "<script>
+			$('#staticBackdrop').modal('show');
+		</script>";
+}
+?>
       
       <!-- modal do zgłoszenia filmu -->
       <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
