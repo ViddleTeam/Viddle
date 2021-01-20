@@ -50,7 +50,8 @@ if(!$_POST['haslo'] == '')
 	
 	if($ok == true)
 	{
-		 if ($result = @$connect->query(sprintf("UPDATE viddle_users SET password='%s' WHERE email='%s'", mysqli_real_escape_string($connect,$_POST['haslo2']), mysqli_real_escape_string($connect,$email))))
+		 $haslo_reset = password_hash($connect->real_escape_string($_POST['haslo2']), PASSWORD_DEFAULT);
+		 if ($result = @$connect->query(sprintf("UPDATE viddle_users SET password='%s' WHERE email='%s'", mysqli_real_escape_string($connect,$haslo_reset), mysqli_real_escape_string($connect,$email))))
 		 {
 			 $_SESSION['zhaslo'] = true;
 			 
