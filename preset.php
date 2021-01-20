@@ -52,7 +52,6 @@ if (isset($_POST['email']))
 	
 	if($ok == '2')
 	{
-		echo 'poszło';
 		$k1 = rand(10000,99999);
 		$k2 = rand(10000,99999);
 		$email = $_POST['email'];
@@ -71,7 +70,7 @@ $mail = new PHPMailer(true);
     $mail->Host       = 'smtppro.zoho.eu';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'support@viddle.xyz';                     // SMTP username
-    $mail->Password   = 'b33@tbKz2fkTXxV';                               // SMTP password
+    $mail->Password   = '3fpbmx@b6oSw9kyu';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
