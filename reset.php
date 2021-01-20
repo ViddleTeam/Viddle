@@ -45,7 +45,7 @@ if(!$_POST['haslo'] == '')
 	if (password_verify($_POST['haslo2'], $dane2['password']))
 	{
 		$ok = false;
-		$p2_error = "<div class='alert alert-danger' role='alert'>To hasło jest takie same jak te które aktualnie jest ustawione!</div>";
+		$p2_error = "<div class='alert alert-danger' role='alert'>Hasło jest takie samo, jak przed resetem.</div>";
 	}
 	
 	if($ok == true)
@@ -93,7 +93,7 @@ if(!$_POST['haslo'] == '')
 					<?php if($d2 == '1')
 					      { ?>
 				<h3 style="font-weight: bold;">Resetowanie hasła</h3>
-				<p>Już dzielą cie ostatnie kroki by zmienić hasło !!!</p><br>
+				<p>Wymyśl nowe hasło (najlepiej takie, które nie było używane nigdzie indziej).</p><br>
 				<?php
 				echo $p_error;	
 				echo $rp_error;
@@ -127,8 +127,8 @@ if(!$_POST['haslo'] == '')
 else
 {
 	?>
-	<h3 style="font-weight: bold;">Upsss ... coś poszło nie tak</h3>
-				<p></p>Najwidoczniej ktoś już skorzystał z tego linku do zresetowania hasła lub jest on niepoprawny. Jeśli wpisywałeś link ręcznie to upewnij się że jest on prawidłowy<br>
+	<h3 style="font-weight: bold;">Coś poszło nie tak</h3>
+				<p></p>Najwidoczniej ktoś już skorzystał z tego linku do zresetowania hasła, lub jest on niepoprawny. Jeśli wpisywałeś link ręcznie to upewnij się że jest on prawidłowy<br>
 				
 	</body>
 </html>
