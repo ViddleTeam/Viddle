@@ -28,7 +28,7 @@ if(isset($_SESSION['uid']))
     
     if($connect->query("INSERT INTO `viddle_ver`(`id`, `vid`, `vid2`, `uid`) VALUES (NULL, '$vid', '$vid2', '$uid')"))
     {
-        require("danemail.php");
+        require "danemail.php";
 
 
 // Instantiation and passing `true` enables exceptions
