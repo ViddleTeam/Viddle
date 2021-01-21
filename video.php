@@ -138,8 +138,8 @@ $_SESSION['id'] = $id;
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;">SlaVistaPL</h5>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
+                    <h5 style="align-items: center;"><?php echo $publisher ?></h5>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo  ?> obserwujących</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
                     <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
@@ -157,10 +157,10 @@ $_SESSION['id'] = $id;
                       <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
                     </span>
                     </div><br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum. Praesent fringilla molestie sodales. Mauris tempus urna est, non sodales tortor placerat in. Donec elementum mattis elit. Quisque semper nisi nunc, sit amet malesuada lorem posuere quis. Vivamus non eros id ante varius ultrices.</p>
+                    <p><?php echo $opis ?></p>
                 </div>
                 <div class="comments">
-                  <h3>Komentarze (1)</h3>
+                  <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                   <div class="container row">
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
