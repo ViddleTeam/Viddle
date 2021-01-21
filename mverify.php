@@ -49,7 +49,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom(MAILUSER, MAILNAME);
-    $mail->addAddress($_POST['email']);     // Add a recipient
+    $mail->addAddress($_SESSION['emai']);     // Add a recipient
   
 
 
@@ -92,10 +92,10 @@ $mail = new PHPMailer(true);
         <div id="body">
             <div id="text-container">
                 <p>
-                    Witaj, <b>[placeholder dla nazwy użytkownika]!</b><br><br>
+                    Witaj, <b>'.$_SESSION['user'].'!</b><br><br>
                     Dziękujemy za rejestrację konta w serwisie Viddle!<br>
                     Chcemy sprawdzić, czy to ty rzeczywiście się rejestrujesz, a nie ktoś niepowołany czy bot.<br><br>
-                    Kliknij w <a href=""><b>ten link</b></a>, żeby potwierdzić twoją rejestrację. Jeżeli to nie ty - zignoruj tą wiadomość i dla bezpieczeństwa ustaw silniejsze hasło do skrzynki mailowej.<br><br>
+                    Kliknij w <a href="https://beta.viddle.xyz/verify.php?id='.$vid.'"><b>ten link</b></a>, żeby potwierdzić twoją rejestrację. Jeżeli to nie ty - zignoruj tą wiadomość i dla bezpieczeństwa ustaw silniejsze hasło do skrzynki mailowej.<br><br>
                     Pozdrawiamy,<br>
                     Viddle Developers
                 </p>
@@ -123,7 +123,7 @@ $mail = new PHPMailer(true);
 	}
 	else
 	{
-		$e2_err = '<div class="alert alert-danger" role="alert">
+		 echo '<div class="alert alert-danger" role="alert">
 				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle
 		  	</div>';
 	}
