@@ -1,27 +1,4 @@
-<html lang="pl-PL"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Najpopularniejsze filmy - Viddle</title>
-    <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
-    <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="VDP - polska alternatywa dla YouTube">
-    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą VDP.">
-	<script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
-	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
-	<style type="text/css">/* Chart.js */
-@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
-<body>
-    <div class="loader" style="opacity: 0; display: none;">
-        <div class="spinner spinner-center">  
-          <div class="spinner-border" style="width:3rem;height:3rem;color:white;margin-top: -150px;" role="status">
-          <span class="sr-only">Ładowanie...</span>
-        </div>
-          </div>
-        </div>
-        <div style="opacity: 1;" class="website">
-    <?php 
+<?php 
 	require_once('partials/navbar.php');		
     ?>
       <div class="container" style="margin-top:30px;">
