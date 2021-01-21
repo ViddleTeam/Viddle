@@ -138,13 +138,13 @@ $_SESSION['id'] = $id;
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;"><?php echo $publisher ?></h5>
+                    <h5 style="align-items: center;"><?php echo $name ?></h5>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
                     <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
                   </span>
-                  </div>
+			</div>
                   <div class="border border white" style="opacity: 0.45;"></div>
                   <div class="container row" style="margin-top: 20px;">
                     <span style="margin-left: 10px; margin-right: auto;">
