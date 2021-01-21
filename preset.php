@@ -57,6 +57,7 @@ if (isset($_POST['email']))
 		$email = $_POST['email'];
 		if ($connect->query("INSERT INTO viddle_passreset VALUES (NULL, '$email', '$k1', '$k2')"))
 		{
+			require("danemail.php");
 
 
 // Instantiation and passing `true` enables exceptions
@@ -67,15 +68,15 @@ $mail = new PHPMailer(true);
     $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
     $mail->isSMTP(); 
     $mail->CharSet = 'UTF-8'; // Send using SMTP
-    $mail->Host       = 'smtppro.zoho.eu';                    // Set the SMTP server to send through
+    $mail->Host       = MAILHOST;                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'support@viddle.xyz';                     // SMTP username
-    $mail->Password   = '3fpbmx@b6oSw9kyu';                               // SMTP password
+    $mail->Username   = MAILUSER;                     // SMTP username
+    $mail->Password   = MAILPASS;                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->Port       = MAILPORT;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('support@viddle.xyz', 'viddle');
+    $mail->setFrom(MAILUSER, MAILNAME);
     $mail->addAddress($_POST['email']);     // Add a recipient
   
 
