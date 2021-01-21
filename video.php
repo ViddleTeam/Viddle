@@ -132,10 +132,10 @@ $_SESSION['id'] = $id;
               <div class="md-form form-group">
                 <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/2704396/2704396.mp4&title=Tytuł filmu" style="width: 100%; height: 360px;" frameborder="0"></iframe>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
-                  <h4>Tytuł filmu</h4>
+                  <h4><?php echo $title ?></h4>
                   <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
-                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
                     <h5 style="align-items: center;">SlaVistaPL</h5>
