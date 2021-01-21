@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception
+use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 include 'vendor/autoload.php';
@@ -61,24 +60,20 @@ $mail = new PHPMailer(true);
         <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Roboto");
-
             * {
                 font-family: Roboto;
                 color: white;
             }
-
             #header {
                 padding: 10px;
                 background-color: #313539;
                 text-align: center;
             }
-
             #body {
                 padding: 10px;
                 background-color: #212529;
                 justify-content: center;
             }
-
             #text-container {
                 padding-left: 10%;
                 padding-right: 10%;
@@ -111,15 +106,12 @@ $mail = new PHPMailer(true);
 	
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Weryfikacja adresu e-mail;
+    $mail->Subject = 'Weryfikacja adresu e-mail';
     $mail->Body    = $body;
    
-
     $mail->send();
     echo 'Message has been sent';
 	header('Location: vinfo.php?id='.$vid2.'');
-
-
 	}
 	else
 	{
@@ -128,14 +120,14 @@ $mail = new PHPMailer(true);
 		  	</div>';
 	}
       
-    }
+    
+    
   }
   else
   {
   header('location: index.php');
   }
   
-
 }
 else
 {
