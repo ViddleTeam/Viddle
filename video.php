@@ -153,14 +153,14 @@ $_SESSION['id'] = $id;
                       </p>
                     </span>
                     <span style="margin-left: auto; margin-right: -20px; text-align: right;">
-                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> 3 201</h4>
-                      <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> 32 <i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> 3
+                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i><?php echo $views ?></h4>
+                      <i class="fas fa-arrow-up" style="margin-right: 5px;"><?php echo $likes ?></i><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?>
                     </span>
                     </div><br>
                     <p><?php echo $opis ?></p>
                 </div>
                 <div class="comments">
-                  <h3>Komentarze (1)</h3>
+                  <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                   <div class="container row">
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
