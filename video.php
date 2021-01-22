@@ -195,13 +195,13 @@ $_SESSION['id'] = $id;
 								} else {
 									$av11 = '/grafic/'.$dane3['uid'].'a.'.$dane4['avatarname'].'';
 								}
-								echo '<br></br>
+								?> <br></br>
 		<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
 		<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="'.$av11.'">
                         <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;">'.$kuname.' • '.$dane3['published'].'</h6>
                         <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;">'.$dane3['tresc'].'</p>
                     </span>';
-									}
+								<?php	}
 								}
 							}
 						}
