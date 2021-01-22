@@ -154,7 +154,7 @@ $_SESSION['id'] = $id;
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input class="form-control mr-sm-2" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
-				  <input type="submit" value="opubublikuj">
+				  
 			  </form>
                   </div>
                   <div class="container row" style="margin-top: 10px;">
