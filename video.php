@@ -181,6 +181,13 @@ $_SESSION['id'] = $id;
 							$ktresc = $dane3['tresc'];
 							$kuid = '';
 							$kdate = '';
+							    
+							    $dataczas = new DateTime('2150-05-01 09:33:59');
+							    
+							    $date = DateTime::createFromFormat('Y-m-d H:i:s', $dane3['published']);
+							    
+							    $data = $dataczas->diff($date);
+							    
 							if($dane3['videoid'] == $id)
 							{
 								$uiddd = $dane3['uid'];	
@@ -195,8 +202,6 @@ $_SESSION['id'] = $id;
 								} else {
 									$av11 = '/grafic/'.$dane3['uid'].'a.'.$dane4['avatarname'].'';
 								}
-								
-								
 								?> <br></br>
 		<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
 		<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $av11 ?>">
