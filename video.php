@@ -195,10 +195,12 @@ $_SESSION['id'] = $id;
 								} else {
 									$av11 = '/grafic/'.$dane3['uid'].'a.'.$dane4['avatarname'].'';
 								}
+								
+								$date = DateTime::createFromFormat('Y-m-d H:i:s', $dane3['published']);
 								?> <br></br>
 		<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
 		<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $av11 ?>">
-                        <h6 style="margin-left: 55px; margin-bottom: 10px; font-weight: bold;"><?php echo $kuname ?> • <?php echo $dane3['published'] ?></h6>
+                        <h6 style="margin-left: 55px; margin-bottom: 10px; font-weight: bold;"><?php echo $kuname ?> • <?php echo $date ?></h6>
                         <p style="text-align: left; margin-top: -6px; margin-left: 55px;"><?php echo $dane3['tresc'] ?></p>
                  </span>
 								<?php	}
