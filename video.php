@@ -12,22 +12,7 @@ $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 			$video_e = false;
 		}
 	}
-function get_buttons() {
-	$bu1 = '';
-	$bu2=array(
-	
-		1=>'<img src="partie/pis.png" style="width:100px;height:100px;">',
-		2=>'<img src="partie/po.png" style="width:400px;height:100px;">',
 
-	);
-	
-	while(list($bu3,$bu4)=each($bu2))
-	{
-		$bu1.='<div class="1">
-		<button type="submit" name="btn_'.$bu3.'">'.$bu4.'</button> <br></br>
-		</div>';
-	}
-	return $bu1;
 }
 if($i = '1') {
 	$form = '1';
@@ -165,9 +150,12 @@ $_SESSION['id'] = $id;
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                       </span>
+			  <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input class="form-control mr-sm-2" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
+				  <input type="submit" value="opubublikuj">
+			  </form>
                   </div>
                   <div class="container row" style="margin-top: 10px;">
                     <span>
