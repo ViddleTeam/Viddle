@@ -155,7 +155,7 @@ $_SESSION['id'] = $id;
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input class="form-control mr-sm-2" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
-				  <input type="submit" class="btn btn-primary" value="Opublikuj">
+				  <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 				  
 			  </form>
                   </div>
@@ -197,8 +197,8 @@ $_SESSION['id'] = $id;
 								}
 								?> <br></br>
 		<span class="md-form mx-2" style="color: white !important; margin-top: -45px;">
-		<img style="border-radius:50%;margin-right:5px;margin-top: 20px;" class="img-responsive" width="48px" src="<?php echo $av11 ?>">
-                        <h6 style="margin-left: 50px; margin-bottom: 10px; font-weight: bold;"><?php echo $kuname ?> • <?php echo $dane3['published'] ?></h6>
+		<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $av11 ?>">
+                        <h6 style="margin-left: 60px; margin-bottom: 10px; font-weight: bold;"><?php echo $kuname ?> • <?php echo $dane3['published'] ?></h6>
                         <p style="text-align: left; margin-bottom: 18px; margin-top: -6px; margin-left: 50px;"><?php echo $dane3['tresc'] ?></p>
                     </span>
 								<?php	}
