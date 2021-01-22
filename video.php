@@ -182,7 +182,7 @@ $_SESSION['id'] = $id;
 							$kuid = '';
 							$kdate = '';
 							    
-							    $dataczas = new DateTime('2150-05-01 09:33:59');
+							    $dataczas = new DateTime('2022-05-01 09:33:59');
 							    
 							    $date = DateTime::createFromFormat('Y-m-d H:i:s', $dane3['published']);
 							    
