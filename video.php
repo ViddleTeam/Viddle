@@ -13,7 +13,7 @@ $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 		}
 	}
 
-}
+
 if($i = '1') {
 	$form = '1';
 } else {
@@ -103,7 +103,7 @@ if($logged == '0') {
 	$obd = '';
 }
 $_SESSION['id'] = $id;
-}
+
 ?>
 <?php 
 	require_once("partials/navbar.php");
