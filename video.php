@@ -161,8 +161,9 @@ $_SESSION['id'] = $id;
                   </div>
                   <div class="container row" style="margin-top: 10px;">
                     <span>
-                      <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                     
                     </span>
+			  <br></br>
 			  <?php
 		if ($result3 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_comments")))
