@@ -103,6 +103,7 @@ if($logged == '0') {
 	$obd = '';
 }
 $_SESSION['id'] = $id;
+}
 ?>
 <?php 
 	require_once("partials/navbar.php");
