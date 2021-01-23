@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 session_start();
 
@@ -18,12 +18,6 @@ if (isset($_SESSION['z']))
 
 <html>
 	<head>
-	<style>
-	body {
-		background: rgb(30,0,59);
-		background: linear-gradient(90deg, rgba(30,0,59,1) 0%, rgba(9,34,121,1) 35%, rgba(154,0,255,1) 100%);
-	}
-	</style>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
@@ -41,9 +35,11 @@ if (isset($_SESSION['z']))
 				<div class="card-body">
                                 <div id="main">
 				<h3 style="font-weight: bold;">Dziękujemy!</h3>
-				<p>Twoje konto zostało zarejestrowane, życzymy powodzenia w rozwoju kanału na Viddle!</p><br>
-				
-                
+				<p>
+					Twoje konto zostało zarejestrowane - życzymy powodzenia w rozwoju kanału na Viddle!<br>
+					Przed tym sprawdzimy, czy adres mailowy którego użyłeś do rejestracji jest prawidłowy i należy do Ciebie.
+					Sprawdź skrzynkę mailową oraz zakładkę spamu.
+				</p><br>
 					<a href="login.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zaloguj się</p></button></a>
 				</div>
 				</div>
