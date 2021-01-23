@@ -98,7 +98,7 @@ if ($result = @$connect->query(
         </div>
         </div>
           <div class="row">
-            <h4 class="tile-before" style="color:white;">Ostatnio udostępnione</h4>
+            <h4 class="tile-before" style="color:white; margin-left: 10px;">Ostatnio udostępnione</h4>
           </div><br>
 		<div class="container row" style="min-width: 100%">
 				<?php
@@ -159,7 +159,7 @@ if ($result = @$connect->query(
 		    {
 			    if ($do == '1') {
 							echo '<div class="alert alert-info" style="width: 100%;">
-									<strong>Aby dodać swój pierwszy film na twoim nowym kanale, kliknij na ikonę u góry obok panelu użytkownika.</strong>
+									<strong>Trochę tu pusto.</strong> Dodaj swój pierwszy film poprzez kliknięcie ikony tuż obok menu konta.
 								  </div>';
 						} else {
 								echo '<div class="alert alert-info" style="width: 100%;">
