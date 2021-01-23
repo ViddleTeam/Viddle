@@ -38,25 +38,19 @@ if (isset($login)){
 		$rp_error = "<div class='alert alert-danger' role='alert'>Hasła się nie zgadzają.</div>";
 	}
 
-	if ($password == "12345678" || $password == "abcdefgh" || !preg_match("#.*^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
+	if (!preg_match("#.*^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
 		$ok = false;
 		$easypass_error = "<div class='alert alert-danger' role='alert'>Hasło, które ustaliłeś, może ułatwić włamanie się na Twoje konto. Ustal silniejsze hasło!</div>";
 	}
-	
 	$secret = '0x2e38D68c01a7AAa01905f1471631C6b59e47300A';
         $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$_POST['h-captcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']);
         $responseData = json_decode($verifyResponse);
-        if($responseData->success)
-        {
+        if($responseData->success) {
             
-        }
-        else
-        {
+        } else {
             $ok=false;
 		$c_error = "<div class='alert alert-danger' role='alert'>Nie zaznaczono pola captcha.</div>";
         }
-
-    
         require("danesql.php");
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 			if ($connect->connect_errno!=0) {
@@ -91,7 +85,7 @@ if (isset($login)){
                 $success = $connect->query("INSERT INTO viddle_users VALUES ('$login_e', '$haslo_h', '$email_e', '$uid', 1, 0, 0, 'x', 'x', NULL, 0)");
                 if ($success) {
                     $_SESSION['z'] = true;
-                    header('Location: prejestracja.php');
+                    header('Location: mverify.php');
                 } else {
                     echo 'Error. '.$connect->error;
                 }
