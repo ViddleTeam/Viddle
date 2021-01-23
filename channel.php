@@ -98,7 +98,7 @@ if ($result = @$connect->query(
         </div>
         </div>
           <div class="row">
-            <h4 class="tile-before" style="color:white;">Ostatnio dodane</h4>
+            <h4 class="tile-before" style="color:white;">Filmy na kanale</h4>
           </div><br>
 		<div class="container row" style="min-width: 100%">
 				<?php
