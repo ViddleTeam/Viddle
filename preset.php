@@ -33,9 +33,7 @@ if (isset($_POST['email']))
 	
 	require("danesql.php");
         $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-	
-	 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE email='%s'", mysqli_real_escape_string($connect,$_POST['email']))))
-		 
+	if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE email='%s'", mysqli_real_escape_string($connect,$_POST['email'])))) 
 	$d2 = $result->num_rows;
 	
 	if($d2 == '0')
@@ -150,15 +148,14 @@ $mail = new PHPMailer(true);
    
 
     $mail->send();
-    echo 'Message has been sent';
-	header('Location: resetinfo.php?id='.$k2.'');
+    header('Location: resetinfo.php?id='.$k2.'');
 
 
 	}
 	else
 	{
 		$e2_err = '<div class="alert alert-danger" role="alert">
-				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle
+				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem Viddle
 		  	</div>';
 	}
 						}
@@ -175,13 +172,6 @@ echo $ok;
 <html>
 	<head>
 		<script src="https://hcaptcha.com/1/api.js" async defer></script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
-		<style>
-		body {
-			background: rgb(30,0,59);
-			background: linear-gradient(90deg, rgba(30,0,59,1) 0%, rgba(9,34,121,1) 35%, rgba(154,0,255,1) 100%);
-		}
-		</style>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
