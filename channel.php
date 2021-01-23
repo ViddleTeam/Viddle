@@ -138,19 +138,17 @@ if ($result = @$connect->query(
                                
                                 echo'
                                 <div class="card">
-                        <a href="video?id='.$d5['video_id'].'">
-                        <img src="'.$miniaturka.'" class="img-responsive card-img" width="300" height="187.5">
-                        <p class="card-title">'.$d5['title'].'</p>
-                        <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                        <div class="bottom-info">
-                            <span>'.$nazwa.'</span>
-                            <span>•</span>
-                            <span>'.$d5['views'].' wyświetleń</span>
-                        </div>
-                        </a>
-                    </div>
-            </div>
-        </div>';
+					<a href="video?id='.$d5['video_id'].'">
+					<img src="'.$miniaturka.'" class="img-responsive card-img" width="300" height="187.5">
+					<p class="card-title">'.$d5['title'].'</p>
+					<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+					<div class="bottom-info">
+						<span>'.$nazwa.'</span>
+						<span>•</span>
+						<span>'.$d5['views'].' wyświetleń</span>
+					</div>
+					</a>
+				</div>';
                                 
                             
                         }
