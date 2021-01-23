@@ -38,11 +38,11 @@ if ($result = @$connect->query(
 		
 		if($_SESSION['uid'] == $id)
 		{
-			$do = '1';
+			$do = 1;
 		}
 		else
 		{
-			$do = '0';
+			$do = 0;
 		}
 		
 		
@@ -70,7 +70,7 @@ if ($result = @$connect->query(
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
-					<h3 style="align-items: center;"><?php echo $nazwa; ?></h3>
+					<h3><?php echo $nazwa; ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
@@ -115,11 +115,6 @@ if ($result = @$connect->query(
                     
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows+1;
-			    
-			    
-						
-			
-                        
                         for($k1 = 1; $k1 < $num; $k1 += 1){
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
                                 $d5 = $k2->fetch_assoc();
@@ -132,11 +127,8 @@ if ($result = @$connect->query(
 					   {
 						   $miniaturka = 'grafic/'.$d5['video_id'].'m.'.$d5['minname'].'';
 					   }
-                                
-				    
-				    
-                               
-                                echo'
+
+                                echo '
                                 <div class="card">
 					<a href="video?id='.$d5['video_id'].'">
 					<img src="'.$miniaturka.'" class="img-responsive card-img" width="300" height="187.5">
@@ -154,10 +146,8 @@ if ($result = @$connect->query(
                         }
                     }
 		    }
-		    }
-		    else
-		    {
-			    if ($do == '1') {
+		    } else {
+			    if ($do == 1) {
 							echo '<div class="alert alert-info" style="width: 100%;">
 									<strong>Trochę tu pusto.</strong> Dodaj swój pierwszy film poprzez kliknięcie ikony tuż obok menu konta.
 								  </div>';
