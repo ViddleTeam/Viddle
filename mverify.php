@@ -110,7 +110,6 @@ $mail = new PHPMailer(true);
     $mail->Body    = $body;
    
     $mail->send();
-    echo 'Message has been sent';
 	header('Location: vinfo.php?id='.$vid2.'');
 	}
 	else
