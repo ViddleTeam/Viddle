@@ -100,6 +100,7 @@ if ($result = @$connect->query(
           <div class="row">
             <h4 class="tile-before" style="color:white;">Ostatnio dodane</h4>
           </div><br>
+		<div class="row" style="min-width: 100%">
 				<?php
 				
 				if ($result3 = @$connect->query(
@@ -169,6 +170,7 @@ if ($result = @$connect->query(
 						}
 		    }	
 						?>
+		</div>
 	    <!--
 	    // tutaj placeholdery do wyświetlania filmów
             // coś tutaj jeszcze sie zmieni, zobaczysz - evo
