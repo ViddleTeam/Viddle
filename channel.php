@@ -106,7 +106,6 @@ if ($result = @$connect->query(
 				<div class="row">
 				  <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
 				</div>
-				</div>
 				  <div class="row">
 				    <h4 class="tile-before" style="color:white; margin-left: 10px;">Ostatnio udostępnione</h4>
 				  </div><br>
