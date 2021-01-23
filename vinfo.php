@@ -17,14 +17,9 @@ if ($result = @$connect->query(
       header('location: index.php');
     }
   }
-
-
-
-
 ?>
 
 <!DOCTYPE HTML>
-
 <html>
 	<head>
 	<style>
@@ -34,12 +29,12 @@ if ($result = @$connect->query(
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Konto zostało założone.</title>
-		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
+		<title>Konto zostało założone</title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+   		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
 		<meta property="og:title" content="Viddle">
-		<meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą VDP.">
+		<meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
 		<script src="script.js"></script>
 		<script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
 		<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
@@ -49,9 +44,11 @@ if ($result = @$connect->query(
 				<div class="card-body">
                                 <div id="main">
 				<h3 style="font-weight: bold;">Weryfikacja adresu e-mail</h3>
-				<p>Na adres e-mail <?php echo $_SESSION['email'] ?> wysłaliśmy link do weryfikacji adresu e-mail. Sprawdź swoją skrzynke e-mail i kliknij w link wysłany przez nas.</p><br>
-				
-                
+				<p>
+					Na adres e-mail (<?php echo $_SESSION['email'] ?>) wysłaliśmy link do jego weryfikacji. 
+					Sprawdź swoją skrzynkę i kliknij w link, który Tobie wysłaliśmy.<br>
+					Mail nie dotarł? Możliwe, że trafił on do folderu, gdzie przechowywany jest spam.
+				</p><br>
 					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Strona główna</p></button></a>
 				</div>
 				</div>
