@@ -100,7 +100,7 @@ if ($result = @$connect->query(
           <div class="row">
             <h4 class="tile-before" style="color:white;">Ostatnio dodane</h4>
           </div><br>
-		<div class="row" style="min-width: 100%">
+		<div class="container row tile" style="min-width: 100%">
 				<?php
 				
 				if ($result3 = @$connect->query(
