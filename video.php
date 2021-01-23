@@ -153,7 +153,8 @@ $_SESSION['id'] = $id;
                       </span>
 			  <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
-                          <input class="form-control mr-sm-2" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
+                          <input class="form-control mr-sm-2 d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
+			  <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
 				  <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 				  
