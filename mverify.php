@@ -48,7 +48,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom(MAILUSER, MAILNAME);
-    $mail->addAddress($_SESSION['emai']);     // Add a recipient
+    $mail->addAddress($_SESSION['email']);     // Add a recipient
   
 
 
@@ -111,9 +111,7 @@ $mail = new PHPMailer(true);
    
     $mail->send();
 	header('Location: vinfo.php?id='.$vid2.'');
-	}
-	else
-	{
+	} else {
 		 echo '<div class="alert alert-danger" role="alert">
 				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem viddle
 		  	</div>';
