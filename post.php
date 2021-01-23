@@ -20,7 +20,7 @@ if ($_SESSION['z1'] == true) {
 	  $file_ext = mime_content_type($_FILES["videovid"]["tmp_name"]);
 	  $filesize = $_FILES["videovid"]["size"];
 	  $allowed_file_types = ['video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp'];	
-	  define('MB', 1048576);
+	  define('GB', 1073741824);
 	  function ext($mime_type){
 	    $extensions = array('video/mp4' => '.mp4',
                           'video/mov' => '.mov',
@@ -92,7 +92,7 @@ if ($_SESSION['z1'] == true) {
 			//echo "Podaj nazwę pliku do wrzucenia!";
 			//header('Location: index.php');
 		  	$uplsuccess = 0;
-	  } elseif ($filesize > 10*MB) {	
+	  } elseif ($filesize > 5*GB) {	
 			// file size error
 			//echo "Plik jest zbyt duży!";
 			header('Location: index.php');
