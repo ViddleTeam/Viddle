@@ -194,7 +194,7 @@ echo $ok;
 			echo $e2_err;
 		?>
 				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
-				<p>w celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła</p><br>
+				<p>W celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła.</p><br>
 				<?php
 
 
