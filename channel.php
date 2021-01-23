@@ -69,7 +69,7 @@ if ($result = @$connect->query(
 				<span style="margin-left: 10px; margin-bottom: 10px;">
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
-				<span style="margin-left: 10px; margin-right: auto;">
+				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
 					<h3><?php echo $nazwa; ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
 				</span>
@@ -102,32 +102,23 @@ if ($result = @$connect->query(
           </div><br>
 		<div class="container row" style="min-width: 100%">
 				<?php
-				
 				if ($result3 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_videos WHERE publisher='%s'",
-		    mysqli_real_escape_string($connect,$id))))
-					
+		    mysqli_real_escape_string($connect,$id))))	
 		    $d4 = $result->num_rows;
 				
-		    if(!$d4 == '0')
-		    {
+		    if(!$d4 == '0') {
 			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'");
-                    
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows+1;
                         for($k1 = 1; $k1 < 4; $k1 += 1){
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
                                 $d5 = $k2->fetch_assoc();
-				    
-				    if($d5['minname'] == 'x')
-				    {
+				    if($d5['minname'] == 'x') {
 				    	$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-					   }
-					   else
-					   {
+					   } else {
 						   $miniaturka = 'grafic/'.$d5['video_id'].'m.'.$d5['minname'].'';
 					   }
-
                                 echo '
                                 <div class="card">
 					<a href="video?id='.$d5['video_id'].'">
@@ -141,13 +132,11 @@ if ($result = @$connect->query(
 					</div>
 					</a>
 				</div>';
-                                
-                            
                         }
                     }
 		    }
 		    } else {
-			    if ($do == 1) {
+			    if (!$do == 0) {
 							echo '<div class="alert alert-info" style="width: 100%;">
 									<strong>Trochę tu pusto.</strong> Dodaj swój pierwszy film poprzez kliknięcie ikony tuż obok menu konta.
 								  </div>';
