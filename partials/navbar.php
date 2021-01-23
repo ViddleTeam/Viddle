@@ -101,7 +101,7 @@ if($block == '1')
                     </div>
                 </ul>
                 <form class="form-inline" method="GET" action="search" style="margin-right: auto;">
-                    <input id="input_search" class="form-control mr-sm-2" style="width: 20rem; margin-top: 14px;" name="q" type="text" placeholder="Szukaj" aria-label="Szukaj">
+                    <input id="input_search" class="form-control mr-sm-2" style="width: 20rem;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
                 </form>
 
                 <?php
