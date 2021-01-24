@@ -1,13 +1,8 @@
 <?php
-if (isset($_POST['plik']))
-{
+if (isset($_POST['plik'])) {
 	$plik = $_FILES['plik'];
-	
 	echo $plik;
-	
-	print_r($plik);
-	
-		
+	print_r($plik);	
 }
 
 $f_plik = true;
@@ -58,14 +53,7 @@ if ($result = @$connect->query(
 		header('location: index.php');
 	}
 $title = "zmiana avataru kanału";
-
-
-
-
 ?>
-
-  
-
 <?php
 require_once('partials/navbar.php');
 ?>
@@ -101,9 +89,6 @@ require_once('partials/navbar.php');
 require_once('partials/footer.php');
 ?>
 <!-- JS -->
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
 <script src="script.js"></script>
 
 <div class="hiddendiv common"></div></body></html>
