@@ -15,46 +15,50 @@ if ($result = @$connect->query(
 		$av5 = $dane['avatarname'];
 		$nazwa = $dane['login'];
 		$ba2 = $dane['banername'];
+		$badges = $dane['badges'];
 		// blagam zmieńcie observators na followers, poprawny angielski by sie przydał ;) - evo
 		$obserwatorzy = $dane['observators'];
 		
-		if($av5 == 'x')
-		{
-			$av4 = 'anonim.png';
+		/* 
+		   Znaczenie ID odznak:
+		   1 - brak
+		   2 - łowca bugów
+		   3 - moderator
+		   4 - łowca bugów + moderator
+		   5 - deweloper
+		*/
+		if ($badges == 1) {
+			$badges_text = '';
+		} else if ($badges == 2) {
+			$badges_text = '<i class="fas fa-flask" data-toggle="tooltip" data-placement="top" title="Łowca bugów Viddle"></i>';
+		} else if ($badges == 3) {
+			$badges_text = '<i class="fas fa-gavel" data-toggle="tooltip" data-placement="top" title="Moderator"></i>';
+		} else if ($badges == 4) {
+			$badges_text = '<i class="fas fa-flask" style="margin-right: 5px;" data-toggle="tooltip" data-placement="top" title="Łowca bugów Viddle"></i> <i class="fas fa-gavel" data-toggle="tooltip" data-placement="top" title="Moderator"></i>';
+		} else if ($badges == 5) {
+			$badges_text = '<i class="fas fa-tools" data-toggle="tooltip" data-placement="top" title="Deweloper Viddle"></i>';
 		}
-		else
-		{
+		
+		if($av5 == 'x') {
+			$av4 = 'anonim.png';
+		} else {
 			$av4 = 'grafic/'.$id.'a.'.$av5.'';
 		}
 		
-		if($ba2 == 'x')
-		{
+		if($ba2 == 'x') {
 			$ba3 = 'http://wallpapercave.com/wp/t05PXKg.jpg';
-		}
-		else
-		{
+		} else {
 			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
 		}
 		
-		if($_SESSION['uid'] == $id)
-		{
+		if($_SESSION['uid'] == $id) {
 			$do = 1;
-		}
-		else
-		{
+		} else {
 			$do = 0;
 		}
-		
-		
-		
-	}	
-	else
-	{
+	} else {
 		header('location: index.php');
 	}
-	
-
-
     $title = "Konto ".$nazwa."";
     require_once('partials/navbar.php');
 ?>
@@ -70,7 +74,7 @@ if ($result = @$connect->query(
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
-					<h3><?php echo $nazwa; ?></h3>
+					<h3><?php echo $nazwa $badges_text; ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
