@@ -34,7 +34,7 @@ if(isset($_FILES['file_picker']))
 		//plik jest większy niż 3 mb
 		
 		$w_error = '<div class="alert alert-danger" role="alert">
-				Wybrany przez ciebie plik jest za duży. Maksymalny rozmiar wynosi 3 mb
+				Wybrany przez ciebie plik jest za duży. Maksymalny rozmiar pliku wynosi 3 MB.
 		  	</div>';
 	}
 	
@@ -145,7 +145,7 @@ require_once('partials/navbar.php');
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4><br>
 		      <center>
-			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="100%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
+			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="10%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
 			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -125px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
 				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
 		      	<button type="button" class="btn btn-gray" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
