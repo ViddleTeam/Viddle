@@ -139,7 +139,7 @@ $_SESSION['id'] = $id;
                       </p>
                     </span>
                     <span style="margin-left: auto; margin-right: -20px; text-align: right;">
-                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i><?php echo $views ?></h4>
+                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
                       <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?>
                     </span>
                     </div><br>
@@ -228,7 +228,7 @@ $_SESSION['id'] = $id;
             <div class="col-md-5">
               <div class="md-form form-group">
                 <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
-                    <h4 style="margin-bottom: 10px;">Inni również to oglądali</h4>
+                    <h4 style="margin-bottom: 10px;">Filmy z tego kanału</h4>
                     <div class="container">
                       <div class="row">
                           <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
