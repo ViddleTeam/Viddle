@@ -15,29 +15,8 @@ if ($result = @$connect->query(
 		$av5 = $dane['avatarname'];
 		$nazwa = $dane['login'];
 		$ba2 = $dane['banername'];
-		$badge = $dane['badges'];
 		// blagam zmieńcie observators na followers, poprawny angielski by sie przydał ;) - evo
 		$obserwatorzy = $dane['observators'];
-		
-		/* 
-		   Znaczenie ID odznak:
-		   1 - brak
-		   2 - łowca bugów
-		   3 - moderator
-		   4 - łowca bugów + moderator
-		   5 - deweloper
-		*/
-		if ($badge == 1) {
-			$badge_text = '';
-		} else if ($badge == 2) {
-			$badge_text = '<i class="fas fa-flask" data-toggle="tooltip" data-placement="top" title="Łowca bugów Viddle"></i>';
-		} else if ($badge == 3) {
-			$badge_text = '<i class="fas fa-gavel" data-toggle="tooltip" data-placement="top" title="Moderator"></i>';
-		} else if ($badge == 4) {
-			$badge_text = '<i class="fas fa-flask" style="margin-right: 5px;" data-toggle="tooltip" data-placement="top" title="Łowca bugów Viddle"></i> <i class="fas fa-gavel" data-toggle="tooltip" data-placement="top" title="Moderator"></i>';
-		} else if ($badge == 5) {
-			$badge_text = '<i class="fas fa-tools" data-toggle="tooltip" data-placement="top" title="Deweloper Viddle"></i>';
-		}
 		
 		if($av5 == 'x') {
 			$av4 = 'anonim.png';
@@ -74,7 +53,7 @@ if ($result = @$connect->query(
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
 				<span style="margin-left: 10px; margin-right: auto;">
-					<h3><?php echo $nazwa $badge_text; ?></h3>
+					<h3><?php echo $nazwa; ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
