@@ -2,7 +2,8 @@
 $title = 'Studio Twórców';
 require_once('partials/navbar.php');
 ?>
-<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:60px; padding: 0 10% 0 10%;">
+<div class="website">
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:60px;">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Strona główna</a>
   </li>
@@ -54,6 +55,7 @@ require_once('partials/navbar.php');
             </div>
 </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Twoje filmy</div>
+</div>
 </div>
 
 <?php
