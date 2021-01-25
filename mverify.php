@@ -26,7 +26,12 @@ if(isset($_SESSION['uid']))
     $vid = rand(10000,99999);
     $vid2 = rand(10000,99999);
     
-    if($connect->query("INSERT INTO `viddle_ver`(`id`, `vid`, `vid2`, `uid`) VALUES (NULL, '$vid', '$vid2', '$uid')"))
+    
+	if ($xd = @$connect->query(
+		    sprintf("INSERT INTO viddle_ver VALUES (NULL, '%s', '%s', '%s')",
+		    mysqli_real_escape_string($connect,$vid),
+		    mysqli_real_escape_string($connect,$vid2),
+		    mysqli_real_escape_string($connect,$uid))))
     {
         require "danemail.php";
 
