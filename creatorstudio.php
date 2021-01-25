@@ -2,7 +2,7 @@
 $title = 'Studio Twórców';
 require_once('partials/navbar.php');
 ?>
-<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:30px;">
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:50px;">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Strona główna</a>
   </li>
@@ -18,7 +18,7 @@ require_once('partials/navbar.php');
         </div>
           <div class="row" style="justify-content: center;">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 60px;">Podgląd twojego kanału</h4>
+                  <h4 class="tile-before" style="color:white;">Podgląd twojego kanału</h4>
               </div>
               <div class="card-creatorstudio border border-white" style="padding: 10px;">
                 <p>Wyświetlenia (ostatnie 24 godziny)</p>
