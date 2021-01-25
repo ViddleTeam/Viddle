@@ -104,7 +104,7 @@ if ($result = @$connect->query(
                                 $d5 = $k2->fetch_assoc();
 				 
 				    
-				 if(!$d5['views'] == '')
+				 if(isset($d5['views']))
 				 {
 				    if($d5['minname'] == 'x')
 				    {
@@ -131,8 +131,6 @@ if ($result = @$connect->query(
                                 
                             
                         }
-			    } else {
-				   exit();
 			    }
                     }
 		    }
