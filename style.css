@@ -21,6 +21,10 @@ table, th, td {
 	font-family: 'Inter', sans-serif;
 }
 
+.tab-pane {
+	margin-top: 10px;
+}
+
 .modal-dialog {
 	font-family: 'Inter', sans-serif
 }
