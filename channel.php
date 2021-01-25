@@ -95,11 +95,11 @@ if ($result = @$connect->query(
 		    if(!$d4 == '0')
 		    {
 			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'");
-			    $df = $p1->fetch_assoc();
+			    
                     
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows+1;
-                        for($df['il'] = ; $k1 < 4; $k1 -= 1){
+                        for($k1 = ; $k1 < 4; $k1 += 1){
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
                                 $d5 = $k2->fetch_assoc();
 				    
