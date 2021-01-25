@@ -3,7 +3,7 @@ $title = 'Studio Twórców';
 require_once('partials/navbar.php');
 ?>
 <div class="website">
-<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:60px;">
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:60px; margin-left: 10%; margin-right: 10%;">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Strona główna</a>
   </li>
