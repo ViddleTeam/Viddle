@@ -102,7 +102,10 @@ if ($result = @$connect->query(
                         for($k1 = $num; $k1 < 4; $k1 -= 1){
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id' ORDER BY `il` DESC LIMIT 3")){
                                 $d5 = $k2->fetch_assoc();
+				 
 				    
+				 if(!$d5['views'] == '')
+				 {
 				    if($d5['minname'] == 'x')
 				    {
 				    	$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
@@ -128,6 +131,9 @@ if ($result = @$connect->query(
                                 
                             
                         }
+			    } else {
+				   exit();
+			    }
                     }
 		    }
 		    } else {
