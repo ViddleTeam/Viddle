@@ -2,7 +2,7 @@
 $title = 'Studio Twórców';
 require_once('partials/navbar.php');
 ?>
-<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:50px;">
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 10px; margin-top:60px; padding: 0 10% 0 10%;">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Strona główna</a>
   </li>
