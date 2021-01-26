@@ -51,6 +51,25 @@ if($block == '1')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <?php
+    if ($_SESSION['z1'] == true) {
+        echo '<script>
+            function noActivityModal() {
+                setTimeout(function() {
+                    $(document).ready(function(){
+                        $("#noActivityModal").modal("show");
+                    });
+                }, 60000 * 0.25);
+            }
+        </script>';
+    } else {
+        return;
+    }
+    ?>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/css/uikit.min.css" />
     UIkit JS
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.16/dist/js/uikit.min.js"></script>
@@ -66,7 +85,24 @@ if($block == '1')
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
     <meta name="turbolinks-cache-control" content="no-cache">-->
 </head>
-<body>
+<body onblur="noActivityModal()">
+    <div id="noActivityModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nie wykryto żadnej aktywności od dłuższego czasu</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Wykryliśmy brak aktywności z twojej strony przez ponad 10 minut. Czy chcesz się wylogować?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="loader" style="opacity: 0; display: none;">
     <div class="spinner spinner-center">
         <div class="spinner-border" style="width:3rem;height:3rem;color:white;margin-top: -150px;" role="status">
@@ -138,6 +174,7 @@ if($block == '1')
             </div>
         </nav>
     </header>
+    <div class=""></div>
     <!--    <header>
             <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
                 <div class="uk-navbar-left">
