@@ -277,8 +277,7 @@ $_SESSION['id'] = $id;
 <?php } ?>
       
       <!-- modal do zgłoszenia filmu -->
-      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
@@ -305,11 +304,32 @@ $_SESSION['id'] = $id;
 </div>
 <?php 
 	require_once("partials/footer.php");
+
 ?>
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nie znaleziono filmu!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	Prawdopodobnie film nie istnieje lub administrator usunął go z serwisu 
+	z powodu naruszenia regulaminu Viddle. Jeżeli wpisałeś ID filmu ręcznie, 
+	sprawdź czy się nie pomyliłeś.
+      </div>
+      <div class="modal-footer">
+        <a href="/"><button type="button" class="btn btn-blue-grey waves-effect waves-light"><p style="margin: 10px;">Powrót na stronę główną</p></button></a>
+      </div>
+    </div>
+  </div>
+</div>
 <?php if ($video_e == false) {
     echo "<script>
-			$('#staticBackdrop').modal('show');
-		</script>";
+		$('#staticBackdrop').modal('show');
+	  </script>";
 }
 ?>
 
