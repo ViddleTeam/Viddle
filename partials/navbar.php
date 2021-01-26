@@ -97,8 +97,8 @@ if($block == '1')
                     <p>Wykryliśmy brak aktywności z twojej strony przez ponad 10 minut. Czy chcesz się wylogować?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="padding: 10px;">Pozostaw mnie zalogowanego</button>
+                    <a href="/logout"><button type="button" class="btn btn-primary" style="padding: 10px;">Wyloguj się</button></a>
                 </div>
             </div>
         </div>
