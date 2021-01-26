@@ -63,7 +63,7 @@ if($block == '1')
                     $(document).ready(function(){
                         $("#noActivityModal").modal("show");
                     });
-                }, 60000 * 0.25);
+                }, 60000 * 10);
             }
         </script>';
     } else {
