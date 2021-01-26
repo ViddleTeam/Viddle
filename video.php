@@ -311,9 +311,6 @@ $_SESSION['id'] = $id;
     <div class="modal-content bg-dark">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Nie znaleziono filmu!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
       	Prawdopodobnie film nie istnieje lub administrator usunął go z serwisu 
