@@ -275,13 +275,6 @@ $_SESSION['id'] = $id;
 		</div>		
       </div>
 <?php } ?>
-
-<?php if ($video_e == false) {
-    echo "<script>
-			$('#staticBackdrop').modal('show');
-		</script>";
-}
-?>
       
       <!-- modal do zgłoszenia filmu -->
       <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -312,6 +305,12 @@ $_SESSION['id'] = $id;
 </div>
 <?php 
 	require_once("partials/footer.php");
+?>
+<?php if ($video_e == false) {
+    echo "<script>
+			$('#staticBackdrop').modal('show');
+		</script>";
+}
 ?>
 
 <div class="hiddendiv common"></div></body></html>
