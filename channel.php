@@ -107,7 +107,7 @@ if ($result = @$connect->query(
 				 
 				    if($d5['minname'] == 'x')
 				    {
-				    	$miniaturka = 'https://cdn.ampersandbot.pl/Jmt25XRT0.png';
+				    	$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
 					   }
 					   else
 					   {
