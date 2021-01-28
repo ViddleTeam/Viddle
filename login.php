@@ -1,33 +1,22 @@
 <?php
-
 session_start();
-
-if ($_SESSION['z1'] == true) 
-{
+if ($_SESSION['z1'] == true) {
 	header('location: index.php');
 	exit;
 }
-	
-
 $error = '';
-	if (isset($_POST['login']))
-	{
+	if (isset($_POST['login'])) {
         $ok = true;
             require "danesql.php";
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-
             $login = $_POST['login'];
-		    $haslo = $_POST['haslo'];
-
+	    $haslo = $_POST['haslo'];
             if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE login='%s'",
 		    mysqli_real_escape_string($connect,$login))))
-
             $d2 = $result->num_rows;
-			if(isset($d2) && $d2 == '1')
-			{
+			if(isset($d2) && $d2 == '1') {
 				$dane = $result->fetch_assoc();
-				
 				if (password_verify($haslo, $dane['password']))
 				{
                     $_SESSION['z1'] = true;
@@ -35,24 +24,16 @@ $error = '';
                     $_SESSION['user'] = $dane['login'];
 		    $_SESSION['uid'] = $dane['uid'];
                     header('Location: index.php');
-                }
-                else
-                {
-                    
+                } else {
             $error = '<div class="alert alert-danger" role="alert">
 				Nazwa użytkownika lub hasło jest nieprawidłowe.
 		  	</div>';
-
                 }
-            }
-            else
-            {
-                
+            } else {
             $error = '<div class="alert alert-danger" role="alert">
 				Nazwa użytkownika lub hasło jest nieprawidłowe.
 		  	</div>';
             }
-
     }
 ?>
 <!DOCTYPE html>
@@ -82,14 +63,8 @@ $error = '';
 				<div class="card-body">
 				<h3 style="font-weight: bold;">Zaloguj się do Viddle</h3>
 				<p>Miło Ciebie znowu widzieć!</p><br>
-				<?php
-
-				echo $error;	
-
-				?>
-
+				<?php echo $error; ?>
                 <form method="post">
-
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
 					<input type="text"name="login" class="form-control" placeholder="Nazwa użytkownika" aria-label="Nazwa użytkownika" aria-describedby="material-addon1">
 				</div>
@@ -99,7 +74,6 @@ $error = '';
 				<center>
 				<div class="container row" style="justify-content: center;">
 				<input type="submit" value="Zaloguj się" class="btn btn-success" style="padding: 10px; color: white;">
-
                 </form>
 					<a href="register.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zarejestruj się</p></button></a>
 				</div>
