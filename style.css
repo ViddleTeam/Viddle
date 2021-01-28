@@ -8,6 +8,10 @@ table, th, td {
 	color: white !important;
 }
 
+.card-title {
+	text-align: center !important;
+}
+
 .card-settings {
 	width: 100%;
 	height: auto;
