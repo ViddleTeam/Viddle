@@ -67,12 +67,13 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 }
 ?>
 <head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 		$(document).ready(function(){
     if($("#notify").width() > 0) {
 
     } else {
-        alert('AdBlocker Detected');
+        <?php echo '<script>$(function() { alert('hi') })</script>' ?>
     }
 });
 	</script>
