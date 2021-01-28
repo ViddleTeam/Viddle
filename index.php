@@ -73,7 +73,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
     if($("#notify").width() > 0) {
 
     } else {
-        <?php echo '<script>$(function() { alert('hi') })</script>' ?>
+    $(function() { alert('hi')}
     }
 });
 	</script>
