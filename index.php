@@ -150,7 +150,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 			    
 			  	if($avn1 == 'x')
 				{
-					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+					$avnf1 = 'http://cdn.ampersandbot.pl/Jmt25XRT0.png';
 				}
 			    	else
 				{
@@ -185,7 +185,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 			    
 			  	if($avn2 == 'x')
 				{
-					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+					$avnf2 = 'http://cdn.ampersandbot.pl/Jmt25XRT0.png';
 				}
 			    	else
 				{
@@ -218,7 +218,7 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
 			    
 			  	if($avn3 == 'x')
 				{
-					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+					$avnf3 = 'http://cdn.ampersandbot.pl/Jmt25XRT0.png';
 				}
 			    	else
 				{
