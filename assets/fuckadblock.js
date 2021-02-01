@@ -1,4 +1,4 @@
-/* // Function called if AdBlock is not detected
+// Function called if AdBlock is not detected
 function adBlockNotDetected() {
   return;
 }
@@ -30,4 +30,3 @@ if(typeof fuckAdBlock !== 'undefined' || typeof FuckAdBlock !== 'undefined') {
 	importFAB.src = 'https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js';
 	document.head.appendChild(importFAB);
 }
-*/
