@@ -47,10 +47,6 @@ if($block == '1')
     <link rel="shortcut icon" href="/logo (1).png">
     <script data-ad-client="ca-pub-4393741826344878" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title><?php echo $ttl ?></title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -105,7 +101,7 @@ if($block == '1')
                     </div>
                 </ul>
                 <form class="form-inline" method="GET" action="search" style="margin-right: auto;">
-                    <input id="input_search" class="form-control mr-sm-2" style="width: 20rem;" name="q" type="text" placeholder="Szukaj" aria-label="Szukaj">
+                    <input id="input_search" class="form-control mr-sm-2" style="width: 20rem;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
                 </form>
 
                 <?php
@@ -121,6 +117,7 @@ if($block == '1')
                     } ?>
                     <?php if ($i == '0') { ?>
                         <a class="nav-link" href="login.php" style="color: white;">Zaloguj się</a>
+
                         <?php
                     } else { ?>
                     <li class="nav-item dropdown">
@@ -141,6 +138,7 @@ if($block == '1')
             </div>
         </nav>
     </header>
+    <div class=""></div>
     <!--    <header>
             <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
                 <div class="uk-navbar-left">
