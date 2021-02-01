@@ -1,5 +1,5 @@
 <?php
 define('SQLHOST', 'localhost');
-define('SQLPASS', 'N6-\[6e6Sgb.FU');
+define('SQLPASS', '$dB2?Km+5ujf]:E%J>7C:2');
 define('SQLUSER', 'viddle');
 define('DBNAME', 'viddle');
