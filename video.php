@@ -309,35 +309,35 @@ $_SESSION['id'] = $id;
                     <div class="container">
                       <div class="row">
                           <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                          <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitleone); ?><br></strong>
+                          <p style="margin-left: 10px; margin-top: 5px; word-wrap: break-word;"><strong><?php echo($randomtitleone); ?><br></strong>
                             <?php echo($randomuserone); ?><br>
                             <?php echo($randomviewsone); ?> wyświetleń</p>
                       </div>
                       <br>
                       <div class="row">
                         <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                        <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitletwo); ?><br></strong>
+                        <p style="margin-left: 10px; margin-top: 5px; word-wrap: break-word;"><strong><?php echo($randomtitletwo); ?><br></strong>
                           <?php echo($randomusertwo); ?><br>
                           <?php echo($randomviewstwo); ?> wyświetleń</p>
                     </div>
                     <br>
                     <div class="row">
                       <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                      <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitlethree); ?><br></strong>
+                      <p style="margin-left: 10px; margin-top: 5px; word-wrap: break-word;"><strong><?php echo($randomtitlethree); ?><br></strong>
                         <?php echo($randomuserthree); ?><br>
                         <?php echo($randomviewsthree); ?> wyświetleń</p>
                   </div>
                   <br>
                   <div class="row">
                     <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                    <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitlefour); ?><br></strong>
+                    <p style="margin-left: 10px; margin-top: 5px; word-wrap: break-word;"><strong><?php echo($randomtitlefour); ?><br></strong>
                       <?php echo($randomuserfour); ?><br>
                       <?php echo($randomviewsfour); ?> wyświetleń</p>
                 </div>
                 <br>
                 <div class="row">
                   <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                  <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitlefive); ?><br></strong>
+                  <p style="margin-left: 10px; margin-top: 5px; word-wrap: break-word;"><strong><?php echo($randomtitlefive); ?><br></strong>
                     <?php echo($randomuserfive); ?><br>
                     <?php echo($randomviewsfive); ?> wyświetleń</p>
               </div>
