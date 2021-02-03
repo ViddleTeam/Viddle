@@ -168,10 +168,11 @@ $_SESSION['id'] = $id;
     //Tytuły wylosowanych polecanych filmów:
     $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
     $dane = $randomtitleone->fetch_assoc();
-    $randomtitleone = $dane['title'];
-    if(strlen($randomtitleone)>27) {
-	
-    }
+    //$randomtitleone = $dane['title'];
+    $randomtitleone = "1234567891234567891111111132222"
+    //if(strlen($randomtitleone)>27) {
+    $randomtitleone = substr_replace($randomtitleone, '...', 27, 0)
+    //}
     $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
     $dane = $randomtitletwo->fetch_assoc();
     $randomtitletwo = $dane['title'];
