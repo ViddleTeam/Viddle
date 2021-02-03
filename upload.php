@@ -46,7 +46,7 @@ require_once ('partials/navbar.php');
             <p style="color: white; margin-bottom: 10px;">Krok 2/3: Nadaj nazwę filmowi oraz dodaj opis</p>
         </div>
     </div>
-    <div class="container row" style="width: auto; color: white;"
+    <div class="container row" style="width: auto; color: white;">
         <div class="form-row" style="justify-content: center;">
             <div class="col-md-12">
                 <div class="md-form form-group" style="width: 100%;">
