@@ -29,7 +29,7 @@ if (isset($d2) && $d2 == '1') {
     	$dane = $randomvidthree->fetch_assoc();
     	$randomvidthree = $dane['video_id'];
 	$randomthree = $dane['publisher'];
-    } while ($randomvidthree == $randomvidtwo);
+    } while ($randomvidthree == $randomvidtwo or $randomvidthree == $randomvidone);
     //Wyświetlania wylosowanych filmów:
     $randomviewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
     $dane = $randomviewsone->fetch_assoc();
