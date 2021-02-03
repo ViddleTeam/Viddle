@@ -9,7 +9,7 @@ table, th, td {
 }
 
 h4.tile-before {
-	font-family: Inter, Roboto, sans-serif;
+	font-family: Inter, Roboto, sans-serif !important;
 }
 
 .card-title {
