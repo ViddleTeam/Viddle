@@ -54,12 +54,21 @@ if (isset($d2) && $d2 == '1') {
     $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
     $dane = $randomtitleone->fetch_assoc();
     $randomtitleone = $dane['title'];
+    if(strlen($randomtitleone)>45) {
+    	$randomtitleone = substr_replace($randomtitleone,"...",45);
+    }
     $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
     $dane = $randomtitletwo->fetch_assoc();
     $randomtitletwo = $dane['title'];
+    if(strlen($randomtitletwo)>45) {
+    	$randomtitletwo = substr_replace($randomtitletwo,"...",45);
+    }
     $randomtitlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
     $dane = $randomtitlethree->fetch_assoc();
     $randomtitlethree = $dane['title'];
+    if(strlen($randomtitlethree)>45) {
+    	$randomtitlethree = substr_replace($randomtitlethree,"...",45);
+    }
     //Wyświetlenia najnowszych filmów:
     $viewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
     $dane = $viewsone->fetch_assoc();
@@ -84,12 +93,21 @@ if (isset($d2) && $d2 == '1') {
     $titleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
     $dane = $titleone->fetch_assoc();
     $titleone = $dane['title'];
+    if(strlen($titleone)>27) {
+    	$titleone = substr_replace($titleone,"...",45);
+    }
     $titletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$twoid';");
     $dane = $titletwo->fetch_assoc();
     $titletwo = $dane['title'];
+    if(strlen($titletwo)>27) {
+    	$titletwo = substr_replace($titletwo,"...",45);
+    }
     $titlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$threeid';");
     $dane = $titlethree->fetch_assoc();
     $titlethree = $dane['title'];
+    if(strlen($titlethree)>27) {
+    	$titlethree = substr_replace($titlethree,"...",45);
+    }
 }
 //Zaokrąglanie wyświetleń najnowszych filmów:
 if ($viewsone > 999 && $viewsone <= 999999) {
