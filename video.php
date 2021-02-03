@@ -228,7 +228,7 @@ $_SESSION['id'] = $id;
             <div class="col-md-5">
               <div class="md-form form-group">
                 <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
-                    <h4 style="margin-bottom: 10px;">Filmy z tego kanału</h4>
+                    <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
                     <div class="container">
                       <div class="row">
                           <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
