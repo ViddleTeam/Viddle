@@ -187,9 +187,9 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=<?php echo($randomvidtwo); ?>'>
+                        <a href='video?id=<?php echo($randomvidthree); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'><?php echo($randomtitletwo); ?></p>
+                        <p class='card-title'><?php echo($randomtitlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
                             <span><?php echo($randomuserthree); ?></span>
