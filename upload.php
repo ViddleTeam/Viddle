@@ -56,7 +56,7 @@ require_once ('partials/navbar.php');
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="md-form form-group">
+                    <div class="md-form form-group" style="width: 100%;">
                         <textarea id="form7" name="descvid" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
                         <label for="form7" style="color: white;">Opis filmu</label>
                     </div>
