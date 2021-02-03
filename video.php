@@ -168,22 +168,34 @@ $_SESSION['id'] = $id;
     //Tytuły wylosowanych polecanych filmów:
     $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
     $dane = $randomtitleone->fetch_assoc();
-    //$randomtitleone = $dane['title'];
-    //if(strlen($randomtitleone)>27) {
-    $randomtitleone = substr_replace("1234567891234567891111111132222","...",27);
-    //}
+    $randomtitleone = $dane['title'];
+    if(strlen($randomtitleone)>27) {
+    	$randomtitleone = substr_replace($randomtitleone,"...",27);
+    }
     $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
     $dane = $randomtitletwo->fetch_assoc();
     $randomtitletwo = $dane['title'];
+    if(strlen($randomtitletwo)>27) {
+    	$randomtitletwo = substr_replace($randomtitletwo,"...",27);
+    }
     $randomtitlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
     $dane = $randomtitlethree->fetch_assoc();
     $randomtitlethree = $dane['title'];
+    if(strlen($randomtitlethree)>27) {
+    	$randomtitlethree = substr_replace($randomtitlethree,"...",27);
+    }
     $randomtitlefour = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfour';");
     $dane = $randomtitlefour->fetch_assoc();
     $randomtitlefour = $dane['title'];
+    if(strlen($randomtitlefour)>27) {
+    	$randomtitlefour = substr_replace($randomtitlefour,"...",27);
+    }
     $randomtitlefive = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfive';");
     $dane = $randomtitlefive->fetch_assoc();
     $randomtitlefive = $dane['title'];
+    if(strlen($randomtitlefive)>27) {
+    	$randomtitlefive = substr_replace($randomtitlefive,"...",27);
+    }
 ?>
 <?php 
 	require_once("partials/navbar.php");
