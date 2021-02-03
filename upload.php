@@ -74,7 +74,7 @@ require_once ('partials/navbar.php');
                 <br>
                 <p style="color: white; margin-bottom: 20px;">Krok 3/3: Gotowy do przesłania?</p>
             </div>
-        </div>
+        </div><br>
         <center>
             <!-- PROSZE NIE DODAWAC class="btn btn-success" TYMCZASOWO, DZIEKI - lort533 -->
             <input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie">
