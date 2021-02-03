@@ -8,6 +8,10 @@ table, th, td {
 	color: white !important;
 }
 
+h4.tile-before {
+	font-family: Inter, Roboto, sans-serif;
+}
+
 .card-title {
 	text-align: center !important;
 }
