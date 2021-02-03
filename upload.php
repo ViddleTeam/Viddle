@@ -69,12 +69,6 @@ require_once ('partials/navbar.php');
             <div class="col-md-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <br>
-                <p style="color: white; margin-bottom: 20px;">Krok 3/3: Gotowy do przesłania?</p>
-            </div>
-        </div><br>
         <center>
             <!-- PROSZE NIE DODAWAC class="btn btn-success" TYMCZASOWO, DZIEKI - lort533 -->
             <input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie">
