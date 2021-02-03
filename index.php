@@ -12,6 +12,55 @@ if (isset($d2) && $d2 == '1') {
     $twoid = $dane['viddle_recent_two_id'];
     $three = $dane['viddle_recent_three_user'];
     $threeid = $dane['viddle_recent_three_id'];
+
+    //Losowanie ID filmów:
+    $randomvidone = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    $dane = $randomvidone->fetch_assoc();
+    $randomvidone = $dane['video_id'];
+    $randomone = $dane['publisher'];
+    do {
+	$randomvidtwo = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    	$dane = $randomvidtwo->fetch_assoc();
+    	$randomvidtwo = $dane['video_id'];
+	$randomtwo = $dane['publisher'];
+    } while ($randomvidtwo == $randomvidone);
+    do {
+	$randomvidthree = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    	$dane = $randomvidthree->fetch_assoc();
+    	$randomvidthree = $dane['video_id'];
+	$randomthree = $dane['publisher'];
+    } while ($randomvidthree == $randomvidtwo);
+    //Wyświetlania wylosowanych filmów:
+    $randomviewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
+    $dane = $randomviewsone->fetch_assoc();
+    $randomviewsone = $dane['views'];
+    $randomviewstwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
+    $dane = $randomviewstwo->fetch_assoc();
+    $randomviewstwo = $dane['views'];
+    $randomviewsthree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
+    $dane = $randomviewsthree->fetch_assoc();
+    $randomviewsthree = $dane['views'];
+    //Twórcy wylosowanych filmów:
+    $randomuserone = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomone';");
+    $dane = $randomuserone->fetch_assoc();
+    $randomuserone = $dane['login'];
+    $randomusertwo = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomtwo';");
+    $dane = $randomusertwo->fetch_assoc();
+    $randomusertwo = $dane['login'];
+    $randomuserthree = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomthree';");
+    $dane = $randomuserthree->fetch_assoc();
+    $randomuserthree = $dane['login'];
+    //Tytuły wylosowanych filmów:
+    $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
+    $dane = $randomtitleone->fetch_assoc();
+    $randomtitleone = $dane['title'];
+    $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
+    $dane = $randomtitletwo->fetch_assoc();
+    $randomtitletwo = $dane['title'];
+    $randomtitlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
+    $dane = $randomtitlethree->fetch_assoc();
+    $randomtitlethree = $dane['title'];
+    //Wyświetlenia najnowszych filmów:
     $viewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
     $dane = $viewsone->fetch_assoc();
     $viewsone = $dane['views'];
@@ -21,7 +70,7 @@ if (isset($d2) && $d2 == '1') {
     $viewsthree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$threeid';");
     $dane = $viewsthree->fetch_assoc();
     $viewsthree = $dane['views'];
-
+    //Twórcy najnowszych filmów:
     $userone = $connect->query("SELECT * FROM viddle_users WHERE uid = '$one';");
     $dane = $userone->fetch_assoc();
     $userone = $dane['login'];
@@ -31,7 +80,7 @@ if (isset($d2) && $d2 == '1') {
     $userthree = $connect->query("SELECT * FROM viddle_users WHERE uid = '$three';");
     $dane = $userthree->fetch_assoc();
     $userthree = $dane['login'];
-
+    //Tytuły najnowszych filmów:
     $titleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$oneid';");
     $dane = $titleone->fetch_assoc();
     $titleone = $dane['title'];
@@ -42,6 +91,7 @@ if (isset($d2) && $d2 == '1') {
     $dane = $titlethree->fetch_assoc();
     $titlethree = $dane['title'];
 }
+//Zaokrąglanie wyświetleń najnowszych filmów:
 if ($viewsone > 999 && $viewsone <= 999999) {
     $rezultat = floor($viewsone / 1000) . 'K';
 } elseif ($value > 999999) {
@@ -64,6 +114,30 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
     $rezulattrzy = floor($viewsthree / 1000000) . 'M';
 } else {
     $rezultattrzy = $viewsthree;
+}
+//Zaokrąglanie wyświetleń wylosowanych filmów:
+if ($randomviewsone > 999 && $randomviewsone <= 999999) {
+    $randomrezultat = floor($randomviewsone / 1000) . 'K';
+} elseif ($value > 999999) {
+    $randomrezulat = floor($randomviewsone / 1000000) . 'M';
+} else {
+    $randomrezultat = $randomviewsone;
+}
+
+if ($randomviewstwo > 999 && $randomviewstwo <= 999999) {
+    $randomrezultatdwa = floor($randomviewstwo / 1000) . 'K';
+} elseif ($value > 999999) {
+    $randomrezulatdwa = floor($randomviewstwo / 1000000) . 'M';
+} else {
+    $randomrezultatdwa = $randomviewstwo;
+}
+
+if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
+    $randomrezultattrzy = floor($randomviewsthree / 1000) . 'K';
+} elseif ($value > 999999) {
+    $randomrezulattrzy = floor($randomviewsthree / 1000000) . 'M';
+} else {
+    $randomrezultattrzy = $randomviewsthree;
 }
 ?>
 <head>
@@ -89,38 +163,38 @@ if ($viewsthree > 999 && $viewsthree <= 999999) {
             </div>
                 <div class='tile' style='margin: auto;'>
                     <div class='card'>
-                        <a href='video?id=8385178'>
+                        <a href='video?id=<?php echo($randomvidone); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>Pierwszy film</p>
+                        <p class='card-title'><?php echo($randomtitleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span>Kohady</span>
+                            <span><?php echo($randomuserone); ?></span>
                             <span>•</span>
-                            <span>17.5k wyświetleń</span>
+                            <span><?php echo($randomrezultat); ?> wyświetleń</span>
                         </div>
                         </a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=8385178'>
+                        <a href='video?id=<?php echo($randomvidtwo); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>Testowa nazwa</p>
+                        <p class='card-title'><?php echo($randomtitletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span>PatryQHyper</span></a>
+                            <span><?php echo($randomusertwo); ?></span></a>
                             <span>•</span>
-                            <span>1.3k wyświetleń</span>
+                            <span><?php echo($randomrezultatdwa); ?> wyświetleń</span>
                         </div>
 			</a>
                     </div>
                     <div class='card'>
-                        <a href='video?id=8385178'>
+                        <a href='video?id=<?php echo($randomvidtwo); ?>'>
                         <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'>Zrobione z nudów</p>
+                        <p class='card-title'><?php echo($randomtitletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span>Hekitu</span>
+                            <span><?php echo($randomuserthree); ?></span>
                             <span>•</span>
-                            <span>9k wyświetleń</span>
+                            <span><?php echo($randomrezultattrzy); ?> wyświetleń</span>
                         </div>
                         </a>
                     </div>
