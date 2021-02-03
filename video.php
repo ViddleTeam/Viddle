@@ -120,19 +120,19 @@ $_SESSION['id'] = $id;
     	$dane = $randomvidthree->fetch_assoc();
     	$randomvidthree = $dane['video_id'];
 	$randomthree = $dane['publisher'];
-    } while ($randomvidthree == $randomvidtwo);
+    } while ($randomvidthree == $randomvidtwo or $randomvidthree == $randomvidone);
     do {
 	$randomvidfour = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
     	$dane = $randomvidfour->fetch_assoc();
     	$randomvidfour = $dane['video_id'];
 	$randomfour = $dane['publisher'];
-    } while ($randomvidfour == $randomvidthree);
+    } while ($randomvidfour == $randomvidthree or $randomvidfour == $randomvidtwo or $randomvidfour == $randomvidone);
     do {
 	$randomvidfive = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
     	$dane = $randomvidfive->fetch_assoc();
     	$randomvidfive = $dane['video_id'];
 	$randomfive = $dane['publisher'];
-    } while ($randomvidfive == $randomvidfour);
+    } while ($randomvidfive == $randomvidfour or $randomvidfive == $randomvidthree or $randomvidfive == $randomvidtwo or $randomvidfive == $randomvidone);
     //Wyświetlania wylosowanych polecanych filmów:
     $randomviewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
     $dane = $randomviewsone->fetch_assoc();
