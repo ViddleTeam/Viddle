@@ -104,6 +104,83 @@ if($logged == '0') {
 }
 $_SESSION['id'] = $id;
 
+    //Losowanie ID polecanych filmów:
+    $randomvidone = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    $dane = $randomvidone->fetch_assoc();
+    $randomvidone = $dane['video_id'];
+    $randomone = $dane['publisher'];
+    do {
+	$randomvidtwo = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    	$dane = $randomvidtwo->fetch_assoc();
+    	$randomvidtwo = $dane['video_id'];
+	$randomtwo = $dane['publisher'];
+    } while ($randomvidtwo == $randomvidone);
+    do {
+	$randomvidthree = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    	$dane = $randomvidthree->fetch_assoc();
+    	$randomvidthree = $dane['video_id'];
+	$randomthree = $dane['publisher'];
+    } while ($randomvidthree == $randomvidtwo);
+    do {
+	$randomvidfour = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    	$dane = $randomvidfour->fetch_assoc();
+    	$randomvidfour = $dane['video_id'];
+	$randomfour = $dane['publisher'];
+    } while ($randomvidfour == $randomvidthree);
+    do {
+	$randomvidfive = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
+    	$dane = $randomvidfive->fetch_assoc();
+    	$randomvidfive = $dane['video_id'];
+	$randomfive = $dane['publisher'];
+    } while ($randomvidfive == $randomvidfour);
+    //Wyświetlania wylosowanych polecanych filmów:
+    $randomviewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
+    $dane = $randomviewsone->fetch_assoc();
+    $randomviewsone = $dane['views'];
+    $randomviewstwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
+    $dane = $randomviewstwo->fetch_assoc();
+    $randomviewstwo = $dane['views'];
+    $randomviewsthree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
+    $dane = $randomviewsthree->fetch_assoc();
+    $randomviewsthree = $dane['views'];
+    $randomviewsfour = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfour';");
+    $dane = $randomviewsfour->fetch_assoc();
+    $randomviewsfour = $dane['views'];
+    $randomviewsfive = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfive';");
+    $dane = $randomviewsfive->fetch_assoc();
+    $randomviewsfive = $dane['views'];
+    //Twórcy wylosowanych polecanych filmów:
+    $randomuserone = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomone';");
+    $dane = $randomuserone->fetch_assoc();
+    $randomuserone = $dane['login'];
+    $randomusertwo = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomtwo';");
+    $dane = $randomusertwo->fetch_assoc();
+    $randomusertwo = $dane['login'];
+    $randomuserthree = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomthree';");
+    $dane = $randomuserthree->fetch_assoc();
+    $randomuserthree = $dane['login'];
+    $randomuserfour = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomfour';");
+    $dane = $randomuserfour->fetch_assoc();
+    $randomuserfour = $dane['login'];
+    $randomuserfive = $connect->query("SELECT * FROM viddle_users WHERE uid = '$randomfive';");
+    $dane = $randomuserfive->fetch_assoc();
+    $randomuserfive = $dane['login'];
+    //Tytuły wylosowanych polecanych filmów:
+    $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
+    $dane = $randomtitleone->fetch_assoc();
+    $randomtitleone = $dane['title'];
+    $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
+    $dane = $randomtitletwo->fetch_assoc();
+    $randomtitletwo = $dane['title'];
+    $randomtitlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
+    $dane = $randomtitlethree->fetch_assoc();
+    $randomtitlethree = $dane['title'];
+    $randomtitlefour = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfour';");
+    $dane = $randomtitlefour->fetch_assoc();
+    $randomtitlefour = $dane['title'];
+    $randomtitlefive = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfive';");
+    $dane = $randomtitlefive->fetch_assoc();
+    $randomtitlefive = $dane['title'];
 ?>
 <?php 
 	require_once("partials/navbar.php");
@@ -232,37 +309,37 @@ $_SESSION['id'] = $id;
                     <div class="container">
                       <div class="row">
                           <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                          <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                            SlaVistaPL<br>
-                            6.1k wyświetleń</p>
+                          <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitleone); ?><br></strong>
+                            <?php echo($randomuserone); ?><br>
+                            <?php echo($randomviewsone); ?> wyświetleń</p>
                       </div>
                       <br>
                       <div class="row">
                         <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                        <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                          SlaVistaPL<br>
-                          6.1k wyświetleń</p>
+                        <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitletwo); ?><br></strong>
+                          <?php echo($randomusertwo); ?><br>
+                          <?php echo($randomviewstwo); ?> wyświetleń</p>
                     </div>
                     <br>
                     <div class="row">
                       <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                      <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                        SlaVistaPL<br>
-                        6.1k wyświetleń</p>
+                      <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitlethree); ?><br></strong>
+                        <?php echo($randomuserthree); ?><br>
+                        <?php echo($randomviewsthree); ?> wyświetleń</p>
                   </div>
                   <br>
                   <div class="row">
                     <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                    <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                      SlaVistaPL<br>
-                      6.1k wyświetleń</p>
+                    <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitlefour); ?><br></strong>
+                      <?php echo($randomuserfour); ?><br>
+                      <?php echo($randomviewsfour); ?> wyświetleń</p>
                 </div>
                 <br>
                 <div class="row">
                   <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                  <p style="margin-left: 10px; margin-top: 5px;"><strong>Testowy film<br></strong>
-                    SlaVistaPL<br>
-                    6.1k wyświetleń</p>
+                  <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo($randomtitlefive); ?><br></strong>
+                    <?php echo($randomuserfive); ?><br>
+                    <?php echo($randomviewsfive); ?> wyświetleń</p>
               </div>
                     </div>
                 </div>
