@@ -326,6 +326,10 @@ margin-left: 5px;
 	justify-content: center;
 }
 
+#followedChannelAvatar {
+	border-radius: 50px;
+}
+
 .form__field {
 text-align: center;
 width: 360px;
