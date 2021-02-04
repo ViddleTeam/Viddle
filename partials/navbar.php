@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$_SESSION['przek'] = $_SERVER['REQUEST_URI'];
 if ($_SESSION['z1'] == true) {
     $i = '1';
     
