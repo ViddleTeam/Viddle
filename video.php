@@ -2,7 +2,9 @@
 session_start();
 $test = $_GET['button'];
 if(isset($test)) {
-	header('location: test.php?id='.$_SESSION['id'].'');
+	$_SESSION['komtresc'] = 
+	$_SESSION['kom'] = true;
+	header('location: komentarz.php?id='.$_SESSION['id'].'');
 	
 }
 require "danesql.php";
