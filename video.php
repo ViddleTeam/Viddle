@@ -1,10 +1,9 @@
 <?php
 session_start();
-if(isset($_POST['button'])) {
+$test = $_GET['button'];
+if(isset($test)) {
 	header('location: test.php?id='.$_SESSION['id'].'');
 	
-} else {
-	unset($_SESSION['id']);
 }
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
