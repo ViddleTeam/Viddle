@@ -1,6 +1,20 @@
 <?php
 
 require 'danesql.php';
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
+if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DESC")) {
+	$dane = $result->fetch_assoc();
+	$1video_id = $dane['video_id'];
+	$1tytul = $dane['title'];
+	$1vievs = $dane['views'];
+	$1publisher = $dane['publisher'];
+	
+	if($result = @$connect->query("SELECT * FROM viddle_users WHERE uid='$1publisher'")) {
+		$udane = $result->fetch_assoc();
+		$1username = $dane['login'];
+	}
+}
 
 ?>
 <?php 
