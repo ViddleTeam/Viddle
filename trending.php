@@ -16,6 +16,8 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 		$udane = $result2->fetch_assoc();
 		$oneusername = $dane['login'];
 	}
+	
+	$oneusername = $onepublisher;
 }
 
 ?>
