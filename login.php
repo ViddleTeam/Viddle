@@ -23,7 +23,7 @@ $error = '';
                     
                     $_SESSION['user'] = $dane['login'];
 		    $_SESSION['uid'] = $dane['uid'];
-                    header('Location: index.php');
+                    header('Location: '.$_SESSION['przek'].'');
                 } else {
             $error = '<div class="alert alert-danger" role="alert">
 				Nazwa użytkownika lub hasło jest nieprawidłowe.
