@@ -15,9 +15,10 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 		    mysqli_real_escape_string($connect,$onepublisher)))) {
 		$udane = $result2->fetch_assoc();
 		$oneusername = $dane['login'];
+		$oneusername = $onepublisher;
 	}
 	
-	$oneusername = $onepublisher;
+	
 }
 
 ?>
