@@ -5,7 +5,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DESC")) {
 	$dane = $result->fetch_assoc();
-	$onevideo_id = $dane['video_id'];
+	$onevideoid = $dane['video_id'];
 	$onetytul = $dane['title'];
 	$onevievs = $dane['views'];
 	$onepublisher = $dane['publisher'];
