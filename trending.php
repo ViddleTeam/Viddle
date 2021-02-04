@@ -65,7 +65,9 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos WHERE `video_id` NOT
                     </div>
                     </a>
                 </div>
-		    
+		 
+	      <div class="tile" style="margin: auto;">
+                <div class="card">
                 <?php echo "<a href='video.php?id=".$twovideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                     <p class="card-title"><?php echo $twotytul ?></p>
