@@ -21,4 +21,6 @@ function get_ip($ip2long = true)
 
  return $ip;
 }
+
+echo $ip;
 ?>
