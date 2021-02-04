@@ -10,7 +10,7 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 	$onevievs = $dane['views'];
 	$onepublisher = $dane['publisher'];
 	
-	if($result = @$connect->query("SELECT * FROM viddle_users WHERE uid='$1publisher'")) {
+	if($result = @$connect->query("SELECT * FROM viddle_users WHERE uid='$onepublisher'")) {
 		$udane = $result->fetch_assoc();
 		$oneusername = $dane['login'];
 	}
@@ -32,7 +32,7 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
             </div>
             <div class="tile" style="margin: auto;">
                 <div class="card">,
-			// top 1 film
+			
                     <a href="video.php?id=".$onevideo_id."">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                     <p class="card-title"><?php echo $onetytul ?></p>
@@ -44,7 +44,7 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
                     </div>
                     </a>
                 </div>
-		    // top 2 film
+		    
                 <div class="card">
                     <a href="video.php">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
