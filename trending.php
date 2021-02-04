@@ -37,6 +37,23 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos WHERE `video_id` NOT
 	
 }
 
+if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` NOT LIKE '$twovideoid' AND `video_id` NOT LIKE '$onevideoid' ORDER BY `views` DESC ")) {
+	$dane = $result->fetch_assoc();
+	$threevideoid = $dane['video_id'];
+	$threetytul = $dane['title'];
+	$threevievs = $dane['views'];
+	$threepublisher = $dane['publisher'];
+	
+	if ($result2 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$twopublisher)))) {
+		$udane = $result2->fetch_assoc();
+		$threeusername = $udane['login'];
+	}
+	
+	
+}
+
 ?>
 <?php 
 	require_once('partials/navbar.php');		
@@ -79,20 +96,21 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos WHERE `video_id` NOT
                     </div>
                     </a>
                 </div>
+	      
+	      <div class="tile" style="margin: auto;">
                 <div class="card">
-                    <a href="video.php">
+                <?php echo "<a href='video.php?id=".$threevideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Zrobione z nudów</p>
+                    <p class="card-title"><?php echo $threetytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                     <div class="bottom-info">
-                        <span>Hekitu</span>
+                        <span><?php echo $threeusername ?></span>
                         <span>•</span>
-                        <span>9k wyświetleń</span>
+                        <span><?php echo $threevievs ?> wyświetleń</span>
                     </div>
                     </a>
                 </div>
-            </div>
-        </div>
+               
 		<?php 
 require_once('partials/footer.php');
 ?>
