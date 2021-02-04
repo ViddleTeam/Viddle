@@ -47,7 +47,7 @@ if ($result = @$connect->query(
 		<div class="banner mx-auto">
 			<img class="img-fluid" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto; " height="100%" width="100%"/>
 		</div>
-			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
+			<div class="card-channel" style="height: auto; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
@@ -194,9 +194,8 @@ if ($result = @$connect->query(
 						</div>
 					</div>
 					<div class="tab-pane fade" id="channels" role="tabpanel" aria-labelledby="channels-tab">
-						<div class="container row" id="channelsContainer" style="min-width: 100%;">
-							<h4 class="tile-before" style="color:white; margin-left: 10px;">Obserwowane kanały</h4>
-							<br>
+						<h4 class="tile-before" style="color:white; margin-left: 10px;">Obserwowane kanały</h4>
+						<div class="container row" id="channelsContainer">
 							<span class="followedChannel">
 								<img src="https://cdn.ampersandbot.pl/bOziN3jpd.jpg" id="followedChannelAvatar" width="96px" height="96px" /><br>
 								<p class="followedChannelName">Nazwa kanału</p>

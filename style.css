@@ -328,7 +328,7 @@ margin-left: 5px;
 }
 
 #followedChannelAvatar {
-	border-radius: 50px;
+	border-radius: 50%;
 }
 
 .form__field {
