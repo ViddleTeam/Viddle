@@ -10,9 +10,10 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 	$onevievs = $dane['views'];
 	$onepublisher = $dane['publisher'];
 	
-	if($result2 = @$connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$onepublisher'")) {
+	if ($result2 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$onepublisher)))) {
 		$udane = $result2->fetch_assoc();
-		$oneusername = 'gwalt';
 		$oneusername = $dane['login'];
 	}
 }
