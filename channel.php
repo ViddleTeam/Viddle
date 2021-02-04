@@ -73,7 +73,7 @@ if ($result = @$connect->query(
 				</span>
 				</div>
 				<div class="bottom-radius" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
-					<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+					<ul class="nav nav-tabs nav-justified bottom-radius" id="myTab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
 							aria-selected="true">Strona główna</a>
