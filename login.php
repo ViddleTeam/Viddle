@@ -23,6 +23,10 @@ $error = '';
                     
                     $_SESSION['user'] = $dane['login'];
 		    $_SESSION['uid'] = $dane['uid'];
+					
+					if(!isset($_SESSION['przek'])) {
+						$_SESSION['przek'] = 'index.php';
+					}
                     header('Location: '.$_SESSION['przek'].'');
                 } else {
             $error = '<div class="alert alert-danger" role="alert">
