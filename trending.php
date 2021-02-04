@@ -20,6 +20,23 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 	
 }
 
+if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DESC WHERE")) {
+	$dane = $result->fetch_assoc();
+	$onevideoid = $dane['video_id'];
+	$onetytul = $dane['title'];
+	$onevievs = $dane['views'];
+	$onepublisher = $dane['publisher'];
+	
+	if ($result2 = @$connect->query(
+		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		    mysqli_real_escape_string($connect,$onepublisher)))) {
+		$udane = $result2->fetch_assoc();
+		$oneusername = $udane['login'];
+	}
+	
+	
+}
+
 ?>
 <?php 
 	require_once('partials/navbar.php');		
@@ -37,7 +54,7 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
             <div class="tile" style="margin: auto;">
                 <div class="card">
 			
-                    <a href="video.php?id=".$onevideo_id."">
+                    <a href="video.php?id=".$onevideoid."">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                     <p class="card-title"><?php echo $onetytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
