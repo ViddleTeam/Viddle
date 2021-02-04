@@ -80,11 +80,11 @@ if ($result = @$connect->query(
 							aria-selected="true">Strona główna</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+							<a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-controls="profile"
 							aria-selected="false">Filmy</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+							<a class="nav-link" id="channels-tab" data-toggle="tab" href="#channels" role="tab" aria-controls="contact"
 							aria-selected="false">Kanały</a>
 						</li>
 					</ul>
@@ -107,7 +107,7 @@ if ($result = @$connect->query(
 						$p1 = $connect->query("SELECT * FROM viddle_videos WHERE `publisher`='$id'");
 							if($p1->num_rows > 0){
 								$num = $p1->num_rows;
-								for($k1 = $num; $k1; $k1 -= 1){
+								for($k1 > 3; $k1; $k1 += 1){
 									if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
 										$d5 = $k2->fetch_assoc();
 							if($d5['minname'] == 'x') {
@@ -145,11 +145,78 @@ if ($result = @$connect->query(
 					?>
 					</div>
 					</div>
-					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
+					<div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+						<div class="container row" style="min-width: 100%;">
+							<h4 class="tile-before" style="color:white; margin-left: 10px;">Wszystkie filmy</h4>
+							<?php
+								if ($result3 = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE publisher='%s'", mysqli_real_escape_string($connect,$id))))
+								$d4 = $result->num_rows;
+								if (!$d4 == '0') {
+									$p1 = $connect->query("SELECT * FROM viddle_videos WHERE `publisher`='$id'");
+										if($p1->num_rows > 0){
+											$num = $p1->num_rows;
+											for($k1 = $num; $k1; $k1 -= 1){
+												if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
+													$d5 = $k2->fetch_assoc();
+										if($d5['minname'] == 'x') {
+											$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+										} else {
+											$miniaturka = 'grafic/'.$d5['video_id'].'m.'.$d5['minname'].'';
+										}
+										echo '
+													<div class="card">
+										<a href="video?id='.$d5['video_id'].'">
+										<img src="'.$miniaturka.'" class="img-responsive card-img" width="300" height="187.5">
+										<p class="card-title">'.$d5['title'].'</p>
+										<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+										<div class="bottom-info">
+											<span>'.$nazwa.'</span>
+											<span>•</span>
+											<span>'.$d5['views'].' wyświetleń</span>
+										</div>
+										</a>
+									</div>';  
+											}
+										}
+								}
+								} else {
+									if ($do == 1) {
+												echo '<div class="alert alert-info" style="width: 100%;">
+														<strong>Trochę tu pusto.</strong> Dodaj swój pierwszy film poprzez kliknięcie ikony tuż obok menu konta.
+													</div>';
+											} else {
+													echo '<div class="alert alert-info" style="width: 100%;">
+															<strong>'.$nazwa.' nie posiada żadnych filmów.</strong>
+														</div>';
+											}
+								}	
+							?>
+						</div>
 					</div>
-					<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-						
+					<div class="tab-pane fade" id="channels" role="tabpanel" aria-labelledby="channels-tab">
+						<div class="container row" id="channelsContainer" style="min-width: 100%;">
+							<h4 class="tile-before" style="color:white; margin-left: 10px;">Obserwowane kanały</h4>
+							<span class="followedChannel">
+								<img src="https://cdn.ampersandbot.pl/bOziN3jpd.jpg" width="96px" height="96px" /><br>
+								<p class="followedChannelName">Nazwa kanału</p>
+							</span>
+							<span class="followedChannel">
+								<img src="https://cdn.ampersandbot.pl/bOziN3jpd.jpg" width="96px" height="96px" /><br>
+								<p class="followedChannelName">Nazwa kanału</p>
+							</span>
+							<span class="followedChannel">
+								<img src="https://cdn.ampersandbot.pl/bOziN3jpd.jpg" width="96px" height="96px" /><br>
+								<p class="followedChannelName">Nazwa kanału</p>
+							</span>
+							<span class="followedChannel">
+								<img src="https://cdn.ampersandbot.pl/bOziN3jpd.jpg" width="96px" height="96px" /><br>
+								<p class="followedChannelName">Nazwa kanału</p>
+							</span>
+							<span class="followedChannel">
+								<img src="https://cdn.ampersandbot.pl/bOziN3jpd.jpg" width="96px" height="96px" /><br>
+								<p class="followedChannelName">Nazwa kanału</p>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

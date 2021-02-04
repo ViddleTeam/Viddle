@@ -37,12 +37,14 @@
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
-				<h3 style="font-weight: bold;">Konto zostało zablokowane!!!</h3>
-				<p> Twoje konto zostało zablokowane z powodów bezpieczeństwa, aby je odblokować należy wpisać 10-cio cyfrowy kod wysłany na twoją skrzynke e-mail, zostanie on wysłany na twoje zlecenie a zlecić jego wysłanie będziesz mógł (data), wtedy na samym dole pojawi się przycisk "zleć wysłanie kodu", i należy na niego nakliknąć by zlecić wysłanie tego kodu na twój e-mail. Do tego czasu postaraj się odebrać dostęp nieporządanym osobą do twojej skrzynki e-mail i tego konta.</p><br>
-				
+				<h3 style="font-weight: bold;">Konto zostało zablokowane!</h3>
+				<p>Żeby je odblokować, należy poniżej wpisać kod, który otrzymasz 
+				na swoją skrzynkę mailową po ręcznym zleceniu wysłania. Jego wysłanie
+				możesz zlecić, poczynając od dnia [placeholder daty]. Do tego czasu zmień hasło 
+				dostępowe do swojej skrzynki mailowej.</p><br>
                 <form method="post">
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
-					<input type="text" name="kod" class="form-control" placeholder="Kod odblokowywujący" aria-label="Kod odblokowywujący"Kod odblokowywujący aria-describedby="material-addon1">
+					<input type="text" name="kod" class="form-control" placeholder="Kod odblokowywujący" aria-label="Kod odblokowywujący" aria-describedby="material-addon1">
 				</div>
                 
                 
