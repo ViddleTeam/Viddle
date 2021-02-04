@@ -31,18 +31,20 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
               </div>
             </div>
             <div class="tile" style="margin: auto;">
-                <div class="card">
-                    <a href="video.php">
+                <div class="card">,
+			// top 1 film
+                    <a href="video.php?id=".$onevideo_id."">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Pierwszy film</p>
+                    <p class="card-title"><?php echo $onetytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                     <div class="bottom-info">
-                        <span>Kohady</span>
+                        <span><?php echo $oneusername ?></span>
                         <span>•</span>
-                        <span>17.5k wyświetleń</span>
+                        <span><?php echo $onevievs ?> wyświetleń</span>
                     </div>
                     </a>
                 </div>
+		    // top 2 film
                 <div class="card">
                     <a href="video.php">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
