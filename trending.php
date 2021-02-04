@@ -46,7 +46,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
 	
 	if ($result2 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
-		    mysqli_real_escape_string($connect,$twopublisher)))) {
+		    mysqli_real_escape_string($connect,$threepublisher)))) {
 		$udane = $result2->fetch_assoc();
 		$threeusername = $udane['login'];
 	}
