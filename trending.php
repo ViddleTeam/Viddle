@@ -1,3 +1,8 @@
+<?php
+
+require 'danesql.php';
+
+?>
 <?php 
 	require_once('partials/navbar.php');		
     ?>
