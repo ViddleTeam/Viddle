@@ -10,8 +10,8 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 	$onevievs = $dane['views'];
 	$onepublisher = $dane['publisher'];
 	
-	if($result = @$connect->query("SELECT * FROM viddle_users WHERE uid='$onepublisher'")) {
-		$udane = $result->fetch_assoc();
+	if($result2 = @$connect->query("SELECT * FROM viddle_users WHERE uid='$onepublisher'")) {
+		$udane = $result2->fetch_assoc();
 		$oneusername = $dane['login'];
 	}
 }
