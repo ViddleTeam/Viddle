@@ -316,19 +316,19 @@ margin-left: 5px;
 
 .followedChannel {
 	text-align: center;
-	margin: 10px 20px;
+	margin: 10px 20px 10px 20px !important;
 }
 
 .followedChannelName {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 #channelsContainer {
-	justify-content: center;
+	justify-content: center !important;
 }
 
 #followedChannelAvatar {
-	border-radius: 50%;
+	border-radius: 50% !important;
 }
 
 .form__field {
