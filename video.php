@@ -1,8 +1,8 @@
 <?php
 session_start();
 $test = $_GET['button'];
-if(isset($test)) {
-	$_SESSION['komtresc'] = 
+if(isset($test) || isset($_POST['button'])) {
+	$_SESSION['komtresc'] = $_POST['tresc'];
 	$_SESSION['kom'] = true;
 	header('location: komentarz.php?id='.$_SESSION['id'].'');
 	
@@ -253,7 +253,7 @@ $_SESSION['id'] = $id;
                       </span>
 			  <form method="post" action="test.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
-                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
+                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc">
 			  <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
                       </span>
 				  <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj" name="button">
