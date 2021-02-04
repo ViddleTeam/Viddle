@@ -257,7 +257,7 @@ $_SESSION['id'] = $id;
                           <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
 			  <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc1">
                       </span>
-				  <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj" name="button">
+				  <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 				  
 			  </form>
                   </div>
