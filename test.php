@@ -23,4 +23,7 @@ function get_ip($ip2long = true)
 }
 
 echo $ip;
+
+echo $_SERVER['REMOTE_ADDR'];
+
 ?>
