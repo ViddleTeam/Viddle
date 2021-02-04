@@ -157,6 +157,8 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 } else {
     $randomrezultattrzy = $randomviewsthree;
 }
+
+echo $_SERVER['REQUEST_URI'];;
 ?>
 <head>
 	<!-- <script>
