@@ -14,6 +14,7 @@ h4.tile-before {
 
 .card-title {
 	text-align: center !important;
+	--max-lines: 1;
 }
 
 .card-settings {
