@@ -14,9 +14,8 @@ h4.tile-before {
 
 .card-title {
 	text-align: center !important;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
+	font-size: 1.4em;
+	height: 1.4em;
 }
 
 .card-settings {
