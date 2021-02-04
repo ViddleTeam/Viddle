@@ -7,7 +7,7 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['REMOTE_ADDR'];
 }
 
-if($ip == '') {
+if(isset($ip)) {
  echo 'blad';
 } else {
  echo $ip
