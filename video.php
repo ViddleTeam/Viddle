@@ -412,7 +412,7 @@ $_SESSION['id'] = $id;
         <h5 class="modal-title" id="exampleModalLabel">Nie znaleziono filmu!</h5>
       </div>
       <div class="modal-body">
-      	Prawdopodobnie film nie istnieje lub administrator usunął go z serwisu 
+      	Prawdopodobnie film nie istnieje lub administrator usunął go z serwisu <?php echo $_SESSION['id'] ?>
 	z powodu naruszenia regulaminu Viddle. Jeżeli wpisałeś ID filmu ręcznie, 
 	sprawdź czy się nie pomyliłeś.
       </div>
