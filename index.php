@@ -159,15 +159,15 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 }
 ?>
 <head>
-	<script>
+	<!-- <script>
 		$(document).ready(function(){
-    if($("#notify").width() > 0) {
+		    if($("#notify").width() > 0) {
 
-    } else {
-        alert('AdBlocker Detected');
-    }
-});
-	</script>
+		    } else {
+			alert('AdBlocker Detected');
+		    }
+		});
+	</script> -->
 </head>
       <div class="container" style="margin-top:30px;">
         <div class="row">
