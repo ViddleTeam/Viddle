@@ -4,7 +4,7 @@ $test = $_GET['button'];
 if(isset($test) || isset($_POST['button']) || isset($_POST['tresc1'])) {
 	$_SESSION['komtresc'] = $_POST['tresc1'];
 	$_SESSION['kom'] = true;
-	header('location: komentarz.php?id='.$_SESSION['komtresc'].'');
+	header('location: komentarz.php?id='.$_POST['tresc1'].'');
 	
 }
 require "danesql.php";
