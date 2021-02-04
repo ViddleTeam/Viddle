@@ -47,7 +47,7 @@ if ($result = @$connect->query(
 		<div class="banner mx-auto">
 			<img class="img-fluid" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto; " height="100%" width="100%"/>
 		</div>
-			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
+			<div class="card-channel" style="height: auto; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
@@ -70,7 +70,7 @@ if ($result = @$connect->query(
 						}
 						?>
 					</div>
-				</span>
+				</span><br><br>
 					<ul class="nav nav-tabs nav-justified bottom-radius" id="myTab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
