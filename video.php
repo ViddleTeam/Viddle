@@ -251,7 +251,7 @@ $_SESSION['id'] = $id;
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                       </span>
-			  <form method="post" action="test.php">
+			  <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
 			  <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc1">
