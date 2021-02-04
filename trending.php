@@ -20,18 +20,18 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 	
 }
 
-if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DESC WHERE")) {
+if ($result = @$connect->query("SELECT * FROM viddle_videos WHERE `video_id` NOT LIKE '$onevideoid' ORDER BY `views` DESC ")) {
 	$dane = $result->fetch_assoc();
-	$onevideoid = $dane['video_id'];
-	$onetytul = $dane['title'];
-	$onevievs = $dane['views'];
-	$onepublisher = $dane['publisher'];
+	$twovideoid = $dane['video_id'];
+	$twotytul = $dane['title'];
+	$twovievs = $dane['views'];
+	$twopublisher = $dane['publisher'];
 	
 	if ($result2 = @$connect->query(
 		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
-		    mysqli_real_escape_string($connect,$onepublisher)))) {
+		    mysqli_real_escape_string($connect,$twopublisher)))) {
 		$udane = $result2->fetch_assoc();
-		$oneusername = $udane['login'];
+		$twousername = $udane['login'];
 	}
 	
 	
@@ -66,17 +66,16 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
                     </a>
                 </div>
 		    
-                <div class="card">
-                    <a href="video.php">
+                <?php echo "<a href='video.php?id=".$twovideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Testowa nazwa</p>
+                    <p class="card-title"><?php echo $twotytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    </a><div class="bottom-info"><a href="video.php">
-                        </a><a href="channel.php"><span>PatryQHyper</span></a>
+                    <div class="bottom-info">
+                        <span><?php echo $twousername ?></span>
                         <span>•</span>
-                        <span>1.3k wyświetleń</span>
+                        <span><?php echo $twovievs ?> wyświetleń</span>
                     </div>
-                    
+                    </a>
                 </div>
                 <div class="card">
                     <a href="video.php">
