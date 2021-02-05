@@ -24,7 +24,7 @@ mysqli_real_escape_string($connect,$id)))) {
     
     if ($result2 = @$connect->query(
     sprintf("SELECT * FROM viddle_oceny WHERE userid='%s'",
-    mysqli_real_escape_string($connect,$uid)))) {
+    mysqli_real_escape_string($connect,$uid)))) { echo '4';
     
     $d3 = $result->num_rows;
     
