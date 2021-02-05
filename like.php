@@ -44,14 +44,8 @@ mysqli_real_escape_string($connect,$id)))) {
       
       $d4 = $result3->num_rows;
       
-      if($d4 == '1') { echo '2';
       
-	  
-       
-      } else {
-		  
-if($przepusc == 'true') { echo '1';
-	        $wstaw = $like + '1';
+	$wstaw = $like + '1';
         
       if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
         
@@ -79,5 +73,5 @@ header('location: index.php');
 }
 }
 }
-}
+
 ?>
