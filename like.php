@@ -57,13 +57,8 @@ mysqli_real_escape_string($connect,$id)))) {
           $przepusc = true;
 		  }
       }
-      
-      
-      
-    }
-      if($przepusc == true) {
-        
-        $wstaw = $like + '1';
+if($przepusc == 'true') {
+	        $wstaw = $like + '1';
         
       if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
         
@@ -73,7 +68,12 @@ mysqli_real_escape_string($connect,$id)))) {
           
     }
       }
-        
+      
+      
+      
+    }
+      
+     
     } else {
      header('location: index.php');
     }
