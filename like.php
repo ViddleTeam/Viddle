@@ -56,6 +56,7 @@ mysqli_real_escape_string($connect,$id)))) {
             
           $przepusc = true;
 		  }
+      } 
       }
 if($przepusc == 'true') {
 	        $wstaw = $like + '1';
