@@ -1,5 +1,4 @@
 <?php
-$przepusc = true;
 session_start();
 $id = $_GET['id'];
 require 'danesql.php';
@@ -43,6 +42,7 @@ mysqli_real_escape_string($connect,$id)))) {
       $wstaw = $like - '1';
         if($connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'")) {
             header('location: video.php?id='.$id.'');
+		exit();
       
         }
       }
