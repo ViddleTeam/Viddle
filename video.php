@@ -208,6 +208,7 @@ $_SESSION['id'] = $id;
 ?>
 <?php 
 	require_once("partials/navbar.php");
+$video_e = false;
 ?>
 		 <?php
         if ($video_e == true) {
@@ -411,12 +412,13 @@ $_SESSION['id'] = $id;
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nie znaleziono filmu!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Przerwa techniczna</h5>
       </div>
       <div class="modal-body">
-      	Prawdopodobnie film nie istnieje lub administrator usunął go z serwisu <?php echo $_SESSION['id'] ?>
-	z powodu naruszenia regulaminu Viddle. Jeżeli wpisałeś ID filmu ręcznie, 
-	sprawdź czy się nie pomyliłeś.
+   	Aktualnie trwa przerwa techniczna w pliku video.php<br>
+	Do czasu jej zaakończenia będziesz mógł zobaczyć tylko ten ekran.
+	      Przepraszamy za utrudnienia.</br>
+	    
       </div>
       <div class="modal-footer">
         <a href="/"><button type="button" class="btn btn-blue-grey waves-effect waves-light"><p style="margin: 10px;">Powrót na stronę główną</p></button></a>
