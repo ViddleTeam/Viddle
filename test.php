@@ -22,8 +22,10 @@ function get_ip($ip2long = true)
  return $ip;
 }
 
-echo $ip;
+echo $ip
 
 echo $_SERVER['REMOTE_ADDR'];
+
+echo $_SERVER['HTTP_CLIENT_IP'];l
 
 ?>
