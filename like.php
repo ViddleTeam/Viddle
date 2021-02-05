@@ -3,7 +3,7 @@ session_start();
 $id = $_GET['id'];
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-
+$uid = $_SESSION['uid'];
 
 
 if ($result1 = @$connect->query(
