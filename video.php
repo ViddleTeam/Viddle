@@ -1,12 +1,13 @@
 <?php
 session_start();
 $test = $_GET['button'];
-if(isset($test) || isset($_POST['button']) || isset($_POST['tresc1'])) {
-	$_SESSION['komtresc'] = $_POST['tresc1'];
-	$_SESSION['kom'] = true;
-	// header('location: komentarz.php?id='.$_POST['tresc1'].'');
-	echo $_POST['button'];
+if(isset($_POST['like']) || isset($_SESSION['id'])) {
 	
+	if($_SESSION['z'] == true) {
+		header('location: like.php?id='.$_SESSION['id']);
+	} else {
+		//później
+	}
 }
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
