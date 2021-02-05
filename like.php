@@ -1,12 +1,16 @@
 <?php
+$przepusc = true;
 session_start();
 $id = $_GET['id'];
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
+
+
 if ($result1 = @$connect->query(
 sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
 mysqli_real_escape_string($connect,$id)))) {
+	
   $d2 = $result1->num_rows;
   $uid = $_SESSION['uid'];
   
@@ -71,14 +75,14 @@ mysqli_real_escape_string($connect,$id)))) {
       }
         
     } else {
-     header('location: index1.php');
+     header('location: index.php');
     }
   } else {
-  header('location: index2.php');
+  header('location: index.php');
   }
 
 } else {
-header('location: index3.php');
+header('location: index.php');
 }
 
 }
