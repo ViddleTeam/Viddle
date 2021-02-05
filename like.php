@@ -12,7 +12,7 @@ mysqli_real_escape_string($connect,$id)))) {
   $dane = $result1->fetch_assoc();
   
   $like = $dane['upvotes'];
-  
+  $dislike = $dane['downvotes'];
   if($d2 == '1') {
    
     if(isset($_SESSION['uid'])) {
@@ -43,6 +43,13 @@ mysqli_real_escape_string($connect,$id)))) {
       }
       
       } else {
+        
+        if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
+        $wstaw = $dislike - '1';
+        
+          $connect->query("UPDATE viddle_videos SET downvotes='$wstaw' WHERE video_id='$id'")
+            
+            $przepusc = true;
       
       }
       
@@ -51,7 +58,12 @@ mysqli_real_escape_string($connect,$id)))) {
     }
       if($przepusc == true) {
         
+        $wstaw = $like + '1';
+        
       if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
+        
+        $connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'");
+        
         header('location: video.php?id='.$id.'');
           
     }
