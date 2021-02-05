@@ -34,7 +34,7 @@ mysqli_real_escape_string($connect,$id)))) {
       if($d4 == '1') {
       
       if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
-      $wstaw = $like - '1'
+      $wstaw = $like - '1';
         if($connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'")) {
             header('location: video.php?id='.$id.'');
       
@@ -49,7 +49,7 @@ mysqli_real_escape_string($connect,$id)))) {
       
     }
           
-      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$nick', '$haslo_hash', '$email', 100, 100, 100, 14)"))    
+      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$nick', '$haslo_hash', '$email', 100, 100, 100, 14)"))    {
           
     }
         
@@ -62,5 +62,7 @@ mysqli_real_escape_string($connect,$id)))) {
 
 } else {
 header('location: index.php');
+}
+
 }
 ?>
