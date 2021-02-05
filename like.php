@@ -30,7 +30,6 @@ mysqli_real_escape_string($connect,$id)))) {
     $przepusc = true;
       
     if($d3 == '1') {
-      $przepusc = false;
       
       $result3 = $connect->query("SELECT * FROM viddle_oceny WHERE ocena='1' AND userid='$uid'");
       
@@ -41,7 +40,8 @@ mysqli_real_escape_string($connect,$id)))) {
       if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
       $wstaw = $like - '1';
         if($connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'")) {
-            header('location: video.php?id='.$id.'');
+		$przepusc = false;
+		header('location: video.php?id='.$id.'');
 		exit();
       
         }
