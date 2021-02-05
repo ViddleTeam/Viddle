@@ -71,14 +71,14 @@ mysqli_real_escape_string($connect,$id)))) {
       }
         
     } else {
-     header('location: index.php');
+     header('location: index1.php');
     }
   } else {
-  header('location: index.php');
+  header('location: index2.php');
   }
 
 } else {
-header('location: index.php');
+header('location: index3.php');
 }
 
 }
