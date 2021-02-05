@@ -24,9 +24,10 @@ mysqli_real_escape_string($connect,$id)))) {
     $d3 = $result->num_rows;
     
     $przepusc = true;
+      $uid = $_SESSION['uid'];
     if($d3 == '1') {
       $przepusc = false;
-      $uid = $_SESSION['uid'];
+      
       $result3 = $connect->query("SELECT * FROM viddle_oceny WHERE ocena='1' AND userid='$uid'");
       
       $d4 = $result3->num_rows;
@@ -48,10 +49,13 @@ mysqli_real_escape_string($connect,$id)))) {
       
       
     }
-          
-      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$nick', '$haslo_hash', '$email', 100, 100, 100, 14)"))    {
+      if($przepusc == true) {
+        
+      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
+        header('location: video.php?id='.$id.'');
           
     }
+      }
         
     } else {
      header('location: index.php');
