@@ -95,11 +95,11 @@ mysqli_real_escape_string($connect,$id)))) {
      
 
   } else {
-  header('location: index.php');
+  header('location: in1dex.php');
   }
 
 } else {
-header('location: index.php');
+header('location: in2dex.php');
 }
 }
 }
