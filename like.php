@@ -40,9 +40,26 @@ mysqli_real_escape_string($connect,$id)))) {
       
     if($d3 == '1') { echo '1';
       
-      $result3 = $connect->query("SELECT * FROM viddle_oceny WHERE ocena='1' AND userid='$uid'");
+      $result3 = $connect->query("SELECT * FROM viddle_oceny WHERE videoid='$id' AND userid='$uid'");
       
       $d4 = $result3->num_rows;
+		    
+	if($d4 == '1') {
+	
+	$danef = $result3->fetch_assoc();
+	
+	if($danef['ocena'] == '1') {
+		if($connect->query("DELETE * FROM viddle_oceny WHERE videoid='$id' AND userid='$uid'")) {
+			$wartosc = $like - '1';
+			if($connect->query("UPDATE viddle_videos SET upvotes='$wartosc' WHERE video_id='$id'")) {
+				header('location: video.php?id='.$id.'');
+			}
+		}
+	} else {
+		
+	}
+		
+	} else {
       
       
 	$wstaw = $like + '1';
@@ -55,7 +72,7 @@ mysqli_real_escape_string($connect,$id)))) {
           
     }
       }
-      
+		   }
       
       
     }
