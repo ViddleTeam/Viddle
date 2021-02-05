@@ -48,10 +48,10 @@ mysqli_real_escape_string($connect,$id)))) {
         if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
         $wstaw = $dislike - '1';
         
-          $connect->query("UPDATE viddle_videos SET downvotes='$wstaw' WHERE video_id='$id'")
+          if($connect->query("UPDATE viddle_videos SET downvotes='$wstaw' WHERE video_id='$id'")) {
             
-            $przepusc = true;
-      
+          $przepusc = true;
+		  }
       }
       
       
@@ -81,5 +81,6 @@ mysqli_real_escape_string($connect,$id)))) {
 header('location: index.php');
 }
 
+}
 }
 ?>
