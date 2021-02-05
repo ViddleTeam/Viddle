@@ -246,8 +246,9 @@ if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
                     </span>
                     <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
-                      <i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?>
-                    </span>
+			    <form method='post'>
+                      <button type='submit' id='like'><i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?></button><button type='submit' id='dislike'><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></button>
+                    </form></span>
                     </div><br>
                     <p><?php echo $opis ?></p>
                 </div>
