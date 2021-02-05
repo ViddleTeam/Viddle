@@ -75,7 +75,7 @@ if($przepusc == 'true') {
       
      
     } else {
-     header('location: index.php');
+     header('location: index1.php');
     }
   } else {
   header('location: index.php');
