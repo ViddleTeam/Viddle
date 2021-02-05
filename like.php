@@ -27,6 +27,14 @@ mysqli_real_escape_string($connect,$id)))) {
     mysqli_real_escape_string($connect,$uid)))) { echo '4';
     
     $d3 = $result->num_rows;
+	
+	$wstaw = $like + '1';
+        
+      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
+        
+        $connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'");
+        
+        header('location: video.php?id='.$id.'');
     
     $przepusc = true;
       
@@ -38,27 +46,10 @@ mysqli_real_escape_string($connect,$id)))) {
       
       if($d4 == '1') { echo '2';
       
-      if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
-      $wstaw = $like - '1';
-        if($connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'")) {
-		$przepusc = false;
-		header('location: video.php?id='.$id.'');
-		exit();
-      
-        }
-      }
-      
-      } else { echo '2';
-        
-        if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
-        $wstaw = $dislike - '1';
-        
-          if($connect->query("UPDATE viddle_videos SET downvotes='$wstaw' WHERE video_id='$id'")) {
-            
-          $przepusc = true;
-		  }
-      } 
-      }
+	  
+       
+      } else {
+		  
 if($przepusc == 'true') { echo '1';
 	        $wstaw = $like + '1';
         
@@ -85,6 +76,7 @@ if($przepusc == 'true') { echo '1';
 header('location: index.php');
 }
 
+}
 }
 }
 ?>
