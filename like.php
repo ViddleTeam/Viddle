@@ -9,6 +9,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if ($result1 = @$connect->query(
 sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
 mysqli_real_escape_string($connect,$id)))) {
+	echo '1';
 	
   $d2 = $result1->num_rows;
   $uid = $_SESSION['uid'];
@@ -17,9 +18,9 @@ mysqli_real_escape_string($connect,$id)))) {
   
   $like = $dane['upvotes'];
   $dislike = $dane['downvotes'];
-  if($d2 == '1') {
+  if($d2 == '1') { echo '1';
    
-    if(isset($_SESSION['uid'])) {
+    if(isset($_SESSION['uid'])) { echo '1';
     
     if ($result2 = @$connect->query(
     sprintf("SELECT * FROM viddle_oceny WHERE userid='%s'",
@@ -29,13 +30,13 @@ mysqli_real_escape_string($connect,$id)))) {
     
     $przepusc = true;
       
-    if($d3 == '1') {
+    if($d3 == '1') { echo '1';
       
       $result3 = $connect->query("SELECT * FROM viddle_oceny WHERE ocena='1' AND userid='$uid'");
       
       $d4 = $result3->num_rows;
       
-      if($d4 == '1') {
+      if($d4 == '1') { echo '2';
       
       if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
       $wstaw = $like - '1';
@@ -47,7 +48,7 @@ mysqli_real_escape_string($connect,$id)))) {
         }
       }
       
-      } else {
+      } else { echo '2';
         
         if($connect->query("DELETE * FROM viddle_oceny WHERE userid='$uid'")) {
         $wstaw = $dislike - '1';
@@ -58,7 +59,7 @@ mysqli_real_escape_string($connect,$id)))) {
 		  }
       } 
       }
-if($przepusc == 'true') {
+if($przepusc == 'true') { echo '1';
 	        $wstaw = $like + '1';
         
       if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
