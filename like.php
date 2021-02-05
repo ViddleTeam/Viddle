@@ -8,6 +8,7 @@ if ($result1 = @$connect->query(
 sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
 mysqli_real_escape_string($connect,$id)))) {
   $d2 = $result1->num_rows;
+  $uid = $_SESSION['uid'];
   
   $dane = $result1->fetch_assoc();
   
@@ -19,12 +20,12 @@ mysqli_real_escape_string($connect,$id)))) {
     
     if ($result2 = @$connect->query(
     sprintf("SELECT * FROM viddle_oceny WHERE userid='%s'",
-    mysqli_real_escape_string($connect,$_SESSION['uid'])))) {
+    mysqli_real_escape_string($connect,$uid)))) {
     
     $d3 = $result->num_rows;
     
     $przepusc = true;
-      $uid = $_SESSION['uid'];
+      
     if($d3 == '1') {
       $przepusc = false;
       
