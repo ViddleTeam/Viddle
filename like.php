@@ -44,7 +44,7 @@ mysqli_real_escape_string($connect,$id)))) {
       
       $d4 = $result3->num_rows;
 		    
-	if($d4 == '1') {
+	if($d4 > 0) {
 	
 	$danef = $result3->fetch_assoc();
 	
