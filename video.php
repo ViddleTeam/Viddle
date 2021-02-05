@@ -1,7 +1,7 @@
 <?php
 session_start();
 $test = $_GET['button'];
-if(isset($_POST['like']) || isset($_SESSION['id'])) {
+if(isset($_POST['like'])) {
 	
 	if($_SESSION['z'] == true) {
 		header('location: like.php?id='.$_SESSION['id']);
