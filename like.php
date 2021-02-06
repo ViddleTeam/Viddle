@@ -64,7 +64,7 @@ if($d2 == '1')
 			$w = $dislike - '1';
 			$w2 = $like + '1';
 			if($gg = @$connect->query(
-			sprintf("UPDATE viddle_videos SET ocena='%s' WHERE video_id='%s' AND uid='%s'",
+			sprintf("UPDATE viddle_oceny SET ocena='%s' WHERE videoid='%s' AND uid='%s'",
 			mysqli_real_escape_string($connect,$r),
 			mysqli_real_escape_string($connect,$id),
 			mysqli_real_escape_string($connect,$uid)))) {
