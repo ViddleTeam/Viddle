@@ -70,9 +70,10 @@ if($d2 == '1')
 			mysqli_real_escape_string($connect,$uid)))) {
 				echo '2';
 				
-				$r = $polaczenie->query("UPDATE viddle_videos SET upvotes='$w' WHERE video_id='$id';
+				$r = $connect->query("UPDATE viddle_videos SET upvotes='$w' WHERE video_id='$id';
 				UPDATE viddle_videos SET downvotes='$w2' WHERE video_id='$id'");
 					echo '3';
+				
 					header('location: video.php?id='.$id.'');
 				
 					
