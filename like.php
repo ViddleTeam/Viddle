@@ -32,7 +32,7 @@ if($d2 == '1')
 			echo '1';
 			$w = $like - '1';
 			if($gg = @$connect->query(
-			sprintf("DELETE FROM viddle_oceny WHERE videoid='%s' AND uid='%s''",
+			sprintf("DELETE FROM viddle_oceny WHERE videoid='%s' AND uid='%s'",
 			mysqli_real_escape_string($connect,$id),
 			mysqli_real_escape_string($connect,$uid)))) {
 				echo '2';
