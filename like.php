@@ -39,7 +39,7 @@ if($d2 == '1')
 				echo '2';
 				
 				if($gg = @$connect->query(
-				sprintf("UPDATE pracownicy SET imie='%s' WHERE video_id='%s'",
+				sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'",
 				mysqli_real_escape_string($connect,$w),
 				mysqli_real_escape_string($connect,$id)))) {
 					echo '3';
@@ -71,7 +71,7 @@ if($d2 == '1')
 					{
 						$w = $like + '1';
 						if($gg = @$connect->query(
-						sprintf("UPDATE pracownicy SET imie='%s' WHERE video_id='%s'",
+						sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'",
 						mysqli_real_escape_string($connect,$w),
 						mysqli_real_escape_string($connect,$id)))) {
 							echo '3';
