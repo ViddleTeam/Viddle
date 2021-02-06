@@ -55,11 +55,31 @@ if($d2 == '1')
 			mysqli_real_escape_string($connect,$_SESSION['uid']),
 			mysqli_real_escape_string($connect,$o)))) 
 			{
+				$w = 
 				$d4 = $result2->num_rows;
 				
 				if($d4 == '1')
 				{
-					echo 'koca';
+						echo '1';
+			$w = $dislike - '1';
+			$w2 = $like + '1';
+			if($gg = @$connect->query(
+			sprintf("DELETE FROM viddle_oceny WHERE videoid='%s' AND uid='%s' AND ocena='%s'",
+			mysqli_real_escape_string($connect,$id),
+			mysqli_real_escape_string($connect,$uid),
+			mysqli_real_escape_string($connect,$o)))) {
+				echo '2';
+				
+				if($gg = @$connect->query(
+				sprintf("UPDATE viddle_videos SET upvotes='%s' AND downvotes='%s' WHERE video_id='%s'",
+				mysqli_real_escape_string($connect,$w2),
+				mysqli_real_escape_string($connect,$w),
+				mysqli_real_escape_string($connect,$id)))) {
+					echo '3';
+					header('location: video.php?id='.$id.'');
+				}
+					
+			}
 					
 				} else {
 					$d = '1';
