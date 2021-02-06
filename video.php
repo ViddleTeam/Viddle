@@ -207,6 +207,10 @@ $video_e = false;
 if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
 	$video_e = true;
 }
+
+if($_SESSION['uid'] == '5fd60fc0868fe5fd60fc086901') {
+	$video_e = true;
+}
 ?>
 		 <?php
         if ($video_e == true) {
