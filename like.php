@@ -70,13 +70,8 @@ if($d2 == '1')
 			mysqli_real_escape_string($connect,$uid)))) {
 				echo '2';
 				
-				$gg = @$connect->query(
-				sprintf("UPDATE viddle_videos SET upvotes='$w2' WHERE video_id='$id';
-				UPDATE viddle_videos SET downvotes='$w' WHERE video_id='$id';",
-				mysqli_real_escape_string($connect,$w2),
-				mysqli_real_escape_string($connect,$id),
-				mysqli_real_escape_string($connect,$w),
-				mysqli_real_escape_string($connect,$id))) 
+				$r = $polaczenie->query("UPDATE viddle_videos SET upvotes='$w' WHERE video_id='$id';
+				UPDATE viddle_videos SET downvotes='$w2' WHERE video_id='$id'");
 					echo '3';
 					header('location: video.php?id='.$id.'');
 				
