@@ -29,17 +29,20 @@ if($d2 == '1')
 		
 		if($d3 == '1')
 		{
+			echo '1';
 			$w = $like - '1';
 			if($gg = @$connect->query(
 			sprintf("DELETE * FROM viddle_oceny WHERE videoid='%s' AND uid='%s' AND ocena='%s'",
 			mysqli_real_escape_string($connect,$id),
 			mysqli_real_escape_string($connect,$uid),
 			mysqli_real_escape_string($connect,$r)))) {
+				echo '2';
 				
 				if($gg = @$connect->query(
 				sprintf("UPDATE pracownicy SET imie='%s' WHERE video_id='%s'",
 				mysqli_real_escape_string($connect,$w),
 				mysqli_real_escape_string($connect,$id)))) {
+					echo '3';
 					header('location: video.php?id='.$id.'');
 				}
 					
