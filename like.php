@@ -74,19 +74,17 @@ if($d2 == '1')
 			mysqli_real_escape_string($connect,$id)))) {
 					
 					if($gg = @$connect->query(
-			sprintf("UPDATE viddle_videos SET '%s' WHERE videoid='%s'",
+			sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE videoid='%s'",
 			mysqli_real_escape_string($connect,$w),
 			mysqli_real_escape_string($connect,$id)))) {
+						
+						echo '3';
+				
+					header('location: video.php?id='.$id.'');
 						
 					}
 					
 				}
-				
-				
-				
-					echo '3';
-				
-					header('location: video.php?id='.$id.'');
 				
 					
 			}
