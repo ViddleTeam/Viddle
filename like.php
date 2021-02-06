@@ -46,7 +46,7 @@ if($d2 == '1')
 					$d = '1';
 					if ($syf = @$connect->query(
 					sprintf("INSERT INTO `viddle_oceny` VALUES (NULL,'%s','%s','%s')",
-					mysqli_real_escape_string($connect,$_SESSION['uid']),
+					mysqli_real_escape_string($connect,$uid),
 					mysqli_real_escape_string($connect,$id),
 					mysqli_real_escape_string($connect,$d))))
 					{
