@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $id = $_GET['id'];
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -50,7 +50,7 @@ if($d2 == '1')
 					mysqli_real_escape_string($connect,$id),
 					mysqli_real_escape_string($connect,$d))))
 					{
-						header('location: video.php?id='.$id.'')
+						header('location: video.php?id='.$id.'');
 					}
 				}
 			}
@@ -62,8 +62,10 @@ if($d2 == '1')
 } else {
 	header('location: index.php');
 }
+
+}
 	
-}	
+	
 	
 
 
