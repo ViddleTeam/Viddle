@@ -245,7 +245,7 @@ if($_SESSION['uid'] == '5fd60fc0868fe5fd60fc086901') {
                     <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
 			    
-                      <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?></a> <button type='submit' id='dislike' name='dislike'><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></button>
+                      <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?></a> <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
                     </div><br>
                     <p><?php echo $opis ?></p>
