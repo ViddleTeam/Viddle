@@ -5,105 +5,66 @@ require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $uid = $_SESSION['uid'];
 
+$r = '1';
 
-if ($result1 = @$connect->query(
+if ($result = @$connect->query(
 sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
 mysqli_real_escape_string($connect,$id)))) {
-	echo '1';
+$d2 = $result->num_rows;
+$dane = $result->fetch_assoc();
 	
-  $d2 = $result1->num_rows;
-  $uid = $_SESSION['uid'];
-  
-  $dane = $result1->fetch_assoc();
-  
-  $like = $dane['upvotes'];
-  $dislike = $dane['downvotes'];
-  if($d2 == '1') { echo '1';
-   
-    if(isset($_SESSION['uid'])) { echo '1';
-    
-    if ($result2 = @$connect->query(
-    sprintf("SELECT * FROM viddle_oceny WHERE userid='%s'",
-    mysqli_real_escape_string($connect,$uid)))) { echo '4';
-    
-    $d3 = $result->num_rows;
+$like = $dane['upvotes'];
+$dislike = $dane['downvotes'];
 	
-	$wstaw = $like + '1';
-        
-      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
-        
-        $connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'");
-        
-        header('location: video.php?id='.$id.'');
-    
-    $przepusc = true;
-      
-    if($d3 == '1') { echo '1';
-	
-    if ($result3 = @$connect->query(
-    sprintf("SELECT * FROM viddle_oceny WHERE userid='%s' AND videoid='%s'",
-    mysqli_real_escape_string($connect,$uid),
-    mysqli_real_escape_string($connect,$id)))) {
-	
-	    $d4 = $result3->num_rows;
-	    
-	if($d4 > 0) {
-		$danef = $result3->fetch_assoc();
+if($d2 == '1')
+{
+	if ($result1 = @$connect->query(
+	sprintf("SELECT * FROM viddle_oceny WHERE videoid='%s' AND uid='%s' AND ocena='%s'",
+	mysqli_real_escape_string($connect,$id),
+	mysqli_real_escape_string($connect,$_SESSION['uid']),
+	mysqli_real_escape_string($connect,$r)))) 
+	{
+		$d3 = $result1->num_rows;
 		
-		$c = $danef['ocena'];
-		
-		if($c == '1') { 
-		
-		if ($res = @$connect->query(
-    		sprintf("DELETE * FROM viddle_oceny WHERE userid='%s' AND videoid='%s'",
-    		mysqli_real_escape_string($connect,$uid),
-   		mysqli_real_escape_string($connect,$id)))) {
-			
-			$wartosc = $like - '1';
-		
-			if ($res = @$connect->query(
-    			sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'",
-   			mysqli_real_escape_string($connect,$wartosc),
-			mysqli_real_escape_string($connect,$id)))) {
-				header('location: video.php?id='.$id.'');
-		}
+		if($d3 == '1')
+		{
 			
 		} else {
+			$o = '0';
+			if ($result2 = @$connect->query(
+			sprintf("SELECT * FROM viddle_oceny WHERE videoid='%s' AND uid='%s' AND ocena='%s'",
+			mysqli_real_escape_string($connect,$id),
+			mysqli_real_escape_string($connect,$_SESSION['uid']),
+			mysqli_real_escape_string($connect,$o)))) 
+			{
+				$d4 = $result2->num_rows;
+				
+				if($d4 == '1')
+				{
+					
+				} else {
+					$d = '1';
+					if ($syf = @$connect->query(
+					sprintf("INSERT INTO `viddle_oceny` VALUES (NULL,'%s','%s','%s')",
+					mysqli_real_escape_string($connect,$_SESSION['uid']),
+					mysqli_real_escape_string($connect,$id),
+					mysqli_real_escape_string($connect,$d))))
+					{
+						header('location: video.php?id='.$id.'')
+					}
+				}
+			}
+			
 			
 		}
+	}
 		
-	} else {
-	    
-	    
-	
-      
-	$wstaw = $like + '1';
-        
-      if ($connect->query("INSERT INTO viddle_oceny VALUES (NULL, '$uid', '$id', '1')"))    {
-        
-        $connect->query("UPDATE viddle_videos SET upvotes='$wstaw' WHERE video_id='$id'");
-        
-        header('location: video.php?id='.$id.'');
-          
-    }
-      }
-		   }
-      
-      
-    }
-      
-     
-
-  } else {
-  header('location: in1dex.php');
-  }
-
 } else {
-header('location: in2dex.php');
+	header('location: index.php');
 }
-}
-}
-}
-}
+	
+}	
+	
 
+}
 ?>
