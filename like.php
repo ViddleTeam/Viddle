@@ -1,7 +1,12 @@
 <?php
+$id = $_GET['id'];
 session_start();
 
-$id = $_GET['id'];
+if(!isset($_SESSION['uid'])) {
+	$_SESSION['pol'] = true;
+	header('location: video.php?id='.$id.'');
+} else {
+
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $uid = $_SESSION['uid'];
@@ -119,7 +124,7 @@ if($d2 == '1')
 }
 
 }
-	
+}	
 	
 	
 
