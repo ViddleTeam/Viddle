@@ -75,7 +75,7 @@ if($d2 == '1')
 					
 					if($gg = @$connect->query(
 			sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'",
-			mysqli_real_escape_string($connect,$w),
+			mysqli_real_escape_string($connect,$w2),
 			mysqli_real_escape_string($connect,$id)))) {
 						
 						echo '3';
