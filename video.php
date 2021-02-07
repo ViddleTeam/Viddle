@@ -6,7 +6,6 @@ require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
-$uid = null;
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 if ($c = $connect->query($polecenie))
 {
@@ -76,7 +75,6 @@ else
         $observators = $dane['observators'];
         $name = $dane['login'];
         $av6 = $dane['avatarname'];
-        $uid = $dane['uid'];
         $video_exists = true;
 
     }
@@ -251,7 +249,7 @@ if ($video_e == true)
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>">
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
-                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?= $uid ?>"><?php echo $name ?></a></h5>
+                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><?php echo $name ?></a></h5>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
