@@ -71,7 +71,7 @@ require_once ('partials/navbar.php');
         </div>
         <center>
             <!-- PROSZE NIE DODAWAC class="btn btn-success" TYMCZASOWO, DZIEKI - lort533 -->
-            <input type="submit" class="btn btn-success" value="Rozpocznij przesyłanie">
+            <input type="submit" value="Rozpocznij przesyłanie">
         </center>
         </form>
     </div>
