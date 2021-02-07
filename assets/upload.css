@@ -1,4 +1,4 @@
-input[type=submit]#upload {
+input[type=submit] {
     outline: none;
     margin: 10px;
     height: 50px;
@@ -20,9 +20,4 @@ input[type=submit]#upload {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     padding: .84rem 2.14rem;
     font-size: .81rem
-}
-
-input[type=submit]#upload:hover {
-    color: #fff;
-    background-color: #00e25b;
 }
