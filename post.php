@@ -1,3 +1,4 @@
+<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
