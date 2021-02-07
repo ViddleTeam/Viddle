@@ -1,5 +1,5 @@
 <?php
-/*$uplsuccess = 0;
+$uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
 } else if ($_POST['descvid'] == false) {
@@ -20,6 +20,7 @@ if ($_SESSION['z1'] == true) {
 	  $file_ext = mime_content_type($_FILES["videovid"]["tmp_name"]);
 	  $filesize = $_FILES["videovid"]["size"];
 	  $allowed_file_types = ['video/mp4','video/mov','video/webm','video/x-ms-wmv','video/3gpp'];	
+	  define('MB', 1048576);
 	  define('GB', 1073741824);
 	  function ext($mime_type){
 	    $extensions = array('video/mp4' => '.mp4',
@@ -71,17 +72,17 @@ if ($_SESSION['z1'] == true) {
 	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {	
-	    $conn_id = ftp_connect("ftpupload.net") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
-	    $login_result = ftp_login($conn_id, "epiz_27397310", "YPf7vgDQu3JpVm");
+	    $conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
+	    $login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
 	    $res = ftp_size($conn_id, $file);
-	    $sciezka = "/viddlecdn.ml/htdocs/videos/";
+	    $sciezka = "/videos/";
 	    if ($res != -1) {
 	      echo "Plik już istnieje.";
 	      //header('Location: blad.php?id=4');
 	    } else {
-	      ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/');
+	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
-	      ftp_chdir($conn_id, '/viddlecdn.ml/htdocs/videos/' . $viddleid . '/');
+	      ftp_chdir($conn_id, '/videos/' . $viddleid . '/');
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
@@ -92,7 +93,7 @@ if ($_SESSION['z1'] == true) {
 			//echo "Podaj nazwę pliku do wrzucenia!";
 			//header('Location: index.php');
 		  	$uplsuccess = 0;
-	  } elseif ($filesize > 5*GB) {	
+	  } elseif ($filesize > 1*GB) {	
 			// file size error
 			//echo "Plik jest zbyt duży!";
 			header('Location: index.php');
@@ -130,7 +131,7 @@ if ($_SESSION['z1'] == true) {
 	/*  $destination = fopen("ftp://epiz_27397310:YPf7vgDQu3JpVm@ftpupload.net/" . $film, "wb");
 	  $source = file_get_contents($film);
 	  fwrite($destination, $source, strlen($source)); */
-/*  } else {
+  } else {
     header('Location: blad.php?id=5');
     //echo('brak pliku');
   }
@@ -138,6 +139,6 @@ if ($_SESSION['z1'] == true) {
 //header('Location: index.php');
 echo('ERROR 4 - Nie jesteś zalogowany.');
 }
-echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');*/
-header('Location: blad.php?id=404');
+echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
+/*header('Location: blad.php?id=404');*/
 ?>
