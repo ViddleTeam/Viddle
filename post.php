@@ -77,7 +77,7 @@ if ($_SESSION['z1'] == true) {
 	    $conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	    $login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
 	    $res = ftp_size($conn_id, $file);
-	    $sciezka = "/videos/";
+	    $sciezka = "/public_html/cdn.viddle.xyz/cgi-bin/videos/";
 	    if ($res != -1) {
 	      echo "Plik już istnieje.";
 	      //header('Location: blad.php?id=4');
