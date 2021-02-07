@@ -2,7 +2,6 @@ input[type=submit] {
     outline: none;
     margin: 10px;
     height: 50px;
-    width: fit-content;
     color: #fff;
     background-color: #00c851 !important;
     margin: .375rem;
