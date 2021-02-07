@@ -2,14 +2,7 @@
 $title = "Udostępnianie filmów";
 require_once ('partials/navbar.php');
 ?>
-<style>
-    input[type=submit] {
-        outline: none;
-        margin: 10px;
-        height: 50px;
-        width: 225px;
-    }
-</style>
+<link rel="stylesheet" href="assets/upload.css" />
 <div class="container" style="margin-top:30px;">
     <div class="row">
         <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
