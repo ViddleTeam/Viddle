@@ -1,3 +1,4 @@
+<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <link rel="stylesheet" href="style.css">
 <title>Wystąpił błąd!</title>
 <style>
@@ -18,7 +19,7 @@ if($id=="1") {
   $test = "Kurza twarz! Wystąpił błąd serwisu. Koniecznie przekaż to naszej drużynie.
 <br /><h2>Kod błędu: 0x00001c</h2>";
 } elseif($id=="2") {
-  $test = "Twój plik jest jakiś troszeczkę podejrzany... lub stało się coś nieoczekiwanego.<br />Wróć do poprzedniej strony i spróbuj ponownie.<br />Możliwe że to jest problem po naszej stronie, więc skontaktuj się z naszą drużyną!<br /><h2>Kod błędu: 0x00002c</h2>";
+  $test = "Twój plik jest zbyt duży, lub stało się coś nieoczekiwanego.<br />Wróć do poprzedniej strony i spróbuj ponownie.<br />Możliwe że to jest problem po naszej stronie, więc skontaktuj się z naszą drużyną!<br /><h2>Kod błędu: 0x00002c</h2>";
 } elseif($id=="3") {
   $test = "Kurza twarz! Wystąpił poważny błąd serwisu. Koniecznie przekaż to naszej drużynie.<br /><h3>Kod błędu: 0x00003c</h3>";
 } elseif($id=="4") {
