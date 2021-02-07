@@ -120,7 +120,7 @@ if ($_SESSION['z1'] == true) {
 	  if (!in_array($file_ext, $allowed_file_types)) {
             header('Location: index.php');
     	  }
-	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
+	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {
 	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, 0, '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
 	  }
