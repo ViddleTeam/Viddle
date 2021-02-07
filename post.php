@@ -77,14 +77,14 @@ if ($_SESSION['z1'] == true) {
 	    $conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	    $login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
 	    $res = ftp_size($conn_id, $file);
-	    $sciezka = "/public_html/cdn.viddle.xyz/cgi-bin/videos/";
+	    $sciezka = "/videos/";
 	    if ($res != -1) {
 	      echo "Plik już istnieje.";
 	      //header('Location: blad.php?id=4');
 	    } else {
-	      ftp_chdir($conn_id, '/public_html/cdn.viddle.xyz/cgi-bin/videos/');
+	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
-	      ftp_chdir($conn_id, '/public_html/cdn.viddle.xyz/cgi-bin/videos/' . $viddleid . '/');
+	      ftp_chdir($conn_id, '/videos/' . $viddleid . '/');
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
