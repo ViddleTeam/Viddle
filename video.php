@@ -246,7 +246,7 @@ if ($video_e == true)
                             <h4><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
-                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>">
+                      <a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7 ?>"></a>
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
                                     <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><?php echo $name ?></a></h5>
