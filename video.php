@@ -202,21 +202,6 @@ $_SESSION['id'] = $id;
 ?>
 <?php 
 	require_once("partials/navbar.php");
-$video_e = false;
-
-if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
-	$video_e = true;
-}
-
-if($_SESSION['uid'] == '5fd60fc0868fe5fd60fc086901') {
-	$video_e = true;
-}
-
-$l = '5fe2e9c1e06ed5fe2e9c1e06f1';
-
-if($_SESSION['uid'] == $l) {
-	$video_e = true;
-}
 ?>
 		 <?php
         if ($video_e == true) {
@@ -421,12 +406,10 @@ if($_SESSION['uid'] == $l) {
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Przerwa techniczna</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Film nie został znaleziony!</h5>
       </div>
       <div class="modal-body">
-   	Aktualnie trwa przerwa techniczna w pliku video.php<br>
-	Do czasu jej zaakończenia będziesz mógł zobaczyć tylko ten ekran.
-	      Przepraszamy za utrudnienia.</br>
+   	Być może film pod tym adresem został usunięty przez administracje lub link do niego jest niepoprawny. Jeśli wpisywałeś adres ręcznie upewnij sie czy wpisałeś prawidłowy adres.</br>
 	    
       </div>
       <div class="modal-footer">
