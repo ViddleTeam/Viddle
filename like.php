@@ -1,3 +1,4 @@
+<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
 $id = $_GET['id'];
 session_start();
