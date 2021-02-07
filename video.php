@@ -60,7 +60,6 @@ else
         if ($d2 == '1')
         {
         }
-
     }
     else
     {
@@ -76,7 +75,6 @@ else
         $name = $dane['login'];
         $av6 = $dane['avatarname'];
         $video_exists = true;
-
     }
     else
     {
@@ -440,8 +438,8 @@ require_once ("partials/footer.php");
                 <h5 class="modal-title" id="exampleModalLabel">Film nie został znaleziony!</h5>
             </div>
             <div class="modal-body">
-                Być może film pod tym adresem został usunięty przez administracje lub link do niego jest niepoprawny. Jeśli wpisywałeś adres ręcznie upewnij sie czy wpisałeś prawidłowy adres.</br>
-
+                Być może film nie istnieje, lub został usunięty przez administratora. Jeżeli wpisywałeś/aś 
+                ID filmu w pasku adresu URL ręcznie, upewnij się że nie dokonałeś/aś pomyłki.
             </div>
             <div class="modal-footer">
                 <a href="/"><button type="button" class="btn btn-blue-grey waves-effect waves-light"><p style="margin: 10px;">Powrót na stronę główną</p></button></a>
@@ -456,5 +454,4 @@ require_once ("partials/footer.php");
 	  </script>";
 }
 ?>
-
 <div class="hiddendiv common"></div></body></html>
