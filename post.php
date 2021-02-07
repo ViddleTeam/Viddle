@@ -42,6 +42,9 @@ if ($_SESSION['z1'] == true) {
 	  $name = $dane['login'];
 	  $result = $connect -> query("SELECT * FROM `viddle_recent` WHERE number=1;");
 	  $row = $result -> fetch_assoc();
+	  $result = $connect -> query("SELECT * FROM viddle_videos WHERE uid='$userid';");
+	  $il = $result -> fetch_assoc();
+	  $il_num_rows = mysql_num_rows($il);
 	  if($row['viddle_recent_one_user'] === $userid) {
 		header('Location: blad.php?id=4');
 		exit;
@@ -70,7 +73,7 @@ if ($_SESSION['z1'] == true) {
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
-	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
+	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {	
 	    $conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
 	    $login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
@@ -120,7 +123,7 @@ if ($_SESSION['z1'] == true) {
     	  }
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 10*MB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES ('$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES (NULL, '$il_num_rows' '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
