@@ -226,7 +226,7 @@ if($_SESSION['uid'] == $l) {
           <div class="form-row">
             <div class="col-md-7">
               <div class="md-form form-group">
-                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos<?php echo $id.'/'.$file?>&title=<?php echo $title ?>" style="width: 100%; height: 360px;" frameborder="0"></iframe>
+                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?php echo $id.'/'.$file?>&title=<?php echo $title ?>" style="width: 100%; height: 360px;" frameborder="0"></iframe>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
                   <h4><?php echo $title ?></h4>
                   <div class="container row" style="margin-top: 20px;">
