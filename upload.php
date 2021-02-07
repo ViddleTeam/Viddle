@@ -2,7 +2,6 @@
 $title = "Udostępnianie filmów";
 require_once ('partials/navbar.php');
 ?>
-<link rel="stylesheet" href="assets/upload.css" />
 <div class="container" style="margin-top:30px;">
     <div class="row">
         <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -11,7 +10,7 @@ require_once ('partials/navbar.php');
     <div class="row">
         <div class="col-lg-12">
             <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
-            <p style="color: white; margin-bottom: 20px;">Krok 1/3: Wybierz film do udostępnienia</p>
+            <p style="color: white; margin-bottom: 20px;">Krok 1/2: Wybierz film do udostępnienia</p>
         </div>
     </div>
     <div class="tile" style="margin: auto;">
@@ -36,7 +35,7 @@ require_once ('partials/navbar.php');
     <div class="row">
         <div class="col-lg-12">
             <h4 class="tile-before" style="color:white; margin-top: 40px;"><br></h4>
-            <p style="color: white; margin-bottom: 10px;">Krok 2/3: Nadaj nazwę filmowi oraz dodaj opis</p>
+            <p style="color: white; margin-bottom: 10px;">Krok 2/2: Nadaj nazwę filmowi oraz dodaj opis</p>
         </div>
     </div>
     <div class="container row" style="width: auto; color: white;">
