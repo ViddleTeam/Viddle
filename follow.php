@@ -17,7 +17,7 @@ if ($_SESSION['z1'] == true) {
   if ($userid == $followid) {
     echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.');
   }
-  $result = @$connect->query("SELECT * FROM viddle_users WHERE uid='$followid';");
+  $result = $connect->query("SELECT * FROM viddle_users WHERE uid='$followid';");
   $d2 = $result->num_rows;
   if (isset($d2) && $d2 == '0') {
     echo('Wystąpił błąd - nieprawidłowe ID użytkownika.');
