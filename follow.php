@@ -16,11 +16,13 @@ if ($_SESSION['z1'] == true) {
   $login = $_SESSION['user'];
   if ($userid == $followid) {
     echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.');
+    break;
   }
   $result = $connect->query("SELECT * FROM viddle_users WHERE uid='$followid'");
   $d2 = $result->num_rows;
   if (isset($d2) && $d2 == '0') {
     echo('Wystąpił błąd - nieprawidłowe ID użytkownika.');
+    break;
   }
   if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'"))) {
     $d2 = $isfollowing->num_rows;
