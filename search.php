@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="row">
+                <div class="row" style="align-items: center;">
                     <span style="margin-left: 10px;">
                       <a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="https://cdn.viddle.xyz/cdn/videos/avatars/5fd60fc0868fe5fd60fc086901/5fd60fc0868fe5fd60fc086901.jpeg"></a>
                     </span>
