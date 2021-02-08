@@ -27,7 +27,7 @@ if ($_SESSION['z1'] == true) {
   if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'"))) {
     $d2 = $isfollowing->num_rows;
     if (isset($d2) && $d2 == '0' && error == 0) {
-      $success = $connect->query("INSERT INTO viddle_followers VALUES (0, followed='$followid' AND follower='$userid')");
+      $success = $connect->query("INSERT INTO viddle_followers VALUES (0, '$followid', '$userid');");
       echo('Użytkownik zaobserwowany pomyślnie.');
     } elseif (error == 0) {
       $success = $connect->query("DELETE FROM viddle_followers WHERE followed='$followid' AND follower='$userid';");
