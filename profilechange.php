@@ -17,11 +17,36 @@ $d2 = $result->num_rows;
 
 if(isset($_FILES['file_picker']))
 {
-	require 'daneftp.php';
+	$ok = true;
 	
-	$ftp_server = FTPSERWER;
-	$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
-	$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);		
+	$file_name = $_FILES['file_picker']['name'];
+      	$file_size =$_FILES['file_picker']['size'];
+      	$file_tmp =$_FILES['file_picker']['tmp_name'];
+      	$file_type=$_FILES['file_picker']['type'];
+	$file_ext=strtolower(end(explode('.',$_FILES['file_picker']['name'])));
+	
+	$extensions= array('png','jpg','jpeg','bmp');
+	
+	 if(in_array($file_ext,$formaty)=== false) {
+         	$f_error = 'niedozwolony format';
+		$ok = false;
+         }
+	
+	 if($file_size > 3097152){
+         	$w_error = 'plik za wielki!';
+		$ok = false;
+      	 }
+	
+	 if($ok == true) {
+		 require 'daneftp.php';
+	
+		$ftp_server = FTPSERWER;
+		$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+		$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
+		 
+	 }
+	
+	
 }
 	if (isset($d2) && $d2 == '1')
 	{
