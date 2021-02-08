@@ -56,8 +56,8 @@
                     if ($stmt->num_rows === 0) echo '<script>console.log("nie znaleziono filmów")</script>';
                     $stmt->bind_result($publisher, $video_id, $views, $title);
                     $stmt->fetch();
-                    while ($stmt->fetch()) { ?>
-                        <div class="card">
+                    while ($stmt->fetch()) {
+                        echo('<div class="card">
                             <a href="video">
                                 <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                                 <p class="card-title"><?php echo $title ?></p>
@@ -68,8 +68,7 @@
                                     <span>17.5k wyświetleń</span>
                                 </div>
                             </a>
-                        </div>
-                    <?php
+                        </div>');
                     }
                     ?>
                 </div>
