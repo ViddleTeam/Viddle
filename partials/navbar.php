@@ -23,7 +23,7 @@ if ($_SESSION['z1'] == true) {
             $av3 = 'avatardomyslny.jpg';
         } else {
             $av2 = '1';
-            $av3 = 'grafic/' . $uid . 'a.' . $avatar . '';
+            $av3 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'';
         }
     } else {
     }
