@@ -226,6 +226,22 @@ if (strlen($randomtitlefive) > 27)
 {
     $randomtitlefive = substr_replace($randomtitlefive, "...", 27);
 }
+$uid = $_SESSION['uid'];
+
+$polecenie = "SELECT * FROM viddle_oceny WHERE uid='$uid'";
+if ($c2 = $connect->query($polecenie)) {
+	$cheack3 = $c2->num_rows;
+	
+	if($cheack3 == '1') {
+		$dane10 = $c2->fetch_assoc();
+		
+		if($dane10['ocena'] == '1') {
+			$like = 'color: #00c3ff;';
+		} else {
+			$dislike = 'color: #00c3ff;';
+		}
+	}
+}
 ?>
 <?php
 require_once ("partials/navbar.php");
@@ -264,7 +280,7 @@ if ($video_e == true)
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
 
-                      <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" style="margin-right: 5px;"></i> <?php echo $likes ?></a> <a href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                      <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" style="margin-right: 5px; <?php echo $like ?>"></i> <?php echo $likes ?></a> <a href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
                             </div><br>
                             <p><?php echo $opis ?></p>
