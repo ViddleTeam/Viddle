@@ -67,7 +67,7 @@ if ($id == 0) {
 if ($av6 == 'x') {
     $av7 = 'anonim.png';
 } else {
-    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.jpeg';
+    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$id.'/'.$id.'.'.$dane['avatarname'].'';
 }
 
 if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']) , mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
@@ -259,7 +259,7 @@ if ($video_e == true)
                             <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                             <div class="container row">
                       <span>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.''; ?>">
                       </span>
                                 <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
