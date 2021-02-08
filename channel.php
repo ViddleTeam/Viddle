@@ -1,23 +1,12 @@
 <script type="javascript">
-$(document).on("submit", "form", function(event)
-{
-    event.preventDefault();
-    var url  = $(this).attr("action");
-    $.ajax({
-        url: url,
-        type: 'POST',
-        dataType: "JSON",
-        data: new FormData(this),
-        processData: false,
-        contentType: false,
-        success: function (data, status)
-        {
-
-        },
-        error: function (xhr, desc, err)
-        {
-            console.log("error");
-        }
+$(document).ready(function(){
+    $("form").on("submit", function(event){
+        event.preventDefault();
+        var formValues= $(this).serialize();
+        $.post("follow.php", formValues, function(data){
+            // Display the returned data in browser
+            $("#result").html(data);
+        });
     });
 });
 </script>
