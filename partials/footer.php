@@ -1,7 +1,11 @@
-<!-- <link rel="stylesheet" href="../assets/master.css" />
-<div id="footer">
-  &copy; 2020 Viddle Team
-</div> -->
+<!-- <link rel="stylesheet" href="../assets/master.css" /> -->
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center text-white py-3">
+      &copy; 2020-2021 Viddle Developers
+      <a href="/attachments/privacypolicy.pdf">Polityka prywatności</a> • <a href="/attachments/termsofservice.pdf">Regulamin</a>
+  </div>
+</footer>
+
 <script src="../assets/fuckadblock.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
