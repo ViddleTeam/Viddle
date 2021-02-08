@@ -1,3 +1,23 @@
+<script type="javascript">
+$(document).ready(function() {
+    $('form').submit(function(event) {
+        var sendFollow = {
+            'followid' : $('input[name=followid]').val(),
+        };
+        $.ajax({
+            type : 'POST',
+            url : 'follow.php',
+            data : sendFollow,
+            dataType : 'json',
+            encode : true
+        })
+            //.done(function(data) {
+            //});
+        event.preventDefault();
+    });
+});
+</script>
+
 <?php
 session_start();
 $id = $_GET['id'];
