@@ -240,8 +240,7 @@ if ($video_e == true)
                                 <span style="margin-left: auto; margin-right: -20px;">
 		    <form action="follow.php" method="POST">
 		    <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
-		    <!-- class="btn btn-success" -->
-                    <button type="submit" ><p style="margin: 10px;">Obserwuj</p></button>
+                    <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 		    </form>
                   </span>
                             </div>
