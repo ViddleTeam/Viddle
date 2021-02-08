@@ -44,12 +44,12 @@ if(isset($_FILES['file_picker']))
 		$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 		$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
 		 
-		$s = ftp_nlist($ftp_conn, '/avatars/'.$_SESSION['uid']);
-		 
-		if($s == 'false') {
-			$f_error = 'gwalt';
-			//$c = ftp_mkdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
+		ftp_chdir($ftp_conn, '/avatars/');
+		
+		if (ftp_nlist($ftp_stream, $_SESSION['uid']) == false) {
+    			$f_error = 'poszlo';
 		}
+		
 		 
 		$w_error = 'dziala';
 		 
