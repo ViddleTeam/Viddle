@@ -34,7 +34,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania dla: <?php echo $search_query; ?></h4>
+                <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania</h4>
             </div>
         </div>
         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -49,27 +49,33 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="tile" style="margin: auto;">
                     <?php
-                    $x = $db->real_escape_string($search_query);
-                    $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
-                    $stmt->execute();
-                    $stmt->store_result();
-                    if ($stmt->num_rows === 0) echo('<div class="alert alert-info" role="alert">
-                       Nie znaleziono filmów odpowiadających Twojej frazie.
-                    </div>');
-                    $stmt->bind_result($publisher, $video_id, $views, $title);
-                    $stmt->fetch();
-                    while ($stmt->fetch()) {
-                        echo('<div class="card">
-                            <a href="video">
-                                <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                                <p class="card-title"><?php echo $title ?></p>
-                                <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                                <div class="bottom-info">
-                                    <span><?php echo $publisher; ?></span>
-                                    <span>•</span>
-                                    <span>17.5k wyświetleń</span>
-                                </div>
-                            </a>
+                    if (strlen($search_query) >= 2) {
+                        $x = $db->real_escape_string($search_query);
+                        $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
+                        $stmt->execute();
+                        $stmt->store_result();
+                        if ($stmt->num_rows === 0) echo('<div class="alert alert-info" role="alert">
+                        Nie znaleziono filmów odpowiadających Twojej frazie.
+                        </div>');
+                        $stmt->bind_result($publisher, $video_id, $views, $title);
+                        $stmt->fetch();
+                        while ($stmt->fetch()) {
+                            echo('<div class="card">
+                                <a href="video">
+                                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                                    <p class="card-title"><?php echo $title ?></p>
+                                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+                                    <div class="bottom-info">
+                                        <span><?php echo $publisher; ?></span>
+                                        <span>•</span>
+                                        <span>17.5k wyświetleń</span>
+                                    </div>
+                                </a>
+                            </div>');
+                        }
+                    } else {
+                        echo('<div class="alert alert-danger" role="alert">
+                            Twoja fraza powinna składać się z przynajmniej 2 znaków.
                         </div>');
                     }
                     ?>
