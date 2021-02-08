@@ -74,7 +74,7 @@
                             </div>');
                         }
                     } else {
-                        echo('<div class="alert alert-danger" role="alert">
+                        echo('<div class="alert alert-danger" style="min-width: 100%; text-align: center;" role="alert">
                             Twoja fraza powinna składać się z przynajmniej 2 znaków.
                         </div>');
                     }
