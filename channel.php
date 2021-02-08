@@ -52,7 +52,7 @@ if ($result = @$connect->query(
 				<span style="margin-left: 10px; margin-bottom: 10px;">
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
-				<span style="margin-left: 10px; margin-right: auto;">
+				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
 					<h3><?php echo $nazwa; ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
 				</span>
