@@ -35,6 +35,9 @@ if ($result = @$connect->query(
 		} else {
 			$do = 0;
 		}
+		//Liczba obserwacji
+    		$resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id'");
+ 		$followcount = $resulttwo->num_rows;
 	} else {
 		header('location: index.php');
 	}
@@ -54,7 +57,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
 					<h3><?php echo $nazwa; ?></h3>
-					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
+					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($followcount)) echo $followcount; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
 					<div class="row">
