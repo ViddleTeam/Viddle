@@ -71,8 +71,12 @@ if(isset($_FILES['file_picker']))
 		}
 		 
 		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
+		$files = ftp_nlist($ftp_conn, ".");
+		foreach ($files as $file)
+		{
+    			ftp_delete($ftp_conn, $file);
+		}    
 		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
-		 
 		ftp_close($ftp_conn);
 		
 		if ($result = @$connect->query(
