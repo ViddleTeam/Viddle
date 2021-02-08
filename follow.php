@@ -37,5 +37,5 @@ if ($_SESSION['z1'] == true) {
 } else {
   echo('Wystąpił błąd - użytkownik nie jest zalogowany.');
 }
-echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
+//echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 ?>
