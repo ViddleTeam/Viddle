@@ -19,6 +19,8 @@ if(isset($_FILES['file_picker']))
 {
 	$ok = true;
 	
+	$av = $dane2['avatarname'];
+	
 	$file_name = $_FILES['file_picker']['name'];
       	$file_size =$_FILES['file_picker']['size'];
       	$file_tmp =$_FILES['file_picker']['tmp_name'];
@@ -58,6 +60,13 @@ if(isset($_FILES['file_picker']))
       	 }
 	
 	 if($ok == true) {
+		 
+		 if(!$av == 'x') {
+		 $del = '1';
+		 $plik = ''.$_SESSION['uid'].'.'.$av.'';
+		 } else {
+			 $del = '0';
+		 }
 		 require 'daneftp.php';
 	
 		$ftp_server = FTPSERWER;
@@ -71,11 +80,9 @@ if(isset($_FILES['file_picker']))
 		}
 		 
 		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
-		$files = ftp_nlist($ftp_conn, ".");
-		foreach ($files as $file)
-		{
-    			ftp_delete($ftp_conn, $file);
-		}    
+		if($del == '1') {
+		ftp_delete($ftp_conn, $plik) ;
+		}
 		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
 		ftp_close($ftp_conn);
 		
