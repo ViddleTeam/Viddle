@@ -37,34 +37,62 @@
                 <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania dla: <?php echo $search_query; ?></h4>
             </div>
         </div>
-        <div class="tile" style="margin: auto;">
-            <?php
-            $x = $db->real_escape_string($search_query);
-            $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
-            $stmt->execute();
-            $stmt->store_result();
-            if ($stmt->num_rows === 0) echo '<script>console.log("nie znaleziono filmów")</script>';
-            $stmt->bind_result($publisher, $video_id, $views, $title);
-            $stmt->fetch();
-            while ($stmt->fetch()) { ?>
-                <div class="card">
-                    <a href="video">
-                        <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                        <p class="card-title"><?php echo $title ?></p>
-                        <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                        <div class="bottom-info">
-                            <span><?php echo $publisher; ?></span>
-                            <span>•</span>
-                            <span>17.5k wyświetleń</span>
+        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-controls="videos"
+                aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="channels-tab" data-toggle="tab" href="#channels" role="tab" aria-controls="channels"
+                aria-selected="false">Profile</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+                <div class="tile" style="margin: auto;">
+                    <?php
+                    $x = $db->real_escape_string($search_query);
+                    $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
+                    $stmt->execute();
+                    $stmt->store_result();
+                    if ($stmt->num_rows === 0) echo '<script>console.log("nie znaleziono filmów")</script>';
+                    $stmt->bind_result($publisher, $video_id, $views, $title);
+                    $stmt->fetch();
+                    while ($stmt->fetch()) { ?>
+                        <div class="card">
+                            <a href="video">
+                                <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                                <p class="card-title"><?php echo $title ?></p>
+                                <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+                                <div class="bottom-info">
+                                    <span><?php echo $publisher; ?></span>
+                                    <span>•</span>
+                                    <span>17.5k wyświetleń</span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    <?php
+                    }
+                    ?>
                 </div>
-            <?php
-            }
-            ?>
+            </div>
+            <div class="tab-pane fade" id="channels" role="tabpanel" aria-labelledby="channels-tab">
+                <div class="row">
+                    <span style="margin-left: 10px;">
+                      <a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="<?php echo $av7 ?>"></a>
+                    </span>
+                    <span style="margin-left: 10px; margin-right: auto;">
+                        <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901">SlaVistaPL</a></h5>
+                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
+                    </span>
+                    <span style="margin-left: auto; margin-right: -20px;">
+                        <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+                    </span>
+                </div>
+            </div>
         </div>
-    </div>
-    <?php
+</div>
+<?php
     require_once ('partials/footer.php');
-    ?>
-    <div class="hiddendiv common"></div></body></html>
+?>
+<div class="hiddendiv common"></div></body></html>
