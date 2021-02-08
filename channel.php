@@ -21,13 +21,13 @@ if ($result = @$connect->query(
 		if($av5 == 'x') {
 			$av4 = 'anonim.png';
 		} else {
-			$av4 = 'grafic/'.$id.'a.'.$av5.'';
+			$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.jpeg';;
 		}
 		
 		if($ba2 == 'x') {
 			$ba3 = 'http://wallpapercave.com/wp/t05PXKg.jpg';
 		} else {
-			$ba3 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.jpeg';
+			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
 		}
 		
 		if($_SESSION['uid'] == $id) {
