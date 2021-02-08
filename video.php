@@ -63,6 +63,9 @@ if ($id == 0) {
     } else {
         $video_exists = false;
     }
+    //Liczba obserwacji
+    $resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$uid'");
+    $followcount = $resulttwo->num_rows;
 }
 
 if ($av6 == 'x') {
@@ -235,10 +238,10 @@ if ($video_e == true)
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
                                     <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><?php echo $name ?></a></h5>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $followcount ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-		    <form action="follow.php" method="POST">
+		    <form action="/follow.php" method="POST">
 		    <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
                     <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 		    </form>

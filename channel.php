@@ -35,6 +35,9 @@ if ($result = @$connect->query(
 		} else {
 			$do = 0;
 		}
+		//Liczba obserwacji
+    		$resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id'");
+ 		$followcount = $resulttwo->num_rows;
 	} else {
 		header('location: index.php');
 	}
@@ -54,7 +57,7 @@ if ($result = @$connect->query(
 				</span>
 				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
 					<h3><?php echo $nazwa; ?></h3>
-					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($obserwatorzy)) echo $obserwatorzy; ?> obserwujących</p>
+					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($followcount)) echo $followcount; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
 					<div class="row">
@@ -63,7 +66,7 @@ if ($result = @$connect->query(
 							echo '<a href="profilechange.php"><button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button></a>';
 						} else {
 							if ($_SESSION['z1'] == true) {
-								echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+								echo '<form action="/follow.php" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
 							}
