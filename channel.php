@@ -1,6 +1,7 @@
 <script type="javascript">
 $(document).ready(function() {
     $('form').submit(function(event) {
+    	event.preventDefault();
         var sendFollow = {
             'followid' : $('input[name=followid]').val(),
         };
@@ -13,7 +14,6 @@ $(document).ready(function() {
         })
             //.done(function(data) {
             //});
-        event.preventDefault();
     });
 });
 </script>
