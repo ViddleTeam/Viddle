@@ -221,25 +221,6 @@ require_once ("partials/navbar.php");
 if ($video_e == true)
 {
     ?>
-<script type="javascript">
-$(document).ready(function() {
-    $('form').submit(function(event) {
-        var sendFollow = {
-            'followid' : $('input[name=followid]').val(),
-        };
-        $.ajax({
-            type : 'POST',
-            url : 'follow.php',
-            data : sendFollow,
-            dataType : 'json',
-            encode : true
-        })
-            //.done(function(data) {
-            //});
-        event.preventDefault();
-    });
-});
-</script>
     <div class="container" style="margin-top: 70px; justify-content: center;">
         <form>
             <div class="form-row">
