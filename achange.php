@@ -67,12 +67,12 @@ require_once('partials/navbar.php');
                 <p style="color: white;">oto twój aktualny avatar:</a></p>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
 		<form method ="post" enctype="multipart/form-data">
-		<center><input type="file" name="plik" style="color: white; margin-top: 5px;" />wybierz nowy avatar</center>
+		<center><input type="file" name="plik" style="color: white; margin-top: 5px;" />Wybierz nowy avatar</center>
 			<br></br><br></br>
 
 		<center> <input type="submit" value="zmień avatar" class="btn btn-success" style="padding: 10px; color: white;">
 		</form>
-		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny avatar  </p></button></a>
+		<a href="davatar.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny awatar</p></button></a>
 		
 								
 							</center>

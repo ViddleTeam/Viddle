@@ -90,30 +90,20 @@ if(isset($_FILES['file_picker']))
 		sprintf("UPDATE viddle_users SET avatarname='%s' WHERE uid='%s'",
 		mysqli_real_escape_string($connect,$t),
 		mysqli_real_escape_string($connect,$_SESSION['uid'])))) {
-			
 		}
-		 
-		
-		 
 	 }
-	
-	
 }
-	if (isset($d2) && $d2 == '1')
-	{
-		
+	if (isset($d2) && $d2 == '1') {
 		$av5 = $dane2['avatarname'];
 		$ba2 = $dane2['banername'];
 		$id = $dane2['uid'];
-		
-		
 		if($av5 == 'x')
 		{
 			$av4 = 'avatardomyslny.jpg';
 		}
 		else
 		{
-			$av4 = 'grafic/'.$id.'a.'.$av5.'';
+			$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.jpeg';;
 		}
 		
 		if($ba2 == 'x')
@@ -153,7 +143,7 @@ require_once('partials/navbar.php');
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4><br>
 		      <center>
 			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="15%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
-			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -125px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
+			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -100px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
 				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br>
 		      	<button type="button" class="btn btn-grey" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
 				<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
