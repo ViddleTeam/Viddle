@@ -44,6 +44,8 @@ if(isset($_FILES['file_picker']))
 		$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 		$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
 		 
+		$w_error = 'dziala';
+		 
 	 }
 	
 	
