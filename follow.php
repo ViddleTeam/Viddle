@@ -21,9 +21,8 @@ if ($_SESSION['z1'] == true) {
   $d2 = $result->num_rows;
   if (isset($d2) && $d2 == '0') {
     echo('Wystąpił błąd - nieprawidłowe ID użytkownika.');
-    break 1;
   }
-  /*if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'")))
+  if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'")))
   $d2 = $isfollowing->num_rows;
   if (isset($d2) && $d2 == '0') {
     $success = $connect->query("DELETE FROM viddle_followers WHERE followed='$followid' AND follower='$userid';");
@@ -31,7 +30,7 @@ if ($_SESSION['z1'] == true) {
   } else {
     $success = $connect->query("INSERT INTO viddle_followers VALUES (0, followed='$followid' AND follower='$userid');");
     echo('Użytkownik zaobserwowany pomyślnie.');
-  }*/
+  }
 } else {
   echo('Wystąpił błąd - użytkownik zalogowany.');
 }
