@@ -1,16 +1,3 @@
-<script type="javascript">
-$(document).ready(function(){
-    $("form").on("submit", function(event){
-        event.preventDefault();
-        var formValues= $(this).serialize();
-        $.post("follow.php", formValues, function(data){
-            // Display the returned data in browser
-            $("#result").html(data);
-        });
-    });
-});
-</script>
-
 <?php
 session_start();
 $id = $_GET['id'];
