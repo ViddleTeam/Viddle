@@ -1,5 +1,6 @@
 <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
+$ok = 1;
 if ($_POST['followid'] == false) {
     header('Location: index.php');
 }
@@ -16,20 +17,18 @@ if ($_SESSION['z1'] == true) {
   $login = $_SESSION['user'];
   if ($userid == $followid) {
     echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.');
-    break;
   }
   $result = $connect->query("SELECT * FROM viddle_users WHERE uid='$followid'");
   $d2 = $result->num_rows;
   if (isset($d2) && $d2 == '0') {
     echo('Wystąpił błąd - nieprawidłowe ID użytkownika.');
-    break;
   }
   if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'"))) {
     $d2 = $isfollowing->num_rows;
-    if (isset($d2) && $d2 == '0') {
+    if (isset($d2) && $d2 == '0' && ok == 1) {
       $success = $connect->query("INSERT INTO viddle_followers VALUES (0, followed='$followid' AND follower='$userid');");
       echo('Użytkownik zaobserwowany pomyślnie.');
-    } else {
+    } else if (ok==1) {
       $success = $connect->query("DELETE FROM viddle_followers WHERE followed='$followid' AND follower='$userid';");
       echo('Użytkownik odobserwowany pomyślnie.');
     }
