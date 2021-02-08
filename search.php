@@ -76,7 +76,6 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            dfgdfg
                 <div class="row">
                     <span style="margin-left: 10px;">
                       <a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="<?php echo $av7 ?>"></a>
