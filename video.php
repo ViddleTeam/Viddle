@@ -268,7 +268,7 @@ if ($video_e == true)
                                 <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
-			  <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc1">
+			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc1">
                       </span>
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
@@ -418,8 +418,11 @@ if ($video_e == true)
     </div>
 </div>
 <?php
-require_once ("partials/footer.php");
-
+    if ($video_e == true) {
+        require_once("partials/footer.php");
+    } else {
+        return;
+    }
 ?>
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
