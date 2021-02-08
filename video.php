@@ -88,7 +88,7 @@ if ($av6 == 'x')
 }
 else
 {
-    $av7 = '/grafic/' . $publisher . 'a.' . $av6 . '';
+    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'';
 }
 
 if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']) , mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
