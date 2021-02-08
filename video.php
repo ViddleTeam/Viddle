@@ -57,6 +57,7 @@ if ($id == 0) {
         $dane = $result->fetch_assoc();
         $observators = $dane['observators'];
         $name = $dane['login'];
+        $uid = $dane['uid'];
         $av6 = $dane['avatarname'];
         $video_exists = true;
     } else {
@@ -67,7 +68,7 @@ if ($id == 0) {
 if ($av6 == 'x') {
     $av7 = 'anonim.png';
 } else {
-    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$id.'/'.$id.'.'.$dane['avatarname'].'';
+    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$uid.'/'.$uid.'.'.$dane['avatarname'].'';
 }
 
 if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']) , mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
