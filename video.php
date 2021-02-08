@@ -221,6 +221,25 @@ require_once ("partials/navbar.php");
 if ($video_e == true)
 {
     ?>
+<script type="javascript">
+$(document).ready(function() {
+    $('form').submit(function(event) {
+        var sendFollow = {
+            'followid' : $('input[name=followid]').val(),
+        };
+        $.ajax({
+            type : 'POST',
+            url : 'follow.php',
+            data : sendFollow,
+            dataType : 'json',
+            encode : true
+        })
+            //.done(function(data) {
+            //});
+        event.preventDefault();
+    });
+});
+</script>
     <div class="container" style="margin-top: 70px; justify-content: center;">
         <form>
             <div class="form-row">
@@ -238,7 +257,10 @@ if ($video_e == true)
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-                    <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+		    <form action="follow.php" method="POST">
+		    <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
+                    <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+		    </form>
                   </span>
                             </div>
                             <div class="border border white" style="opacity: 0.45;"></div>
