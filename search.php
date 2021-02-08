@@ -86,7 +86,19 @@
                     <span style="margin-left: auto; margin-right: -20px;">
                         <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
                     </span>
-                </div>
+                </div><br>
+                <div class="row">
+                    <span style="margin-left: 10px;">
+                      <a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="<?php echo $av7 ?>"></a>
+                    </span>
+                    <span style="margin-left: 10px; margin-right: auto;">
+                        <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901">SlaVistaPL</a></h5>
+                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
+                    </span>
+                    <span style="margin-left: auto; margin-right: -20px;">
+                        <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+                    </span>
+                </div><br>
             </div>
         </div>
 </div>
