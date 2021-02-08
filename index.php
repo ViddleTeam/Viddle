@@ -352,5 +352,4 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 <?php 
 require_once('partials/footer.php');
 ?>
-
 <div class="hiddendiv common"></div></body></html>
