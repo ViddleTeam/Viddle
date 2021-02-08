@@ -2,15 +2,10 @@
 $(document).ready(function() {
     $('form').submit(function(event) {
     	event.preventDefault();
-        var sendFollow = {
-            'followid' : $('input[name=followid]').val(),
-        };
         $.ajax({
-            type : 'POST',
-            url : 'follow.php',
-            data : sendFollow,
-            dataType : 'json',
-            encode : true
+            type: 'POST',
+            url: 'follow.php',
+            data: $('form').serialize()
         })
             //.done(function(data) {
             //});
