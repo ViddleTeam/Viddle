@@ -71,7 +71,7 @@ if(isset($_FILES['file_picker']))
 		}
 		 
 		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
-		ftp_put($ftp_conn, $_SESSION['uid'], $file_tmp, FTP_BINARY);
+		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
 		 
 		ftp_close($ftp_conn);
 		
@@ -79,7 +79,7 @@ if(isset($_FILES['file_picker']))
 		sprintf("UPDATE viddle_users SET avatarname='%s' WHERE uid='%s'",
 		mysqli_real_escape_string($connect,$t),
 		mysqli_real_escape_string($connect,$_SESSION['uid'])))) {
-			$w_error = 'dzialae';
+			
 		}
 		 
 		
