@@ -22,10 +22,10 @@
 </div>
 <div style="opacity: 1;" class="website">
     <?php
-    require_once ("partials/navbar.php");
-    require 'danesql.php';
-    $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-    $search_query = $db->real_escape_string(htmlentities($_GET['q']));
+        require_once ("partials/navbar.php");
+        require 'danesql.php';
+        $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+        $search_query = $db->real_escape_string(htmlentities($_GET['q']));
     ?>
     <div class="container" style="margin-top:30px;">
         <div class="row">
