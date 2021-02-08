@@ -1,14 +1,19 @@
 <script type="javascript">
 $(document).ready(function() {
-    $('#followuser').submit(function(event) {
+    $('form').submit(function(event) {
+    	var FollowID = { //Fetch form data
+            'name': $('input[followid=followid]').val()
+        };
     	event.preventDefault();
         $.ajax({
             type: 'POST',
             url: 'follow.php',
-            data: $('#followuser').serialize()
+            data: FollowID,
+	    dataType  : 'json'
         })
-            //.done(function(data) {
-            //});
+        //.done(function(data) {
+        //});
+	event.preventDefault();
     });
 });
 </script>
