@@ -25,9 +25,29 @@ if(isset($_FILES['file_picker']))
       	$file_type=$_FILES['file_picker']['type'];
 	$file_ext=strtolower(end(explode('.',$_FILES['file_picker']['name'])));
 	
-	$extensions= array('png','jpg','jpeg','bmp');
+	$f = '0';
 	
-	 if(in_array($file_ext,$formaty)=== false) {
+	if($file_type == 'image/png') {
+		$f = '1';
+		$t = 'png';	
+	}
+	
+	if($file_type == 'image/jpg') {
+		$f = '1';
+		$t = 'jpg';	
+	}
+	
+	if($file_type == 'image/jpeg') {
+		$f = '1';
+		$t = 'jpeg';	
+	}
+	
+	if($file_type == 'image/bmp') {
+		$f = '1';
+		$t = 'bmp';	
+	}
+	
+	 if($f == '0') {
          	$f_error = 'niedozwolony format';
 		$ok = false;
          }
@@ -46,12 +66,23 @@ if(isset($_FILES['file_picker']))
 		 
 		ftp_chdir($ftp_conn, '/avatars/');
 		
-		if (ftp_nlist($ftp_stream, $_SESSION['uid']) == false) {
-    			$f_error = 'poszlo';
+		if (ftp_nlist($ftp_conn, $_SESSION['uid']) == false) {
+    			ftp_mkdir($ftp_conn, $_SESSION['uid']);
 		}
-		
 		 
-		$w_error = 'dziala';
+		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
+		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
+		 
+		ftp_close($ftp_conn);
+		
+		if ($result = @$connect->query(
+		sprintf("UPDATE viddle_users SET avatarname='%s' WHERE uid='%s'",
+		mysqli_real_escape_string($connect,$t),
+		mysqli_real_escape_string($connect,$_SESSION['uid'])))) {
+			
+		}
+		 
+		
 		 
 	 }
 	
