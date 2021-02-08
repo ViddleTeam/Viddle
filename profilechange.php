@@ -17,69 +17,11 @@ $d2 = $result->num_rows;
 
 if(isset($_FILES['file_picker']))
 {
-	$ok = true;
-	$s = true;
+	require 'daneftp.php';
 	
-	
-	$file_s = $_FILES['file_picker']['size'];
-	$katalog = "grafic/";
-	$plik = $target_dir . basename($_FILES["file_picker"]["name"]);
-
-	$kon = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-	
-	if($file_s>3000000)
-	{
-		$ok = false;
-		
-		//plik jest większy niż 3 mb
-		
-		$w_error = '<div class="alert alert-danger" role="alert">
-				Wybrany przez ciebie plik jest za duży. Maksymalny rozmiar pliku wynosi 3 MB.
-		  	</div>';
-	}
-	
-	
-	
-	if ($_FILES['file_picker']['type']="image/jpeg" || $_FILES['file_picker']['type']="image/png" || $_FILES['file_picker']['type']="image/bmp")
-	{
-		
-	}
-	else
-	{
-		
-		$ok = false;
-		
-		//nieobsługiwany format
-		
-		$f_error = '<div class="alert alert-danger" role="alert">
-				Format wybranego przez ciebie pliku jest nieobsługiwany. Obsługujemy formaty .png, .jpg, .jpeg i .bmp
-		  	</div>';
-	}
-	
-	if($ok == true)
-	{
-		if (move_uploaded_file($_FILES["file_picker"]["tmp_name"], 'grafic/'.$dane['uid'].'m.'.$kon.''))
-		{
-                
-		
-		
-		
-			if ($result = @$connect->query(
-		    sprintf("UPDATE `viddle_users` SET avatarname='%s' WHERE uid='%s'",
-		    mysqli_real_escape_string($connect,$kon),
-		    mysqli_real_escape_string($connect,$dane['uid']))))
-			{
-				
-
-			}
-		}
-		else
-		{
-			echo $_FILES['file_picker']['error'];
-		}
-	}
-			
-		
+	$ftp_server = FTPSERWER;
+	$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+	$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);		
 }
 	if (isset($d2) && $d2 == '1')
 	{
@@ -171,7 +113,7 @@ require_once('partials/footer.php');
 	    echo $w_error;
 	    echo $_FILES['file_picker']['type'];
 	    ?>
-	<form method="POST" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data">
       <div class="modal-body">
 	      <p>Wybierz plik obrazu, który posłuży jako zdjęcie profilowe na Viddle.</p><br>
 	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
