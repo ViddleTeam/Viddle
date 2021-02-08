@@ -7,25 +7,18 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
-if ($c = $connect->query($polecenie))
-{
+if ($c = $connect->query($polecenie)) {
     $cheack2 = $c->num_rows;
-    if ($cheack2 == '1')
-    {
+    if ($cheack2 == '1') {
         $video_e = true;
-    }
-    else
-    {
+    } else {
         $video_e = false;
     }
 }
 
-if ($i = '1')
-{
+if ($i = '1') {
     $form = '1';
-}
-else
-{
+} else {
     $form = '0';
 }
 
@@ -33,16 +26,12 @@ if (isset($_POST['ob'])) $id = $_GET['id'];
 $video_exists = true;
 $_SESSION['id'] = $_GET['id'];
 
-if ($id == 0)
-{
+if ($id == 0) {
     $video_exists = false;
-}
-else
-{
+} else {
     $video_exists = true;
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
-    if (isset($d2) && $d2 == '1')
-    {
+    if (isset($d2) && $d2 == '1') {
         $dane = $result->fetch_assoc();
         $publisher = $dane['publisher'];
         $file = $dane['fname'];
@@ -57,66 +46,47 @@ else
 
             $d2 = $result->num_rows;
 
-        if ($d2 == '1')
-        {
+        if ($d2 == '1') {
         }
-    }
-    else
-    {
+    } else {
         $video_exists = false;
     }
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id))))
-
         $d2 = $result->num_rows;
-    if ($d2 == '1')
-    {
+    if ($d2 == '1') {
         $dane = $result->fetch_assoc();
         $observators = $dane['observators'];
         $name = $dane['login'];
         $av6 = $dane['avatarname'];
         $video_exists = true;
-    }
-    else
-    {
+    } else {
         $video_exists = false;
     }
 }
 
-if ($av6 == 'x')
-{
+if ($av6 == 'x') {
     $av7 = 'anonim.png';
-}
-else
-{
-    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'';
+} else {
+    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.jpeg';
 }
 
 if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']) , mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
 
-if ($ilosc == '1')
-{
+if ($ilosc == '1') {
     $obm = '0';
-}
-else
-{
+} else {
     $obm = '1';
 }
 
-if (!isset($_SESSION['uid']))
-{
+if (!isset($_SESSION['uid'])) {
     $obm = '0';
     $logged = '0';
-}
-else
-{
+} else {
     $logged = '1';
 }
-if ($logged == '0')
-{
+if ($logged == '0') {
     $obd = 'disabled="disabled"';
-}
-else
-{
+} else {
     $obd = '';
 }
 $_SESSION['id'] = $id;
