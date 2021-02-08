@@ -1,7 +1,7 @@
 <!-- <link rel="stylesheet" href="../assets/master.css" /> -->
-<footer class="page-footer font-small blue">
+<footer class="page-footer font-small" style="background-color: #212121;">
   <div class="footer-copyright text-center text-white py-3">
-      &copy; 2020-2021 Viddle Developers
+      &copy; 2020-2021 Viddle Developers<br>
       <a href="/attachments/privacypolicy.pdf">Polityka prywatności</a> • <a href="/attachments/termsofservice.pdf">Regulamin</a>
   </div>
 </footer>
