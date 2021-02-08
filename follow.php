@@ -23,7 +23,7 @@ if ($_SESSION['z1'] == true) {
     echo('Wystąpił błąd - nieprawidłowe ID użytkownika.');
     break 1;
   }
-  if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid';")) {
+  if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'");) {
     $d2 = $isfollowing->num_rows;
     if (isset($d2) && $d2 == '0') {
       $success = $connect->query("DELETE FROM viddle_followers WHERE followed='$followid' AND follower='$userid';");
