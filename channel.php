@@ -63,7 +63,7 @@ if ($result = @$connect->query(
 							echo '<a href="profilechange.php"><button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button></a>';
 						} else {
 							if ($_SESSION['z1'] == true) {
-								echo '<button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+								echo '<form action="/follow.php" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="button" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
 							}
