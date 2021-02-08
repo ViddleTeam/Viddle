@@ -1,19 +1,23 @@
 <script type="javascript">
-$(document).ready(function() {
-    $('form').submit(function(event) {
-    	var FollowID = { //Fetch form data
-            'name': $('input[followid=followid]').val()
-        };
-    	event.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'follow.php',
-            data: FollowID,
-	    dataType  : 'json'
-        })
-        //.done(function(data) {
-        //});
-	event.preventDefault();
+$(document).on("submit", "form", function(event)
+{
+    event.preventDefault();
+    var url  = $(this).attr("action");
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: "JSON",
+        data: new FormData(this),
+        processData: false,
+        contentType: false,
+        success: function (data, status)
+        {
+
+        },
+        error: function (xhr, desc, err)
+        {
+            console.log("error");
+        }
     });
 });
 </script>
@@ -83,7 +87,7 @@ if ($result = @$connect->query(
 							echo '<a href="profilechange.php"><button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button></a>';
 						} else {
 							if ($_SESSION['z1'] == true) {
-								echo '<form id="followuser" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+								echo '<form id="followuser" action="/follow.php" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
 							}
