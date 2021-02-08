@@ -26,10 +26,10 @@ if ($_SESSION['z1'] == true) {
     $d2 = $isfollowing->num_rows;
     if (isset($d2) && $d2 == '0') {
       $success = $connect->query("DELETE FROM viddle_followers WHERE followed='$followid' AND follower='$userid';");
-      echo('Użytkownik odobserwowany pomyślnie.');
+      header("Location: channel.php?id=".$followid);
     } else {
       $success = $connect->query("INSERT INTO viddle_followers VALUES (0, followed='$followid' AND follower='$userid');");
-      echo('Użytkownik zaobserwowany pomyślnie.');
+      header("Location: channel.php?id=".$followid);
     }
   }
 } else {
