@@ -238,7 +238,7 @@ if ($video_e == true)
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $observators ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-		    <form action="follow.php" method="POST">
+		    <form action="/follow.php" method="POST">
 		    <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
                     <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 		    </form>
