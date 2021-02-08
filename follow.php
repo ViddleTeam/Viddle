@@ -10,7 +10,7 @@ if ($_SESSION['z1'] == true) {
   require "danesql.php";
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   $login = $_SESSION['user'];
-  $result = $connect -> query("SELECT * FROM `viddle_users` WHERE login='$login';");
+  $result = $connect -> query("SELECT * FROM viddle_users WHERE login='$login';");
   $dane = $result -> fetch_assoc();
   $userid = $dane['uid'];
   $login = $_SESSION['user'];
