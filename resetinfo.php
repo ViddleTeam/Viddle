@@ -1,5 +1,4 @@
 <?php
-
 $id = $_GET['id'];
 
 require "danesql.php";
@@ -8,7 +7,6 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if ($result = @$connect->query(
 		    sprintf("SELECT * FROM viddle_passreset WHERE rid2='%s'",
 		    mysqli_real_escape_string($connect,$id))))
-  
 $d2 = $result->num_rows;
 			if($d2 == '0')
       {
@@ -17,25 +15,19 @@ $d2 = $result->num_rows;
       else
       {
            $dane = $result->fetch_assoc();
-        
             $email = $dane['email'];
       }
-  
-
 ?>
-
 <!DOCTYPE HTML>
-
 <html>
 	<head>
 	<style>
-	
 	</style>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Konto zostało założone.</title>
+		<title>Resetowanie hasła</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -50,13 +42,11 @@ $d2 = $result->num_rows;
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
-                                <div id="main">
-				<h3 style="font-weight: bold;">Resetowanie hasła</h3>
-				<p>Na adres e-mail <?php echo $email ?> wysłaliśmy link do zresetowania hasła. Sprawdź swoją skrzynke e-mail i kliknij w link wysłany przez nas.</p><br>
-				
-                
-					<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Strona główna</p></button></a>
-				</div>
+					<div id="main">
+						<h3 style="font-weight: bold;">Resetowanie hasła</h3>
+						<p>Na adres e-mail <?php echo $email ?> wysłaliśmy link do zresetowania hasła. Sprawdź swoją skrzynkę e-mail i kliknij w link, który otrzymałeś/aś.</p><br>
+						<a href="index.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Strona główna</p></button></a>
+					</div>
 				</div>
 				</center>
 			</div>
