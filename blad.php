@@ -25,7 +25,7 @@ if($id=="1") {
 } elseif($id=="4") {
   $test = "Hola, hola, za szybko wrzucasz filmy!<br />Poczekaj aż ktoś inny wrzuci film, żeby wrzucić kolejny.<br /><h3>Kod błędu: 0x00004c</h3>";
 } elseif($id=="5") {
-  $test = "Twój plik zdaje się być nam nieznany, lub nawet go nie ma.<br />Błąd z którym masz doczynienia nie występuje od <br />tak o, więc lepiej zgłoś to naszej drużynie!<br /><h2>Kod błędu: 0x00005c</h2>";
+  $test = "Twój plik zdaje się być nam nieznany, lub nawet go nie ma.<br />Błąd z którym masz do czynienia nie występuje bez<br />przyczyny, więc lepiej zgłoś to naszej drużynie!<br /><h2>Kod błędu: 0x00005c</h2>";
 } elseif($id=="404") {
   $test = "Awaria systemu FTP.<br />Usilnie próbujemy rozwiązać problem,<br />prosimy o cierpliwość.<br /><h2>Kod błędu: 0x00404c</h2>";
 } else {
