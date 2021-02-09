@@ -143,8 +143,9 @@ if($block == '1')
                         </div>
                     </li>
                 </ul>
-                <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>
             </div>
+            <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>
+            
         </nav>
     </header>
     <div class=""></div>
