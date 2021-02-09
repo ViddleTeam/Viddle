@@ -17,6 +17,7 @@ if ($_SESSION['z1'] == true) {
         $uid = $dane['uid'];
         $_SESSION['uid'] = $dane['uid'];
         $_SESSION['email'] = $dane['email']; 
+        $_SESSION['emailver'] = $dane['emailver']
         $block = $dane['block'];
         if ($avatar == 'x') {
             $av2 = '0';
