@@ -144,10 +144,12 @@ if($block == '1')
                     </li>
                 </ul>
             </div>
-            <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>
+           
             
         </nav>
+         <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>
     </header>
+    
     <div class=""></div>
     <!--    <header>
             <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
