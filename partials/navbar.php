@@ -143,12 +143,8 @@ if($block == '1')
                         </div>
                     </li>
                 </ul>
-            </div><br></br><br></br><span class="alert alert-warning" style='position: -webkit-sticky; position: sticky;'><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>  
-           
-         
+            </div>
         </nav>
-         
-         
     </header>
 
     <div class=""></div>
