@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-// Load Composer's autoloader
-include 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 require 'danesql.php';
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
