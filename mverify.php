@@ -94,7 +94,7 @@ $mail = new PHPMailer(true);
                     Witaj, <b>'.$dane['login'].'!</b><br><br>
                     Dziękujemy za rejestrację konta w serwisie Viddle!<br>
                     Chcemy sprawdzić, czy to ty rzeczywiście się rejestrujesz, a nie ktoś niepowołany czy bot.<br><br>
-                    Kliknij w <a href="verify.php?id='.$los.'"><b>ten link</b></a>, żeby potwierdzić twoją rejestrację. Jeżeli to nie ty - zignoruj tą wiadomość i dla bezpieczeństwa ustaw silniejsze hasło do skrzynki mailowej.<br><br>
+                    Kliknij w <a href="https://beta.viddle.xyz/verify.php?id='.$los.'"><b>ten link</b></a>, żeby potwierdzić twoją rejestrację. Jeżeli to nie ty - zignoruj tą wiadomość i dla bezpieczeństwa ustaw silniejsze hasło do skrzynki mailowej.<br><br>
                     Pozdrawiamy,<br>
                     Viddle Developers
                 </p>
