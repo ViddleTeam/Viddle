@@ -279,7 +279,7 @@ if ($video_e == true)
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
 
-                      <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" style="<?php echo $disable ?> margin-right: 5px; <?php echo $like ?>"></i> <?php echo $likes ?></a> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                      <a href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" style="<?php echo $disable ?> margin-right: 5px;" <?php echo $like ?>"></i> <?php echo $likes ?></a> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
 				    <?php echo $powod ?>
                             </div><br>
