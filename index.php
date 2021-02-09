@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Strona główna";
 require_once('partials/navbar.php');
 require "danesql.php";
@@ -338,10 +339,10 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Wykryto adblocka!</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Weryfikacja adresu e-mail</h5>
       </div>
       <div class="modal-body">
-        Rozumiemy to, że nie lubisz reklam. W końcu, to Twoja przeglądarka. Obecnie jest to nasze jedyne źródło zarobku (wyłączając dobrowolne datki), który przeznaczamy na opłacenie serwerów. Jeżeli nie chcesz wyłączać adblocka, przemyśl dodanie na listę wyjątków tej strony.
+        Na adres e-mail wysłaliśmy link do weryfikacji adresu e-mail. W celu zweryfikowania adresu e-mail wejdź na swojego e-maila i kliknij w nadesłany przez nas link
       </div>
       <div class="modal-footer">
 	<button type="button" class="btn btn-blue-grey" style="padding: 10px;" data-dismiss="modal">Przejdź do Viddle</button>
@@ -350,23 +351,10 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
   </div>
 </div>
 
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content bg-dark">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Weryfikacja Adresu e-mail</h5>
-            </div>
-            <div class="modal-body">
-                Na twój adres e-mail wysłaliśmy link do weryfikacji adresu e-mail. Sprawdź swoją skrzynke mailową i kliknij w link wysłany przez nas
-            </div>
-            <div class="modal-footer">
-                <a href="/"><button type="button" class="btn btn-blue-grey waves-effect waves-light"><p style="margin: 10px;">Zamknij okno</p></button></a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <?php if (isset($_SESSION['ver']))
 {
+	unset($_SESSION['ver']);
     echo "<script>
 		$('#staticBackdrop').modal('show');
 	  </script>";
