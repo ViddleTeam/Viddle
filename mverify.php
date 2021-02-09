@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require 'vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -27,7 +28,7 @@ if(!isset($_SESSION['uid'])) {
 		 $dane = $result->fetch_assoc();
 		  
 		 require("danemail.php");
-		 require 'vendor/autoload.php';
+		 
 		  
 		 $beka = $connect->query("INSERN INTO viddle_ver VALUES (NULL, '$los', '$losII', '$uid'");
 
