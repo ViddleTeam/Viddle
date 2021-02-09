@@ -123,7 +123,7 @@ $mail = new PHPMailer(true);
 		  
 		  
 	  } else {
-		  header('location: index.php');
+		  header('location: inex.php');
 	  }
   	}
   
