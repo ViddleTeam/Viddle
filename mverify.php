@@ -29,7 +29,7 @@ require 'danesql.php';
 		 require("danemail.php");
 		 
 		  
-		 $beka = $connect->query("INSERN INTO viddle_ver VALUES (NULL, '$los', '$losII', '$uid'");
+		 $beka = $connect->query("INSERT INTO `viddle_ver`(`id`, `vid`, `vid2`, `uid`) VALUES (NULL,'$los','$los2','$uid')");
 
 
 // Instantiation and passing `true` enables exceptions
