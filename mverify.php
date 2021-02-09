@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if(isset($_SESSION['z'])) {
+
 require 'danesql.php';
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   
@@ -125,9 +125,7 @@ $mail = new PHPMailer(true);
 	  }
   	}
   
-} else {
-  header('location: ind3ex.php');
-}
+
 
 
 ?>
