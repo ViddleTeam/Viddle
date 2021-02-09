@@ -23,13 +23,15 @@ if ($result = @$connect->query(
       $dane = $result->fetch_assoc();
       $exist = '1';
       
-      $pytanie = "UPDATE viddle_users SET emailver='1' WHERE uid='$dane['uid']";
+      $pytanie = "UPDATE viddle_users SET emailver='1' WHERE uid='$uid'";
       
       if($connect->query($pytanie))
       {
         $p = "DELETE FROM viddle_ver WHERE ver='$id'";
         
-        if($connect->query($p))
+        if($connect->query($p)) {
+			
+		}
         
       }
     }
