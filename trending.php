@@ -104,6 +104,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
                     </a>
                 </div>
             </div>
+            </div>
 <?php
 require_once('partials/footer.php');
 ?>
