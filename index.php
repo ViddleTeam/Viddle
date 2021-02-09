@@ -355,9 +355,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 <?php if (isset($_SESSION['ver']))
 {
 	unset($_SESSION['ver']);
-    echo "<script>
-		$('#staticBackdrop').modal('show');
-	  </script>";
+
 }
 ?>
 <div class="hiddendiv common"></div>
