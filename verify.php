@@ -22,6 +22,7 @@ if ($result = @$connect->query(
     {
       $dane = $result->fetch_assoc();
       $exist = '1';
+	$uid = $dane['uid'];
       
       $pytanie = "UPDATE viddle_users SET emailver='1' WHERE uid='$uid'";
       
