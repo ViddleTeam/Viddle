@@ -1,13 +1,7 @@
 <?php
 session_start();
 
-if($_SESSION['emailver'] == '0') {
-	$disable = 'pointer-events: none; cursor: default;';
-	$powod = '(nie można dodawać ocen ponieważ niezweryfikowałeś adresu e-mail)';
-} else {
-	$disable = '';
-	$powod = '';
-}
+
 
 $test = $_GET['button'];
 
@@ -224,6 +218,25 @@ if ($c2 = $connect->query($polecenie)) {
 			$dislike = 'color: #00c3ff;';
 		}
 	}
+}
+
+if(isset($_SESSION['uid'])) {
+	$uidm = $_SESSION['uid'];
+	$polecenie = "SELECT * FROM viddle_users WHERE uid='$uidm'";
+	if ($c2 = $connect->query($polecenie)) {
+		$d = $c2->fetch_assoc;
+		
+		if($d['emailver'] == '0') {
+			$disable = 'pointer-events: none; cursor: default;';
+			$powod = '(Musisz zweryfikować adres e-mail by móc dodać ocene)';
+		} else {
+			$disable = '';
+			$powod = '';
+		}
+	}
+} else {
+	$disable = 'pointer-events: none; cursor: default;';
+	$powod = '';
 }
 ?>
 <?php
