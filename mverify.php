@@ -121,12 +121,12 @@ $mail = new PHPMailer(true);
 		  
 		  
 	  } else {
-		  header('location: index.php');
+		  header('location: in1dex.php');
 	  }
   	}
   
 } else {
-  header('location: index.php');
+  header('location: ind3ex.php');
 }
 
 
