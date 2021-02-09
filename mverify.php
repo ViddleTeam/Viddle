@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if(!isset($_SESSION['uid'])) {
-header('location: indexq.php');
+//header('location: indeq.php');
 } else {
   require 'danesql.php';
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
@@ -123,7 +123,7 @@ $mail = new PHPMailer(true);
 		  
 		  
 	  } else {
-		  header('location: inex.php');
+		  //header('location: inex.php');
 	  }
   	}
   
