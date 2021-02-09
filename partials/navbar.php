@@ -145,8 +145,9 @@ if($block == '1')
                 </ul>
             </div><br>
            
-          <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>  
+         
         </nav>
+         <span class="alert alert-warning" style='position: -webkit-sticky; position: sticky;'><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail <a href='mverify.php'>Zweryfikuj teraz</a></span>  
          
     </header>
     </br>
