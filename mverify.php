@@ -121,7 +121,7 @@ $mail = new PHPMailer(true);
 		  
 		  
 	  } else {
-		  header('location: inoooodex.php');
+		  
 	  }
   	}
   
