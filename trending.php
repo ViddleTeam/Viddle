@@ -67,7 +67,6 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Najpopularniejsze filmy na Viddle</h4>
               </div>
-            </div>
                 <div class="card">
                     <?php echo "<a href='video.php?id=".$onevideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
@@ -104,8 +103,8 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
                     </div>
                     </a>
                 </div>
-               
-		<?php 
+            </div>
+<?php
 require_once('partials/footer.php');
 ?>
 
