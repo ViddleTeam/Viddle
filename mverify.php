@@ -5,6 +5,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+// Load Composer's autoloader
+include 'vendor/autoload.php';
+
 require 'danesql.php';
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   
@@ -112,6 +115,8 @@ $mail = new PHPMailer(true);
    
 
     $mail->send();
+    $_SESSION['ver'] = true;
+    $_SESSION['pidv'] = $los2;
     header('Location: vinfo.php?id='.$los2.'');
 
 
