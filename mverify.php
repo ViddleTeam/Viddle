@@ -20,7 +20,7 @@ header('location: index.php');
 	 $result = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid' AND emailver='0'");
 	  
 	  $d2 = $result->num_rows;
-	  
+	  echo '1';
 	  if($d2 == '1') {
 		  $los = rand(100000,999999);
 		  $los2 = rand(100000,999999);
