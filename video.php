@@ -242,6 +242,9 @@ if(isset($_SESSION['uid'])) {
 <?php
 require_once ("partials/navbar.php");
 ?>
+<meta property="og:title" content="<?php echo $title; ?> na Viddle">
+<meta property="og:description" content="<?php echo $opis; ?>">
+<meta property="theme-color" content="#e7698b">
 <?php
 if ($video_e == true)
 {
