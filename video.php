@@ -71,6 +71,20 @@ if ($id == 0) {
     } else {
         $video_exists = false;
     }
+    //Sprawdzenie awataru samego użytownika
+    if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$id'", mysqli_real_escape_string($connect, $id))))
+        $d2 = $result->num_rows;
+    if ($d2 == '1') {
+        $dane = $result->fetch_assoc();
+        $av8 = $dane['avatarname'];
+	if ($av8 == 'x') {
+    		$av9 = 'anonim.png';
+	} else {
+    		$av9 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$uid.'/'.$uid.'.'.$av6.'';
+	}
+    } else {
+        $video_exists = false;
+    }
     //Liczba obserwacji
     $resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$uid'");
     $followcount = $resulttwo->num_rows;
@@ -291,7 +305,7 @@ if ($video_e == true)
                             <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                             <div class="container row">
                       <span>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $av7; ?>">
+                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo '' ?>">
                       </span>
                                 <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
