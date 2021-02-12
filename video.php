@@ -66,7 +66,7 @@ if ($id == 0) {
 	if ($av6 == 'x') {
     		$av7 = 'anonim.png';
 	} else {
-    		$av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$uid.'/'.$uid.'.'.$av6.'';
+    		$av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$publisher.'/'.$publisher.'.'.$av6.'';
 	}
     } else {
         $video_exists = false;
@@ -241,7 +241,7 @@ if(isset($_SESSION['uid'])) {
 		
 		if($d['emailver'] == '0') {
 			$disable = 'pointer-events: none; cursor: default;';
-			$powod = '(Musisz zweryfikować adres e-mail by móc dodać ocene)';
+			$powod = '(Musisz zweryfikować adres e-mail w celu zagłosowania na film.)';
 		} else {
 			$disable = '';
 			$powod = '';
