@@ -219,6 +219,14 @@ if ($c2 = $connect->query($polecenie)) {
 	}
 }
 
+if(!isset($avatar)) {
+	$av9 = 'anonim.png';
+} elseif($avatar=='x') {
+	$av9 = 'anonim.png';
+} else {
+	$av9 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'';
+}
+
 if(isset($_SESSION['uid'])) {
 	$uidm = $_SESSION['uid'];
 	$polecenie = "SELECT * FROM viddle_users WHERE uid='$uidm'";
@@ -291,7 +299,7 @@ if ($video_e == true)
                             <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                             <div class="container row">
                       <span>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.''; ?>">
+                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo $av9; ?>">
                       </span>
                                 <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
