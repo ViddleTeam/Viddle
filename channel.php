@@ -61,7 +61,7 @@ $(document).ready(function(e) {
 	    error:function(data){
 	    	console.log("Wystąpił błąd");
 	    }
-        })
+        });
         return false;
     });
 });
