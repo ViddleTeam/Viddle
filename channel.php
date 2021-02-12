@@ -63,6 +63,7 @@ $(document).ready(function(e) {
 	    }
         });
         return false;
+	e.preventDefault();
     }));
 });
 </script>
