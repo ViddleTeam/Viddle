@@ -271,16 +271,16 @@ if ($video_e == true)
                     <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 		    </form>
 		    <?php } else { ?>
-                                        <button
-                                                type="button"
-                                                class="btn btn-primary"
-                                                disabled
+                                        <span
+                                                class="d-inline-block"
+                                                tabindex="0"
                                                 data-mdb-toggle="tooltip"
-                                                data-mdb-placement="top"
                                                 title="Nie trzeba obserwować własnego kanału."
                                         >
-  <p style="margin: 10px;">Obserwuj</p>
-</button>
+                                            <button class="btn btn-success" style="pointer-events: none" type="button" disabled>
+                                                <p style="margin: 10px;">Obserwuj</p>
+                                            </button>
+                                        </span>
 		    <?php } ?>
                   </span>
                             </div>
