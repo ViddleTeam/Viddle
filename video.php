@@ -244,6 +244,11 @@ require_once ("partials/navbar.php");
 <meta property="og:title" content="<?php echo $title; ?> na Viddle">
 <meta property="og:description" content="<?php echo $opis; ?>">
 <meta property="theme-color" content="#e7698b">
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
 <?php
 if ($video_e == true)
 {
@@ -267,20 +272,15 @@ if ($video_e == true)
                                 <span style="margin-left: auto; margin-right: -20px;">
                                     <?php if ($uid != $publisher) { ?>
 		    <form action="/follow.php" method="POST">
-		    <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
-                    <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+                <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
+                <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 		    </form>
 		    <?php } else { ?>
-                                        <span
-                                                class="d-inline-block material-tooltip-main"
-                                                tabindex="0"
-                                                data-toggle="tooltip"
-                                                title="Nie trzeba obserwować własnego kanału."
-                                        >
-                                            <button class="btn btn-success" style="pointer-events: none" type="button" disabled>
-                                                <p style="margin: 10px;">Obserwuj</p>
-                                            </button>
-                                        </span>
+                <span class="d-inline-block material-tooltip-main" tabindex="0" data-toggle="tooltip" title="Nie trzeba obserwować swojego kanału.">
+                    <button class="btn btn-success" style="pointer-events: none" type="button" disabled>
+                        <p style="margin: 10px;">Obserwuj</p>
+                    </button>
+                </span>
 		    <?php } ?>
                   </span>
                             </div>
