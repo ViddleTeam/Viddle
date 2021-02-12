@@ -44,7 +44,7 @@ if ($result = @$connect->query(
     $title = "Konto ".$nazwa."";
     require_once('partials/navbar.php');
 ?>
-<script type="text/javascript">
+<script>
 $(document).ready(function(e) {
     $('#follow').on('submit',(function(e) {
 	var form = $('form')[0];
