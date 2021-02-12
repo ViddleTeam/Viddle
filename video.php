@@ -63,18 +63,17 @@ if ($id == 0) {
         $uid = $dane['uid'];
         $av6 = $dane['avatarname'];
         $video_exists = true;
+	if ($av6 == 'x') {
+    		$av7 = 'anonim.png';
+	} else {
+    		$av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$uid.'/'.$uid.'.'.$av6.'';
+	}
     } else {
         $video_exists = false;
     }
     //Liczba obserwacji
     $resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$uid'");
     $followcount = $resulttwo->num_rows;
-}
-
-if ($av6 == 'x') {
-    $av7 = 'anonim.png';
-} else {
-    $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$uid.'/'.$uid.'.'.$av6.'';
 }
 
 if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']) , mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
