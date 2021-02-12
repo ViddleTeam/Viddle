@@ -15,9 +15,9 @@ if ($_SESSION['z1'] == true) {
   $userid = $dane['uid'];
   $login = $_SESSION['user'];
   if ($userid == $followid) {
-    echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.');
-    echo($userid);
-    echo($followid);
+    echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.<br>');
+    echo($userid . '<br>');
+    echo($followid . '<br>');
     $error = 1;
   }
   $result = $connect->query("SELECT * FROM viddle_users WHERE uid='$followid'");
