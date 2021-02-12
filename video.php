@@ -73,8 +73,8 @@ if ($id == 0) {
     }
     //Sprawdzenie awataru samego użytownika
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$id'", mysqli_real_escape_string($connect, $id))))
-        $d2 = $result->num_rows;
-    if ($d2 == '1') {
+        $d3 = $result->num_rows;
+    if ($d3 == '1') {
         $dane = $result->fetch_assoc();
         $av8 = $dane['avatarname'];
 	if ($av8 == 'x') {
