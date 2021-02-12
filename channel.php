@@ -63,8 +63,7 @@ $(document).ready(function(e) {
 	    }
         });
         return false;
-    });
-});
+    }));
 </script>
 	  <center>
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
