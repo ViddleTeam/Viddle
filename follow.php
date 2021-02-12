@@ -15,9 +15,7 @@ if ($_SESSION['z1'] == true) {
   $userid = $dane['uid'];
   $login = $_SESSION['user'];
   if ($userid == $followid) {
-    echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.<br>');
-    echo($userid . '<br>');
-    echo($followid . '<br>');
+    echo('Wystąpił błąd - nastąpiła próba zaobserwowania samego siebie.');
     $error = 1;
   }
   $result = $connect->query("SELECT * FROM viddle_users WHERE uid='$followid'");
@@ -28,12 +26,16 @@ if ($_SESSION['z1'] == true) {
   }
   if ($isfollowing = @$connect->query(sprintf("SELECT * FROM viddle_followers WHERE followed='$followid' AND follower='$userid'"))) {
     $d2 = $isfollowing->num_rows;
-    if (isset($d2) && $d2 == '0' && error == 0) {
+    if (isset($d2) && $d2 == '0') {
+      if ($error==0) {
       $success = $connect->query("INSERT INTO viddle_followers VALUES (0, '$followid', '$userid');");
       echo('Użytkownik zaobserwowany pomyślnie.');
-    } elseif (error == 0) {
+      }
+    } elseif ($error == 0) {
+      if ($error==0) {
       $success = $connect->query("DELETE FROM viddle_followers WHERE followed='$followid' AND follower='$userid';");
       echo('Użytkownik odobserwowany pomyślnie.');
+      }
     }
   }
 } else {
