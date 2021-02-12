@@ -265,10 +265,23 @@ if ($video_e == true)
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $followcount ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
+                                    <?php if ($uid != $publisher) { ?>
 		    <form action="/follow.php" method="POST">
 		    <input id="followid" name="followid" type="hidden" value="<?= $publisher ?>">
                     <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
 		    </form>
+		    <?php } else { ?>
+                                        <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                disabled
+                                                data-mdb-toggle="tooltip"
+                                                data-mdb-placement="top"
+                                                title="Nie trzeba obserwować własnego kanału."
+                                        >
+  <p style="margin: 10px;">Obserwuj</p>
+</button>
+		    <?php } ?>
                   </span>
                             </div>
                             <div class="border border white" style="opacity: 0.45;"></div>
