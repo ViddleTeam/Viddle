@@ -47,6 +47,8 @@ if ($result = @$connect->query(
 <script type="text/javascript">
 $(document).ready(function(e) {
     $('form').on('submit',(function(e) {
+	var form = $('form')[0];
+	var formFata = new FormData(form);
         $.ajax({
             type: 'POST', 
             url: 'follow.php',
