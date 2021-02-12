@@ -274,7 +274,7 @@ if ($video_e == true)
                                         <span
                                                 class="d-inline-block"
                                                 tabindex="0"
-                                                data-mdb-toggle="tooltip"
+                                                data-toggle="tooltip"
                                                 title="Nie trzeba obserwować własnego kanału."
                                         >
                                             <button class="btn btn-success" style="pointer-events: none" type="button" disabled>
