@@ -272,7 +272,7 @@ if ($video_e == true)
 		    </form>
 		    <?php } else { ?>
                                         <span
-                                                class="d-inline-block"
+                                                class="d-inline-block material-tooltip-main"
                                                 tabindex="0"
                                                 data-toggle="tooltip"
                                                 title="Nie trzeba obserwować własnego kanału."
