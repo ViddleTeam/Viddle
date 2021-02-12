@@ -1,3 +1,24 @@
+<script type="javascript">
+$(document).ready(function(e) {
+    $('form').on('submit',(function(e) {
+        
+        $.ajax({
+            type: 'POST', 
+            url: 'follow.php',
+            data: formData,
+            contentType: 'false',
+            processData: 'false',
+	    success:function(data){
+	    	console.log("Zaobserwowano użytkownika!");
+	    },
+	    error:function(data){
+	    	console.log("Wystąpił błąd");
+	    }
+        })
+        return false;
+    });
+});
+</script>
 <?php
 session_start();
 $id = $_GET['id'];
