@@ -259,7 +259,7 @@ if ($video_e == true)
                             <h4><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
-                      <a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$uid.'/'.$uid.'.'.$dane['avatarname'].''; ?>"></a>
+                      <a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$publisher.'/'.$publisher.'.'.$dane['avatarname'].''; ?>"></a>
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
                                     <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><?php echo $name ?></a></h5>
