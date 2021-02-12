@@ -1,7 +1,6 @@
 <script type="javascript">
 $(document).ready(function(e) {
     $('form').on('submit',(function(e) {
-        
         $.ajax({
             type: 'POST', 
             url: 'follow.php',
