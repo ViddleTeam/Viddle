@@ -1,23 +1,3 @@
-<script type="javascript">
-$(document).ready(function(e) {
-    $('form').on('submit',(function(e) {
-        $.ajax({
-            type: 'POST', 
-            url: 'follow.php',
-            data: formData,
-            contentType: 'false',
-            processData: 'false',
-	    success:function(data){
-	    	console.log("Zaobserwowano użytkownika!");
-	    },
-	    error:function(data){
-	    	console.log("Wystąpił błąd");
-	    }
-        })
-        return false;
-    });
-});
-</script>
 <?php
 session_start();
 $id = $_GET['id'];
@@ -64,6 +44,26 @@ if ($result = @$connect->query(
     $title = "Konto ".$nazwa."";
     require_once('partials/navbar.php');
 ?>
+<script type="javascript">
+$(document).ready(function(e) {
+    $('form').on('submit',(function(e) {
+        $.ajax({
+            type: 'POST', 
+            url: 'follow.php',
+            data: formData,
+            contentType: 'false',
+            processData: 'false',
+	    success:function(data){
+	    	console.log("Zaobserwowano użytkownika!");
+	    },
+	    error:function(data){
+	    	console.log("Wystąpił błąd");
+	    }
+        })
+        return false;
+    });
+});
+</script>
 	  <center>
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
