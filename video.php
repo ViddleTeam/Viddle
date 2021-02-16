@@ -363,12 +363,12 @@ if ($video_e == true)
                                     @media (min-width: 992px) {
                                         #input {
                                             color: white!important;
-                                            width: 32rem;
+                                            width: 100%;
                                         }
                                     }
                                     #input {
                                         color: white!important;
-                                        width: 100%;
+                                        width: 32rem;
                                     }
                                 </style>
                                 <br></br>
