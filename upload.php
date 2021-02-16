@@ -1,4 +1,10 @@
 <?php
+session_start(); 
+if($_SESSION['emailver'] == '0') {
+    header('location: index.php');
+    exit();
+}
+
 $title = "Udostępnianie filmów";
 require_once ('partials/navbar.php');
 ?>
