@@ -179,6 +179,10 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
         </div>
           <div class="row">
               <div class="col-lg-12">
+		      
+		      <?php if($_SESSION['emailver'] == '0') { ?> <br></br>
+        <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail. <a href='mverify.php' class="alert-link">Zweryfikuj teraz</a></span>
+        <?php } ?>
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wybrane dla Ciebie</h4>
               </div>
             </div>
