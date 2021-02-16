@@ -84,6 +84,9 @@ if($block == '1')
 </div>
 <div style="opacity: 1;" class="website">
     <header>
+        <?php if($_SESSION['emailver'] == '0') { ?>
+        <span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail. <a href='mverify.php' class="alert-link">Zweryfikuj teraz</a></span>
+        <?php } ?>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
             <a class="navbar-brand" href="index.php"><img src="https://media.discordapp.net/attachments/785086822220169217/796438597258444830/vlogocropped.png?width=25&height=25" width="25px" height="25px"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
