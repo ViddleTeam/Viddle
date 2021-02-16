@@ -330,15 +330,15 @@ if ($video_e == true)
                             </div><br>
                             <p><?php echo $opis ?></p>
                         </div>
-                        <div class="comments">
+                        <!--<div class="comments">
                             <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                             <div class="container row">
                       <span>
-                        <?php if ($_SESSION['z1']) {
-                            echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'">';
-                        } else {
-                            echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
-                        } ?>
+                        <?php //if ($_SESSION['z1']) {
+                            //echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'">';
+                        //} else {
+                            //echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
+                        //} ?>
                       </span>
                                 <form method="post" action="comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
@@ -350,22 +350,19 @@ if ($video_e == true)
                                   aria-label="Dodaj komentarz"
                                   name="comment"
                           >
-                          <!--<input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
-			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">-->
+                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
+			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
                       </span>
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
                                 </form>
-                            </div>
+                            </div>-->
+                        <div class="comments">
+                            <h3>Komentarze (<?= $komentarze ?>)</h3>
+                        </div>
                             <div class="container row" style="margin-top: 10px;">
                     <span>
                     </span>
-                                <style>
-                                    #input {
-                                        width: 100%!important;
-                                        color: white!important;
-                                    }
-                                </style>
                                 <br></br>
                                 <?php
                                 if ($result3 = @$connect->query(sprintf("SELECT * FROM viddle_comments"))) $d3 = $result3->num_rows;
