@@ -300,7 +300,11 @@ if ($video_e == true)
                             <h3>Komentarze (<?php echo $komentarze ?>)</h3>
                             <div class="container row">
                       <span>
-                        <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="<?php echo 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.''; ?>">
+                        <?php if ($_SESSION['z1']) {
+                            echo '<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'">';
+                        } else {
+                            echo '<img style="border-radius: 50%; margin-right: 5px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
+                        } ?>
                       </span>
                                 <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
@@ -313,49 +317,36 @@ if ($video_e == true)
                             </div>
                             <div class="container row" style="margin-top: 10px;">
                     <span>
-
                     </span>
                                 <br></br>
                                 <?php
                                 if ($result3 = @$connect->query(sprintf("SELECT * FROM viddle_comments"))) $d3 = $result3->num_rows;
-                                if ($d3 > '0')
-                                {
+                                if ($d3 > '0') {
                                     $pytanie = '$connect->query("SELECT * FROM viddle_comments")';
                                     $k1 = $d3 + '1';
-                                    for ($k2 = 1;$k2 < $k1;$k2 += 1)
-                                    {
+                                    for ($k2 = 1;$k2 < $k1;$k2 += 1) {
                                         $ktresc = '';
-                                        if ($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id2='$k2'"))
-                                        {
+                                        if ($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id2='$k2'")) {
                                             $dane3 = $comment->fetch_assoc();
-
                                             $ktresc = $dane3['tresc'];
                                             $kuid = '';
                                             $kdate = '';
 
                                             $dataczas = new DateTime('2022-05-01 09:33:59');
-
                                             $date = DateTime::createFromFormat('Y-m-d H:i:s', $dane3['published']);
-
                                             $data = $dataczas->diff($date);
-
                                             $data->format('%y');
 
-                                            if ($dane3['videoid'] == $id)
-                                            {
+                                            if ($dane3['videoid'] == $id) {
                                                 $uiddd = $dane3['uid'];
-                                                if ($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$uiddd'"))
-                                                {
+                                                if ($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$uiddd'")) {
                                                     $dane4 = $result4->fetch_assoc();
                                                     $kuav = $dane4['avatarname'];
                                                     $kuname = $dane4['login'];
                                                     $kuid = $dane4['uid'];
-                                                    if ($kuav == 'x')
-                                                    {
+                                                    if ($kuav == 'x') {
                                                         $av11 = 'anonim.png';
-                                                    }
-                                                    else
-                                                    {
+                                                    } else {
                                                         $av11 = '/grafic/' . $dane3['uid'] . 'a.' . $dane4['avatarname'] . '';
                                                     }
                                                     ?> <br></br>
