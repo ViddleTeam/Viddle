@@ -135,6 +135,9 @@ if($block == '1')
                             <a class="dropdown-item waves-effect waves-light" href="creatorstudio">Studio twórców</a>
                             <a class="dropdown-item waves-effect waves-light" href="profilechange">Ustawienia grafiki kanału</a>
                             <a class="dropdown-item waves-effect waves-light" href="developers">Dla deweloperów</a>
+                            <?php if($_SESSION['emailver'] == '0') { ?>
+                            <a class="dropdown-item waves-effect waves-light" href="mverify.php">Zweryfikuj adres e-mail</a>
+                            <?php } ?>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item waves-effect waves-light" href="logout">Wyloguj się</a>
                             <?php
