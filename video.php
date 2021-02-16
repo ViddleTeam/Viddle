@@ -344,13 +344,14 @@ if ($video_e == true)
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input
                                   class="form-control mr-sm-2"
-                                  type="text" id="input"
+                                  type="text"
+                                  id="input"
                                   placeholder="Dodaj komentarz..."
                                   aria-label="Dodaj komentarz"
                                   name="comment"
                           >
-                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
-			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
+                          <!--<input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
+			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">-->
                       </span>
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
