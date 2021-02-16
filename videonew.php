@@ -6,7 +6,7 @@ $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
 $already_seen = false;
 //$polecenie = sprintf("SELECT * FROM viddle_videos WHERE id = %s", $db->real_escape_string($id));
-$polecenie = "SELECT * FROM viddle_videos WHERE id = $id";
+$polecenie = "SELECT * FROM viddle_videos WHERE video_id = $id";
 if ($result = $db->query($polecenie)) {
     $rows = $result->num_rows;
     $vid = $result->fetch_assoc();
