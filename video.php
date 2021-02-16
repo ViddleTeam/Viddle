@@ -301,9 +301,9 @@ if ($video_e == true)
                             <div class="container row">
                       <span>
                         <?php if ($_SESSION['z1']) {
-                            echo '<img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'">';
+                            echo '<img style="border-radius: 50%; margin-right: 15px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'">';
                         } else {
-                            echo '<img style="border-radius: 50%; margin-right: 5px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
+                            echo '<img style="border-radius: 50%; margin-right: 15px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
                         } ?>
                       </span>
                                 <form method="post">
