@@ -114,7 +114,7 @@ mysqli_real_escape_string($connect,$id)))) {
 		mysqli_real_escape_string($connect,$wstaw),
 		mysqli_real_escape_string($connect,$id)))) {
 			if($w = $connect->query("INSERT INTO `viddle_vievs` VALUES (NULL, '$id', '$ip2')")) {
-			header();
+			header('location: '.$_SERVER['REQUEST_URI'].'');
 			}
 		}
 		
