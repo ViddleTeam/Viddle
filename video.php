@@ -361,16 +361,9 @@ if ($video_e == true)
                     <span>
                     </span>
                                 <style>
-                                    @media (min-width: 992px) {
-                                        #input {
-                                            color: white!important;
-                                            /*width: 32rem;*/
-                                            width: 100%;
-                                        }
-                                    }
                                     #input {
+                                        width: 100%!important;
                                         color: white!important;
-                                        width: 100%;
                                     }
                                 </style>
                                 <br></br>
