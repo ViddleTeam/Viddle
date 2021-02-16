@@ -9,5 +9,6 @@ $already_seen = false;
 $polecenie = "SELECT * FROM viddle_videos WHERE id = $id";
 if ($result = $db->query($polecenie)) {
     $rows = $result->num_rows;
-    echo "<p>$rows</p>";
+    $vid = $result->fetch_assoc();
+    echo "<p>$vid->title</p>";
 }
