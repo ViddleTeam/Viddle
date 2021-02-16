@@ -1,10 +1,6 @@
 <?php
 session_start();
-
-
-
 $test = $_GET['button'];
-
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
@@ -260,7 +256,7 @@ if ($video_e == true)
                     <div class="md-form form-group">
                         <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?php echo $id . '/' . $file ?>&title=<?php echo $title ?>" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
                         <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
-                            <h4><?php echo $title ?></h4>
+                            <h4 class="text-truncate"><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
                       <a href="https://beta.viddle.xyz/channel?id=<?= $publisher ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
