@@ -103,8 +103,9 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip2 = $_SERVER['REMOTE_ADDR'];
 }
 
-if ($resultv = @$connect->query(sprintf("SELECT * FROM `viddle_vievs` WHERE ip='%s'", 
-mysqli_real_escape_string($connect,$ip2)))) {
+if ($resultv = @$connect->query(sprintf("SELECT * FROM `viddle_vievs` WHERE ip='%s' AND vid='%s'", 
+mysqli_real_escape_string($connect,$ip2),
+mysqli_real_escape_string($connect,$id)))) {
 	$d3 = $resultv->num_rows;
 	
 	if($d3 == '0') {
