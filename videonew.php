@@ -11,4 +11,4 @@ if ($result = $db->query($polecenie)) {
     $rows = $result->num_rows;
 }
 ?>
-<p>Test</p>
+<p><?= $user_ip ?></p>
