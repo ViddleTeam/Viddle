@@ -93,6 +93,34 @@ if ($logged == '0') {
 }
 $_SESSION['id'] = $id;
 
+//nabijanie wyświetleń
+
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip2 = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip2 = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip2 = $_SERVER['REMOTE_ADDR'];
+}
+
+if ($resultv = @$connect->query(sprintf("SELECT * FROM `viddle_vievs` WHERE ip='%s'", 
+mysqli_real_escape_string($connect,$ip2)))) {
+	$d3 = $resultv->num_rows;
+	
+	if($d3 == '0') {
+		$wstaw = $vievs + '1';
+		if ($syf = @$connect->query(sprintf("UPDATE `viddle_videos` SET views='%s' WHERE video_id='%s'", 
+		mysqli_real_escape_string($connect,$wstaw),
+		mysqli_real_escape_string($connect,$id)))) {
+			$w = $connect->query("INSERT INTO `viddle_vievs` VALUES (NULL, '$id', '$ip2')");	
+		}
+		
+	}
+	
+}
+
+
+
 //Losowanie ID polecanych filmów:
 $randomvidone = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
 $dane = $randomvidone->fetch_assoc();
