@@ -5,11 +5,10 @@ $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
 $already_seen = false;
-//$polecenie = sprintf("SELECT * FROM viddle_videos WHERE id = %s", $db->real_escape_string($id));
-$polecenie = "SELECT * FROM viddle_videos WHERE video_id = $id";
+$user_ip = $_SERVER['HTTP_CLIENT_IP'] OR $_SERVER['HTTP_X_FORWARDED_FOR'] OR $_SERVER['REMOTE_ADDR'];
+$polecenie = sprintf("SELECT * FROM viddle_videos WHERE video_id = %s", $db->real_escape_string($id));
 if ($result = $db->query($polecenie)) {
     $rows = $result->num_rows;
-    $vid = $result->fetch_assoc();
-    $title = $vid['title'];
-    echo "<p>$title</p>";
 }
+?>
+<p>Test</p>
