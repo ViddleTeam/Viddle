@@ -357,7 +357,7 @@ if ($video_e == true)
 
                                 </form>
                             </div>-->
-                        <div class="comments row">
+                        <div class="comments container row">
                             <h3>Komentarze (<?= $komentarze ?>)</h3>
                         </div>
                             <div class="container row" style="margin-top: 10px;">
