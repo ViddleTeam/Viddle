@@ -343,7 +343,7 @@ if ($video_e == true)
                                 <form method="post" action="comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input
-                                  class="form-control mr-sm-2"
+                                  class="form-control mr-sm-2 input-block-level"
                                   type="text"
                                   id="input"
                                   placeholder="Dodaj komentarz..."
