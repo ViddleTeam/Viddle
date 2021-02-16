@@ -112,7 +112,9 @@ mysqli_real_escape_string($connect,$ip2)))) {
 		if ($syf = @$connect->query(sprintf("UPDATE `viddle_videos` SET views='%s' WHERE video_id='%s'", 
 		mysqli_real_escape_string($connect,$wstaw),
 		mysqli_real_escape_string($connect,$id)))) {
-			$w = $connect->query("INSERT INTO `viddle_vievs` VALUES (NULL, '$id', '$ip2')");	
+			if($w = $connect->query("INSERT INTO `viddle_vievs` VALUES (NULL, '$id', '$ip2')")) {
+				header('refresh: 1;');
+			}
 		}
 		
 	}
