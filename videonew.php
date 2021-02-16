@@ -10,5 +10,6 @@ $polecenie = "SELECT * FROM viddle_videos WHERE id = $id";
 if ($result = $db->query($polecenie)) {
     $rows = $result->num_rows;
     $vid = $result->fetch_assoc();
-    echo "<p>${$vid['title']}</p>";
+    $title = $vid['title'];
+    echo "<p>$title</p>";
 }
