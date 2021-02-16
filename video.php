@@ -94,7 +94,8 @@ if ($logged == '0') {
 $_SESSION['id'] = $id;
 
 //nabijanie wyświetleń
-
+if($video_e == true) {
+	
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip2 = $_SERVER['HTTP_CLIENT_IP'];
 } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -122,6 +123,7 @@ mysqli_real_escape_string($connect,$id)))) {
 	
 }
 
+}
 
 
 //Losowanie ID polecanych filmów:
