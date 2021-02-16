@@ -220,8 +220,9 @@ if(isset($_SESSION['uid'])) {
 	$polecenie = "SELECT * FROM viddle_users WHERE uid='$uidm'";
 	if ($c2 = $connect->query($polecenie)) {
 		$d = $c2->fetch_assoc;
+		$ez = $d['emailver'];
 		
-		if($d['emailver'] == '0') {
+		if($ez == '0') {
 			$disable = 'pointer-events: none; cursor: default;';
 			$powod = '(Musisz zweryfikować adres e-mail w celu zagłosowania na film.)';
 		} else {
