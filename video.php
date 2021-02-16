@@ -364,7 +364,8 @@ if ($video_e == true)
                                     @media (min-width: 992px) {
                                         #input {
                                             color: white!important;
-                                            width: 32rem;
+                                            /*width: 32rem;*/
+                                            width: 100%;
                                         }
                                     }
                                     #input {
