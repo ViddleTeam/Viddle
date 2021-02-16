@@ -308,8 +308,8 @@ if ($video_e == true)
                       </span>
                                 <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
-                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem; margin: -25px 25px 0 0;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
-			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%; margin: -25px 25px 0 0;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc1">
+                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem; margin: -20px 30px 0 0;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz">
+			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%; margin: -20px 30px 0 0;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="tresc1">
                       </span>
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
