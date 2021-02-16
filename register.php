@@ -87,7 +87,7 @@ if (isset($login)){
                     $_SESSION['z'] = true;
                     header('Location: prejestracja.php');
                 } else {
-                    echo 'Error. '.$connect->error;
+                    echo '<span style="color: red;">Error. '.$connect->connect_errno.'<br>Skontaktuj się z supportem</br></span>';
                 }
             }
         }	
