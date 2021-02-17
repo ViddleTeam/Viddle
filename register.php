@@ -40,7 +40,7 @@ if (isset($login)){
 
 	if (!preg_match("#.*^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
 		$ok = false;
-		$easypass_error = "<div class='alert alert-danger' role='alert'>Hasło, które ustaliłeś, może ułatwić włamanie się na Twoje konto. Ustal silniejsze hasło!</div>";
+		$easypass_error = "<div class='alert alert-danger' role='alert'>Twoje hasło powinno składać się z 1 małej i dużej litery, 1 cyfry i 1 znaku specjalnego oraz powinno być dłuższe niż 8 znaków.</div>";
 	}
 	$secret = '0x2e38D68c01a7AAa01905f1471631C6b59e47300A';
         $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$_POST['h-captcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']);
@@ -85,7 +85,7 @@ if (isset($login)){
                 $success = $connect->query("INSERT INTO viddle_users VALUES ('$login_e', '$haslo_h', '$email_e', '$uid', 1, 0, 0, 'x', 'x', NULL, 0)");
                 if ($success) {
                     $_SESSION['z'] = true;
-                    header('Location: prejestracja.php');
+                    header('Location: mverify.php');
                 } else {
                     echo '<span style="color: red;">Error. '.$connect->connect_errno.'<br>Skontaktuj się z supportem</br></span>';
                 }
