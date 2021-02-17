@@ -475,10 +475,12 @@ if ($video_e == true)
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
                             <div class="container">
                                 <div class="row">
+                                    <a href="/video?id=<?= $randomvidone ?>">
                                     <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
                                     <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitleone); ?><br></strong>
                                         <?php echo ($randomuserone); ?><br>
                                         <?php echo ($randomviewsone); ?> wyświetleń</p>
+                                    </a>
                                 </div>
                                 <br>
                                 <div class="row">
