@@ -79,7 +79,7 @@ $(document).ready(function(e) {
 					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
 				</span>
 				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
-					<h3><?php echo $nazwa; ?></h3>
+					<h3 class="text-truncate"><?php echo $nazwa; ?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($followcount)) echo $followcount; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">
@@ -147,7 +147,7 @@ $(document).ready(function(e) {
 					<p class="card-title">'.$d5['title'].'</p>
 					<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 					<div class="bottom-info">
-						<span>'.$nazwa.'</span>
+						<span class="text-truncate">'.$nazwa.'</span>
 						<span>•</span>
 						<span>'.$d5['views'].' wyświetleń</span>
 					</div>

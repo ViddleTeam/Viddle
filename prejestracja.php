@@ -37,8 +37,8 @@ if (isset($_SESSION['z']))
 				<h3 style="font-weight: bold;">Dziękujemy!</h3>
 				<p>
 					Twoje konto zostało zarejestrowane - życzymy powodzenia w rozwoju kanału na Viddle!<br>
-					Przed tym sprawdzimy, czy adres mailowy którego użyłeś do rejestracji jest prawidłowy i należy do Ciebie.
-					Sprawdź skrzynkę mailową oraz zakładkę spamu.
+					Możesz się na nie zalogować, ale do czasu weryfikacji adresu mailowego niektóre funkcje 
+					nie będą dostępne.
 				</p><br>
 					<a href="login.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zaloguj się</p></button></a>
 				</div>

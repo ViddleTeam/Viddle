@@ -198,7 +198,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <p class='card-title'><?php echo($randomtitleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($randomuserone); ?></span>
+                            <span class="text-truncate"><?php echo($randomuserone); ?></span>
                             <span>•</span>
                             <span><?php echo($randomrezultat); ?> wyświetleń</span>
                         </div>
@@ -210,7 +210,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <p class='card-title'><?php echo($randomtitletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($randomusertwo); ?></span></a>
+                            <span class="text-truncate"><?php echo($randomusertwo); ?></span></a>
                             <span>•</span>
                             <span><?php echo($randomrezultatdwa); ?> wyświetleń</span>
                         </div>
@@ -222,7 +222,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <p class='card-title'><?php echo($randomtitlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($randomuserthree); ?></span>
+                            <span class="text-truncate"><?php echo($randomuserthree); ?></span>
                             <span>•</span>
                             <span><?php echo($randomrezultattrzy); ?> wyświetleń</span>
                         </div>
@@ -269,7 +269,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <p class='card-title'><?php echo($titleone); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($userone); ?></span>
+                            <span class="text-truncate"><?php echo($userone); ?></span>
                             <span>•</span>
                             <span><?php echo($rezultat); ?> wyświetleń</span>
                         </div>
@@ -302,7 +302,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <p class='card-title'><?php echo($titletwo); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($usertwo); ?></span></a>
+                            <span class="text-truncate"><?php echo($usertwo); ?></span></a>
                             <span>•</span>
                             <span><?php echo($rezultatdwa); ?> wyświetleń</span>
                         </div>
@@ -335,7 +335,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <p class='card-title'><?php echo($titlethree); ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span><?php echo($userthree); ?></span>
+                            <span class="text-truncate"><?php echo($userthree); ?></span>
                             <span>•</span>
                             <span><?php echo($rezultattrzy); ?> wyświetleń</span>
                         </div>
