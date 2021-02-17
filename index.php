@@ -5,10 +5,6 @@ require_once('partials/navbar.php');
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
-if ($connect->connect_errno!=0)
-{
-	echo '<div class="alert alert-danger" role="alert">Error: '.$connect->connect_errno.'! Skontaktuj się z supportem!</div>';
-}
 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_recent WHERE number='%s'", mysqli_real_escape_string($connect, '1')))) $d2 = $result->num_rows;
 if (isset($d2) && $d2 == '1') {
     $dane = $result->fetch_assoc();
@@ -183,9 +179,13 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
         </div>
         </div>
           <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-12"> <?php
+		      if ($connect->connect_errno!=0)
+{
+	echo '<div class="alert alert-danger" role="alert">Error: '.$connect->connect_errno.'! Skontaktuj się z supportem!</div>';
+}
 		      
-		      <?php if($_SESSION['emailver'] == '0') { ?> <br></br><br></br>
+		       if($_SESSION['emailver'] == '0') { ?> <br></br><br></br>
         <center><span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail. <a href='mverify.php' class="alert-link">Zweryfikuj teraz</a></span></center>
         <?php } ?>
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wybrane dla Ciebie</h4>
