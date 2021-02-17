@@ -7,7 +7,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if ($connect->connect_errno!=0)
 {
-	echo "<div class="alert alert-danger" role="alert">Error: ".$connect->connect_errno.'! Skontaktuj się z supportem!</div>';
+	echo '<div class="alert alert-danger" role="alert">Error: '.$connect->connect_errno.'! Skontaktuj się z supportem!</div>';
 }
 if ($result = @$connect->query(sprintf("SELECT * FROM viddle_recent WHERE number='%s'", mysqli_real_escape_string($connect, '1')))) $d2 = $result->num_rows;
 if (isset($d2) && $d2 == '1') {
