@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'danesql.php';
+require_once 'partials/navbar.php';
 $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
