@@ -14,4 +14,4 @@ if ($result = $db->query($polecenie)) {
     $rows = $result->num_rows;
 }
 ?>
-<p><?= $user_ip ?></p>
+<p>Witaj na nowej stronie Video!</p>
