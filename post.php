@@ -82,38 +82,25 @@ if ($_SESSION['z1'] == true) {
       		$file_tmp =$_FILES['miniaturka']['tmp_name'];
       		$file_type=$_FILES['miniaturka']['type'];
 		  
-		 $extensions= array("jpeg","jpg","png","bmp");
-      
-		      if(in_array($file_ext,$extensions)=== false){
-			 $_SESSION['error'] = 'niedozwolony format';
-			$ok = false;
-			header('location: upload.php');
-			exit();
-		      } else {
-			      $extensions2= array("jpeg");
-			      
-			       if(in_array($file_ext,$extensions2)=== true){
-				       $t = 'jpeg';
-			       }
-			      
-			      $extensions3= array("jpg");
-			      
-			       if(in_array($file_ext,$extensions3)=== true){
-				       $t = 'jpg';
-			       }
-			      
-			      $extensions4= array("png");
-			      
-			       if(in_array($file_ext,$extensions4)=== true){
-				       $t = 'png';
-			       }
-			      
-			      $extensions5= array("bmp");
-			      
-			       if(in_array($file_ext,$extensions5)=== true){
-				       $t = 'bmp';
-			       }
-		}
+		 function excentionsII ($fII) 
+		 {
+			 return pathinfo ($fII, PATHINFO_EXTENSION);
+		 }
+		  
+		 $roz = excentionsII($file_tmp);
+		 
+		 if(!$roz == 'png') {
+			 if(!$roz == 'jpg') {
+				 if(!$roz == 'jpeg') {
+					 if(!$roz == 'bmp') {
+						$_SESSION['error'] = 'zły format';
+						$ok = false;
+						header('location: upload.php');
+						exit(); 
+					 }
+				 }
+			 }
+		 }
 	
 		 if($file_size > 3097152){
          		$_SESSION['error'] = 'plik za wielki!';
