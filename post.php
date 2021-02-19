@@ -193,7 +193,7 @@ if ($_SESSION['z1'] == true) {
 	  {
 	  //$success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', '$t', '$data')");
 	  	if ($success = @$connect->query(
-		    sprintf("INSERT INTO viddle_videos VALUES (0, '%s', '%s', 123454321, '%s', 0, 0, 0, 0, '%s', '%s', '%s', '%s', '%s'",
+		    sprintf("INSERT INTO viddle_videos VALUES (0, '%s', '%s', 123454321, '%s', 0, 0, 0, 0, '%s', '%s', '%s', '%s', '%s')",
 		    mysqli_real_escape_string($connect,$wstaw),
 		    mysqli_real_escape_string($connect,$userid),
 		    mysqli_real_escape_string($connect,$viddleid),
