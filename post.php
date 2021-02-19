@@ -81,34 +81,16 @@ if ($_SESSION['z1'] == true) {
       		$file_size =$_FILES['miniaturka']['size'];
       		$file_tmp =$_FILES['miniaturka']['tmp_name'];
       		$file_type=$_FILES['miniaturka']['type'];
-		$file_ext=strtolower(end(explode('.',$_FILES['miniaturka']['name'])));
 		  
-		 if($file_type == 'image/png') {
-		$f = '1';
-		$t = 'png';	
-		}
-
-		if($file_type == 'image/jpg') {
-			$f = '1';
-			$t = 'jpg';	
-		}
-
-		if($file_type == 'image/jpeg') {
-			$f = '1';
-			$t = 'jpeg';	
-		}
-
-		if($file_type == 'image/bmp') {
-			$f = '1';
-			$t = 'bmp';	
-		}
-
-		 if($f == '0') {
-			$_SESSION['error'] = 'niedozwolony format';
+		 $extensions= array("jpeg","jpg","png","bmp");
+      
+		      if(in_array($file_ext,$extensions)=== false){
+			 $_SESSION['error'] = 'niedozwolony format';
+			$ok = false;
 			header('location: upload.php');
 			exit();
-		 }
-		  
+		      }
+	
 		 if($file_size > 3097152){
          		$_SESSION['error'] = 'plik za wielki!';
 			$ok = false;
