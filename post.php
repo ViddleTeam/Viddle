@@ -73,6 +73,66 @@ if ($_SESSION['z1'] == true) {
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
+	  
+	  if(isset($_FILES['miniaturka'])) {
+		  $ok = true;
+		  
+		$file_name = $_FILES['miniaturka']['name'];
+      		$file_size =$_FILES['miniaturka']['size'];
+      		$file_tmp =$_FILES['miniaturka']['tmp_name'];
+      		$file_type=$_FILES['miniaturka']['type'];
+		$file_ext=strtolower(end(explode('.',$_FILES['miniaturka']['name'])));
+		  
+		 if($file_type == 'image/png') {
+		$f = '1';
+		$t = 'png';	
+		}
+
+		if($file_type == 'image/jpg') {
+			$f = '1';
+			$t = 'jpg';	
+		}
+
+		if($file_type == 'image/jpeg') {
+			$f = '1';
+			$t = 'jpeg';	
+		}
+
+		if($file_type == 'image/bmp') {
+			$f = '1';
+			$t = 'bmp';	
+		}
+
+		 if($f == '0') {
+			$_SESSION['error'] = 'niedozwolony format';
+			header('location: upload.php');
+			exit();
+		 }
+		  
+		 if($file_size > 3097152){
+         		$_SESSION['error'] = 'plik za wielki!';
+			$ok = false;
+			header('location: upload.php');
+			exit();
+	 	}
+		 
+		 if($ok == true) {
+			 require 'daneftp.php';
+	
+			$ftp_server = FTPSERWER;
+			$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
+			 
+			ftp_chdir($ftp_conn, '/thumbnails/');
+			ftp_mkdir($ftp_conn, $viddleid);
+			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid.'');
+			ftp_put($ftp_conn, $viddleid.'.'.$t, $file_tmp, FTP_BINARY);
+			ftp_close($ftp_conn);
+		 }
+	  } else {
+		 $t = 'x';
+	  }
+	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {	
 	    $conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
@@ -121,6 +181,8 @@ if ($_SESSION['z1'] == true) {
 	  if (!in_array($file_ext, $allowed_file_types)) {
             header('Location: index.php');
     	  }
+	  
+	  
 	  $uid = $_SESSION['uid'];
 	  
 	  $result = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$uid'");
@@ -129,7 +191,7 @@ if ($_SESSION['z1'] == true) {
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', '$t', '$data')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
