@@ -89,7 +89,31 @@ if ($_SESSION['z1'] == true) {
 			$ok = false;
 			header('location: upload.php');
 			exit();
-		      }
+		      } else {
+			      $extensions2= array("jpeg");
+			      
+			       if(in_array($file_ext,$extensions2)=== true){
+				       $t = 'jpeg';
+			       }
+			      
+			      $extensions3= array("jpg");
+			      
+			       if(in_array($file_ext,$extensions3)=== true){
+				       $t = 'jpg';
+			       }
+			      
+			      $extensions4= array("png");
+			      
+			       if(in_array($file_ext,$extensions4)=== true){
+				       $t = 'png';
+			       }
+			      
+			      $extensions5= array("bmp");
+			      
+			       if(in_array($file_ext,$extensions5)=== true){
+				       $t = 'bmp';
+			       }
+		}
 	
 		 if($file_size > 3097152){
          		$_SESSION['error'] = 'plik za wielki!';
