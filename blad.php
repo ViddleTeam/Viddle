@@ -26,6 +26,14 @@ if($id=="1") {
   $test = "Hola, hola, za szybko wrzucasz filmy!<br />Poczekaj aż ktoś inny wrzuci film, żeby wrzucić kolejny.<br /><h3>Kod błędu: 0x00004c</h3>";
 } elseif($id=="5") {
   $test = "Twój plik zdaje się być nam nieznany, lub nawet go nie ma.<br />Błąd z którym masz do czynienia nie występuje bez<br />przyczyny, więc lepiej zgłoś to naszej drużynie!<br /><h2>Kod błędu: 0x00005c</h2>";
+} elseif($id=="6") {
+  $test = "Rozmiar miniaturki jest zbyt wielki.<br />Zalecamy zmniejszenie wymiarów miniaturki.<br /><h2>Kod błędu: 0x00006c</h2>";
+} elseif($id=="7") {
+  $test = "Złe rozszerzenie miniaturki.<br />Akceptowane rozszerzenia:<br />.png, .jpg, .jpeg, .bmp<br /><h2>Kod błędu: 0x00006c</h2>";
+} elseif($id=="8") {
+  $test = "Plik miniaturki zdaje się być nam nieznany, lub nawet go nie ma.<br />Błąd z którym masz do czynienia nie występuje bez<br />przyczyny, więc lepiej zgłoś to naszej drużynie!<br /><h2>Kod błędu: 0x00008c</h2>";
+} elseif($id=="9") {
+  $test = "Podczas dodawania miniaturki wystąpił nieznany błąd.<br />Spróbuj wrzucić ją jeszcze raz.<br />W przypadku dalszych problemów, skontaktuj<br />się z naszą drużyną!<br /><h2>Kod błędu: 0x00009c</h2>";
 } elseif($id=="404") {
   $test = "Awaria systemu FTP.<br />Usilnie próbujemy rozwiązać problem,<br />prosimy o cierpliwość.<br /><h2>Kod błędu: 0x00404c</h2>";
 } else {
