@@ -191,18 +191,18 @@ if ($_SESSION['z1'] == true) {
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {
-	  //$success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', '$t', '$data')");
-	  	if ($success = @$connect->query(
-		    sprintf("INSERT INTO viddle_videos VALUES (0, '%s', '%s', 123454321, '%s', 0, 0, 0, 0, '%s', '%s', '%s', '%s', '%s')",
-		    mysqli_real_escape_string($connect,$wstaw),
-		    mysqli_real_escape_string($connect,$userid),
-		    mysqli_real_escape_string($connect,$viddleid),
-	            mysqli_real_escape_string($connect,$newfilename),
-		    mysqli_real_escape_string($connect,$zabezpdwa),
-	            mysqli_real_escape_string($connect,$zabezptrzy),
-	            mysqli_real_escape_string($connect,$t),
-	            mysqli_real_escape_string($connect,$data)))) {
-			echo 'it works! To działa tak zajebiście!';
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
+	  	//if ($success = @$connect->query(
+		  //  sprintf("INSERT INTO viddle_videos VALUES (0, '%s', '%s', 123454321, '%s', 0, 0, 0, 0, '%s', '%s', '%s', '%s', '%s')",
+		  //  mysqli_real_escape_string($connect,$wstaw),
+		    //mysqli_real_escape_string($connect,$userid),
+		   // mysqli_real_escape_string($connect,$viddleid),
+	          ////  mysqli_real_escape_string($connect,$newfilename),
+		   ////// mysqli_real_escape_string($connect,$zabezpdwa),
+	           //////// mysqli_real_escape_string($connect,$zabezptrzy),
+	            //////////mysqli_real_escape_string($connect,$t),
+	            //mysqli_real_escape_string($connect,$data)))) {
+			//echo 'it works! To działa tak zajebiście!';//
 			
 		} else {
 		echo 'głupi błąd!';
