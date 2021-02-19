@@ -202,7 +202,10 @@ if ($_SESSION['z1'] == true) {
 	            mysqli_real_escape_string($connect,$zabezptrzy),
 	            mysqli_real_escape_string($connect,$t),
 	            mysqli_real_escape_string($connect,$data)))) {
+			echo 'it works! To działa tak zajebiście!';
 			
+		} else {
+		echo 'głupi błąd!';
 		}
 	  }
 	  if ($success) {
