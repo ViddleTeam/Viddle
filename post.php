@@ -201,7 +201,9 @@ if ($_SESSION['z1'] == true) {
 		    mysqli_real_escape_string($connect,$zabezpdwa),
 	            mysqli_real_escape_string($connect,$zabezptrzy),
 	            mysqli_real_escape_string($connect,$t),
-	            mysqli_real_escape_string($connect,$data))))
+	            mysqli_real_escape_string($connect,$data)))) {
+			
+		}
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
