@@ -75,53 +75,48 @@ if ($_SESSION['z1'] == true) {
 	  }
 	  
 	  if(isset($_FILES['miniaturka'])) {
-		  $ok = true;
-		  
-		$file_name = $_FILES['miniaturka']['name'];
-      		$file_size =$_FILES['miniaturka']['size'];
-      		$file_tmp =$_FILES['miniaturka']['tmp_name'];
-      		$file_type=$_FILES['miniaturka']['type'];
-		  
-		 function excentionsII ($fII) 
-		 {
-			 return pathinfo ($fII, PATHINFO_EXTENSION);
-		 }
-		  
-		 $roz = excentionsII($file_tmp);
-		 
-		 if(!$roz == 'png') {
-			 if(!$roz == 'jpg') {
-				 if(!$roz == 'jpeg') {
-					 if(!$roz == 'bmp') {
-						$_SESSION['error'] = 'zły format';
-						$ok = false;
-						header('location: upload.php');
-						exit(); 
-					 }
-				 }
-			 }
-		 }
-	
-		 if($file_size > 3097152){
-         		$_SESSION['error'] = 'plik za wielki!';
-			$ok = false;
-			header('location: upload.php');
-			exit();
-	 	}
-		 
-		 if($ok == true) {
-			 require 'daneftp.php';
-	
-			$ftp_server = FTPSERWER;
-			$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
-			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-			 
-			ftp_chdir($ftp_conn, '/thumbnails/');
-			ftp_mkdir($ftp_conn, $viddleid);
-			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid.'');
-			ftp_put($ftp_conn, $viddleid.'.'.$t, $file_tmp, FTP_BINARY);
-			ftp_close($ftp_conn);
-		 }
+		$ok = true;
+		$pic_name = $_FILES["miniaturka"]["name"];
+	  	$pic_basename = substr($miniaturka, 0, strripos($miniaturka, '.'));
+	  	$pic_ext = mime_content_type($_FILES["miniaturka"]["tmp_name"]);
+	  	$pic_size = $_FILES["miniaturka"]["size"];
+	  	$allowed_picture_types = ['image/png','image/jpg','image/jpeg','image/bmp'];	
+	  	function extpicture($mime_type){
+	    	  $extensions = array('image/png' => '.png',
+                          'image/jpg' => '.jpg',
+			  'image/jpeg' => '.jpeg',
+			  'image/bmp' => '.bmp',
+                          );
+    	          return $extensions[$mime_type];
+	  	}
+		$rozszerzenieminiatura = extpicture($pic_ext);
+		$nazwaplikuminiatura = $viddleid . $pic_ext;
+		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
+	  	{	
+	    		$conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
+	    		$login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
+	    		$res = ftp_size($conn_id, $file);
+	    		$sciezka = "/thumbnails/";
+		    	if ($res != -1) {
+	      			echo "Plik już istnieje.";
+	      			//header('Location: blad.php?id=4');
+	    		} else {
+	      			ftp_chdir($conn_id, '/thumbnails/');
+	      			ftp_mkdir($conn_id, $viddleid);
+	      			ftp_chdir($conn_id, '/thumbnails/' . $viddleid . '/');
+	      			ftp_put($conn_id, $nazwaplikuminiatura, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY); 
+	      			//echo "Wrzucono miniaturkę.";
+	      			ftp_close($conn_id);
+	         	}
+	  	} elseif ($pic_size > 3097152) {
+			header('Location: blad.php?id=6');
+		} elseif (!in_array($pic_ext, $allowed_picture_types)) {
+            		header('Location: blad.php?id=7');
+    	  	} elseif (empty($pic_basename)) {
+			header('Location: blad.php?id=8');
+		} else {
+			header('Location: blad.php?id=9');
+		}
 	  } else {
 		 $t = 'x';
 	  }
@@ -184,29 +179,12 @@ if ($_SESSION['z1'] == true) {
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data')");
-	  	//if ($success = @$connect->query(
-		  //  sprintf("INSERT INTO viddle_videos VALUES (0, '%s', '%s', 123454321, '%s', 0, 0, 0, 0, '%s', '%s', '%s', '%s', '%s')",
-		  //  mysqli_real_escape_string($connect,$wstaw),
-		    //mysqli_real_escape_string($connect,$userid),
-		   // mysqli_real_escape_string($connect,$viddleid),
-	          ////  mysqli_real_escape_string($connect,$newfilename),
-		   ////// mysqli_real_escape_string($connect,$zabezpdwa),
-	           //////// mysqli_real_escape_string($connect,$zabezptrzy),
-	            //////////mysqli_real_escape_string($connect,$t),
-	            //mysqli_real_escape_string($connect,$data)))) {
-			//echo 'it works! To działa tak zajebiście!';//
-			
-		//} else {
-		//echo 'głupi błąd!';
-		//}
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', '$t', '$data')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
 	     header('Location: video.php?id=' . $viddleid);
 	  } else {
-		  echo $success -> error;
-		  exit();
 	     header('Location: blad.php?id=2');
 	  }
 	/*  $destination = fopen("ftp://epiz_27397310:YPf7vgDQu3JpVm@ftpupload.net/" . $film, "wb");
