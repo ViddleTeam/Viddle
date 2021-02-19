@@ -60,6 +60,7 @@ require_once ('partials/navbar.php');
                     </div>
                 </div>
             </div>
+            <input type="file" accept="image/png, image/jpg, image/bmp, image/jpeg" name="miniaturka" style="color: white; margin-top: 5px;" />
             <div style="justify-content: center;">
             </div>
         </div>
