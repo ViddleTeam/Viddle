@@ -209,11 +209,11 @@ if ($_SESSION['z1'] == true) {
 		//}
 	  }
 	  if ($success) {
-		  echo $success -> error;
-		  exit();
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
 	     header('Location: video.php?id=' . $viddleid);
 	  } else {
+		  echo $success -> error;
+		  exit();
 	     header('Location: blad.php?id=2');
 	  }
 	/*  $destination = fopen("ftp://epiz_27397310:YPf7vgDQu3JpVm@ftpupload.net/" . $film, "wb");
