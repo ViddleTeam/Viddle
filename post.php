@@ -93,21 +93,18 @@ if ($_SESSION['z1'] == true) {
 		$nazwaplikuminiatura = $viddleid . $pic_ext;
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
-	    		$conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
-	    		$login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
-	    		$res = ftp_size($conn_id, $file);
-	    		$sciezka = "/thumbnails/";
-		    	if ($res != -1) {
-	      			echo "Plik już istnieje.";
-	      			//header('Location: blad.php?id=4');
-	    		} else {
-	      			ftp_chdir($conn_id, '/thumbnails/');
-	      			ftp_mkdir($conn_id, $viddleid);
-	      			ftp_chdir($conn_id, '/thumbnails/' . $viddleid . '/');
-	      			ftp_put($conn_id, $nazwaplikuminiatura, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY); 
-	      			//echo "Wrzucono miniaturkę.";
-	      			ftp_close($conn_id);
-	         	}
+	    		 require 'daneftp.php';
+	
+			$ftp_server = FTPSERWER;
+			$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
+		    	ftp_chdir($ftp_conn, '/thumbnails/');
+			ftp_mkdir($ftp_conn, $viddleid);
+			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid);
+			$file_tmp =$_FILES['file_picker']['tmp_name'];
+			ftp_put($ftp_conn, $viddleid.'.'.$rozszerzenieminiatura, $file_tmp, FTP_BINARY);
+	
+	         	
 	  	} elseif ($pic_size > 3097152) {
 			header('Location: blad.php?id=6');
 		} elseif (!in_array($pic_ext, $allowed_picture_types)) {
