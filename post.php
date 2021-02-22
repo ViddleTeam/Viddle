@@ -77,6 +77,7 @@ if ($_SESSION['z1'] == true) {
 	  if(isset($_FILES['miniaturka'])) {
 		$ok = true;
 		$pic_name = $_FILES["miniaturka"]["name"];
+		$file_tmp =$_FILES['file_picker']['tmp_name'];
 	  	$pic_basename = substr($miniaturka, 0, strripos($miniaturka, '.'));
 	  	$pic_ext = mime_content_type($_FILES["miniaturka"]["tmp_name"]);
 	  	$pic_size = $_FILES["miniaturka"]["size"];
@@ -90,6 +91,7 @@ if ($_SESSION['z1'] == true) {
     	          return $extensions[$mime_type];
 	  	}
 		$rozszerzenieminiatura = extpicture($pic_ext);
+		//kurwa dlaczego taka długa nazwa zmiennej, nie lepiej dać rozmin w nazwie zmiennej
 		$nazwaplikuminiatura = $viddleid . $pic_ext;
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
@@ -101,8 +103,8 @@ if ($_SESSION['z1'] == true) {
 		    	ftp_chdir($ftp_conn, '/thumbnails/');
 			ftp_mkdir($ftp_conn, $viddleid);
 			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid);
-			$file_tmp =$_FILES['file_picker']['tmp_name'];
-			ftp_put($ftp_conn, $viddleid.'.'.$rozszerzenieminiatura, $file_tmp, FTP_BINARY);
+			ftp_put($ftp_conn, $viddleid.$rozszerzenieminiatura, $file_tmp, FTP_BINARY);
+			
 	
 	         	
 	  	} elseif ($pic_size > 3097152) {
