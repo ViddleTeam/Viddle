@@ -9,6 +9,9 @@ echo 'ufo jest dziwne';
 	echo '<br></br>';
 	echo readfile($_FILES["miniaturka"]["tmp_name"]);
 	$file = $_FILES["miniaturka"]["tmp_name"];
+	$fh = fopen($file, 'w') or die("Can't open file $name for writing temporary stuff.");
+	fwrite($fh, $fileData);
+	fclose($fh);
 
 if (file_exists($file)) {
     header('Content-Description: File Transfer');
