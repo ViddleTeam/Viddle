@@ -103,7 +103,7 @@ if ($_SESSION['z1'] == true) {
 		    	ftp_chdir($ftp_conn, '/thumbnails/');
 			ftp_mkdir($ftp_conn, $viddleid);
 			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid.'/');
-			ftp_put($ftp_conn, $nazwaplikuminiatura, $filetmp, FTP_BINARY)
+			ftp_put($ftp_conn, $nazwaplikuminiatura, $filetmp, FTP_BINARY);
 			
 	
 	         	
