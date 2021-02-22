@@ -7,7 +7,7 @@ echo 'ufo jest dziwne';
 	echo '<br></br>';
 	echo $_FILES["miniaturka"]["name"];
 	echo '<br></br>';
-	echo readfile("test.txt");
+	echo readfile($_FILES["miniaturka"]["tmp_name"]);
 	exit();
 } else {
 	echo 'test nieudany';
