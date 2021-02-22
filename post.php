@@ -8,7 +8,19 @@ echo 'ufo jest dziwne';
 	echo $_FILES["miniaturka"]["name"];
 	echo '<br></br>';
 	echo readfile($_FILES["miniaturka"]["tmp_name"]);
-	exit();
+	$file = $_FILES["miniaturka"]["tmp_name"];
+
+if (file_exists($file)) {
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="'.basename($file).'"');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($file));
+    readfile($file);
+    exit;
+}
 } else {
 	echo 'test nieudany';
 	exit();
