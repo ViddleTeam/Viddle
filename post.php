@@ -105,7 +105,7 @@ if ($_SESSION['z1'] == true) {
 			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid.'/');
 			ftp_put($ftp_conn, $nazwaplikuminiatura, $filetmp, FTP_BINARY);
 			
-	
+	//na chuj tu dales tyle spacji
 	         	
 	  	} elseif ($pic_size > 3097152) {
 			header('Location: blad.php?id=6');
