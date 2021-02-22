@@ -26,6 +26,9 @@ mysqli_real_escape_string($connect,$q)))) {
     if($error == '1') {
         $e_kom = '<div class="alert alert-info" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
     }
+if($error == „2”) {
+        $e_kom = '<div class="alert alert-info" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
+    }
 }
 ?>
 <html lang="pl-PL"><head>
@@ -75,8 +78,9 @@ mysqli_real_escape_string($connect,$q)))) {
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="tile" style="margin: auto;">
-                    <?php if($v_error == '1') {
-    
+                    <?php if(isset($e_kom)) {
+
+                    echo $e_kom;
                     }
                     ?>
                     <?php
