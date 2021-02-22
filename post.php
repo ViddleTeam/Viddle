@@ -7,7 +7,7 @@ echo 'ufo jest dziwne';
 	echo '<br></br>';
 	echo $_FILES["miniaturka"]["name"];
 	echo '<br></br>';
-	echo '<img src="'.$_FILES["miniaturka"]["tmp_name"].'">'
+	echo '<img src="'.$_FILES["miniaturka"]["tmp_name"].'">';
 	exit();
 } else {
 	echo 'test nieudany';
