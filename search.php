@@ -8,7 +8,7 @@ $q = htmlentities($q, ENT_QUOTES, "UTF-8");
 try {
     
 require 'danesql.php';
-$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAM);
 
 if($connect->connect_errno) {
     $error = '1';
