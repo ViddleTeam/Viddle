@@ -77,7 +77,6 @@ if ($_SESSION['z1'] == true) {
 	  if(isset($_FILES['miniaturka']) || isset($viddleid)) {
 		$ok = true;
 		$pic_name = $_FILES["miniaturka"]["name"];
-		$filetmp = $_FILES["miniaturka"]["tmp_name"];
 	  	$pic_basename = substr($miniaturka, 0, strripos($miniaturka, '.'));
 	  	$pic_ext = mime_content_type($_FILES["miniaturka"]["tmp_name"]);
 	  	$pic_size = $_FILES["miniaturka"]["size"];
@@ -92,7 +91,7 @@ if ($_SESSION['z1'] == true) {
 	  	}
 		$rozszerzenieminiatura = extpicture($pic_ext);
 		//kurwa dlaczego taka długa nazwa zmiennej, nie lepiej dać rozmin w nazwie zmiennej
-		$nazwaplikuminiatura = $viddleid.$pic_ext;
+		$nazwaplikuminiatura = $viddleid.''.$pic_ext;
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
 	    		 require 'daneftp.php';
@@ -103,7 +102,7 @@ if ($_SESSION['z1'] == true) {
 		    	ftp_chdir($ftp_conn, '/thumbnails/');
 			ftp_mkdir($ftp_conn, $viddleid);
 			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid.'/');
-			ftp_put($ftp_conn, $nazwaplikuminiatura, $filetmp, FTP_BINARY);
+			ftp_put($ftp_conn, $nazwaplikuminiatura, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY);
 			
 	//na chuj tu dales tyle spacji
 	         	
