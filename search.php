@@ -10,25 +10,38 @@ try {
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
+if (strlen($q) >= 2) { 
+    $error = '2';
+    throw new Exception($q->error);
+} else {
 if($connect->connect_errno) {
     $error = '1';
     throw new Exception($connect->error);
 } else {
+
+
 if($result = @$connect->query(
 sprintf("SELECT publisher, video_id, views, title FROM viddle_videos WHERE publisher, title LIKE %{%s}%",
 mysqli_real_escape_string($connect,$q)))) {
+  
 } else {
-    $error = '2';
+    $error = '3';
     throw new Exception($result->error);
+}
 }
 }
 } catch (Exception $e) {
     if($error == '1') {
         $e_kom = '<div class="alert alert-info" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
     }
-if($error == „2”) {
+if($error == „3”) {
         $e_kom = '<div class="alert alert-info" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
     }
+
+if($error == „2”) {
+        $e_kom = '<div class="alert alert-info" role="alert">Twoje zapytanie nie może mieć conajmniej 2 znaki</div>';
+    }
+ 
 }
 ?>
 <html lang="pl-PL"><head>
