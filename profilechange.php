@@ -79,7 +79,7 @@ if(isset($_FILES['file_picker']))
 		 
 		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
 		if($del == '1') {
-			$delete = $_SESSION['uid'].'.'.$t.'';
+			$delete = $_SESSION['uid'].'.'.$av.'';
 			ftp_delete($conn_id, $delete)  
 		}
 		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
