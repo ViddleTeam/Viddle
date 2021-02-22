@@ -2,7 +2,10 @@
 <?php
 if(isset($_FILES["miniaturka"]["tmp_name"])) {
 echo 'ufo jest dziwne';
+	echo '<br></br>';
 	echo $_FILES["miniaturka"]["tmp_name"];
+	echo '<br></br>';
+	echo echo $_FILES["miniaturka"]["name"];
 	exit();
 } else {
 	echo 'test nieudany';
