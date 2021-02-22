@@ -75,13 +75,14 @@ if(isset($_FILES['file_picker']))
 		 
 		ftp_chdir($ftp_conn, '/avatars/');
 		
-		if (ftp_nlist($ftp_conn, $_SESSION['uid']) == false) {
-    			ftp_mkdir($ftp_conn, $_SESSION['uid']);
-		}
+		
 		 
 		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
 		if($del == '1') {
-		ftp_delete($ftp_conn, $plik) ;
+			$files = ftp_nlist($ftp_conn, ".");
+			foreach ($files as $file) {
+			    ftp_delete($ftp_conn, $file);
+			}    
 		}
 		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
 		ftp_close($ftp_conn);
