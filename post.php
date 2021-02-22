@@ -1,5 +1,12 @@
 <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
+if(isset($_FILES["miniaturka"]["tmp_name"])) {
+echo 'ufo jest dziwne';
+	exit();
+} else {
+	echo 'test nieudany';
+	exit();
+}
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
