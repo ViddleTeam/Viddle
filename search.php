@@ -1,3 +1,33 @@
+<?php
+session_start();
+$ok = true;
+
+$q = $_GET['q'];
+$q = htmlentities($q, ENT_QUOTES, "UTF-8");
+
+try {
+    
+require 'danesql.php';
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
+if($connect->connect_errno) {
+    $error = '1';
+    throw new Exception($connect->error);
+} else {
+if($result = @$connect->query(
+sprintf("SELECT publisher, video_id, views, title FROM viddle_videos WHERE publisher, title LIKE %{%s}%",
+mysqli_real_escape_string($connect,$q)))) {
+} else {
+    $error = '2';
+    throw new Exception($result->error);
+}
+}
+} catch (Exception $e) {
+    if($error == '1') {
+        $e_kom = '<div class="alert alert-info" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
+    }
+}
+?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,9 +53,6 @@
 <div style="opacity: 1;" class="website">
     <?php
         require_once ("partials/navbar.php");
-        require 'danesql.php';
-        $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-        $search_query = $db->real_escape_string(htmlentities($_GET['q']));
     ?>
     <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -48,6 +75,10 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="tile" style="margin: auto;">
+                    <?php if($v_error == '1') {
+    
+                    }
+                    ?>
                     <?php
                     if (strlen($search_query) >= 2) {
                         $x = $db->real_escape_string($search_query);
