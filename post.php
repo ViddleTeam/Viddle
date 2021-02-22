@@ -1,33 +1,6 @@
 <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
-if(isset($_FILES["miniaturka"]["tmp_name"])) {
-echo 'ufo jest dziwne';
-	echo '<br></br>';
-	echo $_FILES["miniaturka"]["tmp_name"];
-	echo '<br></br>';
-	echo $_FILES["miniaturka"]["name"];
-	echo '<br></br>';
-	echo readfile($_FILES["miniaturka"]["tmp_name"]);
-	$file = $_FILES["miniaturka"]["tmp_name"];
-	$fh = fopen($file, 'w') or die("Can't open file $name for writing temporary stuff.");
-	fwrite($fh, $fileData);
-	fclose($fh);
 
-if (file_exists($file)) {
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="'.basename($file).'"');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($file));
-    readfile($file);
-    exit;
-}
-} else {
-	echo 'test nieudany';
-	exit();
-}
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
