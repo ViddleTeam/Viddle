@@ -234,7 +234,6 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="row" style="align-items: center;">
 			<?php if(isset($k_com)) {
 			echo $k_com;
 			}
@@ -259,7 +258,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 					    $av2 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$danec['uid'].'/'.$danec['uid'].'.'.$av.'';
 				    }
 					
-                    $say = '<div style="width: 100%;">
+                    $say = '<div class="row" style="width: 100%;">
                         <span style="margin-left: 10px;">
                         <a href=https://beta.viddle.xyz/channel?id="'.$danec['uid'].'"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="'.$av2.'"></a>
                         </span>
@@ -282,8 +281,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 			echo $V;
 			}
 			?>
-                    
-                </div><br>
+            <br>
             </div>
         </div>
 </div>
