@@ -21,7 +21,7 @@ if($connect->connect_errno) {
 
  $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 
- if($result = $connect->query("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%$qII%'")) {
+ if($result = $connect->query("SELECT views, title, publisher FROM viddle_videos WHERE publisher AND title LIKE '%$qII%'")) {
     $d2 = $result->num_rows;
     
     if(!$d2 == '0') {
@@ -111,8 +111,8 @@ if($error == '2') {
                     <?php 
                     if($videov == true) {
                            
-                            while($dane=$result->fetch_array()){
-				    $uid = dane['2'];
+                            while($dane=$result->fetch_assoc()){
+				    $uid = dane['publisher'];
                                 if(!isset($f_error)) {
                                   if ($p = @$connect->query(
 		                     sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
