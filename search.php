@@ -244,6 +244,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                             while($danec=$resultIII->fetch_assoc()){
 				    
                                 if(!isset($f_error)) {
+					$id = $danec['uid'];
 					$zapytanie = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id'");
 					$liczbaobs = $zapytanie->num_rows;
 					if(!isset($liczbaobs)) {
@@ -263,7 +264,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                     </span>
                     <span style="margin-left: 10px; margin-right: auto; align-items: center;">
                         <h4><a href="https://beta.viddle.xyz/channel?id='.$danec['uid'].'">'.$danec['login'].'</a></h4>
-                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$danec['observators'].' obserwujących</p>
+                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$liczbaobs.' obserwujących</p>
                     </span>
                     <span style="margin-left: auto; margin-right: -20px;">
                         <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
