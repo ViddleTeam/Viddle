@@ -21,8 +21,15 @@ if($connect->connect_errno) {
 
  $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 
- if($connect->query("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%$qII%'")) {
-  
+ if($result = $connect->query("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%$qII%'")) {
+    $d2 = $result->num_rows;
+    
+    if(!$d2 == '0') {
+    } else {
+        $error = '4';
+        throw new Exception($d2->error);
+    }
+    
 } else {
     $error = '3';
     throw new Exception($result->error);
@@ -39,6 +46,10 @@ if($error == '3') {
 
 if($error == '2') {
         $e_kom = '<div class="alert alert-info" role="alert">Twoje zapytanie nie może mieć conajmniej 2 znaki</div>';
+    }
+    
+    if($error == '4') {
+        $e_kom = '<div class="alert alert-info" role="alert">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
     }
  
 }
