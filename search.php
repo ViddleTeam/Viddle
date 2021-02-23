@@ -118,7 +118,7 @@ if($error == '2') {
                                    if($p = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
                                         
                                           $danee = mysqli_fetch_assoc($p);
-                                          if(!$danee['login'] == '')) {
+                                          if(!$danee['login'] == '') {
                                                                $say = '<div class="card">
                                               <a href="video?id='.$dane['video_id'].'">
                                                   <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
