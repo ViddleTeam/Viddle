@@ -112,7 +112,7 @@ if($error == '2') {
                     if($videov == true) {
                            
                             while($dane=$result->fetch_assoc()){
-				    $uid = dane['publisher'];
+				    $uid = $dane['publisher'];
                                 if(!isset($f_error)) {
                                   if ($p = @$connect->query(
 		                     sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
