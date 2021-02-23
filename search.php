@@ -21,7 +21,7 @@ if($connect->connect_errno) {
 
 
 if($result = @$connect->query(
-sprintf("SELECT publisher, video_id, views, title FROM viddle_videos WHERE publisher, title LIKE %{%s}%",
+sprintf("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%{%s}%'",
 mysqli_real_escape_string($connect,$q)))) {
   
 } else {
@@ -96,7 +96,7 @@ if($error == '2') {
                     echo $e_kom;
                     }
                     ?>
-                    <?php
+                    <?php /*
                     if (strlen($search_query) >= 2) {
                         $x = $db->real_escape_string($search_query);
                         $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
@@ -126,7 +126,7 @@ if($error == '2') {
                             Twoja fraza powinna składać się z przynajmniej 2 znaków.
                         </div>');
                     }
-                    ?>
+                    */?>
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
