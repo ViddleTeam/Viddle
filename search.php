@@ -114,7 +114,7 @@ if($error == '2') {
                             while($dane=$result->fetch_assoc()){
                                 
                                    $uid = $dane['publisher'];
-                                   if($p = $connect->query("ELECT * FROM viddle_users WHERE uid='$uid'")) {
+                                   if($p = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
                                           $daneII = $p->fetch_assoc();
                                           
                                           if(!isset($f_error)) {
@@ -128,7 +128,7 @@ if($error == '2') {
                                     <div class="bottom-info">
                                         <span>'.$daneII['login'].'</span>
                                         <span>•</span>
-                                        <span>17.5k wyświetleń</span>
+                                        <span>'.$dane['views'].' wyświetleń</span>
                                     </div>
                                 </a>
                             </div>';
