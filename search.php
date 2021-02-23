@@ -108,7 +108,19 @@ if($error == '2') {
                     echo $e_kom;
                     }
                     ?>
-                    <?php /*
+                    <?php 
+                    if($videov == true) {
+                           try {
+                                  
+                            while($dane=$result->fetch_assoc()){
+                                   echo $dane['title'];
+                            }       
+                                  
+                           }  catch (Exception $e) {
+                           }
+                    }
+                       
+                       /*
                     if (strlen($search_query) >= 2) {
                         $x = $db->real_escape_string($search_query);
                         $stmt = $db->prepare("SELECT publisher, video_id, views, title FROM viddle_videos WHERE title LIKE %{$x}%");
