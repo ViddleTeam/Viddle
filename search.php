@@ -47,7 +47,7 @@ if($error == '3') {
     }
 
 if($error == '2') {
-        $e_kom = '<div class="alert alert-info" role="alert">Twoje zapytanie nie może mieć conajmniej 2 znaki</div>';
+        $e_kom = '<div class="alert alert-info" role="alert">Twoje zapytanie musi mieć conajmniej 2 znaki</div>';
     }
     
     if($error == '4') {
