@@ -98,14 +98,11 @@ if ($_SESSION['z1'] == true) {
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
 			$ftp_server = FTPSERWER;
-			$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+			$ftp_conn = ftp_connect($ftp_server) or die("Could not connt to $ftp_server");
 			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-			$sciezka 
 		    	ftp_chdir($ftp_conn, '/thumbnails/');
 			ftp_put($ftp_conn, $nazwaplikuminiatura, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY);
-			
-	//na chuj tu dales tyle spacji
-	         	
+
 	  	} elseif ($pic_size > 3097152) {
 			header('Location: blad.php?id=6');
 		} elseif (!in_array($pic_ext, $allowed_picture_types)) {
