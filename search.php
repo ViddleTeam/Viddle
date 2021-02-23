@@ -71,7 +71,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 
 	 $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 		
-  	 if($resultIII = $connect->query("SELECT * FROM viddle_users WHERE login, observators LIKE '%$qII%'")) {
+  	 if($resultIII = $connect->query("SELECT * FROM viddle_users WHERE login AND observators LIKE '%$qII%'")) {
 		 $d3 =mysqli_num_rows($resultIII);
 		 
 		 if(!$d3 == '0') {
