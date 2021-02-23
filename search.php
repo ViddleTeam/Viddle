@@ -71,8 +71,8 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 
 	 $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 		
-  	 if($resultII = $connect->query("SEECT * FROM viddle_users WHERE login, observators LIKE '%$qII%'")) {
-		 $d3 =mysqli_num_rows($resultII);
+  	 if($resultIII = $connect->query("SEECT * FROM viddle_users WHERE login, observators LIKE '%$qII%'")) {
+		 $d3 =mysqli_num_rows($resultIII);
 		 
 		 if(!$d3 == '0') {
 			 $channel = true;
@@ -238,17 +238,36 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 			<?php if(isset($k_com)) {
 			echo $k_com;
 			}
-			?>
-                    <span style="margin-left: 10px;">
-                      <a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="https://cdn.viddle.xyz/cdn/videos/avatars/5fd60fc0868fe5fd60fc086901/5fd60fc0868fe5fd60fc086901.jpeg"></a>
+			?> <?php
+			 if($channel == true) {
+                           
+                            while($danec=$resultIII->fetch_assoc()){
+				    
+                                if(!isset($f_error)) {
+					$av = $dane['avatarname'];
+				    if($av == 'x') {
+					    $av2 = 'anonim.png';
+				    } else {
+					    $av2 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$danec['uid'].'/'.$danec['uid'].'.'.$av.'';
+				    }
+					
+                                                               $say = '<span style="margin-left: 10px;">
+                      <a href=https://beta.viddle.xyz/channel?id="'.$danec['uid'].'"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="'.$av2.'"></a>
                     </span>
                     <span style="margin-left: 10px; margin-right: auto; align-items: center;">
-                        <h4><a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901">SlaVistaPL</a></h4>
-                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
+                        <h4><a href="https://beta.viddle.xyz/channel?id='.$danec['uid'].'">'.$danec['login'].'</a></h4>
+                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$danec['observators'].' obserwujących</p>
                     </span>
                     <span style="margin-left: auto; margin-right: -20px;">
                         <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
-                    </span>
+                    </span>';
+                                                 echo $say;
+				}
+			    }
+                                   
+                                  
+                            }  ?>
+                    
                 </div><br>
             </div>
         </div>
