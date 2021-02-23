@@ -4,11 +4,11 @@ $ok = true;
 
 $q = $_GET['q'];
 $q = htmlentities($q, ENT_QUOTES, "UTF-8");
-
-try {
-       $videov = false; 
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+try {
+       $videov = false; 
+
 if((strlen($q) < '1') || (strlen($q) == '1')) {
  
     $error = '2';
@@ -54,6 +54,25 @@ if($error == '2') {
         $e_kom = '<div class="alert alert-info" role="alert">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
     }
  
+} 
+
+try {
+if((strlen($q) < '1') || (strlen($q) == '1')) {
+ 
+    $kerror = '2';
+    throw new Exception($q->error);
+} else {
+	if($connect->connect_errno) {
+	    $kerror = '1';
+	    throw new Exception($connect->error);
+	} else {
+
+	 $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
+	}
+}
+	
+} catch (Exception $e) {
+	
 }
 ?>
 <html lang="pl-PL"><head>
@@ -89,7 +108,7 @@ if($error == '2') {
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania</h4>
+                <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wyniki wyszukiwania frazy <?php echo $q ?></h4>
             </div>
         </div>
         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
