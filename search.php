@@ -114,7 +114,7 @@ if($error == '2') {
                             while($dane=$result->fetch_assoc()){
                                 
                                    $uid = $dane['publisher'];
-                                   if($p = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
+                                   if($p = $connect->query("ELECT * FROM viddle_users WHERE uid='$uid'")) {
                                           $daneII = $p->fetch_assoc();
                                           
                                           if(!isset($f_error)) {
@@ -139,7 +139,7 @@ if($error == '2') {
                                    } else {
                                           $f_error = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0003</div>';
                                    }
-                                   
+                                   }
                                    }
                                   
                             }       
