@@ -110,15 +110,41 @@ if($error == '2') {
                     ?>
                     <?php 
                     if($videov == true) {
-                           try {
-                                  
+                           
                             while($dane=$result->fetch_assoc()){
-                                   echo $dane['title'];
+                                
+                                   $uid = $dane['publisher'];
+                                   if($p = $connect->query("SELET * FROM viddle_users WHERE uid='$uid'")) {
+                                          $daneII = $p->fetch_assoc();
+                                          
+                                          if(!isset($f_error)) {
+                                                 
+                                          if(isset(daneII['login'])) {
+                                                  $say = '<div class="card">
+                                <a href="video?id='.$dane['video_id'].'">
+                                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                                    <p class="card-title">'.$dane['title'].'</p>
+                                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+                                    <div class="bottom-info">
+                                        <span>'.$daneII['login'].'</span>
+                                        <span>•</span>
+                                        <span>17.5k wyświetleń</span>
+                                    </div>
+                                </a>
+                            </div>';
+                                                 echo $say;
+                                          } else {
+                                                 $f_error = '<div class="alert alert-danger" role="alert">Wystąpił poważny błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0004</div>';
+                                          }
+                                   } else {
+                                          $f_error = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0003</div>';
+                                   }
+                                   
+                                   }
+                                  
                             }       
                                   
-                           }  catch (Exception $e) {
-                           }
-                    }
+                   
                        
                        /*
                     if (strlen($search_query) >= 2) {
@@ -151,6 +177,10 @@ if($error == '2') {
                         </div>');
                     }
                     */?>
+                       <?php if(isset($f_error)) {
+                           echo $f_error;
+                    }
+                       ?>
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
