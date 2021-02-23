@@ -115,7 +115,8 @@ if($error == '2') {
                                 if(!isset($f_error)) {
                                        
                                    $uid = $dane['publisher'];
-                                   if($p = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
+                                   $res = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'");
+                                   if($res == true) {
                                           $num =mysqli_num_rows($p);
                                           $danee = mysqli_fetch_assoc($p);
                                           if(!$num == '0') {
