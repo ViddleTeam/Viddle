@@ -91,17 +91,17 @@ if ($_SESSION['z1'] == true) {
                           );
     	          return $extensions[$mime_type];
 	  	}
-		  require 'daneftp.php';
+		 $min_tmp = $_FILES["miniaturka"]["tmp_name"];
 		$rozszerzenieminiatura = extpicture($pic_ext);
 		//kurwa dlaczego taka długa nazwa zmiennej, nie lepiej dać rozmin w nazwie zmiennej
-		$nazwaplikuminiatura = $viddleid.''.$pic_ext;
+		$nazwaplikuminiatura = $viddleid.'m'.$pic_ext;
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
 			$ftp_server = FTPSERWER;
 			$ftp_conn = ftp_connect($ftp_server) or die("Could not connt to $ftp_server");
 			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-		    	ftp_chdir($ftp_conn, '/thumbnails/');
-			ftp_put($ftp_conn, $nazwaplikuminiatura, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY);
+		    	ftp_chdir($ftp_conn, '/thumbnails');
+			ftp_put($ftp_conn, $nazwaplikuminiatura, $min_tmp, FTP_BINARY);
 
 	  	} elseif ($pic_size > 3097152) {
 			header('Location: blad.php?id=6');
