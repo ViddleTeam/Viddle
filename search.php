@@ -127,7 +127,7 @@ if($error == '2') {
                                                   <p class="card-title">'.$dane['title'].'</p>
                                                   <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                                                   <div class="bottom-info">
-                                                      <span>'.$daneII['login'].'</span>
+                                                      <span>'.$danee['login'].'</span>
                                                       <span>•</span>
                                                       <span>'.$dane['views'].' wyświetleń</span>
                                                   </div>
