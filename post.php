@@ -128,7 +128,7 @@ if ($_SESSION['z1'] == true) {
 	    } else {
 	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
-	      ftp_chdir($conn_id, '/videos/.$viddleid.'/');
+	      ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
