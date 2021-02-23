@@ -71,7 +71,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 
 	 $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 		
-  	 if($resultIII = $connect->query("SEECT * FROM viddle_users WHERE login, observators LIKE '%$qII%'")) {
+  	 if($resultIII = $connect->query("SELECT * FROM viddle_users WHERE login, observators LIKE '%$qII%'")) {
 		 $d3 =mysqli_num_rows($resultIII);
 		 
 		 if(!$d3 == '0') {
@@ -151,12 +151,12 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="tile" style="margin: auto;">
+                <div class="tile" style="margin: auto;"><center>
                     <?php if(isset($e_kom)) {
 
                     echo $e_kom;
                     }
-                    ?>
+			?></center>
                     <?php 
                     if($videov == true) {
                            
