@@ -258,7 +258,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 					    $av2 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$danec['uid'].'/'.$danec['uid'].'.'.$av.'';
 				    }
 					
-                    $say = '<div class="row" style="width: 100%; align-items: center; margin: 10px 0 10px 0;">
+                    $say = '<div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                         <span style="margin-left: 10px;">
                         <a href=https://beta.viddle.xyz/channel?id="'.$danec['uid'].'"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="'.$av2.'"></a>
                         </span>
