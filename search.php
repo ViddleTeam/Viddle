@@ -259,17 +259,19 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 					    $av2 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$danec['uid'].'/'.$danec['uid'].'.'.$av.'';
 				    }
 					
-                                                               $say = '<span style="margin-left: 10px;">
-                      <a href=https://beta.viddle.xyz/channel?id="'.$danec['uid'].'"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="'.$av2.'"></a>
-                    </span>
-                    <span style="margin-left: 10px; margin-right: auto; align-items: center;">
-                        <h4><a href="https://beta.viddle.xyz/channel?id='.$danec['uid'].'">'.$danec['login'].'</a></h4>
-                        <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$liczbaobs.' obserwujących</p>
-                    </span>
-                    <span style="margin-left: auto; margin-right: -20px;">
-                        <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
-                    </span>';
-                                                 echo $say;
+                    $say = '<div style="width: 100%;">
+                        <span style="margin-left: 10px;">
+                        <a href=https://beta.viddle.xyz/channel?id="'.$danec['uid'].'"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="'.$av2.'"></a>
+                        </span>
+                        <span style="margin-left: 10px; margin-right: auto; align-items: center;">
+                            <h4><a href="https://beta.viddle.xyz/channel?id='.$danec['uid'].'">'.$danec['login'].'</a></h4>
+                            <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$liczbaobs.' obserwujących</p>
+                        </span>
+                        <span style="margin-left: auto; margin-right: -20px;">
+                            <button type="button" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
+                        </span>
+                    </div>';
+                    echo $say;
 				}
 			    }
 			    }

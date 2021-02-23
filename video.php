@@ -298,7 +298,7 @@ if (isset($_SESSION['uid']))
         if ($ez == '0')
         {
             $disable = 'pointer-events: none; cursor: default;';
-            $powod = '(Musisz zweryfikować adres e-mail w celu zagłosowania na film.)';
+            $powod = 'Musisz zweryfikować adres e-mail w celu oddania głosu na film.';
         }
         else
         {
