@@ -90,19 +90,17 @@ if ($_SESSION['z1'] == true) {
                           );
     	          return $extensions[$mime_type];
 	  	}
+		  require 'daneftp.php';
 		$rozszerzenieminiatura = extpicture($pic_ext);
 		//kurwa dlaczego taka długa nazwa zmiennej, nie lepiej dać rozmin w nazwie zmiennej
 		$nazwaplikuminiatura = $viddleid.''.$pic_ext;
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
-	    		 require 'daneftp.php';
-	
 			$ftp_server = FTPSERWER;
 			$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
+			$sciezka 
 		    	ftp_chdir($ftp_conn, '/thumbnails/');
-			ftp_mkdir($ftp_conn, $viddleid);
-			ftp_chdir($ftp_conn, '/thumbnails/'.$viddleid.'/');
 			ftp_put($ftp_conn, $nazwaplikuminiatura, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY);
 			
 	//na chuj tu dales tyle spacji
@@ -122,8 +120,8 @@ if ($_SESSION['z1'] == true) {
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {	
-	    $conn_id = ftp_connect("ftp.oliwierj.webd.pro") or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
-	    $login_result = ftp_login($conn_id, "cdn_viddle@viddle.xyz", "uaX9WprQfEO}");
+	    $conn_id = ftp_connect(FTPSERWER) or die("Nie można się połączyć z serwerem. SKONTAKTUJ się z administratorami.");
+	    $login_result = ftp_login($conn_id, FTPUSER, FTPPASS);
 	    $res = ftp_size($conn_id, $file);
 	    $sciezka = "/videos/";
 	    if ($res != -1) {
@@ -132,7 +130,7 @@ if ($_SESSION['z1'] == true) {
 	    } else {
 	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
-	      ftp_chdir($conn_id, '/videos/' . $viddleid . '/');
+	      ftp_chdir($conn_id, '/videos/.$viddleid.'/');
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
