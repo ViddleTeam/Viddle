@@ -113,10 +113,10 @@ if($error == '2') {
                            
                             while($dane=$result->fetch_assoc()){
                                 if(!isset($f_error)) {
-                                       
-                                   $uid = $dane['publisher'];
-                                   $res = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'");
-                                   if($res == true) {
+                                  if ($p = @$connect->query(
+		                     sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
+		                     mysqli_real_escape_string($connect,$dane['publisher']))))  {  
+                                          
                                           $num =mysqli_num_rows($p);
                                           $danee = mysqli_fetch_assoc($p);
                                           if(!$num == '0') {
