@@ -244,6 +244,13 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                             while($danec=$resultIII->fetch_assoc()){
 				    
                                 if(!isset($f_error)) {
+					$zapytanie = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id'");
+					$liczbaobs = $zapytanie->num_rows;
+					if(!isset($liczbaobs)) {
+						$blad = '5';
+						$V = '<div class="alert alert-danger" role="alert">'.$dane['publisher'].'Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0005</div>';
+						$k_com = $V;
+					} else {
 					$av = $danec['avatarname'];
 				    if($av == 'x') {
 					    $av2 = 'anonim.png';
@@ -264,9 +271,14 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                                                  echo $say;
 				}
 			    }
+			    }
                                    
                                   
-                            }  ?>
+                            }
+			if(isset($V)) {
+			echo $V;
+			}
+			?>
                     
                 </div><br>
             </div>
