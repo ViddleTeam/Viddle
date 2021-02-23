@@ -112,26 +112,27 @@ if($error == '2') {
                     if($videov == true) {
                            
                             while($dane=$result->fetch_assoc()){
-                                
+                                if(!isset($f_error)) {
+                                       
                                    $uid = $dane['publisher'];
                                    if($p = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
                                           $daneII = $p->fetch_assoc();
                                           
-                                          if(!isset($f_error)) {
+                                          
                                                  
                                           if(isset(daneII['login'])) {
-                                                  $say = '<div class="card">
-                                <a href="video?id='.$dane['video_id'].'">
-                                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                                    <p class="card-title">'.$dane['title'].'</p>
-                                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                                    <div class="bottom-info">
-                                        <span>'.$daneII['login'].'</span>
-                                        <span>•</span>
-                                        <span>'.$dane['views'].' wyświetleń</span>
-                                    </div>
-                                </a>
-                            </div>';
+                                                               $say = '<div class="card">
+                                              <a href="video?id='.$dane['video_id'].'">
+                                                  <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                                                  <p class="card-title">'.$dane['title'].'</p>
+                                                  <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+                                                  <div class="bottom-info">
+                                                      <span>'.$daneII['login'].'</span>
+                                                      <span>•</span>
+                                                      <span>'.$dane['views'].' wyświetleń</span>
+                                                  </div>
+                                              </a>
+                                          </div>';
                                                  echo $say;
                                           } else {
                                                  $f_error = '<div class="alert alert-danger" role="alert">Wystąpił poważny błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0004</div>';
