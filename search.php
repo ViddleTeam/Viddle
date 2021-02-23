@@ -134,7 +134,7 @@ if($error == '2') {
                                           </div>';
                                                  echo $say;
                                           } else {
-                                                 $f_error = '<div class="alert alert-danger" role="alert">'.$num.'Wystąpił poważny błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0004</div>';
+                                                 $f_error = '<div class="alert alert-danger" role="alert">'.$dane['publisher'].'Wystąpił poważny błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0004</div>';
                                           }
                                    } else {
                                           $f_error = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0003</div>';
