@@ -111,11 +111,11 @@ if($error == '2') {
                     <?php 
                     if($videov == true) {
                            
-                            while($dane=$result->fetch_assoc()){
+                            while($dane=$result->fetch_array()){
                                 if(!isset($f_error)) {
                                   if ($p = @$connect->query(
 		                     sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
-		                     mysqli_real_escape_string($connect,$dane['publisher']))))  {  
+		                     mysqli_real_escape_string($connect,$dane['2']))))  {  
                                           
                                           $num =mysqli_num_rows($p);
                                           $danee = mysqli_fetch_assoc($p);
