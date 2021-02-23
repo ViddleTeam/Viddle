@@ -190,9 +190,9 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                                           $f_error = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0003</div>';
                                    }
                                    }
-                                   }
+                              }
                                   
-                            }       
+                                  
                                   
                    
                        
