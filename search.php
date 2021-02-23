@@ -21,7 +21,7 @@ if($connect->connect_errno) {
 
  $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 
- if($connect->query("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%{$qII}%'")) {
+ if($connect->query("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%$qII%'")) {
   
 } else {
     $error = '3';
