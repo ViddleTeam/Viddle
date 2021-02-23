@@ -40,18 +40,18 @@ if($connect->connect_errno) {
 } catch (Exception $e) {
 
     if($error == '1') {
-        $e_kom = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
+        $e_kom = '<div class="alert alert-danger" role="alert" style="width: 100%; text-align: center;">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
     }
 if($error == '3') {
-        $e_kom = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
+        $e_kom = '<div class="alert alert-danger" role="alert" style="width: 100%; text-align: center;">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
     }
 
 if($error == '2') {
-        $e_kom = '<div class="alert alert-info" role="alert">Twoje zapytanie musi mieć conajmniej 2 znaki</div>';
+        $e_kom = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Twoje zapytanie musi mieć co najmniej 2 znaki.</div>';
     }
     
     if($error == '4') {
-        $e_kom = '<div class="alert alert-info" role="alert">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
+        $e_kom = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Nie odnaleziono treści odpowiadających Twojemu zapytaniu.</div>';
     }
  
 } 
