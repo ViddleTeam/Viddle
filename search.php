@@ -19,10 +19,9 @@ if($connect->connect_errno) {
     throw new Exception($connect->error);
 } else {
 
+ $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
 
-if($result = @$connect->query(
-sprintf("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%{%s}%'",
-mysqli_real_escape_string($connect,$q)))) {
+ if($connect->query("SELECT views, title FROM viddle_videos WHERE publisher AND title LIKE '%{$qII}%'")) {
   
 } else {
     $error = '3';
