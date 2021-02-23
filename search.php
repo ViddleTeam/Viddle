@@ -6,10 +6,10 @@ $q = $_GET['q'];
 $q = htmlentities($q, ENT_QUOTES, "UTF-8");
 
 try {
-    
+       $videov = false; 
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-if(!$q > 1) {
+if((strlen($q) < '1') || (strlen($q) == '1')) {
  
     $error = '2';
     throw new Exception($q->error);
@@ -25,6 +25,7 @@ if($connect->connect_errno) {
     $d2 = $result->num_rows;
     
     if(!$d2 == '0') {
+        $videov = true;
     } else {
         $error = '4';
         throw new Exception($d2->error);
@@ -37,6 +38,7 @@ if($connect->connect_errno) {
 }
 }
 } catch (Exception $e) {
+
     if($error == '1') {
         $e_kom = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
     }
