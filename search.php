@@ -244,7 +244,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                             while($danec=$resultIII->fetch_assoc()){
 				    
                                 if(!isset($f_error)) {
-					$av = $dane['avatarname'];
+					$av = $danec['avatarname'];
 				    if($av == 'x') {
 					    $av2 = 'anonim.png';
 				    } else {
