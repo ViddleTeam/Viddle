@@ -34,6 +34,7 @@ if ($_SESSION['z1'] == true) {
     	    return $extensions[$mime_type];
 	  }
 	  require "danesql.php";
+	  require 'daneftp.php';
   	  $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 	  $zabezpjeden = mysqli_real_escape_string($connect, htmlspecialchars($login));
   	  $zabezpdwa = mysqli_real_escape_string($connect, htmlspecialchars($tytul));
