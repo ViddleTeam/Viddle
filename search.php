@@ -57,6 +57,8 @@ if($error == '2') {
 } 
 
 try {
+	
+	$channel = false;
 if((strlen($q) < '1') || (strlen($q) == '1')) {
  
     $kerror = '2';
@@ -68,11 +70,39 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 	} else {
 
 	 $qII = mysqli_real_escape_string($connect, htmlspecialchars($q));
+		
+  	 if($resultII = $connect->query("SEECT * FROM viddle_users WHERE login, observators LIKE '%$qII%'")) {
+		 $d3 =mysqli_num_rows($resultII);
+		 
+		 if(!$d3 == '0') {
+			 $channel = true;
+		 } else {
+			$kerror = '4';
+	   		throw new Exception($resultII->error);  
+		 }
+	 } else {
+		$kerror = '3';
+	   	throw new Exception($resultII->error); 
+	 }
 	}
 }
 	
 } catch (Exception $e) {
+	if($kerror == '1') {
+		$k_com = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
+	}
 	
+	if($kerror == '2') {
+		$k_com = '<div class="alert alert-info" role="alert">Twoje zapytanie musi mieć conajmniej 2 znaki</div>';
+	}
+	
+	if($kerror == '3') {
+		$k_com = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
+	}
+	
+	if($kerror == '4') {
+		$k_com = '<div class="alert alert-info" role="alert">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
+	}
 }
 ?>
 <html lang="pl-PL"><head>
@@ -205,6 +235,10 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="row" style="align-items: center;">
+			<?php if(isset($k_com)) {
+			echo $k_com;
+			}
+			?>
                     <span style="margin-left: 10px;">
                       <a href="https://beta.viddle.xyz/channel?id=5fd60fc0868fe5fd60fc086901"><img width="96px" style="border-radius:50%; margin-right:5px;" class="img-responsive" src="https://cdn.viddle.xyz/cdn/videos/avatars/5fd60fc0868fe5fd60fc086901/5fd60fc0868fe5fd60fc086901.jpeg"></a>
                     </span>
