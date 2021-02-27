@@ -11,8 +11,12 @@ if ($result = $db->query($stmt)) {
     $assoc = $result->fetch_assoc();
 }
 ?>
-<div class="mt-8">
+<div style="margin-top: 60px;" class="container">
     <p>
-        <?= $assoc ?>
+        <?php
+            array_map(function($value) {
+                echo "<li>$value</li>";
+            }, $assoc)
+        ?>
     </p>
 </div>
