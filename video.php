@@ -5,17 +5,6 @@ require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $uidtest = $_SESSION['id'];
-if ($_SESSION['z1'] == true) {
-	$test = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id' AND following='$uidtest'");
- 	$followcount = $resulttwo->num_rows;
-	if($followcount == 1) {
-		$isfollowinguser = true;
-	} else {
-		$isfollowinguser = false;
-	}
-} else {
-	$isfollowinguser = false;
-}
 $_SESSION['id'] = $_GET['id'];
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 if ($c = $connect->query($polecenie)) {
@@ -75,6 +64,17 @@ if ($id == 0) {
     //Liczba obserwacji
     $resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$uid'");
     $followcount = $resulttwo->num_rows;
+    if ($_SESSION['z1'] == true) {
+	$test = $connect->query("SELECT * FROM viddle_followers WHERE followed='$uid' AND following='$uidtest'");
+ 	$followcount = $resulttwo->num_rows;
+	if($followcount == 1) {
+		$isfollowinguser = true;
+	} else {
+		$isfollowinguser = false;
+	}
+    } else {
+	  $isfollowinguser = false;
+    }
 }
 if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']), mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
 if ($ilosc == '1') {
@@ -278,9 +278,9 @@ if ($video_e == true) {
                                     <?php if ($uid != $publisher) { 
 					if ($_SESSION['z1'] == true) {
 						if($isfollowinguser == true) {
-							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button></form>';
+							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $uid . '"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button></form>';
 						} else {
-							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $uid . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 						}
 					} else {
 						echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
