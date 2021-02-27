@@ -4,6 +4,18 @@ $test = $_GET['button'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
+$uidtest = $_SESSION['id'];
+if ($_SESSION['z1'] == true) {
+	$test = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id' AND following='$uidtest'");
+ 	$followcount = $resulttwo->num_rows;
+	if($followcount == 1) {
+		$isfollowinguser = true;
+	} else {
+		$isfollowinguser = false;
+	}
+} else {
+	$isfollowinguser = false;
+}
 $_SESSION['id'] = $_GET['id'];
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
 if ($c = $connect->query($polecenie)) {
@@ -263,13 +275,16 @@ if ($video_e == true) {
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $followcount ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-                                    <?php if ($uid != $publisher) { ?>
-                                        <form action="/follow.php" method="POST">
-                                            <input id="followid" name="followid" type="hidden" value="<?=$publisher
-                                            ?>">
-                <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
-                                        </form>
-                                        <?php
+                                    <?php if ($uid != $publisher) { 
+					if ($_SESSION['z1'] == true) {
+						if($isfollowinguser == true) {
+							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button></form>';
+						} else {
+							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+						}
+					} else {
+						echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
+					}
                                     } else { ?>
                                         <span class="d-inline-block material-tooltip-main" tabindex="0" data-toggle="tooltip" title="Nie trzeba obserwować swojego kanału.">
                     <button class="btn btn-success" style="pointer-events: none" type="button" disabled>
@@ -477,6 +492,27 @@ if ($video_e == true) {
     return;
 }
 ?>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.</p>
+      </div>
+      <div class="modal-footer">
+	<button type="button" class="btn btn-secondary" data-dismiss="modal" style="padding: 10px;">Zamknij okno</button>
+	<a href="login.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Zaloguj się</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content bg-dark">
