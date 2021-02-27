@@ -257,7 +257,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				}
 			    	else
 				{
-					$avnf1 = 'grafic/'.$oneid.'m.'.$avn1.'';
+					$avnf1 = 'grafic/'.$oneid.'.'.$avn1.'';
 				}
 		       		
 		  
@@ -292,7 +292,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				}
 			    	else
 				{
-					$avnf2 = '/grafic/'.$twoid.'m.'.$avn2.'';
+					$avnf2 = '/grafic/'.$twoid.'.'.$avn2.'';
 				}
 		       		
 				    
@@ -325,7 +325,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				}
 			    	else
 				{
-					$avnf3 = '/grafic/'.$thteeid.'m.'.$avn3.'';
+					$avnf3 = '/grafic/'.$threeid.'.'.$avn3.'';
 				}
 		  
 		  ?>
