@@ -278,9 +278,9 @@ if ($video_e == true) {
                                     <?php if ($uid != $publisher) { 
 					if ($_SESSION['z1'] == true) {
 						if($isfollowinguser == true) {
-							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $uid . '"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button></form>';
+							echo '<button href="/follow.php?' . $uid . '" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button>';
 						} else {
-							echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $uid . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+							echo '<button href="/follow.php?' . $uid . '" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						}
 					} else {
 						echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
