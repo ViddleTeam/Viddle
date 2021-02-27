@@ -408,7 +408,7 @@ if ($video_e == true)
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
                                 </form>-->
-                                <form method="post">
+                                <form method="post" action="video.php">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
                                         <input class="form-control mr-sm-2 input-block-level"
                                                type="text"
