@@ -251,12 +251,13 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			    	    $danen1 = $resultn1->fetch_assoc();
 			    	    $avn1 = $danen1['minname'];
 			    
-			  	if($avn1 == 'x')
-				{
+			  	if($avn1 == 'x') {
 					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				}
-			    	else
-				{
+				} elseif(!isset($avn1)) {
+					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				} elseif($avn1 == '') {
+					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				} else {
 					$avnf1 = 'grafic/'.$oneid.'.'.$avn1.'';
 				}
 		       		
@@ -286,12 +287,13 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			    	    $danen2 = $resultn2->fetch_assoc();
 			    	    $avn2 = $danen2['minname'];
 			    
-			  	if($avn2 == 'x')
-				{
+			  	if($avn2 == 'x') {
 					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				}
-			    	else
-				{
+				} elseif(!isset($avn2)) {
+					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				} elseif($avn2 == '') {
+					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				} else {
 					$avnf2 = '/grafic/'.$twoid.'.'.$avn2.'';
 				}
 		       		
@@ -319,12 +321,13 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			    	    $danen3 = $resultn3->fetch_assoc();
 			    	    $avn3 = $danen3['minname'];
 			    
-			  	if($avn3 == 'x')
-				{
+			  	if($avn3 == 'x') {
 					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				}
-			    	else
-				{
+				} elseif(!isset($avn3)) {
+					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				} elseif($avn3 == '') {
+					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				} else {
 					$avnf3 = '/grafic/'.$threeid.'.'.$avn3.'';
 				}
 		  
