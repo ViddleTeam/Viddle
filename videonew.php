@@ -5,10 +5,9 @@ require_once 'partials/navbar.php';
 $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
-$res = null;
 $stmt = sprintf("SELECT * FROM viddle_videos WHERE video_id = '%s'", $db->real_escape_string($id));
 if ($result = $db->query($stmt)) {
-    $res = $result;
+    $assoc = $result->fetch_assoc();
+    echo "<h1>$assoc</h1>";
 }
 ?>
-<p><?= $res ?></p>
