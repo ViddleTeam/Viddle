@@ -33,15 +33,15 @@ if ($result = @$db->query("SELECT * FROM viddle_users WHERE uid")) {
 ] = $assoc_user;
 ?>
 <div style="margin-top: 70px; justify-content: center;" class="container">
-    <pre>
+    <h1>
         Video ID => <?= $video_id ?>
-        Publisher => <?= $publisher ?> | <?= $username ?>
-        Views => <?= $views ?>
-        Comments num => <?= $comments ?>
-        Upvotes => <?= $upvotes ?>
-        Downvotes => <?= $downvotes ?>
-        Title => <?= $title ?>
-        Published at => <?= $published_at ?>
-        Followers => <?= $followers ?>
-    </pre>
+        <br/>Publisher => <?= $publisher ?> | <?= $username ?>
+        <br/>Views => <?= $views ?>
+        <br/>Comments num => <?= $comments ?>
+        <br/>Upvotes => <?= $upvotes ?>
+        <br/>Downvotes => <?= $downvotes ?>
+        <br/>Title => <?= $title ?>
+        <br/>Published at => <?= $published_at ?>
+        <br/>Followers => <?= $followers ?>
+    </h1>
 </div>
