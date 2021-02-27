@@ -258,7 +258,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				} elseif($avn1 == '') {
 					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
 				} else {
-					$avnf1 = 'grafic/'.$oneid.'.'.$avn1.'';
+					$avnf1 = 'grafic/'.$oneid.$avn1.'';
 				}
 		       		
 		  
@@ -294,7 +294,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				} elseif($avn2 == '') {
 					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
 				} else {
-					$avnf2 = '/grafic/'.$twoid.'.'.$avn2.'';
+					$avnf2 = '/grafic/'.$twoid.$avn2.'';
 				}
 		       		
 				    
@@ -328,7 +328,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				} elseif($avn3 == '') {
 					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
 				} else {
-					$avnf3 = '/grafic/'.$threeid.'.'.$avn3.'';
+					$avnf3 = '/grafic/'.$threeid.$avn3.'';
 				}
 		  
 		  ?>
