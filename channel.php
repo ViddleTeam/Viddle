@@ -1,6 +1,7 @@
 <?php
 session_start();
 $id = $_GET['id'];
+$uid = $_SESSION['uid'];
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if ($result = @$connect->query(
@@ -38,6 +39,17 @@ if ($result = @$connect->query(
 		//Liczba obserwacji
     		$resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id'");
  		$followcount = $resulttwo->num_rows;
+		if ($_SESSION['z1'] == true) {
+			$test = $connect->query("SELECT * FROM viddle_followers WHERE followed='$id' AND following='$uid'");
+ 			$followcount = $resulttwo->num_rows;
+			if($followcount == 1) {
+				$isfollowinguser = true;
+			} else {
+				$isfollowinguser = false;
+			}
+		} else {
+			$isfollowinguser = false;
+		}
 	} else {
 		header('location: index.php');
 	}
@@ -89,7 +101,11 @@ $(document).ready(function(e) {
 							echo '<a href="profilechange.php"><button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button></a>';
 						} else {
 							if ($_SESSION['z1'] == true) {
-								echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+								if($isfollowinguser == true) {
+									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px; color: gray;">Obserwujesz</button></form>';
+								} else {
+									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+								}
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
 							}
