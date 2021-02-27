@@ -314,7 +314,7 @@ else
 }
 if ($_POST['comment']) {
     $cmt = $_POST['comment'];
-    //$polecenie = sprintf('INSERT INTO viddle_comments (tresc, uid, published, videoid) VALUES (%s, %s, %s, %s)', $cmt, );
+    $polecenie = sprintf('INSERT INTO viddle_comments (tresc, uid, published, videoid) VALUES (%s, %s, %s, %s)', $cmt, $_SESSION['uid'], new DateTime(), $_GET['id']);
 }
 ?>
 <?php
@@ -413,7 +413,6 @@ if ($video_e == true)
 
                                 </form>-->
                                 <form method="post" action="video.php?id=<?= $_GET['id'] ?>">
-                                    <p><?= $_SESSION['uid'] ?></p>
                                     <span class="md-form my-0 mx-2" style="color: white!important">
                                         <input class="form-control mr-sm-2 d-none d-lg-block"
                                                style="color: white !important; width: 32rem;"
