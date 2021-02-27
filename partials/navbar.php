@@ -149,8 +149,6 @@ if($block == '1')
             </div>
         </nav>
     </header>
-
-    <div class=""></div>
     <!--    <header>
             <nav class="uk-navbar-container" uk-navbar style="background: #262626; height: fit-content;">
                 <div class="uk-navbar-left">
