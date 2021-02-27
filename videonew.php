@@ -11,4 +11,6 @@ if ($result = $db->query($stmt)) {
     $assoc = $result->fetch_assoc();
 }
 ?>
-<h1><?= $assoc ?></h1>
+<div class="mt-5">
+    <p><?= $assoc ?></p>
+</div>
