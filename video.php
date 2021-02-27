@@ -312,11 +312,11 @@ else
     $disable = 'pointer-events: none; cursor: default;';
     $powod = '';
 }
-if (isset($_POST['comment'])) {
+/*if (isset($_POST['comment'])) {
     $cmt = $_POST['comment'];
     $polecenie = sprintf('INSERT INTO viddle_comments (tresc, uid, published, videoid) VALUES (%s, %s, %s, %s)', $connect->real_escape_string($cmt, $_SESSION['uid'], new DateTime(), $_GET['id']));
     $connect->query($polecenie);
-}
+}*/
 ?>
 <?php
 require_once ("partials/navbar.php");
