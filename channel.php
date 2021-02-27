@@ -102,7 +102,7 @@ $(document).ready(function(e) {
 						} else {
 							if ($_SESSION['z1'] == true) {
 								if($isfollowinguser == true) {
-									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px; color: gray;">Obserwujesz</button></form>';
+									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: gray;">Obserwujesz</button></form>';
 								} else {
 									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 								}
