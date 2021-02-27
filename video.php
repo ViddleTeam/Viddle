@@ -312,6 +312,10 @@ else
     $disable = 'pointer-events: none; cursor: default;';
     $powod = '';
 }
+if ($_POST['comment']) {
+    $cmt = $_POST['comment'];
+    //$polecenie = sprintf('INSERT INTO viddle_comments (tresc, uid, published, videoid) VALUES (%s, %s, %s, %s)', $cmt, );
+}
 ?>
 <?php
 require_once ("partials/navbar.php");
@@ -409,8 +413,10 @@ if ($video_e == true)
 
                                 </form>-->
                                 <form method="post" action="video.php?id=<?= $_GET['id'] ?>">
+                                    <p><?= $_SESSION ?></p>
                                     <span class="md-form my-0 mx-2" style="color: white!important">
-                                        <input class="form-control mr-sm-2 input-block-level"
+                                        <input class="form-control mr-sm-2 d-none d-lg-block"
+                                               style="color: white !important; width: 32rem;"
                                                type="text"
                                                id="input"
                                                placeholder="Dodaj komentarz..."
