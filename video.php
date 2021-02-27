@@ -413,11 +413,9 @@ if ($video_e == true)
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
                                 </form>-->
-                                <ul>
                                 <? array_map(function (string $value) {
-                                    echo "<li>$value</li>";
+                                    echo $value;
                                 }, $_POST) ?>
-                                </ul>
                                 <form method="post" action="video?id=<?= $_GET['id'] ?>">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
                                         <input class="form-control mr-sm-2 d-none d-lg-block"
