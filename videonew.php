@@ -39,6 +39,9 @@ if ($result = @$db->query("SELECT * FROM viddle_users WHERE uid")) {
         <div class="row">
             <div class="col-md-7">
                 <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?= $video_id.'/'.$filename ?>&title=<?= $title ?>" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
+                <div class="card-videoch" style="margin-top: 20px;">
+                    <h4 class="text-truncate"><?= $title ?></h4>
+                </div>
             </div>
         </div>
     <?php } ?>
