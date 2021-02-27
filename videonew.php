@@ -22,7 +22,8 @@ if ($result = @$db->query($stmt)) {
         'upvotes' => $upvotes,
         'downvotes' => $downvotes,
         'title' => $title,
-        'publishdate' => $published_at
+        'publishdate' => $published_at,
+        'opis' => $description
 ] = $assoc_video;
 if ($result = @$db->query("SELECT * FROM viddle_users WHERE uid")) {
     $assoc_user = $result->fetch_assoc();
@@ -43,5 +44,6 @@ if ($result = @$db->query("SELECT * FROM viddle_users WHERE uid")) {
         <br/>Title => <?= $title ?>
         <br/>Published at => <?= $published_at ?>
         <br/>Followers => <?= $followers ?>
+        <br/>Description => <?= $description ?>
     </h1>
 </div>
