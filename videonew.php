@@ -11,4 +11,6 @@ if ($result = $db->query($stmt)) {
     $assoc = $result->fetch_assoc();
 }
 ?>
-<h1 style="margin-top: 50px;"><?= $assoc ?></h1>
+<h1 style="margin-top: 50px;"><? array_map(function(string $value) {
+    echo $value;
+    }, $assoc) ?></h1>
