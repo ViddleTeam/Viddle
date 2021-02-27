@@ -1,0 +1,396 @@
+<html lang="pl-PL"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viddle - ustawienia</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Viddle">
+    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
+	<script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
+	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+	<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+<body>
+    <div class="loader" style="opacity: 0; display: none;">
+        <div class="spinner spinner-center">  
+          <div class="spinner-border" style="width:3rem;height:3rem;color:white;margin-top: -150px;" role="status">
+          <span class="sr-only">Ładowanie...</span>
+        </div>
+          </div>
+        </div>
+        <div style="opacity: 1;" class="website">
+    <header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
+    <a class="navbar-brand" href="index.html"><img src="https://cdn.discordapp.com/attachments/719598185118433311/766951476341506048/1602925873953.png" width="120px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
+      aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-6">
+      <ul class="navbar-nav mr-auto">
+	  <div class="container row">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none">Strona główna</p></a>
+		</li>
+	  </div>
+	  <div class="container row">
+        <li class="nav-item">
+          <a class="nav-link" href="trending.html" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none">Popularne</p></a>
+        </li>
+	  </div>
+	  <div class="container row">
+        <li class="nav-item">
+          <a class="nav-link" href="discover.html" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none">Odkrywaj</p></a>
+        </li>
+	  </div>
+      </ul>
+      <form class="form-inline" method="GET" action="search.html" style="margin-right: auto;">
+        <input id="input_search" class="form-control mr-sm-2" style="width: 24rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
+      </form>
+ 
+	<ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
+	<div class="container row">
+		<li class="nav-item">
+		  <a class="nav-link" href="upload.html" title="Udostępnij film na VDP"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <p class="d-lg-none">Udostępnij film na VDP</p></a>
+		</li>
+	</div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">SlaVistaPL</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item waves-effect waves-light" href="channel.html">Przejdź na kanał</a>
+                      <a class="dropdown-item waves-effect waves-light" href="#">Studio twórców</a>
+                      <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
+                    </div>
+                </li>
+            </ul>   
+			</div>
+  </nav>
+      </header>
+      <div class="container" style="margin-top:30px;">
+        <div class="row">
+          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
+        </div>
+        </div>
+          <div class="row">
+              <div class="col-lg-12">
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Ustawienia kanału</h4>
+              </div>
+            </div>
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 100%;">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">Strona główna</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-controls="videos"
+                  aria-selected="false">Filmy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="unsafe-tab" data-toggle="tab" href="#unsafe" role="tab" aria-controls="unsafe"
+                  aria-selected="false">Niebezpieczna strefa</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent" style="margin-top: 10px;">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                Ustawienia podstawowe - od nazwy konta czy hasło, po adres mailowy.
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px; margin-right: auto;">
+                      <h4>Zmień nazwę kanału</h4>
+                      <p style="text-align: left; margin-top: -6px;">Nie podoba się Tobie obecna nazwa? Możesz ją zawsze zmienić.</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                      <button type="button" class="btn btn-primary" style="margin-top: -10px;" data-toggle="modal" data-target="#nameModal"><p style="margin: 10px;">Zmień nazwę kanału</p></button>
+                  </span>
+                </div>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px; margin-right: auto;">
+                      <h4>Zmień hasło</h4>
+                      <p style="text-align: left; margin-top: -6px;">Jeżeli uważasz, że hasło do konta jest za proste, zmień je tutaj.</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                      <button type="button" class="btn btn-primary" style="margin-top: -10px;" data-toggle="modal" data-target="#passwordModal"><p style="margin: 10px;">Zmień hasło</p></button>
+                  </span>
+                </div>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px; margin-right: auto;">
+                      <h4>Zmień adres e-mail</h4>
+                      <p style="text-align: left; margin-top: -6px;">Zmieniłeś adres e-mail i chcesz otrzymywać dalej informacje o np. nowym logowaniu na Twoje konto?</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                      <button type="button" class="btn btn-primary" style="margin-top: -10px;" data-toggle="modal" data-target="#emailModal"><p style="margin: 10px;">Zmień adres e-mail</p></button>
+                  </span>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+                Lista filmów na Twoim kanale. Możesz stąd edytować informacje o filmie (np. tytuł czy opis) albo je usunąć.<br>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px;">
+                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
+                  </span>
+                  <span style="margin-left: 10px; margin-right: auto; align-items: center;">
+                    <h4><a href="https://beta.viddle.xyz/channel?id=5fd60e5323fe95fd60e5323feb">Film 1</a></h4>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 wyświetleń, 21 głosów pozytywnych</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
+                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
+                  </span>
+                </div>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px;">
+                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
+                  </span>
+                  <span style="margin-left: 10px; margin-right: auto; align-items: center;">
+                    <h4><a href="https://beta.viddle.xyz/channel?id=5fd60e5323fe95fd60e5323feb">Film 2</a></h4>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 wyświetleń, 21 głosów pozytywnych</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
+                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
+                  </span>
+                </div>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px;">
+                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
+                  </span>
+                  <span style="margin-left: 10px; margin-right: auto; align-items: center;">
+                    <h4><a href="https://beta.viddle.xyz/channel?id=5fd60e5323fe95fd60e5323feb">Film 3</a></h4>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 wyświetleń, 21 głosów pozytywnych</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
+                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
+                  </span>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="unsafe" role="tabpanel" aria-labelledby="unsafe-tab">
+                Strefa niebezpieczna to miejsce, w którym możesz usunąć wszystkie swoje filmy jednym kliknięciem, lub nawet skasować swoje konto.<br>
+                <b>UWAGA:</b> te operacje są nieodwracalne!<br>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px; margin-right: auto;">
+                      <h4>Zacznij od zera</h4>
+                      <p style="text-align: left; margin-top: -6px;">Wszystkie Twoje filmy zostaną usunięte z Viddle. Liczba obserwujących, awatar i baner pozostaną nienaruszone.</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                      <button type="button" class="btn btn-danger" style="margin-top: -10px;" data-toggle="modal" data-target="#startOverModal"><p style="margin: 10px;">Zacznij od zera</p></button>
+                  </span>
+                </div>
+                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px; margin-right: auto;">
+                      <h4>Zamknij swoje konto</h4>
+                      <p style="text-align: left; margin-top: -6px;">
+                        Wszystkie Twoje filmy, awatar oraz baner zostaną usunięte z Viddle, a licznik obserwujących zostanie wyzerowany.<br>
+                        Po zażądaniu usunięcia konta zostaniesz automatycznie wylogowany i nie będziesz mógł się ponownie zalogować.
+                      </p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                      <button type="button" class="btn btn-danger" style="margin-top: -10px;" data-toggle="modal" data-target="#accountCloseModal"><p style="margin: 10px;">Zamknij konto</p></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+      </div>
+
+<!-- modale ustawień ogólnych, zmiana nazwy kanału -->
+<div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zmień nazwę kanału</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Zmiana zostanie zastosowana w ciągu maksymalnie kilku minut.<br>
+        Nazwa powinna składać się z przynajmniej 4 znaków i nie być dłuższa niż 30 znaków.<br><br>
+        Obecną nazwą stosowaną na Viddle jest <b>SlaVistaPL.</b><br>
+        <div class="md-form">
+          <input type="text" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Podaj nową nazwę konta</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- zmiana hasła -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zmień hasło</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Hasło powinno składać się z przynajmniej 8 znaków, mieć jedną dużą i małą literę oraz jeden znak specjalny.<br>
+        <div class="md-form">
+          <input type="password" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Nowe hasło</label>
+        </div>
+        <div class="md-form">
+          <input type="password" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Potwierdź hasło</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- zmiana adresu e-mail -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zmień adres e-mail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Zostanie wysłany mail potwierdzający celem sprawdzenia, czy adres mailowy należy do Ciebie.<br>
+        <div class="md-form">
+          <input type="text" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Nowy adres e-mail</label>
+        </div>
+        <div class="md-form">
+          <input type="text" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Potwierdź adres e-mail</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filmy - modale -->
+<div class="modal fade" id="editVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edytuj informacje o filmie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
+        <div class="md-form">
+          <input type="text" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Nazwa filmu</label>
+        </div>
+        <div class="md-form">
+          <textarea id="form7" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
+          <label for="form7">Opis filmu</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="removeVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Usunięcie filmu</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Jesteś pewien, że chcesz usunąć ten film? Ta operacja jest nieodwracalna.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strefa niebezpieczna - modale -->
+<div class="modal fade" id="startOverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zacznij od zera</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Jesteś pewien, że chcesz to zrobić?<br>
+        Dla bezpieczeństwa potwierdź akcję poprzez wpisanie hasła do konta.
+        <div class="md-form">
+          <input type="password" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Wprowadź hasło</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="accountCloseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zażądaj usunięcia konta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        UWAGA: jest to operacja nieodwracalna! Wszystkie Twoje dane zostaną usunięte
+        - włączając w to m.in. udostępnione filmy czy dane o obserwowanych przez Ciebie kanałach.<br>
+        Zostaniesz po tym automatycznie wylogowany i <b>nie będziesz mógł się ponownie zalogować</b>.<br>
+        Przed tym otrzymasz maila z zapytaniem o chęć usunięcia kanału, żeby uniknąć przypadkowego 
+        usunięcia konta (lub poprzez osoby do tego nieupoważnione).<br><br>
+        Dla bezpieczeństwa potwierdź akcję poprzez wpisanie hasła do konta.
+        <div class="md-form">
+          <input type="password" id="form1" class="form-control" style="color: white;">
+          <label for="form1">Hasło</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
+<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
+<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
+<script src="script.js"></script>
+
+<div class="hiddendiv common"></div></body></html>
