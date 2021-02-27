@@ -15,19 +15,18 @@ $stmt = sprintf("SELECT * FROM viddle_videos WHERE video_id = '%s'", $db->real_e
     'upvotes' => $upvotes,
     'downvotes' => $downvotes
 ] = $db->query($stmt)->fetch_assoc();
-$user_stmt = sprintf("SELECT login FROM viddle_users WHERE uid = '%s'", $db->real_escape_string($publisher));
 [
         'login' => $username,
-] = $db->query($stmt)->fetch_assoc();
+] = $db->query("SELECT * FROM viddle_users WHERE uid = '$publisher'")->fetch_assoc();
 ?>
 <div style="margin-top: 60px;" class="container">
     <p>
         Title => <?= $title ?>
-        Description => <?= $description ?>
-        Publisher => <?= $publisher ?> | <?= $username ?>
-        Video ID => <?= $video_id ?>
-        Published at => <?= $published_at ?>
-        Upvotes => <?= $upvotes ?>
-        Downvotes => <? $downvotes ?>
+        <br></br>Description => <?= $description ?>
+        <br></br>Publisher => <?= $publisher ?> | <?= $username ?>
+        <br>Video ID => <?= $video_id ?>
+        <br>Published at => <?= $published_at ?>
+        <br></br>Upvotes => <?= $upvotes ?>
+        <br></br>Downvotes => <? $downvotes ?>
     </p>
 </div>
