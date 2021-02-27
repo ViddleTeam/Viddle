@@ -1,4 +1,8 @@
-<?php
+<?php session_start();
+if(!isset($_SESSION['z'])) {
+    header('location: index.php');
+}
+
 $title = "Ustawienia";
 require_once('partials/navbar.php');
 ?>
