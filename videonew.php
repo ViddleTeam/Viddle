@@ -22,11 +22,11 @@ $stmt = sprintf("SELECT * FROM viddle_videos WHERE video_id = '%s'", $db->real_e
 <div style="margin-top: 60px;" class="container">
     <p>
         Title => <?= $title ?>
-        <br></br>Description => <?= $description ?>
-        <br></br>Publisher => <?= $publisher ?> | <?= $username ?>
+        <br>Description => <?= $description ?>
+        <br>Publisher => <?= $publisher ?> | <?= $username ?>
         <br>Video ID => <?= $video_id ?>
         <br>Published at => <?= $published_at ?>
-        <br></br>Upvotes => <?= $upvotes ?>
-        <br></br>Downvotes => <? $downvotes ?>
+        <br>Upvotes => <?= $upvotes ?>
+        <br>Downvotes => <? $downvotes ?>
     </p>
 </div>
