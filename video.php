@@ -414,8 +414,7 @@ if ($video_e == true)
                                                type="text"
                                                id="input"
                                                placeholder="Dodaj komentarz..."
-                                               aria-label="Dodaj komentarz..."
-                                               name="comment">
+                                               aria-label="Dodaj komentarz...">
                                         <input class="btn btn-primary" type="submit" value="Opublikuj">
                                     </span>
                                 </form>
