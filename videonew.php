@@ -13,7 +13,8 @@ $stmt = sprintf("SELECT * FROM viddle_videos WHERE video_id = '%s'", $db->real_e
     'video_id' => $video_id,
     'publishdate' => $published_at,
     'upvotes' => $upvotes,
-    'downvotes' => $downvotes
+    'downvotes' => $downvotes,
+    'views' => $views
 ] = $db->query($stmt)->fetch_assoc();
 [
         'login' => $username,
@@ -27,6 +28,7 @@ $stmt = sprintf("SELECT * FROM viddle_videos WHERE video_id = '%s'", $db->real_e
         <br>Video ID => <?= $video_id ?>
         <br>Published at => <?= $published_at ?>
         <br>Upvotes => <?= $upvotes ?>
-        <br>Downvotes => <? $downvotes ?>
+        <br>Downvotes => <?= $downvotes ?>
+        <br>Views => <?= $views ?>
     </p>
 </div>
