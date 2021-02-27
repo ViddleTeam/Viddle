@@ -6,42 +6,28 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
 $_SESSION['id'] = $_GET['id'];
 $polecenie = "SELECT * FROM viddle_videos WHERE video_id='$id'";
-if ($c = $connect->query($polecenie))
-{
+if ($c = $connect->query($polecenie)) {
     $cheack2 = $c->num_rows;
-    if ($cheack2 == '1')
-    {
+    if ($cheack2 == '1') {
         $video_e = true;
-    }
-    else
-    {
+    } else {
         $video_e = false;
     }
 }
-
-if ($i = '1')
-{
+if ($i = '1') {
     $form = '1';
-}
-else
-{
+} else {
     $form = '0';
 }
-
 if (isset($_POST['ob'])) $id = $_GET['id'];
 $video_exists = true;
 $_SESSION['id'] = $_GET['id'];
-
-if ($id == 0)
-{
+if ($id == 0) {
     $video_exists = false;
-}
-else
-{
+} else {
     $video_exists = true;
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
-    if (isset($d2) && $d2 == '1')
-    {
+    if (isset($d2) && $d2 == '1') {
         $dane = $result->fetch_assoc();
         $publisher = $dane['publisher'];
         $file = $dane['fname'];
@@ -52,150 +38,100 @@ else
         $likes = $dane['upvotes'];
         $dislikes = $dane['downvotes'];
         $video_exists = true;
-        if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='%s'", mysqli_real_escape_string($connect, $publisher))))
-
-            $d2 = $result->num_rows;
-
-        if ($d2 == '1')
-        {
+        if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='%s'", mysqli_real_escape_string($connect, $publisher)))) $d2 = $result->num_rows;
+        if ($d2 == '1') {
         }
-    }
-    else
-    {
+    } else {
         $video_exists = false;
     }
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id)))) $d2 = $result->num_rows;
-    if ($d2 == '1')
-    {
+    if ($d2 == '1') {
         $dane = $result->fetch_assoc();
         $observators = $dane['observators'];
         $name = $dane['login'];
         $uid = $dane['uid'];
         $av6 = $dane['avatarname'];
         $video_exists = true;
-        if ($av6 == 'x')
-        {
+        if ($av6 == 'x') {
             $av7 = 'anonim.png';
-        }
-        else
-        {
+        } else {
             $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/' . $publisher . '/' . $publisher . '.' . $av6 . '';
         }
-    }
-    else
-    {
+    } else {
         $video_exists = false;
     }
     //Liczba obserwacji
     $resulttwo = $connect->query("SELECT * FROM viddle_followers WHERE followed='$uid'");
     $followcount = $resulttwo->num_rows;
 }
-
-if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']) , mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
-
-if ($ilosc == '1')
-{
+if ($resulto = @$connect->query(sprintf("SELECT * FROM viddle_obserwators WHERE obserwujący='%s' AND obserwuje='%s'", mysqli_real_escape_string($connect, $_SESSION['uid']), mysqli_real_escape_string($connect, $publisher)))) $ilosc = $resulto->num_rows;
+if ($ilosc == '1') {
     $obm = '0';
-}
-else
-{
+} else {
     $obm = '1';
 }
-
-if (!isset($_SESSION['uid']))
-{
+if (!isset($_SESSION['uid'])) {
     $obm = '0';
     $logged = '0';
-}
-else
-{
+} else {
     $logged = '1';
 }
-if ($logged == '0')
-{
+if ($logged == '0') {
     $obd = 'disabled="disabled"';
-}
-else
-{
+} else {
     $obd = '';
 }
 $_SESSION['id'] = $id;
-
 //nabijanie wyświetleń
-if ($video_e == true)
-{
-
-    if (!empty($_SERVER['HTTP_CLIENT_IP']))
-    {
+if ($video_e == true) {
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
         $ip2 = $_SERVER['HTTP_CLIENT_IP'];
-    }
-    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-    {
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
         $ip2 = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }
-    else
-    {
+    } else {
         $ip2 = $_SERVER['REMOTE_ADDR'];
     }
-
-    if ($resultv = @$connect->query(sprintf("SELECT * FROM `viddle_vievs` WHERE ip='%s' AND vid='%s'", mysqli_real_escape_string($connect, $ip2) , mysqli_real_escape_string($connect, $id))))
-    {
+    if ($resultv = @$connect->query(sprintf("SELECT * FROM `viddle_vievs` WHERE ip='%s' AND vid='%s'", mysqli_real_escape_string($connect, $ip2), mysqli_real_escape_string($connect, $id)))) {
         $d3 = $resultv->num_rows;
-
-        if ($d3 == '0')
-        {
+        if ($d3 == '0') {
             $wstaw = $vievs + '1';
-            if ($syf = @$connect->query(sprintf("UPDATE `viddle_videos` SET views='%s' WHERE video_id='%s'", mysqli_real_escape_string($connect, $wstaw) , mysqli_real_escape_string($connect, $id))))
-            {
-                if ($w = $connect->query("INSERT INTO `viddle_vievs` VALUES (NULL, '$id', '$ip2')"))
-                {
+            if ($syf = @$connect->query(sprintf("UPDATE `viddle_videos` SET views='%s' WHERE video_id='%s'", mysqli_real_escape_string($connect, $wstaw), mysqli_real_escape_string($connect, $id)))) {
+                if ($w = $connect->query("INSERT INTO `viddle_vievs` VALUES (NULL, '$id', '$ip2')")) {
                     header('location: ' . $_SERVER['REQUEST_URI'] . '');
                 }
             }
-
         }
-
     }
-
 }
-
 //Losowanie ID polecanych filmów:
 $randomvidone = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
 $dane = $randomvidone->fetch_assoc();
 $randomvidone = $dane['video_id'];
 $randomone = $dane['publisher'];
-do
-{
+do {
     $randomvidtwo = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
     $dane = $randomvidtwo->fetch_assoc();
     $randomvidtwo = $dane['video_id'];
     $randomtwo = $dane['publisher'];
-}
-while ($randomvidtwo == $randomvidone);
-do
-{
+} while ($randomvidtwo == $randomvidone);
+do {
     $randomvidthree = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
     $dane = $randomvidthree->fetch_assoc();
     $randomvidthree = $dane['video_id'];
     $randomthree = $dane['publisher'];
-}
-while ($randomvidthree == $randomvidtwo or $randomvidthree == $randomvidone);
-do
-{
+} while ($randomvidthree == $randomvidtwo or $randomvidthree == $randomvidone);
+do {
     $randomvidfour = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
     $dane = $randomvidfour->fetch_assoc();
     $randomvidfour = $dane['video_id'];
     $randomfour = $dane['publisher'];
-}
-while ($randomvidfour == $randomvidthree or $randomvidfour == $randomvidtwo or $randomvidfour == $randomvidone);
-do
-{
+} while ($randomvidfour == $randomvidthree or $randomvidfour == $randomvidtwo or $randomvidfour == $randomvidone);
+do {
     $randomvidfive = $connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1;");
     $dane = $randomvidfive->fetch_assoc();
     $randomvidfive = $dane['video_id'];
     $randomfive = $dane['publisher'];
-}
-while ($randomvidfive == $randomvidfour or $randomvidfive == $randomvidthree or $randomvidfive == $randomvidtwo or $randomvidfive == $randomvidone);
+} while ($randomvidfive == $randomvidfour or $randomvidfive == $randomvidthree or $randomvidfive == $randomvidtwo or $randomvidfive == $randomvidone);
 //Wyświetlania wylosowanych polecanych filmów:
 $randomviewsone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
 $dane = $randomviewsone->fetch_assoc();
@@ -232,83 +168,61 @@ $randomuserfive = $dane['login'];
 $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidone';");
 $dane = $randomtitleone->fetch_assoc();
 $randomtitleone = $dane['title'];
-if (strlen($randomtitleone) > 27)
-{
+if (strlen($randomtitleone) > 27) {
     $randomtitleone = substr_replace($randomtitleone, "...", 27);
 }
 $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
 $dane = $randomtitletwo->fetch_assoc();
 $randomtitletwo = $dane['title'];
-if (strlen($randomtitletwo) > 27)
-{
+if (strlen($randomtitletwo) > 27) {
     $randomtitletwo = substr_replace($randomtitletwo, "...", 27);
 }
 $randomtitlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
 $dane = $randomtitlethree->fetch_assoc();
 $randomtitlethree = $dane['title'];
-if (strlen($randomtitlethree) > 27)
-{
+if (strlen($randomtitlethree) > 27) {
     $randomtitlethree = substr_replace($randomtitlethree, "...", 27);
 }
 $randomtitlefour = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfour';");
 $dane = $randomtitlefour->fetch_assoc();
 $randomtitlefour = $dane['title'];
-if (strlen($randomtitlefour) > 27)
-{
+if (strlen($randomtitlefour) > 27) {
     $randomtitlefour = substr_replace($randomtitlefour, "...", 27);
 }
 $randomtitlefive = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfive';");
 $dane = $randomtitlefive->fetch_assoc();
 $randomtitlefive = $dane['title'];
-if (strlen($randomtitlefive) > 27)
-{
+if (strlen($randomtitlefive) > 27) {
     $randomtitlefive = substr_replace($randomtitlefive, "...", 27);
 }
 $uid = $_SESSION['uid'];
-
 $polecenie = "SELECT * FROM viddle_oceny WHERE uid='$uid'";
-if ($c2 = $connect->query($polecenie))
-{
+if ($c2 = $connect->query($polecenie)) {
     $cheack3 = $c2->num_rows;
-
-    if ($cheack3 == '1')
-    {
+    if ($cheack3 == '1') {
         $dane10 = $c2->fetch_assoc();
-
-        if ($dane10['ocena'] == '1')
-        {
+        if ($dane10['ocena'] == '1') {
             $like = 'color: #00c3ff;';
-        }
-        else
-        {
+        } else {
             $dislike = 'color: #00c3ff;';
         }
     }
 }
-
-if (isset($_SESSION['uid']))
-{
+if (isset($_SESSION['uid'])) {
     $uidm = $_SESSION['uid'];
     $polecenie = "SELECT * FROM viddle_users WHERE uid='$uidm'";
-    if ($c2 = $connect->query($polecenie))
-    {
+    if ($c2 = $connect->query($polecenie)) {
         $d = $c2->fetch_assoc;
         $es = $d['emailver'];
-
-        if ($es == '0')
-        {
+        if ($es == '0') {
             $disable = 'pointer-events: none; cursor: default;';
             $powod = 'Musisz zweryfikować adres e-mail w celu oddania głosu na film.';
-        }
-        else
-        {
+        } else {
             $disable = '';
             $powod = '';
         }
     }
-}
-else
-{
+} else {
     $disable = 'pointer-events: none; cursor: default;';
     $powod = '';
 }
@@ -330,8 +244,7 @@ require_once ("partials/navbar.php");
     })
 </script>
 <?php
-if ($video_e == true)
-{
+if ($video_e == true) {
     ?>
     <div class="container" style="margin-top: 70px; justify-content: center;">
         <form>
@@ -350,17 +263,14 @@ if ($video_e == true)
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $followcount ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
-                                    <?php if ($uid != $publisher)
-                                    { ?>
+                                    <?php if ($uid != $publisher) { ?>
                                         <form action="/follow.php" method="POST">
-                <input id="followid" name="followid" type="hidden" value="<?=$publisher
-                ?>">
+                                            <input id="followid" name="followid" type="hidden" value="<?=$publisher
+                                            ?>">
                 <button type="submit" class="btn btn-success"><p style="margin: 10px;">Obserwuj</p></button>
-		    </form>
+                                        </form>
                                         <?php
-                                    }
-                                    else
-                                    { ?>
+                                    } else { ?>
                                         <span class="d-inline-block material-tooltip-main" tabindex="0" data-toggle="tooltip" title="Nie trzeba obserwować swojego kanału.">
                     <button class="btn btn-success" style="pointer-events: none" type="button" disabled>
                         <p style="margin: 10px;">Obserwuj</p>
@@ -387,13 +297,13 @@ if ($video_e == true)
                             <p><?php echo $opis ?></p>
                         </div>
                         <div class="comments">
-                            <h3>Komentarze (<?= $komentarze ?>)</h3>
+                            <h3>Komentarze (<?=$komentarze ?>)</h3>
                             <div class="container row">
                       <span>
                         <?php if ($_SESSION['z1']) {
-                        echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$avatar.'">';
+                            echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/' . $_SESSION['uid'] . '/' . $_SESSION['uid'] . '.' . $avatar . '">';
                         } else {
-                        echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
+                            echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
                         }
                         ?>
                       </span>
@@ -435,40 +345,30 @@ if ($video_e == true)
                                 <br></br>
                                 <?php
                                 if ($result3 = @$connect->query(sprintf("SELECT * FROM viddle_comments"))) $d3 = $result3->num_rows;
-                                if ($d3 > '0')
-                                {
+                                if ($d3 > '0') {
                                     $pytanie = '$connect->query("SELECT * FROM viddle_comments")';
                                     $k1 = $d3 + '1';
-                                    for ($k2 = 1;$k2 < $k1;$k2 += 1)
-                                    {
+                                    for ($k2 = 1;$k2 < $k1;$k2+= 1) {
                                         $ktresc = '';
-                                        if ($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id2='$k2'"))
-                                        {
+                                        if ($comment = $pytanie = $connect->query("SELECT * FROM viddle_comments WHERE id2='$k2'")) {
                                             $dane3 = $comment->fetch_assoc();
                                             $ktresc = $dane3['tresc'];
                                             $kuid = '';
                                             $kdate = '';
-
                                             $dataczas = new DateTime('2022-05-01 09:33:59');
                                             $date = DateTime::createFromFormat('Y-m-d H:i:s', $dane3['published']);
                                             $data = $dataczas->diff($date);
                                             $data->format('%y');
-
-                                            if ($dane3['videoid'] == $id)
-                                            {
+                                            if ($dane3['videoid'] == $id) {
                                                 $uiddd = $dane3['uid'];
-                                                if ($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$uiddd'"))
-                                                {
+                                                if ($result4 = $connect->query("SELECT * FROM viddle_users WHERE uid='$uiddd'")) {
                                                     $dane4 = $result4->fetch_assoc();
                                                     $kuav = $dane4['avatarname'];
                                                     $kuname = $dane4['login'];
                                                     $kuid = $dane4['uid'];
-                                                    if ($kuav == 'x')
-                                                    {
+                                                    if ($kuav == 'x') {
                                                         $av11 = 'anonim.png';
-                                                    }
-                                                    else
-                                                    {
+                                                    } else {
                                                         $av11 = '/grafic/' . $dane3['uid'] . 'a.' . $dane4['avatarname'] . '';
                                                     }
                                                     ?> <br></br>
@@ -494,13 +394,14 @@ if ($video_e == true)
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
                             <div class="container">
-                                <a href="/video?id=<?= $randomvidone ?>">
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitleone); ?><br></strong>
-                                        <?php echo ($randomuserone); ?><br>
-                                        <?php echo ($randomviewsone); ?> wyświetleń</p>
-                                </div>
+                                <a href="/video?id=<?=$randomvidone
+                                ?>">
+                                    <div class="row">
+                                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                                        <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitleone); ?><br></strong>
+                                            <?php echo ($randomuserone); ?><br>
+                                            <?php echo ($randomviewsone); ?> wyświetleń</p>
+                                    </div>
                                 </a>
                                 <br>
                                 <div class="row">
@@ -570,12 +471,9 @@ if ($video_e == true)
     </div>
 </div>
 <?php
-if ($video_e == true)
-{
+if ($video_e == true) {
     require_once ("partials/footer.php");
-}
-else
-{
+} else {
     return;
 }
 ?>
@@ -595,8 +493,7 @@ else
         </div>
     </div>
 </div>
-<?php if ($video_e == false)
-{
+<?php if ($video_e == false) {
     echo "<script>
 		$('#staticBackdrop').modal('show');
 	  </script>";
