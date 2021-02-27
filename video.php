@@ -413,7 +413,7 @@ if ($video_e == true)
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
                                 </form>-->
-                                <form method="post" action="video?id=">
+                                <!--<form method="post" action="video?id=">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
                                         <input class="form-control mr-sm-2 d-none d-lg-block"
                                                style="color: white !important; width: 32rem;"
@@ -424,6 +424,9 @@ if ($video_e == true)
                                                name="comment">
                                         <input class="btn btn-primary" type="submit" value="Opublikuj">
                                     </span>
+                                </form>-->
+                                <form method="post" action="video.php">
+
                                 </form>
                             </div>
                             <div class="container row" style="margin-top: 10px;">
