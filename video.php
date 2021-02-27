@@ -408,13 +408,14 @@ if ($video_e == true)
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
                                 </form>-->
-                                <form action="comment.php" method="post">
+                                <form method="post">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
                                         <input class="form-control mr-sm-2 input-block-level"
                                                type="text"
                                                id="input"
                                                placeholder="Dodaj komentarz..."
-                                               aria-label="Dodaj komentarz...">
+                                               aria-label="Dodaj komentarz..."
+                                               name="comment">
                                         <input class="btn btn-primary" type="submit" value="Opublikuj">
                                     </span>
                                 </form>
