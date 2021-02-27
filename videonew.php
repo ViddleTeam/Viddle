@@ -11,6 +11,10 @@ if ($result = $db->query($stmt)) {
     $assoc = $result->fetch_assoc();
 }
 ?>
-<div class="mt-5">
-    <p><?= $assoc ?></p>
+<div class="mt-10">
+    <p>
+        <? array_map(function ($value) {
+            echo $value;
+        }, $assoc) ?>
+    </p>
 </div>
