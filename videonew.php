@@ -23,7 +23,8 @@ if ($result = @$db->query($stmt)) {
         'downvotes' => $downvotes,
         'title' => $title,
         'publishdate' => $published_at,
-        'opis' => $description
+        'opis' => $description,
+        'fname' => $filename
 ] = $assoc_video;
 if ($result = @$db->query("SELECT * FROM viddle_users WHERE uid")) {
     $assoc_user = $result->fetch_assoc();
@@ -34,16 +35,11 @@ if ($result = @$db->query("SELECT * FROM viddle_users WHERE uid")) {
 ] = $assoc_user;
 ?>
 <div style="margin-top: 70px; justify-content: center;" class="container">
-    <h1>
-        Video ID => <?= $video_id ?>
-        <br/>Publisher => <?= $publisher ?> | <?= $username ?>
-        <br/>Views => <?= $views ?>
-        <br/>Comments num => <?= $comments ?>
-        <br/>Upvotes => <?= $upvotes ?>
-        <br/>Downvotes => <?= $downvotes ?>
-        <br/>Title => <?= $title ?>
-        <br/>Published at => <?= $published_at ?>
-        <br/>Followers => <?= $followers ?>
-        <br/>Description => <?= $description ?>
-    </h1>
+    <?php if ($video_found) { ?>
+        <div class="row">
+            <div class="col-md-7">
+                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?= $video_id.'/'.$filename ?>&title=<?= $title ?>" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    <?php } ?>
 </div>
