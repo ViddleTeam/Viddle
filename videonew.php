@@ -16,3 +16,6 @@ if ($result = $db->query($polecenie)) {
 }
 ?>
 <p>Witaj na nowej stronie Video!</p>
+<form method="post" action="videonew">
+
+</form>
