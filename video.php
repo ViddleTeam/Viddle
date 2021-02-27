@@ -293,9 +293,9 @@ if (isset($_SESSION['uid']))
     if ($c2 = $connect->query($polecenie))
     {
         $d = $c2->fetch_assoc;
-        $ez = $d['emailver'];
+        $es = $d['emailver'];
 
-        if ($ez == '0')
+        if ($es == '0')
         {
             $disable = 'pointer-events: none; cursor: default;';
             $powod = 'Musisz zweryfikować adres e-mail w celu oddania głosu na film.';
@@ -392,7 +392,7 @@ if ($video_e == true)
                         }
                         ?>
                       </span>
-                                <form method="post" action="comment.php">
+                                <form method="post" action="/comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <!-- <input
                                   class="form-control mr-sm-2 input-block-level"
