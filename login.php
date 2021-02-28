@@ -17,7 +17,12 @@ $error = '';
 		    mysqli_real_escape_string($connect,$login))))
             $d2 = $result->num_rows;
 		$dane = $result->fetch_assoc();
-		if(isset($_POST['save'])) {
+		
+			if(isset($d2) && $d2 == '1') {
+				
+				if (password_verify($haslo, $dane['password']))
+				{
+					if(isset($_POST['save'])) {
 			if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 			    $ip = $_SERVER['HTTP_CLIENT_IP'];
 			} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -33,10 +38,6 @@ $error = '';
 				echo 'error';
 			}
 		}
-			if(isset($d2) && $d2 == '1') {
-				
-				if (password_verify($haslo, $dane['password']))
-				{
                     $_SESSION['z1'] = true;
                     
                     $_SESSION['user'] = $dane['login'];
