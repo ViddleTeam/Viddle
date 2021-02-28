@@ -18,8 +18,8 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
-  $tytultest = strlen($tytul);
-  $opistest = strlen($opis);
+  $tytultest = mb_strlen($tytul);
+  $opistest = mb_strlen($opis);
   if($tytultest>52) {
       header('Location: blad.php?id=10');
       exit();
