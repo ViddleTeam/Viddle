@@ -527,7 +527,7 @@ if($d2 == '1')
                       <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?= $av11 ?>"></a>
                   </span>
                                     <span style="margin-left: 10px; margin-right: auto;">
-                                    <h6 style="align-items: center; font-weight: bold;"><a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><?= $kuname ?> • <?= $data3['published'] ?></a></h6>
+                                        <h6 style="align-items: center; font-weight: bold;"><a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><?= $kuname ?></a> • <?= $data3['published'] ?></h6>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?= $ktresc ?></p>
                   </span>
                                                     <?php
