@@ -305,12 +305,12 @@ if ($video_e == true) {
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
 
-                      <span style='margin-right: 5px;'><div onclick="like()" style='<?php echo $disable ?>' href="like.php?id=<?php echo $id ?>"><i class="fas fa-arrow-up" <?php echo $like ?>"></i> <?php echo $likes ?></div></span> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                      <span style='margin-right: 5px;'><div onclick="like()" style='<?php echo $disable ?>'><i class="fas fa-arrow-up" <?php echo $like ?>"></i> <?php echo $likes ?></div></span> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
 			      <script>
 			      function like() {
 			      <?php
-	    			session_start();
+	    			
 
 if(!isset($_SESSION['uid'])) {
 	$_SESSION['pol'] = true;
