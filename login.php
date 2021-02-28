@@ -76,6 +76,7 @@ $error = '';
 					<input type="password" name="haslo" class="form-control" placeholder="Hasło" aria-label="Hasło" aria-describedby="material-addon1">
 				</div><br>
 				<center>
+					<input type="checkbox" name="save" />Nie wylogowywuj mnie z tego urządzenia (beta)
 				<div class="container row" style="justify-content: center;">
 				<input type="submit" value="Zaloguj się" class="btn btn-success" style="padding: 10px; color: white;">
                 </form>
