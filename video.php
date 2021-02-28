@@ -517,12 +517,12 @@ if($d2 == '1')
                                                     } else {
                                                         $av11 = '/grafic/' . $data3['uid'] . 'a.' . $data4['avatarname'] . '';
                                                     }
-                                                    ?> <br></br>
-                                                    <span class="md-form mx-2" style="color: white !important; margin-top: -45px; padding: 2px;">
+                                                    ?>
+                                                    <!--<span class="md-form mx-2" style="color: white !important; margin-top: -45px; padding: 2px;">
 		<img style="border-radius:50%;margin-right:5px; margin-top: 30px!important;" class="img-responsive" width="48px" src="<?php echo $av11 ?>">
                         <h6 style="margin-left: 55px; margin-bottom: 10px; font-weight: bold;"><?php echo $kuname ?> • <?php echo $data3['published'] ?></h6>
                         <p style="text-align: left; margin-top: -6px; margin-left: 55px;"><?php echo $ktresc ?></p>
-                 </span>
+                 </span>-->
                                                     <?php
                                                 }
                                             }
