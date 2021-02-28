@@ -9,9 +9,9 @@ if ($_POST['titlevid'] == false) {
 } else if ($_FILES['videovid'] == false) {
     header('Location: index.php');
 } else if (strlen($_POST['titlevid'])>52) {
-    header('Location: blad.php?id=10')
+    header('Location: blad.php?id=10');
 } else if (strlen($_POST['descvid'])>1024) {
-    header('Location: blad.php?id=11')
+    header('Location: blad.php?id=11');
 }
 session_start();
 if ($_SESSION['z1'] == true) {
