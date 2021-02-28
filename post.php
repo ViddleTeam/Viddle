@@ -148,7 +148,7 @@ if ($_SESSION['z1'] == true) {
 	      $videocompress = $_FILES["videovid"]["tmp_name"];
 	      $videobitrate = "5000k";
 	      $compresscommand = "/usr/bin/ffmpeg -i $videocompress -b:v $videobitrate -bufsize $videobitrate ftp://" . FTPUSER . ":" . FTPPASS . "@" . FTPSERWER . ":21/videos/test/output.mp4 2>&1";
-	      $returnedvalue = shell_exec('/usr/bin/ffmpeg -i $videocompress -b:v $videobitrate -bufsize $videobitrate ftp://' . FTPUSER . ':' . FTPPASS . '@' . FTPSERWER . ':21/videos/test/output.mp4 2>&1');
+	      $returnedvalue = shell_exec('/usr/bin/ffmpeg -i $videocompress -bufsize $videobitrate ftp://' . FTPUSER . ':' . FTPPASS . '@' . FTPSERWER . ':21/videos/test/output.mp4 2>&1');
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
 	    }
