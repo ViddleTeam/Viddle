@@ -143,12 +143,13 @@ if ($_SESSION['z1'] == true) {
 	      ftp_mkdir($conn_id, $viddleid);
 	      ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
 	      ftp_put($conn_id, $newfilenametwo, $_FILES["videovid"]["tmp_name"], FTP_BINARY);
+	      ftp_delete($conn_id, $newfilenametwo);
+	      ftp_close($conn_id);
 	      $videocompress = $_FILES["videovid"]["tmp_name"];
-	      $compresscommand = "ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k ftp://[cdn_viddle@viddle.xyz[:uaX9WprQfEO}]@]ftp.oliwierj.webd.pro[:21]/videos/$viddleid/$newfilename";
+	      $compresscommand = "ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k ftp://" . FTPUSER . ":" . FTPPASS . "@" . FTPSERWER . ":21/videos/$viddleid/$newfilename";
 	      system($compresscommand);
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
-	      ftp_close($conn_id);
 	    }
 	  } elseif (empty($file_basename)) {	
 			// file selection error
