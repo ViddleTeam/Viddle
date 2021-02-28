@@ -146,7 +146,7 @@ if ($_SESSION['z1'] == true) {
 	      ftp_delete($conn_id, $newfilenametwo);
 	      ftp_close($conn_id);
 	      $videocompress = $_FILES["videovid"]["tmp_name"];
-	      $compresscommand = "ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k ftp://" . FTPUSER . ":" . FTPPASS . "@" . FTPSERWER . ":21/videos/$viddleid/$newfilename";
+	      $compresscommand = "ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k output.mp4";
 	      system($compresscommand);
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
