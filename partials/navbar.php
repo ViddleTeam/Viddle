@@ -1,5 +1,29 @@
 <?php
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 session_start();
+
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			    $ip = $_SERVER['HTTP_CLIENT_IP'];
+			} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			} else {
+			    $ip = $_SERVER['REMOTE_ADDR'];
+			}
+if($res = $connect->query("SELECT * FROM `viddle_device` WHERE ip='$ip'")) {
+    $il = $res->num_rows;
+    
+    if($il == '1' || !isset
+        $dip = $res->fetch_assoc();
+        $uid = $dip['uid'];
+        if($resII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
+            $dipII = $resII->fetch_assoc();
+            $_SESSION['user'] = $dipII['login'];
+            $_SESSION['z1'] = true;
+        }
+        
+        
+}
 
 $_SESSION['przek'] = $_SERVER['REQUEST_URI'];
 if ($_SESSION['z1'] == true) {
@@ -7,8 +31,7 @@ if ($_SESSION['z1'] == true) {
     
     $avatar = 'test.png';
     $login = $_SESSION['user'];
-    require "danesql.php";
-    $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+    
     if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE login='%s'", mysqli_real_escape_string($connect, $login)))) $d2 = $result->num_rows;
     if (isset($d2) && $d2 == '1') {
         $dane = $result->fetch_assoc();
