@@ -1,4 +1,7 @@
 <?php
+require "danesql.php";
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 			    $ip = $_SERVER['HTTP_CLIENT_IP'];
 			} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -22,8 +25,7 @@ if($res = $connect->query("SELECT * FROM `viddle_device` WHERE ip='$ip'")) {
        
 }
 }
-require "danesql.php";
-$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
 session_start();
 if ($_SESSION['z1'] == true) {
 	header('location: index.php');
