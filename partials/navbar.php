@@ -14,7 +14,7 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 if($res = $connect->query("SELECT * FROM `viddle_device` WHERE ip='$ip'")) {
     $il = $res->num_rows;
     
-    if($il == '1' || !isset($_SESSION['z1'])) {
+    if($il == '1') {
         $dip = $res->fetch_assoc();
         $uid = $dip['uid'];
         if($resII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
