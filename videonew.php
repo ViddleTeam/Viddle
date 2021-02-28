@@ -59,6 +59,7 @@ if ($publisher['avatarname'] == 'x') {
                         <span style="margin-left: 10px; margin-right: auto;">
                             <h5 style="align-items: center;">
                                 <a href="channel?id=<?= $publisher['uid'] ?>"><?= $publisher['login'] ?></a>
+                                <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?= $publisher['observators'] ?> obserwujących</p>
                             </h5>
                         </span>
                     </div>
