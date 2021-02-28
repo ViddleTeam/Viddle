@@ -523,7 +523,6 @@ if($d2 == '1')
                         <h6 style="margin-left: 55px; margin-bottom: 10px; font-weight: bold;"><?php echo $kuname ?> • <?php echo $data3['published'] ?></h6>
                         <p style="text-align: left; margin-top: -6px; margin-left: 55px;"><?php echo $ktresc ?></p>
                  </span>-->
-                                <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
                       <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
                   </span>
