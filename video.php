@@ -481,9 +481,6 @@ if($d2 == '1')
                                         <input class="btn btn-primary" type="submit" value="Opublikuj">
                                     </span>
                                 </form>-->
-                                <form method="post" action="video.php">
-
-                                </form>
                             </div>
                             <div class="container row" style="margin-top: 10px;">
                     <span>
@@ -526,7 +523,7 @@ if($d2 == '1')
                   <span style="margin-left: 10px;">
                       <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?= $av11 ?>"></a>
                   </span>
-                                    <span style="margin-left: 10px; margin-right: auto;">
+                                    <span style="margin-left: 5px; margin-right: auto;">
                                         <h6 style="align-items: center; font-weight: bold;"><a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><?= $kuname ?></a> • <?= $data3['published'] ?></h6>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?= $ktresc ?></p>
                   </span>
