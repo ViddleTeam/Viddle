@@ -524,11 +524,11 @@ if($d2 == '1')
                         <p style="text-align: left; margin-top: -6px; margin-left: 55px;"><?php echo $ktresc ?></p>
                  </span>-->
                   <span style="margin-left: 10px;">
-                      <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
+                      <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?= $av11 ?>"></a>
                   </span>
                                     <span style="margin-left: 10px; margin-right: auto;">
-                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><?php echo $name ?></a></h5>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $followcount ?> obserwujących</p>
+                                    <h6 style="align-items: center; font-weight: bold;"><a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><?= $kuname ?> • <?= $data3['published'] ?></a></h6>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?= $ktresc ?></p>
                   </span>
                                                     <?php
                                                 }
