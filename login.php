@@ -1,4 +1,27 @@
 <?php
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			    $ip = $_SERVER['HTTP_CLIENT_IP'];
+			} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			} else {
+			    $ip = $_SERVER['REMOTE_ADDR'];
+			}
+
+if($res = $connect->query("SELECT * FROM `viddle_device` WHERE ip='$ip'")) {
+    $il = $res->num_rows;
+    
+    if($il == '1' || !isset($_SESSION['z1'])) {
+        $dip = $res->fetch_assoc();
+        $uid = $dip['uid'];
+        if($resII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
+            $dipII = $resII->fetch_assoc();
+            $_SESSION['user'] = $dipII['login'];
+            $_SESSION['z1'] = true;
+		header('location: index.php');
+        }
+       
+}
+}
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 session_start();
