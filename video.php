@@ -309,7 +309,7 @@ if ($video_e == true) {
                     </span>
 			      <script>
 			      function like() {
-			      <?php /*
+			      <?php 
 	    			
 
 if(!isset($_SESSION['uid'])) {
@@ -434,7 +434,7 @@ if($d2 == '1')
 }
 
 }
-}	*/
+}	
 	    			?>
 			      }
 			      </script>
