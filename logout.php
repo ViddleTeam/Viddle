@@ -5,7 +5,7 @@ if ($_SESSION['z1'] == true) {
   session_destroy();
 $_SESSION['uid'] = false;
 session_destroy();
-
+unset($_SESSION['user']);
 } else {
   header('Location: index.php');
 }
