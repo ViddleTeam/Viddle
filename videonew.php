@@ -49,11 +49,11 @@ if ($publisher['avatarname'] == 'x') {
             <div class="col-md-7">
                 <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?= $video_id.'/'.$filename ?>&title=<?= $title ?>" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
                 <div class="card-videoch" style="margin-top: 10px; padding: 12px; cursor: default; width: 100%;">
-                    <h4 class="text-truncate"><?= $title ?></h4>
+                    <h4 class="text-truncate"><?= $video['title'] ?></h4>
                     <div class="container row" style="margin-top: 20px;">
                         <span style="margin-left: 10px;">
                             <a href="channel?id=<?= $publisher ?>">
-                                <img width="48pc" style="border-radius: 50%; margin-right: 5%;" class="img-responsive d-none d-md-block" src="<?= $av7; ?>"/>
+                                <img width="48pc" style="border-radius: 50%; margin-right: 5%;" class="img-responsive d-none d-md-block" src="<?= $avatar_url ?>"/>
                             </a>
                         </span>
                     </div>
