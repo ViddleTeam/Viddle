@@ -56,6 +56,11 @@ if ($publisher['avatarname'] == 'x') {
                                 <img width="48px" style="border-radius: 50%; margin-right: 5px;" class="img-responsive d-none d-md-block" src="<?= $avatar_url ?>">
                             </a>
                         </span>
+                        <span style="margin-left: 10px; margin-right: auto;">
+                            <h5 style="align-items: center;">
+                                <a href="channel?id=<?= $publisher['uid'] ?>" <?= $publisher['login'] ?></h5>
+                            </h5>
+                        </span>
                     </div>
                 </div>
             </div>
