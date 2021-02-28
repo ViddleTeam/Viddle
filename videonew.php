@@ -40,7 +40,7 @@ $avatar_url = null;
 if ($publisher['avatarname'] == 'x') {
     $avatar_url = 'anonim.png';
 } else {
-    $avatar_url = "https://cdn.viddle.xyz/cdn/videos/avatars/${publisher['publisher']}/${publisher['publisher']}.${publisher['avatarname']}";
+    $avatar_url = "https://cdn.viddle.xyz/cdn/videos/avatars/${publisher['uid']}/${publisher['uid']}.${publisher['avatarname']}";
 }
 ?>
 <div style="margin-top: 70px; justify-content: center;" class="container">
@@ -52,8 +52,8 @@ if ($publisher['avatarname'] == 'x') {
                     <h4 class="text-truncate"><?= $video['title'] ?></h4>
                     <div class="container row" style="margin-top: 20px;">
                         <span style="margin-left: 10px;">
-                            <a href="channel?id=<?= $publisher ?>">
-                                <img width="48pc" style="border-radius: 50%; margin-right: 5%;" class="img-responsive d-none d-md-block" src="<?= $avatar_url ?>"/>
+                            <a href="channel?id=<?= $publisher['publisher'] ?>">
+                                <img width="48px" style="border-radius: 50%; margin-right: 5%;" class="img-responsive d-none d-md-block" src="<?= $avatar_url ?>"/>
                             </a>
                         </span>
                     </div>
