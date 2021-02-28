@@ -4,14 +4,19 @@
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
+    exit();
 } elseif ($_POST['descvid'] == false) {
     header('Location: index.php');
+    exit();
 } elseif ($_FILES['videovid'] == false) {
     header('Location: index.php');
+    exit();
 } elseif (strlen($_POST['titlevid'])>52) {
     header('Location: blad.php?id=10');
+    exit();
 } elseif (strlen($_POST['descvid'])>1024) {
     header('Location: blad.php?id=11');
+    exit();
 }
 session_start();
 if ($_SESSION['z1'] == true) {
