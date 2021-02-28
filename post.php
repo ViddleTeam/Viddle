@@ -141,13 +141,12 @@ if ($_SESSION['z1'] == true) {
 	    } else {
 	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
-	      ftp_mkdir($conn_id, 'test');
 	      ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
 	      ftp_put($conn_id, $newfilenametwo, $_FILES["videovid"]["tmp_name"], FTP_BINARY);
 	      ftp_delete($conn_id, $newfilenametwo);
 	      ftp_close($conn_id);
 	      $videocompress = $_FILES["videovid"]["tmp_name"];
-	      $compresscommand = "ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k ftp://" . FTPUSER . ":" . FTPPASS . "@" . FTPSERWER . ":21/videos/test/output.mp4";
+	      $compresscommand = "ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k output.mp4";
 	      system($compresscommand);
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
