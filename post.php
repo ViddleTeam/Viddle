@@ -11,12 +11,6 @@ if ($_POST['titlevid'] == false) {
 } elseif ($_FILES['videovid'] == false) {
     header('Location: index.php');
     exit();
-} elseif (strlen($_POST['titlevid'])>52) {
-    header('Location: blad.php?id=10');
-    exit();
-} elseif (strlen($_POST['descvid'])>1024) {
-    header('Location: blad.php?id=11');
-    exit();
 }
 session_start();
 if ($_SESSION['z1'] == true) {
@@ -24,6 +18,13 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
+  if (strlen($tytul)>52) {
+      header('Location: blad.php?id=10');
+      exit();
+  } elseif (strlen($opis)>1024) {
+      header('Location: blad.php?id=11');
+      exit();
+  }
   if (is_uploaded_file($_FILES['videovid']['tmp_name'])) {
 	  $login = $_SESSION['user'];
 	  $filename = $_FILES["videovid"]["name"];
