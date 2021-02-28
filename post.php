@@ -18,10 +18,12 @@ if ($_SESSION['z1'] == true) {
   $tytul = $_POST['titlevid'];
   $opis = $_POST['descvid'];
   $film = $_POST['videovid'];
-  if (strlen($tytul)>52) {
+  $tytultest = strlen($tytul);
+  $opistest = strlen($opis);
+  if($tytultest>52) {
       header('Location: blad.php?id=10');
       exit();
-  } elseif (strlen($opis)>1024) {
+  } elseif($opistest>1024) {
       header('Location: blad.php?id=11');
       exit();
   }
