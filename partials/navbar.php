@@ -10,6 +10,7 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 			} else {
 			    $ip = $_SERVER['REMOTE_ADDR'];
 			}
+
 if($res = $connect->query("SELECT * FROM `viddle_device` WHERE ip='$ip'")) {
     $il = $res->num_rows;
     
@@ -21,8 +22,8 @@ if($res = $connect->query("SELECT * FROM `viddle_device` WHERE ip='$ip'")) {
             $_SESSION['user'] = $dipII['login'];
             $_SESSION['z1'] = true;
         }
-        
-        
+       
+}
 }
 
 $_SESSION['przek'] = $_SERVER['REQUEST_URI'];
