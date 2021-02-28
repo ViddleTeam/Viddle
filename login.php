@@ -26,9 +26,12 @@ $error = '';
 			    $ip = $_SERVER['REMOTE_ADDR'];
 			}
 			$uid = $dane['uid'];
-			$connect->query("INSERT INTO `viddle_device` VALUES (NULL, '$ip', '$uid')");
+			if($connect->query("INSERT INTO `viddle_device` VALUES (NULL, '$ip', '$uid')")) {
 				//dziala
-			
+			} else {
+				exit();
+				echo 'error';
+			}
 		}
 			if(isset($d2) && $d2 == '1') {
 				
