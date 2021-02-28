@@ -52,13 +52,8 @@ if ($publisher['avatarname'] == 'x') {
                     <h4 class="text-truncate"><?= $video['title'] ?></h4>
                     <div class="container row" style="margin-top: 20px;">
                         <span style="margin-left: 10px;">
-                            <a href="channel?id=<?= $publisher['publisher'] ?>">
-                                <span style="margin-left: 10px;">
-                                    <img width="48px" style="border-radius: 50%; margin-right: 5%;" class="img-responsive d-none d-md-block" src="<?= $avatar_url ?>"/>
-                                </span>
-                                <span style="margin-left: 10px; margin-right: auto;">
-                                    <h5 style="align-items: center;"><?= $publisher['login'] ?></h5>
-                                </span>
+                            <a href="channel?id=<?= $publisher['uid'] ?>">
+                                <img width="48px" style="border-radius: 50%; margin-right: 5px;" class="img-responsive d-none d-md-block" src="<?= $avatar_url ?>">
                             </a>
                         </span>
                     </div>
