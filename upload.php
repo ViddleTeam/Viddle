@@ -52,6 +52,7 @@ require_once ('partials/navbar.php');
                     <label for="inputEmail4MD" style="color: white;">Tytuł filmu</label>
                 </div>
             </div>
+            <label for="inputEmail4MD" style="color: white;">Maksymalna ilość znaków w tytule to 52.</label>
             <div class="row">
                 <div class="col-md-12">
                     <div class="md-form form-group" style="width: 100%;">
@@ -60,6 +61,7 @@ require_once ('partials/navbar.php');
                     </div>
                 </div>
             </div>
+            <label for="inputEmail4MD" style="color: white;">Maksymalna ilość znaków w opisie to 1024.</label>
             <input type="file" accept="image/png, image/jpg, image/bmp, image/jpeg" name="miniaturka" style="color: white; margin-top: 5px;" />
             <div style="justify-content: center;">
             </div>
