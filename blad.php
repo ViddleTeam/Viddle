@@ -34,6 +34,10 @@ if($id=="1") {
   $test = "Plik miniaturki zdaje się być nam nieznany, lub nawet go nie ma.<br />Błąd z którym masz do czynienia nie występuje bez<br />przyczyny, więc lepiej zgłoś to naszej drużynie!<br /><h2>Kod błędu: 0x00008c</h2>";
 } elseif($id=="9") {
   $test = "Podczas dodawania miniaturki wystąpił nieznany błąd.<br />Spróbuj wrzucić ją jeszcze raz.<br />W przypadku dalszych problemów, skontaktuj<br />się z naszą drużyną!<br /><h2>Kod błędu: 0x00009c</h2>";
+} elseif($id=="10") {
+  $test = "Tytuł filmu jest zbyt długi.<br />Maksymalna długość to 52.<br /><h2>Kod błędu: 0x00010c</h2>";
+} elseif($id=="11") {
+  $test = "Opis filmu jest zbyt długi.<br />Maksymalna długość to 1024.<br /><h2>Kod błędu: 0x00011c</h2>";
 } elseif($id=="404") {
   $test = "Awaria systemu FTP.<br />Usilnie próbujemy rozwiązać problem,<br />prosimy o cierpliwość.<br /><h2>Kod błędu: 0x00404c</h2>";
 } else {
