@@ -84,7 +84,6 @@ if ($_SESSION['z1'] == true) {
 		    }
 	  }
 	  $newfilename = $viddleid . $test;
-	  $newfilenametwo = $viddleid . "NC" . $test;
 	  if($error==2) {
 	    header('Location: blad.php?id=1');
 	  }
@@ -142,14 +141,10 @@ if ($_SESSION['z1'] == true) {
 	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
 	      ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
-	      ftp_put($conn_id, $newfilenametwo, $_FILES["videovid"]["tmp_name"], FTP_BINARY);
-	      ftp_delete($conn_id, $newfilenametwo);
-	      ftp_close($conn_id);
-	      $videocompress = $_FILES["videovid"]["tmp_name"];
-	      $compresscommand = "/usr/bin/ffmpeg -i $videocompress -b:v 5000k -bufsize 5000k ftp://" . FTPUSER . ":" . FTPPASS . "@" . FTPSERWER . ":21/videos/test/output.mp4 2>&1";
-	      $returnedvalue = shell_exec($compresscommand);
+	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
+	      ftp_close($conn_id);
 	    }
 	  } elseif (empty($file_basename)) {	
 			// file selection error
@@ -191,7 +186,7 @@ if ($_SESSION['z1'] == true) {
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$returnedvalue', '$rozszerzenieminiatura', '$data')");
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', '$rozszerzenieminiatura', '$data')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
