@@ -63,7 +63,7 @@ if ($publisher['avatarname'] == 'x') {
                             <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?= $publisher['observators'] ?> obserwujących</p>
                         </span>
                         <span style="margin-left: auto; margin-right: -20px;">
-                            <?php
+
                         </span>
                     </div>
                 </div>
