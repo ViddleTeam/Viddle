@@ -47,7 +47,7 @@ if ($publisher['avatarname'] == 'x') {
     <?php if ($video_found) { ?>
         <div class="row">
             <div class="col-md-7">
-                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?= $video_id.'/'.$filename ?>&title=<?= $title ?>" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?= $video['video_id'].'/'.$video['fname'] ?>&title=<?= $video['title'] ?>" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
                 <div class="card-videoch" style="margin-top: 10px; padding: 12px; cursor: default; width: 100%;">
                     <h4 class="text-truncate"><?= $video['title'] ?></h4>
                     <div class="container row" style="margin-top: 20px;">
@@ -61,6 +61,9 @@ if ($publisher['avatarname'] == 'x') {
                                 <a href="channel?id=<?= $publisher['uid'] ?>"><?= $publisher['login'] ?></a>
                             </h5>
                             <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?= $publisher['observators'] ?> obserwujących</p>
+                        </span>
+                        <span style="margin-left: auto; margin-right: -20px;">
+                            <?php
                         </span>
                     </div>
                 </div>
