@@ -544,8 +544,7 @@ if($d2 == '1')
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
                             <div class="container">
-                                <a href="/video?id=<?=$randomvidone
-                                ?>">
+                                <a href="/video?id=<?=$randomvidone?>" class="videoprop">
                                     <div class="row">
                                         <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
                                         <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitleone); ?><br></strong>
@@ -554,33 +553,41 @@ if($d2 == '1')
                                     </div>
                                 </a>
                                 <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitletwo); ?><br></strong>
-                                        <?php echo ($randomusertwo); ?><br>
-                                        <?php echo ($randomviewstwo); ?> wyświetleń</p>
-                                </div>
+                                <a href="/video?id=<?=$randomvidtwo?>" class="videoprop">
+                                    <div class="row">
+                                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                                        <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitletwo); ?><br></strong>
+                                            <?php echo ($randomusertwo); ?><br>
+                                            <?php echo ($randomviewstwo); ?> wyświetleń</p>
+                                    </div>
+                                </a>
                                 <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitlethree); ?><br></strong>
-                                        <?php echo ($randomuserthree); ?><br>
-                                        <?php echo ($randomviewsthree); ?> wyświetleń</p>
-                                </div>
+                                <a href="/video?id=<?=$randomvidthree?>" class="videoprop">
+                                    <div class="row">
+                                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                                        <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitlethree); ?><br></strong>
+                                            <?php echo ($randomuserthree); ?><br>
+                                            <?php echo ($randomviewsthree); ?> wyświetleń</p>
+                                    </div>
+                                </a>
                                 <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitlefour); ?><br></strong>
-                                        <?php echo ($randomuserfour); ?><br>
-                                        <?php echo ($randomviewsfour); ?> wyświetleń</p>
-                                </div>
+                                <a href="/video?id=<?=$randomvidfour?>" class="videoprop">
+                                    <div class="row">
+                                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                                        <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitlefour); ?><br></strong>
+                                            <?php echo ($randomuserfour); ?><br>
+                                            <?php echo ($randomviewsfour); ?> wyświetleń</p>
+                                    </div>
+                                </a>
                                 <br>
-                                <div class="row">
-                                    <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                    <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitlefive); ?><br></strong>
-                                        <?php echo ($randomuserfive); ?><br>
-                                        <?php echo ($randomviewsfive); ?> wyświetleń</p>
-                                </div>
+                                <a href="/video?id=<?=$randomvidfive?>" class="videoprop">
+                                    <div class="row">
+                                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                                        <p class="text-truncate" style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitlefive); ?><br></strong>
+                                            <?php echo ($randomuserfive); ?><br>
+                                            <?php echo ($randomviewsfive); ?> wyświetleń</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

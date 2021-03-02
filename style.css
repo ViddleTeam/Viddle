@@ -207,6 +207,19 @@ position: relative;
 	position: relative;
 }
 
+.videoprop {
+	color: white;
+	transition: all 0.3s ease-in-out;
+}
+
+.videoprop:hover {
+	color: #e4e4e4;
+}
+
+.videoprop:active {
+	color: #c4c4c4;
+}
+
 .card-channel {
 	width: 300px;
 	height: 265px;
