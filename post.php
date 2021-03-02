@@ -137,10 +137,10 @@ if ($_SESSION['z1'] == true) {
 	      echo "Plik już istnieje.";
 	      //header('Location: blad.php?id=4');
 	    } else {
-	    if($rozszerzenieminiatura == 'x') {
+	   
 	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
-	    }
+	    
 	      ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
