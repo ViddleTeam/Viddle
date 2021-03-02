@@ -111,7 +111,7 @@ if ($_SESSION['z1'] == true) {
 			$ftp_server = FTPSERWER;
 			$ftp_conn = ftp_connect($ftp_server) or die("Wystąpił błąd! Skontaktuj się z supportem.");
 			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-		    	ftp_chdir($ftp_conn, '/videos/.$viddleid.'/');
+		    	ftp_chdir($ftp_conn, '/videos/'.$viddleid.'/');
 			ftp_put($ftp_conn, $nazwaplikuminiatura, $min_tmp, FTP_BINARY);
 
 	  	} elseif ($pic_size > 3097152) {
