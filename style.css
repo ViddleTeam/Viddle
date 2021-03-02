@@ -208,16 +208,16 @@ position: relative;
 }
 
 .videoprop {
-	color: white;
+	color: white !important;
 	transition: all 0.3s ease-in-out;
 }
 
 .videoprop:hover {
-	color: #e4e4e4;
+	color: #e4e4e4 !important;
 }
 
 .videoprop:active {
-	color: #c4c4c4;
+	color: #c4c4c4 !important;
 }
 
 .card-channel {
