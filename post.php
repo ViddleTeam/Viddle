@@ -1,5 +1,4 @@
-<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
-<?php
+<?php echo '<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>';
 
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
@@ -110,9 +109,9 @@ if ($_SESSION['z1'] == true) {
 		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
 	  	{	
 			$ftp_server = FTPSERWER;
-			$ftp_conn = ftp_connect($ftp_server) or die("Could not connt to $ftp_server");
+			$ftp_conn = ftp_connect($ftp_server) or die("Wystąpił błąd! Skontaktuj się z supportem.");
 			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-		    	ftp_chdir($ftp_conn, '/thumb/');
+		    	ftp_chdir($ftp_conn, '/videos/.$viddleid.'/');
 			ftp_put($ftp_conn, $nazwaplikuminiatura, $min_tmp, FTP_BINARY);
 
 	  	} elseif ($pic_size > 3097152) {
@@ -138,8 +137,10 @@ if ($_SESSION['z1'] == true) {
 	      echo "Plik już istnieje.";
 	      //header('Location: blad.php?id=4');
 	    } else {
+	    if($rozszerzenieminiatura == 'x') {
 	      ftp_chdir($conn_id, '/videos/');
 	      ftp_mkdir($conn_id, $viddleid);
+	    }
 	      ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
