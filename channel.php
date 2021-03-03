@@ -88,7 +88,7 @@ $(document).ready(function(e) {
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4)) echo $av4; ?>">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (isset($av4) && $av4 != 'x') echo $av4; ?>">
 				</span>
 				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
 					<h3 class="text-truncate"><?php echo $nazwa; ?></h3>
@@ -102,9 +102,9 @@ $(document).ready(function(e) {
 						} else {
 							if ($_SESSION['z1'] == true) {
 								if($isfollowinguser == true) {
-									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button></form>';
+									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="'.$id.'"><button type="submit" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button></form>';
 								} else {
-									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="' . $id . '"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
+									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="'.$id.'"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 								}
 							} else {
 								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';

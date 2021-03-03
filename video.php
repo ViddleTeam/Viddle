@@ -56,7 +56,7 @@ if ($id == 0) {
         if ($av6 == 'x') {
             $av7 = 'anonim.png';
         } else {
-            $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/' . $publisher . '/' . $publisher . '.' . $av6 . '';
+            $av7 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$publisher.'/'.$publisher.'.'.$av6. '';
         }
     } else {
         $video_exists = false;
@@ -309,13 +309,11 @@ if ($video_e == true) {
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $viev ?></h4>
 
-                      <span style='margin-right: 5px;'><div onclick="like()" style='<?php echo $disable ?>'><i class="fas fa-arrow-up" <?php echo $like ?>"></i> <?php echo $likes ?></div></span> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                      <span style='margin-right: 5px;'><div onclick="like()" style='<?php echo $disable ?>'><i class="fas fa-arrow-up"></i> <?php echo $likes ?></div></span> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
 			      <script>
 			      function like() {
 			      <?php 
-	    			
-
 if(!isset($_SESSION['uid'])) {
 	$_SESSION['pol'] = true;
 	header('location: video.php?id='.$id.'');
