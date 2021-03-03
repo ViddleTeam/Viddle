@@ -86,7 +86,7 @@ if(!isset($_SESSION['uid'])) {
 		      $wyk = false;
 		      try {
 			      $uid = $_SESSION['uid'];
-			      if($res = $connect->query("SELECT * FROM viddle_videos WHERE `publisher`='$uid'")) {
+			      if($res = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid' ORDER BY `publishdate` DESC")) {
 					$il = $res->num_rows;
 				      
 				      if(!$il == '0') {
