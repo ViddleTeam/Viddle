@@ -124,33 +124,7 @@ if(!isset($_SESSION['uid'])) {
                 </div>';
 			      }
 		      } ?>
-                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
-                  <span style="margin-left: 10px;">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
-                  </span>
-                  <span style="margin-left: 10px; margin-right: auto; align-items: center;">
-                    <h4><a href="https://beta.viddle.xyz/channel?id=5fd60e5323fe95fd60e5323feb">Film 2</a></h4>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 wyświetleń, 21 głosów pozytywnych</p>
-                  </span>
-                  <span style="margin-left: auto; margin-right: -20px;">
-                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
-                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
-                  </span>
-                </div>
-                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
-                  <span style="margin-left: 10px;">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
-                  </span>
-                  <span style="margin-left: 10px; margin-right: auto; align-items: center;">
-                    <h4><a href="https://beta.viddle.xyz/channel?id=5fd60e5323fe95fd60e5323feb">Film 3</a></h4>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 wyświetleń, 21 głosów pozytywnych</p>
-                  </span>
-                  <span style="margin-left: auto; margin-right: -20px;">
-                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
-                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
-                  </span>
-                </div>
-              </div>
+                
               <div class="tab-pane fade" id="unsafe" role="tabpanel" aria-labelledby="unsafe-tab">
                 Strefa niebezpieczna to miejsce, w którym możesz usunąć wszystkie swoje filmy jednym kliknięciem, lub nawet skasować swoje konto.<br>
                 <b>UWAGA:</b> te operacje są nieodwracalne!<br>
