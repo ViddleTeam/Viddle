@@ -82,26 +82,26 @@ if(!isset($_SESSION['uid'])) {
               </div>
               <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
                 Lista filmów na Twoim kanale. Możesz stąd edytować informacje o filmie (np. tytuł czy opis) albo je usunąć.<br>
-		      <?php
-		      $wyk = false;
-		      try {
-			      $uid = $_SESSION['uid'];
-			      if($res = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid' ORDER BY `publishdate` DESC")) {
-					$il = $res->num_rows;
-				      
-				      if(!$il == '0') {
-					      $wyk = true;
-				      } else {
-					      $error = '2';
-					      throw new Exception($il->error);
-				      }
-			      } else {
-				      $error = '1';
-				      throw new Exception($res->error);
-			      }
-		      } catch(Exception $e) {
-		      }
-		      ?>
+              <?php
+              $wyk = false;
+              try {
+                $uid = $_SESSION['uid'];
+                if($res = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid' ORDER BY `publishdate` DESC")) {
+              $il = $res->num_rows;
+                  
+                  if(!$il == '0') {
+                    $wyk = true;
+                  } else {
+                    $error = '2';
+                    throw new Exception($il->error);
+                  }
+                } else {
+                  $error = '1';
+                  throw new Exception($res->error);
+                }
+              } catch(Exception $e) {
+              }
+              ?>
 		      <?php 
 		      if($wyk == true) {
 			      while($daneV = mysqli_fetch_assoc($res)) {
@@ -123,11 +123,8 @@ if(!isset($_SESSION['uid'])) {
                   </span>
                 </div>';
 			      }
-		      } ?>
-		        </span>	
-                </div>	
+		        } ?>
               </div>
-                
               <div class="tab-pane fade" id="unsafe" role="tabpanel" aria-labelledby="unsafe-tab">
                 Strefa niebezpieczna to miejsce, w którym możesz usunąć wszystkie swoje filmy jednym kliknięciem, lub nawet skasować swoje konto.<br>
                 <b>UWAGA:</b> te operacje są nieodwracalne!<br>
