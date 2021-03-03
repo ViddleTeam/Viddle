@@ -124,6 +124,9 @@ if(!isset($_SESSION['uid'])) {
                 </div>';
 			      }
 		      } ?>
+		        </span>	
+                </div>	
+              </div>
                 
               <div class="tab-pane fade" id="unsafe" role="tabpanel" aria-labelledby="unsafe-tab">
                 Strefa niebezpieczna to miejsce, w którym możesz usunąć wszystkie swoje filmy jednym kliknięciem, lub nawet skasować swoje konto.<br>
