@@ -173,8 +173,8 @@ if(!isset($_SESSION['uid'])) {
         Nazwa powinna składać się z przynajmniej 4 znaków i nie być dłuższa niż 30 znaków.<br><br>
         Obecną nazwą stosowaną na Viddle jest <b>SlaVistaPL.</b><br>
         <div class="md-form">
-          <input type="text" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Podaj nową nazwę konta</label>
+          <input type="text" id="newName" class="form-control" style="color: white;">
+          <label for="newName">Podaj nową nazwę konta</label>
         </div>
       </div>
       <div class="modal-footer">
@@ -198,12 +198,12 @@ if(!isset($_SESSION['uid'])) {
       <div class="modal-body">
         Hasło powinno składać się z przynajmniej 8 znaków, mieć jedną dużą i małą literę oraz jeden znak specjalny.<br>
         <div class="md-form">
-          <input type="password" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Nowe hasło</label>
+          <input type="password" id="newPassword" class="form-control" style="color: white;">
+          <label for="newPassword">Nowe hasło</label>
         </div>
         <div class="md-form">
-          <input type="password" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Potwierdź hasło</label>
+          <input type="password" id="confirmPassword" class="form-control" style="color: white;">
+          <label for="confirmPassword">Potwierdź hasło</label>
         </div>
       </div>
       <div class="modal-footer">
@@ -227,12 +227,12 @@ if(!isset($_SESSION['uid'])) {
       <div class="modal-body">
         Zostanie wysłany mail potwierdzający celem sprawdzenia, czy adres mailowy należy do Ciebie.<br>
         <div class="md-form">
-          <input type="text" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Nowy adres e-mail</label>
+          <input type="text" id="newMailAddress" class="form-control" style="color: white;">
+          <label for="newMailAddress">Nowy adres e-mail</label>
         </div>
         <div class="md-form">
-          <input type="text" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Potwierdź adres e-mail</label>
+          <input type="text" id="confirmMailAddress" class="form-control" style="color: white;">
+          <label for="confirmMailAddress">Potwierdź adres e-mail</label>
         </div>
       </div>
       <div class="modal-footer">
@@ -257,12 +257,12 @@ if(!isset($_SESSION['uid'])) {
       <div class="modal-body">
         Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
         <div class="md-form">
-          <input type="text" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Nazwa filmu</label>
+          <input type="text" id="videoName" class="form-control" style="color: white;">
+          <label for="videoName">Nazwa filmu</label>
         </div>
         <div class="md-form">
-          <textarea id="form7" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
-          <label for="form7">Opis filmu</label>
+          <textarea id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
+          <label for="videoDescription">Opis filmu</label>
         </div>
       </div>
       <div class="modal-footer">
@@ -308,8 +308,8 @@ if(!isset($_SESSION['uid'])) {
         Jesteś pewien, że chcesz to zrobić?<br>
         Dla bezpieczeństwa potwierdź akcję poprzez wpisanie hasła do konta.
         <div class="md-form">
-          <input type="password" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Wprowadź hasło</label>
+          <input type="password" id="passwordResetAccount" class="form-control" style="color: white;">
+          <label for="passwordResetAccount">Wprowadź hasło</label>
         </div>
       </div>
       <div class="modal-footer">
@@ -337,8 +337,8 @@ if(!isset($_SESSION['uid'])) {
         usunięcia konta (lub poprzez osoby do tego nieupoważnione).<br><br>
         Dla bezpieczeństwa potwierdź akcję poprzez wpisanie hasła do konta.
         <div class="md-form">
-          <input type="password" id="form1" class="form-control" style="color: white;">
-          <label for="form1">Hasło</label>
+          <input type="password" id="passwordRemoveAccount" class="form-control" style="color: white;">
+          <label for="passwordRemoveAccount">Hasło</label>
         </div>
       </div>
       <div class="modal-footer">
