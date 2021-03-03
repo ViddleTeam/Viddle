@@ -87,12 +87,6 @@ $error = '';
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-		body {
-			background: rgb(30,0,59);
-			background: linear-gradient(90deg, rgba(30,0,59,1) 0%, rgba(9,34,121,1) 35%, rgba(154,0,255,1) 100%);
-		}
-		</style>
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -126,7 +120,7 @@ $error = '';
                 </form>
 					<a href="register.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zarejestruj się</p></button></a>
 				</div>
-				<p style="margin: 15px 0 0 0;">Zapomniałeś hasła? <a href="preset.php">Wyślij prośbę o zresetowanie.</a></p>
+				<p style="margin: 15px 0 0 0;">Zapomniałeś hasła? <a href="preset.php" class="text-black">Wyślij prośbę o zresetowanie.</a></p>
 				</center>
 			</div>
 			</div><br>

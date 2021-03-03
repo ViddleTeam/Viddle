@@ -137,16 +137,11 @@ $(document).ready(function(e) {
 		    if(!$d4 == '0')
 		    {
 			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE `publisher`='$id'");
-			    
-                    
                     if($p1->num_rows > 0){
                         $num = $p1->num_rows;
                         for($k1 = $num; $k1; $k1 -= 1){
                             if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
                                 $d5 = $k2->fetch_assoc();
-				 
-				    
-				 
 				    if($d5['minname'] == 'x')
 				    {
 				    	$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
