@@ -82,19 +82,48 @@ if(!isset($_SESSION['uid'])) {
               </div>
               <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
                 Lista filmów na Twoim kanale. Możesz stąd edytować informacje o filmie (np. tytuł czy opis) albo je usunąć.<br>
-                <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+		      <?php
+		      $wyk = false;
+		      try {
+			      $uid = $_SESSION['uid'];
+			      if($res = $connect->query("SELECT * FROM viddle_videos WHERE `publisher`='$uid'")) {
+					$il = $res->num_rows;
+				      
+				      if(!$il == '0') {
+					      $wyk = true;
+				      } else {
+					      $error = '2';
+					      throw new Exception($il->error);
+				      }
+			      } else {
+				      $error = '1';
+				      throw new Exception($res->error);
+			      }
+		      } catch(Exception $e) {
+		      }
+		      ?>
+		      <?php 
+		      if($wyk == true) {
+			      while($daneV = mysqli_fetch_assoc($res)) {
+				      $vid = $daneV['video_id'];
+				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+				      
+				      $vievsII = $vievs->num_rows;
+                echo '<div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px;">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto; align-items: center;">
-                    <h4><a href="https://beta.viddle.xyz/channel?id=5fd60e5323fe95fd60e5323feb">Film 1</a></h4>
-                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 wyświetleń, 21 głosów pozytywnych</p>
+                    <h4><a href="https://beta.viddle.xyz/channel?id='.$_SESSION['uid'].'">'.$daneV['title'].'</a></h4>
+                    <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$vievsII.' wyświetleń, '.$daneV['upvotes'].' głosów pozytywnych</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
                     <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
                     <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
                   </span>
-                </div>
+                </div>';
+			      }
+		      } ?>
                 <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px;">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
