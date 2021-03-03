@@ -89,19 +89,19 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 	
 } catch (Exception $e) {
 	if($kerror == '1') {
-		$k_com = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
+		$k_com = '<div class="alert alert-danger" role="alert" style="width: 100%; text-align: center;">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0001</div>';
 	}
 	
 	if($kerror == '2') {
-		$k_com = '<div class="alert alert-info" role="alert">Twoje zapytanie musi mieć conajmniej 2 znaki</div>';
+		$k_com = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Twoje zapytanie musi mieć conajmniej 2 znaki</div>';
 	}
 	
 	if($kerror == '3') {
-		$k_com = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
+		$k_com = '<div class="alert alert-danger" role="alert" style="width: 100%; text-align: center;">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xf0002</div>';
 	}
 	
 	if($kerror == '4') {
-		$k_com = '<div class="alert alert-info" role="alert">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
+		$k_com = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
 	}
 }
 ?>
