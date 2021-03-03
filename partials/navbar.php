@@ -157,12 +157,13 @@ if($block == '1')
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item waves-effect waves-light" href="channel?id=<?php if (isset($uid)) echo $uid ?>">Strona twojego kanału</a>
                             <a class="dropdown-item waves-effect waves-light" href="creatorstudio">Studio twórców</a>
-                            <a class="dropdown-item waves-effect waves-light" href="profilechange">Ustawienia grafiki kanału</a>
-                            <a class="dropdown-item waves-effect waves-light" href="developers">Dla deweloperów</a>
+                            <a class="dropdown-item waves-effect waves-light" href="profilechange">Zmień zdjęcie profilowe</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item waves-effect waves-light" href="developers">Ustawienia kanału</a>
+                            <div class="dropdown-divider"></div>
                             <?php if($_SESSION['emailver'] == '0') { ?>
                             <a class="dropdown-item waves-effect waves-light" href="mverify.php">Zweryfikuj adres e-mail</a>
                             <?php } ?>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item waves-effect waves-light" href="logout">Wyloguj się</a>
                             <?php
                             } 
