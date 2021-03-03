@@ -2,7 +2,7 @@
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
-echo '<html>data-target="nameModal"</html>'
+echo '<html>data-target="nameModal"</html>';
 if(!isset($_SESSION['uid'])) {
 	header('location: index.php');
 	exit();
