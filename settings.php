@@ -1,3 +1,12 @@
+<?php session_start();
+require 'danesql.php';
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
+if(!isset($_SESSION['uid'])) {
+	header('location: index.php');
+	exit();
+}
+?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
