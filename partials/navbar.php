@@ -159,7 +159,7 @@ if($block == '1')
                             <a class="dropdown-item waves-effect waves-light" href="creatorstudio">Studio twórców</a>
                             <a class="dropdown-item waves-effect waves-light" href="profilechange">Zmień zdjęcie profilowe</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item waves-effect waves-light" href="developers">Ustawienia kanału</a>
+                            <a class="dropdown-item waves-effect waves-light" href="settings">Ustawienia kanału</a>
                             <div class="dropdown-divider"></div>
                             <?php if($_SESSION['emailver'] == '0') { ?>
                             <a class="dropdown-item waves-effect waves-light" href="mverify.php">Zweryfikuj adres e-mail</a>
