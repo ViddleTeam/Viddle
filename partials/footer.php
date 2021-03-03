@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../assets/master.css" />
+<!-- <link rel="stylesheet" href="../assets/master.css" /> -->
 <footer class="page-footer font-small" style="background-color: #212121; margin-top: 30px; width: 100%;">
   <div class="footer-copyright text-center text-white py-3">
       &copy; 2020-2021 Viddle Developers<br>

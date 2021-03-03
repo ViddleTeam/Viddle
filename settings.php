@@ -350,6 +350,5 @@ if(!isset($_SESSION['uid'])) {
 </div>
 
 <!-- JS -->
-<?php include 'partials/footer.php'; ?>
 <script src="script.js"></script>
 <div class="hiddendiv common"></div></body></html>
