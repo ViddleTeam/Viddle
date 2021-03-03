@@ -243,6 +243,10 @@ if (isset($_SESSION['uid'])) {
     $polecenie = sprintf('INSERT INTO viddle_comments (tresc, uid, published, videoid) VALUES (%s, %s, %s, %s)', $connect->real_escape_string($cmt, $_SESSION['uid'], new DateTime(), $_GET['id']));
     $connect->query($polecenie);
 }*/
+
+if($vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$id'")) {
+	$viev = $vievs->num_rows;
+}
 ?>
 <?php
 require_once ("partials/navbar.php");
@@ -303,7 +307,7 @@ if ($video_e == true) {
                       </p>
                     </span>
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
-                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $views ?></h4>
+                    	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $viev ?></h4>
 
                       <span style='margin-right: 5px;'><div onclick="like()" style='<?php echo $disable ?>'><i class="fas fa-arrow-up" <?php echo $like ?>"></i> <?php echo $likes ?></div></span> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="<?php echo $dislike ?> margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
