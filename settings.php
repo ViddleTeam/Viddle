@@ -120,23 +120,9 @@ if(!isset($_SESSION['uid'])) {
 					      
 					      $opis = htmlentities($opis, ENT_QUOTES, "UTF-8");
 					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
+					
 					      
-					      if(empty($opis) && !empty($title)) {
-						      $polecenie = "UPDATE `viddle_videos` SET `title`='$title' WHERE `video_id`='$vid'";
-					      } else {
-						      if(empty($title) && !empty($opis)) {
-							      $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' WHERE `video_id`='$vid'";
-						      } else {
-							      if(empty($opis) || empty($title)) {
-								      $polecenie = '';
-							      } else {
-								    $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'";  
-							      }
-						      }
-					      }
-					      
-					      if(!empty($polecenie)) {
-					      		if($connect->query($polecenie)) {
+					      		if($connect->query("UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'")) {
 								echo "<script>
 								    $(function() { alert('Operacja na filmie powiodła się!') });
 								</script>";
