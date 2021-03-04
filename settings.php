@@ -110,11 +110,14 @@ if(!isset($_SESSION['uid'])) {
               ?>
 		      <?php 
 		      if($wyk == true) {
+			      $a = '0';
 			      while($daneV = mysqli_fetch_assoc($res)) {
+				      $a = $a + '1';
 				      $vid = $daneV['video_id'];
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				      
 				      $vievsII = $vievs->num_rows;
+				      //modal do edycji filmu
                 echo '<div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px;">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
@@ -124,10 +127,38 @@ if(!isset($_SESSION['uid'])) {
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">'.$vievsII.' wyświetleń, '.$daneV['upvotes'].' głosów pozytywnych</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
-                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal">Edytuj informacje</p></button>
+                    <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal'.$a.'">Edytuj informacje</p></button>
                     <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
                   </span>
                 </div>';
+				      echo '<div class="modal fade" id="editVideoModal'.$a.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edytuj informacje o filmie '.$daneV['title'].'</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
+        <div class="md-form">
+          <input type="text" id="videoName" class="form-control" style="color: white;">
+          <label for="videoName">Nazwa filmu</label>
+        </div>
+        <div class="md-form">
+          <textarea id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
+          <label for="videoDescription">Opis filmu</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+      </div>
+    </div>
+  </div>
+</div>';
 			      }
 		        } ?>
               </div>
