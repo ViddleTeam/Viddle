@@ -114,6 +114,39 @@ if(!isset($_SESSION['uid'])) {
 			      $a = '0';
 			      while($daneV = mysqli_fetch_assoc($res)) {
 				      $a = $a + '1';
+				      if(isset($_POST['opis'.$a])) {
+					      $opis = mysqli_real_escape_string($connect, $_POST['opis'.$a]);
+					      $title = mysqli_real_escape_string($connect, $_POST['title'.$a]);
+					      
+					      $opis = htmlentities($opis, ENT_QUOTES, "UTF-8");
+					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
+					      
+					      if(empty($opis) && !empty($title)) {
+						      $polecenie = "UPDATE `viddle_videos` SET `title`='$title' WHERE `video_id`='$vid'";
+					      } else {
+						      if(empty($title) && !empty($opis)) {
+							      $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' WHERE `video_id`='$vid'";
+						      } else {
+							      if(empty($opis) || empty($title)) {
+								      $polecenie = '';
+							      } else {
+								    $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'";  
+							      }
+						      }
+					      }
+					      
+					      if(!empty($polecenie)) {
+					      		if($connect->query($polecenie)) {
+								echo "<script>
+								    $(function() { alert('Operacja na filmie powiodła się!') });
+								</script>";
+							} else {
+								echo "<script>
+								    $(function() { alert('Operacja na filmie nie powiodła się!') });
+								</script>";
+							}
+						}
+				}
 				      $vid = $daneV['video_id'];
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				      
@@ -147,11 +180,11 @@ if(!isset($_SESSION['uid'])) {
         Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
         <div class="md-form">
 	<form method="post">
-          <input type="text" id="videoName" class="form-control" name="title" style="color: white;">
+          <input type="text" id="videoName" class="form-control" name="title'.$a.'" style="color: white;">
           <label for="videoName">Nazwa filmu</label>
         </div>
         <div class="md-form">
-          <textarea name="opis" id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
+          <textarea name="opis'.$a.'" id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
           <label for="videoDescription">Opis filmu</label>
         </div>
       </div>
@@ -163,39 +196,7 @@ if(!isset($_SESSION['uid'])) {
     </div>
   </div>
 </div>'; 
-				      if(isset($_POST['button'.$a])) {
-					      $opis = mysqli_real_escape_string($connect, $_POST['opis']);
-					      $title = mysqli_real_escape_string($connect, $_POST['title']);
-					      
-					      $opis = htmlentities($opis, ENT_QUOTES, "UTF-8");
-					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
-					      
-					      if(empty($opis) && !empty($title)) {
-						      $polecenie = "UPDATE `viddle_videos` SET `title`='$title' WHERE `video_id`='$vid'";
-					      } else {
-						      if(empty($title) && !empty($opis)) {
-							      $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' WHERE `video_id`='$vid'";
-						      } else {
-							      if(empty($opis) || empty($title)) {
-								      $polecenie = '';
-							      } else {
-								    $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'";  
-							      }
-						      }
-					      }
-					      
-					      if(!empty($polecenie)) {
-					      		if($connect->query($polecenie)) {
-								echo "<script>
-								    $(function() { alert('Operacja na filmie powiodła się!') });
-								</script>";
-							} else {
-								echo "<script>
-								    $(function() { alert('Operacja na filmie nie powiodła się!') });
-								</script>";
-							}
-						}
-				}
+				      
 		      ?>
 
 		<?php		    
