@@ -131,8 +131,8 @@ if(!isset($_SESSION['uid'])) {
 								    $(function() { alert('Operacja na filmie nie powiodła się!') });
 								</script>";
 							}
-						}
-			      }
+						
+			      
 				}
 				      $vid = $daneV['video_id'];
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
