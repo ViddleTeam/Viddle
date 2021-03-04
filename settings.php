@@ -132,6 +132,7 @@ if(!isset($_SESSION['uid'])) {
 								</script>";
 							}
 						}
+			      }
 				}
 				      $vid = $daneV['video_id'];
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
