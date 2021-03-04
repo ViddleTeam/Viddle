@@ -154,11 +154,19 @@ if(!isset($_SESSION['uid'])) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+        <button type="button" class="btn btn-primary" onclick="edit'.$a.'()"><p style="margin: 10px;">Potwierdź</p></button>
       </div>
     </div>
   </div>
-</div>';
+</div>'; ?>
+<script>
+function edit<?php echo $a ?>() {
+	<?php
+	header('location: gwalt.php.');
+	?>
+}
+</script>
+		<?php		    
 			      }
 		        } ?>
               </div>
