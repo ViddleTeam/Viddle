@@ -7,6 +7,7 @@ if(!isset($_SESSION['uid'])) {
 	header('location: index.php');
 	exit();
 }
+
 ?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
@@ -117,7 +118,7 @@ if(!isset($_SESSION['uid'])) {
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				      
 				      $vievsII = $vievs->num_rows;
-				      //modal do edycji filmu
+				      
                 echo '<div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px;">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
@@ -131,6 +132,7 @@ if(!isset($_SESSION['uid'])) {
                     <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
                   </span>
                 </div>';
+				      //modal do edycji filmu
 				      echo '<div class="modal fade" id="editVideoModal'.$a.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -144,28 +146,58 @@ if(!isset($_SESSION['uid'])) {
       <div class="modal-body">
         Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
         <div class="md-form">
-          <input type="text" id="videoName" class="form-control" style="color: white;">
+	<form method="post">
+          <input type="text" id="videoName" class="form-control" name="title" style="color: white;">
           <label for="videoName">Nazwa filmu</label>
         </div>
         <div class="md-form">
-          <textarea id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
+          <textarea name="opis" id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
           <label for="videoDescription">Opis filmu</label>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-        <button type="button" class="btn btn-primary" onclick="edit'.$a.'()"><p style="margin: 10px;">Potwierdź</p></button>
+        <button type="submit" class="btn btn-primary"><p style="margin: 10px;" name="button'.$a.'">Potwierdź</p></button>
+	</form>
       </div>
     </div>
   </div>
-</div>'; ?>
-<script>
-function edit<?php echo $a ?>() {
-	<?php
-	header('location: gwalt.php.');
-	?>
-}
-</script>
+</div>'; 
+				      if(isset($_POST['button'.$a])) {
+					      $opis = mysqli_real_escape_string($connect, $_POST['opis']);
+					      $title = mysqli_real_escape_string($connect, $_POST['title']);
+					      
+					      $opis = htmlentities($opis, ENT_QUOTES, "UTF-8");
+					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
+					      
+					      if(empty($opis) && !empty($title)) {
+						      $polecenie = "UPDATE `viddle_videos` SET `title`='$title' WHERE `video_id`='$vid'";
+					      } else {
+						      if(empty($title) && !empty($opis)) {
+							      $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' WHERE `video_id`='$vid'";
+						      } else {
+							      if(empty($opis) || empty($title)) {
+								      $polecenie = '';
+							      } else {
+								    $polecenie = "UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'";  
+							      }
+						      }
+					      }
+					      
+					      if(!empty($polecenie)) {
+					      		if($connect->query($polecenie)) {
+								echo "<script>
+								    $(function() { alert('Operacja na filmie powiodła się!') });
+								</script>";
+							} else {
+								echo "<script>
+								    $(function() { alert('Operacja na filmie nie powiodła się!') });
+								</script>";
+							}
+						}
+				}
+		      ?>
+
 		<?php		    
 			      }
 		        } ?>
