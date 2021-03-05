@@ -119,27 +119,6 @@ if(!isset($_SESSION['uid'])) {
 			      $a = '0';
 			      while($daneV = mysqli_fetch_assoc($res)) {
 				      $a = $a + '1';
-				      if(isset($_POST['opis'.$a])) {
-					      
-					      $opis = htmlentities($opis, ENT_QUOTES, "UTF-8");
-					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
-
-					      		if ($result = @$connect->query(
-		   					sprintf("UPDATE `viddle_videos` SET `opis`='%s' AND `title`='%s' WHERE `video_id`='%s'",
-		    					mysqli_real_escape_string($connect,$opis),
-							mysqli_real_escape_string($connect,$title),
-							mysqli_real_escape_string($connect,$vid)))){
-								echo "<script>
-								    $(function() { alert('Operacja na filmie powiodła się! ".$title."   ".$opis."    ".$vid."') });
-								</script>";
-							} else {   
-								echo "<script>
-								    $(function() { alert('Operacja na filmie nie powiodła się!') });
-								</script>";
-							}
-						
-			      
-				}
 				      $vid = $daneV['video_id'];
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				      
@@ -172,7 +151,7 @@ if(!isset($_SESSION['uid'])) {
       <div class="modal-body">
         Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
         <div class="md-form">
-	<form method="post">
+	<form method="post" action="editvid.php?id='.$vid.'">
           <input type="text" id="videoName" class="form-control" name="title'.$a.'" style="color: white;">
           <label for="videoName">Nazwa filmu</label>
         </div>
