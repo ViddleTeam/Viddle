@@ -115,14 +115,15 @@ if(!isset($_SESSION['uid'])) {
 			      while($daneV = mysqli_fetch_assoc($res)) {
 				      $a = $a + '1';
 				      if(isset($_POST['opis'.$a])) {
-					      $opis = mysqli_real_escape_string($connect, $_POST['opis'.$a]);
-					      $title = mysqli_real_escape_string($connect, $_POST['title'.$a]);
 					      
 					      $opis = htmlentities($opis, ENT_QUOTES, "UTF-8");
 					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
-					
-					      
-					      		if($connect->query("UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'")) {
+
+					      		if ($result = @$connect->query(
+		   					sprintf("UPDATE `viddle_videos` SET `opis`='%s' AND `title`='%s' WHERE `video_id`='%s'",
+		    					mysqli_real_escape_string($connect,$opis),
+							mysqli_real_escape_string($connect,$title),
+							mysqli_real_escape_string($connect,$vid)))){
 								echo "<script>
 								    $(function() { alert('Operacja na filmie powiodła się!') });
 								</script>";
