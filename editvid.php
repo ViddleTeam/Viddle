@@ -5,7 +5,8 @@ if(!isset($_SESSION['uid'])) {
   header('location: index.php');
 } else {
     $id = $_GET['id'];
-    
+    $opis = $_POST['opis'];
+	$title = $_POST['title'];
               require "danesql.php";
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   
