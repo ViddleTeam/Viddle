@@ -4,6 +4,12 @@
     <link rel="stylesheet" href="style.css" />
     <title>Usuń film z Viddle</title>
     <style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
     button {
         outline: none;
         margin: 10px;
