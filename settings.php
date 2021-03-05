@@ -130,9 +130,9 @@ if(!isset($_SESSION['uid'])) {
 							mysqli_real_escape_string($connect,$title),
 							mysqli_real_escape_string($connect,$vid)))){
 								echo "<script>
-								    $(function() { alert('Operacja na filmie powiodła się!') });
+								    $(function() { alert('Operacja na filmie powiodła się! ".$title."   ".$opis."    ".$vid."') });
 								</script>";
-							} else {
+							} else {   
 								echo "<script>
 								    $(function() { alert('Operacja na filmie nie powiodła się!') });
 								</script>";
