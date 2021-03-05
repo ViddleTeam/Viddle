@@ -4,10 +4,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Usuń film z Viddle</title>
     <style>
-    body {
-      top: 50%;
-      left: 50%;
-    }
     button {
         outline: none;
         margin: 10px;
@@ -17,10 +13,12 @@
     </style>
 </head>
 <body>
+    <center>
     <form action="deletevidsecret.php" method="post">
     <h2>Kod filmu: <input type="text" id="kodf" name="kodf" /></h2>
     <br /><h2>Token zabezpieczający: <input type="text" id="token" name="token" /></h2>
     <input type="submit" value="Usuń film" />
     </form>
+    </center>
 </body>
 </html>
