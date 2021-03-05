@@ -122,7 +122,7 @@ if(!isset($_SESSION['uid'])) {
 					      $title = htmlentities($title, ENT_QUOTES, "UTF-8");
 					
 					      
-					      		if($res = @$connect->query("UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'")) {
+					      		if($connect->query("UPDATE `viddle_videos` SET `opis`='$opis' AND `title`='$title' WHERE `video_id`='$vid'")) {
 								echo "<script>
 								    $(function() { alert('Operacja na filmie powiodła się!') });
 								</script>";
