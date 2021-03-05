@@ -6,8 +6,8 @@ if(!isset($_SESSION['uid'])) {
 } else {
     $id = $_GET['id'];
     
-    require 'danesql.php';
-    $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+              require "danesql.php";
+            $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   
     if ($result = @$connect->query(
 		sprintf("SELECT * FROM viddle_videos WHERE video_id='%s' AND publisher='%s'",
@@ -18,9 +18,9 @@ if(!isset($_SESSION['uid'])) {
               if ($resultII = @$connect->query(
 		          sprintf("UPDATE `viddle_videos` SET `opis`='%s' AND `title`='%s' WHERE `video_id`='%s'",
 		          mysqli_real_escape_string($connect,$opis),
-              mysqli_real_escape_string($connect,$title),
-              mysqli_real_escape_string($connect,$id)))) {
-                header('location: settings.php');
+              		mysqli_real_escape_string($connect,$title),
+              		mysqli_real_escape_string($connect,$id)))) {
+                		header('location: settings.php');
               }
       } else {
         header('location: index.php');
