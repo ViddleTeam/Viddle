@@ -9,7 +9,6 @@ if(!isset($_SESSION['uid'])) {
 	$title = $_POST['title'];
               require "danesql.php";
             $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-  
     if ($result = @$connect->query(
 		sprintf("SELECT * FROM viddle_videos WHERE video_id='%s' AND publisher='%s'",
 		mysqli_real_escape_string($connect,$id),

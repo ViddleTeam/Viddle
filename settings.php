@@ -3,7 +3,7 @@ require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 if($connect->connect_errno!=0) {
-	echo 'Błąd!!!';
+	echo 'Błąd!';
 	exit;
 }
 
@@ -25,6 +25,7 @@ if(!isset($_SESSION['uid'])) {
     <link rel="stylesheet" href="style.css">
     <meta property="og:title" content="Viddle">
     <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
+    <script type="text/javascript" src="/assets/videoview.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -138,36 +139,36 @@ if(!isset($_SESSION['uid'])) {
                   </span>
                 </div>';
 				      //modal do edycji filmu
-				      echo '<div class="modal fade" id="editVideoModal'.$a.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content bg-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edytuj informacje o filmie '.$daneV['title'].'</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
-        <div class="md-form">
-	<form method="post" action="editvid.php?id='.$vid.'">
-          <input type="text" id="videoName" class="form-control" name="title'.$a.'" style="color: white;">
-          <label for="videoName">Nazwa filmu</label>
-        </div>
-        <div class="md-form">
-          <textarea name="opis'.$a.'" id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
-          <label for="videoDescription">Opis filmu</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-        <button type="submit" class="btn btn-primary"><p style="margin: 10px;" name="button'.$a.'">Potwierdź</p></button>
-	</form>
-      </div>
-    </div>
-  </div>
-</div>'; 
+				      echo '<div class="modal fade" id="editVideoModal'.$a.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edytuj informacje o filmie '.$daneV['title'].'</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
+                            <div id="titleBlank"></div><br>
+                            <div class="md-form">
+                      <form method="post" action="editvid.php?id='.$vid.'">
+                              <input type="text" id="videoName" class="form-control" name="title'.$a.'" value="'.$daneV['title'].'" style="color: white;">
+                              <label for="videoName">Nazwa filmu</label>
+                            </div>
+                            <div class="md-form">
+                              <textarea name="opis'.$a.'" id="videoDescription" class="md-textarea form-control" style="resize: none;" rows="3"></textarea>
+                              <label for="videoDescription">Opis filmu</label>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+                            <button type="submit" class="btn btn-primary"><p style="margin: 10px;" name="button'.$a.'" onclick="editVideoInfo()">Potwierdź</p></button>
+                      </form>
+                          </div>
+                        </div>
+                      </div>
+                  </div>'; 
 				      
 		      ?>
 
