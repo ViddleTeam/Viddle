@@ -88,7 +88,7 @@ $(document).ready(function(e) {
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
-					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php if (!$av4 == 'x') echo $av4; else echo 'anonim.png'; ?>">
+					<img width="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4; ?>">
 				</span>
 				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
 					<h3 class="text-truncate"><?php echo $nazwa; ?></h3>
