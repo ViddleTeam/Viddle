@@ -1,7 +1,7 @@
 <html>
 <head>
     <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Usuń film z Viddle</title>
     <style>
     button {
