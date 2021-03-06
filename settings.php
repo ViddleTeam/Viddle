@@ -135,7 +135,7 @@ if(!isset($_SESSION['uid'])) {
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
                     <button type="button" class="btn btn-primary"><p style="margin: 10px;" data-toggle="modal" data-target="#editVideoModal'.$a.'">Edytuj informacje</p></button>
-                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal">Usuń film</p></button>
+                    <button type="button" class="btn btn-danger"><p style="margin: 10px;" data-toggle="modal" data-target="#removeVideoModal'.$a.'">Usuń film</p></button>
                   </span>
                 </div>';
 				      //modal do edycji filmu
@@ -169,6 +169,29 @@ if(!isset($_SESSION['uid'])) {
                         </div>
                       </div>
                   </div>'; 
+				      //modal do usuwania filmów
+				      echo '<div class="modal fade" id="removeVideoModal'.$a.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Usunięcie filmu</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Jesteś pewien, że chcesz usunąć ten film? Ta operacja jest nieodwracalna.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
+	<form action="deletevid.php?id='.$vid.'>
+        <button type="submit" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+	</form>
+      </div>
+    </div>
+  </div>
+</div>
 				      
 		      ?>
 
@@ -323,26 +346,7 @@ if(!isset($_SESSION['uid'])) {
     </div>
   </div>
 </div>
-<div class="modal fade" id="removeVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content bg-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Usunięcie filmu</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Jesteś pewien, że chcesz usunąć ten film? Ta operacja jest nieodwracalna.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- Strefa niebezpieczna - modale -->
 <div class="modal fade" id="startOverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
