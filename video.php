@@ -272,7 +272,7 @@ if ($video_e == true) {
                             <h4 class="text-truncate"><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
-                      <a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
+                      <a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><img width="48px" height="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
                                     <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><?php echo $name ?></a></h5>
@@ -282,9 +282,9 @@ if ($video_e == true) {
                                     <?php if ($uid != $publisher) { 
 					if ($_SESSION['z1'] == true) {
 						if($isfollowinguser == true) {
-							echo '<button href="/follow.php?' . $uid . '" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button>';
+							echo '<button href="/follow.php?'.$uid.'" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button>';
 						} else {
-							echo '<button href="/follow.php?' . $uid . '" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
+							echo '<button href="/follow.php?'.$uid.'" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						}
 					} else {
 						echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
@@ -309,7 +309,7 @@ if ($video_e == true) {
                                 <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $viev ?></h4>
 
-                      <span style='margin-right: 5px;'><div onclick="like()" style='<?php echo $disable ?>'><i class="fas fa-arrow-up"></i> <?php echo $likes ?></div></span> <a style='<?php echo $disable ?>' href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                      <span style='margin-right: 5px;'><div onclick="like()"><i class="fas fa-arrow-up"></i> <?php echo $likes ?></div></span> <a href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
 			      <script>
 			      function like() {
@@ -523,7 +523,7 @@ if($d2 == '1')
                         <p style="text-align: left; margin-top: -6px; margin-left: 55px;"><?php echo $ktresc ?></p>
                  </span>-->
                   <span style="margin-left: 10px;">
-                      <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?= $av11 ?>"></a>
+                      <a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><img width="48px" height="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?= $av11 ?>"></a>
                   </span>
                                     <span style="margin-left: 5px; margin-right: auto;">
                                         <h6 style="align-items: center; font-weight: bold;"><a href="https://beta.viddle.xyz/channel?id=<?=$kuid ?>"><?= $kuname ?></a> • <?= $data3['published'] ?></h6>
