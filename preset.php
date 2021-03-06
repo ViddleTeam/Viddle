@@ -1,16 +1,11 @@
 <?php
-
 session_start();
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 include 'vendor/autoload.php';
-
-
 $e1_err = '';
 $e2_err = '';
 
@@ -57,29 +52,22 @@ if (isset($_POST['email']))
 		{
 			require("danemail.php");
 
-
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
-
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;
     $mail->isSMTP(); 
-    $mail->CharSet = 'UTF-8'; // Send using SMTP
-    $mail->Host       = MAILHOST;                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = MAILUSER;                     // SMTP username
-    $mail->Password   = MAILPASS;                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = MAILPORT;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = MAILHOST;
+    $mail->SMTPAuth = true;
+    $mail->Username = MAILUSER;
+    $mail->Password = MAILPASS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = MAILPORT;
     //Recipients
     $mail->setFrom(MAILUSER, MAILNAME);
-    $mail->addAddress($_POST['email']);     // Add a recipient
-  
-
-
-			$body = '<html>
+    $mail->addAddress($_POST['email']);
+	$body = '<html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8" />
@@ -142,29 +130,18 @@ $mail = new PHPMailer(true);
 	
 	
     // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->isHTML(true);
     $mail->Subject = 'Resetowanie hasła';
-    $mail->Body    = $body;
-   
-
+    $mail->Body = $body;
     $mail->send();
     header('Location: resetinfo.php?id='.$k2.'');
-
-
-	}
-	else
-	{
+	} else {
 		$e2_err = '<div class="alert alert-danger" role="alert">
-				Wystąpił nieoczekiwany błąd, skontaktuj się z supportem Viddle
-		  	</div>';
+			Wystąpił nieoczekiwany błąd, skontaktuj się z supportem Viddle
+		</div>';
 	}
-						}
+	}
 }
-			
-			
-	
-	
-	
 echo $ok;
 ?>
 

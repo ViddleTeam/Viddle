@@ -150,7 +150,7 @@ if(!isset($_SESSION['uid'])) {
                           </div>
                           <div class="modal-body">
                             Zmiany zostaną zastosowane w ciągu maksymalnie kilku minut.<br>
-                            <div id="titleBlank"></div><br>
+                            <div id="titleBlank"></div>
                             <div class="md-form">
                       <form method="post" action="editvid.php?id='.$vid.'">
                               <input type="text" id="videoName" class="form-control" name="title'.$a.'" value="'.$daneV['title'].'" style="color: white;">

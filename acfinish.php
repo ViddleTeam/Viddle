@@ -25,7 +25,7 @@ if (isset($_SESSION['ac']))
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Konto zostało założone.</title>
+		<title>Awatar został ustawiony.</title>
 		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
 		<link rel="stylesheet" href="style.css">
