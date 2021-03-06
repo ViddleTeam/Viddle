@@ -185,7 +185,7 @@ if(!isset($_SESSION['uid'])) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-	<form action="deletevid.php?id='.$vid.'>
+	<form action="deletevid.php?id='.$vid.'">
         <button type="submit" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
 	</form>
       </div>
