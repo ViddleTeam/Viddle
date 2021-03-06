@@ -191,7 +191,7 @@ if(!isset($_SESSION['uid'])) {
       </div>
     </div>
   </div>
-</div>
+</div>';
 				      
 		      ?>
 
