@@ -1,6 +1,6 @@
 <?php
 
-echo 'prosze czekać ...';
+echo 'Proszę czekać...';
 
 ?>
 
