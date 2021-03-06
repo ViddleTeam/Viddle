@@ -244,7 +244,11 @@ if(!isset($_SESSION['uid'])) {
       </div>
       <div class="modal-body">
         Hasło powinno składać się z przynajmniej 8 znaków, mieć jedną dużą i małą literę oraz jeden znak specjalny.<br>
-        <div class="md-form">
+          <div class="md-form">
+              <input type="password" id="oldPassword" class="form-control" style="color: white;">
+              <label for="newPassword">Obecne hasło</label>
+          </div>
+          <div class="md-form">
           <input type="password" id="newPassword" class="form-control" style="color: white;">
           <label for="newPassword">Nowe hasło</label>
         </div>
