@@ -267,7 +267,7 @@ if ($video_e == true) {
             <div class="form-row">
                 <div class="col-md-7">
                     <div class="md-form form-group">
-                        <iframe src="https://cdn.plrjs.com/player/3ehs9nbnddz9a/or43an4e4gpx.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?php echo $id . '/' . $file ?>&title=<?php echo $title ?>&autoplay=1" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/<?php echo $id . '/' . $file ?>&title=<?php echo $title ?>&autoplay=1" style="width: 100%; height: 360px;" frameborder="0" allowfullscreen></iframe>
                         <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
                             <h4 class="text-truncate"><?php echo $title ?></h4>
                             <div class="container row" style="margin-top: 20px;">
