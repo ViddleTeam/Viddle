@@ -9,7 +9,7 @@ if(!isset($_SESSION['uid'])) {
 }
 $uid = $_SESSION['uid'];
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-if($res = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id' AND publisher='$uid'")) {
+if($res = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid' AND `video_id`='$vid';")) {
   $dane = $res->fetch_assoc();
 	$d2 = $res->num_rows;
   if($il == '1') {
