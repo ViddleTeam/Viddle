@@ -23,7 +23,9 @@ if($res = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id'")) {
       ftp_rmdir($ftp_conn, $dane['video_id']);
       ftp_close($ftp_conn);
       header('location: settings.php');
-  } 
+  } else {
+	    header('location: index1.php');
+    }
   } else {
     header('location: index.php');
   }
