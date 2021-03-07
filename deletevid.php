@@ -10,7 +10,7 @@ if($connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME)) {
 			$d2 = $result->num_rows;
 			
 			if($d2 == '1') {
-				if($connect->query("DELETE * FROM `viddle_videos` WHERE `video_id`='$id'")) {
+				if($connect->query("DELETE FROM `viddle_videos` WHERE `video_id`='$id'")) {
 					require 'daneftp.php';
 					$ftp_server = FTPSERWER;
 					$ftp_conn = ftp_connect($ftp_server) or die("Wystąpił błąd! Skontaktuj się z supportem.");
