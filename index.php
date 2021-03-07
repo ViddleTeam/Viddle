@@ -238,7 +238,10 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
-		      <?php //nowy sytem pokazywania najnowszych filmów
+		    
+              </div>
+            </div>
+		   <?php //nowy sytem pokazywania najnowszych filmów
 		      //1
 		      if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
 			      $last = $res->fech_assoc();
@@ -276,71 +279,43 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			      }
 		      }
 		      ?>
-              </div>
-            </div>
-		 
             <div class="tile" style="margin: auto;">
-                <div class='card'>
-                        <a href='video?id=<?php echo $vid; ?>'>
-                        <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" width="300" height="187.5">
-				<p class='card-title'><?php echo $last['title'] ?></p>
-                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
-                        <div class='bottom-info'>
-				<span class="text-truncate"><?php echo $lastl['login'] ?></span>
-                            <span>•</span>
-                            <span><?php echo $vievs ?> wyświetleń</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class='card'>
-			
-                        <a href='video?id=<?php echo($twoid); ?>'>
-                        <img src='<?php echo $avnf2 ?>' class="img-responsive card-img" width="300" height="187.5">
-                        <p class='card-title'><?php echo($titletwo); ?></p>
-                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
-                        <div class='bottom-info'>
-                            <span class="text-truncate"><?php echo($usertwo); ?></span></a>
-                            <span>•</span>
-                            <span><?php echo($rezultatdwa); ?> wyświetleń</span>
-                        </div>
-			</a>
-                    </div>
-		  <?php
-		  
-		  if ($resultn3 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
-		    mysqli_real_escape_string($connect,$threeid))))
-			
-				    $dn3 = $resultn3->num_rows;
-			    
-			    	    $danen3 = $resultn3->fetch_assoc();
-			    	    $avn3 = $danen3['minname'];
-			    
-			  	if($avn3 == 'x') {
-					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} elseif(!isset($avn3)) {
-					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} elseif($avn3 == '') {
-					$avnf3 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} else {
-					$avnf3 = 'https://cdn.viddle.xyz/cdn/videos/thumb/'.$threeid.$avn3.'';
-				}
-		  
-		  ?>
-                    <div class='card'>
-                        <a href='video?id=<?php echo($threeid); ?>'>
-                        <img src='<?php echo $avnf3 ?>' class='img-responsive card-img' width="300" height="187.5">
-                        <p class='card-title'><?php echo($titlethree); ?></p>
-                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
-                        <div class='bottom-info'>
-                            <span class="text-truncate"><?php echo($userthree); ?></span>
-                            <span>•</span>
-                            <span><?php echo($rezultattrzy); ?> wyświetleń</span>
-                        </div>
-                        </a>
-                    </div>
-            </div>
-        </div>
+<div class="card">
+<a href="video.php">
+<img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+<p class="card-title">Pierwszy film</p>
+<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+<div class="bottom-info">
+<span>Kohady</span>
+<span>•</span>
+<span>17.5k wyświetleń</span>
+</div>
+</a>
+</div>
+<div class="card">
+<a href="video.php">
+<img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+<p class="card-title">Testowa nazwa</p>
+<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+</a><div class="bottom-info"><a href="video.php">
+</a><a href="channel.php"><span>PatryQHyper</span></a>
+<span>•</span>
+<span>1.3k wyświetleń</span>
+</div>
+</div>
+<div class="card">
+<a href="video.php">
+<img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+<p class="card-title">Zrobione z nudów</p>
+<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+<div class="bottom-info">
+<span>Hekitu</span>
+<span>•</span>
+<span>9k wyświetleń</span>
+</div>
+</a>
+</div>
+</div>
 <!-- modal fuckadblock -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
