@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 $id = $_GET['id'];
 include 'danesql.php';
 include 'daneftp.php';
@@ -36,8 +37,10 @@ echo $dane;
   } else {
 	  echo 'mysql query error';
   }
+
   
 } else {
   echo 'error';
 }
-  ?>
+
+?>
