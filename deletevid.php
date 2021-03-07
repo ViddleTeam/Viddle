@@ -25,7 +25,7 @@ if($res = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id'")) {
       header('location: settings.php');
   } 
   } else {
-    header('location: index.php')
+    header('location: index.php');
   }
 } else {
   echo 'error';
