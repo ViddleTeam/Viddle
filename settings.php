@@ -170,7 +170,7 @@ if(!isset($_SESSION['uid'])) {
                       </div>
                   </div>'; 
 				      //modal do usuwania filmów
-				      echo '<div class="modal fade" id="removeVideoModal'.$a.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+				      ?><div class="modal fade" id="removeVideoModal<?php echo $a ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-dark">
@@ -185,13 +185,13 @@ if(!isset($_SESSION['uid'])) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-	<form action="deletevid.php?id=?id='.$vid.'" method="post">
-        <input type="submit" class="btn btn-primary" value="Potwierdź">
+	<form action="deletevid.php?id=<?php echo $vid ?>" method="post">
+        <button type="submit" class="btn btn-primary" value="Potwierdź">
 	</form>
       </div>
     </div>
   </div>
-</div>';
+</div> <?php
 				      
 		      ?>
 
