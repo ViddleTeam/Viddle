@@ -12,6 +12,8 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $res = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid' AND `video_id`='$vid';");
   $dane = $res->fetch_assoc();
 	$d2 = $res->num_rows;
+echo $il;
+echo $dane;
   if($il == '1') {
     if($connect->query("DELETE * FROM viddle_videos WHERE video_id='$id'")) {
       $ftp_server = FTPSERWER;
