@@ -235,9 +235,8 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
-</div>
 		   <?php //nowy sytem pokazywania najnowszych filmów
-		      //1
+		      //1 /*
 		      if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
 			      $last = $res->fech_assoc();
 			      $vid = $last['video_id'];
@@ -262,19 +261,10 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			      }
 		      }
 		      //3
-		      if($resIII = $connect->query("SELECT * FROM `viddle_videos` WHERE video_id NOT LIKE '$vid' AND video_id NOT LIKE '$vidII' ORDER BY `publishdate` DESC")) {
-			      $lastIII = $resIII->fech_assoc();
-			      $vidIII = $lastIII['video_id'];
-			      $lastuid = $lastIII['publisher'];
-			      if($reslII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
-				      $lastlIII = $reslIII->fetch_assoc();
-			      }
-			      if($vIII = $connect->query("SELECT * FROM `viddle_vievs` WHERE vid='$vidIII'")) {
-				      $vievsIII = $vIII->num_rows;
-			      }
-		      }
-		      ?>
-		  <center><span class="alert alert-warning"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
+		      if($resIII = $connect->query("SELECT * FROM `viddle_videos` WHERE video_id NOT LIKE '$vid' AND video_id NOT LIKE '$vidII' ORDER BY `publishdate` RE vid='$vidIII'")) {
+				      $vievsIII = $vIII->p
+		 
+		*/ ?>  <center><span class="alert alert-warning"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
                       <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
