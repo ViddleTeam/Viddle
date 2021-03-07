@@ -150,7 +150,7 @@ $(document).ready(function(e) {
 					   {
 						   $miniaturka = 'grafic/'.$d5['video_id'].'m.'.$d5['minname'].'';
 					   }
-
+				if(!$d5['video_id'] == '') {
                                 echo '
                                 <div class="card">
 					<a href="video?id='.$d5['video_id'].'">
@@ -165,7 +165,7 @@ $(document).ready(function(e) {
 					</a>
 				</div>';
                                 
-                            
+				}
                         }
 			    
                     }
