@@ -1,7 +1,7 @@
 <?php session_start();
 $id = $_GET['id'];
-require 'danesql.php';
-require 'daneftp.php';
+include 'danesql.php';
+include 'daneftp.php';
 
 if(!isset($_SESSION['uid'])) {
   header('location: index.php');
