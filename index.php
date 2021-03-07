@@ -235,6 +235,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
+</div>
 		   <?php //nowy sytem pokazywania najnowszych filmów
 		      //1
 		      if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
