@@ -279,6 +279,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 			      }
 		      }
 		      ?>
+		  <center><span class="alert alert-warning"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
             <div class="tile" style="margin: auto;">
 <div class="card">
 <a href="video.php">
