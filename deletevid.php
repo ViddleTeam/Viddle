@@ -9,10 +9,10 @@ if(!isset($_SESSION['uid'])) {
 }
 $uid = $_SESSION['uid'];
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-if($res = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id'")) {
+if($res = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id' AND publisher='$uid'")) {
   $dane = $res->fetch_assoc();
-
-  if($dane['publisher'] == $uid) {
+	$d2 = $res->num_rows;
+  if($il == '1') {
     if($connect->query("DELETE * FROM viddle_videos WHERE video_id='$id'")) {
       $ftp_server = FTPSERWER;
 			$ftp_conn = ftp_connect($ftp_server) or die("Wystąpił błąd! Skontaktuj się z supportem.");
