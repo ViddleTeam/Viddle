@@ -238,67 +238,62 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
+		      <?php //nowy sytem pokazywania najnowszych filmów
+		      //1
+		      if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
+			      $last = $res->fech_assoc();
+			      $vid = $last['video_id'];
+			      $lastuid = $last['publisher'];
+			      if($resl = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
+				      $lastl = $resl->fetch_assoc();
+			      }
+			      if($v = $connect->query("SELECT * FROM `viddle_vievs` WHERE vid='$vid'")) {
+				      $vievs = $v->num_rows;
+			      }
+		      }
+		      //2
+		      if($resII = $connect->query("SELECT * FROM `viddle_videos` WHERE video_id NOT LIKE '$vid' ORDER BY `publishdate` DESC")) {
+			      $lastII = $resII->fech_assoc();
+			      $vidII = $lastII['video_id'];
+			      $lastuid = $lastII['publisher'];
+			      if($reslII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
+				      $lastlII = $reslII->fetch_assoc();
+			      }
+			      if($vII = $connect->query("SELECT * FROM `viddle_vievs` WHERE vid='$vidII'")) {
+				      $vievsII = $vII->num_rows;
+			      }
+		      }
+		      //3
+		      if($resIII = $connect->query("SELECT * FROM `viddle_videos` WHERE video_id NOT LIKE '$vid' AND video_id NOT LIKE '$vidII' ORDER BY `publishdate` DESC")) {
+			      $lastIII = $resIII->fech_assoc();
+			      $vidIII = $lastIII['video_id'];
+			      $lastuid = $lastIII['publisher'];
+			      if($reslII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
+				      $lastlIII = $reslIII->fetch_assoc();
+			      }
+			      if($vIII = $connect->query("SELECT * FROM `viddle_vievs` WHERE vid='$vidIII'")) {
+				      $vievsIII = $vIII->num_rows;
+			      }
+		      }
+		      ?>
               </div>
             </div>
-		  <?php 
-		  
-		  if ($resultn1 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
-		    mysqli_real_escape_string($connect,$oneid))))
-			
-				    $dn1 = $resultn1->num_rows;
-			    
-			    	    $danen1 = $resultn1->fetch_assoc();
-			    	    $avn1 = $danen1['minname'];
-			    
-			  	if($avn1 == 'x') {
-					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} elseif(!isset($avn1)) {
-					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} elseif($avn1 == '') {
-					$avnf1 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} else {
-					$avnf1 = 'https://cdn.viddle.xyz/cdn/videos/thumb/'.$oneid.$avn1.'';
-				}
-		       		
-		  
-		  ?>
+		 
             <div class="tile" style="margin: auto;">
                 <div class='card'>
-                        <a href='video?id=<?php echo($oneid); ?>'>
-                        <img src="<?php echo $avnf1; ?>" class="img-responsive card-img" width="300" height="187.5">
-                        <p class='card-title'><?php echo($titleone); ?></p>
+                        <a href='video?id=<?php echo $vid; ?>'>
+                        <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" width="300" height="187.5">
+				<p class='card-title'><?php echo $last['title'] ?></p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span class="text-truncate"><?php echo($userone); ?></span>
+				<span class="text-truncate"><?php echo $lastl['login'] ?></span>
                             <span>•</span>
-                            <span><?php echo($rezultat); ?> wyświetleń</span>
+                            <span><?php echo $vievs ?> wyświetleń</span>
                         </div>
                         </a>
                     </div>
                     <div class='card'>
-			<?php
-			    if ($resultn2 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
-		    mysqli_real_escape_string($connect,$twoid))))
 			
-				    $dn2 = $resultn2->num_rows;
-			    
-			    	    $danen2 = $resultn2->fetch_assoc();
-			    	    $avn2 = $danen2['minname'];
-			    
-			  	if($avn2 == 'x') {
-					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} elseif(!isset($avn2)) {
-					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} elseif($avn2 == '') {
-					$avnf2 = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-				} else {
-					$avnf2 = 'https://cdn.viddle.xyz/cdn/videos/thumb/'.$twoid.$avn2.'';
-				}
-		       		
-				    
-			?>
                         <a href='video?id=<?php echo($twoid); ?>'>
                         <img src='<?php echo $avnf2 ?>' class="img-responsive card-img" width="300" height="187.5">
                         <p class='card-title'><?php echo($titletwo); ?></p>
@@ -373,5 +368,6 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 <div class="hiddendiv common"></div>
 <?php 
 require_once('partials/footer.php');
+$connect->close();
 ?>
 <div class="hiddendiv common"></div></body></html>
