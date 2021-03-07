@@ -235,36 +235,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
-		   <?php //nowy sytem pokazywania najnowszych filmów
-		      //1 /*
-		      if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
-			      $last = $res->fech_assoc();
-			      $vid = $last['video_id'];
-			      $lastuid = $last['publisher'];
-			      if($resl = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
-				      $lastl = $resl->fetch_assoc();
-			      }
-			      if($v = $connect->query("SELECT * FROM `viddle_vievs` WHERE vid='$vid'")) {
-				      $vievs = $v->num_rows;
-			      }
-		      }
-		      //2
-		      if($resII = $connect->query("SELECT * FROM `viddle_videos` WHERE video_id NOT LIKE '$vid' ORDER BY `publishdate` DESC")) {
-			      $lastII = $resII->fech_assoc();
-			      $vidII = $lastII['video_id'];
-			      $lastuid = $lastII['publisher'];
-			      if($reslII = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'")) {
-				      $lastlII = $reslII->fetch_assoc();
-			      }
-			      if($vII = $connect->query("SELECT * FROM `viddle_vievs` WHERE vid='$vidII'")) {
-				      $vievsII = $vII->num_rows;
-			      }
-		      }
-		      //3
-		      if($resIII = $connect->query("SELECT * FROM `viddle_videos` WHERE video_id NOT LIKE '$vid' AND video_id NOT LIKE '$vidII' ORDER BY `publishdate` RE vid='$vidIII'")) {
-				      $vievsIII = $vIII->p
-		 
-		*/ ?>  <center><span class="alert alert-warning"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
+		   <?php //nowy sytem pokazywania najnowszych */ ?>  <center><span class="alert alert-warning"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
                       <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
