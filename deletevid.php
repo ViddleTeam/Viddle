@@ -9,7 +9,11 @@ if(!isset($_SESSION['uid'])) {
 }
 $uid = $_SESSION['uid'];
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-$res = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid' AND `video_id`='$vid';");
+if ($result = @$connect->query(
+sprintf("SELECT * FROM `viddle_videos` WHERE `publisher`='%s' AND `video_id`='%s'",
+mysqli_real_escape_string($connect,$uid),
+mysqli_real_escape_string($connect,$id)))) {
+
   $dane = $res->fetch_assoc();
 	$d2 = $res->num_rows;
 echo $il;
@@ -29,6 +33,9 @@ echo $dane;
   } else {
 	    header('location: index1.php');
     }
+  } else {
+	  echo 'mysql query error';
+  }
   
 } else {
   echo 'error';
