@@ -1,6 +1,10 @@
 <?php
 session_start();
-$test = $_GET['button'];
+$c = $_GET['comment'];
+if(isset($c)) {
+	echo $c;
+	exit;
+}
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
