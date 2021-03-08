@@ -1,7 +1,8 @@
 <?php
 session_start();
+
 $c = $_SERVER['REQUEST_URI'];
-if(isset($c)) {
+
 	$datab[0]['body'] = $c;
 	$vars = array(
             '/video?comment='       => '',
@@ -11,8 +12,8 @@ if(isset($c)) {
         $cII = strtr($datab[0]['body'], $vars);
 	echo '<br></br>';
 	echo $cII;
-	exit;
-}
+	header('location: comment.php?id='.$cII);
+
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
