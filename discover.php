@@ -1,6 +1,6 @@
 <?php 
 require "danesql.php";
-$connect = @new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if($connect->connect_errno!=0) {
  $error = '1';
 }
