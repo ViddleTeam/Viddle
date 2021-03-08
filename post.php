@@ -87,45 +87,7 @@ if ($_SESSION['z1'] == true) {
 	    header('Location: blad.php?id=1');
 	  }
 	  
-	  if(isset($_FILES['miniaturka']) || isset($viddleid)) {
-		$ok = true;
-		$pic_name = $_FILES["miniaturka"]["name"];
-	  	$pic_basename = substr($miniaturka, 0, strripos($miniaturka, '.'));
-	  	$pic_ext = mime_content_type($_FILES["miniaturka"]["tmp_name"]);
-	  	$pic_size = $_FILES["miniaturka"]["size"];
-	  	$allowed_picture_types = ['image/png','image/jpg','image/jpeg','image/bmp'];	
-	  	function extpicture($mime_type){
-	    	  $extensions = array('image/png' => '.png',
-                          'image/jpg' => '.jpg',
-			  'image/jpeg' => '.jpeg',
-			  'image/bmp' => '.bmp',
-                          );
-    	          return $extensions[$mime_type];
-	  	}
-		 $min_tmp = $_FILES["miniaturka"]["tmp_name"];
-		$rozszerzenieminiatura = extpicture($pic_ext);
-		//kurwa dlaczego taka długa nazwa zmiennej, nie lepiej dać rozmin w nazwie zmiennej
-		$nazwaplikuminiatura = $viddleid.'m'.$pic_ext;
-		if (in_array($pic_ext, $allowed_picture_types) && ($pic_size < 3097152))
-	  	{	
-			$ftp_server = FTPSERWER;
-			$ftp_conn = ftp_connect($ftp_server) or die("Wystąpił błąd! Skontaktuj się z supportem.");
-			$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-		    	ftp_chdir($ftp_conn, '/videos/'.$viddleid.'/');
-			ftp_put($ftp_conn, $nazwaplikuminiatura, $min_tmp, FTP_BINARY);
-
-	  	} elseif ($pic_size > 3097152) {
-			header('Location: blad.php?id=6');
-		} elseif (!in_array($pic_ext, $allowed_picture_types)) {
-            		header('Location: blad.php?id=7');
-    	  	} elseif (empty($pic_basename)) {
-			header('Location: blad.php?id=8');
-		} else {
-			header('Location: blad.php?id=9');
-		}
-	  } else {
-		 $rozszerzenieminiatura = 'x';
-	  }
+	  
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {	
@@ -145,6 +107,32 @@ if ($_SESSION['z1'] == true) {
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
+		    if(isset($_FILES['miniaturka']) || isset($viddleid)) {
+		  $datab[0]['body'] = $_FILES['miniaturka']['type'];
+		    $vars = array(
+		    'image/png'       => 'png',
+		    'image/jpg'        => 'jpg',
+		    'image/jpeg' => 'jpeg',
+		    'image/bmp' => 'bmp',
+		    );
+
+		    $roz = strtr($datab[0]['body'], $vars);
+		  if(!$roz == 'png' && !$roz == 'jpg' && !$roz == 'jpeg' && !$roz == 'bmp') {
+			  header('location: https://beta.viddle.xyz/blad.php?id=7');
+		  } else {
+			  $size = $_FILES['miniaturka']['size'];
+			  if($size > 3000000) {
+				header('location: https://beta.viddle.xyz/blad.php?id=6');  
+			  } else {
+				$n = $viddleid'm.'.$roz;
+				 ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
+				 ftp_put($conn_id, $n, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY); 
+				  //poszła miniaturka
+			  }
+		  }
+		  } else {
+			  $roz = 'x';
+		  }
 	      ftp_close($conn_id);
 	    }
 	  } elseif (empty($file_basename)) {	
