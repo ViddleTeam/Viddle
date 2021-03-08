@@ -3,7 +3,7 @@ session_start();
 $c = $_GET['comment'];
 if(isset($c)) {
 	echo $c;
-	echo $_SERVER['HTTP_HOST'];
+	echo $_SERVER['REQUEST_URI'];
 	exit;
 }
 require "danesql.php";
