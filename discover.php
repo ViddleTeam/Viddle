@@ -1,7 +1,7 @@
 <?php 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-$error = '0';
+$blad = '0';
 
 	require_once('partials/navbar.php');		
 ?>
@@ -16,7 +16,7 @@ $error = '0';
               </div>
             </div>
 	      <?php
-		      if($error = '1') {
+		      if($blad = '1') {
 			      echo '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xd00001 </div>';
 		      } else {
 			   $i = '0';
