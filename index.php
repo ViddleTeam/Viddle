@@ -160,7 +160,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
     $randomrezultattrzy = $randomviewsthree;
 }
 
-$new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC");
+
 ?>
 <head>
 	<!-- <script>
@@ -243,7 +243,7 @@ $new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DES
             </div>
             <div class="tile" style="margin: auto;">
 		    <?php
-		    if(!$new) {
+		    if($new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
 			   
 			   for($i += '1'; $i < '4'; mysqli_fetch_assoc($new)){
 				   
