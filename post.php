@@ -1,5 +1,5 @@
 <?php echo '<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>';
-
+<?php
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
@@ -124,9 +124,9 @@ if ($_SESSION['z1'] == true) {
 			  if($size > 3000000) {
 				header('location: https://beta.viddle.xyz/blad.php?id=6');  
 			  } else {
-				$n = $viddleid'm.'.$roz;
+				$n = $viddleid.'m.'.$roz;
 				 ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
-				 if(ftp_put($conn_id, $n, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY);) {
+				 if(ftp_put($conn_id, $n, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY)) {
 				  	//poszła miniaturka
 				 } else {
 					 
@@ -199,4 +199,5 @@ echo('ERROR 4 - Nie jesteś zalogowany.');
 }
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 /*header('Location: blad.php?id=404');*/
+		    ?>
 ?>
