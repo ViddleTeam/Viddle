@@ -1,9 +1,7 @@
 <?php 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-if($connect->connect_errno!=0) {
- $error = '1';
-}
+$error = '0';
 
 	require_once('partials/navbar.php');		
 ?>
