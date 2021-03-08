@@ -162,17 +162,6 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 
 
 ?>
-<head>
-	<!-- <script>
-		$(document).ready(function(){
-		    if($("#notify").width() > 0) {
-
-		    } else {
-			alert('AdBlocker Detected');
-		    }
-		});
-	</script> -->
-</head>
       <div class="container" style="margin-top:30px;">
         <div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -235,7 +224,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
-		     <center><span class="alert alert-warning"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
+		     <center><span class="alert alert-warning" style="width: 100%;"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
                       <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
@@ -250,7 +239,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				   $i = $i + '1';
 				   $vid = $dane['video_id'];
 				   $uid = $dane['publisher'];
-			           $u = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
+			       $u = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
 				   $user = $u->fetch_assoc();
 				   $v = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				   $vievs = $v->num_rows;
@@ -271,7 +260,6 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 		    ?>
                 
         </div>
-<!-- modal fuckadblock -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark">
@@ -295,7 +283,6 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 
 }
 ?>
-<div class="hiddendiv common"></div>
 <?php 
 require_once('partials/footer.php');
 $connect->close();
