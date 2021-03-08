@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$id = $_GET['id'];
+if(!isset($id)) {
 $c = $_SERVER['REQUEST_URI'];
 
 	$datab[0]['body'] = $c;
@@ -13,7 +14,7 @@ $c = $_SERVER['REQUEST_URI'];
 	echo '<br></br>';
 	echo $cII;
 	header('location: comment.php?id='.$cII);
-
+}
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
