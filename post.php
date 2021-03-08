@@ -1,5 +1,5 @@
 <?php echo '<script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>';
-<?php
+
 $uplsuccess = 0;
 if ($_POST['titlevid'] == false) {
     header('Location: index.php');
@@ -200,4 +200,4 @@ echo('ERROR 4 - Nie jesteś zalogowany.');
 echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 /*header('Location: blad.php?id=404');*/
 		    ?>
-?>
+
