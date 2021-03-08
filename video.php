@@ -11,7 +11,7 @@ if(isset($c)) {
 
         $c = strtr($d, $vars);
 	echo '<br></br>';
-	echo $c
+	echo $c;
 	exit;
 }
 require "danesql.php";
