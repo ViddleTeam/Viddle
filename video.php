@@ -448,14 +448,14 @@ if($d2 == '1')
                             <h3>Komentarze (<?=$comment_count ?>)</h3>
                             <div class="container row">
                       <span>
-                        <?php /*if ($_SESSION['z1']) {
+                        <?php if ($_SESSION['z1']) {
                             echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/' . $_SESSION['uid'] . '/' . $_SESSION['uid'] . '.' . $avatar . '">';
                         } else {
                             echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://beta.viddle.xyz/anonim.png">';
-                        }*/
+                        }
                         ?>
                       </span>
-                                <!--<form method="post" action="comment.php">
+                                <form method="post" action="comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
                           <input
                                   class="form-control mr-sm-2 input-block-level"
@@ -470,7 +470,7 @@ if($d2 == '1')
                       </span>
                                     <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 
-                                </form>-->
+				    </form>
                                 <!--<form method="post" action="video?id=">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
                                         <input class="form-control mr-sm-2 d-none d-lg-block"
