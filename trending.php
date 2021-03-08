@@ -60,8 +60,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
     ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
-          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
-        </div>
+          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;"></div>
         </div>
           <div class="row">
               <div class="col-lg-12">
