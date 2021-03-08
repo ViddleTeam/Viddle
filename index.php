@@ -245,10 +245,10 @@ $new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DES
 		    <?php
 		    if(!$new) {
 			   $w = '0';
-			   for($dane = $new->fetch_assoc; $w == '3'){
+			   for($dane = $new->fetch_assoc; $w == '3';){
 				   $w = $w + '1';
 				   $vid = $dane['video_id'];
-				   $uid = $dane['publisher']
+				   $uid = $dane['publisher'];
 			           $u = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
 				   $user = $u->fetch_assoc();
 				   $v = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
@@ -256,9 +256,9 @@ $new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DES
 				   echo '                <div class="card">
                     <a href="video.php?id='.$dane['video_id'].'">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">'.$dane['title']'</p>
+                    <p class="card-title">'.$dane['title'].'</p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    </a><div class="bottom-info"><a href="video.php?id='.$vid.'">
+                    </a><div class="bottom-info"><a href="video.php?id='.$dane['video_id'].'">
                         </a><a href="channel.html"><span>'.$user['login'].'</span></a>
                         <span>•</span>
                         <span>'.$vievs.' wyświetleń</span>
