@@ -224,7 +224,6 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
         </div>
         </div>
-		     <center><span class="alert alert-warning" style="width: 100%;"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</span></center>
                       <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
