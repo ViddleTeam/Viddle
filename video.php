@@ -4,6 +4,14 @@ $c = $_GET['comment'];
 if(isset($c)) {
 	echo $c;
 	echo $_SERVER['REQUEST_URI'];
+	$vars = array(
+            '/video?comment='       => '',
+            '&comment='        => '',
+            );
+
+        $c = strtr($d, $vars);
+	echo '<br></br>';
+	echo $c
 	exit;
 }
 require "danesql.php";
