@@ -227,7 +227,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
               </div>
             </div>
-            <div class="alert alert-warning" style="width: 100%;"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo ze względu na trwające prace techniczne. Przepraszamy za utrudnienia</div>
+            <div class="alert alert-warning" style="width: 100%;"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo, ze względu na trwające prace techniczne. Przepraszamy za wszelkie utrudnienia.</div>
             <div class="tile" style="margin: auto;">
 		    <?php
 		    if($new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
@@ -251,7 +251,6 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                         <span>•</span>
                         <span>'.$vievs.' wyświetleń</span>
                     </div>
-                    
                 </div>';
 			   }
 		    }
