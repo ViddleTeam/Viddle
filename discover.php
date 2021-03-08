@@ -16,9 +16,7 @@ $blad = '0';
               </div>
             </div>
 	      <?php
-		      if($blad = '1') {
-			      echo '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xd00001 </div>';
-		      } else {
+		      
 			   $i = '0';
 			   for($i += '1'; $i < '4';){
 				   $los = @$connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1");
@@ -44,7 +42,7 @@ $blad = '0';
                     </a>
                 </div>';
 			   }
-		      }
+		      
 	      
 	      ?>
 
