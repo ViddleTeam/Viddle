@@ -126,8 +126,11 @@ if ($_SESSION['z1'] == true) {
 			  } else {
 				$n = $viddleid'm.'.$roz;
 				 ftp_chdir($conn_id, '/videos/'.$viddleid.'/');
-				 ftp_put($conn_id, $n, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY); 
-				  //poszła miniaturka
+				 if(ftp_put($conn_id, $n, $_FILES["miniaturka"]["tmp_name"], FTP_BINARY);) {
+				  	//poszła miniaturka
+				 } else {
+					 
+				 }
 			  }
 		  }
 		  } else {
