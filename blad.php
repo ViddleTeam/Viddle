@@ -38,6 +38,8 @@ if($id=="1") {
   $test = "Tytuł filmu jest zbyt długi.<br />Maksymalna długość to 52.<br /><h2>Kod błędu: 0x00010c</h2>";
 } elseif($id=="11") {
   $test = "Opis filmu jest zbyt długi.<br />Maksymalna długość to 1024.<br /><h2>Kod błędu: 0x00011c</h2>";
+} elseif($id=="12") {
+  $test = "Upsss ... wydarzyło się coś nieoczekiwanego.<br />Najwidoczniej z jakiegoś powodu nie udało się przesłać miniaturki. Upewnij się czy plik z miniaturką nie jest uszkodzony, jeśli nie to zgłoś to naszej drużynie.<br /><h2>Kod błędu: 0x00012c</h2>";
 } elseif($id=="404") {
   $test = "Awaria systemu FTP.<br />Usilnie próbujemy rozwiązać problem,<br />prosimy o cierpliwość.<br /><h2>Kod błędu: 0x00404c</h2>";
 } else {
