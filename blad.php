@@ -49,8 +49,6 @@ if($id=="1") {
 <center>
 <img src="pwnedimg.png" width="200" height="200"/>
 <h1>Ups.</h1> <?php
-  if($id=="12") {
-  echo "Wydarzyło się coś nieoczekiwanego.<br />Najwidoczniej z jakiegoś powodu nie udało się przesłać miniaturki. Upewnij się czy plik z miniaturką nie jest uszkodzony, jeśli nie to zgłoś to naszej drużynie.<br /><h2>Kod błędu: 0x00012c</h2>";
-} else {
- echo($test) } ?>
+
+ echo($test)  ?>
 <a href="index.php"><p style="color: white;"><button class="btn btn-success">Powrót do strony głównej</button></p></a></center>
