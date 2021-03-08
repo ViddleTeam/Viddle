@@ -1,4 +1,10 @@
 <?php 
+require "danesql.php";
+$connect = @new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+if($connect->connect_errno!=0) {
+ $error = '1';
+}
+
 	require_once('partials/navbar.php');		
 ?>
       <div class="container" style="margin-top:30px;">
@@ -11,44 +17,39 @@
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Odkrywaj twórców na Viddle</h4>
               </div>
             </div>
-            <div class="tile" style="margin: auto;">
+	      <?php
+		      if($error = '1') {
+			      echo '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xd00001 </div>';
+		      } else {
+			   $i = '0';
+			   for($i += '1'; $i < '4';){
+				   $los = @$connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1");
+				   $dane = mysqli_fetch_assoc($los);
+				   $vid = $dane['video_id'];
+				   $uid = $dane['publisher'];
+				   $u = @$connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
+				   $user = $u->fetch_assoc();
+				   $v = @$connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+				   $vievs = $v->num_rows;
+				   $i = $i + '1';
+				   echo ' <div class="tile" style="margin: auto;">
                 <div class="card">
-                    <a href="video.php">
+                    <a href="video.php?id='.$vid.'">
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Pierwszy film</p>
+                    <p class="card-title">'.$dane['title'].'</p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                     <div class="bottom-info">
-                        <span>Kohady</span>
+                        <span>'.$user['login'].'</span>
                         <span>•</span>
-                        <span>17.5k wyświetleń</span>
+                        <span>'.$vievs.' wyświetleń</span>
                     </div>
                     </a>
-                </div>
-                <div class="card">
-                    <a href="video.php">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Testowa nazwa</p>
-                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    </a><div class="bottom-info"><a href="video.php">
-                        </a><a href="channel.php"><span>PatryQHyper</span></a>
-                        <span>•</span>
-                        <span>1.3k wyświetleń</span>
-                    </div>
-                    
-                </div>
-                <div class="card">
-                    <a href="video.php">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
-                    <p class="card-title">Zrobione z nudów</p>
-                    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-                    <div class="bottom-info">
-                        <span>Hekitu</span>
-                        <span>•</span>
-                        <span>9k wyświetleń</span>
-                    </div>
-                    </a>
-                </div>
-            </div>
+                </div>';
+			   }
+		      }
+	      
+	      ?>
+
         </div>
             <?php
             require_once('partials/footer.php');
