@@ -245,7 +245,8 @@ $new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DES
 		    <?php
 		    if(!$new) {
 			   $w = '0';
-			   for($dane = $new->fetch_assoc; $w == '3';){
+			   while($w == '3';){
+				   $dane = $new->fetch_assoc; 
 				   $w = $w + '1';
 				   $vid = $dane['video_id'];
 				   $uid = $dane['publisher'];
