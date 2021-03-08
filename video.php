@@ -1,9 +1,7 @@
 <?php
 session_start();
-$c = $_GET['comment'];
+$c = $_SERVER['REQUEST_URI'];
 if(isset($c)) {
-	echo $c;
-	echo $_SERVER['REQUEST_URI'];
 	$datab[0]['body'] = $c;
 	$vars = array(
             '/video?comment='       => '',
