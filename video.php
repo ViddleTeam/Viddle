@@ -4,14 +4,15 @@ $c = $_GET['comment'];
 if(isset($c)) {
 	echo $c;
 	echo $_SERVER['REQUEST_URI'];
+	$datab[0]['body'] = $c;
 	$vars = array(
             '/video?comment='       => '',
             '&comment='        => '',
             );
 
-        $c = strtr($d, $vars);
+        $cII = strtr($datab[0]['body'], $vars);
 	echo '<br></br>';
-	echo $c;
+	echo $cII;
 	exit;
 }
 require "danesql.php";
