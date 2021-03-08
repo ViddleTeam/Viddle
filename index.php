@@ -245,8 +245,8 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 		    <?php
 		    if($new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
 			   
-			   for($i += '1'; $i < '4'; mysqli_fetch_assoc($new)){
-				   
+			   for($i += '1'; $i < '4';){
+				   $dane = mysqli_fetch_assoc($new);
 				   $i = $i + '1';
 				   $vid = $dane['video_id'];
 				   $uid = $dane['publisher'];
