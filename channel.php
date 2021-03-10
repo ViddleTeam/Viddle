@@ -152,7 +152,7 @@ $(document).ready(function(e) {
 						<span>'.$vievs.' wyświetleń</span>
 						</div>
 					</a>
-                </div>'
+                </div>';
 							}
 						} else {
 							if($id == $_SESSION['uid']) {
