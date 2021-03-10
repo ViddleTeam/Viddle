@@ -256,7 +256,8 @@ $connect->close();
 			   </div>
             </div>
 			<center>
-     <input type="submit" name="submit" class="btn btn-success" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
+				<!-- PROSZE NIE DAWAĆ DO ŻADNEGO SUBMITA class="btn-succes" - człowieczek -->
+     <input type="submit" name="submit" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
      </form></div>
 			<div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -294,7 +295,7 @@ $connect->close();
                     </div>
                   </div>
                 </div>
-				  <input type="submit" name="submitII" class="btn btn-success" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
+				  <input type="submit" name="submitII" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
 			   <div style="justify-content: center;">
 			   </div></form>
     </div>
@@ -328,7 +329,7 @@ $connect->close();
 			   </div>
             </div>
 			<center>
-     <input type="submit" name="buttonIII" class="btn btn-success" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
+     <input type="submit" name="buttonIII" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
      </form></div>
 	 <form method="post">
 	 <input type="submit" name="po" class="btn btn-success" style="margin-bottom: 10px;" style="margin: 10px; color: white;" value="pomiń" />
