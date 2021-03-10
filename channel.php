@@ -146,7 +146,7 @@ $(document).ready(function(e) {
 								    <p class="card-title">'.$dane['title'].'</p>
 								    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 								    <div class="bottom-info">
-									</a><span>'.$nick.'</span>
+									</a><span>'.$nazwa.'</span>
 									<span>•</span>
 									<span>'.$vievs.' wyświetleń</span>
 								    </div>
