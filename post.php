@@ -107,7 +107,7 @@ if ($_SESSION['z1'] == true) {
 	      ftp_put($conn_id, $newfilename, $_FILES["videovid"]["tmp_name"], FTP_BINARY); 
 	      //echo "Wrzucono film.";
 	      $uplsuccess = 1;
-		    if(isset($_FILES['miniaturka']) || isset($viddleid)) {
+		   /* if(isset($_FILES['miniaturka']) || isset($viddleid)) {
 		  $datab[0]['body'] = $_FILES['miniaturka']['type'];
 		    $vars = array(
 		    'image/png'       => 'png',
@@ -135,7 +135,7 @@ if ($_SESSION['z1'] == true) {
 		  }
 		  } else {
 			  $roz = 'x';
-		  }
+		  } */
 	      ftp_close($conn_id);
 	    }
 	  } elseif (empty($file_basename)) {	
@@ -178,7 +178,7 @@ if ($_SESSION['z1'] == true) {
 	  
 	  if (in_array($file_ext, $allowed_file_types) && ($filesize < 1*GB))
 	  {
-	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', '$rozszerzenieminiatura', '$data')");
+	  $success = $connect->query("INSERT INTO viddle_videos VALUES (0, '$wstaw', '$userid', 123454321, '$viddleid', 0, 0, 0, 0, '$newfilename', '$zabezpdwa', '$zabezptrzy', 'x', '$data', '0')");
 	  }
 	  if ($success) {
 	     $successtwo = $connect->query("UPDATE viddle_recent SET viddle_recent_three_user=viddle_recent_two_user,viddle_recent_three_id=viddle_recent_two_id,viddle_recent_two_user=viddle_recent_one_user,viddle_recent_two_id=viddle_recent_one_id,viddle_recent_one_user='$userid',viddle_recent_one_id='$viddleid' WHERE number = 1;");
