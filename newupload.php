@@ -266,7 +266,7 @@ $connect->close();
 		<?php
 	  }
 	  if($_SESSION['etap'] == '2') {		?>
-          <div class="row">
+          <div class="row"><center>
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br></h4>
 				
@@ -298,7 +298,7 @@ $connect->close();
 				  <input type="submit" name="submitII" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
 			   <div style="justify-content: center;">
 			   </div></form>
-    </div>
+		       </div></center>
 	  <?php } ?>
 	  <?php if($_SESSION['etap'] == '3') { ?>
 	  <form method="post" enctype="multipart/form-data">
