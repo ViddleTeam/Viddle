@@ -140,19 +140,18 @@ $(document).ready(function(e) {
 								} else {
 									$min = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$dane['minname'].'';
 								}
-								echo '<div class="tile" style="margin: auto;">
-                <div class="card">
-					<a href="video.php?id='.$vid.'">
-						<img src="'.$min.'" class="img-responsive card-img">
-						<p class="card-title">'.$dane['title'].'</p>
-						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-						<div class="bottom-info">
-						<span>'.$nazwa.'</span>
-						<span>-</span>
-						<span>'.$vievs.' wyświetleń</span>
-						</div>
-					</a>
-                </div>';
+								echo '<div class="card">
+								    <a href="video?id='.$vid.'">
+								    <img src="'.$min.'" class="img-responsive card-img">
+								    <p class="card-title">'.$dane['title'].'</p>
+								    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+								    <div class="bottom-info">
+									</a><span>'.$nick.'</span>
+									<span>•</span>
+									<span>'.$vievs.' wyświetleń</span>
+								    </div>
+
+								</div>';
 							}
 						} else {
 							if($id == $_SESSION['uid']) {
