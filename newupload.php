@@ -17,7 +17,8 @@ if(!isset($_SESSION['etap'])) {
 if(isset($_POST['submit'])) {
 	
 	if(empty($_FILES['video']['name'])) {
-		//w tej sytuacji nic się nie dzieje
+		echo 'to';
+		exit;
 	} else {
 		try {
 			$error = '0';
