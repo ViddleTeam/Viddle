@@ -1,12 +1,11 @@
 <?php 
 session_start();
+$uid = $_SESSION['uid'];
 $t = '';
 $sciezka = '/videos';
 require 'danesql.php';
 $connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
-
-$uid = $_SESSION['uid'];
 if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
