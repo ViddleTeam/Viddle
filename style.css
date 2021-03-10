@@ -354,3 +354,12 @@ border: 0;
 outline: 0;
 padding: 22px 18px;
 }
+
+.hover-anim {
+	transition: 300ms;
+	padding: 5px 0 5px 0;
+}
+
+.hover-anim:hover, :active {
+	transform: translateY(-5px);
+}
