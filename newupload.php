@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $uid = $_SESSION['uid'];
-if(empty($uid)) {
+if(!isset($_SESSION['uid'])) {
 	header('location: index.php');
 	exit();
 }
