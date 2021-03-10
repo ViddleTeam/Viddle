@@ -1,6 +1,10 @@
 <?php 
 session_start();
 $uid = $_SESSION['uid'];
+if(empty($uid)) {
+	header('location: index.php');
+	exit();
+}
 $t = '';
 $sciezka = '/videos';
 require 'danesql.php';
