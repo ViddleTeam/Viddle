@@ -1,14 +1,12 @@
-<?php session_start();
+<?php 
+session_start();
 $t = '';
-
-
 $sciezka = '/videos';
 require 'danesql.php';
-$connect = @new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+$connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 
 $uid = $_SESSION['uid'];
-
 if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
@@ -17,8 +15,7 @@ if(!isset($_SESSION['etap'])) {
 if(isset($_POST['submit'])) {
 	
 	if(empty($_FILES['video']['name'])) {
-		echo 'to';
-		exit;
+		//w tej sytuacji nic się nie dzieje
 	} else {
 		try {
 			$error = '0';
@@ -46,17 +43,17 @@ if(isset($_POST['submit'])) {
 						$viddleid = rand(1000000,9999999);
 						$_SESSION['vid'] = $viddleid;
 						require 'daneftp.php';
-						$ftp_conn = @ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
-						$login = @ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
-						@ftp_chdir($ftp_conn, $sciezka);
-						@ftp_mkdir($ftp_conn, $viddleid);
-						@ftp_chdir($ftp_conn, $viddleid);
+						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
+						$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
+						 ftp_chdir($ftp_conn, $sciezka);
+						 ftp_mkdir($ftp_conn, $viddleid);
+						 ftp_chdir($ftp_conn, $viddleid);
 						$nazwa = $viddleid.'.'.$roz;
-						@ftp_put($ftp_conn, $nazwa, $_FILES['video']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
+						 ftp_put($ftp_conn, $nazwa, $_FILES['video']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
 						ftp_close($ftp_conn);
 						$wstaw = time() + '300';
 						$date = date("Y-m-d H:i:s");     
-						$i = @$connect->query("SELECT * FROM viddle_videos WHERE publisher='$uid'");
+						$i =  $connect->query("SELECT * FROM viddle_videos WHERE publisher='$uid'");
 						$il = $i->num_rows;
 						
 						if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw')")) {
@@ -117,7 +114,7 @@ if(isset($_POST['submitII'])) {
 				throw new Exception('za dlugi opis');
 			} else {
 				
-				if ($syf = @$connect->query(
+				if ($syf =  $connect->query(
 				sprintf("UPDATE `viddle_videos` SET `title`='%s',`opis`='%s' WHERE `video_id`='%s'",
 				mysqli_real_escape_string($connect,$title),
 				mysqli_real_escape_string($connect,$opis),
@@ -166,12 +163,12 @@ if(isset($_POST['buttonIII'])) {
 					throw new Exception('za duzy plik');
 				} else {
 					require 'daneftp.php';
-					$ftp_conn = @ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
-					$login = @ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
-					@ftp_chdir($ftp_conn, $sciezka);
-					@ftp_chdir($ftp_conn, $_SESSION['vid']);
+					$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
+					$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
+					 ftp_chdir($ftp_conn, $sciezka);
+					 ftp_chdir($ftp_conn, $_SESSION['vid']);
 					$nazwa = $_SESSION['vid'].'m.'.$roz;
-					@ftp_put($ftp_conn, $nazwa, $_FILES['min']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
+					 ftp_put($ftp_conn, $nazwa, $_FILES['min']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
 					ftp_close($ftp_conn);
 					$vid = $_SESSION['vid'];
 					if($connect->query("UPDATE viddle_videos SET minname='$roz', premiere='0' WHERE video_id='$vid'")) {
@@ -221,7 +218,7 @@ $connect->close();
 	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
 	<script src="https://cdn.tiny.cloud/1/9n5avfoajfr11lw9hhd4o45rxfafzr79vlo04km6r4kp8i7l/tinymce/5/tinymce.min.js" referrerpolicy="origin"/></script>
 	<style type="text/css">/* Chart.js */
-@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+ -webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}} keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
     <div class="loader" style="opacity: 0; display: none;">
         <div class="spinner spinner-center">  
