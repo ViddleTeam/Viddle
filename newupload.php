@@ -211,8 +211,8 @@ $connect->close();
     
      <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="VDP - polska alternatywa dla YouTube">
-    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą VDP.">
+    <meta property="og:title" content="Viddle- polska alternatywa dla YouTube">
+    <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
 	<script src="script.js"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
 	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
@@ -257,7 +257,7 @@ $connect->close();
             </div>
 			<center>
 				<!-- PROSZE NIE DAWAĆ DO ŻADNEGO SUBMITA class="btn-succes" - człowieczek -->
-     <input type="submit" name="submit" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
+     <input type="submit" name="submit" style="margin-bottom: 10px; color: white;" value="dalej" />
      </form></div>
 			<div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
@@ -295,7 +295,7 @@ $connect->close();
                     </div>
                   </div>
                 </div>
-				  <input type="submit" name="submitII" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
+				  <input type="submit" name="submitII" style="margin: 10px; color: white;" value="dalej" />
 			   <div style="justify-content: center;">
 			   </div></form>
 		       </div></center>
@@ -320,8 +320,8 @@ $connect->close();
 							<center>
 								<h2 style="color: white;">Wybierz miniaturke z komputera/telefonu</h2>
 								
-                <p style="color: white;">Maksymalny dozwolony rozmiar na jedną miniaturke wynosi 3 MB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
-                <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja VDP ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
+                <p style="color: white;">Maksymalny dozwolony rozmiar na jedną miniaturke wynosi 3 MB. Chcesz się dowiedzieć, ile dana miniaturka może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
+                
 								<input type="file" name="min" accept="image/png, image/jpeg, image/jpg, image/bmp" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
@@ -329,10 +329,10 @@ $connect->close();
 			   </div>
             </div>
 			<center>
-     <input type="submit" name="buttonIII" style="margin-bottom: 10px;"><p style="margin: 10px; color: white;" value="dalej" />
+     <input type="submit" name="buttonIII" style="margin: 10px; color: white;" value="zakończ" />
      </form></div>
 	 <form method="post">
-	 <input type="submit" name="po" class="btn btn-success" style="margin-bottom: 10px;" style="margin: 10px; color: white;" value="pomiń" />
+	 <input type="submit" name="po" class="btn btn-success" style="margin: 10px; color: white;" value="pomiń" />
 	 </form>
 			<div class="row">
           <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
