@@ -238,6 +238,12 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				   $dane = mysqli_fetch_assoc($new);
 				   $i = $i + '1';
 				   $vid = $dane['video_id'];
+				   if($dane['minname'] == 'x') {
+					$min = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';   
+				   } else {
+					   $min = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$dane['minname'].'';
+				   }
+				   
 				   $uid = $dane['publisher'];
 			       $u = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
 				   $user = $u->fetch_assoc();
@@ -245,7 +251,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				   $vievs = $v->num_rows;
 				   echo '                <div class="card">
                     <a href="video.php?id='.$dane['video_id'].'">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
+                    <img width="300" height="187" src="'.$min.'" class="img-responsive card-img">
                     <p class="card-title">'.$dane['title'].'</p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                     </a><div class="bottom-info"><a href="video.php?id='.$dane['video_id'].'">
