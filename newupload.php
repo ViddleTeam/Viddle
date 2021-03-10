@@ -248,7 +248,7 @@ $connect->close();
 								}
 								?>
                 <p style="color: white;">Maksymalny dozwolony rozmiar na jeden film wynosi 1 GB. Chcesz się dowiedzieć, ile dany film może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
-                <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja VDP ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
+                <p style="color: white; font-weight: bold; margin-top: -10px;">Pamiętaj, że administracja Viddle ma pełne prawo do usunięcia filmu, jeżeli narusza on prawa autorskie i/lub regulamin.</p>
 								<input type="file" name="video" accept="video/mp4, video/mov" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
