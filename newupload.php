@@ -206,7 +206,7 @@ $connect->close();
 	
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Udostępnij film na VDP</title> 
+    <title>Udostępnij film na Viddle</title> 
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
     
      <link rel="stylesheet" href="css/mdb.min.css">
@@ -232,7 +232,7 @@ $connect->close();
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na VDP</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
 				  <p style="color: white; margin-bottom: 20px;">Krok 1/3: Wybierz film do udostępnienia</p>
               </div>
             </div>
@@ -272,6 +272,11 @@ $connect->close();
               </div>
             </div>
 			<?php echo $t; ?>
+		                <div class="col-lg-12">
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
+				  <p style="color: white; margin-bottom: 20px;">Krok 2/3: Podstawowe informacje</p>
+              </div>
+            </div>
             <div class="container row" style="width: auto; color: white;">
                <form method="post">
                 <div class="form-row" style="justify-content: center;">
@@ -303,7 +308,7 @@ $connect->close();
         </div>
           <div class="row">
               <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na VDP</h4>
+                  <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
 				  <p style="color: white; margin-bottom: 20px;">Krok 3/3: Dodatkowe elementy</p>
               </div>
             </div>
