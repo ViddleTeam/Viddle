@@ -127,61 +127,60 @@ $(document).ready(function(e) {
           </div><br>
 		<div class="container row" style="min-width: 100%">
 				<?php
-				
-				if ($result3 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_videos WHERE publisher='%s'",
-		    mysqli_real_escape_string($connect,$id))))
-					
-		    $d4 = $result->num_rows;
-				
-		    if(!$d4 == '0')
-		    {
-			    $p1 = $connect->query("SELECT * FROM viddle_videos WHERE `publisher`='$id'");
-                    if($p1->num_rows > 0){
-                        $num = $p1->num_rows;
-                        for($k1 = $num; $k1; $k1 -= 1){
-                            if($k2 = $p1 = $connect->query("SELECT * FROM viddle_videos WHERE il='$k1' AND publisher='$id'")){
-                                $d5 = $k2->fetch_assoc();
-				    if($d5['minname'] == 'x')
-				    {
-				    	$miniaturka = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-					   }
-					   else
-					   {
-						   $miniaturka = 'grafic/'.$d5['video_id'].'m.'.$d5['minname'].'';
-					   }
-				if(!$d5['video_id'] == '') {
-                                echo '
-                                <div class="card">
-					<a href="video?id='.$d5['video_id'].'">
-					<img src="'.$miniaturka.'" class="img-responsive card-img" width="300" height="187.5">
-					<p class="card-title">'.$d5['title'].'</p>
-					<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
-					<div class="bottom-info">
-						<span class="text-truncate">'.$nazwa.'</span>
-						<span>•</span>
-						<span>'.$d5['views'].' wyświetleń</span>
-					</div>
+				try {
+					if($res = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'")) {
+						$num = $res->num_rows;
+						if(!$num == '0') {
+							while($dane = $res->fetch_assoc()) {
+								$vid = $dane['video_id'];
+								$v = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+								$vievs = $v->num_rows;
+								if($dane['minname'] == 'x') {
+									$min = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+								} else {
+									$min = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$dane['minname'].'';
+								}
+								echo '<div class="tile" style="margin: auto;">
+                <div class="card">
+					<a href="video.php?id='.$vid.'">
+						<img src="'.$min.'" class="img-responsive card-img">
+						<p class="card-title">'.$dane['title'].'</p>
+						<div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
+						<div class="bottom-info">
+						<span>'.$nazwa.'</span>
+						<span>-</span>
+						<span>'.$vievs.' wyświetleń</span>
+						</div>
 					</a>
-				</div>';
-                                
-				}
-                        }
-			    
-                    }
-		    }
-		    } else {
-			    if ($do == 1) {
-							echo '<div class="alert alert-info" style="width: 100%;">
-									<strong>Trochę tu pusto.</strong> Dodaj swój pierwszy film poprzez kliknięcie ikony tuż obok menu konta.
-								  </div>';
+                </div>'
+							}
 						} else {
-								echo '<div class="alert alert-info" style="width: 100%;">
-									  	<strong>'.$nazwa.' nie posiada żadnych filmów.</strong>
-									  </div>';
+							if($id == $_SESSION['uid']) {
+								$error = '3';
+							} else {
+								$error = '2';
+							}
+							throw new Exception('pusto');
 						}
-		    }	
-						?>
+					} else {
+						$error = '1';
+						throw new Exception('query error');
+					}
+				} catch (Exception $e) {
+					if($error == '1') {
+						echo '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xu00001</div>';
+					}
+					
+					if($error == '2') {
+						echo '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Na tym kanale nie ma żadnych treści</div>';
+					}
+					
+					if($error == '3') {
+						echo '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Jeszcze niczego nie wrzuciłeś. Kliknij na ikone u góry by to zrobić</div>';
+					}
+				}
+				
+				?>
 		</div>
 	    <!--
 	    // tutaj placeholdery do wyświetlania filmów
