@@ -33,7 +33,7 @@ if(isset($_POST['submit'])) {
 				  'video/mp4' => 'mp4',
 				  'video/webm' => 'webm',
 				  'video/x-ms-wmv' => 'wmv',
-			      'video/3gpp' => '3gpp',
+			      	  'video/3gpp' => '3gpp',
 				);
 
 				$roz = strtr($z[0]['body'], $vars);
@@ -102,6 +102,8 @@ if(isset($_POST['submitII'])) {
 	$opis = $_POST['opis'];
 	$title = htmlentities($title, ENT_QUOTES, 'UTF-8');
 	$opis = htmlentities($title, ENT_QUOTES, 'UTF-8');
+	$title = mysqli_real_escape_string($connect,$title);
+	$opis = mysqli_real_escape_string($connect,$opis);
 	if(empty($title)) {
 		$title = date("Y-m-d"); 
 	}
@@ -118,11 +120,7 @@ if(isset($_POST['submitII'])) {
 				throw new Exception('za dlugi opis');
 			} else {
 				
-				if ($syf =  $connect->query(
-				sprintf("UPDATE `viddle_videos` SET `title`='%s',`opis`='%s' WHERE `video_id`='%s'",
-				mysqli_real_escape_string($connect,$title),
-				mysqli_real_escape_string($connect,$opis),
-				mysqli_real_escape_string($connect,$_SESSION['vid'])))) {
+				if ($syf =  $connect->query("UPDATE `viddle_videos` SET `title`='$title',`opis`='$opis' WHERE `video_id`='$vid'")) {
 					$_SESSION['etap'] = '3';
 				} else {
 					$error = '7';
