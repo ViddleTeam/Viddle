@@ -142,7 +142,7 @@ $(document).ready(function(e) {
 								}
 								echo '<div class="card">
 								    <a href="video?id='.$vid.'">
-								    <img src="'.$min.'" class="img-responsive card-img">
+								    <img width="300" height="187" src="'.$min.'" class="img-responsive card-img">
 								    <p class="card-title">'.$dane['title'].'</p>
 								    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 								    <div class="bottom-info">
