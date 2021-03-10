@@ -128,12 +128,12 @@ $(document).ready(function(e) {
 		<div class="container row" style="min-width: 100%">
 				<?php
 				try {
-					if($res = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id'")) {
+					if($res = $connect->query("SELECT * FROM viddle_videos WHERE publisher='$id' ORDER BY `publishdate` DESC")) {
 						$num = $res->num_rows;
 						if(!$num == '0') {
 							while($dane = $res->fetch_assoc()) {
 								$vid = $dane['video_id'];
-								$v = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+								$v = $connect->query("SELECT * FROM `viddle_vievs` WHERE `vid`='$vid'");
 								$vievs = $v->num_rows;
 								if($dane['minname'] == 'x') {
 									$min = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
