@@ -143,7 +143,10 @@ if($block == '1')
                     <div class="container row">
                         <li class="nav-item">
                             <a class="nav-link" href="upload.php" title="Udostępnij film"><img src="https://media.discordapp.net/attachments/785086822220169217/796438592850362378/viconupload.png?width=117&height=72" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
-                        </li>
+                        <div class="dropdown-menu1 dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
+				<a class="dropdown-item1 waves-effect waves-light" href="profilechange">Uzj nowego uploadera</a>
+				<a class="dropdown-item1 waves-effect waves-light" href="profilechange">Uzj starego uploadera</a>
+			    </li>
                     </div>
                     <?php
                     } ?>
