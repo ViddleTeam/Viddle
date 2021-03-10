@@ -62,7 +62,7 @@ require_once ('partials/navbar.php');
                 </div>
                 <small>Maksymalna ilość znaków w opisie to 1024.</small>
             </div>
-            <input type="file" accept="image/png, image/jpg, image/bmp, image/jpeg" name="miniaturka" style="color: white; margin-top: 5px;" />
+            <!--<input type="file" accept="image/png, image/jpg, image/bmp, image/jpeg" name="miniaturka" style="color: white; margin-top: 5px;" /> -->
             <div style="justify-content: center;">
             </div>
         </div>
