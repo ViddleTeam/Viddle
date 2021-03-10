@@ -220,61 +220,7 @@ $connect->close();
 	<style type="text/css">/* Chart.js */
  -webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}} keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
-    <div class="loader" style="opacity: 0; display: none;">
-        <div class="spinner spinner-center">  
-          <div class="spinner-border" style="width:3rem;height:3rem;color:white;margin-top: -150px;" role="status">
-          <span class="sr-only">Ładowanie...</span>
-        </div>
-          </div>
-        </div>
-        <div style="opacity: 1;" class="website">
-    <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
-    <a class="navbar-brand" href="index.html"><img src="https://cdn.discordapp.com/attachments/719598185118433311/766951476341506048/1602925873953.png" width="120px" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
-      aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-6">
-      <ul class="navbar-nav mr-auto">
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none">Strona główna</p></a>
-		</li>
-	  </div>
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="trending.html" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none">Popularne</p></a>
-        </li>
-	  </div>
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="discover.html" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none">Odkrywaj</p></a>
-        </li>
-	  </div>
-      </ul>
-      <form class="form-inline" method="GET" action="search.html" style="margin-right: auto;">
-        <input id="input_search" class="form-control mr-sm-2" style="width: 24rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
-      </form>
- 
-	<ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
-	<div class="container row">
-		<li class="nav-item">
-		  <a class="nav-link" href="upload.html" title="Udostępnij film na VDP"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <p class="d-lg-none">Udostępnij film na VDP</p></a>
-		</li>
-	</div>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/353067694565883915/e6d7166edad41a3a2d5000281d9f8b14.png?size=1024">SlaVistaPL</a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item waves-effect waves-light" href="channel.html">Przejdź na kanał</a>
-                      <a class="dropdown-item waves-effect waves-light" href="#">Studio twórców</a>
-                      <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
-                    </div>
-                </li>
-            </ul>   
-			</div>
-  </nav>
-      </header> 
+<?php require 'partials/navbar.php'; ?>
 	  <?php 
 	  if($_SESSION['etap'] == '1') {
 	  ?>
