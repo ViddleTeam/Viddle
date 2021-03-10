@@ -1,16 +1,14 @@
 <?php session_start();
 $t = '';
-use \PHPUnit\Framework\TestCase;
-use \Sightengine\SightengineClient;
-require 'vendor/autoload.php';
 
-$sciezka = 'htdocs/videos';
+
+$sciezka = '/videos';
 require 'danesql.php';
 $connect = @new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
 
-$uid = '5fd62da0d95545fd62da0d9557';
-require 'xamp.php';
+$uid = $_SESSION['uid'];
+
 if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
