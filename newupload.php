@@ -269,7 +269,7 @@ $connect->close();
           <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br></h4>
-				  <p style="color: white; margin-bottom: 10px;">Krok 2/3: Nadaj nazwę filmowi oraz dodaj opis</p>
+				
               </div>
             </div>
 			<?php echo $t; ?>
