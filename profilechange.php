@@ -14,7 +14,7 @@ if ($result = @$connect->query(
 
 $dane2 = $result->fetch_assoc();
 $d2 = $result->num_rows;
-if(isset($_POST['buttom'])) {
+/*if(isset($_POST['buttom'])) {
 	if(!empty($_FILES['baner']['name'])) {
 		$z[0]['body'] = $_FILES['baner']['type'];
 			$vars = array(
@@ -28,7 +28,7 @@ if(isset($_POST['buttom'])) {
 			
 	}
 }
-
+*/
 if(isset($_FILES['file_picker']))
 {
 	$ok = true;
