@@ -21,10 +21,10 @@ if($d2 == '1') {
 		$ba3 = 'https://cdn.viddle.xyz/cdn/videos/baners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane2['banername'].'';
 	}
 	
-	if($dane2['banername'] == 'x' || $dane2['banername'] == 'X') {
-		$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
+	if($dane2['avatarname'] == 'x' || $dane2['avatarname'] == 'X') {
+		$av4 = 'anonim.png';
 	} else {
-		$ba3 = 'https://cdn.viddle.xyz/cdn/videos/baners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane2['banername'].'';
+		$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'a.'.$dane2['avatarname'].'';
 	}
 }
 if(isset($_POST['buttom'])) {
