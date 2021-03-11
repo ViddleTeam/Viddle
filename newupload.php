@@ -121,9 +121,16 @@ if(isset($_POST['submitII'])) {
 			} else {
 				$vid = $_SESSION['vid'];
 				
-				if($connect->query("UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$title' WHERE `video_id`='$vid'")) {
-				
-					$_SESSION['etap'] = '3';
+				if($connect->query("UPDATE `viddle_videos` SET `title`='$title' WHERE `video_id`='$vid'")) {
+					
+					if($connect->query("UPDATE `viddle_videos` SET `opis`='$opis' WHERE `video_id`='$vid'")) {
+						
+						$_SESSION['etap'] = '3';
+						
+					} else {
+						$error = '8';
+						throw new Exception('blad z poleceniem');
+					}
 				} else {
 					$error = '7';
 					throw new Exception('blad z poleceniem');
@@ -141,6 +148,9 @@ if(isset($_POST['submitII'])) {
 		
 		if($error == '7') {
 			$t = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu 0xu00002</div>';
+		}
+		if($error == '8') {
+			$t = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu 0xu00003</div>';
 		}
 		if($error == '00') {
 			$t = '<div class="alert alert-danger" role="alert">Wystąpił nieznany błąd serwisu! Skontaktuj się z supportem.</div>';
