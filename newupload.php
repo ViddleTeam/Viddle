@@ -120,8 +120,8 @@ if(isset($_POST['submitII'])) {
 				throw new Exception('za dlugi opis');
 			} else {
 				$vid = $_SESSION['vid'];
-				$polecenie = "UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$title' WHERE `video_id`='$vid'";
-				if($connect->query($polecenie)) {
+				
+				if($connect->query("UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$title' WHERE `video_id`='$vid'")) {
 				
 					$_SESSION['etap'] = '3';
 				} else {
