@@ -14,6 +14,19 @@ if ($result = @$connect->query(
 
 $dane2 = $result->fetch_assoc();
 $d2 = $result->num_rows;
+if($d2 == '1') {
+	if($dane2['banername'] == 'x' || $dane2['banername'] == 'X') {
+		$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
+	} else {
+		$ba3 = 'https://cdn.viddle.xyz/cdn/videos/baners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane2['banername'].'';
+	}
+	
+	if($dane2['banername'] == 'x' || $dane2['banername'] == 'X') {
+		$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
+	} else {
+		$ba3 = 'https://cdn.viddle.xyz/cdn/videos/baners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane2['banername'].'';
+	}
+}
 if(isset($_POST['buttom'])) {
 	if(!empty($_FILES['baner']['name'])) {
 		$z[0]['body'] = $_FILES['baner']['type'];
@@ -153,36 +166,7 @@ if(isset($_FILES['file_picker']))
 		}
 	 }
 } 
-/* ten skrypt tu odmawia współpracy, wkródce będzie nowy
 
-	if (isset($d2) && $d2 == '1') {
-		$av5 = $dane2['avatarname'];
-		$ba2 = $dane2['banername'];
-		$id = $dane2['uid'];
-		if($av5 == 'x')
-		{
-			$av4 = 'avatardomyslny.jpg';
-		}
-		else
-		{
-			$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.$av5.'';
-		}
-		
-		if($ba2 == 'x')
-		{
-			$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
-		}
-		else
-		{
-			$ba3 = 'grafic/'.$id.'b.'.$ba2.'';
-		}
-		
-	}
-	else
-	{	
-		header('location: index.php');
-	}
-	*/
 $title = "Zmień grafikę kanału";
 require_once('partials/navbar.php');
 ?>
