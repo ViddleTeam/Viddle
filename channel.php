@@ -135,7 +135,7 @@ $(document).ready(function(e) {
 								$vid = $dane['video_id'];
 								$v = $connect->query("SELECT * FROM `viddle_vievs` WHERE `vid`='$vid'");
 								$vievs = $v->num_rows;
-								if($dane['minname'] == 'x') {
+								if($dane['minname'] == 'x' ||$dane['minname'] == 'X') {
 									$min = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
 								} else {
 									$min = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$dane['minname'].'';
