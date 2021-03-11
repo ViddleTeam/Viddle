@@ -25,7 +25,7 @@ if(isset($_POST['buttom'])) {
 			);
 
 			$roz = strtr($z[0]['body'], $vars);
-			try { /*
+			/*try { 
 				if($roz == 'png' || $roz == 'jpg' || $roz == 'jpeg' || $roz == 'bmp') {
 					
 					if($_FILES['baner']['size'] > '48000000') {
