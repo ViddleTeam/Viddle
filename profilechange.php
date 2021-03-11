@@ -14,6 +14,66 @@ if ($result = @$connect->query(
 
 $dane2 = $result->fetch_assoc();
 $d2 = $result->num_rows;
+if(isset($_POST['buttom'])) {
+	if(!empty($_FILES['baner']['name'])) {
+		$z[0]['body'] = $_FILES['baner']['type'];
+			$vars = array(
+			'image/png' => 'png',
+			'image/jpg' => 'jpg',
+			'image/jpeg' => 'jpeg',
+			'image/bmp' => 'bmp',
+			);
+
+			$roz = strtr($z[0]['body'], $vars);
+			try {
+				if($roz == 'png' || $roz == 'jpg' || $roz == 'jpeg' || $roz == 'bmp') {
+					
+					if($_FILES['baner']['size'] > '48000000') {
+						$error = '2';
+						throw new Exception('za duzy plik');
+					} else {
+						$sciezka = '/baners/';
+						require 'daneftp.php';
+						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
+						$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
+						ftp_chdir($ftp_conn, $sciezka);
+						if(!ftp_chdir($ftp_conn, $_SESSION['uid'])) {
+							ftp_mkdir($ftp_conn, $_SESSION['uid']);
+							ftp_chdir($ftp_conn, $_SESSION['uid']);
+						}
+						$nazwa = $_SESSION['uid'].'b.'.$roz;
+						ftp_put($ftp_conn, $nazwa, $_FILES['baner']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
+						ftp_close($ftp_conn);
+						$uid = $_SESSION['uid'];
+						if($connect->query("UPDATE viddle_users SET avatarname='$roz' WHERE uid='$uid'")) {
+								
+						} else {
+							$error = '3';
+							throw new Exception('za duzy plik');
+						}
+					}
+				} else {
+					$error = '1';
+					throw new Exception('zly format');
+				}
+			} catch (Exception $e) {
+				if($error == '1') {
+					$berror = '<div class="alert alert-danger" role="alert">Format wybranego pliku jest nieobsługiwany. Dozwolone formaty to .png, .jpg, .jpeg i .bmp</div>';
+				}
+				
+				if($error == '2') {
+					$berror = '<div class="alert alert-danger" role="alert">Twój baner waży za dużo. Maksymalny rozmiar baneru może wynosić 6 MB</div>';
+				}
+				
+				if($error == '2') {
+					$berror = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu. Skontaktuj się z supportem</div>';
+				}
+				echo "<script>
+				      $('#modalBanner').modal('show');
+				      </script>";
+			}
+	}
+}
 
 if(isset($_FILES['file_picker']))
 {
@@ -102,7 +162,7 @@ if(isset($_FILES['file_picker']))
 		}
 		else
 		{
-			$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.jpeg';;
+			$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.$av5.'';
 		}
 		
 		if($ba2 == 'x')
@@ -219,21 +279,22 @@ require_once('partials/footer.php');
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Zmiana baneru</h5>
       </div>
+	    <form method="post" enctype="multipart/form-data">
 	    <?php
-	    echo $f_error;
-	    echo $w_error;
-	    echo $_FILES['file_picker']['type'];
+	    if(isset($berror)) {
+	    	echo $berror;
+	    }
 	    ?>
-	<form method="post" enctype="multipart/form-data">
+	
       <div class="modal-body">
 	      <p>Wybierz plik obrazu, który posłuży jako baner na Viddle. Zalecane jest użycie baneru o rozmiarze 1140x190 pikseli lub wyższym. Maksymalny rozmiar wynosi 6 MB.</p><br>
-	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
+	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $ba3 ?>"> <br></br></center>
 		<center>
-			<input type="file" name="file_picker" value="Wybierz plik" />
+			<input type="file" name="baner" value="Wybierz plik" />
 		</center>
       </div>
       <div class="modal-footer">
-		<input type="submit" class="btn btn-primary" style="padding: 10px;" value='Zastosuj zmiany'>
+		<input type="submit" class="btn btn-primary" style="padding: 10px;" value='Zastosuj zmiany' name="buttom">
       </div>
 	</form>
     </div>
