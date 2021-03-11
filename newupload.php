@@ -120,9 +120,9 @@ if(isset($_POST['submitII'])) {
 				
 				if ($res = @$connect->query(
 				sprintf("UPDATE `viddle_videos` SET `title`='%s' AND `opis`='%s'  WHERE `video_id`='%s'",
-				mysqli_real_escape_string($polaczenie,$title),
-				mysqli_real_escape_string($polaczenie,$opis),
-				mysqli_real_escape_string($polaczenie,$_SESSION['vid'])))) {
+				mysqli_real_escape_string($connect,$title),
+				mysqli_real_escape_string($connect,$opis),
+				mysqli_real_escape_string($connect,$_SESSION['vid'])))) {
 				
 					$_SESSION['etap'] = '3';
 				} else {
