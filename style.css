@@ -360,6 +360,6 @@ padding: 22px 18px;
 	padding: 5px 0 5px 0;
 }
 
-.hover-anim:hover, :active {
+.hover-anim:hover, .hover-anim:active {
 	transform: translateY(-5px);
 }
