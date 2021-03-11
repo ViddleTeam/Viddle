@@ -118,7 +118,7 @@ if(isset($_POST['submitII'])) {
 				throw new Exception('za dlugi opis');
 			} else {
 				
-				if ($rezultat = @$polaczenie->query(
+				if ($res = @$connect->query(
 				sprintf("UPDATE `viddle_videos` SET `title`='%s' AND `opis`='%s'  WHERE `video_id`='%s'",
 				mysqli_real_escape_string($polaczenie,$title),
 				mysqli_real_escape_string($polaczenie,$opis),
