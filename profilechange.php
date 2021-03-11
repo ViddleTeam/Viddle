@@ -50,7 +50,7 @@ if(isset($_POST['buttom'])) {
 						} else {
 							$error = '3';
 							throw new Exception('za duzy plik');
-						*/}
+						}
 					}
 				} else {
 					$error = '1';
@@ -71,7 +71,7 @@ if(isset($_POST['buttom'])) {
 				echo "<script>
 				      $('#modalBanner').modal('show');
 				      </script>";
-			}
+			} */
 	}
 }
 
