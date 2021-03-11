@@ -46,7 +46,7 @@ if(isset($_POST['buttom'])) {
 						ftp_put($ftp_conn, $nazwa, $_FILES['baner']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
 						ftp_close($ftp_conn);
 						$uid = $_SESSION['uid'];
-						if($connect->query("UPDATE viddle_users SET avatarname='$roz' WHERE uid='$uid'")) {
+						if($connect->query("UPDATE viddle_users SET banername='$roz' WHERE uid='$uid'")) {
 								
 						} else {
 							$error = '3';
