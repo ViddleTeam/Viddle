@@ -98,11 +98,13 @@ if(isset($_POST['submit'])) {
 }
 
 if(isset($_POST['submitII'])) {
-	$title = $_POST['tytul'];
+	$title = $_POST['title'];
 	$opis = $_POST['opis'];
 	$title = htmlentities($title, ENT_QUOTES, 'UTF-8');
 	$opis = htmlentities($title, ENT_QUOTES, 'UTF-8');
-	if(!isset($_POST['tytul'])) {
+	$opis = mysqli_real_escape_string($connect,$opis);
+	$title = mysqli_real_escape_string($connect,$title);
+	if(!isset($_POST['title'])) {
 		$title = date("Y-m-d"); 
 	}
 	
@@ -117,12 +119,9 @@ if(isset($_POST['submitII'])) {
 				$error = '6';
 				throw new Exception('za dlugi opis');
 			} else {
-				
-				if ($res = $connect->query(
-				sprintf("UPDATE `viddle_videos` SET `title`='%s' AND `opis`='%s'  WHERE `video_id`='%s'",
-				mysqli_real_escape_string($connect,$title),
-				mysqli_real_escape_string($connect,$opis),
-				mysqli_real_escape_string($connect,$_SESSION['vid'])))) {
+				$vid = $_SESSION['vid'];
+				$polecenie = "UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$title' WHERE `video_id`='$vid'";
+				if($connect->query($polecenie)) {
 				
 					$_SESSION['etap'] = '3';
 				} else {
@@ -288,14 +287,14 @@ $connect->close();
                 <div class="form-row" style="justify-content: center;">
                   <div class="col-md-12">
                     <div class="md-form form-group" style="width: 100%;">
-                      <input type="text" style="color: white;" name='tytul' class="form-control" id="inputEmail4MD">
+                      <input type="text" name="title" style="color: white;" ' class="form-control" id="inputEmail4MD">
                       <label for="inputEmail4MD" style="color: white;">Tytuł filmu</label>
                     </div>
                   </div>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="md-form form-group">
-                      <textarea id="form7" name='opis' class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
+                      <textarea name="title" id="form7" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
                       <label for="form7" style="color: white;">Opis filmu</label>
                     </div>
                   </div>
@@ -360,9 +359,6 @@ $connect->close();
 	  <?php } ?>
         </div>
 <!-- JS -->
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
-<script src="https://cdn.patryqhyper.pl/vdp/mdb/js/mdb.min.js"></script>
 <script src="script.js"></script>
 
 <div class="hiddendiv common"></div></body></html>
