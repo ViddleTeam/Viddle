@@ -1,7 +1,7 @@
 <?php
 
 $s = false;
-
+$berror = '';
 session_start();
 
 $login = $_SESSION['uid'];
@@ -281,9 +281,9 @@ require_once('partials/footer.php');
       </div>
 	    <form method="post" enctype="multipart/form-data">
 	    <?php
-	    if(isset($berror)) {
+	    
 	    	echo $berror;
-	    }
+	    
 	    ?>
 	
       <div class="modal-body">
