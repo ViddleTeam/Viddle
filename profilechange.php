@@ -276,7 +276,7 @@ require_once('partials/footer.php');
 	
       <div class="modal-body">
 	      <p>Wybierz plik obrazu, który posłuży jako baner na Viddle. Zalecane jest użycie baneru o rozmiarze 1140x190 pikseli lub wyższym. Maksymalny rozmiar wynosi 6 MB.</p><br>
-	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $ba3 ?>"> <br></br></center>
+	      <center> <img width="1140px" height="190px" style="margin: 0 5px 0 5px;" class="img-responsive" src="<?php echo $ba3 ?>"> <br></br></center>
 		<center>
 			<input type="file" name="baner" value="Wybierz plik" />
 		</center>
