@@ -164,7 +164,7 @@ require_once('partials/navbar.php');
 				<div class="tab-pane fade" id="banner" role="tabpanel" aria-labelledby="banner-tab">
 					<img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="15%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
 					<div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -85px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień baner kanału</p></button></a>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalBanner"><p style="margin: 10px;">Zmień baner kanału</p></button></a>
 						<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
 						<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut.</p>
 					</div>
@@ -183,8 +183,6 @@ require_once('partials/navbar.php');
 <?php 
 require_once('partials/footer.php');
 ?>
-
-
 
 <!-- modal zmiany awataru -->
 <div class="modal fade" id="modalAvatar" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -213,6 +211,34 @@ require_once('partials/footer.php');
     </div>
   </div>
 </div>
+
+<!-- modal zmiany baneru -->
+<div class="modal fade" id="modalBanner" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Zmiana baneru</h5>
+      </div>
+	    <?php
+	    echo $f_error;
+	    echo $w_error;
+	    echo $_FILES['file_picker']['type'];
+	    ?>
+	<form method="post" enctype="multipart/form-data">
+      <div class="modal-body">
+	      <p>Wybierz plik obrazu, który posłuży jako baner na Viddle. Zalecane jest użycie baneru o rozmiarze 1140x190 pikseli lub wyższym. Maksymalny rozmiar wynosi 6 MB.</p><br>
+	      <center> <img width="204px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4 ?>"> <br></br></center>
+		<center>
+			<input type="file" name="file_picker" value="Wybierz plik" />
+		</center>
+      </div>
+      <div class="modal-footer">
+		<input type="submit" class="btn btn-primary" style="padding: 10px;" value='Zastosuj zmiany'>
+      </div>
+	</form>
+    </div>
+  </div>
+</div>
 <?php
 if ($s == true) {
     echo "<script>
@@ -221,7 +247,6 @@ if ($s == true) {
 }
 ?>
 
-	
 <!-- modal dla niezalogowanych -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
