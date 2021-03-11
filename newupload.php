@@ -102,8 +102,6 @@ if(isset($_POST['submitII'])) {
 	$opis = $_POST['opis'];
 	$title = htmlentities($title, ENT_QUOTES, 'UTF-8');
 	$opis = htmlentities($title, ENT_QUOTES, 'UTF-8');
-	$title = mysqli_real_escape_string($connect,$title);
-	$opis = mysqli_real_escape_string($connect,$opis);
 	if(!isset($_POST['tytul'])) {
 		$title = date("Y-m-d"); 
 	}
@@ -120,7 +118,11 @@ if(isset($_POST['submitII'])) {
 				throw new Exception('za dlugi opis');
 			} else {
 				
-				if($titles = $connect->query("UPDATE `viddle_videos` SET `title`='$title',`opis`='$opis'  WHERE `video_id`='$vid'")) {
+				if ($rezultat = @$polaczenie->query(
+				sprintf("UPDATE `viddle_videos` SET `title`='%s' AND `opis`='%s'  WHERE `video_id`='%s'",
+				mysqli_real_escape_string($polaczenie,$title),
+				mysqli_real_escape_string($polaczenie,$opis),
+				mysqli_real_escape_string($polaczenie,$_SESSION['vid'])))) {
 				
 					$_SESSION['etap'] = '3';
 				} else {
