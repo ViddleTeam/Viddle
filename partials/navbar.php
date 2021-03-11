@@ -160,7 +160,7 @@ if($block == '1')
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item waves-effect waves-light" href="channel?id=<?php if (isset($uid)) echo $uid ?>">Strona twojego kanału</a>
                             <a class="dropdown-item waves-effect waves-light" href="creatorstudio">Studio twórców</a>
-                            <a class="dropdown-item waves-effect waves-light" href="profilechange">Zmień zdjęcie profilowe</a>
+                            <a class="dropdown-item waves-effect waves-light" href="profilechange">Ustawienia grafiki kanału</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item waves-effect waves-light" href="settings">Ustawienia kanału</a>
                             <div class="dropdown-divider"></div>
