@@ -75,7 +75,7 @@ if(isset($_POST['buttom'])) {
 			} 
 	}
 }
-/*
+
 if(isset($_FILES['file_picker']))
 {
 	$ok = true;
@@ -153,6 +153,8 @@ if(isset($_FILES['file_picker']))
 		}
 	 }
 } 
+/* ten skrypt tu odmawia współpracy, wkródce będzie nowy
+
 	if (isset($d2) && $d2 == '1') {
 		$av5 = $dane2['avatarname'];
 		$ba2 = $dane2['banername'];
