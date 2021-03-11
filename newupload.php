@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $uid = $_SESSION['uid'];
-if(!isset($_SESSION['logged'])) {
+if(!isset($_SESSION['z1'])) {
 	header('location: index.php');
 	exit();
 }
