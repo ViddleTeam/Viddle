@@ -25,53 +25,7 @@ if(isset($_POST['buttom'])) {
 			);
 
 			$roz = strtr($z[0]['body'], $vars);
-			/*try { 
-				if($roz == 'png' || $roz == 'jpg' || $roz == 'jpeg' || $roz == 'bmp') {
-					
-					if($_FILES['baner']['size'] > '48000000') {
-						$error = '2';
-						throw new Exception('za duzy plik');
-					} else { 
-						$sciezka = '/baners/';
-						require 'daneftp.php';
-						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
-						$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
-						ftp_chdir($ftp_conn, $sciezka);
-						if(!ftp_chdir($ftp_conn, $_SESSION['uid'])) {
-							ftp_mkdir($ftp_conn, $_SESSION['uid']);
-							ftp_chdir($ftp_conn, $_SESSION['uid']);
-						}
-						$nazwa = $_SESSION['uid'].'b.'.$roz;
-						ftp_put($ftp_conn, $nazwa, $_FILES['baner']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
-						ftp_close($ftp_conn);
-						$uid = $_SESSION['uid'];
-						if($connect->query("UPDATE viddle_users SET avatarname='$roz' WHERE uid='$uid'")) {
-								
-						} else {
-							$error = '3';
-							throw new Exception('za duzy plik');
-						}
-					}
-				} else {
-					$error = '1';
-					throw new Exception('zly format');
-				}
-			} catch (Exception $e) {
-				if($error == '1') {
-					$berror = '<div class="alert alert-danger" role="alert">Format wybranego pliku jest nieobsługiwany. Dozwolone formaty to .png, .jpg, .jpeg i .bmp</div>';
-				}
-				
-				if($error == '2') {
-					$berror = '<div class="alert alert-danger" role="alert">Twój baner waży za dużo. Maksymalny rozmiar baneru może wynosić 6 MB</div>';
-				}
-				
-				if($error == '2') {
-					$berror = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu. Skontaktuj się z supportem</div>';
-				}
-				echo "<script>
-				      $('#modalBanner').modal('show');
-				      </script>";
-			} */
+			
 	}
 }
 
