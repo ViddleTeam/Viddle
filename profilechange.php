@@ -31,7 +31,7 @@ if(isset($_POST['buttom'])) {
 					if($_FILES['baner']['size'] > '48000000') {
 						$error = '2';
 						throw new Exception('za duzy plik');
-					} else {
+					} else { /*
 						$sciezka = '/baners/';
 						require 'daneftp.php';
 						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
@@ -50,7 +50,7 @@ if(isset($_POST['buttom'])) {
 						} else {
 							$error = '3';
 							throw new Exception('za duzy plik');
-						}
+						*/}
 					}
 				} else {
 					$error = '1';
