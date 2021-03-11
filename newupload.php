@@ -212,7 +212,7 @@ $connect->close();
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Udostępnij film na Viddle</title> 
-    <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     
      <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
