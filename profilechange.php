@@ -152,7 +152,7 @@ if(isset($_FILES['file_picker']))
 		mysqli_real_escape_string($connect,$_SESSION['uid'])))) {
 		}
 	 }
-} */
+} 
 	if (isset($d2) && $d2 == '1') {
 		$av5 = $dane2['avatarname'];
 		$ba2 = $dane2['banername'];
@@ -180,6 +180,7 @@ if(isset($_FILES['file_picker']))
 	{	
 		header('location: index.php');
 	}
+	*/
 $title = "Zmień grafikę kanału";
 require_once('partials/navbar.php');
 ?>
