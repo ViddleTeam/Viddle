@@ -354,3 +354,11 @@ border: 0;
 outline: 0;
 padding: 22px 18px;
 }
+
+.upload-hover-animation {
+	transition: ease-in-out 300ms;
+}
+
+.upload-hover-animation:hover, .upload-hover-animation:active {
+	transform: translateY(-5px);
+}
