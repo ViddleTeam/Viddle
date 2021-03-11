@@ -141,16 +141,37 @@ require_once('partials/navbar.php');
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Zmień grafikę swojego kanału</h4><br>
 		      <center>
-			      <img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="15%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
-			      <div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -85px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
-				<img width="204px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br><br>
-		      	<button type="button" class="btn btn-grey" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
-				<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
-				<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut. </p>
-			      </div>
+			  <ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+					aria-selected="true">Zdjęcie profilowe</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="banner-tab" data-toggle="tab" href="#banner" role="tab" aria-controls="banner"
+					aria-selected="false">Baner</a>
+				</li>
+			  </ul>
+			  <div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="15%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
+					<div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -85px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
+						<img width="192px" style="border-radius:50%; margin-bottom:5px;" class="img-responsive" src="<?php echo $av4 ?>"><br><br>
+						<button type="button" class="btn btn-grey" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień awatar</p></button></a>
+						<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
+						<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut. </p>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="banner" role="tabpanel" aria-labelledby="banner-tab">
+					<img src="http://wallpapercave.com/wp/t05PXKg.jpg" width="100%" height="15%" style="border-radius: 10px; box-shadow: 0 0 15px -5px black;" />
+					<div class="card-channel" style="border-radius: 0 0 10px 10px; margin-top: -85px; margin-left: 0px; margin-right: 0px; width: 100%; height: auto; padding: 20px;">
+						<button type="button" class="btn btn-grey" data-toggle="modal" data-target="#modalAvatar"><p style="margin: 10px;">Zmień baner kanału</p></button></a>
+						<button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Przywróć domyślny</p></button><br><br>
+						<p>Obsługiwane formaty: JPG, JPEG, PNG oraz BMP. Aktualizacja może potrwać do kilku minut. </p>
+					</div>
+				</div>
+				</div>
 		      </center>
-							</center>
-						</p>
+					</p>
 					</div>
 			   </div>
             </div>
