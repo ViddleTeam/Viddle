@@ -141,11 +141,11 @@ if($block == '1')
 
                 <ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
                     <div class="container row">
-                        <li class="nav-item dropdown1">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink1" data-toggle="dropdown1" aria-haspopup="true" aria-expanded="false"><img src="https://media.discordapp.net/attachments/785086822220169217/796438592850362378/viconupload.png?width=117&height=72" width="20px" style="color: white;" /> <span class="d-lg-none">Udostępnij film</span></a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" style="min-width: 150px;" aria-labelledby="navbarDropdownMenuLink1">
-                            <a class="dropdown-item waves-effect waves-light" href="profilechange">Użyj nowego uploadera</a>
-                            <a class="dropdown-item waves-effect waves-light" href="profilechange">Uzyj starego uploadera</a>
+                            <a class="dropdown-item waves-effect waves-light" href="/newupload">Użyj nowego uploadera</a>
+                            <a class="dropdown-item waves-effect waves-light" href="/upload">Użyj obecnego uploadera</a>
                         </div>
 			    </li>
                     </div>
