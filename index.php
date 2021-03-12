@@ -280,15 +280,9 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
     </div>
   </div>
 </div>
-
-
-<?php if (isset($_SESSION['ver']))
-{
+<?php if (isset($_SESSION['ver'])) {
 	unset($_SESSION['ver']);
-
 }
-?>
-<?php 
 require_once('partials/footer.php');
 $connect->close();
 ?>
