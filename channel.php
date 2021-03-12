@@ -83,7 +83,7 @@ $(document).ready(function(e) {
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
 		<div class="banner mx-auto">
-			<img class="img-fluid" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto;" height="20%" width="100%"/>
+			<img src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto;" height="20%" width="100%" alt="Baner kanału" />
 		</div>
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
@@ -114,8 +114,6 @@ $(document).ready(function(e) {
 					</div>
 				</span>
 				</div>
-				
-				
 			</div>
 			<div class="container" style="margin-top:20px;">
         <div class="row">
@@ -142,7 +140,7 @@ $(document).ready(function(e) {
 								}
 								echo '<div class="card">
 								    <a href="video?id='.$vid.'">
-								    <img width="300" height="187" src="'.$min.'" class="img-responsive card-img">
+								    <img width="300" height="187" alt="Miniaturka filmu" src="'.$min.'" class="img-responsive card-img">
 								    <p class="card-title">'.$dane['title'].'</p>
 								    <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
 								    <div class="bottom-info">
@@ -159,7 +157,7 @@ $(document).ready(function(e) {
 							} else {
 								$error = '2';
 							}
-							throw new Exception('pusto');
+							throw new Exception('Nic nie znaleziono');
 						}
 					} else {
 						$error = '1';
@@ -167,15 +165,15 @@ $(document).ready(function(e) {
 					}
 				} catch (Exception $e) {
 					if($error == '1') {
-						echo '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0xu00001</div>';
+						echo '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu: 0x000001</div>';
 					}
 					
 					if($error == '2') {
-						echo '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Na tym kanale nie ma żadnych treści</div>';
+						echo '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Na tym kanale nie ma żadnych treści.</div>';
 					}
 					
 					if($error == '3') {
-						echo '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Jeszcze niczego nie wrzuciłeś. Kliknij na ikone u góry by to zrobić</div>';
+						echo '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Jeszcze nic nie udostępniłeś/aś. Kliknij na ikonkę kamery, znajdującej się na pasku nawigacyjnym, żeby to zrobić.</div>';
 					}
 				}
 				
