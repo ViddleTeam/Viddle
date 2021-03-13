@@ -46,7 +46,7 @@ if(isset($_POST['buttom'])) {
 						$error = '2';
 						throw new Exception('za duzy plik');
 					} else { 
-						$sciezka = '/banners/'.$_SESSION['uid'].'/';
+						$sciezka = '/banners/';
 						require 'daneftp.php';
 						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
 						$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
