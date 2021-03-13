@@ -205,12 +205,12 @@ position: relative;
 	}
 
 .card-login {
-	color: black;
+	color: white;
 	width: 300px;
 	height: 265px;
 	border-radius: 5px;
 	margin: 25px;
-	background-color: #efefef;
+	background-color: #222;
 	box-shadow: 0 0 15px -5px black;
 	transition: all 0.2s;
 	position: relative;
