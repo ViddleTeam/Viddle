@@ -98,7 +98,7 @@ a {
 }
 
 .resetpass {
-	color: black;
+	color: black !important;
 }
 
 .nav-item:hover {
