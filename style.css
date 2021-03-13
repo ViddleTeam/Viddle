@@ -97,8 +97,13 @@ a {
 	color: white;
 }
 
-.resetpass {
+a.resetpass {
 	color: black !important;
+	transition: ease-in-out 300ms;
+}
+
+a.resetpass:hover {
+	color: #212121;
 }
 
 .nav-item:hover {
