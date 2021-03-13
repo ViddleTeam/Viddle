@@ -120,7 +120,7 @@ $error = '';
                 </form>
 					<a href="register.php"><button type="button" class="btn btn-blue-grey"><p style="margin: 10px;">Zarejestruj się</p></button></a>
 				</div>
-				<p style="margin: 15px 0 0 0;">Zapomniałeś hasła? <a href="preset.php" style="color: black !important;">Wyślij prośbę o zresetowanie.</a></p>
+				<p style="margin: 15px 0 0 0;">Zapomniałeś hasła? <a href="preset.php" class="resetpass">Wyślij prośbę o zresetowanie.</a></p>
 				</center>
 			</div>
 			</div><br>
