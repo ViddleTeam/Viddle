@@ -18,7 +18,7 @@ if($d2 == '1') {
 	if($dane2['banername'] == 'x' || $dane2['banername'] == 'X') {
 		$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
 	} else {
-		$ba3 = 'https://cdn.viddle.xyz/cdn/videos/baners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane2['banername'].'';
+		$ba3 = 'https://cdn.viddle.xyz/cdn/videos/banners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane2['banername'].'';
 	}
 	
 	if($dane2['avatarname'] == 'x' || $dane2['avatarname'] == 'X') {
@@ -260,11 +260,7 @@ require_once('partials/footer.php');
         <h5 class="modal-title" id="staticBackdropLabel">Zmiana baneru</h5>
       </div>
 	    <form method="post" enctype="multipart/form-data">
-	    <?php
-	    
-	    	echo $berror;
-	    
-	    ?>
+	    <?php echo $berror; ?>
 	
       <div class="modal-body">
 	      <p>Wybierz plik obrazu, który posłuży jako baner na Viddle. Zalecane jest użycie baneru o rozmiarze 1140x190 pikseli lub wyższym. Maksymalny rozmiar wynosi 6 MB.</p><br>
