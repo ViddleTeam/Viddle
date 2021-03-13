@@ -93,8 +93,12 @@ h4.tile-before {
 	color: white;
 }
 
-a:not(.resetpass) {
+a {
 	color: white;
+}
+
+.resetpass {
+	color: black;
 }
 
 .nav-item:hover {
