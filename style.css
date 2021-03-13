@@ -205,7 +205,7 @@ position: relative;
 	}
 
 .card-login {
-	color: black !important;
+	color: black;
 	width: 300px;
 	height: 265px;
 	border-radius: 5px;
