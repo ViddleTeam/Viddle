@@ -24,7 +24,7 @@ if($d2 == '1') {
 	if($dane2['avatarname'] == 'x' || $dane2['avatarname'] == 'X') {
 		$av4 = 'anonim.png';
 	} else {
-		$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'a.'.$dane2['avatarname'].'';
+		$av4 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'.'.$dane2['avatarname'].'';
 	}
 }
 if(isset($_POST['buttom'])) {
@@ -46,7 +46,7 @@ if(isset($_POST['buttom'])) {
 						$error = '2';
 						throw new Exception('za duzy plik');
 					} else { 
-						$sciezka = '/baners/';
+						$sciezka = '/banners/'.$_SESSION['uid'].'/';
 						require 'daneftp.php';
 						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
 						$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
@@ -56,7 +56,7 @@ if(isset($_POST['buttom'])) {
 							ftp_chdir($ftp_conn, $_SESSION['uid']);
 						}
 						$nazwa = $_SESSION['uid'].'b.'.$roz;
-						ftp_put($ftp_conn, $nazwa, $_FILES['baner']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
+						ftp_put($ftp_conn, $nazwa, $_FILES['baner']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem, skontaktuj się z supportem');
 						ftp_close($ftp_conn);
 						$uid = $_SESSION['uid'];
 						if($connect->query("UPDATE viddle_users SET banername='$roz' WHERE uid='$uid'")) {
@@ -89,10 +89,8 @@ if(isset($_POST['buttom'])) {
 	}
 }
 
-if(isset($_FILES['file_picker']))
-{
+if(isset($_FILES['file_picker'])) {
 	$ok = true;
-	
 	$av = $dane2['avatarname'];
 	
 	$file_name = $_FILES['file_picker']['name'];
@@ -102,36 +100,30 @@ if(isset($_FILES['file_picker']))
 	$file_ext=strtolower(end(explode('.',$_FILES['file_picker']['name'])));
 	
 	$f = '0';
-	
 	if($file_type == 'image/png') {
 		$f = '1';
 		$t = 'png';	
 	}
-	
 	if($file_type == 'image/jpg') {
 		$f = '1';
 		$t = 'jpg';	
 	}
-	
 	if($file_type == 'image/jpeg') {
 		$f = '1';
 		$t = 'jpeg';	
 	}
-	
 	if($file_type == 'image/bmp') {
 		$f = '1';
 		$t = 'bmp';	
 	}
-	
-	 if($f == '0') {
-         	$f_error = 'niedozwolony format';
+	if($f == '0') {
+        $f_error = 'Format pliku jest nieobsługiwany.';
 		$ok = false;
-         }
-	
-	 if($file_size > 3097152){
-         	$w_error = 'plik za wielki!';
+    }
+	if($file_size > 3097152){
+        $w_error = 'Użyty plik jest za duży.';
 		$ok = false;
-      	 }
+    }
 	
 	 if($ok == true) {
 		 
@@ -151,7 +143,7 @@ if(isset($_FILES['file_picker']))
 		
 		
 		 
-		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid']);
+		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid']);
 		if($del == '1') {
 			$delete = $_SESSION['uid'].'.'.$av.'';
 			ftp_delete($conn_id, $delete);
