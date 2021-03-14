@@ -521,7 +521,7 @@ if($d2 == '1')
                                                     if ($kuav == 'x') {
                                                         $av11 = 'anonim.png';
                                                     } else {
-                                                        $av11 = '/grafic/' . $data3['uid'] . 'a.' . $data4['avatarname'] . '';
+                                                        $av11 = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$data3['uid'].'/'.$data3['uid'].'.'.$data4['avatarname'].'';
                                                     }
                                                     ?>
                                                     <!--<span class="md-form mx-2" style="color: white !important; margin-top: -45px; padding: 2px;">
