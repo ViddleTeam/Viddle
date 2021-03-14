@@ -106,6 +106,10 @@ a.resetpass:hover {
 	color: #212121;
 }
 
+#ratevid:hover {
+	cursor: pointer;
+}
+
 .nav-item:hover {
 	color: white;
 }
