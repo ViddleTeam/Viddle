@@ -322,7 +322,7 @@ if ($video_e == true) {
                     </span>
                     <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $viev ?></h4>
-                        <span style='margin-right: 5px;' onclick="like()" id="ratevid"><i class="fas fa-arrow-up"></i> <?php echo $likes ?></div></span> <span id="ratevid"><a href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a></span>
+                        <i class="fas fa-arrow-up" id="ratevid" onclick="like()" style='margin-right: 5px;'></i> <?php echo $likes ?></div> <a href="dislike.php?id=<?php echo $id ?>"><i class="fas fa-arrow-down" id="ratevid" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
                     </span>
 			      <script>
 			      function like() {
