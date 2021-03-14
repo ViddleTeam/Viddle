@@ -167,28 +167,19 @@ echo $ok;
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
 					<?php
-			echo $e1_err;
-			echo $e2_err;
-		?>
+                        echo $e1_err;
+                        echo $e2_err;
+                    ?>
 				<h3 style="font-weight: bold;">Resetowanie hasła do konta Viddle</h3>
 				<p>W celu zresetowania hasła, wyślemy na adres e-mail twojego konta e-maila z linkiem do resetowania hasła.</p><br>
-				<?php
-
-
-				?>
-
                 <form method="post">
 
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
 					<input type="email"name="email" class="form-control" placeholder="Adres e-mail konta" aria-label="Adres e-mail konta" aria-describedby="material-addon1">
-				</div>
-				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
-					
 				</div><br>
-			<center>
-                <div class="h-captcha" data-sitekey="f982278b-3800-454e-84a8-f08f6956fd44"></div>
-				<div class="container row" style="justify-content: center;">
-				<center>
+			    <center>
+                    <div class="h-captcha" data-sitekey="f982278b-3800-454e-84a8-f08f6956fd44"></div>
+                    <div class="container row" style="justify-content: center;">
 					</div>
 				<div class="container row" style="justify-content: center;">
 				<input type="submit" value="Wyślij e-maila" class="btn btn-success" style="padding: 10px; color: white;">

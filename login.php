@@ -108,7 +108,7 @@ $error = '';
 				<?php echo $error; ?>
                 <form method="post">
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
-					<input type="text"name="login" class="form-control" placeholder="Nazwa użytkownika" aria-label="Nazwa użytkownika" aria-describedby="material-addon1">
+					<input type="text" name="login" class="form-control" placeholder="Nazwa użytkownika" aria-label="Nazwa użytkownika" aria-describedby="material-addon1">
 				</div>
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
 					<input type="password" name="haslo" class="form-control" placeholder="Hasło" aria-label="Hasło" aria-describedby="material-addon1">
