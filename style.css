@@ -98,12 +98,12 @@ a {
 }
 
 a.resetpass {
-	color: black !important;
+	color: white !important;
 	transition: ease-in-out 300ms;
 }
 
 a.resetpass:hover {
-	color: #212121;
+	color: #d4d4d4;
 }
 
 .nav-item:hover {
@@ -210,7 +210,7 @@ position: relative;
 	height: 265px;
 	border-radius: 5px;
 	margin: 25px;
-	background-color: #222;
+	background-color: #313131;
 	box-shadow: 0 0 15px -5px black;
 	transition: all 0.2s;
 	position: relative;
