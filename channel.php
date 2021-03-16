@@ -85,7 +85,7 @@ $(document).ready(function(e) {
 		<div class="banner mx-auto">
 			<img class="img-fluid banner" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto;" height="20%" width="100%" alt="Baner kanału" />
 		</div>
-			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -30px; margin-left: 0px; margin-right: 0px;">
+			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -20px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">
 				<span style="margin-left: 10px; margin-bottom: 10px;">
 					<img width="64px" height="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4; ?>">
