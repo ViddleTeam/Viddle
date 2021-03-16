@@ -100,60 +100,42 @@ if(isset($_POST['submit'])) {
 if(isset($_POST['submitII'])) {
 	$title = $_POST['title'];
 	$opis = $_POST['opis'];
-	$title = htmlentities($title, ENT_QUOTES, 'UTF-8');
-	$opis = htmlentities($title, ENT_QUOTES, 'UTF-8');
-	$opis = mysqli_real_escape_string($connect,$opis);
-	$title = mysqli_real_escape_string($connect,$title);
-	if(!isset($_POST['title'])) {
-		$title = date("Y-m-d"); 
+	$vid = $_SESSION['vid'];
+	$title = mysqli_real_escape_string($connect, $title);
+	$opis = mysqli_real_escape_string($connect, $opis);
+	$title = htmlentities($title, ENT_QUOTES);
+	$opis = htmlentities($opis, ENT_QUOTES);
+	if($title == '') {
+		$title = date("H:i:s"); 
 	}
-	
 	try {
-		$error = '00';
-		
 		if(strlen($title) > '52') {
 			$error = '5';
-			throw new Exception('za dlugi tytul');
+			throw new Exception('title');
 		} else {
-			if(strlen($opis)  > '1024') {
+			if(strlen($opis) > '1024') {
 				$error = '6';
-				throw new Exception('za dlugi opis');
+				throw new Exception('opis');
 			} else {
-				$vid = $_SESSION['vid'];
-				
-				if($connect->query("UPDATE `viddle_videos` SET `title`='$title' WHERE `video_id`='$vid'")) {
-					
-					if($connect->query("UPDATE `viddle_videos` SET `opis`='$opis' WHERE `video_id`='$vid'")) {
-						
-						$_SESSION['etap'] = '3';
-						
-					} else {
-						$error = '8';
-						throw new Exception('blad z poleceniem');
-					}
+				if($connect->query("UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$opis' WHERE `video_id`='$vid'")) {
+					$_SESSION['etap'] == '3';
 				} else {
 					$error = '7';
-					throw new Exception('blad z poleceniem');
+					throw new Exception('query error');
 				}
 			}
 		}
 	} catch (Exception $e) {
 		if($error == '5') {
-			$t = '<div class="alert alert-danger" role="alert">Tytuł jest za długi. Maksymalnie tytuł może mieć 52 znaki!</div>';
+			$t = '<div class="alert alert-danger" role="alert">Tytuł filmu nie może mieć więcej niż 52 znaki</div>';
 		}
 		
 		if($error == '6') {
-			$t = '<div class="alert alert-danger" role="alert">Opis jest za długi. Maksymalnie opis może mieć 1024 znaki!</div>';
+			$t = '<div class="alert alert-danger" role="alert">Opis filmu nie może mieć więcej niż 1024 znaki</div>';
 		}
 		
 		if($error == '7') {
-			$t = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu 0xu00002</div>';
-		}
-		if($error == '8') {
-			$t = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu! Skontaktuj się z supportem. Kod błędu 0xu00003</div>';
-		}
-		if($error == '00') {
-			$t = '<div class="alert alert-danger" role="alert">Wystąpił nieznany błąd serwisu! Skontaktuj się z supportem.</div>';
+			$t = '<div class="alert alert-danger" role="alert">Wystąpił błąd serwisu. Skontaktuj się z supportem</div>';
 		}
 	}
 }
@@ -304,7 +286,7 @@ $connect->close();
                 <div class="row">
                   <div class="col-md-12">
                     <div class="md-form form-group">
-                      <textarea name="title" id="form7" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
+                      <textarea name="opis" id="form7" class="md-textarea form-control" rows="4" cols="137" style="color: white; width: 100%; resize: none; margin-top: -10px;"></textarea>
                       <label for="form7" style="color: white;">Opis filmu</label>
                     </div>
                   </div>
