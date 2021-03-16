@@ -401,8 +401,6 @@ if($d2 == '1')
 					}
 				}
 			}
-			
-			
 		}
 	}
 		
@@ -421,7 +419,8 @@ if($d2 == '1')
                         </div>
                         <div class="comments">
                             <h3>Komentarze (<?=$comment_count ?>)</h3>
-                            <div class="container row">
+                            <div id="commentcont">Nie możesz opublikować pustego komentarza.</div>
+                    <div class="container row">
                       <span>
                         <?php if ($_SESSION['z1']) {
                             echo '<img style="border-radius: 50%; margin-right: 8px;" class="img-responsive" width="48px" src="https://cdn.viddle.xyz/cdn/videos/avatars/' . $_SESSION['uid'] . '/' . $_SESSION['uid'] . '.' . $avatar . '">';
@@ -430,14 +429,11 @@ if($d2 == '1')
                         }
                         ?>
                       </span>
-                                <form method="post" action="comment.php">
+                    <form method="post" action="comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
-                        
-                          <input class="form-control mr-sm-2 d-none d-lg-block" style="color: white !important; width: 32rem;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
-			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
+			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" id="commentbox" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
                       </span>
-                                    <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
-
+                        <input type="submit" class="btn btn-primary" onclick="postcomment()" style="padding: 10px;" value="Opublikuj">
 				    </form>
                                 <!--<form method="post" action="video?id=">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
