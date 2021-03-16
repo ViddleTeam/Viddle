@@ -117,7 +117,7 @@ if(isset($_POST['submitII'])) {
 				$error = '6';
 				throw new Exception('opis');
 			} else {
-				if($connect->query("UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$opis' WHERE `video_id`='$vid'")) {
+				if($res = @$connect->query("UPDATE `viddle_videos` SET `title`='$title' AND `opis`='$opis' WHERE `video_id`='$vid'")) {
 					$_SESSION['etap'] == '3';
 				} else {
 					$error = '7';
