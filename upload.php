@@ -16,7 +16,7 @@ require_once ('partials/navbar.php');
     <div class="row">
         <div class="col-lg-12">
             <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
-            <div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Polecamy korzystanie z <a href="newupload.php">nowego uploadera</a>. Wspiera on nowe funkcje serwisu i jest wygodniejszy.</div>
+            <div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Polecamy korzystanie z <a href="newupload.php" class="alert-link">nowego uploadera</a>. Wspiera on nowe funkcje serwisu i jest wygodniejszy.</div>
             <p style="color: white; margin-bottom: 20px;">Krok 1/2: Wybierz film do udostępnienia</p>
         </div>
     </div>
