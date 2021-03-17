@@ -1,11 +1,4 @@
 <!-- <link rel="stylesheet" href="../assets/master.css" /> -->
-<footer class="page-footer font-small" style="background-color: #212121; margin-top: 30px; width: 100%;">
-  <div class="footer-copyright text-center text-white py-3">
-      &copy; 2020-2021 Viddle Developers<br>
-      <a href="/attachments/privacypolicy.pdf">Polityka prywatności</a> • <a href="/attachments/termsofservice.pdf">Regulamin</a> • <a href="https://discord.gg/QsrbDtxWpn">Serwer Discord</a> • <a data-toggle="modal" data-target="#supportModal">Wesprzyj rozwój Viddle</a><br>
-      Kontakt mailowy: <b>support@viddle.xyz</b>
-  </div>
-</footer>
 
 <div class="modal fade" id="supportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -31,5 +24,13 @@
     </div>
   </div>
 </div>
+
+<footer class="page-footer font-small" style="background-color: #212121; margin-top: 30px; width: 100%;">
+  <div class="footer-copyright text-center text-white py-3">
+      &copy; 2020-2021 Viddle Developers<br>
+      <a href="/attachments/privacypolicy.pdf">Polityka prywatności</a> • <a href="/attachments/termsofservice.pdf">Regulamin</a> • <a href="https://discord.gg/QsrbDtxWpn">Serwer Discord</a> • <a data-toggle="modal" data-target="#supportModal">Wesprzyj rozwój Viddle</a><br>
+      Kontakt mailowy: <b>support@viddle.xyz</b>
+  </div>
+</footer>
 
 <script src="../assets/fuckadblock.js" type="text/javascript" charset="utf-8"></script>

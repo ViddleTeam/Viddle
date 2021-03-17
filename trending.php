@@ -1,5 +1,4 @@
 <?php
-
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
@@ -9,15 +8,10 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos ORDER BY `views` DES
 	$onetytul = $dane['title'];
 	$onevievs = $dane['views'];
 	$onepublisher = $dane['publisher'];
-	
-	if ($result2 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
-		    mysqli_real_escape_string($connect,$onepublisher)))) {
+	if ($result2 = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='%s'", mysqli_real_escape_string($connect,$onepublisher)))) {
 		$udane = $result2->fetch_assoc();
 		$oneusername = $udane['login'];
 	}
-	
-	
 }
 
 if ($result = @$connect->query("SELECT * FROM viddle_videos WHERE `video_id` NOT LIKE '$onevideoid' ORDER BY `views` DESC ")) {
@@ -26,15 +20,10 @@ if ($result = @$connect->query("SELECT * FROM viddle_videos WHERE `video_id` NOT
 	$twotytul = $dane['title'];
 	$twovievs = $dane['views'];
 	$twopublisher = $dane['publisher'];
-	
-	if ($result2 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
-		    mysqli_real_escape_string($connect,$twopublisher)))) {
+	if ($result2 = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='%s'", mysqli_real_escape_string($connect,$twopublisher)))) {
 		$udane = $result2->fetch_assoc();
 		$twousername = $udane['login'];
 	}
-	
-	
 }
 
 if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` NOT LIKE '$twovideoid' AND `video_id` NOT LIKE '$onevideoid' ORDER BY `views` DESC ")) {
@@ -44,16 +33,11 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
 	$threevievs = $dane['views'];
 	$threepublisher = $dane['publisher'];
 	
-	if ($result2 = @$connect->query(
-		    sprintf("SELECT * FROM viddle_users WHERE uid='%s'",
-		    mysqli_real_escape_string($connect,$threepublisher)))) {
+	if ($result2 = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='%s'", mysqli_real_escape_string($connect,$threepublisher)))) {
 		$udane = $result2->fetch_assoc();
 		$threeusername = $udane['login'];
 	}
-	
-	
 }
-
 ?>
 <?php 
 	require_once('partials/navbar.php');		
@@ -104,7 +88,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
                     </a>
                 </div>
             </div>
-            </div>
+        </div>
 <div class="hiddendiv common"></div>
 <?php
 require_once('partials/footer.php');
