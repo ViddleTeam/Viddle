@@ -107,7 +107,7 @@ $(document).ready(function(e) {
 									echo '<form action="/follow.php" id="follow" method="POST"><input id="followid" name="followid" type="hidden" value="'.$id.'"><button type="submit" class="btn btn-primary" style="padding: 10px;">Obserwuj</button></form>';
 								}
 							} else {
-								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
+								echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#loginModal">Obserwuj</button>';
 							}
 						}
 						?>
@@ -227,7 +227,7 @@ $(document).ready(function(e) {
 		</center>
 		</div>
 <!-- modal dla niezalogowanych -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
