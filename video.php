@@ -419,7 +419,7 @@ if($d2 == '1')
                         </div>
                         <div class="comments">
                             <h3>Komentarze (<?=$comment_count ?>)</h3>
-                            <div id="commentcont">Nie możesz opublikować pustego komentarza.</div>
+                            <div id="commentcont"></div>
                     <div class="container row">
                       <span>
                         <?php if ($_SESSION['z1']) {
@@ -431,7 +431,7 @@ if($d2 == '1')
                       </span>
                     <form method="post" action="comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
-			              <input class="form-control mr-sm-2 d-lg-none" style="color: white !important; width: 100%;" id="commentbox" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
+			              <input class="form-control mr-sm-2 d-lg-block" style="color: white !important; width: 100%;" id="commentbox" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
                       </span>
                         <input type="submit" class="btn btn-primary" onclick="postcomment()" style="padding: 10px;" value="Opublikuj">
 				    </form>
