@@ -301,6 +301,8 @@ $connect->close();
 	  <?php } ?>
 									     <?php
 									     if($_SESSION['etap'] == '3') { ?>
+									     <br>
+<p style="color: white; margin-bottom: 20px;">Krok 3/3: Wybierz sposób udostępnienia</p>
 									     <div class="row">
 <div class="col-md-6">
 <div class="card border border-white upload-hover-animation upload-one" style="margin: auto; width: 100%; height: 100%;" onclick="premiere = 0; uploadCheck();">
