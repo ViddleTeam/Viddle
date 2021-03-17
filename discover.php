@@ -12,7 +12,7 @@ $blad = '0';
           <div class="row">
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Odkrywaj twórców na Viddle</h4>
-              </div>	      
+              </div>      
         <?php
 			   $i = '0';
 			   for($i += '1'; $i < '4';){
@@ -39,7 +39,8 @@ $blad = '0';
 			   }
 	      ?>
         </div>
-            <?php
-            require_once('partials/footer.php');
-            ?>
+        </div>
+<?php
+  require_once('partials/footer.php');
+?>
 <div class="hiddendiv common"></div></body></html>
