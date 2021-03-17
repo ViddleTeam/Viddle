@@ -2,8 +2,7 @@
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $blad = '0';
-
-	require_once('partials/navbar.php');		
+require_once('partials/navbar.php');		
 ?>
       <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -27,7 +26,7 @@ $blad = '0';
                     <p class="card-title">'.$dane['title'].'</p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                     <div class="bottom-info">
-                      <span>'.$user['login'].'</span>
+                      <span class="text-truncate">'.$user['login'].'</span>
                       <span>•</span>
                       <span>'.$vievs.' wyświetleń</span>
                     </div>
