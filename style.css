@@ -114,6 +114,10 @@ a.resetpass:hover {
 	color: white;
 }
 
+#getDate, #getTime {
+	color: white !important;
+}
+
 body.bg-img {
 	background-image: url('https://beta.viddle.xyz/assets/25529.png');
 	display: flex;
