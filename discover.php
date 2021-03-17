@@ -11,7 +11,7 @@ $blad = '0';
           <div class="col-lg-12"><h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Odkrywaj twórców na Viddle</h4></div>      
         <?php
 			   $i = '0';
-			   for($i += '1'; $i < '4';)  {
+			   for($i += '1'; $i < '7';)  {
 				   $los = @$connect->query("SELECT * FROM viddle_videos ORDER BY RAND() LIMIT 1");
 				   $dane = mysqli_fetch_assoc($los);
 				   $vid = $dane['video_id'];
