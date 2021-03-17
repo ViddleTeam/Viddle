@@ -301,7 +301,7 @@ if ($video_e == true) {
 							echo '<button href="/follow.php?'.$uid.'" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>';
 						}
 					} else {
-						echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#exampleModal">Obserwuj</button>';
+						echo '<button type="button" class="btn btn-primary" style="padding: 10px;" data-toggle="modal" data-target="#loginModal">Obserwuj</button>';
 					}
                                     } else { ?>
                                         <span class="d-inline-block material-tooltip-main" tabindex="0" data-toggle="tooltip" title="Nie trzeba obserwować swojego kanału.">
@@ -588,7 +588,7 @@ if ($video_e == true) {
 }
 ?>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header">
