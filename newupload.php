@@ -301,7 +301,7 @@ $connect->close();
 	  <?php } ?>
 									     <?php
 									     if($_SESSION['etap'] == '3') { ?>
-									     <br>
+									     <br><br><br>
 <p style="color: white; margin-bottom: 20px;">Krok 3/3: Wybierz sposób udostępnienia</p>
 									     <div class="row">
 <div class="col-md-6">
