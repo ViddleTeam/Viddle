@@ -229,16 +229,15 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                   <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
               </div>
             </div>
-            <div class="alert alert-warning" style="width: 100%;"><b>UWAGA:</b> Wyświetlanie ostatnio udostępnionych filmów może nie działać prawidłowo, ze względu na trwające prace techniczne. Przepraszamy za wszelkie utrudnienia.</div>
             <div class="tile" style="margin: auto;">
 		    <?php
-		    if($new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
+		    if ($new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
 			   $i = '0';
-			   for($i += '1'; $i < '4';){
+			   for ($i += '1'; $i < '4';){
 				   $dane = mysqli_fetch_assoc($new);
 				   $i = $i + '1';
 				   $vid = $dane['video_id'];
-				   if($dane['minname'] == 'x' || $dane['minname'] == 'X') {
+				   if ($dane['minname'] == 'x' || $dane['minname'] == 'X') {
 					$min = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';   
 				   } else {
 					   $min = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$dane['minname'].'';
@@ -249,7 +248,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 				   $user = $u->fetch_assoc();
 				   $v = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				   $vievs = $v->num_rows;
-				   echo '                <div class="card">
+				   echo '<div class="card">
                     <a href="video.php?id='.$dane['video_id'].'">
                     <img width="300" height="187" src="'.$min.'" class="img-responsive card-img">
                     <p class="card-title">'.$dane['title'].'</p>
