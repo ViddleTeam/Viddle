@@ -195,31 +195,31 @@ $randomtitleone = $connect->query("SELECT * FROM viddle_videos WHERE video_id = 
 $data = $randomtitleone->fetch_assoc();
 $randomtitleone = $data['title'];
 if (strlen($randomtitleone) > 27) {
-    $randomtitleone = substr_replace($randomtitleone, "...", 27);
+    $randomtitleone = substr_replace($randomtitleone, "...", 24);
 }
 $randomtitletwo = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidtwo';");
 $data = $randomtitletwo->fetch_assoc();
 $randomtitletwo = $data['title'];
 if (strlen($randomtitletwo) > 27) {
-    $randomtitletwo = substr_replace($randomtitletwo, "...", 27);
+    $randomtitletwo = substr_replace($randomtitletwo, "...", 24);
 }
 $randomtitlethree = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidthree';");
 $data = $randomtitlethree->fetch_assoc();
 $randomtitlethree = $data['title'];
 if (strlen($randomtitlethree) > 27) {
-    $randomtitlethree = substr_replace($randomtitlethree, "...", 27);
+    $randomtitlethree = substr_replace($randomtitlethree, "...", 24);
 }
 $randomtitlefour = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfour';");
 $data = $randomtitlefour->fetch_assoc();
 $randomtitlefour = $data['title'];
 if (strlen($randomtitlefour) > 27) {
-    $randomtitlefour = substr_replace($randomtitlefour, "...", 27);
+    $randomtitlefour = substr_replace($randomtitlefour, "...", 24);
 }
 $randomtitlefive = $connect->query("SELECT * FROM viddle_videos WHERE video_id = '$randomvidfive';");
 $data = $randomtitlefive->fetch_assoc();
 $randomtitlefive = $data['title'];
 if (strlen($randomtitlefive) > 27) {
-    $randomtitlefive = substr_replace($randomtitlefive, "...", 27);
+    $randomtitlefive = substr_replace($randomtitlefive, "...", 24);
 }
 $uid = $_SESSION['uid'];
 $polecenie = "SELECT * FROM viddle_oceny WHERE uid='$uid'";
@@ -263,7 +263,7 @@ if($vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$id'")) {
 }
 ?>
 <?php
-require_once ("partials/navbar.php");
+require_once("partials/navbar.php");
 ?>
 <meta property="og:title" content="<?php echo $title; ?> na Viddle">
 <meta property="og:opis" content="<?php echo $opis; ?>">
@@ -327,23 +327,19 @@ if ($video_e == true) {
 			      <script>
 			      function like() {
 			      <?php 
-if(!isset($_SESSION['uid'])) {
+if (!isset($_SESSION['uid'])) {
 	$_SESSION['pol'] = true;
 	header('location: video.php?id='.$id.'');
 } else {
-
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $uid = $_SESSION['uid'];
-
 $r = '1';
-
 if ($result = @$connect->query(
 sprintf("SELECT * FROM viddle_videos WHERE video_id='%s'",
 mysqli_real_escape_string($connect,$id)))) {
 $d2 = $result->num_rows;
 $data = $result->fetch_assoc();
-	
 $like = $data['upvotes'];
 $dislike = $data['downvotes'];
 
@@ -359,16 +355,11 @@ if($d2 == '1')
 			sprintf("DELETE FROM viddle_oceny WHERE videoid='%s' AND uid='%s'",
 			mysqli_real_escape_string($connect,$id),
 			mysqli_real_escape_string($connect,$uid)))) {
-				echo '2';
-				
-				if($gg = @$connect->query(
-				sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'",
-				mysqli_real_escape_string($connect,$w),
-				mysqli_real_escape_string($connect,$id)))) {
-					echo '3';
-					header('location: video.php?id='.$id.'');
-				}
-					
+			echo '2';
+		    if($gg = @$connect->query(sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'", mysqli_real_escape_string($connect,$w), mysqli_real_escape_string($connect,$id)))) {
+				echo '3';
+				header('location: video.php?id='.$id.'');
+			}	
 			}
 		} else {
 			$o = '0';
@@ -376,13 +367,12 @@ if($d2 == '1')
 				$w = 
 				$d4 = $result2->num_rows;
 				if($d4 == '1') {
-						echo '6';
-			$w = $dislike - '1';
-			$w2 = $like + '1';
-			if($gg = @$connect->query(sprintf("UPDATE viddle_oceny SET ocena='%s' WHERE videoid='%s' AND uid='%s'", mysqli_real_escape_string($connect,$r), mysqli_real_escape_string($connect,$id), mysqli_real_escape_string($connect,$uid)))) {
-				echo '2';
+					echo '6';
+			    $w = $dislike - '1';
+			    $w2 = $like + '1';
+			    if($gg = @$connect->query(sprintf("UPDATE viddle_oceny SET ocena='%s' WHERE videoid='%s' AND uid='%s'", mysqli_real_escape_string($connect,$r), mysqli_real_escape_string($connect,$id), mysqli_real_escape_string($connect,$uid)))) {
+				    echo '2';
 				if($gg = @$connect->query(sprintf("UPDATE viddle_videos SET downvotes='%s' WHERE video_id='%s'", mysqli_real_escape_string($connect,$w), mysqli_real_escape_string($connect,$id)))) {
-					
 					if($gg = @$connect->query(sprintf("UPDATE viddle_videos SET upvotes='%s' WHERE video_id='%s'", mysqli_real_escape_string($connect,$w2), mysqli_real_escape_string($connect,$id)))) {
 						echo '3';
 					    header('location: video.php?id='.$id.'');
@@ -397,21 +387,18 @@ if($d2 == '1')
 							echo '3';
 							header('location: video.php?id='.$id.'');
 						}
-						
 					}
 				}
 			}
 		}
 	}
-		
 } else {
 	header('location: index.php');
 }
-
 }
-}	
-	    			?>
-			      }
+}
+?>
+}
 			      </script>
                                 <?php echo $powod ?>
                             </div><br>
