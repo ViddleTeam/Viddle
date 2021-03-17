@@ -14,6 +14,9 @@ if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
 
+if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
+	$_SESSION['etap'] = '3';
+}
 
 if(isset($_POST['submit'])) {
 	
@@ -118,7 +121,7 @@ if(isset($_POST['submitII'])) {
 				throw new Exception('opis');
 			} else {
 				if($res=$connect->query("UPDATE `viddle_videos` SET `title`='$title', `opis`='$opis' WHERE `video_id`='$vid'")) {
-					$_SESSION['etap'] = '3';
+					$_SESSION['etap'] = '4';
 				} else {
 					$error = '7';
 					throw new Exception('query error');
@@ -296,7 +299,31 @@ $connect->close();
 			   </div></form>
 		       </div></center>
 	  <?php } ?>
-	  <?php if($_SESSION['etap'] == '3') { ?>
+									     <?php
+									     if($_SESSION['etap'] == '3') { ?>
+									     <div class="row">
+<div class="col-md-6">
+<div class="card border border-white upload-hover-animation upload-one" style="margin: auto; width: 100%; height: 100%;" onclick="premiere = 0; uploadCheck();">
+<div class="card-body" style="text-align: center; color: white;">
+<i class="fas fa-upload fa-3x" style="margin-bottom: 10px;"></i><br>
+<h3>Natychmiastowo</h3>
+<p>Twój film po wysłaniu na serwer będzie natychmiast dostępny, a oglądający nie będą musieli czekać.</p>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card border border-white upload-hover-animation upload-two" style="margin: auto; width: 100%; height: 100%;" onclick="premiere = 1; uploadCheck();">
+<div class="card-body" style="text-align: center; color: white;">
+<i class="fas fa-clock fa-3x" style="margin-bottom: 10px;"></i><br>
+<h3>Ustaw premierę <span class="badge badge-info">Beta</span></h3>
+<p>
+Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawionego przez Ciebie dnia i godziny.<br>
+<b>Ważne:</b> nie możesz ustawić premiery, jeżeli ustawiłeś prywatność filmu na <b>prywatny.</b></p>
+</p>
+									     <?php
+									     }
+									     ?>
+	  <?php if($_SESSION['etap'] == '4') { ?>
 	  <form method="post" enctype="multipart/form-data">
       <div class="container" style="margin-top:30px;">
         <div class="row">
