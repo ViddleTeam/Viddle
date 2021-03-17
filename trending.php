@@ -105,7 +105,8 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
                 </div>
             </div>
             </div>
+<div class="hiddendiv common"></div>
 <?php
 require_once('partials/footer.php');
 ?>
-<div class="hiddendiv common"></div></body></html>
+</body></html>

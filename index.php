@@ -279,10 +279,11 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
     </div>
   </div>
 </div>
+<div class="hiddendiv common"></div>
 <?php if (isset($_SESSION['ver'])) {
 	unset($_SESSION['ver']);
 }
 require_once('partials/footer.php');
 $connect->close();
 ?>
-<div class="hiddendiv common"></div></body></html>
+</body></html>

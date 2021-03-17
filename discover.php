@@ -35,7 +35,8 @@ require_once('partials/navbar.php');
 			   }
 	      ?>
         </div>
+<div class="hiddendiv common"></div>
 <?php
   require_once('partials/footer.php');
 ?>
-<div class="hiddendiv common"></div></body></html>
+</body></html>
