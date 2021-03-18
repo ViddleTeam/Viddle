@@ -54,7 +54,7 @@ else {
        echo "<p>$key -> $value</p>";
     });
     if ($_GET['follow_id'] == $_SESSION['uid']) echo 'Przerwano. Nastąpiła próba zaobserwowania siebie.';
-    $stmt = sprintf("SELECT * FROM viddle_users WHERE uid = %s", $db->real_escape_string($_GET['follow_id']));
+    $stmt = sprintf('SELECT * FROM viddle_users WHERE uid = "%s"', $db->real_escape_string($_GET['follow_id']));
     $result = $db->query($stmt);
     echo $result->num_rows;
     $assoc = $result->fetch_assoc();
