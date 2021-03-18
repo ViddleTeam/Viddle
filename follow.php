@@ -59,6 +59,7 @@ else {
     echo $result->num_rows;
     $assoc = $result->fetch_assoc();
     array_walk($assoc, function(&$value, $key) {
+        if ($key == 'password') return;
         echo "(db) $key -> $value";
     });
 }
