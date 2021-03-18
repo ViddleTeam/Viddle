@@ -1,4 +1,5 @@
-<?php session_start();
+<?php echo '<script src="https://code.jquery.com/jquery-latest.min.js"></script>';
+session_start();
 require 'danesql.php';
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 
@@ -13,6 +14,98 @@ if(!isset($_SESSION['uid'])) {
 	exit();
 }
 
+if(isset($_POST['loginc'])) {
+	if(!empty($_POST['login'])) {
+		try {
+			if($_POST['login'] == $_SESSION['user']) {
+				$err = '1';
+				throw new Exception('taki sam login jak wcześniej');
+			} else {
+				if(strlen($_POST['login']) > '30' || strlen($_POST['login']) < '4') {
+					$err = '2';
+					throw new Exception('zla dlugosc niku');
+				} else {
+					require "danesql.php";
+            				$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+					$login = htmlentities($_POST['login'], ENT_QUOTES, "UTF-8");
+					$login = mysqli_real_escape_string($connect, $login);
+					
+					$i = $connect->query("SELECT* FROM viddle_users WHERE login='$login'");
+					$il = $i->num_rows;
+					if(!$il == '0') {
+						$err = '3';
+						throw new Exception('nick zajety');
+					} else {
+						$uid = $_SESSION['uid'];
+						
+						$z = $connect->query("SELECT * FROM `viddle_rename` WHERE uid='$uid'");
+						$zil = $z->num_rows;
+						$dalej = '0';
+						$time = time();
+						$timeII = $time + '2592000';
+						if($zil == '0') {
+							$dalej = '1';
+							$ez = $connect->query("INSERT INTO `viddle_rename` VALUES (NULL, '$uid', '$timeII', '0', '0')");
+						} else {
+							$cred = $z->fetch_assoc();
+							$cI = $cred['one'];
+							$cII = $cred['two'];
+							$cIII = $cred['three'];
+							
+							if($cI < $time || $cII < $time || $cIII < $time) {
+								if($cI < $time) {
+									$dalej = '1';
+									$kekw = $connect->query("UPDATE `viddle_rename` SET `one`='$timeII' WHERE `uid`='$uid'");
+								} elseif ($cII < $time) {
+									$kekw = $connect->query("UPDATE `viddle_rename` SET `two`='$timeII' WHERE `uid`='$uid'");
+									$dalej = '1';
+								} elseif ($cIII < $time) {
+									$kekw = $connect->query("UPDATE `viddle_rename` SET `th`='$timeII' WHERE `uid`='$uid'");
+									$dalej = '1';
+								}
+							}
+						}
+						
+						if($dalej == '1') {
+							if($connect->query("UPDATE `viddle_users` SET `login`='$login' WHERE `uid`='$uid'")) {
+								$alert = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Pomyślnie zmieniono nick!</div>';
+								$_SESSION['user'] = $login;
+							} else {
+								$err = '5';
+								throw new Exception('query error');
+							}
+						} else {
+							$err = '4';
+							throw new Exception('za malo czasu od ostatniej zmiany nicku');
+						}
+					}
+				}
+			}
+		} catch (Exception $e) {
+			echo "<script>
+			$('#nameModal').modal('show');
+			</script>";
+			if($err == '1') {
+				$nickc = '<span class="alert alert-danger" role="alert">Wybrany przez ciebie nick jest taki sam jak ten co jest obecnie!</span>';
+			}
+			if($err == '2') {
+				$nickc = '<span class="alert alert-danger" role="alert">Wybrany przez ciebie nick może mieć minimum 4 znaki i maksymalnie 30 znaków!</span>';
+			}
+			
+			if($err == '3') {
+				$nickc = '<span class="alert alert-danger" role="alert">Wybrany przez ciebie nick jest już zajęty. Wybierz inny!</span>';
+			}
+			
+			if($err == '4') {
+				$nickc = '<span class="alert alert-danger" role="alert">Możesz zmieniać nick tylko trzy razy w miesiącu!</span>';
+			}
+			
+			if($err == '5') {
+				$nickc = '<span class="alert alert-danger" role="alert">Wystąpił błąd! Skontaktuj się z supportem</span>';
+			}
+		}
+	}
+}
 ?>
 <html lang="pl-PL"><head>
     <meta charset="UTF-8">
@@ -62,6 +155,11 @@ if(!isset($_SESSION['uid'])) {
                   aria-selected="false">Niebezpieczna strefa</a>
               </li>
             </ul>
+	      <?php
+	      if(isset($alert)) {
+		      echo $alert;
+	      }
+	      ?>
             <div class="tab-content" id="myTabContent" style="margin-top: 10px;">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 Ustawienia podstawowe - od nazwy konta czy hasło, po adres mailowy.
@@ -244,12 +342,17 @@ if(!isset($_SESSION['uid'])) {
         </button>
       </div>
       <div class="modal-body">
+	      <?php
+	      if(isset($nickc)) {
+		      echo $nickc;
+	      }
+	      ?>
         Zmiana zostanie zastosowana w ciągu maksymalnie kilku minut.<br>
         Nazwa powinna składać się z przynajmniej 4 znaków i nie być dłuższa niż 30 znaków.<br><br>
         Obecną nazwą stosowaną na Viddle jest <b><?php echo $_SESSION['user'] ?></b><br>
         <div class="md-form">
 		<form method="post">
-          <input type="text" id="newName" class="form-control" style="color: white;">
+          <input type="text" name="login" id="newName" class="form-control" style="color: white;">
           <label for="newName">Podaj nową nazwę konta</label>
         </div>
       </div>
