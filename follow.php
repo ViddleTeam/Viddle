@@ -46,9 +46,9 @@ header("Location: javascript://history.go(-1); Location.reload()");*/
 require_once 'danesql.php';
 session_start();
 if (!isset($_GET['follow_id'])) header('Location: index');
-array_map(function($key, $value) {
-    echo "$key -> $value\n";
-}, $_SESSION);
+array_walk($_SESSION, function($key, $value) {
+   echo "$key -> $value";
+});
 if ($_SESSION['z1'] == true) {
     $error = 0;
     $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
