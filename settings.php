@@ -60,7 +60,7 @@ if(isset($_POST['loginc'])) {
 									$kekw = $connect->query("UPDATE `viddle_rename` SET `two`='$timeII' WHERE `uid`='$uid'");
 									$dalej = '1';
 								} elseif ($cIII < $time) {
-									$kekw = $connect->query("UPDATE `viddle_rename` SET `th`='$timeII' WHERE `uid`='$uid'");
+									$kekw = $connect->query("UPDATE `viddle_rename` SET `three`='$timeII' WHERE `uid`='$uid'");
 									$dalej = '1';
 								}
 							}
