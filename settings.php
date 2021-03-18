@@ -68,7 +68,7 @@ if(isset($_POST['loginc'])) {
 						
 						if($dalej == '1') {
 							if($connect->query("UPDATE `viddle_users` SET `login`='$login' WHERE `uid`='$uid'")) {
-								$alert = '<div class="alert alert-info" role="alert" style="width: 100%; margin-top: 10px; text-align: center;">Nick został pomyślnie zmieniony.</div>';
+								$alert = '<div class="alert alert-success" role="alert" style="width: 100%; margin-top: 10px; text-align: center;">Nazwa użytkownika została pomyślnie zmieniona.</div>';
 								$_SESSION['user'] = $login;
 							} else {
 								$err = '5';
