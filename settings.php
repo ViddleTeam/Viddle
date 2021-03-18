@@ -246,15 +246,17 @@ if(!isset($_SESSION['uid'])) {
       <div class="modal-body">
         Zmiana zostanie zastosowana w ciągu maksymalnie kilku minut.<br>
         Nazwa powinna składać się z przynajmniej 4 znaków i nie być dłuższa niż 30 znaków.<br><br>
-        Obecną nazwą stosowaną na Viddle jest <b>SlaVistaPL.</b><br>
+        Obecną nazwą stosowaną na Viddle jest <b><?php echo $_SESSION['user'] ?></b><br>
         <div class="md-form">
+		<form method="post">
           <input type="text" id="newName" class="form-control" style="color: white;">
           <label for="newName">Podaj nową nazwę konta</label>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><p style="margin: 10px;">Anuluj</p></button>
-        <button type="button" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+        <button type="submit" name="loginc" class="btn btn-primary"><p style="margin: 10px;">Potwierdź</p></button>
+	      </form>
       </div>
     </div>
   </div>
