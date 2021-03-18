@@ -1,6 +1,6 @@
 <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
-/*if ($_POST['followid'] == false) {
+if ($_POST['followid'] == false) {
     header('Location: index.php');
 }
 session_start();
@@ -42,18 +42,5 @@ if ($_SESSION['z1'] == true) {
   echo('Wystąpił błąd - użytkownik nie jest zalogowany.');
 }
 //echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
-header("Location: javascript://history.go(-1); Location.reload()");*/
-require_once 'danesql.php';
-session_start();
-if (!isset($_GET['follow_id'])) header('Location: index');
-array_walk($_SESSION, function($value, $key) {
-   echo "$key -> $value\n";
-});
-if ($_SESSION['z1'] == true) {
-    $error = 0;
-    $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-    if ($result = $db->query("SELECT * FROM viddle_users WHERE login='${_GET['follow_id']}'")) {
-        $assoc = $result->fetch_assoc();
-    }
-}
+header("Location: javascript://history.go(-1); Location.reload()");
 ?>
