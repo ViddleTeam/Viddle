@@ -43,6 +43,9 @@ if ($_SESSION['z1'] == true) {
 }
 //echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 header("Location: javascript://history.go(-1); Location.reload()");*/
+session_start();
+if (!isset($_GET['follow_id'])) header('Location: javascript://history.go(-1); Location.reload()');
+echo $_GET['follow_id'];
 ?>
 <h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
 <style>
