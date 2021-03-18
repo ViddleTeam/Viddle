@@ -121,7 +121,7 @@ if(!isset($_SESSION['uid'])) {
 			      while($daneV = mysqli_fetch_assoc($res)) {
 				      $a = $a + '1';
 				      $vid = $daneV['video_id'];
-				      if($daneV['minname'] == 'x') {
+				      if($daneV['minname'] == 'x' || $daneV['minname'] == 'X') {
 					      $minscr = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
 				      } else {
 					      $minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$daneV['minname'];
