@@ -220,16 +220,16 @@ position: relative;
 	position: relative;
 }
 
-a.videoprop {
+a.videoprop, a.commentch {
 	color: white !important;
 	transition: all 0.3s ease-in-out;
 }
 
-a.videoprop:hover {
+a.videoprop:hover, a.commentch:hover {
 	color: #e4e4e4 !important;
 }
 
-a.videoprop:active {
+a.videoprop:active, a.commentch:active {
 	color: #c4c4c4 !important;
 }
 

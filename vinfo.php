@@ -1,11 +1,9 @@
 <?php
 session_start();
-
 $id = $_GET['id'];
 
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
-
 if ($result = @$connect->query(
 	sprintf("SELECT * FROM viddle_ver WHERE vid2='%s'",
 	mysqli_real_escape_string($connect,$id))))
@@ -29,7 +27,7 @@ if ($result = @$connect->query(
 		<link rel="stylesheet" href="http://midacss.ml/assets/master.min.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Konto zostało założone</title>
+		<title>Zweryfikuj swój adres e-mail</title>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
    		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
@@ -45,7 +43,7 @@ if ($result = @$connect->query(
                                 <div id="main">
 				<h3 style="font-weight: bold;">Weryfikacja adresu e-mail</h3>
 				<p>
-					Na adres e-mail (<?php echo $_SESSION['email'] ?>) wysłaliśmy link do jego weryfikacji. 
+					Na adres e-mail (<?php echo $_SESSION['email'] ?>) wysłaliśmy link do jego weryfikacji.
 					Sprawdź swoją skrzynkę i kliknij w link, który Tobie wysłaliśmy.<br>
 					Mail nie dotarł? Możliwe, że trafił on do folderu, gdzie przechowywany jest spam.
 				</p><br>
