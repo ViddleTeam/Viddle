@@ -44,7 +44,7 @@ if ($_SESSION['z1'] == true) {
 //echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 header("Location: javascript://history.go(-1); Location.reload()");*/
 session_start();
-if (!isset($_GET['follow_id']) or !$_SESSION['z1']) echo 'Not.';
+if (!isset($_GET['follow_id']) or !$_SESSION['z1']) header('Location: javascript://history.go(-1)');
 else {
     echo $_GET['follow_id'];
     array_walk($_SESSION, function(&$value, $key) {
