@@ -43,17 +43,13 @@ if ($_SESSION['z1'] == true) {
 }
 //echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 header("Location: javascript://history.go(-1); Location.reload()");*/
-try {
-    session_start();
-    if (!isset($_GET['follow_id']) or !isset($_SESSION['z1'])) header('Location: javascript:history.go(-1); Location.reload()');
-    else {
-        echo $_GET['follow_id'];
-        array_walk($_SESSION, function (&$value, $key) {
-            echo "<p>$key -> $value</p>";
-        });
-    }
-} catch (Exception $e) {
-    echo $e;
+session_start();
+if (!isset($_GET['follow_id']) or !isset($_SESSION['z1'])) echo '<script>history.go(-1);</script>';
+else {
+    echo $_GET['follow_id'];
+    array_walk($_SESSION, function(&$value, $key) {
+       echo "<p>$key -> $value</p>";
+    });
 }
 ?>
 <h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
