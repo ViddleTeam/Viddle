@@ -121,13 +121,18 @@ if(!isset($_SESSION['uid'])) {
 			      while($daneV = mysqli_fetch_assoc($res)) {
 				      $a = $a + '1';
 				      $vid = $daneV['video_id'];
+				      if($daneV['minname'] == 'x') {
+					      $minscr = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+				      } else {
+					      $minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$daneV['minname'];
+				      }
 				      $vievs = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
 				      
 				      $vievsII = $vievs->num_rows;
 				      
                 echo '<div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px;">
-                    <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img" style="width: 160px;">
+                    <img src="''" class="img-responsive card-img" style="width: 160px;">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto; align-items: center;">
                     <h4><a href="https://beta.viddle.xyz/channel?id='.$_SESSION['uid'].'">'.$daneV['title'].'</a></h4>
