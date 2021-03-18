@@ -132,7 +132,7 @@ if(!isset($_SESSION['uid'])) {
 				      
                 echo '<div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px;">
-                    <img src="'.$minscr.'" class="img-responsive card-img" style="width: 160px;">
+                    <img src="'.$minscr.'" class="img-responsive card-img" style="width: 160px;" width="300" height="187">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto; align-items: center;">
                     <h4><a href="https://beta.viddle.xyz/channel?id='.$_SESSION['uid'].'">'.$daneV['title'].'</a></h4>
