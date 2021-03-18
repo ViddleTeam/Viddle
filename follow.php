@@ -1,17 +1,17 @@
 <script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <?php
-if ($_POST['followid'] == false) {
+/*if ($_GET['followid'] == false) {
     header('Location: index.php');
 }
 session_start();
 if ($_SESSION['z1'] == true) {
   $error = 0;
-  $followid = $_POST['followid'];
+  $followid = $_GET['followid'];
   require "danesql.php";
   $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
   $login = $_SESSION['user'];
-  $result = $connect -> query("SELECT * FROM viddle_users WHERE login='$login';");
-  $dane = $result -> fetch_assoc();
+  $result = $connect->query("SELECT * FROM viddle_users WHERE login='$login';");
+  $dane = $result->fetch_assoc();
   $userid = $dane['uid'];
   $login = $_SESSION['user'];
   if ($userid == $followid) {
@@ -42,5 +42,11 @@ if ($_SESSION['z1'] == true) {
   echo('Wystąpił błąd - użytkownik nie jest zalogowany.');
 }
 //echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
-header("Location: javascript://history.go(-1); Location.reload()");
+header("Location: javascript://history.go(-1); Location.reload()");*/
 ?>
+<h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
+<style>
+    * {
+        font-family: 'Verdana', sans-serif;
+    }
+</style>
