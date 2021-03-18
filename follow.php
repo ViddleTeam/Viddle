@@ -55,13 +55,12 @@ else {
     });
     if ($_GET['follow_id'] == $_SESSION['uid']) echo 'Przerwano. Nastąpiła próba zaobserwowania siebie.';
     $stmt = sprintf("SELECT * FROM viddle_users WHERE uid = %s", $db->real_escape_string($_GET['follow_id']));
-    if ($result = $db->query($stmt)) {
-        echo $result->num_rows;
-        $assoc = $result->fetch_assoc();
-        array_walk($assoc, function(&$value, $key) {
-           echo "(db) $key -> $value";
-        });
-    }
+    $result = $db->query($stmt);
+    echo $result->num_rows;
+    $assoc = $result->fetch_assoc();
+    array_walk($assoc, function(&$value, $key) {
+        echo "(db) $key -> $value";
+    });
 }
 ?>
 <h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
