@@ -45,7 +45,12 @@ if ($_SESSION['z1'] == true) {
 header("Location: javascript://history.go(-1); Location.reload()");*/
 session_start();
 if (!isset($_GET['follow_id'])) header('Location: javascript://history.go(-1); Location.reload()');
-echo $_GET['follow_id'];
+else {
+    echo $_GET['follow_id'];
+    array_walk($_SESSION, function(&$value, $key) {
+       echo "<p>$key -> $value</p>";
+    });
+}
 ?>
 <h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
 <style>
