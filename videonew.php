@@ -80,13 +80,13 @@ if ($_SESSION['z1'] == true) {
                         </span>
                     <span style="margin-left: auto; margin-right: -20px;">
                         <?php
-                            if ($_SESSION['uid'] != $publisher['publisher']) {
+                            if ($_SESSION['uid'] != $publisher['uid']) {
                             if ($_SESSION['z1'] === true) {
                                 if ($is_following === true) { ?>
-                                    <button href="/follow?followid=<?=$publisher['publisher'] ?>" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</button>
+                                    <a href="/follow?followid=<?= $publisher['uid'] ?>" class="btn btn-primary" style="padding: 10px; background-color: #808080;">Obserwujesz</a>
                                     <?php
                                 } else { ?>
-                                    <button href="/follow?followid=<?=$publisher['publisher'] ?>" class="btn btn-primary" style="padding: 10px;">Obserwuj</button>
+                                    <a href="/follow?followid=<?= $publisher['uid'] ?>" class="btn btn-primary" style="padding: 10px;">Obserwuj</a>
                                     <?php
                                 }
                             } else {
