@@ -68,7 +68,7 @@ if(isset($_POST['loginc'])) {
 						
 						if($dalej == '1') {
 							if($connect->query("UPDATE `viddle_users` SET `login`='$login' WHERE `uid`='$uid'")) {
-								$alert = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Pomyślnie zmieniono nick!</div>';
+								$alert = '<div class="alert alert-info" role="alert" style="width: 100%; margin-top: 10px; text-align: center;">Nick został pomyślnie zmieniony.</div>';
 								$_SESSION['user'] = $login;
 							} else {
 								$err = '5';
@@ -86,22 +86,22 @@ if(isset($_POST['loginc'])) {
 			$('#nameModal').modal('show');
 			</script>";
 			if($err == '1') {
-				$nickc = '<span class="alert alert-danger" role="alert">Wybrany przez ciebie nick jest taki sam jak ten co jest obecnie!</span>';
+				$nickc = '<div class="alert alert-danger" role="alert">Wybrany przez ciebie nick jest identyczny.</div>';
 			}
 			if($err == '2') {
-				$nickc = '<span class="alert alert-danger" role="alert">Wybrany przez ciebie nick może mieć minimum 4 znaki i maksymalnie 30 znaków!</span>';
+				$nickc = '<div class="alert alert-danger" role="alert">Wybrany przez ciebie nick nie może być krótszy niż 4 znaki i dłuższy niż 30 znaków.</div>';
 			}
 			
 			if($err == '3') {
-				$nickc = '<span class="alert alert-danger" role="alert">Wybrany przez ciebie nick jest już zajęty. Wybierz inny!</span>';
+				$nickc = '<div class="alert alert-danger" role="alert">Wybrany przez ciebie nick jest już zajęty. Wybierz inny!</div>';
 			}
 			
 			if($err == '4') {
-				$nickc = '<span class="alert alert-danger" role="alert">Możesz zmieniać nick tylko trzy razy w miesiącu!</span>';
+				$nickc = '<div class="alert alert-danger" role="alert">Możesz zmieniać nazwę użytkownika tylko 3 razy w miesiącu!</div>';
 			}
 			
 			if($err == '5') {
-				$nickc = '<span class="alert alert-danger" role="alert">Wystąpił błąd! Skontaktuj się z supportem</span>';
+				$nickc = '<div class="alert alert-danger" role="alert">Wystąpił błąd! Skontaktuj się z supportem.</div>';
 			}
 		}
 	}
