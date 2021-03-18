@@ -43,7 +43,9 @@ if ($_SESSION['z1'] == true) {
 }
 //echo('Jeżeli trafiłeś tutaj przez przypadek, to i tak nic tutaj nie ma ciekawego.');
 header("Location: javascript://history.go(-1); Location.reload()");*/
+require_once 'danesql.php';
 session_start();
+$db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if (!isset($_GET['follow_id'])) header('Location: index');
 if (!$_SESSION['z1']) header('Location: login');
 else {
@@ -51,6 +53,15 @@ else {
     array_walk($_SESSION, function(&$value, $key) {
        echo "<p>$key -> $value</p>";
     });
+    if ($_GET['follow_id'] == $_SESSION['uid']) echo 'Przerwano. Nastąpiła próba zaobserwowania siebie.';
+    $stmt = sprintf("SELECT * FROM viddle_users WHERE uid = %s", $db->real_escape_string($_GET['follow_id']));
+    if ($result = $db->query($stmt)) {
+        echo $result->num_rows;
+        $assoc = $result->fetch_assoc();
+        array_walk($assoc, function(&$value, $key) {
+           echo "(db) $key -> $value";
+        });
+    }
 }
 ?>
 <h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
