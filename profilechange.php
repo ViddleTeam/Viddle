@@ -124,9 +124,7 @@ if(isset($_FILES['file_picker'])) {
         $w_error = 'Użyty plik jest za duży.';
 		$ok = false;
     }
-	
 	 if($ok == true) {
-		 
 		 if(!$av == 'x') {
 		 $del = '1';
 		 $plik = ''.$_SESSION['uid'].'.'.$av.'';
@@ -138,11 +136,7 @@ if(isset($_FILES['file_picker'])) {
 		$ftp_server = FTPSERWER;
 		$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 		$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-		 
 		ftp_chdir($ftp_conn, '/avatars/');
-		
-		
-		 
 		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid']);
 		if($del == '1') {
 			$delete = $_SESSION['uid'].'.'.$av.'';
