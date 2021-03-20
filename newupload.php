@@ -13,9 +13,15 @@ $connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
-
-if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
-	$_SESSION['etap'] = '3';
+//system antyspamowy
+if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
+	$check = $aspam->fetch_asssoc();
+	$czas = time();
+	if($czas < $check['videopub']) {
+		$antyspam = '1';
+	} else {
+		$antyspam = '0';
+	}
 }
 
 if(isset($_POST['submit'])) {
@@ -65,6 +71,8 @@ if(isset($_POST['submit'])) {
 						
 						if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw')")) {
 							$_SESSION['etap'] = '2';
+							$wstawII = time() + '1800';
+							$final = $connect->query("UPDATE `viddle_users` SET `videopub`='$wstawII' WHERE `uid`='$uid'");
 						} else {
 							$error = '3';
 							throw new Exception('query error');
@@ -389,6 +397,28 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 
 </div>
 </center>
+<?php if($antyspam == '1') { ?>
+<script>
+$('#staticBackdrop').modal('show');
+</script> <?php } ?>
+<!--modal antyspamowy-->
+									     
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Udostępniasz za szybko filmy!</h5>
+            </div>
+            <div class="modal-body">
+                Wykryliśmy, że udostępniasz wiele filmów w krótkim czasie. Odczekaj co najmniej 30 minut, żeby móc wrzucić kolejny film.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="padding: 10px;" data-dismiss="modal">Zamknij okno</button>
+            </div>
+        </div>
+    </div>
+</div>
+									     
 	  <?php } ?>
         </div>
 <!-- JS -->
