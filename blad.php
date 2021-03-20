@@ -43,14 +43,20 @@ if($id=="1") {
 } elseif($id=="404") {
   $test = "Awaria systemu FTP.<br />Usilnie próbujemy rozwiązać problem,<br />prosimy o cierpliwość.<br /><h2>Kod błędu: 0x00404c</h2>";
 } elseif($id=="14") {
-  $test = "Bez obsługi javascript viddle nie będzie działać! Prosimy włączyć jego obsługe w ustawieniach przeglądarki lub ją zaktualizować do nowszej wersji";
+  $test = "Viddle wymaga JavaScript do poprawnego działania. Włącz obsługę JavaScript w swojej przeglądarce.";
 } else {
   $test = "Wystąpił nieznany błąd. Koniecznie przekaż to naszej drużynie, żeby mogła się temu przyjrzeć.<br />";
 }
 ?>
 <center>
 <img src="pwnedimg.png" width="200" height="200"/>
-<h1>Ups.</h1> <?php
-
- echo($test)  ?>
-<a href="index.php"><p style="color: white;"><button class="btn btn-success">Powrót do strony głównej</button></p></a></center>
+<h1>Ups.</h1> 
+<?php 
+echo $test;
+if ($id != "14") {
+  echo '<a href="index.php"><p style="color: white;"><button class="btn btn-success">Powrót do strony głównej</button></p></a>';
+} else {
+  return;
+}
+?>
+</center>
