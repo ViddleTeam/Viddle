@@ -13,8 +13,8 @@ $connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
-//system antyspamowy
-if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
+//system antyspamowy 
+/* if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
 	$check = $aspam->fetch_asssoc();
 	$czas = time();
 	$c = $check['videopub'];
@@ -24,7 +24,7 @@ if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) 
 		$as = '0';
 	}
 }
-
+*/
 if(isset($_POST['submit'])) {
 	
 	if(empty($_FILES['video']['name'])) {
