@@ -422,7 +422,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
         </div>
     </div>
 </div>
-<?php if($as == '1' && !$_SESSION['etap'] == '4') { ?>
+<?php if($as == '1' && !isset($_SESSION['etap'])) { ?>
 <script>
 $('#staticBackdrop').modal('show');
 </script> 
