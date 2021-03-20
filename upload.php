@@ -4,9 +4,17 @@ if($_SESSION['emailver'] == '0') {
     header('location: index.php');
     exit();
 }
+$czas = time();
+
+if($czas > '1617660000') {
+    $wsparcie = '1';
+} else {
+    $wsparcie = '0';
+}
 
 $title = "Udostępnianie filmów";
 require_once ('partials/navbar.php');
+if($wsparcie == '0') {
 ?>
 <div class="container" style="margin-top:30px;">
     <div class="row">
@@ -16,7 +24,7 @@ require_once ('partials/navbar.php');
     <div class="row">
         <div class="col-lg-12">
             <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
-            <div class="alert alert-warning" role="alert" style="width: 100%; text-align: center;"><B>UWAGA:</b> Niedługo po świętach wielkanocnych wycofamy tego uploadera. Zachęcamy do przejścia na  <a href="newupload.php" class="alert-link">nowy uploader</a>. Wspiera on nowe funkcje serwisu i jest wygodniejszy.</div>
+            <div class="alert alert-warning" role="alert" style="width: 100%; text-align: center;"><B>UWAGA:</b> Z dniem 6 kwietnia 2021 wycofamy tego uploadera. Zachęcamy do przejścia na  <a href="newupload.php" class="alert-link">nowy uploader</a>. Wspiera on nowe funkcje serwisu i jest wygodniejszy.</div>
             <p style="color: white; margin-bottom: 20px;">Krok 1/2: Wybierz film do udostępnienia</p>
         </div>
     </div>
@@ -76,6 +84,27 @@ require_once ('partials/navbar.php');
             <input type="submit" value="Rozpocznij przesyłanie">
         </center>
         </form>
+    <?php } else ?>
+    <div class="modal fade" id="support" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
+            </div>
+            <div class="modal-body">
+                Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze i nie tylko. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
+            </div>
+            <div class="modal-footer">
+                <a href="index.php"><button type="button" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button></a>
+                <a href="login.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Zaloguj się</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        $('#staticBackdrop').modal('show');
+    </script>
+    <?php } ?>
     </div>
 </div>
 </div>
