@@ -92,7 +92,7 @@ if($block == '1')
     <meta property="og:title" content="Viddle">
     <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
     <script src="script.js"></script>
-<noscript><?php header('location: blad.php?id=14'); ?></noscript>
+	<noscript><meta http-equiv="refresh" content="0; URL=/blad.php?id=14"></noscript>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
     <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
     <style type="text/css">/* Chart.js */
