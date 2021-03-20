@@ -14,8 +14,8 @@ if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
 //system antyspamowy 
-/* if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
-	$check = $aspam->fetch_asssoc();
+if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
+	$check = $aspam->fetch_assoc();
 	$czas = time();
 	$c = $check['videopub'];
 	if($czas < $c) {
@@ -24,7 +24,7 @@ if(!isset($_SESSION['etap'])) {
 		$as = '0';
 	}
 }
-*/
+
 if(isset($_POST['submit'])) {
 	
 	if(empty($_FILES['video']['name'])) {
