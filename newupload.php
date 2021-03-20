@@ -416,8 +416,9 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
                 Wykryliśmy, że udostępniasz wiele filmów w krótkim czasie. Odczekaj co najmniej 30 minut, żeby móc wrzucić kolejny film.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" style="padding: 10px;" data-dismiss="modal">Zamknij okno</button>
-            </div>
+									     <form action="/">
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na strone główną</button>
+									     </form> </div>
         </div>
     </div>
 </div>
