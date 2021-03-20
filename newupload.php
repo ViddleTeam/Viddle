@@ -403,6 +403,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 
 </div>
 </center>
+									     <?php } ?>
 									     <!--modal antyspamowy-->
 									     
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -427,7 +428,7 @@ $('#staticBackdrop').modal('show');
 <?php } ?>
 
 									     
-	  <?php } ?>
+	  
         </div>
 <!-- JS -->
 <script src="script.js"></script>
