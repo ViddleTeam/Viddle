@@ -17,7 +17,8 @@ if(!isset($_SESSION['etap'])) {
 if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
 	$check = $aspam->fetch_asssoc();
 	$czas = time();
-	if($czas < $check['videopub']) {
+	$c = $check['videopub'];
+	if($czas < $c) {
 		$antyspam = '1';
 	} else {
 		$antyspam = '0';
@@ -71,7 +72,8 @@ if(isset($_POST['submit'])) {
 						
 						if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw')")) {
 							$_SESSION['etap'] = '2';
-							$wstawII = time() + '1800';
+							$i = time();
+							$wstawII = $i + '1800';
 							$final = $connect->query("UPDATE `viddle_users` SET `videopub`='$wstawII' WHERE `uid`='$uid'");
 						} else {
 							$error = '3';
@@ -397,10 +399,11 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 
 </div>
 </center>
-<?php if($antyspam == '1') { ?>
+<?php //if($antyspam == '1') { ?>
 <script>
 $('#staticBackdrop').modal('show');
-</script> <?php } ?>
+</script> 
+<?php //} ?>
 <!--modal antyspamowy-->
 									     
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
