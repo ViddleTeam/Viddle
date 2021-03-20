@@ -19,9 +19,9 @@ if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) 
 	$czas = time();
 	$c = $check['videopub'];
 	if($czas < $c) {
-		$antyspam = '1';
+		$as = '1';
 	} else {
-		$antyspam = '0';
+		$as = '0';
 	}
 }
 
@@ -399,11 +399,11 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 
 </div>
 </center>
-<?php //if($antyspam == '1') { ?>
+<?php if($as == '1') { ?>
 <script>
 $('#staticBackdrop').modal('show');
 </script> 
-<?php //} ?>
+<?php } ?>
 <!--modal antyspamowy-->
 									     
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
