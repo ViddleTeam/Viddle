@@ -221,16 +221,15 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
         </div>
 	  <div class="container" style="margin-top:30px;">
         <div class="row">
-          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
+          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;"></div>
         </div>
-        </div>
-                      <div class="row">
-              <div class="col-lg-12">
-                  <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
-              </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="tile-before" style="color:white;">Ostatnio udostępnione filmy</h4>
             </div>
-            <div class="tile" style="margin: auto;">
-		    <?php
+        </div>
+        <div class="tile" style="margin: auto;">
+		<?php
 		    if ($new = $connect->query("SELECT * FROM `viddle_videos` ORDER BY `publishdate` DESC")) {
 			   $i = '0';
 			   for ($i += '1'; $i < '4';){
@@ -261,9 +260,9 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                 </div>';
 			   }
 		    }
-		    ?>
-                
+		?>
         </div>
+
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark">
@@ -274,7 +273,7 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
         Na adres e-mail wysłaliśmy link do weryfikacji adresu e-mail. W celu zweryfikowania adresu e-mail wejdź na swojego e-maila i kliknij w nadesłany przez nas link
       </div>
       <div class="modal-footer">
-	<button type="button" class="btn btn-blue-grey" style="padding: 10px;" data-dismiss="modal">Przejdź do Viddle</button>
+	    <button type="button" class="btn btn-blue-grey" style="padding: 10px;" data-dismiss="modal">Przejdź do Viddle</button>
       </div>
     </div>
   </div>
@@ -283,7 +282,38 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 <?php if (isset($_SESSION['ver'])) {
 	unset($_SESSION['ver']);
 }
-require_once('partials/footer.php');
 $connect->close();
 ?>
+<div class="modal fade" id="supportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Wesprzyj rozwój Viddle</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Możesz wesprzeć rozwój serwisu na jeden z 3 sposobów:<br>
+        <ul>
+          <li>Tipply: <a href="https://tipply.pl/u/SlaVistaPL">kliknij tutaj</a></li>
+          <li>Bitcoin: bc1qvtr3mr77tzfm552rm6zxyrc7ry3ct462672wan</li>
+          <li>Ethereum: 0xF3FdE269e853CEA2F5C385F410e13C8a57d00479</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="padding: 10px;">Zamknij</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer font-small" style="background-color: #212121; margin-top: 30px; width: 100%;">
+  <div class="footer-copyright text-center text-white py-3">
+      &copy; 2020-2021 Viddle Developers<br>
+      <a href="/attachments/privacypolicy.pdf">Polityka prywatności</a> • <a href="/attachments/termsofservice.pdf">Regulamin</a> • <a href="https://discord.gg/QsrbDtxWpn">Serwer Discord</a> • <a data-toggle="modal" data-target="#supportModal">Wesprzyj rozwój Viddle</a><br>
+      Kontakt mailowy: <b>support@viddle.xyz</b>
+  </div>
+</footer>
 </body></html>
