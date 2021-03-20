@@ -89,20 +89,20 @@ if($wsparcie == '0') {
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Musisz się zalogować, żeby skorzystać z tej funkcji.</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Ten uploader nie jest już ubsługiwany!</h5>
             </div>
             <div class="modal-body">
-                Zarejestrowani użytkownicy mogą udostępniać filmy, oddawać głosy, czy pisać komentarze i nie tylko. Zaloguj się, lub zarejestruj, żeby móc skorzystać z tej funkcji.
+                Z dniem 6 kwietnia 2021 wycofaliśmy możliwość przesyłania filmów za pomocą tego uploadera! Skorzystaj z nowego
             </div>
             <div class="modal-footer">
                 <a href="index.php"><button type="button" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button></a>
-                <a href="login.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Zaloguj się</button></a>
+                <a href="newupload.php"><button type="button" class="btn btn-primary" style="padding: 10px;">Użyj nowego uploadera</button></a>
             </div>
         </div>
     </div>
 </div>
     <script>
-        $('#staticBackdrop').modal('show');
+        $('#support').modal('show');
     </script>
     <?php } ?>
     </div>
