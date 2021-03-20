@@ -93,7 +93,11 @@ if($wsparcie == '0') {
                 <h5 class="modal-title" id="staticBackdropLabel">Ten uploader nie jest już ubsługiwany!</h5>
             </div>
             <div class="modal-body">
-                Z dniem 6 kwietnia 2021 wycofaliśmy możliwość przesyłania filmów za pomocą tego uploadera! Skorzystaj z nowego
+                Z dniem 6 kwietnia 2021, wycofaliśmy możliwość przesyłania filmów za pomocą tego uploadera! Skorzystaj z nowego - oferuje on:<br>
+                <ul>
+                    <li>system premier</li>
+                    <li>możliwość ustawienia własnej miniaturki</li>
+                </ul>
             </div>
             <div class="modal-footer">
                 <a href="index.php"><button type="button" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button></a>
