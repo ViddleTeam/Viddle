@@ -42,6 +42,8 @@ if($id=="1") {
   $test = "Upsss ... wydarzyło się coś nieoczekiwanego.<br />Najwidoczniej z jakiegoś powodu nie udało się przesłać miniaturki. Upewnij się czy plik z miniaturką nie jest uszkodzony, jeśli nie to zgłoś to naszej drużynie.<br /><h2>Kod błędu: 0x00012c</h2>";
 } elseif($id=="404") {
   $test = "Awaria systemu FTP.<br />Usilnie próbujemy rozwiązać problem,<br />prosimy o cierpliwość.<br /><h2>Kod błędu: 0x00404c</h2>";
+} elseif($id=="14") {
+  $test = "Bez obsługi javascript viddle nie będzie działać! Prosimy włączyć jego obsługe w ustawieniach przeglądarki lub ją zaktualizować do nowszej wersji";
 } else {
   $test = "Wystąpił nieznany błąd. Koniecznie przekaż to naszej drużynie, żeby mogła się temu przyjrzeć.<br />";
 }
