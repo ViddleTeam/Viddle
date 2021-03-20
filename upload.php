@@ -14,6 +14,7 @@ if($czas > '1617660000') {
 
 $title = "Udostępnianie filmów";
 require_once ('partials/navbar.php');
+
 if($wsparcie == '0') {
 ?>
 <div class="container" style="margin-top:30px;">
@@ -84,7 +85,7 @@ if($wsparcie == '0') {
             <input type="submit" value="Rozpocznij przesyłanie">
         </center>
         </form>
-    <?php } else ?>
+    <?php } else { ?>
     <div class="modal fade" id="support" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
