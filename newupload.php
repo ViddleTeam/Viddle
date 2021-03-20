@@ -352,6 +352,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 									     }
 									     ?>
 	  <?php if($_SESSION['etap'] == '4') { ?>
+									     <?php $as = '0'; ?>
 	  <form method="post" enctype="multipart/form-data">
       <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -422,14 +423,11 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
         </div>
     </div>
 </div>
-<?php if($as == '1') {
-	if(!isset($_SESSION['etap'])) {
-									     ?>
+<?php if($as == '1') {									     ?>
 <script>
 $('#staticBackdrop').modal('show');
 </script> 
-<?php }
-	} ?>
+<?php } ?>
 
 									     
 	  
