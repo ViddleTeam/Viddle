@@ -39,7 +39,7 @@ if(isset($_POST['submit'])) {
 			} else {
 				$z[0]['body'] = $_FILES['video']['type'];
 				$vars = array(
-				  'video/mov' => 'mov',
+				  'video/quicktime' => 'mov',
 				  'video/mp4' => 'mp4',
 				  'video/webm' => 'webm',
 				  'video/x-ms-wmv' => 'wmv',
