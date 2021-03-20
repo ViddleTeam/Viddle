@@ -6,7 +6,7 @@ if($_SESSION['emailver'] == '0') {
 }
 $czas = time();
 
-if($czas < '1617660000') {
+if($czas > '1617660000') {
     $wsparcie = '1';
 } else {
     $wsparcie = '0';
