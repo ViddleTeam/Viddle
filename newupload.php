@@ -399,12 +399,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 
 </div>
 </center>
-<?php if($as == '1') { ?>
-<script>
-$('#staticBackdrop').modal('show');
-</script> 
-<?php } ?>
-<!--modal antyspamowy-->
+									     <!--modal antyspamowy-->
 									     
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -421,6 +416,12 @@ $('#staticBackdrop').modal('show');
         </div>
     </div>
 </div>
+<?php if($as == '1') { ?>
+<script>
+$('#staticBackdrop').modal('show');
+</script> 
+<?php } ?>
+
 									     
 	  <?php } ?>
         </div>
