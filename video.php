@@ -227,6 +227,7 @@ if ($c2 = $connect->query($polecenie)) {
     $cheack3 = $c2->num_rows;
     if ($cheack3 == '1') {
         $data10 = $c2->fetch_assoc();
+
         if ($data10['ocena'] == '1') {
             $like = 'color: #00c3ff;';
         } else {
@@ -239,7 +240,6 @@ if (isset($_SESSION['uid'])) {
     $polecenie = "SELECT * FROM viddle_users WHERE uid='$uidm'";
     if ($c2 = $connect->query($polecenie)) {
         $d = $c2->fetch_assoc;
-        $isVerified = $d['verified'];
         $es = $d['emailver'];
         if ($es == '0') {
             $disable = 'pointer-events: none; cursor: default;';
@@ -290,8 +290,10 @@ if ($video_e == true) {
                       <a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><img width="48px" height="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
-                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><?php 
+                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>" class="videoprop"><?php 
                                     echo $name;
+                                    if ($result = @$connect->query(sprintf("SELECT verified, uid FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id)))) $verifiedData = $result->fetch_assoc;
+                                    $isVerified = $verifiedData['verified']; 
                                     if ($isVerified == 1) {
                                         echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany" style="margin-left: 10px;"></i>';
                                     }
