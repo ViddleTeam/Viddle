@@ -451,6 +451,11 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 $('#staticBackdrop').modal('show');
 </script> 
 <?php } ?>
+<?php if($ver == true) { ?>
+<script>
+$('#email').modal('show');
+</script> 
+				 <?php } ?>
 
 									     
 	  
