@@ -392,7 +392,10 @@ if ($video_e == true) {
                                 if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY RAND() LIMIT 5")) {
                                     while($v = $res->fetch_assoc()){
                                         $vid = $v['video_id'];
-                                        $title = $v['title']; 
+                                        $title = $v['title'];
+					if(strlen($title) > '15') {
+						$title = $title[15].'...';
+					}
                                         $viev = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
                                         $vievs = $viev->num_rows;
                                         $uid = $v['publisher'];
