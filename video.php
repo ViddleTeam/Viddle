@@ -387,36 +387,33 @@ if ($video_e == true) {
                     <div class="md-form form-group">
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
-				<?php
-				if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY RAND() LIMIT 5")) {
-					while($v = $res->fetch_assoc()){
-					$vid = $v['video_id'];
-					$viev = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
-					$vievs = $viev->num_rows;
-					$uid = $v['publisher'];
-					$us = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
-					$user = $us->fetch_assoc();
-					$min = $v['minname'];
-					if($min == 'x' || $min == 'X') {
-						$minscr = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
-					} else {
-						$minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$min;
-					}
-							
-						echo  '<br>
-                    <div class="row"><a href="video?id='.$vid.'">
-                      <img src="'.$minscr.'" width="35%">
-                      <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$v['title'].'<br></strong>
-                        '.$user['login'].'<br>
-                        '.$vievs.' wyświetleń</p>
-                  </div>';
-
-					}
-				}
-				?>
-                            
-                               
-                                
+                                <div class="container">
+                                <?php
+                                if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY RAND() LIMIT 5")) {
+                                    while($v = $res->fetch_assoc()){
+                                        $vid = $v['video_id'];
+                                        $viev = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+                                        $vievs = $viev->num_rows;
+                                        $uid = $v['publisher'];
+                                        $us = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
+                                        $user = $us->fetch_assoc();
+                                        $min = $v['minname'];
+                                        if($min == 'x' || $min == 'X') {
+                                            $minscr = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+                                        } else {
+                                            $minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$min;
+                                        }
+                                        echo '<br>
+                                        <div class="row"><a href="video?id='.$vid.'">
+                                        <img src="'.$minscr.'" width="180px">
+                                        <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$v['title'].'<br></strong>
+                                            '.$user['login'].'<br>
+                                            '.$vievs.' wyświetleń</p>
+                                        </div>';
+                                    }
+                                }
+                                ?>
+                                </div>
                             </div>
                         </div>
                     </div>
