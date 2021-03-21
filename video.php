@@ -392,6 +392,8 @@ if ($video_e == true) {
                                 if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY RAND() LIMIT 5")) {
                                     while($v = $res->fetch_assoc()){
                                         $vid = $v['video_id'];
+                                        $title = $v['title']; 
+                                        if (strlen($title) > 24) $truncatedtitle = substr_replace($title, "...", 24);
                                         $viev = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
                                         $vievs = $viev->num_rows;
                                         $uid = $v['publisher'];
@@ -406,8 +408,8 @@ if ($video_e == true) {
                                         echo '
                                         <a href="video?id='.$vid.'">
                                                 <div class="row">
-                                                <img src="'.$minscr.'" width="180px">
-                                                <p style="margin-left: 10px; margin-top: 5px;"><strong class="text-truncate">'.$v['title'].'<br></strong>
+                                                <img src="'.$minscr.'" width="160px" height="100px">
+                                                <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$truncatedtitle.'<br></strong>
                                                     '.$user['login'].'<br>
                                                     '.$vievs.' wyświetleń</p>
                                             </div>
