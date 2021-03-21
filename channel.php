@@ -13,6 +13,7 @@ if ($result = @$connect->query(
 	{
 		$dane = $result->fetch_assoc();
 		
+		$isVerified = $dane['verified'];
 		$av5 = $dane['avatarname'];
 		$nazwa = $dane['login'];
 		$ba2 = $dane['banername'];
@@ -60,7 +61,7 @@ if ($result = @$connect->query(
 $(document).ready(function(e) {
     $('#follow').on('submit',(function(e) {
 	var form = $('form')[0];
-	var formFata = new FormData(form);
+	var formData = new FormData(form);
         $.ajax({
             type: 'POST', 
             url: 'follow.php',
@@ -78,6 +79,9 @@ $(document).ready(function(e) {
 	event.preventDefault();
     }));
 });
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+})
 </script>
 	  <center>
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
@@ -91,7 +95,14 @@ $(document).ready(function(e) {
 					<img width="64px" height="64px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="<?php echo $av4; ?>">
 				</span>
 				<span style="text-align: left; margin-left: 10px; margin-right: auto;">
-					<h3 class="text-truncate"><?php echo $nazwa; ?></h3>
+					<h3 class="text-truncate"><?php 
+					echo $nazwa;
+					if ($isVerified == 1) {
+						echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany"></i>';
+					} else {
+						return;
+					}
+					?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($followcount)) echo $followcount; ?> obserwujących</p>
 				</span>
 				<span style="margin-left: auto; margin-right: 10px;">

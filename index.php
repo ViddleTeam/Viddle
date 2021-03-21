@@ -162,20 +162,18 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
 
 
 ?>
-      <div class="container" style="margin-top:30px;">
+    <div class="container" style="margin-top:30px;">
         <div class="row">
-          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;">
+          <div class="col-lg-12" style="display: -webkit-box;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;flex-direction: column;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;"></div>
         </div>
-        </div>
-          <div class="row">
-              <div class="col-lg-12"> <?php
-		      if ($connect->connect_errno!=0)
-{
-	echo '<div class="alert alert-danger" role="alert">Error: '.$connect->connect_errno.'! Skontaktuj się z supportem!</div>';
-}
-		      
-		       if($_SESSION['emailver'] == '0') { ?> <br></br><br></br>
-        <center><span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dla ciebie dostępna z powodu niezweryfikowanego adresu e-mail. <a href='mverify.php' class="alert-link">Zweryfikuj teraz</a></span></center>
+        <div class="row">
+            <div class="col-lg-12"> 
+            <?php
+		      if ($connect->connect_errno!=0) {
+	            echo '<div class="alert alert-danger" role="alert">Error: '.$connect->connect_errno.'! Skontaktuj się z supportem!</div>';
+              }
+		      if ($_SESSION['emailver'] == '0') { ?> <br></br><br></br>
+        <center><span class="alert alert-warning"><b>UWAGA:</b> część funkcji nie jest dostępna z powodu niezweryfikowanego adresu e-mail. <a href='mverify.php' class="alert-link">Zweryfikuj teraz</a></span></center>
         <?php } ?>
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wybrane dla Ciebie</h4>
               </div>

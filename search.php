@@ -93,7 +93,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 	}
 	
 	if($kerror == '2') {
-		$k_com = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Twoje zapytanie musi mieć conajmniej 2 znaki</div>';
+		$k_com = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Twoje zapytanie musi mieć co najmniej 2 znaki.</div>';
 	}
 	
 	if($kerror == '3') {
@@ -101,7 +101,7 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
 	}
 	
 	if($kerror == '4') {
-		$k_com = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Nie odnaleziono niczego pasującego do twojego zapytania</div>';
+		$k_com = '<div class="alert alert-info" role="alert" style="width: 100%; text-align: center;">Nie odnaleziono treści odpowiadających Twojemu zapytaniu.</div>';
 	}
 }
 ?>
@@ -192,10 +192,6 @@ if((strlen($q) < '1') || (strlen($q) == '1')) {
                                  }
                               }
 		    } 
-                                  
-                                  
-                   
-                       
                        /*
                     if (strlen($search_query) >= 2) {
                         $x = $db->real_escape_string($search_query);

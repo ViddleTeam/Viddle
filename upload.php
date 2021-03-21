@@ -90,7 +90,7 @@ if($wsparcie == '0') {
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Ten uploader nie jest już ubsługiwany!</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Ten uploader nie jest już obsługiwany!</h5>
             </div>
             <div class="modal-body">
                 Z dniem 6 kwietnia 2021, wycofaliśmy możliwość przesyłania filmów za pomocą tego uploadera! Skorzystaj z nowego - oferuje on:<br>

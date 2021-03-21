@@ -43,7 +43,7 @@ if(isset($_POST['submit'])) {
 				  'video/mp4' => 'mp4',
 				  'video/webm' => 'webm',
 				  'video/x-ms-wmv' => 'wmv',
-			      	  'video/3gpp' => '3gpp',
+			      'video/3gpp' => '3gpp',
 				);
 
 				$roz = strtr($z[0]['body'], $vars);
@@ -212,15 +212,13 @@ if(isset($_POST['po'])) {
 $connect->close();
 ?>
 <html lang="pl-PL"><head>
-	
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Udostępnij film na Viddle</title> 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-     <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="Viddle- polska alternatywa dla YouTube">
+    <meta property="og:title" content="Viddle">
     <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
 	<script src="script.js"></script>
 	<script
@@ -229,7 +227,7 @@ $connect->close();
   crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/604acb9c5e.js"></script>
 	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
-	<script src="https://cdn.tiny.cloud/1/9n5avfoajfr11lw9hhd4o45rxfafzr79vlo04km6r4kp8i7l/tinymce/5/tinymce.min.js" referrerpolicy="origin"/></script>
+	<script src="https://cdn.tiny.cloud/1/9n5avfoajfr11lw9hhd4o45rxfafzr79vlo04km6r4kp8i7l/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 	<style type="text/css">/* Chart.js */
  -webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}} keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
@@ -278,7 +276,7 @@ $connect->close();
         </div>
 		<?php
 	  }
-	  if($_SESSION['etap'] == '2') {		?>
+	  if($_SESSION['etap'] == '2') { ?>
           <div class="row"><center>
               <div class="col-lg-12">
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br></h4>
@@ -371,9 +369,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 						<p style="align-items: center; color: white;">
 							<center>
 								<h2 style="color: white;">Wybierz miniaturke z komputera/telefonu</h2>
-								
                 <p style="color: white;">Maksymalny dozwolony rozmiar na jedną miniaturke wynosi 3 MB. Chcesz się dowiedzieć, ile dana miniaturka może ważyć? Użyj <a href="https://toolstud.io/video/filesize.php?">tego narzędzia.</a></p>
-                
 								<input type="file" name="min" accept="image/png, image/jpeg, image/jpg, image/bmp" style="color: white; margin-top: 5px;" /> 
 							</center>
 						</p>
