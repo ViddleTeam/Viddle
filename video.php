@@ -402,8 +402,8 @@ if ($video_e == true) {
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
 				<?php
-				$ilosc = '0';
-				for ($ilosc <= 5; $ilosc+=1) {
+				$i = '0';
+				for ($i += '1'; $i < '6';) {
 					echo 'xd';
 				}
 				?>
