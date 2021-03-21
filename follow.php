@@ -49,7 +49,6 @@ $db = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if (!isset($_GET['follow_id'])) header('Location: index');
 if (!$_SESSION['z1']) header('Location: login');
 else {
-    echo $_GET['follow_id'];
     if ($_GET['follow_id'] == $_SESSION['uid']) echo 'Przerwano. Nastąpiła próba zaobserwowania siebie.';
     $stmt = sprintf('SELECT * FROM viddle_users WHERE uid = "%s"', $db->real_escape_string($_GET['follow_id']));
     $result = $db->query($stmt);
