@@ -403,7 +403,7 @@ if ($video_e == true) {
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
 				<?php
 				$ilosc = '0';
-				for ($ilosc == '5'; $ilosc + '1') {
+				for ($ilosc <= 5; $ilosc+=1) {
 					echo 'xd';
 				}
 				?>
