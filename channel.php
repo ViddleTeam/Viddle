@@ -29,7 +29,7 @@ if ($result = @$connect->query(
 		if($ba2 == 'x') {
 			$ba3 = 'https://wallpapercave.com/wp/t05PXKg.jpg';
 		} else {
-			$ba3 = 'https://cdn.viddle.xyz/cdn/videos/banners/'.$_SESSION['uid'].'/'.$_SESSION['uid'].'b.'.$dane['banername'];
+			$ba3 = 'https://cdn.viddle.xyz/cdn/videos/banners/'.$id.'/'.$id.'b.'.$dane['banername'].'';
 		}
 		
 		if($_SESSION['uid'] == $id) {
