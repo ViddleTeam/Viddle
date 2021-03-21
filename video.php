@@ -307,7 +307,7 @@ if ($video_e == true) {
                         }
                         ?>
                       </span>
-                    <form method="get" action="comment.php">
+                    <form method="get">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
 			              <input class="form-control mr-sm-2 d-lg-block" style="color: white !important; width: 100%;" id="commentbox" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
                       </span>
