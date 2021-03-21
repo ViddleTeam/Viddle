@@ -13,7 +13,7 @@ $connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 if(!isset($_SESSION['etap'])) {
 	$_SESSION['etap'] = '1';
 }
-//system antyspamowy 
+//zabezpieczenia
 if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) {
 	$check = $aspam->fetch_assoc();
 	$czas = time();
@@ -22,6 +22,12 @@ if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) 
 		$as = '1';
 	} else {
 		$as = '0';
+	}
+	
+	if($check['emailver'] == '0') {
+		$ver = false;
+	} else {
+		$ver = true;
 	}
 }
 
@@ -416,6 +422,27 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
 									     <form action="/">
                 <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na strone główną</button>
 									     </form> </div>
+        </div>
+    </div>
+</div>
+									     <!--modal odpalany gdy ktoś nie ma zweryfikowanego e-maila -->
+									     <div class="modal fade" id="email" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Musisz zweryfikować adres e-mail by skorzystać z tej funkcji</h5>
+            </div>
+            <div class="modal-body">
+                By zapobiegać tworzeniu fake kont i ataków na serwis/inne osoby wymagamy zweryfikowanego adresu e-mail by móc skorzystać z pewnych funkcji serwisu, jedną z nich jest ta z której chcesz skorzystać.
+            </div>
+            <div class="modal-footer">
+									     <form action="/">
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na strone główną</button>
+									     </form> 
+									     <form action="mverify.php">
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Zweryfikuj adres e-mail</button>
+									     </form>
+									     </div>
         </div>
     </div>
 </div>
