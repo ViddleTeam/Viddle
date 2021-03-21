@@ -418,7 +418,8 @@ if ($video_e == true) {
 							    '.$user['login'].'<br>
 							    '.$vievs.' wyświetleń</p>
 						    </div>
-						</a>';
+						</a>
+						<br>';
 
 					}
 				}
