@@ -404,6 +404,7 @@ if ($video_e == true) {
 				<?php
 				$i = '0';
 				for ($i += '1'; $i < '6';) {
+					$i = $i + '1';
 					echo 'xd<br>';
 				}
 				?>
