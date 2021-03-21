@@ -87,7 +87,7 @@ $(function () {
       <div class="container my-5" style="margin-top:20px; margin: auto; justify-content: center;">
         <div class="row">
 		<div class="banner mx-auto">
-			<img class="img-fluid banner" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto;" height="20%" width="100%" alt="Baner kanału" />
+			<img class="img-fluid banner" src="<?php if (isset($ba3)) echo $ba3; ?>" style="margin: auto; overflow: hidden; clip: rect(1140px,190px);" height="20%" width="100%" alt="Baner kanału" />
 		</div>
 			<div class="card-channel" style="height: 100px; width: 100%; margin-top: -20px; margin-left: 0px; margin-right: 0px;">
 				<div class="card-body row" style="color: white;">

@@ -368,11 +368,6 @@ outline: 0;
 padding: 22px 18px;
 }
 
-div.banner {
-	overflow: hidden;
-	clip: rect(1140px,190px);
-}
-
 div.card.upload-hover-animation {
 	transition: ease-in-out 300ms;
 }
