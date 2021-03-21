@@ -405,12 +405,12 @@ if ($video_e == true) {
                                             $minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$min;
                                         }
                                         echo '
-                                        <a href="video?id='.$vid.'">
-                                                <div class="row">
+                                        <a href="video?id='.$vid.'" class="videoprop">
+                                            <div class="row">
                                                 <img src="'.$minscr.'" width="160px" height="100px">
-                                                <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$title.'<br></strong>
-                                                    '.$user['login'].'<br>
-                                                    '.$vievs.' wyświetleń</p>
+                                                <p style="margin-left: 10px; margin-top: 5px;" class="text-truncate"><strong>'.$title.'</strong></p><br>
+                                                <p class="text-truncate">'.$user['login'].'</p><br>
+                                                <p>'.$vievs.' wyświetleń</p>
                                             </div>
                                         </a><br>';
                                     }
