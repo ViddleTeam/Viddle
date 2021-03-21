@@ -1,3 +1,17 @@
+<?php
+session_start();
+require 'danesql.php';
+$connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+$id = $_GET['id'];
+$id = mysqli_real_escape_string($connect, $id);
+$pocz = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id'");
+$ilosc = $pocz->num_rows;
+if(!$ilosc == '0') {
+	$exist = true;
+} else {
+	$exist = false;
+}
+?>
 <html lang="pl-PL"><head>
 <script src="/cdn-cgi/apps/head/KXVv_VQyBtibcmvK-FYml_HDUsM.js"></script><script async src="https://arc.io/widget.min.js#oxtrzHwy"></script>
 <meta charset="UTF-8">
@@ -35,53 +49,8 @@
           </div>
         </div>
         <div style="opacity: 1;" class="website">
-    <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-nav-collapse" style="height: fit-content; background-color: #212121;">
-    <a class="navbar-brand" href="index.html"><img src="https://cdn.discordapp.com/attachments/719598185118433311/766951476341506048/1602925873953.png" width="120px" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
-      aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-6">
-      <ul class="navbar-nav mr-auto">
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html" title="Strona główna"><img src="https://media.discordapp.net/attachments/627764286785060899/725795384802410617/houm.png" width="20px"/> <p class="d-lg-none">Strona główna</p></a>
-		</li>
-	  </div>
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="trending.html" title="Popularne"><img src="https://media.discordapp.net/attachments/627764286785060899/725795329810628628/fajer.png" width="20px"/> <p class="d-lg-none">Popularne</p></a>
-        </li>
-	  </div>
-	  <div class="container row">
-        <li class="nav-item">
-          <a class="nav-link" href="discover.html" title="Odkrywaj"><img src="https://media.discordapp.net/attachments/627764286785060899/725795361268039811/dizkower.png" width="20px"/> <p class="d-lg-none">Odkrywaj</p></a>
-        </li>
-	  </div>
-      </ul>
-      <form class="form-inline" method="GET" action="search.html" style="margin-right: auto;">
-        <input id="input_search" class="form-control mr-sm-2" style="width: 24rem; margin-top: 10px;" name="q" type="text" placeholder="Szukaj w Viddle" aria-label="Szukaj w Viddle">
-      </form>
- 
-	<ul class="navbar-nav nav-flex-icons" style="margin-right: 10px;">
-	<div class="container row">
-		<li class="nav-item">
-		  <a class="nav-link" href="upload.html" title="Udostępnij film na VDP"><img src="https://media.discordapp.net/attachments/627873018990952448/726773229863305276/AAAAA.png" width="20px" style="color: white;" /> <p class="d-lg-none">Udostępnij film na VDP</p></a>
-		</li>
-	</div>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img width="32px" style="border-radius:50%;margin-right:5px;" class="img-responsive" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">SlaVistaPL</a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item waves-effect waves-light" href="channel.html">Przejdź na kanał</a>
-                      <a class="dropdown-item waves-effect waves-light" href="#">Studio twórców</a>
-                      <a class="dropdown-item waves-effect waves-light" href="#">Wyloguj się</a>
-                    </div>
-                </li>
-            </ul>   
-			</div>
-  </nav>
-      </header>
+    <?php require 'partials/navbar.php' ?>
+		<?php if($exist == true) { ?>
       <div class="container" style="margin-top: 70px; justify-content: center;">
         <form>
           <div class="form-row">
@@ -215,6 +184,30 @@
     </div>
   </div>
 </div>
+<?php } else { ?>
+      <div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nie znaleziono filmu!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Film o takim id nie istnieje bądź został usunięty przez naszą administracje. Jeśli wpisywałeś link ręcznie upewnij się, czy jest on poprawny
+      <div class="modal-footer">
+        <form action="/">
+        <button type="submit" class="btn btn-danger waves-effect waves-light"><p style="margin: 10px;">Strona główna</p></button>
+	      </form></div>
+    </div>
+  </div>
+</div>
+<script>
+$('#info').modal('show');
+</script>
+<?php } ?>
 <!-- JS -->
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/jquery.min.js"></script>
 <script src="https://cdn.patryqhyper.pl/vdp/mdb/js/bootstrap.min.js"></script>
