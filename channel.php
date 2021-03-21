@@ -98,7 +98,7 @@ $(function () {
 					<h3 class="text-truncate"><?php 
 					echo $nazwa;
 					if ($isVerified == 1) {
-						echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany"></i>';
+						echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany" style="margin-left: 10px;"></i>';
 					}
 					?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($followcount)) echo $followcount; ?> obserwujących</p>
