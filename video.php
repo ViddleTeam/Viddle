@@ -402,21 +402,28 @@ if ($video_e == true) {
                         <div style="width: auto; height: auto; cursor: default; padding-left: 15px;">
                             <h4 style="margin-bottom: 10px;">Polecane filmy</h4>
 				<?php
-				$i = '0';
-				for ($i += '1'; $i < '6';) {
-					$i = $i + '1';
-					echo 'xd<br>';
+				if($res = $connect->query("SELECT * FROM `viddle_videos` ORDER BY RAND() LIMIT 5")) {
+					while($v = $res->fetch_assoc()){
+					$vid = $v['video_id'];
+					$viev = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+					$vievs = $viev->num_rows;
+					$uid = $v['publisher'];
+					$us = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
+					$user = $us->fetch_assoc();
+							echo '<div class="container">
+						<a href="/video?id='.$vid.'" class="videoprop">
+						    <div class="row">
+							<img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+							<p style="margin-left: 10px; margin-top: 5px;"><strong>'.$v['title'].'<br></strong>
+							    '.$user['login'].'<br>
+							    '.$vievs.' wyświetleń</p>
+						    </div>
+						</a>';
+
+					}
 				}
 				?>
-                            <div class="container">
-                                <a href="/video?id=<?=$randomvidone?>" class="videoprop">
-                                    <div class="row">
-                                        <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
-                                        <p style="margin-left: 10px; margin-top: 5px;"><strong><?php echo ($randomtitleone); ?><br></strong>
-                                            <?php echo ($randomuserone); ?><br>
-                                            <?php echo ($randomviewsone); ?> wyświetleń</p>
-                                    </div>
-                                </a>
+                            
                                
                                 
                             </div>
