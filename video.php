@@ -419,7 +419,7 @@ if ($video_e == true) {
 							
 						echo  '<br>
                     <div class="row"><a href="video?id='.$vid.'">
-                      <img src="'.$min.'" width="35%">
+                      <img src="'.$minscr.'" width="35%">
                       <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$v['title'].'<br></strong>
                         '.$user['login'].'<br>
                         '.$vievs.' wyświetleń</p>
