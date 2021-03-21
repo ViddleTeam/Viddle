@@ -50,18 +50,11 @@ if (!isset($_GET['follow_id'])) header('Location: index');
 if (!$_SESSION['z1']) header('Location: login');
 else {
     echo $_GET['follow_id'];
-    array_walk($_SESSION, function(&$value, $key) {
-       echo "<p>$key -> $value</p>";
-    });
     if ($_GET['follow_id'] == $_SESSION['uid']) echo 'Przerwano. Nastąpiła próba zaobserwowania siebie.';
     $stmt = sprintf('SELECT * FROM viddle_users WHERE uid = "%s"', $db->real_escape_string($_GET['follow_id']));
     $result = $db->query($stmt);
     echo $result->num_rows;
     $assoc = $result->fetch_assoc();
-    array_walk($assoc, function(&$value, $key) {
-        if ($key == 'password') return;
-        echo "<p>(db) $key -> $value</p>";
-    });
 }
 ?>
 <h1 class="text">Funkcja obserwowania jest obecnie przepisywana. Zajrzyj ponownie później!</h1>
