@@ -417,7 +417,7 @@ if ($video_e == true) {
 							<p style="margin-left: 10px; margin-top: 5px;"><strong>'.$v['title'].'<br></strong>
 							    '.$user['login'].'<br>
 							    '.$vievs.' wyświetleń</p>
-						    </div>
+						    
 						</a>
 						<br>';
 
