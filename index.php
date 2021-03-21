@@ -178,43 +178,38 @@ if ($randomviewsthree > 999 && $randomviewsthree <= 999999) {
                   <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Wybrane dla Ciebie</h4>
               </div>
             </div>
+
                 <div class='tile' style='margin: auto;'>
-                    <div class='card'>
-                        <a href='video?id=<?php echo($randomvidone); ?>'>
-                        <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'><?php echo($randomtitleone); ?></p>
+			<?php 
+			if($los = $connect->query("SELECT * FROM `viddle_videos`  ORDER BY RAND() LIMIT 3")) {
+				while($wyl = $los->fetch_assoc()) {
+					$vid = $wyl['video_id'];
+					$userid = $wyl['publisher'];
+					$v = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
+					$vievs = $v->num_rows;
+					$u = $connect->query("SELECT * FROM viddle_users WHERE uid='$userid'");
+					$us = $u->fetch_assoc();
+					if($wyl['minname'] == 'x' || $wyl['minname'] == 'X') {
+						$minscr = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+					} else {
+						$minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$wyl['minname'];
+					}
+					echo "<div class='card'>
+                        <a href='video?id=".$vid."'>
+                        <img src='".$minscr."' class='img-responsive card-img'>
+                        <p class='card-title'>".$wyl['title']."</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
-                            <span class="text-truncate"><?php echo($randomuserone); ?></span>
+                            <span class='text-truncate'>".$us['login']."</span>
                             <span>•</span>
-                            <span><?php echo($randomrezultat); ?> wyświetleń</span>
+                            <span>".$vievs." wyświetleń</span>
                         </div>
                         </a>
-                    </div>
-                    <div class='card'>
-                        <a href='video?id=<?php echo($randomvidtwo); ?>'>
-                        <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'><?php echo($randomtitletwo); ?></p>
-                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
-                        <div class='bottom-info'>
-                            <span class="text-truncate"><?php echo($randomusertwo); ?></span></a>
-                            <span>•</span>
-                            <span><?php echo($randomrezultatdwa); ?> wyświetleń</span>
-                        </div>
-			</a>
-                    </div>
-                    <div class='card'>
-                        <a href='video?id=<?php echo($randomvidthree); ?>'>
-                        <img src='https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg' class='img-responsive card-img'>
-                        <p class='card-title'><?php echo($randomtitlethree); ?></p>
-                        <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
-                        <div class='bottom-info'>
-                            <span class="text-truncate"><?php echo($randomuserthree); ?></span>
-                            <span>•</span>
-                            <span><?php echo($randomrezultattrzy); ?> wyświetleń</span>
-                        </div>
-                        </a>
-                    </div>
+                    </div>";
+				}
+			}
+			?>
+                    
             </div>
         </div>
 	  <div class="container" style="margin-top:30px;">
