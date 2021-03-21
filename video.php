@@ -291,9 +291,9 @@ if ($video_e == true) {
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
                                     <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>" class="videoprop"><?php 
-                                    echo $name;
                                     if ($result = @$connect->query(sprintf("SELECT verified, uid FROM viddle_users WHERE uid='$publisher'", mysqli_real_escape_string($connect, $id)))) $verifiedData = $result->fetch_assoc;
                                     $isVerified = $verifiedData['verified']; 
+                                    echo $name;
                                     if ($isVerified == 1) {
                                         echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany" style="margin-left: 10px;"></i>';
                                     }
