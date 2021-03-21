@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tytuł filmu na Viddle</title>
     <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="https://cdn.patryqhyper.pl/vdp/mdb/css/mdb.min.css">
     <link rel="stylesheet" href="style.css">
     <meta property="og:title" content="Viddle">
     <meta property="og:description" content="Filmy, muzyka i wiele więcej. Udostępniaj swoje filmy znajomym, rodzinie, oraz całemu światu, za pomocą Viddle.">
@@ -73,8 +73,8 @@
           <div class="form-row">
             <div class="col-md-7">
               <div class="md-form form-group">
-                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=//plrjs.com/sample.mp4&title=Tytuł filmu" style="width: 640px; height: 360px; box-shadow: 0 0 15px -5px black;" type="text/html" frameborder="0" allowfullscreen=""></iframe>
-                <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 640px;">
+                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/2704396/2704396.mp4&title=Tytuł filmu" style="width: 100%; height: 360px;" frameborder="0"></iframe>
+                <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
                   <h4>Tytuł filmu</h4>
                   <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
