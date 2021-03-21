@@ -1,20 +1,6 @@
 <?php
 session_start();
 $id = $_GET['id'];
-if(!isset($id)) {
-$c = $_SERVER['REQUEST_URI'];
-
-	$datab[0]['body'] = $c;
-	$vars = array(
-            '/video?comment='       => '',
-            '&comment='        => '',
-            );
-
-        $cII = strtr($datab[0]['body'], $vars);
-	echo '<br></br>';
-	echo $cII;
-	header('location: comment.php?id='.$cII);
-}
 require "danesql.php";
 $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 $id = $_GET['id'];
@@ -321,7 +307,7 @@ if ($video_e == true) {
                         }
                         ?>
                       </span>
-                    <form method="post" action="comment.php">
+                    <form method="get" action="comment.php">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
 			              <input class="form-control mr-sm-2 d-lg-block" style="color: white !important; width: 100%;" id="commentbox" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
                       </span>
