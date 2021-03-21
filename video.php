@@ -393,9 +393,9 @@ if ($video_e == true) {
                                     while($v = $res->fetch_assoc()){
                                         $vid = $v['video_id'];
                                         $title = $v['title'];
-					if(strlen($title) > '15') {
-						$title = $title[15].'...';
-					}
+                                        if(strlen($title) > '15') {
+                                            $title = $title[15].'...';
+                                        }
                                         $viev = $connect->query("SELECT * FROM viddle_vievs WHERE vid='$vid'");
                                         $vievs = $viev->num_rows;
                                         $uid = $v['publisher'];
@@ -411,9 +411,9 @@ if ($video_e == true) {
                                         <a href="video?id='.$vid.'" class="videoprop">
                                             <div class="row">
                                                 <img src="'.$minscr.'" width="160px" height="100px">
-                                                <p style="margin-left: 10px; margin-top: 5px;" class="text-truncate"><strong>'.$title.'</strong></p><br>
-                                                <p class="text-truncate">'.$user['login'].'</p><br>
-                                                <p>'.$vievs.' wyświetleń</p>
+                                                <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$title.'</strong><br>
+                                                '.$user['login'].'<br>
+                                                '.$vievs.' wyświetleń</p>
                                             </div>
                                         </a><br>';
                                     }
