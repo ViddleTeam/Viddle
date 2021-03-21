@@ -410,10 +410,16 @@ if ($video_e == true) {
 					$uid = $v['publisher'];
 					$us = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
 					$user = $us->fetch_assoc();
+					$min = $v['minname'];
+					if($min == 'x' || $min == 'X') {
+						$minscr = 'https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg';
+					} else {
+						$minscr = 'https://cdn.viddle.xyz/cdn/videos/videos/'.$vid.'/'.$vid.'m.'.$min;
+					}
 							
 						echo  '<br>
                     <div class="row"><a href="video?id='.$vid.'">
-                      <img src="https://www.serialio.com/sites/default/files/styles/card/public/2017-12/placeholder_600x400.png?itok=EetlztMJ" width="35%">
+                      <img src="'.$min.'" width="35%">
                       <p style="margin-left: 10px; margin-top: 5px;"><strong>'.$v['title'].'<br></strong>
                         '.$user['login'].'<br>
                         '.$vievs.' wyświetleń</p>
