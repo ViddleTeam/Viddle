@@ -8,6 +8,7 @@ $pocz = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$id'");
 $ilosc = $pocz->num_rows;
 if(!$ilosc == '0') {
 	$exist = true;
+	$dane = $pocz->fetch_assoc();
 } else {
 	$exist = false;
 }
@@ -52,11 +53,11 @@ if(!$ilosc == '0') {
     <?php require 'partials/navbar.php' ?>
 		<?php if($exist == true) { ?>
       <div class="container" style="margin-top: 70px; justify-content: center;">
-        <form>
+        
           <div class="form-row">
             <div class="col-md-7">
               <div class="md-form form-group">
-                <iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://viddlecdn.ml/videos/2704396/2704396.mp4&title=Tytuł filmu" style="width: 100%; height: 360px;" frameborder="0"></iframe>
+                <?php echo '<iframe src="https://cdn.plrjs.com/player/frb26f6hndyna/d838dwutz4s3.html?file=https://cdn.viddle.xyz/cdn/videos/videos/'.$id.'/'.$dane['filename'].'&title=Tytuł filmu" style="width: 100%; height: 360px;" frameborder="0"></iframe>'; ?>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
                   <h4>Tytuł filmu</h4>
                   <div class="container row" style="margin-top: 20px;">
@@ -153,7 +154,7 @@ if(!$ilosc == '0') {
           </div>
             </div>
           </div>
-        </form>
+        
 		</div>		
       </div>
       
