@@ -239,6 +239,7 @@ if (isset($_SESSION['uid'])) {
     $polecenie = "SELECT * FROM viddle_users WHERE uid='$uidm'";
     if ($c2 = $connect->query($polecenie)) {
         $d = $c2->fetch_assoc;
+        $isVerified = $d['verified'];
         $es = $d['emailver'];
         if ($es == '0') {
             $disable = 'pointer-events: none; cursor: default;';
@@ -289,7 +290,12 @@ if ($video_e == true) {
                       <a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><img width="48px" height="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av7; ?>"></a>
                   </span>
                                 <span style="margin-left: 10px; margin-right: auto;">
-                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><?php echo $name ?></a></h5>
+                                    <h5 style="align-items: center;"><a href="https://beta.viddle.xyz/channel?id=<?=$publisher ?>"><?php 
+                                    echo $name;
+                                    if ($isVerified == 1) {
+                                        echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany" style="margin-left: 10px;"></i>';
+                                    }
+                                    ?></a></h5>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;"><?php echo $followcount ?> obserwujących</p>
                   </span>
                                 <span style="margin-left: auto; margin-right: -20px;">
