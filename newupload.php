@@ -336,7 +336,7 @@ $connect->close();
 </div>
 </div>
 <div class="col-md-6">
-<div class="card border border-white upload-hover-animation upload-two" style="pointer-events: none; cursor: default; text-decoration: none; margin: auto; width: 100%; height: 100%;" onclick="premiere = 1; uploadCheck();">
+<div class="card border border-white upload-hover-animation upload-two" style="color: gray; pointer-events: none; cursor: default; text-decoration: none; margin: auto; width: 100%; height: 100%;" onclick="premiere = 1; uploadCheck();">
 <div class="card-body" style="text-align: center; color: white;">
 <i class="fas fa-clock fa-3x" style="margin-bottom: 10px;"></i><br>
 <h3>Ustaw premierę <span class="badge badge-info">Beta</span></h3>
