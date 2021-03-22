@@ -31,6 +31,10 @@ if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) 
 	}
 }
 
+if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
+	$_SESSION['etap'] = '3';
+}
+
 if(isset($_POST['submit'])) {
 	
 	if(empty($_FILES['video']['name'])) {
@@ -76,7 +80,7 @@ if(isset($_POST['submit'])) {
 						$i =  $connect->query("SELECT * FROM viddle_videos WHERE publisher='$uid'");
 						$il = $i->num_rows;
 						
-						if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw')")) {
+						if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw', '0')")) {
 							$_SESSION['etap'] = '2';
 							$i = time();
 							$wstawII = $i + '1800';
@@ -332,7 +336,7 @@ $connect->close();
 </div>
 </div>
 <div class="col-md-6">
-<div class="card border border-white upload-hover-animation upload-two" style="margin: auto; width: 100%; height: 100%;" onclick="premiere = 1; uploadCheck();">
+<div class="card border border-white upload-hover-animation upload-two" style="pointer-events: none; cursor: default; text-decoration: none; margin: auto; width: 100%; height: 100%;" onclick="premiere = 1; uploadCheck();">
 <div class="card-body" style="text-align: center; color: white;">
 <i class="fas fa-clock fa-3x" style="margin-bottom: 10px;"></i><br>
 <h3>Ustaw premierę <span class="badge badge-info">Beta</span></h3>
