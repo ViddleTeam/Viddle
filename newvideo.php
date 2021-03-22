@@ -18,7 +18,7 @@ if(!$ilosc == '0') {
 	if($uII['avatarname'] == 'x') {
 		$av = 'anonim.png';
 	} else {
-		$av = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$pid.'/'.$pid.'a.'.$uII['avatarname'];
+		$av = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$pid.'/'.$pid.'.'.$uII['avatarname'];
 	}
 } else {
 	$exist = false;
