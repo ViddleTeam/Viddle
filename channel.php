@@ -98,7 +98,7 @@ $(function () {
 					<h3 class="text-truncate"><?php 
 					echo $nazwa;
 					if ($isVerified == 1) {
-						echo '<i class="fas fa-check" data-toggle="tooltip" title="Kanał zweryfikowany" style="margin-left: 10px;"></i>';
+						echo '<i class="fas fa-check d-none d-md-block" data-toggle="tooltip" title="Kanał zweryfikowany" style="margin-left: 10px;"></i>';
 					}
 					?></h3>
 					<p style="text-align: left; margin-bottom: 20px;"><?php if (isset($followcount)) echo $followcount; ?> obserwujących</p>
@@ -107,7 +107,11 @@ $(function () {
 					<div class="row">
 						<?php
 						if ($do == '1') {
-							echo '<a href="profilechange.php"><button type="button" class="btn btn-primary d-none d-md-block" style="padding: 10px;">Dostosuj kanał</button></a>';
+							echo '<button type="button" class="btn btn-primary d-none d-md-block dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 10px;">Dostosuj kanał</button>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="/profilechange">Zdjęcie profilowe i baner</a>
+								<a class="dropdown-item" href="/settings">Ustawienia kanału</a>
+							</div>';
 						} else {
 							if ($_SESSION['z1'] == true) {
 								if(isset($isfollowinguser) && $isfollowinguser == true) {
