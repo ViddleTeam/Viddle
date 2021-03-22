@@ -334,6 +334,14 @@ $connect->close();
 <p>Twój film po wysłaniu na serwer będzie natychmiast dostępny, a oglądający nie będą musieli czekać.</p>
 </div>
 </div>
+									     <div class="row">
+<div class="md-form col-md-6">
+<input type="date" class="form-control" id="getDate" placeholder="Data premiery" style="color: rgb(255, 255, 255) !important; display: none;" />
+</div>
+<div class="md-form col-md-6">
+<input type="time" class="form-control" id="getTime" placeholder="Godzina premiery" style="color: rgb(255, 255, 255) !important; display: none;" />
+</div>
+</div>
 </div>
 <div class="col-md-6">
 <div class="card border border-white upload-hover-animation upload-two" style="color: gray; pointer-events: none; cursor: default; text-decoration: none; margin: auto; width: 100%; height: 100%;" onclick="premiere = 1; uploadCheck();">
