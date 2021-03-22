@@ -15,6 +15,11 @@ if(!$ilosc == '0') {
 	$u = $connect->query("SELECT * FROM viddle_users WHERE uid='$pid'");
 	$uII = $u->fetch_assoc();
 	$pub = $uII['login'];
+	if($dane['avatarname'] == 'x') {
+		$av = 'anonim.png';
+	} else {
+		$av = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$pid.'/'.$pid.'a.'.$dane['avatarname'];
+	}
 } else {
 	$exist = false;
 }
@@ -68,7 +73,7 @@ if(!$ilosc == '0') {
                   <h4><?php echo $title ?></h4>
                   <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
-                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
+                    <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="<?php echo $av ?>">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
                     <h5 style="align-items: center;"><?php echo $pub ?></h5>
