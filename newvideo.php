@@ -11,6 +11,10 @@ if(!$ilosc == '0') {
 	$dane = $pocz->fetch_assoc();
 	$title = $dane['title'];
 	$fname = $dane['fname'];
+	$pid = $dane['publisher'];
+	$u = $connect->query("SELECT * FROM viddle_users WHERE uid='$pid'");
+	$uII = $u->fetch_assoc();
+	$pub = $uII['login'];
 } else {
 	$exist = false;
 }
@@ -67,7 +71,7 @@ if(!$ilosc == '0') {
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
                   </span>
                   <span style="margin-left: 10px; margin-right: auto;">
-                    <h5 style="align-items: center;">SlaVistaPL</h5>
+                    <h5 style="align-items: center;"><?php echo $pub ?></h5>
                     <p style="text-align: left; margin-bottom: 20px; margin-top: -6px;">0 obserwujących</p>
                   </span>
                   <span style="margin-left: auto; margin-right: -20px;">
