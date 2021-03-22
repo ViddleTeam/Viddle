@@ -15,10 +15,10 @@ if(!$ilosc == '0') {
 	$u = $connect->query("SELECT * FROM viddle_users WHERE uid='$pid'");
 	$uII = $u->fetch_assoc();
 	$pub = $uII['login'];
-	if($dane['avatarname'] == 'x') {
+	if($uII['avatarname'] == 'x') {
 		$av = 'anonim.png';
 	} else {
-		$av = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$pid.'/'.$pid.'a.'.$dane['avatarname'];
+		$av = 'https://cdn.viddle.xyz/cdn/videos/avatars/'.$pid.'/'.$pid.'a.'.$uII['avatarname'];
 	}
 } else {
 	$exist = false;
