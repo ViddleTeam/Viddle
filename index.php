@@ -40,7 +40,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 					}
 					echo "<div class='card'>
                         <a href='video?id=".$vid."'>
-                        <img src='".$minscr."' class='img-responsive card-img'>
+                        <img src='".$minscr."' width='300px' height='187px' class='img-responsive card-img'>
                         <p class='card-title'>".$wyl['title']."</p>
                         <div class='hr' style='margin-top:-5px;margin-bottom:5px;'></div>
                         <div class='bottom-info'>
@@ -86,7 +86,7 @@ $connect = new mysqli(SQLHOST, SQLUSER, SQLPASS, DBNAME);
 				   $vievs = $v->num_rows;
 				   echo '<div class="card">
                     <a href="video.php?id='.$dane['video_id'].'">
-                    <img width="300" height="187" src="'.$min.'" class="img-responsive card-img">
+                    <img width="300px" height="187px" src="'.$min.'" class="img-responsive card-img">
                     <p class="card-title">'.$dane['title'].'</p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
                     </a><div class="bottom-info"><a href="video.php?id='.$dane['video_id'].'">
