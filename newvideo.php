@@ -88,7 +88,7 @@ if(!$ilosc == '0') {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum. Praesent fringilla molestie sodales. Mauris tempus urna est, non sodales tortor placerat in. Donec elementum mattis elit. Quisque semper nisi nunc, sit amet malesuada lorem posuere quis. Vivamus non eros id ante varius ultrices.</p>
                 </div>
                 <div class="comments">
-                  <h3>Komentarze (<?php echo  ?>)</h3>
+                  <h3>Komentarze (<?php echo '11'; ?>)</h3>
                   <div class="container row">
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
