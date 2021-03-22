@@ -9,6 +9,7 @@ $ilosc = $pocz->num_rows;
 if(!$ilosc == '0') {
 	$exist = true;
 	$dane = $pocz->fetch_assoc();
+	$title = $dane['title'];
 } else {
 	$exist = false;
 }
@@ -59,7 +60,7 @@ if(!$ilosc == '0') {
               <div class="md-form form-group">
                 <?php echo '<iframe src="https://cdn.plrjs.com/player/3ehs9nbnddz9a/or43an4e4gpx.html?file=https://cdn.viddle.xyz/cdn/videos/videos/'.$id.'/'.$dane['filename'].'&title='.$dane['title'].'" style="width: 100%; height: 360px;" frameborder="0"></iframe>'; ?>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
-                  <h4><?php echo $dane['title'] ?></h4>
+                  <h4><?php echo $title ?></h4>
                   <div class="container row" style="margin-top: 20px;">
                   <span style="margin-left: 10px;">
                     <img width="48px" style="border-radius:50%; margin-right:5px;" class="img-responsive d-none d-md-block" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
@@ -87,7 +88,7 @@ if(!$ilosc == '0') {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet ullamcorper dapibus. Proin placerat enim in neque tincidunt condimentum. Praesent fringilla molestie sodales. Mauris tempus urna est, non sodales tortor placerat in. Donec elementum mattis elit. Quisque semper nisi nunc, sit amet malesuada lorem posuere quis. Vivamus non eros id ante varius ultrices.</p>
                 </div>
                 <div class="comments">
-                  <h3>Komentarze (1)</h3>
+                  <h3>Komentarze (<?php echo  ?>)</h3>
                   <div class="container row">
                       <span>
                         <img style="border-radius:50%;margin-right:5px;" class="img-responsive" width="48px" src="https://cdn.discordapp.com/avatars/645314415578841101/694defff96f3fe53f85260af628f3a7c.png">
