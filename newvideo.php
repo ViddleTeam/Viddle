@@ -10,7 +10,7 @@ if(!$ilosc == '0') {
 	$exist = true;
 	$dane = $pocz->fetch_assoc();
 	$title = $dane['title'];
-	$fname = $dane['filename'];
+	$fname = $dane['fname'];
 } else {
 	$exist = false;
 }
