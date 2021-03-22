@@ -420,7 +420,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
             </div>
             <div class="modal-footer">
 									     <form action="/">
-                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na strone główną</button>
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button>
 									     </form> </div>
         </div>
     </div>
@@ -430,17 +430,17 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Musisz zweryfikować adres e-mail by skorzystać z tej funkcji</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Zweryfikuj swój adres e-mail.</h5>
             </div>
             <div class="modal-body">
-                By zapobiegać tworzeniu fake kont i ataków na serwis/inne osoby wymagamy zweryfikowanego adresu e-mail by móc skorzystać z pewnych funkcji serwisu, jedną z nich jest ta z której chcesz skorzystać.
+                By zapobiegać tworzeniu fałszywych kont i ataków na serwis/inne osoby, wymagamy zweryfikowanego adresu e-mail, by móc skorzystać z pewnych funkcji serwisu. Jedną z nich jest ta, z której chcesz skorzystać.
             </div>
             <div class="modal-footer">
 									     <form action="/">
-                <button type="submit" class="btn btn-succes" style="padding: 10px;">Strona główna</button>
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Strona główna</button>
 									     </form> 
 									     <form action="mverify.php">
-                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Zweryfikuj adres e-mail</button>
+                <button type="submit" class="btn btn-primary" style="padding: 10px;">Zweryfikuj adres e-mail</button>
 									     </form>
 									     </div>
         </div>
