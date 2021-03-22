@@ -437,7 +437,7 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
             </div>
             <div class="modal-footer">
 									     <form action="/">
-                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Strona główna</button>
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button>
 									     </form> 
 									     <form action="mverify.php">
                 <button type="submit" class="btn btn-primary" style="padding: 10px;">Zweryfikuj adres e-mail</button>
