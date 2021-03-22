@@ -108,7 +108,7 @@ $(function () {
 						<?php
 						if ($do == '1') {
 							echo '<button type="button" class="btn btn-primary d-none d-md-block dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 10px;">Dostosuj kanał</button>
-							<div class="dropdown-menu dropdown-menu-right">
+							<div class="dropdown-menu dropdown-menu-right elegant-color-dark">
 								<a class="dropdown-item" href="/profilechange">Zdjęcie profilowe i baner</a>
 								<a class="dropdown-item" href="/settings">Ustawienia kanału</a>
 							</div>';
