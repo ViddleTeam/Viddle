@@ -10,6 +10,7 @@ if(!$ilosc == '0') {
 	$exist = true;
 	$dane = $pocz->fetch_assoc();
 	$title = $dane['title'];
+	$fname = $dane['filename'];
 } else {
 	$exist = false;
 }
@@ -58,7 +59,7 @@ if(!$ilosc == '0') {
           <div class="form-row">
             <div class="col-md-7">
               <div class="md-form form-group">
-                <?php echo '<iframe src="https://cdn.plrjs.com/player/3ehs9nbnddz9a/or43an4e4gpx.html?file=https://cdn.viddle.xyz/cdn/videos/videos/'.$id.'/'.$dane['filename'].'&title='.$dane['title'].'" style="width: 100%; height: 360px;" frameborder="0"></iframe>'; ?>
+                <?php echo '<iframe src="https://cdn.plrjs.com/player/3ehs9nbnddz9a/or43an4e4gpx.html?file=https://cdn.viddle.xyz/cdn/videos/videos/'.$id.'/'.$fname.'&title='.$dane['title'].'" style="width: 100%; height: 360px;" frameborder="0"></iframe>'; ?>
                 <div class="card-videoch" style="padding: 12px; margin-top: 10px; cursor: default; width: 100%;">
                   <h4><?php echo $title ?></h4>
                   <div class="container row" style="margin-top: 20px;">
