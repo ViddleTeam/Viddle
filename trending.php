@@ -52,7 +52,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
               </div>
               <div class="tile">
                 <div class="card">
-                    <a href='video.php?id="<?php echo $onevideoid ?>'> 
+                    <a href='video.php?id=<?php echo $onevideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                     <p class="card-title"><?php echo $onetytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
@@ -64,7 +64,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
                     </a>
                 </div>
                 <div class="card">
-                <a href='video.php?id="<?php echo $twovideoid ?>'> 
+                <a href='video.php?id=<?php echo $twovideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                     <p class="card-title"><?php echo $twotytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
@@ -76,7 +76,7 @@ if ($result = @$connect->query("SELECT * FROM `viddle_videos` WHERE `video_id` N
                     </a>
                 </div>
                 <div class="card">
-                <a href='video.php?id="<?php echo $threevideoid ?>'> 
+                <a href='video.php?id=<?php echo $threevideoid ?>'> 
                     <img src="https://i.pinimg.com/originals/07/03/6e/07036e12e9ca047f542437befa8872d3.jpg" class="img-responsive card-img">
                     <p class="card-title"><?php echo $threetytul ?></p>
                     <div class="hr" style="margin-top:-5px;margin-bottom:5px;"></div>
