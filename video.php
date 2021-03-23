@@ -39,6 +39,7 @@ if ($id == 0) {
         $likes = $data['upvotes'];
         $dislikes = $data['downvotes'];
         $video_exists = true;
+        if (!$opis) $opis = "Brak opisu dla tego filmu";
         if ($result = @$connect->query(sprintf("SELECT * FROM viddle_users WHERE uid='%s'", mysqli_real_escape_string($connect, $publisher)))) $d2 = $result->num_rows;
         if ($d2 == '1') {
         }
@@ -227,7 +228,7 @@ if ($video_e == true) {
 			      
                                 <?php echo $powod ?>
                             </div><br>
-                            <p><?php echo $opis ?></p>
+                            <p id="description" onclick="ecdesc()"><?php echo $opis ?></p>
                         </div>
                         <div class="comments">
                             <h3>Komentarze (<?=$comment_count ?>)</h3>
@@ -312,7 +313,6 @@ if ($video_e == true) {
                                     }
                                 }
                                 ?>
-
                             </div>
                         </div>
                     </div>

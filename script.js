@@ -30,14 +30,3 @@ function uploadCheck() {
     $('#getTime').css({display: 'block'});
   }
 }
-
-function postcomment() {
-  let commentbox = document.getElementById("commentbox");
-  let commentcont = document.getElementById("commentcont");
-  if (commentbox.length < 1) {
-    commentcont.innerHTML = '<div class="alert alert-warning">Nie możesz opublikować pustego komentarza.</div>';
-  } else {
-    commentcont.innerHTML = '';
-    window.open("comment.php?id=" + commentbox.value);
-  }
-}
