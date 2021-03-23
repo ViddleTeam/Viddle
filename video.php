@@ -218,7 +218,11 @@ if ($video_e == true) {
                     </span>
                         <span style="margin-left: auto; margin-right: -20px; text-align: right;">
                     	<h4 style="font-weight: bold;"><i class="fas fa-eye" style="margin-right: 5px;"></i> <?php echo $viev ?></h4>
-                      <span style='margin-right: 5px;'><a href="like.php?id=<?php echo $id ?>" class="videoprop"><i class="fas fa-arrow-up" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $likes ?></a></span> <a href="dislike.php?id=<?php echo $id ?>" class="videoprop"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                        <?php if ($_SESSION['z1']) { ?>
+                        <span style='margin-right: 5px;'><a href="like.php?id=<?php echo $id ?>" class="videoprop"><i class="fas fa-arrow-up" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $likes ?></a></span> <a href="dislike.php?id=<?php echo $id ?>" class="videoprop"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a>
+                        <?php } else { ?>
+                        <span data-toggle="tooltip" title="Zaloguj się, żeby móc oddać głos na film."><a href="like.php?id=<?php echo $id ?>" class="videoprop disabled"><i class="fas fa-arrow-up" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $likes ?></a> <a href="dislike.php?id=<?php echo $id ?>" class="videoprop"><i class="fas fa-arrow-down" style="margin-left: 10px; margin-right: 5px;"></i> <?php echo $dislikes ?></a></span>
+                        <?php } ?>
                     </span>
 			      
                                 <?php echo $powod ?>
