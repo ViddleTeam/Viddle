@@ -307,11 +307,11 @@ if ($video_e == true) {
                         }
                         ?>
                       </span>
-                    <form method="get">
+                    <form method="post">
                       <span class="md-form my-0 mx-2" style="color: white !important;">
 			              <input class="form-control mr-sm-2 d-lg-block" style="color: white !important; width: 100%;" id="commentbox" type="text" placeholder="Dodaj komentarz" aria-label="Dodaj komentarz" name="comment">
                       </span>
-                        <input type="submit" class="btn btn-primary" onclick="postcomment()" style="padding: 10px;" value="Opublikuj">
+                        <input type="submit" class="btn btn-primary" style="padding: 10px;" value="Opublikuj">
 				    </form>
                                 <!--<form method="post" action="video?id=">
                                     <span class="md-form my-0 mx-2" style="color: white!important">
