@@ -42,62 +42,67 @@ if(isset($_POST['submit'])) {
 		exit;
 	} else {
 		try {
-			$error = '0';
-			if($_FILES['video']['size'] > '1000000000') {
-				$error = '1';
-				throw new Exception('za duzy plik');
+			if($as == '1' || $ver == false) {
+				throw new Exception('xd');
+				$error = '01';
 			} else {
-				$z[0]['body'] = $_FILES['video']['type'];
-				$vars = array(
-				  'video/quicktime' => 'mov',
-				  'video/mp4' => 'mp4',
-				  'video/webm' => 'webm',
-				  'video/x-ms-wmv' => 'wmv',
-			      'video/3gpp' => '3gpp',
-				);
+				$error = '0';
+				if($_FILES['video']['size'] > '1000000000') {
+					$error = '1';
+					throw new Exception('za duzy plik');
+				} else {
+					$z[0]['body'] = $_FILES['video']['type'];
+					$vars = array(
+					  'video/quicktime' => 'mov',
+					  'video/mp4' => 'mp4',
+					  'video/webm' => 'webm',
+					  'video/x-ms-wmv' => 'wmv',
+				      'video/3gpp' => '3gpp',
+					);
 
-				$roz = strtr($z[0]['body'], $vars);
-				
-				if($roz == 'mp4' || $roz == 'mov' || $roz == 'webm' || $roz == 'wmv' || $roz == '3gpp') {
-						
-					
-					
-					if($il = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid'")) {
-						$wstaw = $il->num_rows;
-						$viddleid = rand(1000000,9999999);
-						$_SESSION['vid'] = $viddleid;
-						require 'daneftp.php';
-						$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
-						$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
-						 ftp_chdir($ftp_conn, $sciezka);
-						 ftp_mkdir($ftp_conn, $viddleid);
-						 ftp_chdir($ftp_conn, $viddleid);
-						$nazwa = $viddleid.'.'.$roz;
-						 ftp_put($ftp_conn, $nazwa, $_FILES['video']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
-						ftp_close($ftp_conn);
-						$wstaw = time() + '300';
-						$date = date("Y-m-d H:i:s");     
-						$i =  $connect->query("SELECT * FROM viddle_videos WHERE publisher='$uid'");
-						$il = $i->num_rows;
-						
-						if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw', '0')")) {
-							$_SESSION['etap'] = '2';
-							$i = time();
-							$wstawII = $i + '1800';
-							$final = $connect->query("UPDATE `viddle_users` SET `videopub`='$wstawII' WHERE `uid`='$uid'");
+					$roz = strtr($z[0]['body'], $vars);
+
+					if($roz == 'mp4' || $roz == 'mov' || $roz == 'webm' || $roz == 'wmv' || $roz == '3gpp') {
+
+
+
+						if($il = $connect->query("SELECT * FROM `viddle_videos` WHERE `publisher`='$uid'")) {
+							$wstaw = $il->num_rows;
+							$viddleid = rand(1000000,9999999);
+							$_SESSION['vid'] = $viddleid;
+							require 'daneftp.php';
+							$ftp_conn =  ftp_connect(FTPSERWER) or die("Błąd połączenia FTP! Skontaktuj się z supportem");
+							$login =  ftp_login($ftp_conn, FTPUSER, FTPPASS) or die ("Błąd połączenia FTP! Skontaktuj się z supportem");
+							 ftp_chdir($ftp_conn, $sciezka);
+							 ftp_mkdir($ftp_conn, $viddleid);
+							 ftp_chdir($ftp_conn, $viddleid);
+							$nazwa = $viddleid.'.'.$roz;
+							 ftp_put($ftp_conn, $nazwa, $_FILES['video']['tmp_name'], FTP_BINARY) or die ('Błąd z przesyłaniem filmu, skontaktuj się z supportem');
+							ftp_close($ftp_conn);
+							$wstaw = time() + '300';
+							$date = date("Y-m-d H:i:s");     
+							$i =  $connect->query("SELECT * FROM viddle_videos WHERE publisher='$uid'");
+							$il = $i->num_rows;
+
+							if($connect->query("INSERT INTO `viddle_videos` VALUES ('0', '$il','$uid','13', '$viddleid', '0', '0', '0', '0', '$nazwa', CURRENT_DATE, '', 'X', '$date', '$wstaw', '0')")) {
+								$_SESSION['etap'] = '2';
+								$i = time();
+								$wstawII = $i + '1800';
+								$final = $connect->query("UPDATE `viddle_users` SET `videopub`='$wstawII' WHERE `uid`='$uid'");
+							} else {
+								$error = '3';
+								throw new Exception('query error');
+							}
 						} else {
 							$error = '3';
 							throw new Exception('query error');
 						}
 					} else {
-						$error = '3';
-						throw new Exception('query error');
+						$error = '2';
+						throw new Exception('zly format');
 					}
-				} else {
-					$error = '2';
-					throw new Exception('zly format');
-				}
-				
+
+				}	
 			}
 			
 		} catch (Exception $e) {
@@ -115,6 +120,10 @@ if(isset($_POST['submit'])) {
 			
 			if($error == '0') {
 				$kom = '<div class="alert alert-danger" role="alert">Wystąpił nieznany błąd! Skontaktuj się z supportem</div>';
+			}
+			
+			if($error == '01') {
+				$kom = '<div class="alert alert-danger" role="alert">Żądanie odrzucone!</div>';
 			}
 		}
 	}
