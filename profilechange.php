@@ -136,11 +136,12 @@ if(isset($_FILES['file_picker'])) {
 		$ftp_server = FTPSERWER;
 		$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 		$login = ftp_login($ftp_conn, FTPUSER, FTPPASS);
-		ftp_chdir($ftp_conn, '/avatars/');
-		ftp_chdir($ftp_conn, '/avatars/'.$_SESSION['uid'].'/'.$_SESSION['uid']);
-		if($del == '1') {
-			$delete = $_SESSION['uid'].'.'.$av.'';
-			ftp_delete($conn_id, $delete);
+		ftp_chdir($ftp_conn, 'avatars');
+		if(ftp_chdir($ftp_conn, $_SESSION['uid'])) {
+			
+		} else {
+			ftp_mkdir($ftp_conn, $_SESSION['uid']);
+			ftp_chdir($ftp_conn, $_SESSION['uid']);
 		}
 		ftp_put($ftp_conn, $_SESSION['uid'].'.'.$t, $file_tmp, FTP_BINARY);
 		ftp_close($ftp_conn);
