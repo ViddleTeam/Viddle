@@ -20,6 +20,9 @@ if($c == '0') {
 if(isset($_POST['wycisz'])) {
 	if($_POST['h'] < '24') {
 		$czasw = $_POST['h'].' godzin/y';
+		$use = '1';
+	} else {
+		$use = '0';
 	}
 	$unix = time();
 	$wstaw = $_POST['h'] * '3600' + $unix;
@@ -35,7 +38,7 @@ if(isset($_POST['wycisz'])) {
         if(!empty($_POST['uzasadnienie'])) {
           $wynik = $_POST['h'] / 24;
           if($wynik % 2 == 0) {
-		  if(!$_POST['h'] < '24') {
+		  if($use == '0') {
             		$czasw = $wynik.' dni';
 		  }
     
