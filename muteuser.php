@@ -18,6 +18,8 @@ if($c == '0') {
 }
 
 if(isset($_POST['wycisz'])) {
+	$unix = time();
+	$wstaw = $_POST['h'] * '3600' + $unix;
 	if($_POST['h'] < '24') {
 		$czasw = $_POST['h'].' godzin';
 	}
@@ -128,7 +130,6 @@ if(isset($_POST['wycisz'])) {
     if($mail->send()) {
       $uz = $_POST['uzasadnienie'];
       $today = date("Y-m-d");
-        $wstaw = $_POST['h'] * '3600';
         $dupa = $connect->query("INSERT INTO `viddle_mutes` VALUES (NULL, '$uidI', '$today', '$ciekle', '$uz', '$uid')");
         $dupaII = $connect->query("UPDATE `viddle_users` SET `mute`='$wstaw' WHERE `uid`='$uidI'");
         $say = 'Wyciszono użytkownika!';
