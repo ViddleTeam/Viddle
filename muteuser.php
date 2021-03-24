@@ -10,9 +10,9 @@ use PHPMailer\PHPMailer\Exception;
 // Load Composer's autoloader
 include 'vendor/autoload.php';
 
-$check = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid' AND uprawnienia NOT LIKE '0'");
-$c = $cheack->num_rows;
-if($c == '0') {
+$check = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
+$c = $cheack->fetch_assoc();
+if($c['uprawnienia'] == '0') {
   header('location: /');
   exit;
 } elseif (empty($uid)) {
