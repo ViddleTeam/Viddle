@@ -32,7 +32,7 @@ if(isset($_POST['wycisz'])) {
           $wynik = $_POST['h'] / 24;
           if($wynik % 2 == 0) {
             $czasw = $wynik.' dni';
-          } elseif ($wynik < 1) {
+          } elseif ($_POST['h'] < '24') {
             $czasw = $oryginal.' godzin';
           } elseif ($wynik > 1) {
             $dni = round($wynik, 0);
