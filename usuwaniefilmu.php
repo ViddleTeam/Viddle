@@ -134,7 +134,7 @@ $mail = new PHPMailer(true);
     $uz = $_POST['uzasadnienie'];
 
     if($mail->send()) {
-        $ol = $connect->query("INSERT INTO `viddle_warnings` VALUES (NULL, '$uidII', '$vid', '$uz', '$data')");
+        $ol = $connect->query("INSERT INTO `viddle_warnings` VALUES (NULL, '$uidII', '$vid', '$uz', '$data', '$uid')");
         $olII = $connect->query("DELETE FROM `viddle_videos` WHERE `video_id`='$vid'");
         $olIII = $connect->query("UPDATE `viddle_users` SET `warnings`='$warnings' WHERE `uid`='$uidII'");
       
