@@ -175,6 +175,7 @@ if(isset($_POST['loginc'])) {
                       <button type="button" class="btn btn-primary" style="margin-top: -10px;" data-toggle="modal" data-target="#passwordModal"><p style="margin: 10px;">Zmień hasło</p></button>
                   </span>
                 </div>
+		      <?php if($_SESSION['emailver'] == '1') { ?>
                 <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
                   <span style="margin-left: 10px; margin-right: auto;">
                       <h4>Zmień adres e-mail</h4>
@@ -184,6 +185,17 @@ if(isset($_POST['loginc'])) {
                       <button type="button" class="btn btn-primary" style="margin-top: -10px;" data-toggle="modal" data-target="#emailModal"><p style="margin: 10px;">Zmień adres e-mail</p></button>
                   </span>
                 </div>
+		      <?php } else { ?>
+		      <div class="row" style="width: 100%; align-items: center; margin: 25px 0 25px 0;">
+                  <span style="margin-left: 10px; margin-right: auto;">
+                      <h4>Zmień adres e-mail</h4>
+                      <p style="text-align: left; margin-top: -6px;">Musisz mieć zweryfikowany adres email by móc z tego skorzystać</p>
+                  </span>
+                  <span style="margin-left: auto; margin-right: -20px;">
+                      <button type="button" disabled="disabled" class="btn btn-primary" style="margin-top: -10px;" data-toggle="modal" data-target="#emailModal"><p style="margin: 10px;">Zmień adres e-mail</p></button>
+                  </span>
+                </div
+			      <?php } ?>
               </div>
               <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
                 Lista filmów na Twoim kanale. Możesz stąd edytować informacje o filmie (np. tytuł czy opis) albo je usunąć.<br>
@@ -391,6 +403,7 @@ if(isset($_POST['loginc'])) {
     </div>
   </div>
 </div>
+		    <?php if($_SESSION['emailver'] == '1') { ?>
 <!-- zmiana adresu e-mail -->
 <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -420,7 +433,7 @@ if(isset($_POST['loginc'])) {
     </div>
   </div>
 </div>
-
+<?php } ?>
 <!-- Filmy - modale -->
 <div class="modal fade" id="editVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
