@@ -18,7 +18,9 @@ if($c == '0') {
 }
 
 if(isset($_POST['wycisz'])) {
-	$oryginal = $_POST['h'];
+	if($_POST['h'] < '24') {
+		$czasw = $_POST['h'].' godzin';
+	}
     if($_POST['h'] % 2 == 1 || $_POST['h'] < 1) {
       $say = 'Czas wyciszenia musi być liczbą naturalną!';
     } else {
@@ -32,8 +34,7 @@ if(isset($_POST['wycisz'])) {
           $wynik = $_POST['h'] / 24;
           if($wynik % 2 == 0) {
             $czasw = $wynik.' dni';
-          } elseif ($_POST['h'] < '24') {
-            $czasw = $oryginal.' godzin';
+    
           } elseif ($wynik > 1) {
             $dni = round($wynik, 0);
             $dniII = $dni * '24';
