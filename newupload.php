@@ -29,6 +29,13 @@ if($aspam = $connect->query("SELECT * FROM `viddle_users` WHERE `uid`='$uid'")) 
 	} else {
 		$ver = true;
 	}
+	$time = time();
+	
+	if($check['mute'] > $time) {
+		$m = '1';
+	} else {
+		$m = '0';
+	}
 }
 
 if($_SESSION['uid'] == '5fd62da0d95545fd62da0d9557') {
@@ -42,7 +49,7 @@ if(isset($_POST['submit'])) {
 		exit;
 	} else {
 		try {
-			if($as == '1' || $ver == false) {
+			if($as == '1' || $ver == false) || $m == '1') {
 				throw new Exception('xd');
 				$error = '01';
 			} else {
@@ -467,6 +474,23 @@ Po wysłaniu na serwer, film będzie dostępny do obejrzenia dopiero od ustawion
         </div>
     </div>
 </div>
+									   <!--modal dla wyciszonych-->
+									    <div class="modal fade" id="mute" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Upsss ... nie możesz skorzystać z tego narzędzia</h5>
+            </div>
+            <div class="modal-body">
+                Przykro nam, ale nie możesz przsłać nowego filmu bo zostałeś tymczasowo wyciszony przez naszą administracje. Poczekaj aż wyciszenie upłynie (czas na który wyciszono ciebie znajdziesz w mailu od nas)
+            </div>
+            <div class="modal-footer">
+									     <form action="/">
+                <button type="submit" class="btn btn-secondary" style="padding: 10px;">Powrót na stronę główną</button>
+									     </form> </div>
+        </div>
+    </div>
+</div>
 <?php if($as == '1') {									     ?>
 <script>
 $('#staticBackdrop').modal('show');
@@ -477,8 +501,11 @@ $('#staticBackdrop').modal('show');
 $('#email').modal('show');
 </script> 
 				 <?php } ?>
-
-									     
+<?php if($m == '1') { ?>
+<script>
+$('#mute').modal('show');
+</script> 
+	<?php } ?>								     
 	  
         </div>
 <!-- JS -->
