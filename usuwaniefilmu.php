@@ -179,7 +179,7 @@ $mail = new PHPMailer(true);
 				<center>
 				<div class="container row" style="justify-content: center;">
 				<input type="submit" value="Usuń film" name="usun" class="btn btn-success" style="padding: 10px; color: white;">
-          <?php echo $err ?>
+          <?php echo $say ?>
                 </form>
 				</div>
 				</center>
