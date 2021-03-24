@@ -15,6 +15,9 @@ $c = $cheack->num_rows;
 if($c == '0') {
   header('location: /');
   exit;
+} elseif (empty($uid)) {
+	header('location: /');
+  exit;
 }
 
 if(isset($_POST['wycisz'])) {
