@@ -18,11 +18,11 @@ if($c == '0') {
 }
 
 if(isset($_POST['wycisz'])) {
-	$unix = time();
-	$wstaw = $_POST['h'] * '3600' + $unix;
 	if($_POST['h'] < '24') {
 		$czasw = $_POST['h'].' godzin/y';
 	}
+	$unix = time();
+	$wstaw = $_POST['h'] * '3600' + $unix;
     if($_POST['h'] % 2 == 1 || $_POST['h'] < 1) {
       $say = 'Czas wyciszenia musi być liczbą naturalną!';
     } else {
