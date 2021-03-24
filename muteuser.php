@@ -21,6 +21,121 @@ if(isset($_POST['wycisz'])) {
     if($_POST['h'] % 2 == 1 || $_POST['h'] < 1) {
       $say = 'Czas wyciszenia musi być liczbą naturalną!';
     } else {
+      $uidI = $_POST['id'];
+       $p = $connect->query("SELECT * FROM viddle_users WHERE uid='$uidI'");
+      $users = $p->num_rows;
+      if($users == '0') {
+        $say = 'Użytkownik o podanym id nie istnieje';
+      } else {
+        if(!empty($_POST['uzasadnienie'])) {
+          $wynik = $_POST['h'] / 24;
+          if($wynik % 2 == 0) {
+            $czasw = $wynik.' dni';
+          } elseif ($wynik < 1) {
+            $czasw = $wynik.' godzin';
+          } elseif ($wynik > 1) {
+            $dni = round($wynik, 0);
+            $dniII = $dni * '24';
+            $godziny = $_POST['h'] - $dniII;
+            $czasw = $dni.' dni i '.$godziny.' godzin';
+          }
+          $daneusera = $p->fetch_assoc();
+          
+          require 'danemail.php';
+          $mail = new PHPMailer(true);
+
+
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
+    $mail->isSMTP(); 
+    $mail->CharSet = 'UTF-8'; // Send using SMTP
+    $mail->Host       = MAILHOST;                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = MAILUSER;                     // SMTP username
+    $mail->Password   = MAILPASS;                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = MAILPORT;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom(MAILUSER, MAILNAME);
+    $mail->addAddress($daneusera['email']);     // Add a recipient
+
+
+
+			$body = '<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <script src="https://kit.fontawesome.com/ca8376a2f4.js" crossorigin="anonymous"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Roboto");
+
+            * {
+                font-family: Roboto;
+                color: white;
+            }
+
+            #header {
+                padding: 10px;
+                background-color: #313539;
+                text-align: center;
+            }
+
+            #body {
+                padding: 10px;
+                background-color: #212529;
+                justify-content: center;
+            }
+
+            #text-container {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Twój kanał otrzymał tymczasową blokadę.</h1>
+        </div>
+        <div id="body">
+            <div id="text-container">
+                <p>
+                    Witaj, <b>'.$daneusera['login'].'.</b><br><br>
+                    Chcemy poinformować, że mimo nakładanych ostrzeżeń na Twój kanał, nie stosowałeś/aś się do regulaminu serwisu.<br><br>
+                    Na Twój kanał nałożyliśmy tymczasową blokadę, która potrwa '.$czasw.'<br>
+                    Powód blokady: '.$_POST['uzasadnienie'].'.<br><br>
+                    Jeżeli uważasz, że ta decyzja była niesłuszna, skontaktuj się z nami drogą mailową lub na <a href="https://discord.gg/QsrbDtxWpn">naszym serwerze Discord.</a><br><br>
+                    Pozdrawiamy,<br>
+                    Viddle Developers
+                </p>
+                <br><hr>
+                <p style="text-align: center; font-size: small;">
+                    Wiadomość została wygenerowana automatycznie. Prosimy na nią nie odpisywać.<br>
+                    Jeżeli chcesz się odwołać od naszej decyzji, napisz wiadomość mailową w nowym wątku lub skontaktuj się z nami na naszym serwerze Discord i otwórz ticket do supportu.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>';
+
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Dostałeś tymczasową blokade na viddle';
+    $mail->Body    = $body;
+    if($mail->send()) {
+      $uz = $_POST['uzasadnienie'];
+      $today = date("Y-m-d");
+        $wstaw = $_POST['h'] * '3600';
+        $dupa = $connect->query("INSERT INTO `viddle_mutes` VALUES (NULL, '$uidI', '$today', '$ciekle', '$uz', '$uid')");
+        $dupaII = $connect->query("UPDATE `viddle_users` SET `mute`='$wstaw' WHERE `uid`='$uidI'");
+        $say = 'Wyciszono użytkownika!';
+    }
+          
+        } else {
+          $say = 'Musisz uzasadnić dlaczego chcesz wyciszyć daną osobe';
+        }
+      }
     }
 }
 
