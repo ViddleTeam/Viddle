@@ -1,10 +1,21 @@
 <?php
+$czas = time();
 session_start(); 
+require 'danesql.php';
+$connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+
+$uid = $_SESSION['uid'];
+$res = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
+$c = $res->fetch_assoc();
+if($c['mute'] > $czas) {
+    header('location: /');
+    exit;
+}
 if($_SESSION['emailver'] == '0') {
     header('location: index.php');
     exit();
 }
-$czas = time();
+
 
 if($czas > '1617660000') {
     $wsparcie = '1';
