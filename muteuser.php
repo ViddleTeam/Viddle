@@ -19,6 +19,8 @@ if($c == '0') {
 
 if(isset($_POST['wycisz'])) {
 	$oryginal = $_POST['h'];
+	echo $oryginal;
+	exit;
     if($_POST['h'] % 2 == 1 || $_POST['h'] < 1) {
       $say = 'Czas wyciszenia musi być liczbą naturalną!';
     } else {
