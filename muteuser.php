@@ -1,3 +1,29 @@
+<?php session_start();
+require 'danesql.php';
+$connect =  new MYSQLI(SQLHOST, SQLUSER, SQLPASS, DBNAME);
+$uid = $_SESSION['uid'];
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+// Load Composer's autoloader
+include 'vendor/autoload.php';
+
+$check = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid' AND uprawnienia NOT LIKE '0'");
+$c = $cheack->num_rows;
+if($c == '0') {
+  header('location: /');
+  exit;
+}
+
+if(isset($_POST['wycisz'])) {
+    if(!$_POST['h'] % 2 == 0 || $_POST['h'] < 1) {
+      $say = 'Czas wyciszenia musi być liczbą naturalną!';
+    } else 
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +57,8 @@
 </div><br>
 <center>
 <div class="container row" style="justify-content: center;">
-<input type="submit" value="Wycisz użytkownika" name="usun" class="btn btn-success" style="padding: 10px; color: white;">
+<input type="submit" value="Wycisz użytkownika" name="wycisz" class="btn btn-success" style="padding: 10px; color: white;"><br>
+ <?php echo $say ?>
 </form>
 </div>
 </center>
