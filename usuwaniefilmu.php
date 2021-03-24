@@ -113,7 +113,7 @@ $mail = new PHPMailer(true);
                     Film o nazwie <b>'.$info['title'].'</b> został usunięty z Viddle, a na Twój kanał zostało nałożone ostrzeżenie.<br>
                     Uzasadnienie: '.$_POST['uzasadnienie'].'<br><br>
                     Ostrzeżenie wygaśnie <b>'.$data.'.</b> Do czasu wygaśnięcia ostrzeżenia na Twój kanał mogą zostać nałożone restrykcje.<br><br>
-                    Obecnie posiadasz '.$warnings.' ostrzeżenie/nia. Jeśli na twój kanał w przeciągu 3 miesięcy od nałożenia 1. ostrzeżenia zostaną nałożone 3 ostrzeżenia to twoje konto zostanie zamknięte. <br><br>
+                    Obecnie posiadasz '.$warnings.' ostrzeżenie/nia. Jeżeli na Twój kanał w przeciągu 3 miesięcy od nałożenia 1-szego ostrzeżenia zostaną nałożone 3 ostrzeżenia, to Twoje konto zostanie zamknięte. <br><br>
                     Pozdrawiamy,<br>
                     Viddle Developers
                 </p>
@@ -140,7 +140,6 @@ $mail = new PHPMailer(true);
       
        $say = 'film usunięty';
     }
-          
         } else {
           $say = 'brak uzasadnienia';
         }
@@ -168,7 +167,7 @@ $mail = new PHPMailer(true);
 	<body class="bg-img img-fluid" style="align-items: center; justify-content: center; text-align: center;">
 			<div class="card-login" style="width: 550px; height: auto; align-items: center; padding: 15px 0 15px 0;">
 				<div class="card-body">
-				<h3 style="font-weight: bold;">Usuwanie filmu z viddle</h3>
+				<h3 style="font-weight: bold;">Usuwanie filmu z Viddle</h3>
 				<p>Usuń film z viddle</p><br>
                 <form method="post">
 				<div class="md-form input-group mb-3" style="margin: auto; width: 100%">
@@ -183,7 +182,6 @@ $mail = new PHPMailer(true);
           <?php echo $err ?>
                 </form>
 				</div>
-				<p style="margin: 15px 0 0 0;">Zapomniałeś hasła? <a href="preset.php" class="resetpass">Wyślij prośbę o zresetowanie.</a></p>
 				</center>
 			</div>
 			</div><br>
