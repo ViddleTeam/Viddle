@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 include 'vendor/autoload.php';
 
 $check = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid'");
-$c = $cheack->fetch_assoc();
+$c = $check->fetch_assoc();
 if($c['uprawnienia'] == '0') {
   header('location: /');
   exit;
