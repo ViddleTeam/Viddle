@@ -34,8 +34,10 @@ if(isset($_POST['wycisz'])) {
       } else {
         if(!empty($_POST['uzasadnienie'])) {
           $wynik = $_POST['h'] / 24;
-          if($wynik % 2 == 0 && $wynik > '1') {
-            $czasw = $wynik.' dni';
+          if($wynik % 2 == 0) {
+		  if($wynik <== 1) {
+            		$czasw = $wynik.' dni';
+		  }
     
           } elseif ($wynik > 1) {
             $dni = round($wynik, 0);
