@@ -44,7 +44,10 @@ if(isset($_POST['wycisz'])) {
             $dniII = $dni * '24';
             $godziny = $_POST['h'] - $dniII;
             $czasw = $dni.' dni i '.$godziny.' godzin';
-          }
+          } else {
+		  $dni = round($wynik, 0);
+		  $czasw = $dni.' dni';
+	  }
           $daneusera = $p->fetch_assoc();
           
           require 'danemail.php';
