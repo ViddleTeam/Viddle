@@ -49,7 +49,7 @@ if(isset($_POST['submit'])) {
 		exit;
 	} else {
 		try {
-			if($as == '1' || $ver == false) || $m == '1') {
+			if($as == '1' || $ver == false || $m == '1') {
 				throw new Exception('xd');
 				$error = '01';
 			} else {
