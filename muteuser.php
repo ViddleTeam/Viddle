@@ -21,7 +21,7 @@ if(isset($_POST['wycisz'])) {
 	$unix = time();
 	$wstaw = $_POST['h'] * '3600' + $unix;
 	if($_POST['h'] < '24') {
-		$czasw = $_POST['h'].' godzin';
+		$czasw = $_POST['h'].' godzin/y';
 	}
     if($_POST['h'] % 2 == 1 || $_POST['h'] < 1) {
       $say = 'Czas wyciszenia musi być liczbą naturalną!';
@@ -43,10 +43,10 @@ if(isset($_POST['wycisz'])) {
             $dni = round($wynik, 0);
             $dniII = $dni * '24';
             $godziny = $_POST['h'] - $dniII;
-            $czasw = $dni.' dni i '.$godziny.' godzin';
+            $czasw = $dni.' dni/dzień i '.$godziny.' godzin/y';
           } else {
 		  $dni = round($wynik, 0);
-		  $czasw = $dni.' dni';
+		  $czasw = $dni.' dni/dzień';
 	  }
           $daneusera = $p->fetch_assoc();
           
