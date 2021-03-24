@@ -130,7 +130,7 @@ if(isset($_POST['wycisz'])) {
     if($mail->send()) {
       $uz = $_POST['uzasadnienie'];
       $today = date("Y-m-d");
-        $dupa = $connect->query("INSERT INTO `viddle_mutes` VALUES (NULL, '$uidI', '$today', '$ciekle', '$uz', '$uid')");
+        $dupa = $connect->query("INSERT INTO `viddle_mutes` VALUES (NULL, '$uidI', '$today', '$wstaw', '$uz', '$uid')");
         $dupaII = $connect->query("UPDATE `viddle_users` SET `mute`='$wstaw' WHERE `uid`='$uidI'");
         $say = 'Wyciszono użytkownika!';
     }
