@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 // Load Composer's autoloader
 include 'vendor/autoload.php';
 
-$check = $connect->query("SELECT * FROM viddle_users WHERE uid='$uid' AND uprawnienia NOT LIKE '0'");
+$check = $connect->mysqli_real_escape_string(query("SELECT * FROM viddle_users WHERE uid='$uid' AND uprawnienia NOT LIKE '0'"));
 $c = $check->num_rows;
 if($c == '0') {
   header('location: /');
@@ -19,7 +19,7 @@ if($c == '0') {
 
 if(isset($_POST['usun'])) {
   $ok = true;
-  $vid = $_POST['id'];
+  $vid = htmlentities($_POST['id']);
   if($res = $connect->query("SELECT * FROM viddle_videos WHERE video_id='$vid'")) {
       $il = $res->num_rows;
       if($il == '0') {
