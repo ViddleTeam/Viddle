@@ -36,7 +36,7 @@ if($wsparcie == '0') {
     <div class="row">
         <div class="col-lg-12">
             <h4 class="tile-before" style="color:white; margin-top: 40px;"><br>Udostępnij film na Viddle</h4>
-            <div class="alert alert-warning" role="alert" style="width: 100%; text-align: center;"><B>UWAGA:</b> Z dniem 6 kwietnia 2021 wycofamy tego uploadera. Zachęcamy do przejścia na  <a href="newupload.php" class="alert-link">nowy uploader</a>. Wspiera on nowe funkcje serwisu i jest wygodniejszy.</div>
+            <div class="alert alert-danger" role="alert" style="width: 100%; text-align: center;"><B>Ważne Przypomnienie:</b> Z dniem 6 kwietnia 2021 wycofamy tego uploadera. Prosimy przejść na  <a href="newupload.php" class="alert-link">nowy uploader</a>. Wspiera on nowe funkcje serwisu i jest wygodniejszy.</div>
             <p style="color: white; margin-bottom: 20px;">Krok 1/2: Wybierz film do udostępnienia</p>
         </div>
     </div>
